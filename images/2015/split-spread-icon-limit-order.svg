@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="13329 -64 80 80">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0.4;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_564" data-name="Group 564" class="cls-1" transform="translate(12585 -1994)">
+    <g id="icons8-no_entry" transform="translate(747.2 1933.2)">
+      <path id="Path_124" data-name="Path 124" d="M38.8,2A36.8,36.8,0,1,0,75.6,38.8,36.735,36.735,0,0,0,38.8,2Zm0,3.2A33.6,33.6,0,1,1,5.2,38.8,33.466,33.466,0,0,1,38.8,5.2ZM21.2,30.8A3.081,3.081,0,0,0,18,34v9.6a3.081,3.081,0,0,0,3.2,3.2H56.4a3.081,3.081,0,0,0,3.2-3.2V34a3.081,3.081,0,0,0-3.2-3.2Zm0,3.2H56.4v9.6H21.2Z" transform="translate(-2 -2)"/>
+    </g>
+    <rect id="Rectangle_466" data-name="Rectangle 466" class="cls-2" width="80" height="80" transform="translate(744 1930)"/>
+  </g>
+</svg>

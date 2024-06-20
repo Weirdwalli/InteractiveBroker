@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="12884 359 80 79.923">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0.4;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_565" data-name="Group 565" class="cls-1" transform="translate(817 -1271)">
+    <path id="icons8-merge_vertical" d="M32,0V38.463L18.761,25.226a1.625,1.625,0,1,0-2.3,2.3L27.3,38.363H1.627q-.075,0-.15,0a1.6,1.6,0,1,0,.15,3.2H27.3L16.463,52.4a1.625,1.625,0,0,0,2.3,2.3L32,41.46V79.923h3.2V0ZM44.786,0V79.923h3.2V41.46L61.22,54.7a1.625,1.625,0,0,0,2.3-2.3L52.678,41.56H78.354a1.6,1.6,0,1,0,0-3.2H52.678l10.84-10.84a1.625,1.625,0,0,0-2.3-2.3L48.033,38.463h-.05V0Z" transform="translate(12067.048 1630)"/>
+    <rect id="Rectangle_448" data-name="Rectangle 448" class="cls-2" width="79.924" height="79.923" transform="translate(12067 1630)"/>
+  </g>
+</svg>
