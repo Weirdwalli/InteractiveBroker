@@ -1,0 +1,1340 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<title>Account Management - Release Notes 2015 Archive | Interactive Brokers LLC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"> 
+<meta name="description" content="Account Management - Release Notes 2015 Archive">
+<meta name="keywords" content="Account Management - Release Notes 2015 Archive">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="expires" content="-1">
+<meta name="robots" content="index, follow">
+<meta http-equiv="pragma" content="no-cache">
+<!--Pid:16789-->
+<link rel="canonical" href="general/am-notes-2015.php.html">
+<meta name="apple-mobile-web-app-title" content="IBKR">
+<link rel="icon" sizes="192x192" href="../images/web/favicons/home-screen-icon-192x192.png">
+<link rel="icon" sizes="128x128" href="../images/web/favicons/home-screen-icon-128x128.png">
+<link rel="apple-touch-icon" sizes="57x57" href="../images/web/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../images/web/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../images/web/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../images/web/favicons/apple-touch-icon-144x144.png">
+<!-- SCRIPTS HEAD ---------------------------------------------------------------------------------------------------- -->
+<script type="text/javascript" src='../scripts/common/js/jquery-3.6.1/jquery.min.js'></script>
+<script type="text/javascript">
+function createScriptElement(data) {
+ if (typeof data == "undefined") {
+  return;
+ }
+ var element = document.createElement("SCRIPT");
+ element.type = "text/javascript";
+ if (typeof data.id != "undefined") {
+  element.id = data.id;
+ }
+ if (typeof data.source != "undefined") {
+  element.src = data.source;
+ }
+ if (typeof data.loadfunction == "function") {
+  element.onload = data.loadfunction;
+ }
+ document.head.appendChild(element);
+}
+createScriptElement({ source : "/scripts/common/js/bootstrap-5.2.2/bootstrap.bundle.min.js", loadfunction: bsLoaded  });
+createScriptElement({ source : "/scripts/common/js/lib.js?ver=9" });
+function bsLoaded() {
+  createScriptElement({ source : "/scripts/common/js/appear/appear.min.js?ver=1" });
+  createScriptElement({ source : "/scripts/common/js/easing/easing.min.js?ver=1" });
+  createScriptElement({ source : "/scripts/common/js/parallax/parallax.min.js?ver=1" });
+  createScriptElement({ source : "/scripts/common/js/uitotop/uitotop.min.js?ver=1", loadfunction: uiLoaded });
+}
+function uiLoaded() {
+  createScriptElement({ source : "/scripts/common/js/twsUtils.js?ver=2" });
+  createScriptElement({ source : "/scripts/common/js/design/design.js?ver=1" }); 
+}
+</script>
+<script type="text/javascript">
+$(function() {
+  let ex=new Date();
+  ex.setTime(ex.getTime()+86400000);
+  document.cookie ='IB_REST=1;expires='+ex.toGMTString()+';path=/;domain=.interactivebrokers.com';
+  $('div#langselector').find('a').each(function() {
+  $(this).click(function() {
+   var link = $(this).attr("href");
+   if(link.match(/\/(en|fr|de|es|it|ru|cn|jp)\//))
+   {
+    var langs = link.split("/");
+    if(langs[3] == 'en' || langs[3] == 'fr' || langs[3] == 'de' || langs[3] == 'es' || langs[3] == 'it' || langs[3] == 'ru' || langs[3] == 'cn' || langs[3] == 'jp')
+    {
+      var lang = langs[3];
+      if(lang == 'cn')
+      {
+        lang = 'zh_CN';
+      }
+      if(lang == 'jp')
+      {
+        lang = 'ja';
+      }
+      if(hasCookie("IB_LANG"))
+      {
+        deleteCookie("IB_LANG");
+      }
+      setCookie("IB_LANG", lang, 7, '.interactivebrokers.com');
+    } else if(langs[1] == 'en') {
+      var lang = 'en';
+      setCookie("IB_LANG", lang, 7, '.interactivebrokers.com');
+    }
+   }
+  });
+ });
+ $('p#bandaid-close').click(function() {
+  setCookie("IB_BANDAID", 1, 30, '.interactivebrokers.com');
+ });
+ $('a#btnCloseBannerRegionSelector').click(function() {
+  setCookie("IB_REGION_SEL", 1, 30, '.interactivebrokers.com');
+ });
+});
+</script>
+<script>var e=document.createElement("script");e.type='text/javascript';e.src='/scripts/common/js/ibtrk.js?v=14';document.head.appendChild(e);_ibp=16789;</script>
+<!-- STYLES HEAD -->
+<link rel="preload" as="style" href="../css/bootstrap-5.2.2/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../css/bootstrap-5.2.2/bootstrap.min.css">
+<link rel="preload" as="style" href="../css/ibkr/website.min.css?v=25dbb9871dad19f5b220266180efb316">
+<link rel="stylesheet" type="text/css" media="all" href="../css/ibkr/website.min.css?v=25dbb9871dad19f5b220266180efb316">
+<link rel="preload" as="style" href="../css/ibkr/theme-ibkr.min.css?v=25dbb9871dad19f5b220266180efb316">
+<link rel="stylesheet" type="text/css" media="all" href="../css/ibkr/theme-ibkr.min.css?v=25dbb9871dad19f5b220266180efb316">
+<script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch"}]);</script>
+                              <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="CGJ34-S5RKA-7ZQ8F-AJER9-TWWVG",function(){function e(){if(!o){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,i.parentNode.appendChild(e),o=!0}}function t(e){o=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(i.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",i.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"CGJ34-S5RKA-7ZQ8F-AJER9-TWWVG";var i=document.currentScript||document.getElementsByTagName("script")[0],o=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!o)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),i.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="nfygq4tacd4isztsnupa-f-22f5eafa3-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,o={"ak.v":"37","ak.cp":"1131468","ak.ai":parseInt("665092",10),"ak.ol":"0","ak.cr":140,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"15977795","ak.r":42379,"ak.a2":n,"ak.m":"a","ak.n":"essl","ak.bpcip":"105.112.104.0","ak.cport":14151,"ak.gh":"23.77.196.137","ak.quicv":"","ak.tlsv":"tls1.2","ak.0rtt":"","ak.csrc":"-","ak.acc":"bbr","ak.t":"1718775070","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==28zMe/cmZ0ixJNzURG3X/azdbCZ0KJzEFKvRXmZZ8CInJfM6AhowvzZ0vVSXglTi1xzagI/P+uOdCTkEMbE3QxztkpHii7p+1CQgqdTblfbyijUwGDOUPdjo9QN/jlirOzM1hu+mLXjn54olz2vrQlbsGte746uoqd/yMNg9tu2vsRwK8sycJD9qLO6qt6o2VdGKO+yVwbFfdO6YTrarMWH1XWfhWQHlq1/CX8kGMsTymn0sEt2UM64ArMQkz/ZqiVIhq+0EaKwvzO07Z2SXoeVDYaAdPljW2Aw/B0eLCTVPzbLe400I+7kW8F9FaAOyeQYqq/p1kR0UfBqvqtqSfR7TVIXqiyi4FYNbir0Xx0E9jOMurdXGhjs8gEr+ViVoZk8TbL+4BpwvXntyPH/AvZ/0z8U6dkaGsA3O4iwnvJo=","ak.pv":"316","ak.dpoabenc":"","ak.tf":i};if(""!==t)o["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))o["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(o)},rv:function(){var e=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:o,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+<body>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NK9NSD');</script>
+<!-- End Google Tag Manager --><div id="printheader"></div>
+<!-- HEADER START ---------------------------------------------------------------------------------------------------- -->
+<div class="ibkr-header" id="ibkr-header">
+     
+     
+    <!-- NAV TOP START (LG/XL ONLY) -->
+    <nav class="navbar navbar-inverse navbar-expand-lg navbar-top d-none d-lg-block">
+        <div class="container">
+            <div class="navbar-collapse collapse" id="ibkr-nav-top">
+                <!-- LEFT MENU -->
+                <ul class="navbar-nav mr-auto align-items-center">
+                    <!-- FOR INDIVIDUALS -->
+                    <li class="nav-item dropdown"><a href="#" target="_self" class="nav-link dropdown-toggle" id="nav-for-individuals" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">For Individuals</a>
+                        <div class="dropdown-menu dropdown-ind-accounts" aria-labelledby="nav-for-individuals">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="accounts/individual.php.html" target="_self" class="dropdown-item">Individual, Joint or IRA</a>
+                                    <a href="accounts/non-professional-advisor.php.html" target="_self" class="dropdown-item">Non-Professional Advisors</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- FOR INSTITUTIONS -->
+					<li class="nav-item dropdown"><a href="#" target="_self" class="nav-link dropdown-toggle" id="nav-for-institutions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">For Institutions</a>
+                        <div class="dropdown-menu dropdown-inst-accounts" aria-labelledby="nav-for-institutions">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="accounts/institutions.php.html" target="_self" class="dropdown-item">Institutions Home</a>
+                                    <a href="accounts/advisor.php.html" target="_self" class="dropdown-item">Registered Investment Advisors</a>
+                                    <a href="accounts/proprietary-trading-group.php.html" target="_self" class="dropdown-item">Proprietary Trading Groups</a>
+                                    <a href="accounts/hedge-fund.php.html" target="_self" class="dropdown-item">Hedge Funds</a>
+                                    <a href="accounts/broker.php.html" target="_self" class="dropdown-item">Introducing Brokers</a>
+                                    <a href="accounts/family-office.php.html" target="_self" class="dropdown-item">Family Offices</a>
+                                    <a href="accounts/compliance-officer.php.html" target="_self" class="dropdown-item">Compliance Officers</a>
+                                    <a href="accounts/small-business.php.html" target="_self" class="dropdown-item">Small Businesses</a>
+                                    <a href="accounts/simple-ira.php.html" target="_self" class="dropdown-item">Employee Plan Administrator <br>SIMPLE IRA</a>
+                                    <a href="accounts/fsa-insurance-providers.php.html" target="_self" class="dropdown-item">Full-Service Administrator <br>Insurance Providers</a>
+                                    <a href="accounts/money-manager.php.html" target="_self" class="dropdown-item">Money Managers</a>
+                                    <a href="accounts/administrator.php.html" target="_self" class="dropdown-item">Fund Administrators</a>
+                                    <a href="accounts/hedge-fund-allocator.php.html" target="_self" class="dropdown-item">Hedge Fund Allocators</a>
+                                    <a href="https://ibkrcampus.com/student-trading-lab/" target="_blank" class="dropdown-item">Educators</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- RIGHT MENU -->
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <!-- FREE TRIAL -->
+                    <li class="nav-item"><a href="trading/free-trial.php.html" target="_self" class="nav-link">FREE TRIAL</a></li>
+                    <!-- CAREERS -->
+                    <li class="nav-item"><a href="general/about/careers-splash.php.html" target="_self" class="nav-link">Careers</a></li>
+                    <!-- ABOUT US -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-about-us" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
+                        <div class="dropdown-menu dropdown-about-us" aria-labelledby="nav-about-us">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="general/financial-strength.php.html" target="_self" class="dropdown-item">Strength and Security</a>
+                                    <a href="general/about/about.php.html" target="_self" class="dropdown-item">Information and History</a>
+                                    <a href="general/awards.php.html" target="_self" class="dropdown-item">Awards</a>
+                                    <a href="about/news-at-ibkr.php.html" target="_self" class="dropdown-item">News at IBKR</a>
+                                    <a href="general/about/press-and-media.php.html" target="_self" class="dropdown-item">Press and Media</a>
+                                    <a href="https://investors.interactivebrokers.com/ir/main.php" target="_blank" class="dropdown-item" rel="noreferrer noopener">Investor Relations</a>
+                                    <a href="general/about/sustainability.php.html" target="_self" class="dropdown-item">Sustainability</a>
+                                    <a href="accounts/legalDocuments/brokerPerformanceReports.php.html" target="_self" class="dropdown-item">Regulatory Reports</a>
+                                    <a href="accounts/referrer.php.html" target="_self" class="dropdown-item">Refer a Friend</a>
+                                    <a href="general/about/affiliate-programs.php.html" target="_self" class="dropdown-item">Affiliate Programs</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- SUPPORT -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-support" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Support</a>
+                        <div class="dropdown-menu dropdown-contact-us" aria-labelledby="nav-support">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="support/fund-my-account.php.html" target="_self" class="dropdown-item">Fund Your Account</a>
+                                    <a href="support/individuals.php.html" target="_self" class="dropdown-item">For Individuals</a>
+                                    <a href="support/institutions.php.html" target="_self" class="dropdown-item">For Institutions</a>
+                                    <a href="support/institutional-sales-contacts.php.html" target="_self" class="dropdown-item">Institutional Sales Contacts</a>
+                                                                        <a href="general/contact/ibot-container.php.html" target="_self" class="dropdown-item">Browse Our FAQs</a>
+                                    <a href="support/reports-and-dates.php.html" target="_self" class="dropdown-item">Tax Information</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- LANGUAGE SELECTOR -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link nav-language dropdown-toggle" id="nav-language" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Language</span><img src="../images/web/icons/icon-language.svg" alt="Language" width="23" height="18" border="0"></a>
+                        <div class="dropdown-menu dropdown-language" aria-labelledby="nav-language">
+                            <div class="row">
+                                <div class="col" id="langselector">
+                                    <a href="home.php.html" target="_self" class="dropdown-item">English</a>
+                                    <a href="/es/home.php" target="_self" class="dropdown-item">Español</a>
+                                    <a href="/pt/home.php" target="_self" class="dropdown-item">Português</a>
+                                    <a href="/cn/home.php?lang=sc" target="_self" class="dropdown-item">中文简体</a>
+                                    <a href="/cn/home.php?lang=tc" target="_self" class="dropdown-item">中文繁體</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- NAV TOP END -->
+    <!-- NAV BOTTOM START -->
+    <nav class="navbar navbar-inverse navbar-expand-lg navbar-bottom">
+        <div class="container">
+            <!-- IBKR LOGO -->
+                        <a href="home.php.html" target="_self" title="Interactive Brokers Home" alt="Interactive Brokers Logo" class="navbar-brand brand-logo" aria-label="Interactive Brokers Home"><span>Interactive Brokers Home</span></a>
+            <!-- TOGGLE (XS/SM/MD ONLY) -->
+            <button class="navbar-toggler" type="button" aria-label="Toggle Navigation"><span class="navbar-toggler-icon"><i class="fas fa-bars" aria-hidden="true"></i></span></button>
+            <!-- OPEN ACCOUNT BUTTON (XS/SM/MD ONLY) -->
+            <a href="https://ndcdyn.interactivebrokers.com/Universal/Application" target="_self" class="d-block d-lg-none btn btn-open-account">Open Account</a>
+            <!-- LOG IN (SM/MD ONLY) -->
+                            <a href="https://ndcdyn.interactivebrokers.com/sso/Login?RL=1" target="_self" class="d-none d-sm-block d-lg-none btn btn-log-in">Log In</a>
+                        <!-- IBKR NAV BOTTOM START   -->
+            <div class="navbar-collapse collapse" id="ibkr-nav-bottom">
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <!-- WHY IBKR -->
+                    <li class="nav-item"><a href="whyib/overview.php.html" target="_self" class="nav-link">Why IBKR</a></li>
+                    <!-- PRICING -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-pricing" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pricing</a>
+                        <div class="dropdown-menu dropdown-pricing" aria-labelledby="nav-pricing">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="pricing/commissions-home.php.html" target="_self" class="dropdown-item">Commissions</a>
+                                    <a href="trading/margin-rates.php.html" target="_self" class="dropdown-item">Margin Rates</a>
+                                    <a href="accounts/fees/pricing-interest-rates.php.html" target="_self" class="dropdown-item">Interest Rates</a>
+                                    <a href="pricing/short-sale-cost.php.html" target="_self" class="dropdown-item">Short Sale Cost</a>
+                                    <a href="pricing/research-news-services.php.html" target="_self" class="dropdown-item">Research and News</a>
+                                    <a href="pricing/research-news-marketdata.php.html" target="_self" class="dropdown-item">Market Data</a>
+                                    <a href="pricing/stock-yield-enhancement-program.php.html" target="_self" class="dropdown-item">Stock Yield Enhancement Program</a>
+                                    <a href="pricing/other-fees-overview.php.html" target="_self" class="dropdown-item">Other Fees</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- TRADING -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-technology" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Trading</a>
+                        <div class="dropdown-menu dropdown-technology" aria-labelledby="nav-technology">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="trading/trading-platforms.php.html" target="_self" class="dropdown-item">Platforms</a>
+                                    <a href="trading/ib-api.php.html" target="_self" class="dropdown-item">APIs</a>
+                                    <a href="trading/margin.php.html" target="_self" class="dropdown-item">Margin</a>
+                                    <a href="trading/products-exchanges.php.html" target="_self" class="dropdown-item">Products and Exchange Search</a>
+                                    <a href="trading/ordertypes.php.html" target="_self" class="dropdown-item">Order Types</a>
+                                    <a href="whyib/reporting.php.html" target="_self" class="dropdown-item">Reporting</a>
+                                    <a href="trading/securities-financing.php.html" target="_self" class="dropdown-item">Securities Financing</a>
+                                    <a href="trading/features-in-focus.php.html" target="_self" class="dropdown-item">Features in Focus</a>
+                                    <a href="general/education/probability_lab.php.html" target="_self" class="dropdown-item">Probability Lab</a>
+                                    <a href="trading/global-outsourced-trading-desk.php.html" target="_self" class="dropdown-item">Global Outsourced Trading Desk</a>
+                                    <a href="trading/sustainable-investing.php.html" target="_self" class="dropdown-item">Sustainable Investing</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- SERVICES -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-products" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+                        <div class="dropdown-menu dropdown-products" aria-labelledby="nav-products">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="trading/globalanalyst.php.html" target="_self" class="dropdown-item">IBKR GlobalAnalyst</a>
+                                    <a href="https://www.portfolioanalyst.com" target="_blank" class="dropdown-item" rel="noreferrer noopener">PortfolioAnalyst</a>
+                                    <a href="trading/products-bonds.php.html" target="_self" class="dropdown-item">Bonds Marketplace</a>
+                                    <a href="trading/products-mutual-funds.php.html" target="_self" class="dropdown-item">Mutual Funds Marketplace</a>
+                                    <a href="trading/commission-free-etfs-mkt.php.html" target="_self" class="dropdown-item">No Transaction Fee ETFs</a>
+                                    <a href="https://ndcdyn.interactivebrokers.com/aces/Marketplace/InvestorsMarketplace" target="_blank" class="dropdown-item" rel="noreferrer noopener">Investors' Marketplace</a>
+                                    <a href="trading/short-securities-availability.php.html" target="_self" class="dropdown-item">Short Securities Availability</a>
+                                    <a href="accounts/integrated-cash-management.php.html" target="_self" class="dropdown-item">Cash Management</a>
+                                    <a href="trading/third-party-integration.php.html" target="_self" class="dropdown-item">Third Party Integration</a>
+                                    <a href="https://www.interactiveadvisors.com" target="_blank" class="dropdown-item" rel="noreferrer noopener">Interactive Advisors</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- EDUCATION -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-education" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Education</a>
+                        <div class="dropdown-menu dropdown-education" aria-labelledby="nav-education">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="https://ibkrcampus.com" target="_blank" class="dropdown-item">IBKR Campus</a>
+                                    <a href="https://ibkrcampus.com/academy" target="_blank" class="dropdown-item" rel="noreferrer noopener">Traders' Academy</a>
+                                    <a href="https://ibkrcampus.com/news" target="_blank" class="dropdown-item" rel="noreferrer noopener">Traders' Insight</a>
+                                    <a href="https://ibkrcampus.com/podcasts" target="_blank" class="dropdown-item" rel="noreferrer noopener">IBKR Podcasts</a>
+                                    <a href="https://ibkrcampus.com/quant" target="_blank" class="dropdown-item" rel="noreferrer noopener">IBKR Quant Blog</a>
+                                    <a href="https://ibkrcampus.com/webinars" target="_blank" class="dropdown-item" rel="noreferrer noopener">Webinars</a>
+                                    <a href="https://ibkrcampus.com/student-trading-lab/" target="_blank" class="dropdown-item">Student Trading Lab</a>
+                                    <a href="https://ibkrcampus.com/glossary" target="_blank" class="dropdown-item" rel="noreferrer noopener">Traders' Glossary</a>
+                                    <a href="general/calendar/calendar.php.html" target="_self" class="dropdown-item">Traders' Calendar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- SEARCH -->
+                    <li class="nav-item dropdown d-none d-lg-block" id="search-expand"><a href="#" class="nav-link nav-search dropdown-toggle" id="nav-search" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Search</span><i class="fas fa-search" aria-hidden="true"></i></a>
+                        <div class="dropdown-menu dropdown-search" aria-labelledby="nav-search">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="search_box">
+                                        <script type="text/javascript">
+                                         searchbox_input_changed=false;
+                                          $('#search-expand').on('shown.bs.dropdown', function(e) {
+                                            $('#searchField').focus();
+                                          });
+                                        </script>
+                                        <form action="/en/search/index.php" method="get" class="search_form" id="search_form_id">
+                                            <input type="text" aria-label="Search Box" placeholder="Search Site or Contracts" name="query" maxlength="64" autocomplete="off" id="searchField" class="form-control s swap_value searchinput" aria-label="Search Interactive Brokers">
+                                            <button type="submit" value="" id="searchsubmit" class="searchsubmit" aria-label="Submit Search"><i class="fas fa-search" aria-hidden="true"></i></button>
+                                        </form>
+                                        <ul id='saytlist' style='width:150px;'><li style="display:none"></li></ul>
+<script>
+function delay(cb, ms)
+{
+  var timer = 0;
+  return function() {
+   var context = this, args = arguments;
+   clearTimeout(timer);
+   timer = setTimeout(function() {
+     cb.apply(context, args);
+   }, ms  || 0);
+  };
+}
+$(function() {
+
+ $('#searchField').keyup(delay(function() {
+  var q = $('#searchField').val() || '';
+  if(q.length >= 3)
+  {
+    $.ajax({
+      type: "POST",
+      url: 'https://misc.interactivebrokers.com/response_handlers/search/index.php',
+      dataType: "json",
+      data: {
+        'q': q
+      },
+      success: function(r) {
+        if(r && r.success)
+        {
+          var recommendations = '';
+          var limit = Math.min(r.suggestions.length, 10);
+          for(var i = 0; i < limit; i++)
+          {
+            recommendations += "<li>" + r.suggestions[i] + "</li>";
+          }
+          $('#saytlist').html(recommendations);
+          $('#saytlist').show();
+          $('ul#saytlist li').click(function(e) {
+            var list = $(this).text() || '';
+            e.stopPropagation();
+            if(list != '')
+            {
+              $('input#searchField').val(list);
+              $('button#searchsubmit').click();
+            }
+          });
+        }
+      },
+      error: function(xhr, status, err) {}
+    });
+  } else {
+   $('#saytlist').hide();
+  }
+ }, 500));
+});
+</script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- LOG IN -->
+                    <li class="nav-item dropdown d-none d-lg-block"><a href="#" target="_self" class="nav-link nav-login dropdown-toggle" id="nav-log-in" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Log In</a>
+                        <div class="dropdown-menu dropdown-login" aria-labelledby="nav-log-in">
+                            <div class="row">
+                                <div class="col">
+                                                                                                                    <a href="https://ndcdyn.interactivebrokers.com/sso/Login?RL=1" target="_self" class="dropdown-item dropdown-portal">Portal Login</a>
+                                                                                                                <a href="trading/tws.php.html#tws-software" target="_self" class="dropdown-item">Download Trader Workstation</a>
+                                    <a href="trading/ibkr-desktop.php.html" target="_self" class="dropdown-item">Download IBKR Desktop </a>
+                                    <a href="trading/tws-mobile.php.html#trytoday-drop" target="_self" class="dropdown-item">Download IBKR Mobile</a>
+                                    <a href="trading/ibgateway-latest.php.html" target="_self" class="dropdown-item">Download IB Gateway</a>
+                                    <a href="trading/trading-platforms.php.html" target="_self" class="dropdown-item">Compare All IBKR Platforms</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- OPEN ACCOUNT -->
+                    <li class="nav-item dropdown d-none d-lg-block"><a href="#" target="_self" class="nav-link nav-open-account dropdown-toggle" id="nav-open-account" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Open Account</a>
+                        <div class="dropdown-menu dropdown-open-account" aria-labelledby="nav-open-account">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="https://ndcdyn.interactivebrokers.com/Universal/Application" target="_self" class="dropdown-item dropdown-portal">Start Application</a>
+                                    <a href="https://ndcdyn.interactivebrokers.com/sso/Login?c=t" target="_self" class="dropdown-item">Finish an Application</a>
+                                    <a href="general/what-you-need-inv.php.html" target="_self" class="dropdown-item">What You Need</a>
+                                    <a href="accounts/account-guide.php.html" target="_self" class="dropdown-item">A Guide to Choosing the Right Account</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- NAV BOTTOM END -->
+</div>
+<!-- HEADER END ---------------------------------------------------------------------------------------------------- -->
+<!-- MOBILE NAV START (XS/SM/MD ONLY) ---------------------------------------------------------------------------------------------------- -->
+<div class="menu-mobile d-lg-none">
+    <!-- CLOSE BUTTON -->
+    <div class="close-button"><a href="javascript:void(0);" target="_self" class="btn-close" aria-label="Close Menu"><i class="fas fa-times"></i></a></div>
+    <!-- LOGO -->
+    <div class="logo-container"><a href="home.php.html" target="_self" class="brand-logo" aria-label="Interactive Brokers Home"><span>Interactive Brokers Home</span></a></div>
+    <!-- SEARCH -->
+    <div class="search-container">
+        <div class="search-box">
+            <form action="/en/search/index.php" method="get" class="search_form" id="search_form_id">
+                <input type="text" class="form-control" placeholder="Search Site or Contracts" name="query" maxlength="64" autocomplete="off" id="searchFieldMobile" aria-label="Search Interactive Brokers">
+                <button type="submit" class="btn-search-submit" value="" id="searchsubmitMobile" aria-label="Submit Search"><i class="fas fa-search" aria-hidden="true"></i></button>
+            </form>
+        </div>
+    </div>
+    <ul>
+    <!-- LOG IN -->
+                    <li><a href="https://ndcdyn.interactivebrokers.com/sso/Login?RL=1" target="_self" class="menu-log-in">Portal Login</a></li>
+                <!-- OPEN ACCOUNT -->
+    <li class="has-submenu"><a href="#" target="_self" class="menu-open-account" data-submenu="submenu-open-account">Open Account</a>
+        <div class="submenu" id="submenu-open-account">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-open-account">Back</a></p>
+            <p class="submenu-title">OPEN ACCOUNT</p>
+            <ul>
+            <li><a href="https://ndcdyn.interactivebrokers.com/Universal/Application" target="_self" class="menu-start-application">Start Application</a></li>
+            <li><a href="https://ndcdyn.interactivebrokers.com/sso/Login?c=t" target="_self">Finish an Application</a></li>
+            <li><a href="general/what-you-need-inv.php.html" target="_self">What You Need</a></li>
+            <li><a href="accounts/account-guide.php.html" target="_self">A Guide to Chosing the Right Account</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- DOWNLOAD IBKR MOBILE -->
+        <!-- FREE TRIAL -->
+    <li><a href="trading/free-trial.php.html" target="_self">Free Trial</a></li>
+    <!-- WHY IBKR -->
+    <li><a href="whyib/overview.php.html" target="_self">Why IBKR</a></li>
+    <!-- ACCOUNT TYPES -->
+    <li class="has-submenu"><a href="#" target="_self" data-submenu="submenu-account-types">Account Types</a>
+        <div class="submenu" id="submenu-account-types">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-account-types">Back</a></p>
+            <p class="submenu-title">FOR INDIVIDUALS</p>
+            <ul>
+            <li><a href="accounts/individual.php.html" target="_self">Individual, Joint or IRA</a></li>
+            <li><a href="accounts/non-professional-advisor.php.html" target="_self">Non-Professional Advisors</a></li>
+            </ul>
+            <p class="submenu-title">FOR INSTITUTIONS</p>
+            <ul>
+            <li><a href="accounts/institutions.php.html" target="_self">Institutions Home</a></li>
+            <li><a href="accounts/advisor.php.html" target="_self">Registered Investment Advisors</a></li>
+            <li><a href="accounts/proprietary-trading-group.php.html" target="_self">Proprietary Trading Groups</a></li>
+            <li><a href="accounts/hedge-fund.php.html" target="_self">Hedge Funds</a></li>
+            <li><a href="accounts/broker.php.html" target="_self">Introducing Brokers</a></li>
+            <li><a href="accounts/family-office.php.html" target="_self">Family Offices</a></li>
+            <li><a href="accounts/compliance-officer.php.html" target="_self">Compliance Officers</a></li>
+            <li><a href="accounts/small-business.php.html" target="_self">Small Businesses</a></li>
+            <li><a href="accounts/simple-ira.php.html" target="_self">Employee Plan Administrator <br>SIMPLE IRA</a></li>
+            <li><a href="accounts/fsa-insurance-providers.php.html" target="_self">Full-Service Administrator <br>Insurance Providers</a></li>
+            <li><a href="accounts/money-manager.php.html" target="_self">Money Managers</a></li>
+            <li><a href="accounts/administrator.php.html" target="_self">Fund Administrators</a></li>
+            <li><a href="accounts/hedge-fund-allocator.php.html" target="_self">Hedge Fund Allocators</a></li>
+            <li><a href="https://ibkrcampus.com/student-trading-lab/" target="_blank">Educators</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- PRICING -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-pricing">Pricing</a>
+        <div class="submenu" id="submenu-pricing">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-pricing">Back</a></p>
+            <p class="submenu-title">PRICING</p>
+            <ul>
+            <li><a href="pricing/commissions-home.php.html" target="_self">Commissions</a></li>
+            <li><a href="trading/margin-rates.php.html" target="_self">Margin Rates</a></li>
+            <li><a href="accounts/fees/pricing-interest-rates.php.html" target="_self">Interest Rates</a></li>
+            <li><a href="pricing/short-sale-cost.php.html" target="_self">Short Sale Cost</a></li>
+            <li><a href="pricing/research-news-services.php.html" target="_self">Research and News</a></li>
+            <li><a href="pricing/research-news-marketdata.php.html" target="_self">Market Data</a></li>
+            <li><a href="pricing/stock-yield-enhancement-program.php.html" target="_self">Stock Yield Enhancement</a></li>
+            <li><a href="pricing/other-fees-overview.php.html" target="_self">Other Fees</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- TRADING -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-trading">Trading</a>
+        <div class="submenu" id="submenu-trading">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-trading">Back</a></p>
+            <p class="submenu-title">TRADING</p>
+            <ul>
+            <li><a href="trading/trading-platforms.php.html" target="_self">Platforms</a></li>
+            <li><a href="trading/ib-api.php.html" target="_self">APIs</a></li>
+            <li><a href="trading/margin.php.html" target="_self">Margin</a></li>
+            <li><a href="trading/products-exchanges.php.html" target="_self">Products and Exchange Search</a></li>
+            <li><a href="trading/ordertypes.php.html" target="_self">Order Types</a></li>
+            <li><a href="whyib/reporting.php.html" target="_self">Reporting</a></li>
+            <li><a href="trading/securities-financing.php.html" target="_self">Securities Financing</a></li>
+            <li><a href="trading/features-in-focus.php.html" target="_self">Features in Focus</a></li>
+            <li><a href="general/education/probability_lab.php.html" target="_self">Probability Lab</a></li>
+            <li><a href="trading/global-outsourced-trading-desk.php.html" target="_self">Global Outsourced Trading Desk</a></li>
+            <li><a href="trading/sustainable-investing.php.html" target="_self">Sustainable Investing</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- SERVICES -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-services">Services</a>
+        <div class="submenu" id="submenu-services">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-services">Back</a></p>
+            <p class="submenu-title">SERVICES</p>
+            <ul>
+            <li><a href="trading/globalanalyst.php.html" target="_self">IBKR GlobalAnalyst</a></li>
+            <li><a href="https://www.portfolioanalyst.com" target="_blank">PortfolioAnalyst</a></li>
+            <li><a href="trading/products-bonds.php.html" target="_self">Bonds Marketplace</a></li>
+            <li><a href="trading/products-mutual-funds.php.html" target="_self">Mutual Funds Marketplace</a></li>
+            <li><a href="trading/commission-free-etfs-mkt.php.html" target="_self">No Transaction Fee ETFs</a></li>
+            <li><a href="https://ndcdyn.interactivebrokers.com/aces/Marketplace/InvestorsMarketplace" target="_blank">Investors' Marketplace</a></li>
+            <li><a href="trading/short-securities-availability.php.html" target="_self">Short Securities Availability</a></li>
+            <li><a href="accounts/integrated-cash-management.php.html" target="_self">Cash Management</a></li>
+            <li><a href="trading/third-party-integration.php.html" target="_self">Third Party Integration</a></li>
+            <li><a href="https://www.interactiveadvisors.com" target="_blank">Interactive Advisors</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- EDUCATION -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-education">Education</a>
+        <div class="submenu" id="submenu-education">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-education">Back</a></p>
+            <p class="submenu-title">EDUCATION</p>
+            <ul>
+            <li><a href="https://ibkrcampus.com" target="_blank">IBKR Campus</a></li>
+            <li><a href="https://ibkrcampus.com/academy" target="_blank">Traders' Academy</a></li>
+            <li><a href="https://ibkrcampus.com/news" target="_blank">Traders' Insight</a></li>
+            <li><a href="https://ibkrcampus.com/podcasts" target="_blank">IBKR Podcasts</a></li>
+            <li><a href="https://ibkrcampus.com/quant" target="_blank">IBKR Quant Blog</a></li>
+            <li><a href="https://ibkrcampus.com/webinars" target="_blank">Webinars</a></li>
+            <li><a href="https://ibkrcampus.com/student-trading-lab/" target="_blank">Student Trading Lab</a></li>
+            <li><a href="https://ibkrcampus.com/glossary" target="_blank">Traders' Glossary</a></li>
+            <li><a href="general/calendar/calendar.php.html" target="_self">Traders' Calendar</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- ABOUT US -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-about-us">About Us</a>
+        <div class="submenu" id="submenu-about-us">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-about-us">Back</a></p>
+            <p class="submenu-title">ABOUT US</p>
+            <ul>
+            <li><a href="general/financial-strength.php.html" target="_self">Strength and Security</a></li>
+            <li><a href="general/about/about.php.html" target="_self">Information and History</a></li>
+            <li><a href="general/about/careers-splash.php.html" target="_self">Careers</a></li>
+            <li><a href="general/awards.php.html" target="_self">Awards</a></li>
+            <li><a href="about/news-at-ibkr.php.html" target="_self">News at IBKR</a></li>
+            <li><a href="general/about/press-and-media.php.html" target="_self">Press and Media</a></li>
+            <li><a href="https://investors.interactivebrokers.com/ir/main.php" target="_blank">Investor Relations</a></li>
+            <li><a href="general/about/sustainability.php.html" target="_self">Sustainability</a></li>
+            <li><a href="accounts/legalDocuments/brokerPerformanceReports.php.html" target="_self">Regulatory Reports</a></li>
+            <li><a href="accounts/referrer.php.html" target="_self">Refer a Friend</a></li>
+            <li><a href="general/about/affiliate-programs.php.html" target="_self">Affiliate Programs</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- SUPPORT -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-support">Support</a>
+        <div class="submenu" id="submenu-support">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-support">Back</a></p>
+            <p class="submenu-title">SUPPORT</p>
+            <ul>
+            <li><a href="support/fund-my-account.php.html" target="_self">Fund Your Account</a></li>
+            <li><a href="support/individuals.php.html" target="_self">For Individuals</a></li>
+            <li><a href="support/institutions.php.html" target="_self">For Institutions</a></li>
+            <li><a href="support/institutional-sales-contacts.php.html" target="_self">Institutional Sales Contacts</a></li>
+                        <li><a href="general/contact/ibot-container.php.html" target="_self">Browse Our FAQs</a></li>
+            <li><a href="support/reports-and-dates.php.html" target="_self">Tax Information</a></li>                 
+            </ul>
+        </div>
+    </li>
+    <!-- LANGUAGE -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-language">Language</a>
+        <div class="submenu" id="submenu-language">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-language">Back</a></p>
+            <p class="submenu-title">LANGUAGE</p>
+            <ul>
+            <li><a href="home.php.html" target="_self">English</a></li>
+            <li><a href="/es/home.php" target="_self">Español</a></li>
+            <li><a href="/pt/home.php" target="_self">Português</a></li>
+            <li><a href="/cn/home.php?lang=sc" target="_self">中文简体</a></li>
+            <li><a href="/cn/home.php?lang=tc" target="_self">中文繁體</a></li>
+            </ul>
+        </div>
+    </li>
+    </ul>
+</div>
+<!-- MOBILE NAV OVERLAY -->
+<div class="website-overlay d-lg-none"></div>
+<!-- MOBILE NAV END (XS/SM/MD ONLY) ---------------------------------------------------------------------------------------------------- -->
+<div id="contents">
+    <section class="page-title" id="page-title">
+        <div class="container">
+            <div class="row">
+                                <div class="col"><h1>Account Management - Release Notes 2015 Archive</h1></div>
+                            </div>
+        </div>
+    </section>
+    <style type="text/css">
+h5 a {
+	color:#333333;
+}
+p.notes-archive-link a {
+	margin-left:10px;
+}
+p.notes-beta-link {
+	text-align:right;
+}
+/* MEDIA QUERIES -------------------------------------------------------------- */
+@media (max-width:767px) {
+	p.notes-archive-link {
+		text-align:center;
+	}
+	p.notes-beta-link {
+		text-align:center;
+	}
+}
+</style>
+<section id="am-release-notes">
+<div class="container">
+<div class="row">
+             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h1>December 2015</h1>
+                <br>
+                <hr>
+                <br>
+                <h3>Week Ending December 11, 2015</h3>
+                <br>
+                <h5>Tax Form Collection Page - Updating Your IRS Form W-8/W-9</h5>
+                <p>Beginning with this release, you now update your IRS Form W-8 (non-US legal residents and non-US citizens) or W-9 (legal residents and citizens of US) on the Tax Form Collection Page. The W-8/W-9 page has been removed from Account Management.</p>
+                <p>Access the new Tax Form Collection page by clicking <strong xmlns="">Manage Account > Account   	 Information > Tax Information > Tax Forms</strong> to:</p>
+                <ul class="paralist">
+                <li>Review and update important tax-related information;</li>
+                <li>Update your IRS Form W-8 or W-9.</li>
+                </ul>
+                <p>When an organization adds a new owner, the new owner must log in to Account Management to complete the form on the Tax Form Collection page.</p>
+            	<br>
+                <hr>
+                <br>
+                <h3>Week Ending December 4, 2015</h3>
+                <br>
+                <h5>Organization Changes - Adding Owners and Changing Ownership Percentages</h5>
+                <p>We have made some changes to the way organizations, including Proprietary Trading Group and Small Business accounts, add new owners and update ownership percentages.</p>
+                <ul class="paralist">
+                <li>The Ownership Percentage page has been removed from the Manage Account menu. Accounts that are organizations now use the new Withholding Statements page to update the ownership percentage of all owners. This new page also lets organizations verify the name and address, Tax ID number, and tax statuses of all owners. Access this new page by clicking <strong>Manage Account > Account Information > Tax Information > Withholding Statement</strong>.</li>
+                <li>When an organization adds a new owner, the account master user or account holder adds either an individual or entity user on the <strong>Manage Account > Account   	 Information > Details > Profile</strong> page, and selects Owner as the Association Type and enters the ownership percentage. The new owner receives his or her own username and password, and must log in to Account Management to complete a one-time form.</li>
+                </ul>
+                <br>
+                <h5>Non-Disclosed Brokers Can No Longer Update Client W8/W9 Forms</h5>
+                <p>Beginning with this release, non-disclosed brokers can no longer update their clients' W8 or W9 forms in Account Management.</p>
+<hr>
+			</div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h1>November 2015</h1>
+                <br>
+                <hr>
+                <br>
+                <h3>Week Ending November 27, 2015</h3>
+                <br>
+                <h5>Paper Account Applications No Longer Available</h5>
+                <p>We no longer offer paper applications for any of our institution accounts or institution client accounts. We encourage our Advisor, Broker, Hedge Fund, and Proprietary Trading Group accounts to use fully electronic or semi-electronic client account applications, which are available from within Account Management.</p>
+<hr>
+        	</div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h1>October 2015</h1>
+                <br>
+                <hr>
+                <br>
+                <h3>Week Ending October 30, 2015</h3>
+                <br>
+                <h5>EmployeeTrack Management - Batch Reports</h5>
+                <p>Beginning with this release, requests from EmployeeTrack Management for Activity Statements and Activity Flex Queries with a large   amount of activity will now be placed in a queue for batch processing. Specifically, any Activity Statement or Activity Flex Query request that   includes over 20,000 activities or   over 250 accounts will be automatically submitted for batch processing.   When you generate one of these reports, you will receive a message   indicating that it has been submitted for batch processing.</p>
+                <p>You can view the status of these requests as well as view completed report requests on the <strong>Batch Reports </strong>page, which is accessible in EmployeeTrack Management from the <strong>Reports > Activity</strong> menu.</p>
+                <p>For detailed information on batch reports in EmployeeTrack Management, see the <a href="https://www.interactivebrokers.com/en/software/etmug/employeetrack/batchreports.htm">EmployeeTrack Management Users' Guide.</a></p> 
+            	<br>
+                <hr>
+                <br>
+                <h3>Week Ending October 16, 2015</h3>
+                <br>
+                <h5>CRM Updates</h5>
+                <p>We've updated our database-driven Customer Relationship Management (CRM) system, which lets advisors and brokers manage the entire customer relationship life cycle in one place in Account Management.</p>
+              	<p>CRM now includes:</p>
+                <ul class="paralist">
+                <li>An updated user interface, redesigned for ease of use and including new, simpler icons for most functions.</li>
+                <li>Summary views of current tasks and events displayed on the CRM home page.</li>
+                <li>Email - We provide secure email accounts with 25 GB of storage through Rackspace for USD 1   per month, which will be charged to your IB account. You set up these   email accounts through CRM, and they cannot be accessed by Interactive   Brokers.</li>
+                <li>Events and Tasks - Schedule events for individual contacts with our easy-to-use interactive calendar, and add easily add important tasks to contacts.</li>
+                <li>Check on the progress of client account applications and view detailed   information about your current clients with a click of your mouse.</li>
+                <li>Advanced Search capability, including a wide variety of available search criteria.</li>
+                <li>Groups - organize all of your contacts into groups for ease of management. Quickly create new groups, add and remove contacts to and from a group, rename and delete groups.</li>
+                <li>Bulk Email - Send an email with attachments to multiple contacts or to all some or all members of a group.</li>
+                </ul>
+                <p>For detailed information on CRM, see <a href="https://www.interactivebrokers.com/en/software/am/am/manageclients/crm.htm"> the Account Management Users' Guide.</a></p> 
+            	<br>
+                <hr>
+                <br>
+                <h3>Week Ending October 9, 2015</h3>
+                <br>
+                <h5>Dividend Reinvestment</h5>
+                <p>Beginning with this release, you can automatically invest your cash dividends from common and preferred stocks in the underlying stock. You  turn automatic dividend reinvestment on or off at the account level only; that is, you cannot choose which dividends to reinvest. Once you enable dividend reinvestment in Account Management, IB will use your dividend payment to purchase additional shares of that stock.</p>
+                <p>Note the following:</p>
+                <ul class="paralist">
+                <li>Dividend reinvestment is turned off by default.</li>
+                <li>The program is currently available to IB LLC clients only.</li>
+                <li>If your account is in a margin deficit and can’t initiate new positions,   your dividends will not be reinvested, even if you have dividend reinvestment enabled.</li>
+                </ul>
+                <p>For detailed information on how to enable and disable dividend reinvestment, see <a href="https://www.interactivebrokers.com/en/software/am/am/manageaccount/dividendreinvestment.htm">Dividend Reinvestment</a> in the Account Management Users' Guide.</p> 
+                <br>
+                <h5>W-8/W-9 Page Moved to New Submenu</h5>
+                <p>Effective with this release, the W-8/W-9 page that lets you update your Request for Taxpayer Identification Number and Certification, has been moved. You can now find this page in the new Tax Information submenu in the Manage Account menu. To access the W-8/W-9 page, click <strong>Manage Account > Account Information > Tax Information > W-8/W-9</strong>.</p>
+<hr>
+            </div>
+           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h1>September 2015</h1>
+                <br>
+                <hr>
+                <br>
+                <h3>Week Ending September 25, 2015</h3>
+                <br>
+                <h5>Support for Longer Login Passwords</h5>
+                <p>Effective with this release, the password length limitations for login credentials have been significantly expanded to allow passwords of up to 40 characters long for Account Management access.</p>
+                <br>
+                <h5>View Invoices for Soft Dollars Disbursement</h5>
+				<p>Previously, uploaded invoices for soft dollar disbursements were unavailable for viewing. With this new release, you can now both upload and view soft dollar invoices from the Funding > Soft Dollar Disbursements page in Account Management.</p>
+        <hr>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h1>August 2015</h1>
+                <br>
+                <hr>
+                <br>
+                <h3>Week Ending August 7, 2015</h3>
+                <br>
+                <h5>White Branding - Hide Investors' Marketplace</h5>
+                <p>Beginning with this release, Brokers, Professional Advisors and Fund Investment Managers can choose to hide the Investors' Marketplace when setting up white branding for Account Management. Access these settings in Account Management by clicking <strong>Manage Account > Settings > White Branding</strong>, and then click <strong xmlns="">Registration System, Account Management, Statements and PortfolioAnalyst</strong>. The <strong>Hide Investors' Marketplace </strong>check box is located in that section.</p>
+                <p>For more information,  <a href="https://www.interactivebrokers.com/en/software/am/am/manageaccount/white_branding_account_management_and_the_registration_system.htm" target="_new">White Branding Account Management, the Registration System and Statements</a> in the Account Management Users' Guide.</p>
+                <br>
+                <h5>Hedge Fund Capital Introduction Program Renamed to Hedge Fund Marketplace</h5>
+				<p>We've renamed our popular Hedge Fund Capital Introduction Program to Hedge Fund Marketplace. The program itself has not changed; only the name has changed. The Hedge Fund Marketplace is our online version of a traditional Capital Introduction program and    is designed to help Hedge Funds who use us as their principal Prime Broker    market their Funds to our customers who are Accredited Investors and Qualified    Purchasers, as well as other Hedge Funds who have opened their funds to investing by qualified IB clients. Access the Hedge Fund Marketplace at our Investors' Marketplace, or by clicking <strong>Investors' Marketplace > Advertise Services > Investing > Hedge Funds</strong> in Account Management.</p>
+<hr>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h1>July 2015</h1>
+                <br>
+                <hr>
+                <br>
+                <h3>Week Ending July 17, 2015</h3>
+                <br>
+                <h5>Broker Markups on Borrow Fees</h5>
+                <p>Beginning with this release, Brokers can charge markups to their clients based on our stock borrow rates, entered as a variable or fixed percentage of our borrow rate. You can enter both types of markups and our system will apply the markup rate that results in the larger total amount.</p>
+                <ul class="paralist">
+                <li madcap:conditions="" value="1"> Variable borrow fee   markup - This is a variable percentage of our borrow rate. The total cost to your client is calculated as follows:<br>
+                <strong>Borrow Rate (1 + Variable Markup Percentage)</strong><br>
+                The range of acceptable values that you can enter is 0 - 25%.</li>
+                <li madcap:conditions="" value="2">Fixed borrow fee markup - This is a fixed percentage of our borrow rate.The total cost to your client is calculated as follows:<br>
+                <strong>Borrow Rate + Fixed Markup Percentage)</strong><br>
+                The range of acceptable values that you can enter is 0 - 1%.</li>
+                </ul>
+                <p>Enter markups on borrow fees on the Configure Fees page in Account Management (click <strong>Manage Clients > Fees > Configure</strong>), in the Interest Rate section.</p>
+                <p>For more information about borrow fee markups including examples, see <a href="https://www.interactivebrokers.com/en/software/am/am/manageclients/types_of_broker_client_fees.htm" target="_new">Types of Broker Client Markups</a> in the Account Management Users' Guide.</p>
+            	<br>
+                <hr>
+                <br>
+            	<h3>Week Ending July 3, 2015</h3>
+                <p>The enhancements and modifications below are available as of July 2, 2015.</p>
+                <br>
+                <h5> Advisors Can Invest in Hedge Funds for Their Clients</h5>
+                <p>Beginning with this release, Registered Investment Advisors can invest in a hedge fund at the Hedge   Fund Marketplace (formerly Hedge Fund Investor Site) on behalf of an eligible client, and charge fees on the   current value of the amount that their clients have invested at the   same time. </p>
+                <p>The Advisor  begins this process from the Dashboard by clicking the desired client account to view the Client Account Details, and then clicks Hedge Fund Marketplace in the Special Programs section. For each client who invests in a participating hedge fund, the Advisor can   enter fees based on the Annualized Percentage of Net Liquidation Value   of the current value of the client's investment in the Fund and/or the   percentage of profit and loss of the client's investment in the Fund, as   well as configure the fee posting frequency (monthly or quarterly), all from the Hedge Fund Marketplace. </p>
+                <p>Clients must approve hedge fund investments that you make for them if   they have never invested in a specific fund before. If the Advisor included fee   changes with the investment, the client can approve both the investment   and the fee changes at the same time on the Pending Items page,   available from the Account Management Home page. Once the client   confirms the investment on the Pending Items page, he or she will be   asked to enter a signature on a confirmation page. In addition, the Advisor can view any pending hedge fund investments for a client by clicking the Pending Items tab from the Dashboard. </p>
+                <p>To be eligible to invest in a Hedge fund at the Hedge Fund Investor   Site, an Advisor client must be an Accredited Investor or Qualified Purchase   under SEC rules. <a href="https://www.interactivebrokers.com/en/software/am/am/marketplace/hedgefundmarketplaceforinvestors.htm">Click here to see additional eligibility requirements and rules for hedge fund investing</a>.</p>
+                <br>
+                <h5>RIA Forums</h5>
+                <p>Our new RIA Forums page gives Registered Investment Advisors access to the IB Advisor Forums,   an online community for advisors. The IB Advisor Forums are built on a common Internet bulletin board forum and include the following features:</p>
+                <ul class="paralist">
+                <li>Create and post comments in multiple forums. The Index tab displays all forums. Click any forum name to view the posts in that forum.</li>
+                <li>Search for specific forum users and view a list of all forum users on the User list tab.</li>
+                <li>Search for posts by keyword, author or forum on the Search tab.</li>
+                <li>Enter and edit information about yourself, including email address, password, personal  information, and edit display and privacy settings on the Profile tab.</li>
+                </ul>
+                <p>Access the RIA Forums page from the Support menu.</p>
+                <p>To post on the Advisor Forums, you will need to log in with your Voting Subscription username and password. If you do not have a Voting Subscription username and password, you will prompted to create them the first time you access the RIA Forums page.</p>
+                <br>
+                <h5>Additional Enhancements</h5>
+                <p>We've also added the following enhancements to Account Management:</p>
+                <ul class="paralist">
+                <li><strong>Client Account Templates Optional Steps</strong> - When an Advisor or a Broker creates a client account template, the Investment Objectives and Intended Purpose of Trading step is now optional. You can choose to skip individual sections on this page or skip the entire page when creating the template. For more information, see <a href="https://www.interactivebrokers.com/en/software/am/am/manageclients/clientaccounttemplates.htm" target="_new">Client Account Templates</a>.</li>
+                <li><strong>Dashboard Account Filter Update </strong>- On the Dashboard main page, you can filter the list of accounts by Account Status. We've modified the filter drop-down list to include the following statuses: <em>All</em>, <em>Open Accounts</em>, <em>Pending Applications</em>, <em>Closed Accounts</em>, <em>Rejected Applications</em>, <em>Deleted Applications</em> or <em>Open Not Funded</em>.</li>
+                <li><strong>Hedge Fund Investor Site Renamed </strong>- The Hedge Fund Investor Site, where eligible customers can view and invest in participating Hedge Funds, has been renamed the Hedge Fund Marketplace. Access this Marketplace by clicking <strong>Investors' Marketplace > Search Services > Investing > Hedge Funds.</strong></li>
+                </ul><hr>
+			</div>
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h1>June 2015</h1>
+                <br>
+                <hr>
+                <br>
+                <h3>Week Ending June 19, 2015</h3>
+                <br>
+               	<h5>View Deleted Applications on the Dashboard</h5>
+				<p>Beginning with this release, Advisors, Brokers and Multiple Hedge Fund Investment Managers view a list of all deleted client account applications. Simply selected Deleted Applications from the Status drop-down on the Dashboard page. Access the Dashboard by clicking <strong>Manage Clients > Dashboard</strong>.</p>
+                <br>
+                <h5> Broker Fees for IB-Issued and Non-IB-Issued Warrants</h5>
+				<p>Brokers can now set markups for IB-issued and Non-IB-issued warrants on the Configure Fees page. Access the Configure Fees page by clicking <strong xmlns="">Manage Clients > Fees > Configure</strong>.</p>
+                <br>
+                <h5>Market Data and Research Subscription Termination</h5>
+                <p>Beginning with this release, your active market data and research subscriptions will be terminated if you have not logged into Trader Workstation for 60 days. You can avoid termination by logging in to TWS, or by visiting the Market Data Subscription and Research pages in Account Management and clicking the new Continue Subscription button. Interactive Brokers always notifies you of impending termination of market data and/or research subscriptions. </p>
+                <p>View all of the rules of market data and research subscription termination <a href="https://www.interactivebrokers.com/en/software/am/am/manageaccount/marketdatasubscriptions.htm#term">here</a>.</p>
+            	<br>
+                <hr>
+                <br>
+                <h3>Week Ending June 5, 2015</h3>
+                <br>
+                <h5>Dashboard Enhancements</h5>
+                <p>Beginning with this release, we've enhanced some features of the Dashboard, which lets Advisors, Brokers and Multiple Hedge Fund Investment Managers   quickly and easily access information about their clients from a single   point of access,  as well as manage many aspects of each client account. Specifically, the following changes have been made:</p>
+                <ul class="paralist">
+                <li>Account Status tabs have been replaced by a drop-down filter, which lets you filter the list of client accounts by their account status. You can choose to view all open, pending, closed and rejected accounts by selecting the appropriate status from the Status drop-down.</li>
+                <li>The Smart Search field no longer automatically reloads the list of accounts as you type search criteria into the field. Now when you type the search criteria into the field, you click a Go button in tihe field to display the accounts that match your search.</li>
+                </ul>
+                <p>For more information about viewing client account details, see the <a href="https://www.interactivebrokers.com/en/software/am/am/manageclients/clientaccountdetails.htm" target="_new">Account Management Users' Guide</a>.</p>
+                <br>
+                <h5>Trading Restrictions Update</h5>
+				<p>When you select a Time-in-Force (TIF) as part of entering restrictions on the Trading Restrictions page, you no longer enter a Begin Date and End Date for the GTC (Good-Til-Cancel) TIF selection. </p> 
+           <hr>
+            </div>
+           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h1>May 2015</h1>
+                <br>
+                <hr>
+                <br>
+                <h3>Week Ending May 15, 2015</h3>
+                <br>
+               	<h5>Dashboard Enhancements</h5>
+                <p>Beginning with this release, Advisors, Brokers and Multiple Hedge Fund Investment Managers can now view Customer Service Messages and Corporate Actions for an individual client or fund account. Once you choose a specific account from the Dashboard, you can view messages for that account on the Messages tab and Corporate Actions on the Corporate Actions tab.</p>
+                <p>For more information about viewing client account details, see the <a href="https://www.interactivebrokers.com/en/software/am/am/manageclients/clientaccountdetails.htm" target="_new">Account Management Users' Guide</a>.</p>
+                <br>
+                <h5>Canadian Fully Disclosed Brokers</h5>
+                <p>We now accept applications for Fully Disclosed Broker accounts from Canada. For details about the information Canadian Fully Disclosed Brokers must provide to Interactive Brokers to support their account applications, see the <a href="https://www.interactivebrokers.com/en/accounts/brokers/whatyouneed_registeredbroker.php">What You Need</a> page on our website. This page is also accessible from the Open Account menu after you select <strong>Broker</strong> from the SELECT drop-down on our home page.</p> 
+                <br>
+                <h5>Corporate Access Provider Marketplace</h5>
+                <p>The Meet with Management Marketplace has been renamed to Corporate Access Provider Marketplace. The Corporate Access Provider Marketplace is available from the Business Development category of our Investors' Marketplace. This Marketplace lets Advisors, Brokers and Hedge Funds search for and connect to Corporate Access Providers, who  facilitate meetings, roadshows and conference calls between institutional investors and companies looking for potential investors.</p> 
+                <p>Access the Investors' Marketplace from the Trading menu or the footer section on our website, or from the Investors' Marketplace menu in Account Management.</p>
+                <br>
+                <h5>Hedge Fund Investment Managers Can Enable and Disable Client Trading</h5>
+                <p>Hedge Fund Investment Managers with Multiple Fund accounts can now enable or disable trading for their fund and SMA accounts. Access this feature on the Client Trading page by clicking <strong>Manage Clients > Trading > Configuration.</strong></p>
+                <br>
+                <hr>
+                <br>
+                <h3>Week Ending May 1, 2015</h3>
+                <br>
+               	<h5>Advisors Can Charge Fees on Client Investments in Hedge Funds</h5>
+                <p>Advisors can now charge fees on the current value of the amount   that their clients have invested in hedge funds who participate in our   Hedge Fund Capital Introduction Program (HFCIP), which is part of our   Investors’ Marketplace. If you are an Advisor and you have already invested funds for your   client at the Hedge Fund Investor Site (available at the Marketplace),   the invested hedge fund will automatically be enabled for the fee   program.</p>
+                <p>For each client who invests in a participating hedge fund, the Advisor can charge fees based on the Annualized Percentage of Net Liquidation   Value of the current value of the client's investment in the Fund and/or   the percentage of profit and loss of the client's investment in the   Fund, as well as configure the fee posting frequency (monthly or   quarterly). Advisor clients must approve the fee schedule by signing a   form.</p>
+                <p>For more information, see the <a href="https://www.interactivebrokers.com/en/software/am/am/manageclients/hfcip_fees.htm" target="_new">Account Management Users' Guide</a>.</p>
+                <br>
+                <h5>Meet with Management Marketplace</h5>
+                <p>We've added the Meet with Management Marketplace to the Business Development category of our Investors' Marketplace. The Meet with Management Marketplace lets Advisors, Brokers and Hedge Funds search for and connect to Corporate Access Providers, who  facilitate meetings, roadshows and conference calls between institutional investors and companies looking for potential investors.</p> 
+                <p>Access the Investors' Marketplace from the Trading menu or the footer section on our website, or from the Investors' Marketplace menu in Account Management.</p>
+<hr>
+            </div>
+           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h1>April 2015</h1>
+                <br>
+                <hr>
+                <br>
+                <h3>Week Ending April 24, 2015</h3>
+                <br>
+                <h5>Dashboard Update - Enhanced Navigation</h5>
+                <p>The Dashboard, which provides quick and easy access   to information about Advisor, Broker and Hedge Fund client and fund accounts from a single   point of access, has been updated with enhanced navigation. Beginning with this release, Advisors, Fully and Non-Disclosed Brokers and Multiple Hedge Fund Investment Managers can select how many accounts to view on a single page - 50, 75 or 100 - and can quickly navigate between pages of client account lists. This feature is especially useful for account structures with a large number of client and/or fund accounts.</p>
+                <p>For more information about the Dashboard, see the <a href="https://www.interactivebrokers.com/en/software/am/am/manageclients/dashboard.htm" target="_new">Account Management Users' Guide</a>.</p>
+				<br>
+                <hr>
+                <br>
+                <h3>Week Ending April 10, 2015</h3>
+                <br>
+                <h5>Households for Advisors and Fully Disclosed Brokers</h5>
+                <p>Beginning with this release, Advisors and Fully Disclosed Brokers with multiple accounts for a single   family or an individual can group those accounts into a <strong>household</strong> to   more efficiently manage those accounts. Individuals and Advisor and   Broker clients can request that their accounts be grouped into a   household to reduce the amount of paper mail they receive and to view   consolidated reporting and account details in Account Management. The   primary user of the household, called the Head of Household, is allowed   to view reporting and account information of the other accounts in the   household.</p>
+                <p>Advisors and Fully Disclosed Brokers can create households, add accounts to households, and perform other tasks related to households in Account Management.</p>
+                <p>Single accounts can household their accounts by submitting a paper form. The Create Household form is located on the <strong>Support > Paper Forms </strong>page in Account Management.</p>
+                <p>For more information about households, see the <a href="https://www.interactivebrokers.com/en/software/am/am/manageclients/households.htm" target="_new">Account Management Users' Guide</a>.</p>
+                <br>
+				<h5>Update - Link Individual Account to Advisor- or Broker-Managed Account</h5>
+                <p>The ability to link your Individual,  Joint, Trust and IRA account to an Advisor- or Broker-managed account has been enhanced:</p>
+                <ul class="paralist">
+                <li>Individual,  Joint, Trust and IRA account holders can link their full account, including all cash and positions, to an Advisor- or Broker-managed account directly from the Investors' Marketplace.<br>
+                <br>
+                Access Advisors and Brokers at the Marketplace by clicking <strong>Investors' Marketplace > Search Services > Investing > Advisors</strong> or <strong>Investors' Marketplace > Search Services > Investing > Brokers</strong> in Account Management.</li>
+                <li>Individual,  Joint, Trust and IRA account holders can now choose whether to move their full account(s) to the Advisor or Broker, or   create a new account that will be managed by the Advisor or Broker. If they choose to create a new Advisor- or Broker-managed account, they will retain their existing account, which will be linked to the new Advisor- or Broker-managed account.</li>
+                </ul>
+                <p>To learn more about linking to Advisor- and Broker-managed accounts, see our <a href="https://www.interactivebrokers.com/en/software/am/am/manageaccount/linktoadvisorbrokeraccount.htm" target="_new">Account Management Users' Guide</a>.</p>
+                <br>
+                <h5>Penny Stocks Trading Permission</h5>
+                <p>Beginning with this release, all customers of IB LLC and all IB entities that clear through IB LLC (IB UK, IB Canada) and wish to trade penny stocks must request penny stock trading permissions in Account Management. Penny stocks are defined as any stock whose primary listing exchange is OTCBB, PINK or VALUE.</p>
+                <p>Before you can trade penny stocks, you must request penny stock trading permission in Account Management: click <strong>Manage Account > Trade Configuration > Permissions</strong>, select  Penny Stocks, and then acknowledge our Penny Stock Disclosure.</p>
+                <p>Note the following additional guidelines for trading penny stocks:</p>
+                <ul class="paralist">
+                <li>You and all trading users in your account must be using two-factor authentication to be eligible to trade penny stocks. This means that you and all trading users in your account must be using either a Secure Login Device or our sDSA security app to log in.</li>
+                <li>You must meet the minimum financial and age criteria required to trade equity options in order to qualify to trade penny stocks.</li>
+                <li>If you do not have penny stock trading permissions, you will not be allowed to transfer penny stocks into your IB account.</li>
+                <li>If you already hold penny stocks and have not yet requested penny stock trading permissions, you will be allowed to close out those positions.</li>
+                </ul>
+                <br>
+                <h5>Wire Withdrawals to a Third Party</h5>
+                <p>Beginning with this release, you can now request a wire withdrawal of funds from your account to an eligible third party. A third-party withdrawal is a two-step process:</p>
+                <ol>
+                <li>Enter third-party information and submit it to us for approval.</li>
+                <li>Upon approval of the payee information, create and submit a third-party withdrawal request using the approved information as the bank information for the withdrawal.</li>
+                </ol>
+                <p>For detailed information about the eligibilty requirements and approval process for third-party withdrawals, refer to the Withdrawals page at the <a href="support/fund-my-account.php.html?f=funding&p=cash3">Funding Reference</a> on our website.</p>
+                <p>For information on to how to request a third-party withdrawal in Account Management, see our <a href="https://www.interactivebrokers.com/en/software/am/am/funding/withdrawingfundstoathird_party.htm">Account Management Users' Guide</a>.</p>
+              <hr>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h1>March 2015</h1>
+                <br>
+                <hr>
+                <br>
+                <h3>Week Ending March 27, 2015</h3>
+                <br>
+                <h5>Dashboard for Advisors, Brokers and Multiple Hedge Funds</h5>
+                <p>Beginning with this release, Advisors, Fully Disclosed Brokers, Non-Disclosed Brokers and Multiple Hedge Fund Investment Managers can now quickly and easily access information about their clients from a single   point of access,  as well as manage many aspects of each client or fund account.</p>
+                <p>Previously, you could view lists of all open, pending, closed and rejected client or fund accounts from the Manage Clients > View menu, and view client account details from the View > Summary page in Account Management. This menu structure has been replaced by the Dashboard.</p>
+                <p>Access the Dashboard from the <strong>Manage Clients</strong> menu (<strong>Manage Funds</strong> menu for Hedge Funds) to view information about all of your client and fund accounts:</p>
+                <ul class="paralist">
+                <li>View lists of all open, pending, closed and rejected client accounts. </li>
+                <li>View pending items for all client accounts on a single screen.</li>
+                <li>Fully Disclosed Brokers can also view   application and options trading approvals for all accounts in the   Approvals column, as well as all pending client applications that are   ready to be approved on the Approvals tab if they have enabled Client Approvals.</li>
+                <li>View recent activity for the past five days for all client accounts.</li>
+                <li>Search for and sort client accounts by account title, account type, account number, username or account alias.</li>
+                <li>Download a list of outstanding registration tasks for all pending client accounts to Microsoft Excel.</li>
+                <li>Download information about all client accounts to Microsoft Excel.</li>
+                </ul>
+                <p>From the Dashboard, you can drill down to view and manage individual client and fund accounts:</p>
+                <ul class="paralist">
+                <li>Drill down to account details, balances, positions and transaction history for any client.</li>
+                <li>View pending items.</li>
+                <li>Perform account management tasks, including:</li>
+                <ul class="paralist"><li>Edit account alias, advisor or broker fees, and other settings;</li>
+                <li>Running activity statements and PortfolioAnalyst reports</li>
+                <li>Print account details; </li>
+                <li>Generate a PDF version of the account application;</li>
+                <li>View all registration tasks.</li>
+                <li>Fully Disclosed   Brokers can also approve or reject pending client applications and   pending client options trading permissions if they have enabled Client Approvals.</li></ul>
+                <li>Brokers can edit Registered Representatives.</li>
+                <li>Advisors can get special authorizations from clients to modify additional account settings for that client.</li>
+                </ul>
+                <p>For more information about the Dashboard, see the <a href="https://www.interactivebrokers.com/en/software/am/am/manageclients/dashboard.htm" target="_new">Account Management Users' Guide</a>.</p>
+                <br>
+                <h5>Brokers Can Now Link to Administrator Accounts</h5>
+                <p>Beginning with this release, Brokers can now now link to Administrators at the Investors' Marketplace in Account Management. Administrators are third-party administrators, auditors, accountants or outside legal   counsel who provide services institution accounts. Once linked to existing IB   accounts, Administrators can these log in once to perform their services   for multiple accounts.</p>
+                <p>Previously, only Financial Advisors, Hedge Funds and Proprietary Trading Groups could link to Administrators.</p>
+                <p>To learn more about searching for and linking to Administrator accounts, see our <a href="https://www.interactivebrokers.com/en/software/am/am/marketplace/administration_searchservices.htm" target="_new">Account Management Users' Guide</a>.</p>
+            	<br>
+                <hr>
+                <br>
+                <h3>Week Ending March 20, 2015</h3>
+                <br>
+                <h5>Traders' Library</h5>
+                <p>Beginning with this release, IB clients can now access the Traders' Library, part of our Investors' Marketplace. The Traders' Library connects you to bookshout.com, where you can search for investing-related books and purchase them at a discount. Simply follow the simple instructions on the bookshout.com website.</p>
+                <p>In Account Management, access the Traders' Library by clicking <strong>Investors' Marketplace > Search Services > Research > Traders' Library</strong>. You can also access the Traders' Library from the Investors' Marketplace on our website.</p>
+           <hr>
+            </div>
+           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h1>February 2015</h1>
+                <br>
+                <hr>
+                <br>
+                <h3>Week Ending February 13, 2015</h3>
+                <br>
+                <h5>Semi-Electronic and Paper Applications for Multiple Hedge Fund Accounts Added to Fully Disclosed Brokers</h5>
+                <p>Beginning with this release, Fully Disclosed Brokers who wish to add a Multiple Hedge Fund account to their Broker account structure can now select a semi-electronic or paper application when adding the account. Previously, a Fully Disclosed Broker could only add a Multiple Hedge Fund account using the fully electronic application.</p>
+                <p>In a semi-electronic application, you complete the application electronically, print out a   paper copy for the client to sign, then send the signed application to   us for processing. For a paper application, you print a paper application and disclosures   forms, give them to your client to complete and sign, then send the   completed application to us for processing.</p>
+                <p>Once added to the Fully Disclosed Broker account, the Multiple Hedge Fund Investment Manager can add Fund or Separately Managed accounts, effectively   creating a three-level account structure for the Fully Disclosed Broker.</p>
+                <p>In Account Management, a fully disclosed broker adds a Multiple Hedge Fund account on the <strong>Manage Clients > Accounts > Create > New</strong> page.</p>
+                <p>For more information, refer to the <a href="https://www.interactivebrokers.com/en/software/am/am/manageclients/addingadvisorsstlmultiplehedgefundstofdbroker.htm" target="_new">Account Management Users' Guide</a>.</p>
+                <p>For detailed rules governing these new three-level accounts, see <a href="https://www.interactivebrokers.com/en/software/am/am/manageclients/rulesforthreelevelfdbrokeraccounts.htm" target="_new">Rules for Three-level Fully Disclosed Broker Accounts</a>.</p>
+              <hr>
+            </div>
+           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h1>January 2015</h1>
+                <br>
+                <hr>
+                <br>
+                <h3>Week Ending January 30, 2015</h3>
+                <br>
+                <h5>Advisor Client Fee Enhancements</h5>
+                <p>Beginning with this release, we have added the following new features to Advisor Client Fee configuration:</p>
+                <ul class="paralist">
+                <li><strong>Charge Client Commissions to the Advisor Account - </strong>On the <strong xmlns="">Manage Clients > Fees > Configure</strong> page, Advisors can now choose to charge all commissions for a client account to the Advisor account by clicking the Charge Commissions to Advisor Account check box. Note that if the Advisor Master account balance is below $1000 when the   commissions need to be posted, then the commission will be charged to   the client account.</li>
+                <li><strong>Charge Client Fees to the Advisor Master Account - </strong>Advisors can now choose to charge minimum monthly fees and IRA account fees for their clients to their Advisor Master account. Click <strong>Manage Clients > Fees > Charge Fees to Master</strong> to select this option.</li>
+                <li><strong>Advisor Fee Reimbursements - </strong>Advisors can now reimburse fees to their client accounts on the Advisor Invoicing page. To do this, click <span xmlns="http://www.w3.org/1999/xhtml"><strong>Manage Clients > Fees > Invoicing</strong></span>, and in the Fee Reimbursements section of the page, submit new fee reimbursements, review pending fee reimbursements or view the status of fee reimbursements. Note that new  fee reimbursements cannot exceed 50% of the invoice fees charged in the last 12  months.</li>
+                </ul>
+                <br>
+                <h5>Request Soft Dollars Disbursements from Account Management</h5>
+                <p>Customers who participate in our Soft Dollars Program can now request soft dollars disbursements to approved soft dollar vendors from within Account Management.</p>
+                <p>You request disbursements to soft dollar vendors on the <strong>Funding > Soft Dollars Disbursement </strong>page in Account Management. Click the new Request Disbursement button for any vendor listed on the page, and then enter details about the disbursement on the form provided, including uploading an electronic invoice from your computer.</p>
+                <p>Previously, participants in the Soft Dollars Program could not request disbursements in Account Management.</p>
+                <br>
+                <h5>Additional Updates</h5>
+                <ul class="paralist">
+                <li><strong>ATON Position Transfers for Advisor Clients - </strong>Advisors can now request ATON (Account Transfer on Notification) position transfers for their clients. ATON is used to transfer US or Canadian stocks, options and cash held at another brokerage firm. </li>
+                <li><strong>Additional Features for Non-Disclosed Brokers - </strong>Non-Disclosed Brokers can now delete pending client applications. Delete a client application by clicking the Delete Application button on the <strong>Manage Clients > Accounts > View > Pending</strong> page. Non-Disclosed Brokers can also request all types of position transfers for their clients on the <strong>Funding > Position Transfers</strong> page.</li>
+                <li><strong>Jobs Marketplace Renamed to Careers Marketplace - </strong>The Jobs Marketplace, part of our Investors' Marketplace (currently in Beta release), has been renamed to Careers. The <strong>Investors' Marketplace > Search Services > Business Development > Careers</strong> page lets account holders who are not Advisors, Hedge Funds, Proprietary Trading Group Masters or Brokers search for open positions, and lets Advisors, Hedge Funds, Proprietary Trading Group Masters and Brokers look for individual job-seekers to fill open positions. The <strong>Investors' Marketplace > Advertise Services > Business Development > Careers</strong> page lets Advisors, Hedge Funds, Proprietary Trading Group Masters or Brokers post open positions, and lets account holders who are not Advisors, Hedge Funds, Proprietary Trading Group Masters and Brokers post their resumes.</li>
+                </ul>
+            	<br>
+                <hr>
+                <br>
+                <h3>Week Ending January 16, 2015</h3>
+                <br>
+                <h5>Link Existing Account Enhancements</h5>
+                <p>The Link Existing Account page in Account Management lets you    link multiple IB accounts under a single username and password. We have added the following enhancement to this feature:</p>
+                <ul class="paralist">
+                <li>When you link existing accounts, you are presented with an account comparison screen, which displays the individual and financial information for the accounts that are being linked. You can now edit mismatched information directly on this page. Previously, you could only view this mismatched information on this page and had to modify the information separately.</li>
+                </ul>
+                <p>You access the Link Existing Account page by clicking   <strong>Manage Account > Add or Link Accounts > Link Existing Account </strong>in Account Management.</p> 
+                <br>
+                <h5>Additional Updates</h5>
+                <p> The following updates and enhancements are also available with this release: </p>
+                <ul class="paralist">
+                <li>The Language Menu icon has been changed to a globe. The functionality of the Language Menu has not changed; you still use the Language Menu to change the display language in Account Management and the Customer Service Message Center </li>
+                <li>Hedge Funds who participate in our Hedge Fund Capital Introduction Program can now invest in other Hedge Funds who participate in the program. Participating Hedge Funds can now access the Hedge Fund Investor Site by clicking   <strong>Investors' Marketplace > Search Services > Investing > Hedge Fund Investor Site</strong> in Account Management.</li>
+                </ul>
+            </div>
+</div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><hr>
+                <p class="notes-archive-link"><strong>Release Notes Archive:</strong><span class="hidden-sm hidden-md hidden-lg"><br>
+                </span>
+   <a href="/en/index.php?f=1950" target="_self">2022</a>
+   <a href="index.php-966.html?f=53097" target="_self">2021</a>
+   <a href="index.php-967.html?f=53124" target="_self">2020</a>
+   <a href="index.php-968.html?f=37431" target="_self">2019</a>
+   <a href="index.php-969.html?f=29665" target="_self">2018</a>
+   <a href="index.php-970.html?f=23445" target="_self">2017</a>
+   <a href="index.php-971.html?f=16920" target="_self">2016</a>
+   <a href="index.php-972.html?f=16789" target="_self">2015</a>
+            </p></div>
+        </div>
+</div>
+</section>
+</div>
+<!-- FOOTER START ---------------------------------------------------------------------------------------------------- -->
+<footer class="footer noprint" id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p>Interactive Brokers ®, IB<sup>SM</sup>, InteractiveBrokers.com ®, Interactive Analytics ®, IB Options Analytics<sup>SM</sup>, IB SmartRouting<sup>SM</sup>, PortfolioAnalyst ®, IB Trader Workstation<sup>SM</sup> and One World, One Account<sup>SM</sup> are service marks and/or trademarks of Interactive Brokers LLC. Supporting documentation for any claims and statistical information will be provided upon request. Any trading symbols displayed are for illustrative purposes only and are not intended to portray recommendations.</p>
+                <p>The risk of loss in online trading of stocks, options, futures, currencies, foreign equities, and fixed Income can be substantial.</p>
+                <p>Options involve risk and are not suitable for all investors. For more information read the <a href="https://www.theocc.com/about/publications/character-risks.jsp" rel="noreferrer noopener" target="_blank">Characteristics and Risks of Standardized Options</a>, also known as the options disclosure document (ODD). Alternatively, please contact <a href="support/customer-service.php.html?p=contact" target="_self">IB Customer Service</a> to receive a copy of the ODD. Before trading, clients must read the relevant risk disclosure statements on our <a href="general/homepage-disclosures.php.html" target="_self">Warnings and Disclosures page</a>. Trading on margin is only for experienced investors with high risk tolerance. You may lose more than your initial investment. For additional information about rates on margin loans, please see <a href="trading/margin-rates.php.html" target="_self">Margin Loan Rates</a>. Security futures involve a high degree of risk and are not suitable for all investors. The amount you may lose may be greater than your initial investment. Before trading security futures, read the <a href="general/homepage-disclosures.php.html" target="_self">Security Futures Risk Disclosure Statement</a>. Structured products and fixed income products such as bonds are complex products that are more risky and are not suitable for all investors. Before trading, please read the <a href="general/homepage-disclosures.php.html" target="_self">Risk Warning and Disclosure Statement</a>.</p>
+                <p>For information on the IBKR ATS, please <a href="https://www.sec.gov/divisions/marketreg/form-ats-n-filings.htm#ats-n" rel="noreferrer noopener" target="_blank">visit the SEC site</a>.</p>
+                <p>34 countries include both countries and territories.</p>
+			</div>
+		</div>
+        <div class="footer-site-links" id="footerSiteLinks">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>Account</p>
+                    <ul>
+                    <li><a href="https://ndcdyn.interactivebrokers.com/sso/Login?RL=1" target="_self">Log In</a></li>
+                    <li><a href="https://ndcdyn.interactivebrokers.com/Universal/Application" target="_self">Open an Account</a></li>
+                    <li><a href="https://ndcdyn.interactivebrokers.com/sso/Login?c=t" target="_self">Finish an Application</a></li>
+                    <li><a href="accounts/account-guide.php.html" target="_self">Account Types</a></li>
+                    <li><a href="https://ndcdyn.interactivebrokers.com/Universal/Application?ft=T" target="_self">Free Trial</a></li>
+                    </ul>
+                    <p>Software & Downloads</p>
+                    <ul>
+                    <li><a href="trading/tws.php.html#tws-software" target="_self">Trader Workstation</a></li>
+                    <li><a href="trading/ibkr-desktop.php.html" target="_self">IBKR Desktop</a></li>
+                    <li><a href="trading/tws-mobile.php.html#trytoday" target="_self">IBKR Mobile</a></li>
+                    <li><a href="trading/ib-api.php.html#api-software" target="_self">APIs</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>Support</p>
+                    <ul>
+                    <li><a href="support/fund-my-account.php.html" target="_self">Fund Your Account</a></li>
+					<li><a href="support/individuals.php.html" target="_self">For Individuals</a></li>
+                    <li><a href="support/institutions.php.html" target="_self">For Institutions</a></li>
+                    <li><a href="support/institutional-sales-contacts.php.html" target="_self">Institutional Sales Contacts</a></li>
+					<li><a href="general/contact/ibot-container.php.html" target="_self">Browse our FAQs</a></li>
+					<li><a href="software/systemStatus.php.html" target="_self">System Status</a></li>
+                    </ul>
+                    <p>Vendor Support</p>
+                    <ul>
+                    <li><a href="general/about/supplier-information.php.html" target="_self">Supplier Information</a></li>
+                    </ul>
+                    
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>About Us</p>
+                    <ul>
+                    <li><a href="general/awards.php.html" target="_self">Awards</a></li>
+                    <li><a href="general/about/careers-splash.php.html" target="_self">Careers</a></li>
+                    <li><a href="general/about/about.php.html" target="_self">Information and History</a></li>
+                    <li><a href="https://investors.interactivebrokers.com/ir/main.php" target="_self">Investor Relations</a></li>
+                    <li><a href="about/news-at-ibkr.php.html" target="_self">News @ IBKR</a></li>
+                    <li><a href="general/about/press-and-media.php.html" target="_self">Press and Media</a></li>
+                    <li><a href="accounts/legalDocuments/brokerPerformanceReports.php.html" target="_self">Regulatory Reports</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>Follow Us on Social Media</p>
+                    <ul>
+                    <li><a href="https://www.facebook.com/interactivebrokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com/interactivebrokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/company/interactive-brokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="https://www.twitter.com/ibkr" target="_blank" rel="noreferrer noopener"><i class="fab fa-x-twitter"></i> Twitter</a></li>
+                    <li><a href="https://www.youtube.com/interactivebrokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-youtube"></i> YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-disclosure-links" id="footerDisclosureLinks">
+            <div class="row">
+                <div class="col">
+                    <ul>
+                    <li><a href="accounts/legalDocuments/accessibility-policy.php.html" target="_self">Accessibility Policy</a></li>
+                    <li><a href="accounts/legalDocuments/anti-fraud-notice.php.html" target="_self">Anti-Fraud Notice</a></li>
+                    <li><a href="accounts/legalDocuments/custIdentificationNotice.php.html" target="_self">Customer Identification Program Notice</a></li>
+                    <li><a href="../Universal/servlet/Registration_v2.formSampleView?formdb=4024" target="_blank" rel="noreferrer noopener">Customer Relationship Summary</a></li>
+                    <li><a href="general/warnings-on-frauds-and-scams.php.html" target="_self">Warning on Frauds and Scams</a></li>
+                    <li><a href="accounts/forms-and-disclosures-client-agreements.php.html" target="_self">Forms and Disclosures</a></li>
+                    <li><a href="accounts/legalDocuments/privacy.php.html" target="_self">Privacy</a></li>
+                    <li><a href="sitemap/index.php.html" target="_self">Site Map</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-entities" id="footerEntities">
+            <div class="row">
+                <div class="col">
+                    <div class="footer-entity">
+                        <!-- IBKR LLC -->
+                        <p class="entity-name"><a href="https://www.interactivebrokers.com" target="_self">Interactive Brokers LLC</a></p>
+                        <p>Is a member <a rel="noreferrer noopener" target="_blank" href="https://www.nyse.com">NYSE</a> - <a href="https://www.finra.org" rel="noreferrer noopener" target="_blank">FINRA</a> - <a href="https://www.sipc.org" rel=" noreferrer noopener" target="_blank">SIPC</a> and regulated by the US Securities and Exchange Commission and the Commodity Futures Trading Commission.<br> <strong>Headquarters:</strong> One Pickwick Plaza, Greenwich, CT 06830 USA<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.com" target="_self">www.interactivebrokers.com</a></p>
+                                                <p class="footer-entities-link"><a href="#collapseEntities" target="_self" class="collapsed" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseEntities">Information on Other Interactive Brokers Affiliates</a></p>
+                    </div>
+                    <div class="footer-entities-list collapse" id="collapseEntities">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <!-- IBKR CA -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.ca/en/home.php?nored=t" target="_self">Interactive Brokers Canada Inc.</a></p>
+                                <p>Is a member of the                                 <a href="https://www.ciro.ca" target="_blank" rel="noreferrer noopener">Canadian Investment Regulatory Organization (CIRO)</a> 
+                                 
+                                and Member - <a href="https://www.cipf.ca" target="_blank" rel="noreferrer noopener">Canadian Investor Protection Fund.</a><br> <strong>Registered Office:</strong> 1800 McGill College Avenue, Suite 2106, Montreal, Quebec, H3A 3J6, Canada.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.ca/en/home.php?nored=t" target="_self">www.interactivebrokers.ca</a></p>
+                                <!-- IBKR UK -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.co.uk/en/home.php?nored=t" target="_self">Interactive Brokers (U.K.) Limited </a></p>
+                                <p>Is authorised and regulated by the <a href="https://www.fca.org.uk" target="_blank" rel="noreferrer noopener">Financial Conduct Authority</a>. FCA register entry number 208159. Incorporated in England & Wales under company number 03958476. <a href="https://www.fca.org.uk/firms/financial-services-register" target="_blank" rel="noreferrer noopener">[https://www.fca.org.uk/firms/financial-services-register]</a><br> <strong>Registered Office:</strong> 20 Fenchurch Street, Floor 12, London EC3M 3BY.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.co.uk/en/home.php?nored=t" target="_self">www.interactivebrokers.co.uk</a></p>
+                                <!-- IBKR IE -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.ie/en/home.php?nored=t" target="_self">Interactive Brokers Ireland Limited</a></p>
+                                <p>Is regulated by the <a href="https://www.centralbank.ie" target="_blank" rel="noreferrer noopener">Central Bank of Ireland</a> (CBI, reference number C423427), registered with the Companies Registration Office (CRO, registration number 657406), and is a member of the Irish Investor Compensation Scheme (ICS).<br> <strong>Registered Office:</strong> North Dock One, 91/92 North Wall Quay, Dublin 1 D01 H7V7, Ireland.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.ie/en/home.php?nored=t" target="_self">www.interactivebrokers.ie</a></p>
+                                <!-- IBKR HU -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.hu/en/home.php?nored=t" target="_self">Interactive Brokers Central Europe Zrt.</a></p>
+                                <p>Is licensed and regulated by the <a href="https://www.mnb.hu/" target="_blank" rel="noreferrer noopener">Central Bank of Hungary (Magyar Nemzeti Bank)</a> under no. H-EN-III-623/2020. Company registration number 01-10-141029. Registering Court: Company Registry of the Metropolitan General Court.<br> <strong>Registered Office:</strong> 1075 Budapest, Madách Imre út 13-14., Hungary.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.hu/en/home.php?nored=t" target="_self">www.interactivebrokers.hu</a></p>
+                                <!-- IBKR AUS -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.com.au/en/home.php?nored=t" target="_self">Interactive Brokers Australia Pty. Ltd.</a></p>
+                                <p>ABN 98 166 929 568 is licensed and regulated by the <a href="https://asic.gov.au/" target="_blank" rel="noreferrer noopener">Australian Securities and Investments Commission</a> (AFSL: 453554) and is a participant of <a href="https://www.asx.com.au/" target="_blank" rel="noreferrer noopener">ASX</a>, <a href="https://www.asx.com.au/" target="_blank" rel="noreferrer noopener">ASX 24</a> and <a href="https://www.cboe.com.au/" target="_blank" rel="noreferrer noopener">Cboe Australia</a>.<br> <strong>Registered Office:</strong> Level 11, 175 Pitt Street, Sydney, New South Wales 2000, Australia.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.com.au/en/home.php?nored=t" target="_self">www.interactivebrokers.com.au </a></p>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <!-- IBKR HK -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.com.hk/en/home.php?nored=t" target="_self">Interactive Brokers Hong Kong Limited</a></p>
+                                <p>Is regulated by the Hong Kong Securities and Futures Commission, and is a member of the <a href="https://www.hkex.com.hk" target="_blank" rel="noreferrer noopener">SEHK</a> and the <a href="https://www.hkex.com.hk" target="_blank" rel="noreferrer noopener">HKFE</a>.<br> <strong>Registered Office:</strong> Suite 1512, Two Pacific Place, 88 Queensway, Admiralty, Hong Kong SAR.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.com.hk/en/home.php?nored=t" target="_self">www.interactivebrokers.com.hk</a></p>
+                                <!-- IBKR IN -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.co.in/en/home.php?nored=t" target="_self">Interactive Brokers India Pvt. Ltd.</a></p>
+                                <p>Is a trading member of <a href="https://www.nseindia.com/" target="_blank" rel="noreferrer noopener">NSE</a>, <a href="https://www.bseindia.com/" target="_blank" rel="noreferrer noopener">BSE</a>, and depository participant of <a href="https://nsdl.co.in/" target="_blank" rel="noreferrer noopener">NSDL</a>. <a href="https://www.sebi.gov.in" target="_blank" rel="noreferrer noopener">SEBI</a> Registration No. INZ000217730; NSDL: IN-DP-602-2021. CIN-U67120MH2007FTC170004.<br> <strong>Registered Office:</strong> 502/A, Times Square, Andheri Kurla Road, Andheri East, Mumbai 400059, India.<br> <strong>Phone:</strong> +91-22-61289888 <span class="pipe">|</span> <strong>Fax:</strong> +91-22-61289898.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.co.in/en/home.php?nored=t" target="_self">www.interactivebrokers.co.in</a></p>
+                                <!-- IBKR JP -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.co.jp/en/home.php?nored=t" target="_self">Interactive Brokers Securities Japan Inc.</a></p>
+                                <p>Is regulated by Kanto Local Finance Bureau (Registration No.187) and is a member of <a href="https://www.jsda.or.jp/" target="_blank" rel="noreferrer noopener">Japan Securities Dealers Association</a> and <a href="https://www.nisshokyo.or.jp" target="_blank" rel="noreferrer noopener">The Commodity Futures Association of Japan</a>.<br> <strong>Registered Office:</strong> Kasumigaseki Building 25F, 2-5 Kasumigaseki 3-chome, Chiyoda-ku, Tokyo, 100-6025 Japan.<br> <strong>Phone:</strong> +81 03-4590-0711 <em>(On business days from 8:30-17:30 JST)</em>.<br> <strong>Website:</strong>  <a href="https://www.interactivebrokers.co.jp/en/home.php?nored=t" target="_self">www.interactivebrokers.co.jp</a></p>
+                                <!-- IBKR SG -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.com.sg/en/home.php?nored=t" target="_self">Interactive Brokers Singapore Pte. Ltd.</a></p>
+                                <p>Is licensed and regulated by the Monetary Authority of Singapore (Licence No. CMS100917).<br> <strong>Registered Office:</strong> #40-02A, Asia Square Tower 1, 8 Marina View, Singapore 018960.<br> <strong>Website:</strong>  <a href="https://www.interactivebrokers.com.sg/en/home.php?nored=t" target="_self">www.interactivebrokers.com.sg</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- FOOTER END ---------------------------------------------------------------------------------------------------- -->
+<!-- SHARE ON SOCIAL ---------------------------------------------------------------------------------------------------->
+<div class="social-sidebar animated fadeInLeft noprint">
+	<span><i class="fa fa-chevron-left"></i><i class="fa fa-chevron-right"></i></span>
+	<div class="icon-set">
+		<p>SHARE</p>
+		<div class="share-icon"><a href="/insights/ibtr_alerts.php?tiv=16789&cl=F&p=T" target="_blank" rel="noreferrer noopener" title="Share on Facebook" aria-label="Share on Facebook" class="icon-facebook"><i class="fab fa-facebook-square"></i></a></div>
+		<div class="share-icon"><a href="/insights/ibtr_alerts.php?tiv=16789&cl=T&p=T" target="_blank" rel="noreferrer noopener" title="Share on Twitter" aria-label="Share on Twitter" class="icon-twitter"><i class="fab fa-x-twitter"></i></a></div>
+		<div class="share-icon"><a href="/insights/ibtr_alerts.php?tiv=16789&cl=L&p=T" target="_blank" rel="noreferrer noopener" title="Share on Linkedin" aria-label="Share on Linkedin" class="icon-linkedin"><i class="fab fa-linkedin"></i></a></div>
+		<div class="share-icon"><a href="javascript:void(0);" target="_self" title="Share by Email" aria-label="Share by Email" name="btn_trigger" data-bs-toggle="modal" data-bs-target="#emailModal" id="16789" onclick="emailCookie();" class="icon-email"><i class="far fa-envelope"></i></a></div>
+	</div>
+</div>
+<!-- MODAL START | SHARE ON SOCIAL ---------------------------------------------------------------------------------------------------->
+<div class="modal fade noprint" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button id="cls_frm_1" type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="gridSystemModalLabel"><i class="far fa-envelope text-gray"></i> Email</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col">
+						<form>
+							<div class="form-group">
+								<label for="_to" class="control-label">To:</label> <span id="_err_to" style="color: red;"></span>
+								<input type="text" class="form-control" id="_to">
+							</div>
+							<div class="form-group">
+								<label for="_from" class="control-label">From:</label> <span id="_err_frm" style="color: red;"></span>
+								<input type="text" class="form-control" id="_from">
+							</div>
+							<div class="form-group">
+								<label for="_subject" class="control-label">Subject:</label> <span id="_err_subject" style="color: red;"></span>
+								<input type="text" class="form-control" id="_subject" value="Interactive Brokers">
+							</div>
+							<div class="form-group">
+								<textarea class="form-control" id="_content" style="height:200px;"></textarea>
+							</div>
+							<p class="text-sm">URL: <span class="text-italic text-black">www.interactivebrokers.com/en/index.php?f=<span id='vid'></span></span></p>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<div class="row">
+					<div class="col-6">
+						<div align="left">
+							<button id="cls_frm_2" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+					<div class="col-6">
+						<div align="right">
+							<button type="button" class="btn btn-primary" id="send">Send</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<input type="hidden" id="_page_id" name="_page_id" value="16789">
+</div>
+<!-- MODAL END | SHARE ON SOCIAL ----------------------------------------------------------------------------------------------------> 
+<script type="text/javascript" src="../insights/ibtr_share.js?t=v1"></script>
+<script>
+$(document).ready(function() {
+	 $(".social-sidebar span").click(function(){
+		 $(".social-sidebar div").toggleClass("social-sidebar-hide");
+		 $(".social-sidebar span").toggleClass("toggle-arrow");
+ 	 });
+});
+function emailCookie() {
+	if (document.cookie.indexOf("IB_EM_SH") == -1) {
+		var ex=new Date();
+		ex.setTime(ex.getTime()+86400000);
+		document.cookie ='IB_EM_SH='+1+';expires='+ex.toGMTString()+';path=/;domain=';
+	}
+}
+</script>
+<!-- SCRIPTS FOOTER ---------------------------------------------------------------------------------------------------- -->
+<script type="text/javascript" src="../scripts/common/js/zeynep-2.2.0/zeynep.js"></script>
+<script type="text/javascript" src="../scripts/common/js/lazyload/lazyload.min.js"></script>
+<script type="text/javascript" src="../search/conversions-1629.js?t=1718775071"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+    // GATHER HEIGHT OF HEADER
+    var defaultMarginTop = $("div#ibkr-header").outerHeight();
+    // SET MARGIN-TOP OF CONTENTS
+    $("div#contents").css("margin-top", defaultMarginTop);
+    // ON WINDOW RESIZE CALCULATE THE HEIGHT OF THE HEADER AND USE THAT AS THE MARGIN-TOP OF CONTENTS DIV
+    $(window).resize(function() {
+        var headerHeight = $("div#ibkr-header").outerHeight();
+        var headerHeightDelta = headerHeight - defaultMarginTop;
+        $("div#contents").css("margin-top", defaultMarginTop + headerHeightDelta);
+    });
+    // BANNER | REGION SELECTOR
+    $("#bannerRegionSelector a.btn-close").click(function() {
+        // On banner close, set margin-top on timeout
+        setTimeout(function() {
+            var headerHeight = $("div#ibkr-header").outerHeight();
+            $("div#contents").css("margin-top", headerHeight);
+        },500);
+    });
+    // MOBILE MENU
+    $(function() {
+        // Initilize mobile menu
+        var zeynep = $('.menu-mobile').zeynep({
+            opened: function () {
+        },
+        closed: function () {
+            }
+        })
+        // Dynamically bind closing event
+        zeynep.on('closing', function () {
+        })
+        // Mobile menu close on overlay click
+        $('.website-overlay').on('click', function () {
+            zeynep.close()
+        })
+        // Mobile menu close on button click
+        $('.btn-close').on('click', function () {
+            zeynep.close()
+        })
+        // Mobile menu open on navbar-toggler click
+        $('.navbar-toggler').on('click', function () {
+            zeynep.open()
+        })
+    })
+});
+</script>
+ <script>var ibdmn='interactivebrokers.co.uk';(function(d,c){let s=d.createElement('script');s.src='https://www.interactivebrokers.co.uk/mkt/ibgtag.js?wbst='+c;s.id='_ib_tag';s.async=true;d.getElementsByTagName('head')[0].appendChild(s);})(document,'UK');</script><!-- STYLES FOOTER ---------------------------------------------------------------------------------------------------- -->
+<link rel="preload" as="font" type="font/woff2" href="../fonts/fontawesome-6.4.2/webfonts/fa-brands-400.woff2" crossorigin="">
+<link rel="preload" as="font" type="font/woff2" href="../fonts/fontawesome-6.4.2/webfonts/fa-regular-400.woff2" crossorigin="">
+<link rel="preload" as="font" type="font/woff2" href="../fonts/fontawesome-6.4.2/webfonts/fa-solid-900.woff2" crossorigin="">
+<link rel="preload" as="style" href="../css/fontawesome-6.4.2/all.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../css/fontawesome-6.4.2/all.min.css">
+<link rel="preload" as="style" href="../css/animate-3.7.2/animate.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../css/animate-3.7.2/animate.min.css">
+<link rel="preload" as="style" href="../css/bootstrap-switch-3.3.2/bootstrap-switch.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../css/bootstrap-switch-3.3.2/bootstrap-switch.min.css">
+<link rel="preload" as="style" href="../css/ibkr/website-print.min.css">
+<link rel="stylesheet" type="text/css" media="print" href="../css/ibkr/website-print.min.css"></body>
+</html>
