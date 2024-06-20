@@ -1,0 +1,1462 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<title>Third party Integration | Interactive Brokers LLC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"> 
+<meta name="description" content="Integrate your IBKR data with third-party portfolio management, order management, post-trade allocation and compliance software.">
+<meta name="keywords" content="Third-party Integration,third-party portfolio management,third-party order management">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="expires" content="-1">
+<meta name="robots" content="index, follow">
+<meta http-equiv="pragma" content="no-cache">
+<!--Pid:15491-->
+<link rel="canonical" href="third-party-integration.php.html">
+<meta name="apple-mobile-web-app-title" content="IBKR">
+<link rel="icon" sizes="192x192" href="../../images/web/favicons/home-screen-icon-192x192.png">
+<link rel="icon" sizes="128x128" href="../../images/web/favicons/home-screen-icon-128x128.png">
+<link rel="apple-touch-icon" sizes="57x57" href="../../images/web/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../images/web/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../images/web/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../images/web/favicons/apple-touch-icon-144x144.png">
+<!-- SCRIPTS HEAD ---------------------------------------------------------------------------------------------------- -->
+<script type="text/javascript" src='../../scripts/common/js/jquery-3.6.1/jquery.min.js'></script>
+<script type="text/javascript">
+function createScriptElement(data) {
+ if (typeof data == "undefined") {
+  return;
+ }
+ var element = document.createElement("SCRIPT");
+ element.type = "text/javascript";
+ if (typeof data.id != "undefined") {
+  element.id = data.id;
+ }
+ if (typeof data.source != "undefined") {
+  element.src = data.source;
+ }
+ if (typeof data.loadfunction == "function") {
+  element.onload = data.loadfunction;
+ }
+ document.head.appendChild(element);
+}
+createScriptElement({ source : "/scripts/common/js/bootstrap-5.2.2/bootstrap.bundle.min.js", loadfunction: bsLoaded  });
+createScriptElement({ source : "/scripts/common/js/lib.js?ver=9" });
+function bsLoaded() {
+  createScriptElement({ source : "/scripts/common/js/appear/appear.min.js?ver=1" });
+  createScriptElement({ source : "/scripts/common/js/easing/easing.min.js?ver=1" });
+  createScriptElement({ source : "/scripts/common/js/parallax/parallax.min.js?ver=1" });
+  createScriptElement({ source : "/scripts/common/js/uitotop/uitotop.min.js?ver=1", loadfunction: uiLoaded });
+}
+function uiLoaded() {
+  createScriptElement({ source : "/scripts/common/js/twsUtils.js?ver=2" });
+  createScriptElement({ source : "/scripts/common/js/design/design.js?ver=1" }); 
+}
+</script>
+<script type="text/javascript">
+$(function() {
+  let ex=new Date();
+  ex.setTime(ex.getTime()+86400000);
+  document.cookie ='IB_REST=1;expires='+ex.toGMTString()+';path=/;domain=.interactivebrokers.com';
+  $('div#langselector').find('a').each(function() {
+  $(this).click(function() {
+   var link = $(this).attr("href");
+   if(link.match(/\/(en|fr|de|es|it|ru|cn|jp)\//))
+   {
+    var langs = link.split("/");
+    if(langs[3] == 'en' || langs[3] == 'fr' || langs[3] == 'de' || langs[3] == 'es' || langs[3] == 'it' || langs[3] == 'ru' || langs[3] == 'cn' || langs[3] == 'jp')
+    {
+      var lang = langs[3];
+      if(lang == 'cn')
+      {
+        lang = 'zh_CN';
+      }
+      if(lang == 'jp')
+      {
+        lang = 'ja';
+      }
+      if(hasCookie("IB_LANG"))
+      {
+        deleteCookie("IB_LANG");
+      }
+      setCookie("IB_LANG", lang, 7, '.interactivebrokers.com');
+    } else if(langs[1] == 'en') {
+      var lang = 'en';
+      setCookie("IB_LANG", lang, 7, '.interactivebrokers.com');
+    }
+   }
+  });
+ });
+ $('p#bandaid-close').click(function() {
+  setCookie("IB_BANDAID", 1, 30, '.interactivebrokers.com');
+ });
+ $('a#btnCloseBannerRegionSelector').click(function() {
+  setCookie("IB_REGION_SEL", 1, 30, '.interactivebrokers.com');
+ });
+});
+</script>
+<script>var e=document.createElement("script");e.type='text/javascript';e.src='/scripts/common/js/ibtrk.js?v=14';document.head.appendChild(e);_ibp=15491;</script>
+<!-- STYLES HEAD -->
+<link rel="preload" as="style" href="../../css/bootstrap-5.2.2/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/bootstrap-5.2.2/bootstrap.min.css">
+<link rel="preload" as="style" href="../../css/ibkr/website.min.css?v=25dbb9871dad19f5b220266180efb316">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/ibkr/website.min.css?v=25dbb9871dad19f5b220266180efb316">
+<link rel="preload" as="style" href="../../css/ibkr/theme-ibkr.min.css?v=25dbb9871dad19f5b220266180efb316">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/ibkr/theme-ibkr.min.css?v=25dbb9871dad19f5b220266180efb316"><style type="text/css">
+section#page-title { display:none; }
+.logo-portfolioanalyst, .logo-portfolioanalyst-inverse {
+    margin: 20px auto;
+    width: 220px;
+    height: 45px;
+}
+.pm-layout button {
+	margin:0px;
+	padding:15px; 
+	width:100%;
+	min-height:150px;
+	border:2px solid var(--bg-body);
+	background-color:var(--gray-10-solid);
+}
+.pm-layout button:hover {
+	-webkit-filer: brightness(1.03);
+         filter: brightness(1.03);
+	-webkit-transition:all 0.2s ease-in-out;
+	-moz-transition:all 0.2s ease-in-out;
+	-o-transition:all 0.2s ease-in-out;
+	transition:all 0.2s ease-in-out;
+}
+[data-theme="dark"] .pm-layout button:hover {
+	-webkit-filter: brightness(1.2);
+         filter: brightness(1.2);
+	-webkit-transition:all 0.2s ease-in-out;
+	-moz-transition:all 0.2s ease-in-out;
+	-o-transition:all 0.2s ease-in-out;
+	transition:all 0.2s ease-in-out;
+}
+.pm-layout button img {
+	width:100%;
+	max-width:100%;
+	height:auto;
+}
+[data-theme="dark"]
+        .pm-layout button img {
+          -webkit-filter: invert(1) grayscale(1); 
+          filter: invert(1) grayscale(1)
+}
+.modal-content {
+	border-radius:0;
+}
+.pa-banner { 
+	padding: 0 40px;
+}
+#tpi-portfolio{
+	background: -moz-linear-gradient(top, var(--gray-5-solid) 1%, var(--bg-body) 10%);
+	background: -webkit-linear-gradient(top, var(--gray-5-solid) 1%, var(--bg-body) 10%);
+	background: linear-gradient(to bottom, var(--gray-5-solid) 1%, var(--bg-body) 10%);
+}
+#tpi-portfolio row {
+	align-items: center;
+}
+.modal img{
+	background:var(--white);
+	padding:4px;
+}
+@media (max-width:992px) {
+.pa-banner { border-left:none; 
+             border-top:1px solid var(--border-color); 
+             border-bottom:1px solid var(--border-color); 
+             margin:30px 0 0 0;
+             padding:10px 0 40px 0}
+}
+</style>
+
+<script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch"}]);</script>
+                              <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="CGJ34-S5RKA-7ZQ8F-AJER9-TWWVG",function(){function e(){if(!o){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,i.parentNode.appendChild(e),o=!0}}function t(e){o=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(i.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",i.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"CGJ34-S5RKA-7ZQ8F-AJER9-TWWVG";var i=document.currentScript||document.getElementsByTagName("script")[0],o=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!o)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),i.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="nfygq4s7mteccztsfwyq-f-46207609e-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,o={"ak.v":"37","ak.cp":"1131468","ak.ai":parseInt("665092",10),"ak.ol":"0","ak.cr":140,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"26d56a32","ak.r":36911,"ak.a2":n,"ak.m":"a","ak.n":"essl","ak.bpcip":"105.112.104.0","ak.cport":7302,"ak.gh":"95.100.200.29","ak.quicv":"","ak.tlsv":"tls1.2","ak.0rtt":"","ak.csrc":"-","ak.acc":"bbr","ak.t":"1718758833","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==4e3kZKmav9GGcJRQG4uuil+T4Qkhp2hXZvsP1qnG4IDH/a8UVFtL07yEsFmnTQ/2PAGVssiTg/FKhC3uGi0tQqdp97XBij3c/+fDAWNC/kO+YFefMTh6VNRhG8VEr0xNj8ysmEBB+mLg7uDYAZaBICTAyLVK0qMnZs+EieGSnkBI05jyky1hKQ5wIXd2T27Oqv4+CO+wwxeOkbx1GJn+JWo1Iik0i2xpIxRdjr/oBLXlmWJrJIK6sfTaHMrfjh+ylpeIhVJHsjkMCiIn4Orsz1tOgEyK6j4zTwiHDd55bpsp/ON2xEQlmz+zakYFQzSbrS3Org4Kh39CupvqgWopO805XB559yuAq/jiwPNHY08ViJjhHI1+sw/lRjL6afDcvdgPyFRpAN7i75pl0ueosuoZNmqaORRRuA+wpwEIVRk=","ak.pv":"316","ak.dpoabenc":"","ak.tf":i};if(""!==t)o["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))o["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(o)},rv:function(){var e=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:o,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+<body>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NK9NSD');</script>
+<!-- End Google Tag Manager --><div id="printheader"></div>
+<!-- HEADER START ---------------------------------------------------------------------------------------------------- -->
+<div class="ibkr-header" id="ibkr-header">
+     
+     
+    <!-- NAV TOP START (LG/XL ONLY) -->
+    <nav class="navbar navbar-inverse navbar-expand-lg navbar-top d-none d-lg-block">
+        <div class="container">
+            <div class="navbar-collapse collapse" id="ibkr-nav-top">
+                <!-- LEFT MENU -->
+                <ul class="navbar-nav mr-auto align-items-center">
+                    <!-- FOR INDIVIDUALS -->
+                    <li class="nav-item dropdown"><a href="#" target="_self" class="nav-link dropdown-toggle" id="nav-for-individuals" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">For Individuals</a>
+                        <div class="dropdown-menu dropdown-ind-accounts" aria-labelledby="nav-for-individuals">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../accounts/individual.php.html" target="_self" class="dropdown-item">Individual, Joint or IRA</a>
+                                    <a href="../accounts/non-professional-advisor.php.html" target="_self" class="dropdown-item">Non-Professional Advisors</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- FOR INSTITUTIONS -->
+					<li class="nav-item dropdown"><a href="#" target="_self" class="nav-link dropdown-toggle" id="nav-for-institutions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">For Institutions</a>
+                        <div class="dropdown-menu dropdown-inst-accounts" aria-labelledby="nav-for-institutions">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../accounts/institutions.php.html" target="_self" class="dropdown-item">Institutions Home</a>
+                                    <a href="../accounts/advisor.php.html" target="_self" class="dropdown-item">Registered Investment Advisors</a>
+                                    <a href="../accounts/proprietary-trading-group.php.html" target="_self" class="dropdown-item">Proprietary Trading Groups</a>
+                                    <a href="../accounts/hedge-fund.php.html" target="_self" class="dropdown-item">Hedge Funds</a>
+                                    <a href="../accounts/broker.php.html" target="_self" class="dropdown-item">Introducing Brokers</a>
+                                    <a href="../accounts/family-office.php.html" target="_self" class="dropdown-item">Family Offices</a>
+                                    <a href="../accounts/compliance-officer.php.html" target="_self" class="dropdown-item">Compliance Officers</a>
+                                    <a href="../accounts/small-business.php.html" target="_self" class="dropdown-item">Small Businesses</a>
+                                    <a href="../accounts/simple-ira.php.html" target="_self" class="dropdown-item">Employee Plan Administrator <br>SIMPLE IRA</a>
+                                    <a href="../accounts/fsa-insurance-providers.php.html" target="_self" class="dropdown-item">Full-Service Administrator <br>Insurance Providers</a>
+                                    <a href="../accounts/money-manager.php.html" target="_self" class="dropdown-item">Money Managers</a>
+                                    <a href="../accounts/administrator.php.html" target="_self" class="dropdown-item">Fund Administrators</a>
+                                    <a href="../accounts/hedge-fund-allocator.php.html" target="_self" class="dropdown-item">Hedge Fund Allocators</a>
+                                    <a href="https://ibkrcampus.com/student-trading-lab/" target="_blank" class="dropdown-item">Educators</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- RIGHT MENU -->
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <!-- FREE TRIAL -->
+                    <li class="nav-item"><a href="free-trial.php.html" target="_self" class="nav-link">FREE TRIAL</a></li>
+                    <!-- CAREERS -->
+                    <li class="nav-item"><a href="../general/about/careers-splash.php.html" target="_self" class="nav-link">Careers</a></li>
+                    <!-- ABOUT US -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-about-us" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
+                        <div class="dropdown-menu dropdown-about-us" aria-labelledby="nav-about-us">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../general/financial-strength.php.html" target="_self" class="dropdown-item">Strength and Security</a>
+                                    <a href="../general/about/about.php.html" target="_self" class="dropdown-item">Information and History</a>
+                                    <a href="../general/awards.php.html" target="_self" class="dropdown-item">Awards</a>
+                                    <a href="../about/news-at-ibkr.php.html" target="_self" class="dropdown-item">News at IBKR</a>
+                                    <a href="../general/about/press-and-media.php.html" target="_self" class="dropdown-item">Press and Media</a>
+                                    <a href="https://investors.interactivebrokers.com/ir/main.php" target="_blank" class="dropdown-item" rel="noreferrer noopener">Investor Relations</a>
+                                    <a href="../general/about/sustainability.php.html" target="_self" class="dropdown-item">Sustainability</a>
+                                    <a href="../accounts/legalDocuments/brokerPerformanceReports.php.html" target="_self" class="dropdown-item">Regulatory Reports</a>
+                                    <a href="../accounts/referrer.php.html" target="_self" class="dropdown-item">Refer a Friend</a>
+                                    <a href="../general/about/affiliate-programs.php.html" target="_self" class="dropdown-item">Affiliate Programs</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- SUPPORT -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-support" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Support</a>
+                        <div class="dropdown-menu dropdown-contact-us" aria-labelledby="nav-support">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../support/fund-my-account.php.html" target="_self" class="dropdown-item">Fund Your Account</a>
+                                    <a href="../support/individuals.php.html" target="_self" class="dropdown-item">For Individuals</a>
+                                    <a href="../support/institutions.php.html" target="_self" class="dropdown-item">For Institutions</a>
+                                    <a href="../support/institutional-sales-contacts.php.html" target="_self" class="dropdown-item">Institutional Sales Contacts</a>
+                                                                        <a href="../general/contact/ibot-container.php.html" target="_self" class="dropdown-item">Browse Our FAQs</a>
+                                    <a href="../support/reports-and-dates.php.html" target="_self" class="dropdown-item">Tax Information</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- LANGUAGE SELECTOR -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link nav-language dropdown-toggle" id="nav-language" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Language</span><img src="../../images/web/icons/icon-language.svg" alt="Language" width="23" height="18" border="0"></a>
+                        <div class="dropdown-menu dropdown-language" aria-labelledby="nav-language">
+                            <div class="row">
+                                <div class="col" id="langselector">
+                                    <a href="../home.php.html" target="_self" class="dropdown-item">English</a>
+                                    <a href="/es/home.php" target="_self" class="dropdown-item">Español</a>
+                                    <a href="/pt/home.php" target="_self" class="dropdown-item">Português</a>
+                                    <a href="/cn/home.php?lang=sc" target="_self" class="dropdown-item">中文简体</a>
+                                    <a href="/cn/home.php?lang=tc" target="_self" class="dropdown-item">中文繁體</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- NAV TOP END -->
+    <!-- NAV BOTTOM START -->
+    <nav class="navbar navbar-inverse navbar-expand-lg navbar-bottom">
+        <div class="container">
+            <!-- IBKR LOGO -->
+                        <a href="../home.php.html" target="_self" title="Interactive Brokers Home" alt="Interactive Brokers Logo" class="navbar-brand brand-logo" aria-label="Interactive Brokers Home"><span>Interactive Brokers Home</span></a>
+            <!-- TOGGLE (XS/SM/MD ONLY) -->
+            <button class="navbar-toggler" type="button" aria-label="Toggle Navigation"><span class="navbar-toggler-icon"><i class="fas fa-bars" aria-hidden="true"></i></span></button>
+            <!-- OPEN ACCOUNT BUTTON (XS/SM/MD ONLY) -->
+            <a href="/Universal/Application" target="_self" class="d-block d-lg-none btn btn-open-account">Open Account</a>
+            <!-- LOG IN (SM/MD ONLY) -->
+                            <a href="/sso/Login?RL=1" target="_self" class="d-none d-sm-block d-lg-none btn btn-log-in">Log In</a>
+                        <!-- IBKR NAV BOTTOM START   -->
+            <div class="navbar-collapse collapse" id="ibkr-nav-bottom">
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <!-- WHY IBKR -->
+                    <li class="nav-item"><a href="../whyib/overview.php.html" target="_self" class="nav-link">Why IBKR</a></li>
+                    <!-- PRICING -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-pricing" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pricing</a>
+                        <div class="dropdown-menu dropdown-pricing" aria-labelledby="nav-pricing">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../pricing/commissions-home.php.html" target="_self" class="dropdown-item">Commissions</a>
+                                    <a href="margin-rates.php.html" target="_self" class="dropdown-item">Margin Rates</a>
+                                    <a href="../accounts/fees/pricing-interest-rates.php.html" target="_self" class="dropdown-item">Interest Rates</a>
+                                    <a href="../pricing/short-sale-cost.php.html" target="_self" class="dropdown-item">Short Sale Cost</a>
+                                    <a href="../pricing/research-news-services.php.html" target="_self" class="dropdown-item">Research and News</a>
+                                    <a href="../pricing/research-news-marketdata.php.html" target="_self" class="dropdown-item">Market Data</a>
+                                    <a href="../pricing/stock-yield-enhancement-program.php.html" target="_self" class="dropdown-item">Stock Yield Enhancement Program</a>
+                                    <a href="../pricing/other-fees-overview.php.html" target="_self" class="dropdown-item">Other Fees</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- TRADING -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-technology" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Trading</a>
+                        <div class="dropdown-menu dropdown-technology" aria-labelledby="nav-technology">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="trading-platforms.php.html" target="_self" class="dropdown-item">Platforms</a>
+                                    <a href="ib-api.php.html" target="_self" class="dropdown-item">APIs</a>
+                                    <a href="margin.php.html" target="_self" class="dropdown-item">Margin</a>
+                                    <a href="products-exchanges.php.html" target="_self" class="dropdown-item">Products and Exchange Search</a>
+                                    <a href="ordertypes.php.html" target="_self" class="dropdown-item">Order Types</a>
+                                    <a href="../whyib/reporting.php.html" target="_self" class="dropdown-item">Reporting</a>
+                                    <a href="securities-financing.php.html" target="_self" class="dropdown-item">Securities Financing</a>
+                                    <a href="features-in-focus.php.html" target="_self" class="dropdown-item">Features in Focus</a>
+                                    <a href="../general/education/probability_lab.php.html" target="_self" class="dropdown-item">Probability Lab</a>
+                                    <a href="global-outsourced-trading-desk.php.html" target="_self" class="dropdown-item">Global Outsourced Trading Desk</a>
+                                    <a href="sustainable-investing.php.html" target="_self" class="dropdown-item">Sustainable Investing</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- SERVICES -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-products" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+                        <div class="dropdown-menu dropdown-products" aria-labelledby="nav-products">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="globalanalyst.php.html" target="_self" class="dropdown-item">IBKR GlobalAnalyst</a>
+                                    <a href="https://www.portfolioanalyst.com" target="_blank" class="dropdown-item" rel="noreferrer noopener">PortfolioAnalyst</a>
+                                    <a href="products-bonds.php.html" target="_self" class="dropdown-item">Bonds Marketplace</a>
+                                    <a href="products-mutual-funds.php.html" target="_self" class="dropdown-item">Mutual Funds Marketplace</a>
+                                    <a href="commission-free-etfs-mkt.php.html" target="_self" class="dropdown-item">No Transaction Fee ETFs</a>
+                                    <a href="https://ndcdyn.interactivebrokers.com/aces/Marketplace/InvestorsMarketplace" target="_blank" class="dropdown-item" rel="noreferrer noopener">Investors' Marketplace</a>
+                                    <a href="short-securities-availability.php.html" target="_self" class="dropdown-item">Short Securities Availability</a>
+                                    <a href="../accounts/integrated-cash-management.php.html" target="_self" class="dropdown-item">Cash Management</a>
+                                    <a href="third-party-integration.php.html" target="_self" class="dropdown-item">Third Party Integration</a>
+                                    <a href="https://www.interactiveadvisors.com" target="_blank" class="dropdown-item" rel="noreferrer noopener">Interactive Advisors</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- EDUCATION -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-education" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Education</a>
+                        <div class="dropdown-menu dropdown-education" aria-labelledby="nav-education">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="https://ibkrcampus.com" target="_blank" class="dropdown-item">IBKR Campus</a>
+                                    <a href="https://ibkrcampus.com/academy" target="_blank" class="dropdown-item" rel="noreferrer noopener">Traders' Academy</a>
+                                    <a href="https://ibkrcampus.com/news" target="_blank" class="dropdown-item" rel="noreferrer noopener">Traders' Insight</a>
+                                    <a href="https://ibkrcampus.com/podcasts" target="_blank" class="dropdown-item" rel="noreferrer noopener">IBKR Podcasts</a>
+                                    <a href="https://ibkrcampus.com/quant" target="_blank" class="dropdown-item" rel="noreferrer noopener">IBKR Quant Blog</a>
+                                    <a href="https://ibkrcampus.com/webinars" target="_blank" class="dropdown-item" rel="noreferrer noopener">Webinars</a>
+                                    <a href="https://ibkrcampus.com/student-trading-lab/" target="_blank" class="dropdown-item">Student Trading Lab</a>
+                                    <a href="https://ibkrcampus.com/glossary" target="_blank" class="dropdown-item" rel="noreferrer noopener">Traders' Glossary</a>
+                                    <a href="../general/calendar/calendar.php.html" target="_self" class="dropdown-item">Traders' Calendar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- SEARCH -->
+                    <li class="nav-item dropdown d-none d-lg-block" id="search-expand"><a href="#" class="nav-link nav-search dropdown-toggle" id="nav-search" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Search</span><i class="fas fa-search" aria-hidden="true"></i></a>
+                        <div class="dropdown-menu dropdown-search" aria-labelledby="nav-search">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="search_box">
+                                        <script type="text/javascript">
+                                         searchbox_input_changed=false;
+                                          $('#search-expand').on('shown.bs.dropdown', function(e) {
+                                            $('#searchField').focus();
+                                          });
+                                        </script>
+                                        <form action="/en/search/index.php" method="get" class="search_form" id="search_form_id">
+                                            <input type="text" aria-label="Search Box" placeholder="Search Site or Contracts" name="query" maxlength="64" autocomplete="off" id="searchField" class="form-control s swap_value searchinput" aria-label="Search Interactive Brokers">
+                                            <button type="submit" value="" id="searchsubmit" class="searchsubmit" aria-label="Submit Search"><i class="fas fa-search" aria-hidden="true"></i></button>
+                                        </form>
+                                        <ul id='saytlist' style='width:150px;'><li style="display:none"></li></ul>
+<script>
+function delay(cb, ms)
+{
+  var timer = 0;
+  return function() {
+   var context = this, args = arguments;
+   clearTimeout(timer);
+   timer = setTimeout(function() {
+     cb.apply(context, args);
+   }, ms  || 0);
+  };
+}
+$(function() {
+
+ $('#searchField').keyup(delay(function() {
+  var q = $('#searchField').val() || '';
+  if(q.length >= 3)
+  {
+    $.ajax({
+      type: "POST",
+      url: 'https://misc.interactivebrokers.com/response_handlers/search/index.php',
+      dataType: "json",
+      data: {
+        'q': q
+      },
+      success: function(r) {
+        if(r && r.success)
+        {
+          var recommendations = '';
+          var limit = Math.min(r.suggestions.length, 10);
+          for(var i = 0; i < limit; i++)
+          {
+            recommendations += "<li>" + r.suggestions[i] + "</li>";
+          }
+          $('#saytlist').html(recommendations);
+          $('#saytlist').show();
+          $('ul#saytlist li').click(function(e) {
+            var list = $(this).text() || '';
+            e.stopPropagation();
+            if(list != '')
+            {
+              $('input#searchField').val(list);
+              $('button#searchsubmit').click();
+            }
+          });
+        }
+      },
+      error: function(xhr, status, err) {}
+    });
+  } else {
+   $('#saytlist').hide();
+  }
+ }, 500));
+});
+</script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- LOG IN -->
+                    <li class="nav-item dropdown d-none d-lg-block"><a href="#" target="_self" class="nav-link nav-login dropdown-toggle" id="nav-log-in" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Log In</a>
+                        <div class="dropdown-menu dropdown-login" aria-labelledby="nav-log-in">
+                            <div class="row">
+                                <div class="col">
+                                                                                                                    <a href="/sso/Login?RL=1" target="_self" class="dropdown-item dropdown-portal">Portal Login</a>
+                                                                                                                <a href="tws.php.html#tws-software" target="_self" class="dropdown-item">Download Trader Workstation</a>
+                                    <a href="ibkr-desktop.php.html" target="_self" class="dropdown-item">Download IBKR Desktop </a>
+                                    <a href="tws-mobile.php.html#trytoday-drop" target="_self" class="dropdown-item">Download IBKR Mobile</a>
+                                    <a href="ibgateway-latest.php.html" target="_self" class="dropdown-item">Download IB Gateway</a>
+                                    <a href="trading-platforms.php.html" target="_self" class="dropdown-item">Compare All IBKR Platforms</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- OPEN ACCOUNT -->
+                    <li class="nav-item dropdown d-none d-lg-block"><a href="#" target="_self" class="nav-link nav-open-account dropdown-toggle" id="nav-open-account" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Open Account</a>
+                        <div class="dropdown-menu dropdown-open-account" aria-labelledby="nav-open-account">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="/Universal/Application" target="_self" class="dropdown-item dropdown-portal">Start Application</a>
+                                    <a href="/sso/Login?c=t" target="_self" class="dropdown-item">Finish an Application</a>
+                                    <a href="../general/what-you-need-inv.php.html" target="_self" class="dropdown-item">What You Need</a>
+                                    <a href="../accounts/account-guide.php.html" target="_self" class="dropdown-item">A Guide to Choosing the Right Account</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- NAV BOTTOM END -->
+</div>
+<!-- HEADER END ---------------------------------------------------------------------------------------------------- -->
+<!-- MOBILE NAV START (XS/SM/MD ONLY) ---------------------------------------------------------------------------------------------------- -->
+<div class="menu-mobile d-lg-none">
+    <!-- CLOSE BUTTON -->
+    <div class="close-button"><a href="javascript:void(0);" target="_self" class="btn-close" aria-label="Close Menu"><i class="fas fa-times"></i></a></div>
+    <!-- LOGO -->
+    <div class="logo-container"><a href="../home.php.html" target="_self" class="brand-logo" aria-label="Interactive Brokers Home"><span>Interactive Brokers Home</span></a></div>
+    <!-- SEARCH -->
+    <div class="search-container">
+        <div class="search-box">
+            <form action="/en/search/index.php" method="get" class="search_form" id="search_form_id">
+                <input type="text" class="form-control" placeholder="Search Site or Contracts" name="query" maxlength="64" autocomplete="off" id="searchFieldMobile" aria-label="Search Interactive Brokers">
+                <button type="submit" class="btn-search-submit" value="" id="searchsubmitMobile" aria-label="Submit Search"><i class="fas fa-search" aria-hidden="true"></i></button>
+            </form>
+        </div>
+    </div>
+    <ul>
+    <!-- LOG IN -->
+                    <li><a href="/sso/Login?RL=1" target="_self" class="menu-log-in">Portal Login</a></li>
+                <!-- OPEN ACCOUNT -->
+    <li class="has-submenu"><a href="#" target="_self" class="menu-open-account" data-submenu="submenu-open-account">Open Account</a>
+        <div class="submenu" id="submenu-open-account">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-open-account">Back</a></p>
+            <p class="submenu-title">OPEN ACCOUNT</p>
+            <ul>
+            <li><a href="/Universal/Application" target="_self" class="menu-start-application">Start Application</a></li>
+            <li><a href="/sso/Login?c=t" target="_self">Finish an Application</a></li>
+            <li><a href="../general/what-you-need-inv.php.html" target="_self">What You Need</a></li>
+            <li><a href="../accounts/account-guide.php.html" target="_self">A Guide to Chosing the Right Account</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- DOWNLOAD IBKR MOBILE -->
+        <!-- FREE TRIAL -->
+    <li><a href="free-trial.php.html" target="_self">Free Trial</a></li>
+    <!-- WHY IBKR -->
+    <li><a href="../whyib/overview.php.html" target="_self">Why IBKR</a></li>
+    <!-- ACCOUNT TYPES -->
+    <li class="has-submenu"><a href="#" target="_self" data-submenu="submenu-account-types">Account Types</a>
+        <div class="submenu" id="submenu-account-types">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-account-types">Back</a></p>
+            <p class="submenu-title">FOR INDIVIDUALS</p>
+            <ul>
+            <li><a href="../accounts/individual.php.html" target="_self">Individual, Joint or IRA</a></li>
+            <li><a href="../accounts/non-professional-advisor.php.html" target="_self">Non-Professional Advisors</a></li>
+            </ul>
+            <p class="submenu-title">FOR INSTITUTIONS</p>
+            <ul>
+            <li><a href="../accounts/institutions.php.html" target="_self">Institutions Home</a></li>
+            <li><a href="../accounts/advisor.php.html" target="_self">Registered Investment Advisors</a></li>
+            <li><a href="../accounts/proprietary-trading-group.php.html" target="_self">Proprietary Trading Groups</a></li>
+            <li><a href="../accounts/hedge-fund.php.html" target="_self">Hedge Funds</a></li>
+            <li><a href="../accounts/broker.php.html" target="_self">Introducing Brokers</a></li>
+            <li><a href="../accounts/family-office.php.html" target="_self">Family Offices</a></li>
+            <li><a href="../accounts/compliance-officer.php.html" target="_self">Compliance Officers</a></li>
+            <li><a href="../accounts/small-business.php.html" target="_self">Small Businesses</a></li>
+            <li><a href="../accounts/simple-ira.php.html" target="_self">Employee Plan Administrator <br>SIMPLE IRA</a></li>
+            <li><a href="../accounts/fsa-insurance-providers.php.html" target="_self">Full-Service Administrator <br>Insurance Providers</a></li>
+            <li><a href="../accounts/money-manager.php.html" target="_self">Money Managers</a></li>
+            <li><a href="../accounts/administrator.php.html" target="_self">Fund Administrators</a></li>
+            <li><a href="../accounts/hedge-fund-allocator.php.html" target="_self">Hedge Fund Allocators</a></li>
+            <li><a href="https://ibkrcampus.com/student-trading-lab/" target="_blank">Educators</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- PRICING -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-pricing">Pricing</a>
+        <div class="submenu" id="submenu-pricing">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-pricing">Back</a></p>
+            <p class="submenu-title">PRICING</p>
+            <ul>
+            <li><a href="../pricing/commissions-home.php.html" target="_self">Commissions</a></li>
+            <li><a href="margin-rates.php.html" target="_self">Margin Rates</a></li>
+            <li><a href="../accounts/fees/pricing-interest-rates.php.html" target="_self">Interest Rates</a></li>
+            <li><a href="../pricing/short-sale-cost.php.html" target="_self">Short Sale Cost</a></li>
+            <li><a href="../pricing/research-news-services.php.html" target="_self">Research and News</a></li>
+            <li><a href="../pricing/research-news-marketdata.php.html" target="_self">Market Data</a></li>
+            <li><a href="../pricing/stock-yield-enhancement-program.php.html" target="_self">Stock Yield Enhancement</a></li>
+            <li><a href="../pricing/other-fees-overview.php.html" target="_self">Other Fees</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- TRADING -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-trading">Trading</a>
+        <div class="submenu" id="submenu-trading">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-trading">Back</a></p>
+            <p class="submenu-title">TRADING</p>
+            <ul>
+            <li><a href="trading-platforms.php.html" target="_self">Platforms</a></li>
+            <li><a href="ib-api.php.html" target="_self">APIs</a></li>
+            <li><a href="margin.php.html" target="_self">Margin</a></li>
+            <li><a href="products-exchanges.php.html" target="_self">Products and Exchange Search</a></li>
+            <li><a href="ordertypes.php.html" target="_self">Order Types</a></li>
+            <li><a href="../whyib/reporting.php.html" target="_self">Reporting</a></li>
+            <li><a href="securities-financing.php.html" target="_self">Securities Financing</a></li>
+            <li><a href="features-in-focus.php.html" target="_self">Features in Focus</a></li>
+            <li><a href="../general/education/probability_lab.php.html" target="_self">Probability Lab</a></li>
+            <li><a href="global-outsourced-trading-desk.php.html" target="_self">Global Outsourced Trading Desk</a></li>
+            <li><a href="sustainable-investing.php.html" target="_self">Sustainable Investing</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- SERVICES -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-services">Services</a>
+        <div class="submenu" id="submenu-services">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-services">Back</a></p>
+            <p class="submenu-title">SERVICES</p>
+            <ul>
+            <li><a href="globalanalyst.php.html" target="_self">IBKR GlobalAnalyst</a></li>
+            <li><a href="https://www.portfolioanalyst.com" target="_blank">PortfolioAnalyst</a></li>
+            <li><a href="products-bonds.php.html" target="_self">Bonds Marketplace</a></li>
+            <li><a href="products-mutual-funds.php.html" target="_self">Mutual Funds Marketplace</a></li>
+            <li><a href="commission-free-etfs-mkt.php.html" target="_self">No Transaction Fee ETFs</a></li>
+            <li><a href="https://ndcdyn.interactivebrokers.com/aces/Marketplace/InvestorsMarketplace" target="_blank">Investors' Marketplace</a></li>
+            <li><a href="short-securities-availability.php.html" target="_self">Short Securities Availability</a></li>
+            <li><a href="../accounts/integrated-cash-management.php.html" target="_self">Cash Management</a></li>
+            <li><a href="third-party-integration.php.html" target="_self">Third Party Integration</a></li>
+            <li><a href="https://www.interactiveadvisors.com" target="_blank">Interactive Advisors</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- EDUCATION -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-education">Education</a>
+        <div class="submenu" id="submenu-education">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-education">Back</a></p>
+            <p class="submenu-title">EDUCATION</p>
+            <ul>
+            <li><a href="https://ibkrcampus.com" target="_blank">IBKR Campus</a></li>
+            <li><a href="https://ibkrcampus.com/academy" target="_blank">Traders' Academy</a></li>
+            <li><a href="https://ibkrcampus.com/news" target="_blank">Traders' Insight</a></li>
+            <li><a href="https://ibkrcampus.com/podcasts" target="_blank">IBKR Podcasts</a></li>
+            <li><a href="https://ibkrcampus.com/quant" target="_blank">IBKR Quant Blog</a></li>
+            <li><a href="https://ibkrcampus.com/webinars" target="_blank">Webinars</a></li>
+            <li><a href="https://ibkrcampus.com/student-trading-lab/" target="_blank">Student Trading Lab</a></li>
+            <li><a href="https://ibkrcampus.com/glossary" target="_blank">Traders' Glossary</a></li>
+            <li><a href="../general/calendar/calendar.php.html" target="_self">Traders' Calendar</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- ABOUT US -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-about-us">About Us</a>
+        <div class="submenu" id="submenu-about-us">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-about-us">Back</a></p>
+            <p class="submenu-title">ABOUT US</p>
+            <ul>
+            <li><a href="../general/financial-strength.php.html" target="_self">Strength and Security</a></li>
+            <li><a href="../general/about/about.php.html" target="_self">Information and History</a></li>
+            <li><a href="../general/about/careers-splash.php.html" target="_self">Careers</a></li>
+            <li><a href="../general/awards.php.html" target="_self">Awards</a></li>
+            <li><a href="../about/news-at-ibkr.php.html" target="_self">News at IBKR</a></li>
+            <li><a href="../general/about/press-and-media.php.html" target="_self">Press and Media</a></li>
+            <li><a href="https://investors.interactivebrokers.com/ir/main.php" target="_blank">Investor Relations</a></li>
+            <li><a href="../general/about/sustainability.php.html" target="_self">Sustainability</a></li>
+            <li><a href="../accounts/legalDocuments/brokerPerformanceReports.php.html" target="_self">Regulatory Reports</a></li>
+            <li><a href="../accounts/referrer.php.html" target="_self">Refer a Friend</a></li>
+            <li><a href="../general/about/affiliate-programs.php.html" target="_self">Affiliate Programs</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- SUPPORT -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-support">Support</a>
+        <div class="submenu" id="submenu-support">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-support">Back</a></p>
+            <p class="submenu-title">SUPPORT</p>
+            <ul>
+            <li><a href="../support/fund-my-account.php.html" target="_self">Fund Your Account</a></li>
+            <li><a href="../support/individuals.php.html" target="_self">For Individuals</a></li>
+            <li><a href="../support/institutions.php.html" target="_self">For Institutions</a></li>
+            <li><a href="../support/institutional-sales-contacts.php.html" target="_self">Institutional Sales Contacts</a></li>
+                        <li><a href="../general/contact/ibot-container.php.html" target="_self">Browse Our FAQs</a></li>
+            <li><a href="../support/reports-and-dates.php.html" target="_self">Tax Information</a></li>                 
+            </ul>
+        </div>
+    </li>
+    <!-- LANGUAGE -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-language">Language</a>
+        <div class="submenu" id="submenu-language">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-language">Back</a></p>
+            <p class="submenu-title">LANGUAGE</p>
+            <ul>
+            <li><a href="../home.php.html" target="_self">English</a></li>
+            <li><a href="/es/home.php" target="_self">Español</a></li>
+            <li><a href="/pt/home.php" target="_self">Português</a></li>
+            <li><a href="/cn/home.php?lang=sc" target="_self">中文简体</a></li>
+            <li><a href="/cn/home.php?lang=tc" target="_self">中文繁體</a></li>
+            </ul>
+        </div>
+    </li>
+    </ul>
+</div>
+<!-- MOBILE NAV OVERLAY -->
+<div class="website-overlay d-lg-none"></div>
+<!-- MOBILE NAV END (XS/SM/MD ONLY) ---------------------------------------------------------------------------------------------------- -->
+<div id="contents">
+    <section class="page-title" id="page-title">
+        <div class="container">
+            <div class="row">
+                                <div class="col"><h1>Third party Integration</h1></div>
+                            </div>
+        </div>
+    </section>
+    <!-- HERO -->
+<section class="hero hero-dark hero-bg-wrap bg-none bg-tertiary-dark-20" id="">
+    <figure class="hero-bg-img">
+        <picture class="r-img"><img src="../../images/2015/header-third-party-integration.jpg" alt="Third Party Integration" border="0" class="img-flip-rtl"></picture>
+    </figure>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-6 col-xl-5">
+                <div class="hero-content">
+                    <h2>Third Party Integration</h2>
+                    <p class="subheading">Integrate your IBKR data with third-party portfolio management, order management, post-trade allocation and compliance software.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- DROPLINKS -->
+<section class="droplinks dl-4">
+    <div class="container">
+        <div class="row">
+            <div class="col"> 
+		        <a href="#tpi-portfolio" target="_self" class="page-scroll">
+                    <svg role="img">
+                        <title>Portfolio Management</title>
+                        <g>
+	<path d="M24.646,10.366V9.17c0-1.096-0.623-2.376-2.375-2.376h-3.584c-1.753,0-2.375,1.28-2.375,2.376v1.196H4.604
+	v21h31.75v-21H24.646z M17.312,9.17c0-0.514,0.179-1.376,1.375-1.376h3.584c1.195,0,1.375,0.862,1.375,1.376v1.196h-6.334V9.17z
+	 M35.354,30.366H5.604v-19h29.75V30.366z"></path>
+	<polygon points="3.854,12.616 2.854,12.616 2.854,33.116 34.104,33.116 34.104,32.116 3.854,32.116 	"></polygon>
+	<path d="M23.748,17.374c-0.847-0.871-1.874-1.279-2.861-1.379v-1.609h-0.85v1.593v0.403v0.449
+	c1.031-0.088,2.217,0.227,3.1,1.135L23.748,17.374z"></path>
+	<path d="M20.057,26.141v1.573h0.85v-1.963h-0.001v-0.478c-1.334,0.162-2.963-0.305-3.943-1.672l-0.691,0.496
+	C17.222,25.423,18.682,26.047,20.057,26.141z"></path>
+	<path d="M20.192,21.184c1.734,0.402,2.794,0.746,2.891,2.117c0.065,0.953-0.625,1.451-1.112,1.686v0.919
+	c0.008-0.003,0.016-0.005,0.022-0.007c1.297-0.467,2.021-1.461,1.938-2.657c-0.148-2.095-2.033-2.533-3.547-2.885
+	c-1.535-0.357-2.479-0.629-2.572-1.693c-0.08-0.912,0.744-1.391,1.102-1.555v-0.902c-0.121,0.041-0.244,0.078-0.354,0.129
+	c-1.086,0.496-1.682,1.395-1.594,2.4C17.115,20.467,18.75,20.848,20.192,21.184z"></path>
+</g>                    </svg>
+                    <span>Portfolio Management</span> 
+				</a> 
+				<a href="#tpi-order" target="_self" class="page-scroll">
+                    <svg role="img">
+                        <title>Order Management</title>
+                        <path d="M31.207,16.02c-2.035,0-3.7,1.532-3.949,3.5H9.396v-4.095c2.018-0.202,3.604-1.89,3.604-3.96
+c0-2.206-1.794-4-4-4s-4,1.794-4,4c0,1.999,1.478,3.645,3.396,3.939v5.116h9.5v6.458c-1.927,0.286-3.414,1.935-3.414,3.94
+c0,2.206,1.794,4,4,4c2.206,0,4-1.794,4-4c0-2.064-1.577-3.748-3.586-3.958v-6.44h8.362c0.249,1.968,1.914,3.5,3.949,3.5
+c2.206,0,4-1.793,4-4C35.207,17.814,33.413,16.02,31.207,16.02z M6,11.465c0-1.654,1.346-3,3-3s3,1.346,3,3c0,1.654-1.346,3-3,3
+S6,13.119,6,11.465z M21.482,30.918c0,1.654-1.346,3-3,3c-1.654,0-3-1.346-3-3s1.346-3,3-3
+C20.137,27.918,21.482,29.264,21.482,30.918z M31.207,23.02c-1.654,0-3-1.346-3-3s1.346-3,3-3s3,1.346,3,3
+S32.861,23.02,31.207,23.02z"></path>                    </svg>
+                    <span>Order Management</span> 
+				</a> 
+				<a href="#tpi-post-trade" target="_self" class="page-scroll">
+                    <svg role="img">
+                        <title>Post Trade Allocations</title>
+                        <g>
+	<polygon points="10.17,14.121 9.17,14.121 9.17,19.91 16.17,19.91 16.17,26.861 17.17,26.861 17.17,19.91 
+	24.754,19.91 24.754,18.91 10.17,18.91 	"></polygon>
+	<path d="M14.891,6.059h-10.5v6.834h10.5V6.059z M13.891,11.893h-8.5V7.059h8.5V11.893z"></path>
+	<circle cx="9.641" cy="9.559" r="1.334"></circle>
+	<rect x="12.381" y="7.434" width="0.688" height="1"></rect>
+	<rect x="6.068" y="7.434" width="0.688" height="1"></rect>
+	<rect x="12.381" y="10.309" width="0.688" height="1"></rect>
+	<rect x="6.068" y="10.309" width="0.688" height="1"></rect>
+	<path d="M11.566,34.893h10.5v-6.834h-10.5V34.893z M12.566,29.059h8.5v4.834h-8.5V29.059z"></path>
+	<circle cx="16.817" cy="31.56" r="1.333"></circle>
+	<rect x="19.557" y="29.434" width="0.688" height="1"></rect>
+	<rect x="13.246" y="29.434" width="0.688" height="1"></rect>
+	<rect x="19.557" y="32.309" width="0.688" height="1"></rect>
+	<rect x="13.246" y="32.309" width="0.688" height="1"></rect>
+	<path d="M25.816,16.059v6.833h10.5v-6.833H25.816z M35.316,21.893h-8.5v-4.833h8.5V21.893z"></path>
+	<circle cx="31.066" cy="19.559" r="1.334"></circle>
+	<rect x="33.807" y="17.434" width="0.688" height="1"></rect>
+	<rect x="27.494" y="17.434" width="0.688" height="1"></rect>
+	<rect x="33.807" y="20.309" width="0.688" height="1"></rect>
+	<rect x="27.494" y="20.309" width="0.688" height="1"></rect>
+</g>                    </svg>
+                    <span>Post Trade Allocations</span> 
+				</a> 
+				<a href="#tpi-employeetrack" target="_self" class="page-scroll">
+                    <svg role="img">
+                        <title>EmployeeTrack</title>
+                        <g>
+	<path d="M5.777,30.602c-1.062,0-1.925,0.862-1.925,1.924c0,1.062,0.863,1.926,1.925,1.926s1.925-0.863,1.925-1.926
+	C7.702,31.464,6.839,30.602,5.777,30.602z M5.777,33.352c-0.455,0-0.825-0.371-0.825-0.826s0.37-0.824,0.825-0.824
+	s0.825,0.369,0.825,0.824S6.232,33.352,5.777,33.352z"></path>
+	<polygon points="37.057,27.674 34.449,26.657 34.583,27.522 9.319,31.355 9.484,32.442 34.751,28.609 
+	34.877,29.427 	"></polygon>
+	<polygon points="32.615,20.857 34.169,18.532 31.378,18.343 31.763,19.125 8.808,30.354 9.291,31.341 
+	32.248,20.111 	"></polygon>
+	<polygon points="27.889,13.359 28.68,10.673 25.962,11.328 26.565,11.964 8.015,29.539 8.772,30.338 27.322,12.762 
+		"></polygon>
+	<polygon points="21.137,7.616 21.088,4.819 18.689,6.258 19.452,6.681 7.02,29.008 7.981,29.543 20.414,7.215 	"></polygon>
+</g>                    </svg>
+                    <span>EmployeeTrack</span> 
+				</a> 
+			</div>
+        </div>
+    </div>
+</section>
+<!-- BEGIN TPI DETAILS CONTENT ------------------------------------------------>
+<section id="tpi-portfolio">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-6 be-1">
+                <h2>Portfolio Management</h2>
+                <p>Portfolio management software typically allows you to manage your investments and analyze your portfolio with a variety of tools. Interactive Brokers customers can currently request integration with the third-party portfolio management software providers listed below.</p><br>
+                <h5>Interactive Brokers Reporting Integration Tool</h5>
+                <p>We provide a reporting data feed from the IBKR generic reporting interface for clients who want to integrate that data with third-party software not listed on this page.</p>
+                <p><a href="https://www.interactivebrokers.com/en/software/ibrit/reportintegration.htm" target='_blank' class="btn btn-sm btn-primary">Developer's Guide: Online</a>   <a href="/download/reportIntegration.pdf" target='_blank' class="btn btn-sm btn-primary">Developer's Guide: PDF</a></p>
+        	</div>
+        	<div class="col-12 col-lg-6 text-center">
+                  <div class="pa-banner">
+                    <h3 class="text-bold fs-6 lh-6">Why pay for a third-party portfolio management tool?</h3>
+                    <!-- USE AS A LINK -->
+                    <a href="https://www.portfolioanalyst.com" target="_self" class="logo-portfolioanalyst d-dark-none" title="PortfolioAnalyst" aria-label="PortfolioAnalyst"></a>
+                    <a href="https://www.portfolioanalyst.com" target="_self" class="logo-portfolioanalyst-inverse d-light-none" title="PortfolioAnalyst" aria-label="PortfolioAnalyst"></a>
+                    <!--<img src="/images/web/pa-logo-on-light.svg" alt="portfolio management tool" loading="lazy" style="max-width:280px; height:auto; margin:25px 0 15px 0" />-->
+                    <p class="fs-6 lh-6">Use Interactive Brokers' PortfolioAnalyst portfolio management tool for free!</p><br>
+                     <a href="https://www.portfolioanalyst.com/en/pa/home.php" class="btn btn-sm btn-primary">Find Out More</a>
+                  </div>
+            </div> 
+		</div>
+        <div class="row">
+        	<div class="col-12">
+            	<br>
+                <br>
+                <p>In addition to the download solutions listed below, a number of other third-party providers offer portfolio management and tax reporting packages that integrate with our HTML downloads. Contact the provider for details.</p>
+                <h5>Contact your IBKR Sales Representative to request integration with a third-party portfolio management provider not listed below.</h5><br>
+                <h3>Download to:</h3>
+                <hr>
+            </div>
+        </div>
+            	<div class="row pm-layout">
+            <!-- Addepar -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.addepar.com" data-myp1="We provide a direct data feed to Addepar." data-myp2="To import your IBKR statement data into Addepar, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_addepar.png" alt="Addepar" loading="lazy" width="300" height="100"></button></div>
+            <!-- ADDIKA -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.addika.io" data-myp1="We provide a direct data feed to ADDIKA." data-myp2="To import your IBKR statement data into ADDIKA, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_addika.png" alt="ADDIKA" loading="lazy" width="300" height="100"></button></div>
+            <!-- Advent -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.advent.com" data-myp1="We provide a direct data feed to Advent. Only stocks, options, bonds and futures data are available for Advent Custodial Data, which IBKR converts to USD." data-myp2="To import your IBKR statement data into Advent, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_advent.png" alt="Advent" loading="lazy" width="300" height="100"></button></div>
+            <!-- ADVYZON -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://main.yhlsoft.com/main/index.html" data-myp1="" we="" provide="" a="" direct="" data="" feed="" to="" advyzon.="" only="" stocks,="" options,="" bonds="" and="" futures="" data="" are="" available="" for="" advyzon="" solutions,="" which="" ibkr="" converts="" to="" usd."="" data-myp2="To import your IBKR statement data into Advyzon, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_advyzon.png" alt="Advyzon" loading="lazy" width="300" height="100"></button></div>
+            <!-- SGGG Alpha Desk -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.alphadesk.com" data-myp1="We provide a direct data feed to SGGG." data-myp2="To import your IBKR statement data into SGGG, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_alphadesk.png" alt="SGGG" loading="lazy" width="300" height="100"></button></div>
+            <!-- ARBOR -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.arborfs.com" data-myp1="We provide a direct data feed to Arbor FS." data-myp2="To import your IBKR statement data into Arbor FS, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_arbor.png" alt="Arbor FS" loading="lazy" width="300" height="100"></button></div>
+            <!-- ARCHER -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.archerims.com" data-myp1="We provide a direct data feed to Archer." data-myp2="To import your IBKR statement data into Archer, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_archer.png" alt="Archer" loading="lazy" width="300" height="100"></button></div>
+            <!-- ARCHWAY -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.archwaytechnology.net" data-myp1="We provide a direct data feed to Archway." data-myp2="To import your IBKR statement data into Archway, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_archway.png" alt="Archway" loading="lazy" width="300" height="100"></button></div>
+            <!-- Athena Systems -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.athenasystems.com">
+                <img src="../../images/2015/logos/company_logo_athena_systems.png" alt="Athena Systems" loading="lazy" width="300" height="100"></button></div>
+            <!-- BILLFIN -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://support.billfin.com/portal/home" data-myp1="We provide a direct data feed to BillFin." data-myp2="To import your IBKR statement data into BillFin, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_billfin.png" alt="BillFin" loading="lazy" width="300" height="100"></button></div>
+            <!-- BLOOMBERG -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.bloomberg.com" data-myp1="We provide a direct data feed to Bloomberg." data-myp2="To import your IBKR statement data into Bloomberg, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_bloomberg.png" alt="Bloomberg" loading="lazy" width="300" height="100"></button></div>
+            <!-- BLUELEAF -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.blueleaf.com" data-myp1="We provide a direct data feed to Blueleaf." data-myp2="To import your IBKR statement data into Blueleaf, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_blueleaf.png" alt="Blueleaf" loading="lazy" width="300" height="100"></button></div>
+            <!-- BRIDGEFT -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.bridgeft.com" data-myp1="We provide a direct data feed to BridgeFT." data-myp2="To import your IBKR statement data into BridgeFT, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_bridgeft.png" alt="BridgeFT" loading="lazy" width="300" height="100"></button></div>
+            <!-- BROADRIDGE -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.broadridge.com" data-myp1="We provide a direct data feed to Broadridge Investigo and Paladyne." data-myp2="To import your IBKR statement data into Broadridge, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_broadridge.png" alt="Broadridge" loading="lazy" width="300" height="100"></button></div>
+            <!-- Canpopy -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.canopy.cloud" data-myp1="We provide a direct data feed to Canopy." data-myp2="To import your IBKR statement data into Canopy, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_canopy.png" alt="Canopy" loading="lazy" width="300" height="100"></button></div>
+            <!-- CAPTOOLS -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.captools.net/" data-myp1="We provide Daily Captools Downloads on the Activity Downloads page in Client Portal. The downloadable single zipped file contains an Account, Activity, Position and Security file." data-myp2="To import your IBKR statement data into Captools, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_captoolsnet.png" alt="Captools" loading="lazy" width="300" height="100"></button></div>
+            <!-- Circle Black -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.circleblack.com" data-myp1="We provide a direct data feed to CircleBlack." data-myp2="To import your IBKR statement data into CircleBlack, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_circleblack.png" alt="CircleBlack" loading="lazy" width="300" height="100"></button></div>
+            <!-- CORNERSTONE -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.poweradvisortools.com" data-myp1="We provide a direct data feed to Cornerstone Power Advisor." data-myp2="To import your IBKR statement data into Cornerstone Power Advisor, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_cornerstone.png" alt="Cornerstone Power Advisor" loading="lazy" width="300" height="100"></button></div>
+            <!-- DST -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.dstsystems.com/" data-myp1="We provide a direct data feed to DST Vision Professional." data-myp2="To import your IBKR statement data into DST Vision Professional, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_dst.png" alt="DST Vision Professional" loading="lazy" width="300" height="100"></button></div>
+            <!-- ELECTRA -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.electrainfo.com" data-myp1="We provide a direct data feed to Electra." data-myp2="To import your IBKR statement data into Electra, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_electra.png" alt="Electra" loading="lazy" width="300" height="100"></button></div>
+            <!-- EMONEY -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.emoneyadvisor.com" data-myp1="We provide a direct data feed to eMoney." data-myp2="To import your IBKR statement data into eMoney, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_emoney.png" alt="eMoney" loading="lazy" width="300" height="100"></button></div>
+            <!-- EMOtomy -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.emotomy.com" data-myp1="We provide a direct data feed to Emotomy." data-myp2="To import your IBKR statement data into Emotomy, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_emotomy.png" alt="Emotomy" loading="lazy" width="300" height="100"></button></div>
+            <!-- Enfusion -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.enfusionsystems.com" data-myp1="We provide a direct data feed to Enfusion." data-myp2="To import your IBKR statement data into Enfusion, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_enfusion.png" alt="Enfusion" loading="lazy" width="300" height="100"></button></div>
+            <!-- ENVESTNET TAMARAC -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://tamaracpc.com/" data-myp1="If you would like to import your IBKR data into PortfolioCenter Downloads, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>. You can download Security, Portfolio, Price, Transaction, Position, Reconciliation and Cost Basis Reconciliation files individually or you can download all files in a single zipped file. You can also request FTP delivery by contacting your IBKR Sales Representative or by emailing us at the email address mentioned above. " data-myp2="Stocks, options, bonds, bills and funds data is included and converted to your account's base currency.">
+                <img src="../../images/2015/logos/company_logo_envestnet-tamarac.png" alt="PortfolioCenter" loading="lazy" width="300" height="100"></button></div>
+            <!-- EQUALIZER -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://bdequalizer.com/Marketing/index.aspx" data-myp1="We provide a direct data feed to Equalizer." data-myp2="To import your IBKR statement data into Equalizer, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_equalizer.png" alt="Equalizer" loading="lazy" width="300" height="100"></button></div>
+            <!-- Everysk -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.everysk.com" data-myp1="We provide a direct data feed to Everysk." data-myp2="To import your IBKR statement data into Everysk, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_everysk.png" alt="Everysk" loading="lazy" width="300" height="100"></button></div>
+            <!-- FACTSET -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.factset.com" data-myp1="We provide a direct data feed to FactSet, a leading provider of financial  information and analytics that help the world's best investment professionals outperform. More than 55,500 users stay ahead of global market trends, access extensive company and industry intelligence, and monitor performance with FactSet's desktop analytics, mobile applications, and comprehensive data feeds. For more information, contact <a href='mailto:sales@factset.com'>sales@factset.com</a>." data-myp2="To import your IBKR statement data into FactSet, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_factset.png" alt="FactSet" loading="lazy" width="300" height="100"></button></div>
+            <!-- FinFolio -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.FinFolio.com" data-myp1="We provide a direct data feed to FinFolio." data-myp2="To import your IBKR statement data into FinFolio, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_finfolio.png" alt="FinFolio" loading="lazy" width="300" height="100"></button></div>
+            <!-- FIRM 58 -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.firm58.com" data-myp1="We provide a direct data feed to Firm 58." data-myp2="To import your IBKR statement data into Firm 58, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_firm58.png" alt="Firm 58" loading="lazy" width="300" height="100"></button></div>
+            <!-- Formidium -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://formidium.com" data-myp1="We provide a direct data feed to Formidium." data-myp2="To import your IBKR statement data into Formidium Seamless Solutions, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_formidium.png" alt="Formidium" loading="lazy" width="300" height="100"></button></div>
+            <!-- ft options -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.ftoptions.com" data-myp1="We provide a direct data feed to FT Options." data-myp2="To import your IBKR statement data into FT Options, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_ft_options.png" alt="FT Options" loading="lazy" width="300" height="100"></button></div>
+            <!-- FundCount -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.fundcount.com" data-myp1="We provide a direct data feed to FundCount." data-myp2="To import your IBKR statement data into FundCount, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_fundcount.png" alt="FundCount" loading="lazy" width="300" height="100"></button></div>
+            <!-- Fund Manager -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.fundmanagersoftware.com" data-myp1="We provide a direct data feed to Fund Manager Software." data-myp2="To import your IBKR statement data into Fund Manager Software, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_fund_manager.png" alt="Fund Manager Software" loading="lazy" width="300" height="100"></button></div>
+            <!-- FundSeeder -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.fundseeder.com" data-myp1="We provide a direct data feed to FundSeeder." data-myp2="To import your IBKR statement data into FundSeeder, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_fund_seeder.png" alt="FundSeeder" loading="lazy" width="300" height="100"></button></div>
+            <!-- FUSION -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.fusionadvisor.com" data-myp1="We provide a direct data feed to Fusion Advisor." data-myp2="To import your IBKR statement data into Fusion Advisor, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_fusion_advisor.png" alt="Fusion Advisor" loading="lazy" width="300" height="100"></button></div>
+            <!-- FUSIONIQ -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://fusioniq.io" data-myp1="We provide a direct data feed to FusionIQ." data-myp2="To import your IBKR statement data into FusionIQ, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_fusioniq.png" alt="FusionIQ" loading="lazy" width="300" height="100"></button></div>
+            <!-- GoalTech -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.goaltech.net" data-myp1="We provide a direct data feed to GoalTech." data-myp2="To import your IBKR statement data into GoalTech, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_goalTech.png" alt="GoalTech" loading="lazy" width="300" height="100"></button></div>
+            <!-- HAS -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.hanlon.com" data-myp1="To import to HAS, contact HAS to request the data feed." data-myp2="Once HAS has processed your request, they will contact IBKR to link your account to the HAS data feed.">
+                <img src="../../images/2015/logos/company_logo-hanlon-advisory.png" alt="Hanlon Advisory Software (HAS)" loading="lazy" width="300" height="100"></button></div>
+            <!-- Intelliflo -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.intelliflo.com/us/" data-myp1="We provide a direct data feed to Intelliflo." data-myp2="To import your IBKR statement data into Intelliflo, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_intelliflo.png" alt="Intelliflo" loading="lazy" width="300" height="100"></button></div>
+            <!-- Kinfo -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://kinfo.com" data-myp1="We provide a direct data feed to Kinfo." data-myp2="To import your IBKR statement data into Kinfo, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+            <img src="../../images/2015/logos/company_logo_kinfo.png" alt="Kinfo" loading="lazy" width="300" height="100"></button></div>
+            <!-- LIMINA -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.limina.com" data-myp1="We provide a direct data feed to Limina Financial Systems." data-myp2="To import your IBKR statement data into Limina Financial Systems, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_limina.png" alt="Limina Financial Systems" loading="lazy" width="300" height="100"></button></div>
+            <!-- MASTTRO -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.masttro.com" data-myp1="We provide a direct data feed to MASTTRO." data-myp2="To import your IBKR statement data into MASTTRO, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_masttro.png" alt="MASTTRO" loading="lazy" width="300" height="100"></button></div>
+            <!-- MORNINGSTAR -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.morningstar.com/business/brands/wealth" data-myp1="We provide a direct data feed to MorningStar Office and MorningStar ByAllAccounts." data-myp2="To import your IBKR statement data into MorningStar Office or MorningStar ByAllAccounts, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.<br>For more information about MorningStar Office, visit <a href='https://www.morningstar.com/business/brands/wealth/products/morningstar-office' target='_blank'>Morningstar Office</a><br>For more information about MorningStar ByAllAccounts, visit <a href='http://byallaccounts.morningstar.com/' target='_blank'>http://byallaccounts.morningstar.com</a>">
+                <img src="../../images/2015/logos/company_logo_morningstar-1.png" alt="MorningStar" loading="lazy" width="300" height="100"></button></div>
+            <!-- MYDESQ -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.mydesq.com" data-myp1="We provide a direct data feed to Mydesq." data-myp2="To import your IBKR statement data into Mydesq, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_mydesq.png" alt="Mydesq" loading="lazy" width="300" height="100"></button></div>
+            <!-- NDEX SYSTEMS -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.ndexsystems.com" data-myp1="We provide a direct data feed to NDEX." data-myp2="To import your IBKR statement data into NDEX, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_ndex_systems.png" alt="NDEX" loading="lazy" width="300" height="100"></button></div>
+            <!-- NORTHSTAR RISK-->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.northstarrisk.com" data-myp1="We provide a direct data feed to Northstar Risk." data-myp2="To import your IBKR statement data into Northstar Risk, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_north-star-risk.png" alt="Northstar Risk" loading="lazy" width="300" height="100"></button></div>
+            <!-- OPEN FINANCE -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.openfinance.com" data-myp1="We provide a direct data feed to Open Finance." data-myp2="To import your IBKR statement data into Open Finance, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_open_finance.png" alt="Open Finance" loading="lazy" width="300" height="100"></button></div>
+            <!-- OPTURO -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.opturo.com" data-myp1="We provide a direct data feed to Opturo." data-myp2="To import your IBKR statement data into Opturo, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_opturo.png" alt="Opturo" loading="lazy" width="300" height="100"></button></div>
+            <!-- ORION -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.orionadvisor.com" data-myp1="We provide a direct data feed to Orion." data-myp2="To import your IBKR statement data into Orion, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_orion.png" alt="Orion" loading="lazy" width="300" height="100"></button></div>
+            <!-- Otos -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.the-gears.com/otoswealthsystem" data-myp1="We provide a direct data feed to OTOS." data-myp2="To import your IBKR statement data into OTOS, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_otos.png" alt="OTOS" loading="lazy" width="300" height="100"></button></div>
+            <!-- Panoramix -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.panoramixfinancial.com" data-myp1="We provide a direct data feed to Panoramix Financial." data-myp2="To import your IBKR statement data into Panoramix Financial, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_panoramix.png" alt="Panoramix Financial" loading="lazy" width="300" height="100"></button></div>
+            <!-- portfolio shop -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.portfolioshop.com" data-myp1="We provide a direct data feed to PortfolioShop." data-myp2="To import your IBKR statement data into PortfolioShop, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_portfolio_shop.png" alt="PortfolioShop" loading="lazy" width="300" height="100"></button></div>
+            <!-- PRIVATE CLIENT RESOURCES -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.pcrinsights.com" data-myp1="We provide a direct data feed to Private Client Resources." data-myp2="To import your IBKR statement data into Private Client Resources, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_private_client_resources.png" alt="Private Client Resources" loading="lazy" width="300" height="100"></button></div>
+            <!-- PROPREPORTS -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.propreports.com" data-myp1="We provide a direct data feed to PropReports." data-myp2="To import your IBKR statement data into PropReports, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_propreports.png" alt="PropReports" loading="lazy" width="300" height="100"></button></div>
+            <!-- QUOVO -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.quovo.com" data-myp1="We provide a direct data feed to Quovo." data-myp2="To import your IBKR statement data into Quovo, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_quovo.png" alt="Quovo" loading="lazy" width="300" height="100"></button></div>
+            <!-- RightCapital -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.rightcapital.com" data-myp1="We provide a direct data feed to RightCapital." data-myp2="To import your IBKR statement data into RightCapital, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_right-capital.png" alt="RightCapital" loading="lazy" width="300" height="100"></button></div>
+            <!-- Riskalyze -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.riskalyze.com" data-myp1="We provide a direct data feed to Riskalyze." data-myp2="To import your IBKR statement data into Riskalyze, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_riskalyze.png" alt="Riskalyze" loading="lazy" width="300" height="100"></button></div>
+            <!-- Sequential IT WebView -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.sequentialit.com" data-myp1="We provide a direct data feed to Sequential IT WebView or any of your in house systems via their DataView adaptors." data-myp2="To import your IBKR statement data, contact Sequential IT to request the data feed. Once Sequential IT has processed your request, they will contact IBKR to link your account.">
+                <img src="../../images/2015/logos/company_logo_sequential_it.png" alt="WebView" loading="lazy" width="300" height="100"></button></div>
+            <!-- sharesight -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.sharesight.com" data-myp1="We provide a direct data feed to Sharesight." data-myp2="To import your IBKR statement data into Sharesight, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_sharesight.png" alt="Sharesight" loading="lazy" width="300" height="100"></button></div>
+            <!-- Silexx -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.silexx.com" data-myp1="We provide a direct data feed to Silexx Financial Systems." data-myp2="To import your IBKR statement data into Silexx Financial Systems, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_silexx.png" alt="Silexx Financial Systems" loading="lazy" width="300" height="100"></button></div>
+            <!-- S AND P CAPITAL IQ -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.spcapitaliq.com" data-myp1="We provide a direct data feed to Capital IQ." data-myp2="To import your IBKR statement data into Capital IQ, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_sp_capital_iq.png" alt="Capital IQ" loading="lazy" width="300" height="100"></button></div>
+            <!-- StockRover -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.stockrover.com" data-myp1="We provide a direct data feed to StockRover." data-myp2="To import your IBKR statement data into StockRover, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_stockrover.png" alt="StockRover" loading="lazy" width="300" height="100"></button></div>
+            <!-- STP - Suisse TechPartners STP -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.pm-plus.com/stp-company" data-myp1="We provide a direct data feed to PMplus by SuisseTechPartners." data-myp2="To import your IBKR statement data into PMplus by SuisseTechPartners, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_stp.png" alt="PMplus by SuisseTechPartners" loading="lazy" width="300" height="100"></button></div>
+            <!-- Theorem Technologies -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.theorem.io" data-myp1="We provide a direct data feed to Theorem Technologies." data-myp2="To import your IBKR statement data into Theorem Technologies, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_theorem.png" alt="Theorem Technologies" loading="lazy" width="300" height="100"></button></div>
+            <!-- Toogood -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.toogood.com" data-myp1="We provide a direct data feed to Toogood Financial Systems." data-myp2="To import your IBKR statement data into Toogood Financial Systems, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_toogood.png" alt="Toogood Financial Systems" loading="lazy" width="300" height="100"></button></div>
+            <!-- Trademetria -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.trademetria.com" data-myp1="We provide a direct data feed to Trademetria." data-myp2="To import your IBKR statement data into Trademetria, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_trademetria.png" alt="Trademetria" loading="lazy" width="300" height="100"></button></div>
+            <!-- TraderSync -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://tradersync.com" data-myp1="We provide a direct data feed to TraderSync." data-myp2="To import your IBKR statement data into TraderSync, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_tradersync.png" alt="TraderSync" loading="lazy" width="300" height="100"></button></div>
+            <!-- TradesViz -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://tradesviz.com" data-myp1="We provide a direct data feed to TradesViz.php." data-myp2="To import your IBKR statement data into TradesViz.php, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_tradesviz.png" alt="TradesViz" loading="lazy" width="300" height="100"></button></div>
+            <!-- Trading Front -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.tradingfront.com" data-myp1="We provide a direct data feed to TradingFront." data-myp2="To import your IBKR statement data into TradingFront, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_tradingfront.png" alt="TradingFront" loading="lazy" width="300" height="100"></button></div>
+            <!-- Trinlogix -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.trinlogix.com" data-myp1="We provide a direct data feed to Trinlogix." data-myp2="To import your IBKR statement data into Trinlogix, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_trinlogix.png" alt="Trinlogix" loading="lazy" width="300" height="100"></button></div>
+            <!-- TRUST FORT -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.trustfort.com" data-myp1="We provide a direct data feed to Trust Fort." data-myp2="To import your IBKR statement data into Trust Fort, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_trust_fort.png" alt="Trust Fort" loading="lazy" width="300" height="100"></button></div>
+            <!-- Ultimus Fund Solutions -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.ultimusfundsolutions.com" data-myp1="We provide a direct data feed to Ultimus Fund Solutions." data-myp2="To import your IBKR statement data into Ultimus Fund Solutions, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_ultimus_fund.png" alt="Ultimus Fund Solutions" loading="lazy" width="300" height="100"></button></div>
+            <!-- Vestr -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.vestr.com" data-myp1="We provide a direct data feed to Vestr." data-myp2="To import your IBKR statement data into Vestr, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_vestr.png" alt="Vestr" loading="lazy" width="300" height="100"></button></div>
+            <!-- VestServe -->
+            <div class="col-6 col-md-2 no-padding"><button type="button" href="#thirdPartyModal" data-bs-toggle="modal" data-bs-target="#thirdPartyModal" data-myweblink="https://www.vestserve.com" data-myp1="We provide a direct data feed to VestServe." data-myp2="To import your IBKR statement data into VestServe, contact your IBKR Sales Representative or email <a href='mailto:reportingintegration@interactivebrokers.com'>reportingintegration@interactivebrokers.com</a>.">
+                <img src="../../images/2015/logos/company_logo_vestserve.png" alt="VestServe" loading="lazy" width="300" height="100"></button></div>
+		</div>
+	</div>
+</section>
+<!-- Third Party Modal -->
+<div class="modal fade tpmodal" id="thirdPartyModal" tabindex="-1" role="dialog" aria-labelledby="thirdPartyModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+        	<span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title">Downloading to <span class="co-name">COMPANY_NAME</span></h4>
+      </div>
+      <div class="modal-body">
+        <div align="center">
+            <img src="/images/2015/logos/company_logo_image_name.png" alt="co-name" loading="lazy" style="margin:40px 0px;">
+        </div>
+        <p class="paragraph1">Typically reads: We provide a direct data feed to COMPANY_NAME.</p>
+        <p class="paragraph2">Typically reads: To import your IBKR statement data into COMPANY_NAME, contact your IBKR Sales Representative or email <a href="mailto:reportingintegration@interactivebrokers.com">reportingintegration@interactivebrokers.com</a>. </p>
+        <p>For more information about <span class="co-name">COMPANY_NAME</span>, visit <a class="company-link" href="https://www.abc.com" target='_blank'>https://www.abc.com</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- BEGIN ORDER MANAGEMENT ------------------------------------------------>
+<section id="tpi-order" class="gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h2>Order Management</h2>
+                <p>An order management system (OMS) is a software system designed to efficiently execute securities orders in a cost-effective way. Brokers and dealers use an OMS to fill orders for different types of securities and track the order progress through the system. Interactive Brokers maintains trading relationships with the third-party OMS providers listed below.</p>
+                <h5>Contact your IBKR Sales Representative to request integration with a specific OMS provider.</h5>
+                <br>
+            </div>
+    	</div>
+    	<div class="row">
+    		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <p><a href="https://www.abnamro.com/en/index.html" target='_blank' class="linkexternal"><strong>ABN Amro</strong></a></p>
+                <p><a href="https://www.broadridge.com/" target='_blank' class="linkexternal"><strong>ADP/Broadridge</strong></a></p>
+                <p><a href="https://www.bloomberg.com/professional/product/execution-management-system/" target='_blank' class="linkexternal"><strong>Bloomberg EMSX</strong></a></p>
+                <p><a href="https://www.crd.com/" target='_blank' class="linkexternal"><strong>Charles River Systems, Inc.</strong></a> <br>IBKR is certified with this OMS provider.</p>
+<p><a href="https://www.enfusionsystems.com/" target='_blank' class="linkexternal"><strong>Enfusion Systems</strong></a></p>              
+  <p><a href="https://www.ezesoft.com/" target='_blank' class="linkexternal"><strong>Eze Castle OMS</strong></a><br> FIX CTCI integration</p>
+               <p><a href="https://www.dastrader.com/" target='_blank' class="linkexternal"><strong>DASTrader</strong></a></p>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+ <p><a href="https://www.flextrade.com/%20" target='_blank' class="linkexternal"><strong>FlexTrade Systems</strong></a><br> Order routing</p>
+                <p><a href="https://www.derivatives.com/" target='_blank' class="linkexternal"><strong>Imagine Software</strong></a><br> FIX CTCI integration</p>
+                <p><a href="https://www.inforeachinc.com" target='_blank' class="linkexternal"><strong>InfoReach</strong></a></p>
+                <p><a href="https://www.instinet.com/index.html" target='_blank' class="linkexternal"><strong>Instinet/Newport</strong></a></p>
+                <p><a href="https://www.linedata.com/" target='_blank' class="linkexternal"><strong>LineData </strong></a></p>
+                <p><a href="https://www.neovest.com/" target='_blank' class="linkexternal"><strong>Neovest</strong></a></p>
+                <p><a href="https://realtick.com/default.aspx" target='_blank' class="linkexternal"><strong>RealTick</strong></a></p>
+            </div>
+    		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">  
+                <p><a href="https://www.refinitiv.com/en/products/autex-trade-route" target='_blank' class="linkexternal"><strong>Refinitiv/Autex Trade Route</strong></a></p>
+                <p><a href="https://www.refinitiv.com/en/products/redi-execution-management" target='_blank' class="linkexternal"><strong>REDI</strong></a></p>
+                <p><a href="https://www.sterlingtradingtech.com" target='_blank' class="linkexternal"><strong>Sterling Trading Tech</strong></a></p>
+                <p><a href="https://www.itiviti.com/" target='_blank' class="linkexternal"><strong>Tradeware</strong></a></p>
+                <p><a href="https://www.tradeweb.com/" target='_blank' class="linkexternal"><strong>ULLink/Itiviti</strong></a></p>
+                <br>
+    		</div>
+    	</div>
+    </div>
+</section>
+<!-- BEGIN POST TRADE ALLOCATIONS ------------------------------------------------>
+<section id="tpi-post-trade">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h2>Post Trade Allocations</h2>
+                <p>Post trade allocation software lets you allocate trades to clearing brokers. You can use IBKR's own Post Trade Allocations tool or a third-party software provider listed below.</p>
+                <p>IBKR's intuitive web-based Post Trade Allocation (PTA) tool lets investors quickly allocate US stock, option and US corporate bond orders post-trade. The PTA tool, available from within the Client Portal, lists all the day's unallocated trades, and provides customizable template-based functionality to easily allocate all or some of your trades to multiple pre-approved clearing brokers.</p>
+                <p>For more information about IBKR's PTA tool, see the <a href="https://www.interactivebrokers.com/en/software/am/am/trade/posttradeallocations.htm" target='_blank' class="linkexternal">Client Portal Users' Guide</a>.</p>
+                <br>
+                <p>Contact your IBKR Sales Representative to request integration with a specific post trade allocation software provider.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- BEGIN EMPLOYEE TRACK ------------------------------------------------>
+<section id="tpi-employeetrack" class="gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <h2>EmployeeTrack</h2>
+                <p>IBKR provides a data feed to EmployeeTrack Compliance Officers who want to integrate their data with third-party software. </p>
+                <p>We provide data feeds for the following third-party software: </p>
+                <ul>
+    <li>ACA ComplianceAlpha</li>
+    <li>Ascendant Compliance Manager</li>
+    <li>BasisCode</li>
+    <li>ComplySci</li>
+    <li>Evare</li>
+    <li>FIS Employee Compliance Manager</li>
+    <li>IQ-EQ</li>
+    <li>MyComplianceOffice</li>
+    <li>Orical</li>
+    <li>Paragon Data Labs</li>
+    <li>StarCompliance</li>
+    <li>Wolters Kluwer CCH</li>
+                </ul>
+              <p>To request a third-party data feed for your EmployeeTrack data, send a request via email to <a href="mailto:employeetrack@interactivebrokers.com" target="_self" class="linkexternal">employeetrack@interactivebrokers.com</a><br> or contact your <a href="../support/institutional-sales-contacts.php.html" target="_self">IBKR sales representative</a>. </p>
+            </div>
+			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-lg-offset-1 col-md-offset-1">
+                <span class="hidden-md hidden-lg"><hr></span>
+                <img src="../../images/2015/third_party_icon_001.png" loading="lazy" alt="Third Party" style="width:90px; height:auto; margin-top:20px">
+                <h5>EmployeeTrack Data Feed Integration Guide</h5>
+                <p>Compliance Officers with EmployeeTrack accounts can request a data feed from the IBKR generic reporting interface to integrate that data with third-party software NOT listed on this page.</p>
+                <br>
+                <p><a href="/en/software/et_dataguide/etdataguide.htm" target='_blank' class="btn btn-sm btn-primary">EmployeeTrack Data Feed Integration Guide</a></p>
+            </div> 
+        </div>
+    </div>
+</section>
+<!-- MODAL SCRIPT --> 
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#thirdPartyModal').on('show.bs.modal', function (event) {
+	  var button = $(event.relatedTarget) // Button that triggered the modal
+	  // var recipient = button.data('whatever') // Extract info from data-* attributes
+      var thirdPartyCompany = button.children('img').first().attr('alt');
+      var thirdPartyImg = button.children('img').first().attr('src'); // button.data('myimg');
+      var thirdPartyWeblink = button.data('myweblink');
+      var thirdPartyP1 = button.data('myp1');
+      var thirdPartyP2 = button.data('myp2');
+	  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+	  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+	  var tpmodal = $(this)
+	  tpmodal.find('.modal-header .modal-title').text( 'Downloading to ' + thirdPartyCompany );
+      tpmodal.find('.modal-body img').attr( "src" , thirdPartyImg );
+      tpmodal.find('.modal-body img').attr( "alt" , thirdPartyCompany );
+      tpmodal.find('.modal-body .co-name').text( thirdPartyCompany );
+      tpmodal.find('.modal-body p.paragraph1').html( thirdPartyP1 );
+      tpmodal.find('.modal-body p.paragraph2').html( thirdPartyP2 );
+      tpmodal.find('.modal-body a.company-link').text( thirdPartyWeblink );
+      tpmodal.find('.modal-body a.company-link').attr( "href" , thirdPartyWeblink );
+	})
+});
+</script>
+</div>
+<!-- FOOTER START ---------------------------------------------------------------------------------------------------- -->
+<footer class="footer noprint" id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p>Interactive Brokers ®, IB<sup>SM</sup>, InteractiveBrokers.com ®, Interactive Analytics ®, IB Options Analytics<sup>SM</sup>, IB SmartRouting<sup>SM</sup>, PortfolioAnalyst ®, IB Trader Workstation<sup>SM</sup> and One World, One Account<sup>SM</sup> are service marks and/or trademarks of Interactive Brokers LLC. Supporting documentation for any claims and statistical information will be provided upon request. Any trading symbols displayed are for illustrative purposes only and are not intended to portray recommendations.</p>
+                <p>The risk of loss in online trading of stocks, options, futures, currencies, foreign equities, and fixed Income can be substantial.</p>
+                <p>Options involve risk and are not suitable for all investors. For more information read the <a href="https://www.theocc.com/about/publications/character-risks.jsp" rel="noreferrer noopener" target="_blank">Characteristics and Risks of Standardized Options</a>, also known as the options disclosure document (ODD). Alternatively, please contact <a href="../support/customer-service.php.html?p=contact" target="_self">IB Customer Service</a> to receive a copy of the ODD. Before trading, clients must read the relevant risk disclosure statements on our <a href="../general/homepage-disclosures.php.html" target="_self">Warnings and Disclosures page</a>. Trading on margin is only for experienced investors with high risk tolerance. You may lose more than your initial investment. For additional information about rates on margin loans, please see <a href="margin-rates.php.html" target="_self">Margin Loan Rates</a>. Security futures involve a high degree of risk and are not suitable for all investors. The amount you may lose may be greater than your initial investment. Before trading security futures, read the <a href="../general/homepage-disclosures.php.html" target="_self">Security Futures Risk Disclosure Statement</a>. Structured products and fixed income products such as bonds are complex products that are more risky and are not suitable for all investors. Before trading, please read the <a href="../general/homepage-disclosures.php.html" target="_self">Risk Warning and Disclosure Statement</a>.</p>
+                <p>For information on the IBKR ATS, please <a href="https://www.sec.gov/divisions/marketreg/form-ats-n-filings.htm#ats-n" rel="noreferrer noopener" target="_blank">visit the SEC site</a>.</p>
+                <p>34 countries include both countries and territories.</p>
+			</div>
+		</div>
+        <div class="footer-site-links" id="footerSiteLinks">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>Account</p>
+                    <ul>
+                    <li><a href="/sso/Login?RL=1" target="_self">Log In</a></li>
+                    <li><a href="/Universal/Application" target="_self">Open an Account</a></li>
+                    <li><a href="/sso/Login?c=t" target="_self">Finish an Application</a></li>
+                    <li><a href="../accounts/account-guide.php.html" target="_self">Account Types</a></li>
+                    <li><a href="/Universal/Application?ft=T" target="_self">Free Trial</a></li>
+                    </ul>
+                    <p>Software & Downloads</p>
+                    <ul>
+                    <li><a href="tws.php.html#tws-software" target="_self">Trader Workstation</a></li>
+                    <li><a href="ibkr-desktop.php.html" target="_self">IBKR Desktop</a></li>
+                    <li><a href="tws-mobile.php.html#trytoday" target="_self">IBKR Mobile</a></li>
+                    <li><a href="ib-api.php.html#api-software" target="_self">APIs</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>Support</p>
+                    <ul>
+                    <li><a href="../support/fund-my-account.php.html" target="_self">Fund Your Account</a></li>
+					<li><a href="../support/individuals.php.html" target="_self">For Individuals</a></li>
+                    <li><a href="../support/institutions.php.html" target="_self">For Institutions</a></li>
+                    <li><a href="../support/institutional-sales-contacts.php.html" target="_self">Institutional Sales Contacts</a></li>
+					<li><a href="../general/contact/ibot-container.php.html" target="_self">Browse our FAQs</a></li>
+					<li><a href="../software/systemStatus.php.html" target="_self">System Status</a></li>
+                    </ul>
+                    <p>Vendor Support</p>
+                    <ul>
+                    <li><a href="../general/about/supplier-information.php.html" target="_self">Supplier Information</a></li>
+                    </ul>
+                    
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>About Us</p>
+                    <ul>
+                    <li><a href="../general/awards.php.html" target="_self">Awards</a></li>
+                    <li><a href="../general/about/careers-splash.php.html" target="_self">Careers</a></li>
+                    <li><a href="../general/about/about.php.html" target="_self">Information and History</a></li>
+                    <li><a href="https://investors.interactivebrokers.com/ir/main.php" target="_self">Investor Relations</a></li>
+                    <li><a href="../about/news-at-ibkr.php.html" target="_self">News @ IBKR</a></li>
+                    <li><a href="../general/about/press-and-media.php.html" target="_self">Press and Media</a></li>
+                    <li><a href="../accounts/legalDocuments/brokerPerformanceReports.php.html" target="_self">Regulatory Reports</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>Follow Us on Social Media</p>
+                    <ul>
+                    <li><a href="https://www.facebook.com/interactivebrokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com/interactivebrokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/company/interactive-brokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="https://www.twitter.com/ibkr" target="_blank" rel="noreferrer noopener"><i class="fab fa-x-twitter"></i> Twitter</a></li>
+                    <li><a href="https://www.youtube.com/interactivebrokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-youtube"></i> YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-disclosure-links" id="footerDisclosureLinks">
+            <div class="row">
+                <div class="col">
+                    <ul>
+                    <li><a href="../accounts/legalDocuments/accessibility-policy.php.html" target="_self">Accessibility Policy</a></li>
+                    <li><a href="../accounts/legalDocuments/anti-fraud-notice.php.html" target="_self">Anti-Fraud Notice</a></li>
+                    <li><a href="../accounts/legalDocuments/custIdentificationNotice.php.html" target="_self">Customer Identification Program Notice</a></li>
+                    <li><a href="../../Universal/servlet/Registration_v2-1.formSampleView?formdb=4024" target="_blank" rel="noreferrer noopener">Customer Relationship Summary</a></li>
+                    <li><a href="../general/warnings-on-frauds-and-scams.php.html" target="_self">Warning on Frauds and Scams</a></li>
+                    <li><a href="../accounts/forms-and-disclosures-client-agreements.php.html" target="_self">Forms and Disclosures</a></li>
+                    <li><a href="../accounts/legalDocuments/privacy.php.html" target="_self">Privacy</a></li>
+                    <li><a href="../sitemap/index.php.html" target="_self">Site Map</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-entities" id="footerEntities">
+            <div class="row">
+                <div class="col">
+                    <div class="footer-entity">
+                        <!-- IBKR LLC -->
+                        <p class="entity-name"><a href="https://www.interactivebrokers.com" target="_self">Interactive Brokers LLC</a></p>
+                        <p>Is a member <a rel="noreferrer noopener" target="_blank" href="https://www.nyse.com">NYSE</a> - <a href="https://www.finra.org" rel="noreferrer noopener" target="_blank">FINRA</a> - <a href="https://www.sipc.org" rel=" noreferrer noopener" target="_blank">SIPC</a> and regulated by the US Securities and Exchange Commission and the Commodity Futures Trading Commission.<br> <strong>Headquarters:</strong> One Pickwick Plaza, Greenwich, CT 06830 USA<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.com" target="_self">www.interactivebrokers.com</a></p>
+                                                <p class="footer-entities-link"><a href="#collapseEntities" target="_self" class="collapsed" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseEntities">Information on Other Interactive Brokers Affiliates</a></p>
+                    </div>
+                    <div class="footer-entities-list collapse" id="collapseEntities">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <!-- IBKR CA -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.ca/en/home.php?nored=t" target="_self">Interactive Brokers Canada Inc.</a></p>
+                                <p>Is a member of the                                 <a href="https://www.ciro.ca" target="_blank" rel="noreferrer noopener">Canadian Investment Regulatory Organization (CIRO)</a> 
+                                 
+                                and Member - <a href="https://www.cipf.ca" target="_blank" rel="noreferrer noopener">Canadian Investor Protection Fund.</a><br> <strong>Registered Office:</strong> 1800 McGill College Avenue, Suite 2106, Montreal, Quebec, H3A 3J6, Canada.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.ca/en/home.php?nored=t" target="_self">www.interactivebrokers.ca</a></p>
+                                <!-- IBKR UK -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.co.uk/en/home.php?nored=t" target="_self">Interactive Brokers (U.K.) Limited </a></p>
+                                <p>Is authorised and regulated by the <a href="https://www.fca.org.uk" target="_blank" rel="noreferrer noopener">Financial Conduct Authority</a>. FCA register entry number 208159. Incorporated in England & Wales under company number 03958476. <a href="https://www.fca.org.uk/firms/financial-services-register" target="_blank" rel="noreferrer noopener">[https://www.fca.org.uk/firms/financial-services-register]</a><br> <strong>Registered Office:</strong> 20 Fenchurch Street, Floor 12, London EC3M 3BY.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.co.uk/en/home.php?nored=t" target="_self">www.interactivebrokers.co.uk</a></p>
+                                <!-- IBKR IE -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.ie/en/home.php?nored=t" target="_self">Interactive Brokers Ireland Limited</a></p>
+                                <p>Is regulated by the <a href="https://www.centralbank.ie" target="_blank" rel="noreferrer noopener">Central Bank of Ireland</a> (CBI, reference number C423427), registered with the Companies Registration Office (CRO, registration number 657406), and is a member of the Irish Investor Compensation Scheme (ICS).<br> <strong>Registered Office:</strong> North Dock One, 91/92 North Wall Quay, Dublin 1 D01 H7V7, Ireland.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.ie/en/home.php?nored=t" target="_self">www.interactivebrokers.ie</a></p>
+                                <!-- IBKR HU -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.hu/en/home.php?nored=t" target="_self">Interactive Brokers Central Europe Zrt.</a></p>
+                                <p>Is licensed and regulated by the <a href="https://www.mnb.hu/" target="_blank" rel="noreferrer noopener">Central Bank of Hungary (Magyar Nemzeti Bank)</a> under no. H-EN-III-623/2020. Company registration number 01-10-141029. Registering Court: Company Registry of the Metropolitan General Court.<br> <strong>Registered Office:</strong> 1075 Budapest, Madách Imre út 13-14., Hungary.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.hu/en/home.php?nored=t" target="_self">www.interactivebrokers.hu</a></p>
+                                <!-- IBKR AUS -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.com.au/en/home.php?nored=t" target="_self">Interactive Brokers Australia Pty. Ltd.</a></p>
+                                <p>ABN 98 166 929 568 is licensed and regulated by the <a href="https://asic.gov.au/" target="_blank" rel="noreferrer noopener">Australian Securities and Investments Commission</a> (AFSL: 453554) and is a participant of <a href="https://www.asx.com.au/" target="_blank" rel="noreferrer noopener">ASX</a>, <a href="https://www.asx.com.au/" target="_blank" rel="noreferrer noopener">ASX 24</a> and <a href="https://www.cboe.com.au/" target="_blank" rel="noreferrer noopener">Cboe Australia</a>.<br> <strong>Registered Office:</strong> Level 11, 175 Pitt Street, Sydney, New South Wales 2000, Australia.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.com.au/en/home.php?nored=t" target="_self">www.interactivebrokers.com.au </a></p>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <!-- IBKR HK -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.com.hk/en/home.php?nored=t" target="_self">Interactive Brokers Hong Kong Limited</a></p>
+                                <p>Is regulated by the Hong Kong Securities and Futures Commission, and is a member of the <a href="https://www.hkex.com.hk" target="_blank" rel="noreferrer noopener">SEHK</a> and the <a href="https://www.hkex.com.hk" target="_blank" rel="noreferrer noopener">HKFE</a>.<br> <strong>Registered Office:</strong> Suite 1512, Two Pacific Place, 88 Queensway, Admiralty, Hong Kong SAR.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.com.hk/en/home.php?nored=t" target="_self">www.interactivebrokers.com.hk</a></p>
+                                <!-- IBKR IN -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.co.in/en/home.php?nored=t" target="_self">Interactive Brokers India Pvt. Ltd.</a></p>
+                                <p>Is a trading member of <a href="https://www.nseindia.com/" target="_blank" rel="noreferrer noopener">NSE</a>, <a href="https://www.bseindia.com/" target="_blank" rel="noreferrer noopener">BSE</a>, and depository participant of <a href="https://nsdl.co.in/" target="_blank" rel="noreferrer noopener">NSDL</a>. <a href="https://www.sebi.gov.in" target="_blank" rel="noreferrer noopener">SEBI</a> Registration No. INZ000217730; NSDL: IN-DP-602-2021. CIN-U67120MH2007FTC170004.<br> <strong>Registered Office:</strong> 502/A, Times Square, Andheri Kurla Road, Andheri East, Mumbai 400059, India.<br> <strong>Phone:</strong> +91-22-61289888 <span class="pipe">|</span> <strong>Fax:</strong> +91-22-61289898.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.co.in/en/home.php?nored=t" target="_self">www.interactivebrokers.co.in</a></p>
+                                <!-- IBKR JP -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.co.jp/en/home.php?nored=t" target="_self">Interactive Brokers Securities Japan Inc.</a></p>
+                                <p>Is regulated by Kanto Local Finance Bureau (Registration No.187) and is a member of <a href="https://www.jsda.or.jp/" target="_blank" rel="noreferrer noopener">Japan Securities Dealers Association</a> and <a href="https://www.nisshokyo.or.jp" target="_blank" rel="noreferrer noopener">The Commodity Futures Association of Japan</a>.<br> <strong>Registered Office:</strong> Kasumigaseki Building 25F, 2-5 Kasumigaseki 3-chome, Chiyoda-ku, Tokyo, 100-6025 Japan.<br> <strong>Phone:</strong> +81 03-4590-0711 <em>(On business days from 8:30-17:30 JST)</em>.<br> <strong>Website:</strong>  <a href="https://www.interactivebrokers.co.jp/en/home.php?nored=t" target="_self">www.interactivebrokers.co.jp</a></p>
+                                <!-- IBKR SG -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.com.sg/en/home.php?nored=t" target="_self">Interactive Brokers Singapore Pte. Ltd.</a></p>
+                                <p>Is licensed and regulated by the Monetary Authority of Singapore (Licence No. CMS100917).<br> <strong>Registered Office:</strong> #40-02A, Asia Square Tower 1, 8 Marina View, Singapore 018960.<br> <strong>Website:</strong>  <a href="https://www.interactivebrokers.com.sg/en/home.php?nored=t" target="_self">www.interactivebrokers.com.sg</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- FOOTER END ---------------------------------------------------------------------------------------------------- -->
+<!-- SHARE ON SOCIAL ---------------------------------------------------------------------------------------------------->
+<div class="social-sidebar animated fadeInLeft noprint">
+	<span><i class="fa fa-chevron-left"></i><i class="fa fa-chevron-right"></i></span>
+	<div class="icon-set">
+		<p>SHARE</p>
+		<div class="share-icon"><a href="/insights/ibtr_alerts.php?tiv=15491&cl=F&p=T" target="_blank" rel="noreferrer noopener" title="Share on Facebook" aria-label="Share on Facebook" class="icon-facebook"><i class="fab fa-facebook-square"></i></a></div>
+		<div class="share-icon"><a href="/insights/ibtr_alerts.php?tiv=15491&cl=T&p=T" target="_blank" rel="noreferrer noopener" title="Share on Twitter" aria-label="Share on Twitter" class="icon-twitter"><i class="fab fa-x-twitter"></i></a></div>
+		<div class="share-icon"><a href="/insights/ibtr_alerts.php?tiv=15491&cl=L&p=T" target="_blank" rel="noreferrer noopener" title="Share on Linkedin" aria-label="Share on Linkedin" class="icon-linkedin"><i class="fab fa-linkedin"></i></a></div>
+		<div class="share-icon"><a href="javascript:void(0);" target="_self" title="Share by Email" aria-label="Share by Email" name="btn_trigger" data-bs-toggle="modal" data-bs-target="#emailModal" id="15491" onclick="emailCookie();" class="icon-email"><i class="far fa-envelope"></i></a></div>
+	</div>
+</div>
+<!-- MODAL START | SHARE ON SOCIAL ---------------------------------------------------------------------------------------------------->
+<div class="modal fade noprint" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button id="cls_frm_1" type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="gridSystemModalLabel"><i class="far fa-envelope text-gray"></i> Email</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col">
+						<form>
+							<div class="form-group">
+								<label for="_to" class="control-label">To:</label> <span id="_err_to" style="color: red;"></span>
+								<input type="text" class="form-control" id="_to">
+							</div>
+							<div class="form-group">
+								<label for="_from" class="control-label">From:</label> <span id="_err_frm" style="color: red;"></span>
+								<input type="text" class="form-control" id="_from">
+							</div>
+							<div class="form-group">
+								<label for="_subject" class="control-label">Subject:</label> <span id="_err_subject" style="color: red;"></span>
+								<input type="text" class="form-control" id="_subject" value="Interactive Brokers">
+							</div>
+							<div class="form-group">
+								<textarea class="form-control" id="_content" style="height:200px;"></textarea>
+							</div>
+							<p class="text-sm">URL: <span class="text-italic text-black">www.interactivebrokers.com/en/index.php?f=<span id='vid'></span></span></p>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<div class="row">
+					<div class="col-6">
+						<div align="left">
+							<button id="cls_frm_2" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+					<div class="col-6">
+						<div align="right">
+							<button type="button" class="btn btn-primary" id="send">Send</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<input type="hidden" id="_page_id" name="_page_id" value="15491">
+</div>
+<!-- MODAL END | SHARE ON SOCIAL ----------------------------------------------------------------------------------------------------> 
+<script type="text/javascript" src="../../insights/ibtr_share.js?t=v1"></script>
+<script>
+$(document).ready(function() {
+	 $(".social-sidebar span").click(function(){
+		 $(".social-sidebar div").toggleClass("social-sidebar-hide");
+		 $(".social-sidebar span").toggleClass("toggle-arrow");
+ 	 });
+});
+function emailCookie() {
+	if (document.cookie.indexOf("IB_EM_SH") == -1) {
+		var ex=new Date();
+		ex.setTime(ex.getTime()+86400000);
+		document.cookie ='IB_EM_SH='+1+';expires='+ex.toGMTString()+';path=/;domain=';
+	}
+}
+</script>
+<!-- SCRIPTS FOOTER ---------------------------------------------------------------------------------------------------- -->
+<script type="text/javascript" src="../../scripts/common/js/zeynep-2.2.0/zeynep.js"></script>
+<script type="text/javascript" src="../../scripts/common/js/lazyload/lazyload.min.js"></script>
+<script type="text/javascript" src="../../search/conversions-59.js?t=1718758834"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+    // GATHER HEIGHT OF HEADER
+    var defaultMarginTop = $("div#ibkr-header").outerHeight();
+    // SET MARGIN-TOP OF CONTENTS
+    $("div#contents").css("margin-top", defaultMarginTop);
+    // ON WINDOW RESIZE CALCULATE THE HEIGHT OF THE HEADER AND USE THAT AS THE MARGIN-TOP OF CONTENTS DIV
+    $(window).resize(function() {
+        var headerHeight = $("div#ibkr-header").outerHeight();
+        var headerHeightDelta = headerHeight - defaultMarginTop;
+        $("div#contents").css("margin-top", defaultMarginTop + headerHeightDelta);
+    });
+    // BANNER | REGION SELECTOR
+    $("#bannerRegionSelector a.btn-close").click(function() {
+        // On banner close, set margin-top on timeout
+        setTimeout(function() {
+            var headerHeight = $("div#ibkr-header").outerHeight();
+            $("div#contents").css("margin-top", headerHeight);
+        },500);
+    });
+    // MOBILE MENU
+    $(function() {
+        // Initilize mobile menu
+        var zeynep = $('.menu-mobile').zeynep({
+            opened: function () {
+        },
+        closed: function () {
+            }
+        })
+        // Dynamically bind closing event
+        zeynep.on('closing', function () {
+        })
+        // Mobile menu close on overlay click
+        $('.website-overlay').on('click', function () {
+            zeynep.close()
+        })
+        // Mobile menu close on button click
+        $('.btn-close').on('click', function () {
+            zeynep.close()
+        })
+        // Mobile menu open on navbar-toggler click
+        $('.navbar-toggler').on('click', function () {
+            zeynep.open()
+        })
+    })
+});
+</script>
+ <script>var ibdmn='interactivebrokers.co.uk';(function(d,c){let s=d.createElement('script');s.src='https://www.interactivebrokers.co.uk/mkt/ibgtag.js?wbst='+c;s.id='_ib_tag';s.async=true;d.getElementsByTagName('head')[0].appendChild(s);})(document,'UK');</script><!-- STYLES FOOTER ---------------------------------------------------------------------------------------------------- -->
+<link rel="preload" as="font" type="font/woff2" href="../../fonts/fontawesome-6.4.2/webfonts/fa-brands-400.woff2" crossorigin="">
+<link rel="preload" as="font" type="font/woff2" href="../../fonts/fontawesome-6.4.2/webfonts/fa-regular-400.woff2" crossorigin="">
+<link rel="preload" as="font" type="font/woff2" href="../../fonts/fontawesome-6.4.2/webfonts/fa-solid-900.woff2" crossorigin="">
+<link rel="preload" as="style" href="../../css/fontawesome-6.4.2/all.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/fontawesome-6.4.2/all.min.css">
+<link rel="preload" as="style" href="../../css/animate-3.7.2/animate.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/animate-3.7.2/animate.min.css">
+<link rel="preload" as="style" href="../../css/bootstrap-switch-3.3.2/bootstrap-switch.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/bootstrap-switch-3.3.2/bootstrap-switch.min.css">
+<link rel="preload" as="style" href="../../css/ibkr/website-print.min.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../css/ibkr/website-print.min.css"></body>
+</html>
