@@ -1,0 +1,4225 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<title>No Transaction Fee Mutual Funds | Interactive Brokers LLC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"> 
+<meta name="description" content="No Transaction Fee (NTF) Mutual Funds do not assess a ticket charge to place a mutual fund trade.">
+<meta name="keywords" content="No Transaction Fee Mutual Funds">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="expires" content="-1">
+<meta name="robots" content="index, follow">
+<meta http-equiv="pragma" content="no-cache">
+<!--Pid:13654-->
+<link rel="canonical" href="ntfMutualFunds.php-1.html">
+<meta name="apple-mobile-web-app-title" content="IBKR">
+<link rel="icon" sizes="192x192" href="../../images/web/favicons/home-screen-icon-192x192.png">
+<link rel="icon" sizes="128x128" href="../../images/web/favicons/home-screen-icon-128x128.png">
+<link rel="apple-touch-icon" sizes="57x57" href="../../images/web/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../images/web/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../images/web/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../images/web/favicons/apple-touch-icon-144x144.png">
+<!-- SCRIPTS HEAD ---------------------------------------------------------------------------------------------------- -->
+<script type="text/javascript" src='../../scripts/common/js/jquery-3.6.1/jquery.min.js'></script>
+<script type="text/javascript">
+function createScriptElement(data) {
+ if (typeof data == "undefined") {
+  return;
+ }
+ var element = document.createElement("SCRIPT");
+ element.type = "text/javascript";
+ if (typeof data.id != "undefined") {
+  element.id = data.id;
+ }
+ if (typeof data.source != "undefined") {
+  element.src = data.source;
+ }
+ if (typeof data.loadfunction == "function") {
+  element.onload = data.loadfunction;
+ }
+ document.head.appendChild(element);
+}
+createScriptElement({ source : "/scripts/common/js/bootstrap-5.2.2/bootstrap.bundle.min.js", loadfunction: bsLoaded  });
+createScriptElement({ source : "/scripts/common/js/lib.js?ver=9" });
+function bsLoaded() {
+  createScriptElement({ source : "/scripts/common/js/appear/appear.min.js?ver=1" });
+  createScriptElement({ source : "/scripts/common/js/easing/easing.min.js?ver=1" });
+  createScriptElement({ source : "/scripts/common/js/parallax/parallax.min.js?ver=1" });
+  createScriptElement({ source : "/scripts/common/js/uitotop/uitotop.min.js?ver=1", loadfunction: uiLoaded });
+}
+function uiLoaded() {
+  createScriptElement({ source : "/scripts/common/js/twsUtils.js?ver=2" });
+  createScriptElement({ source : "/scripts/common/js/design/design.js?ver=1" }); 
+}
+</script>
+<script type="text/javascript">
+$(function() {
+  let ex=new Date();
+  ex.setTime(ex.getTime()+86400000);
+  document.cookie ='IB_REST=1;expires='+ex.toGMTString()+';path=/;domain=.interactivebrokers.com';
+  $('div#langselector').find('a').each(function() {
+  $(this).click(function() {
+   var link = $(this).attr("href");
+   if(link.match(/\/(en|fr|de|es|it|ru|cn|jp)\//))
+   {
+    var langs = link.split("/");
+    if(langs[3] == 'en' || langs[3] == 'fr' || langs[3] == 'de' || langs[3] == 'es' || langs[3] == 'it' || langs[3] == 'ru' || langs[3] == 'cn' || langs[3] == 'jp')
+    {
+      var lang = langs[3];
+      if(lang == 'cn')
+      {
+        lang = 'zh_CN';
+      }
+      if(lang == 'jp')
+      {
+        lang = 'ja';
+      }
+      if(hasCookie("IB_LANG"))
+      {
+        deleteCookie("IB_LANG");
+      }
+      setCookie("IB_LANG", lang, 7, '.interactivebrokers.com');
+    } else if(langs[1] == 'en') {
+      var lang = 'en';
+      setCookie("IB_LANG", lang, 7, '.interactivebrokers.com');
+    }
+   }
+  });
+ });
+ $('p#bandaid-close').click(function() {
+  setCookie("IB_BANDAID", 1, 30, '.interactivebrokers.com');
+ });
+ $('a#btnCloseBannerRegionSelector').click(function() {
+  setCookie("IB_REGION_SEL", 1, 30, '.interactivebrokers.com');
+ });
+});
+</script>
+<script>var e=document.createElement("script");e.type='text/javascript';e.src='/scripts/common/js/ibtrk.js?v=14';document.head.appendChild(e);_ibp=13654;</script>
+<!-- STYLES HEAD -->
+<link rel="preload" as="style" href="../../css/bootstrap-5.2.2/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/bootstrap-5.2.2/bootstrap.min.css">
+<link rel="preload" as="style" href="../../css/ibkr/website.min.css?v=25dbb9871dad19f5b220266180efb316">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/ibkr/website.min.css?v=25dbb9871dad19f5b220266180efb316">
+<link rel="preload" as="style" href="../../css/ibkr/theme-ibkr.min.css?v=25dbb9871dad19f5b220266180efb316">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/ibkr/theme-ibkr.min.css?v=25dbb9871dad19f5b220266180efb316"><script language='javascript' type='text/javascript' src='../../scripts/common/js/actb.js'></script>
+<style type="text/css">
+table.tablesorter td:hover { cursor:auto !important;  }
+</style>
+
+<script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch"}]);</script>
+                              <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="CGJ34-S5RKA-7ZQ8F-AJER9-TWWVG",function(){function e(){if(!o){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,i.parentNode.appendChild(e),o=!0}}function t(e){o=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(i.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",i.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"CGJ34-S5RKA-7ZQ8F-AJER9-TWWVG";var i=document.currentScript||document.getElementsByTagName("script")[0],o=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!o)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),i.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="nfygq4tacd4isztsqcma-f-ab2bc5096-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,o={"ak.v":"37","ak.cp":"1131468","ak.ai":parseInt("665092",10),"ak.ol":"0","ak.cr":164,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"15df5bf6","ak.r":42379,"ak.a2":n,"ak.m":"a","ak.n":"essl","ak.bpcip":"105.112.104.0","ak.cport":7791,"ak.gh":"23.77.196.137","ak.quicv":"","ak.tlsv":"tls1.2","ak.0rtt":"","ak.csrc":"-","ak.acc":"bbr","ak.t":"1718780056","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==wKr4vnI0NDboK6NekpMxR1WhXm19AExeC+mF1gIxOtti4Qwh83T5B/9IMzA/G4qfERpeWGnqYehzLBrrwEBj8VH3B+4t0A3EC8TZ7ds2xcFG0EIFmBDdVrYQSKEMVQRy48w05XZ3qoXzX6dSAdLCh/98YpWIGY0d5vaycF3ckwEei6jwWrXDWavzm2HlMFgP6sRT2hURLe0euLoDYb+pAFwn6dkom/BlqaU14xsGoqp3IVnqkNdHMIYDO0kPkMvov3u9fr4lJss688w9gRMn1mtkGhXa/WFfHhGLul4a5Q4owe6Io/7PV6ByZERJcIuZ3z/FOLP7j6T1Q/UAamCMM+E6szkgwmlDiyoNRgwhMiBA5Ad1XOfprjRDXOjFIygGQzE+uVroJ+WLmwT/3gHZyUFnKLcAlR4c7H0XMK/X/nk=","ak.pv":"316","ak.dpoabenc":"","ak.tf":i};if(""!==t)o["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))o["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(o)},rv:function(){var e=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:o,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+<body>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NK9NSD');</script>
+<!-- End Google Tag Manager --><div id="printheader"></div>
+<!-- HEADER START ---------------------------------------------------------------------------------------------------- -->
+<div class="ibkr-header" id="ibkr-header">
+     
+     
+    <!-- NAV TOP START (LG/XL ONLY) -->
+    <nav class="navbar navbar-inverse navbar-expand-lg navbar-top d-none d-lg-block">
+        <div class="container">
+            <div class="navbar-collapse collapse" id="ibkr-nav-top">
+                <!-- LEFT MENU -->
+                <ul class="navbar-nav mr-auto align-items-center">
+                    <!-- FOR INDIVIDUALS -->
+                    <li class="nav-item dropdown"><a href="#" target="_self" class="nav-link dropdown-toggle" id="nav-for-individuals" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">For Individuals</a>
+                        <div class="dropdown-menu dropdown-ind-accounts" aria-labelledby="nav-for-individuals">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../accounts/individual.php.html" target="_self" class="dropdown-item">Individual, Joint or IRA</a>
+                                    <a href="../accounts/non-professional-advisor.php.html" target="_self" class="dropdown-item">Non-Professional Advisors</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- FOR INSTITUTIONS -->
+					<li class="nav-item dropdown"><a href="#" target="_self" class="nav-link dropdown-toggle" id="nav-for-institutions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">For Institutions</a>
+                        <div class="dropdown-menu dropdown-inst-accounts" aria-labelledby="nav-for-institutions">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../accounts/institutions.php.html" target="_self" class="dropdown-item">Institutions Home</a>
+                                    <a href="../accounts/advisor.php.html" target="_self" class="dropdown-item">Registered Investment Advisors</a>
+                                    <a href="../accounts/proprietary-trading-group.php.html" target="_self" class="dropdown-item">Proprietary Trading Groups</a>
+                                    <a href="../accounts/hedge-fund.php.html" target="_self" class="dropdown-item">Hedge Funds</a>
+                                    <a href="../accounts/broker.php.html" target="_self" class="dropdown-item">Introducing Brokers</a>
+                                    <a href="../accounts/family-office.php.html" target="_self" class="dropdown-item">Family Offices</a>
+                                    <a href="../accounts/compliance-officer.php.html" target="_self" class="dropdown-item">Compliance Officers</a>
+                                    <a href="../accounts/small-business.php.html" target="_self" class="dropdown-item">Small Businesses</a>
+                                    <a href="../accounts/simple-ira.php.html" target="_self" class="dropdown-item">Employee Plan Administrator <br>SIMPLE IRA</a>
+                                    <a href="../accounts/fsa-insurance-providers.php.html" target="_self" class="dropdown-item">Full-Service Administrator <br>Insurance Providers</a>
+                                    <a href="../accounts/money-manager.php.html" target="_self" class="dropdown-item">Money Managers</a>
+                                    <a href="../accounts/administrator.php.html" target="_self" class="dropdown-item">Fund Administrators</a>
+                                    <a href="../accounts/hedge-fund-allocator.php.html" target="_self" class="dropdown-item">Hedge Fund Allocators</a>
+                                    <a href="https://ibkrcampus.com/student-trading-lab/" target="_blank" class="dropdown-item">Educators</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- RIGHT MENU -->
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <!-- FREE TRIAL -->
+                    <li class="nav-item"><a href="free-trial.php.html" target="_self" class="nav-link">FREE TRIAL</a></li>
+                    <!-- CAREERS -->
+                    <li class="nav-item"><a href="../general/about/careers-splash.php.html" target="_self" class="nav-link">Careers</a></li>
+                    <!-- ABOUT US -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-about-us" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
+                        <div class="dropdown-menu dropdown-about-us" aria-labelledby="nav-about-us">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../general/financial-strength.php.html" target="_self" class="dropdown-item">Strength and Security</a>
+                                    <a href="../general/about/about.php.html" target="_self" class="dropdown-item">Information and History</a>
+                                    <a href="../general/awards.php.html" target="_self" class="dropdown-item">Awards</a>
+                                    <a href="../about/news-at-ibkr.php.html" target="_self" class="dropdown-item">News at IBKR</a>
+                                    <a href="../general/about/press-and-media.php.html" target="_self" class="dropdown-item">Press and Media</a>
+                                    <a href="https://investors.interactivebrokers.com/ir/main.php" target="_blank" class="dropdown-item" rel="noreferrer noopener">Investor Relations</a>
+                                    <a href="../general/about/sustainability.php.html" target="_self" class="dropdown-item">Sustainability</a>
+                                    <a href="../accounts/legalDocuments/brokerPerformanceReports.php.html" target="_self" class="dropdown-item">Regulatory Reports</a>
+                                    <a href="../accounts/referrer.php.html" target="_self" class="dropdown-item">Refer a Friend</a>
+                                    <a href="../general/about/affiliate-programs.php.html" target="_self" class="dropdown-item">Affiliate Programs</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- SUPPORT -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-support" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Support</a>
+                        <div class="dropdown-menu dropdown-contact-us" aria-labelledby="nav-support">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../support/fund-my-account.php.html" target="_self" class="dropdown-item">Fund Your Account</a>
+                                    <a href="../support/individuals.php.html" target="_self" class="dropdown-item">For Individuals</a>
+                                    <a href="../support/institutions.php.html" target="_self" class="dropdown-item">For Institutions</a>
+                                    <a href="../support/institutional-sales-contacts.php.html" target="_self" class="dropdown-item">Institutional Sales Contacts</a>
+                                                                        <a href="../general/contact/ibot-container.php.html" target="_self" class="dropdown-item">Browse Our FAQs</a>
+                                    <a href="../support/reports-and-dates.php.html" target="_self" class="dropdown-item">Tax Information</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- LANGUAGE SELECTOR -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link nav-language dropdown-toggle" id="nav-language" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Language</span><img src="../../images/web/icons/icon-language.svg" alt="Language" width="23" height="18" border="0"></a>
+                        <div class="dropdown-menu dropdown-language" aria-labelledby="nav-language">
+                            <div class="row">
+                                <div class="col" id="langselector">
+                                    <a href="../home.php.html" target="_self" class="dropdown-item">English</a>
+                                    <a href="/es/home.php" target="_self" class="dropdown-item">Español</a>
+                                    <a href="/pt/home.php" target="_self" class="dropdown-item">Português</a>
+                                    <a href="/cn/home.php?lang=sc" target="_self" class="dropdown-item">中文简体</a>
+                                    <a href="/cn/home.php?lang=tc" target="_self" class="dropdown-item">中文繁體</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- NAV TOP END -->
+    <!-- NAV BOTTOM START -->
+    <nav class="navbar navbar-inverse navbar-expand-lg navbar-bottom">
+        <div class="container">
+            <!-- IBKR LOGO -->
+                        <a href="../home.php.html" target="_self" title="Interactive Brokers Home" alt="Interactive Brokers Logo" class="navbar-brand brand-logo" aria-label="Interactive Brokers Home"><span>Interactive Brokers Home</span></a>
+            <!-- TOGGLE (XS/SM/MD ONLY) -->
+            <button class="navbar-toggler" type="button" aria-label="Toggle Navigation"><span class="navbar-toggler-icon"><i class="fas fa-bars" aria-hidden="true"></i></span></button>
+            <!-- OPEN ACCOUNT BUTTON (XS/SM/MD ONLY) -->
+            <a href="/Universal/Application" target="_self" class="d-block d-lg-none btn btn-open-account">Open Account</a>
+            <!-- LOG IN (SM/MD ONLY) -->
+                            <a href="/sso/Login?RL=1" target="_self" class="d-none d-sm-block d-lg-none btn btn-log-in">Log In</a>
+                        <!-- IBKR NAV BOTTOM START   -->
+            <div class="navbar-collapse collapse" id="ibkr-nav-bottom">
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <!-- WHY IBKR -->
+                    <li class="nav-item"><a href="../whyib/overview.php.html" target="_self" class="nav-link">Why IBKR</a></li>
+                    <!-- PRICING -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-pricing" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pricing</a>
+                        <div class="dropdown-menu dropdown-pricing" aria-labelledby="nav-pricing">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../pricing/commissions-home.php.html" target="_self" class="dropdown-item">Commissions</a>
+                                    <a href="margin-rates.php.html" target="_self" class="dropdown-item">Margin Rates</a>
+                                    <a href="../accounts/fees/pricing-interest-rates.php.html" target="_self" class="dropdown-item">Interest Rates</a>
+                                    <a href="../pricing/short-sale-cost.php.html" target="_self" class="dropdown-item">Short Sale Cost</a>
+                                    <a href="../pricing/research-news-services.php.html" target="_self" class="dropdown-item">Research and News</a>
+                                    <a href="../pricing/research-news-marketdata.php.html" target="_self" class="dropdown-item">Market Data</a>
+                                    <a href="../pricing/stock-yield-enhancement-program.php.html" target="_self" class="dropdown-item">Stock Yield Enhancement Program</a>
+                                    <a href="../pricing/other-fees-overview.php.html" target="_self" class="dropdown-item">Other Fees</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- TRADING -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-technology" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Trading</a>
+                        <div class="dropdown-menu dropdown-technology" aria-labelledby="nav-technology">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="trading-platforms.php.html" target="_self" class="dropdown-item">Platforms</a>
+                                    <a href="ib-api.php.html" target="_self" class="dropdown-item">APIs</a>
+                                    <a href="margin.php.html" target="_self" class="dropdown-item">Margin</a>
+                                    <a href="products-exchanges.php.html" target="_self" class="dropdown-item">Products and Exchange Search</a>
+                                    <a href="ordertypes.php.html" target="_self" class="dropdown-item">Order Types</a>
+                                    <a href="../whyib/reporting.php.html" target="_self" class="dropdown-item">Reporting</a>
+                                    <a href="securities-financing.php.html" target="_self" class="dropdown-item">Securities Financing</a>
+                                    <a href="features-in-focus.php.html" target="_self" class="dropdown-item">Features in Focus</a>
+                                    <a href="../general/education/probability_lab.php.html" target="_self" class="dropdown-item">Probability Lab</a>
+                                    <a href="global-outsourced-trading-desk.php.html" target="_self" class="dropdown-item">Global Outsourced Trading Desk</a>
+                                    <a href="sustainable-investing.php.html" target="_self" class="dropdown-item">Sustainable Investing</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- SERVICES -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-products" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+                        <div class="dropdown-menu dropdown-products" aria-labelledby="nav-products">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="globalanalyst.php.html" target="_self" class="dropdown-item">IBKR GlobalAnalyst</a>
+                                    <a href="https://www.portfolioanalyst.com" target="_blank" class="dropdown-item" rel="noreferrer noopener">PortfolioAnalyst</a>
+                                    <a href="products-bonds.php.html" target="_self" class="dropdown-item">Bonds Marketplace</a>
+                                    <a href="products-mutual-funds.php.html" target="_self" class="dropdown-item">Mutual Funds Marketplace</a>
+                                    <a href="commission-free-etfs-mkt.php.html" target="_self" class="dropdown-item">No Transaction Fee ETFs</a>
+                                    <a href="https://ndcdyn.interactivebrokers.com/aces/Marketplace/InvestorsMarketplace" target="_blank" class="dropdown-item" rel="noreferrer noopener">Investors' Marketplace</a>
+                                    <a href="short-securities-availability.php.html" target="_self" class="dropdown-item">Short Securities Availability</a>
+                                    <a href="../accounts/integrated-cash-management.php.html" target="_self" class="dropdown-item">Cash Management</a>
+                                    <a href="third-party-integration.php.html" target="_self" class="dropdown-item">Third Party Integration</a>
+                                    <a href="https://www.interactiveadvisors.com" target="_blank" class="dropdown-item" rel="noreferrer noopener">Interactive Advisors</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- EDUCATION -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-education" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Education</a>
+                        <div class="dropdown-menu dropdown-education" aria-labelledby="nav-education">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="https://ibkrcampus.com" target="_blank" class="dropdown-item">IBKR Campus</a>
+                                    <a href="https://ibkrcampus.com/academy" target="_blank" class="dropdown-item" rel="noreferrer noopener">Traders' Academy</a>
+                                    <a href="https://ibkrcampus.com/news" target="_blank" class="dropdown-item" rel="noreferrer noopener">Traders' Insight</a>
+                                    <a href="https://ibkrcampus.com/podcasts" target="_blank" class="dropdown-item" rel="noreferrer noopener">IBKR Podcasts</a>
+                                    <a href="https://ibkrcampus.com/quant" target="_blank" class="dropdown-item" rel="noreferrer noopener">IBKR Quant Blog</a>
+                                    <a href="https://ibkrcampus.com/webinars" target="_blank" class="dropdown-item" rel="noreferrer noopener">Webinars</a>
+                                    <a href="https://ibkrcampus.com/student-trading-lab/" target="_blank" class="dropdown-item">Student Trading Lab</a>
+                                    <a href="https://ibkrcampus.com/glossary" target="_blank" class="dropdown-item" rel="noreferrer noopener">Traders' Glossary</a>
+                                    <a href="../general/calendar/calendar.php.html" target="_self" class="dropdown-item">Traders' Calendar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- SEARCH -->
+                    <li class="nav-item dropdown d-none d-lg-block" id="search-expand"><a href="#" class="nav-link nav-search dropdown-toggle" id="nav-search" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Search</span><i class="fas fa-search" aria-hidden="true"></i></a>
+                        <div class="dropdown-menu dropdown-search" aria-labelledby="nav-search">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="search_box">
+                                        <script type="text/javascript">
+                                         searchbox_input_changed=false;
+                                          $('#search-expand').on('shown.bs.dropdown', function(e) {
+                                            $('#searchField').focus();
+                                          });
+                                        </script>
+                                        <form action="/en/search/index.php" method="get" class="search_form" id="search_form_id">
+                                            <input type="text" aria-label="Search Box" placeholder="Search Site or Contracts" name="query" maxlength="64" autocomplete="off" id="searchField" class="form-control s swap_value searchinput" aria-label="Search Interactive Brokers">
+                                            <button type="submit" value="" id="searchsubmit" class="searchsubmit" aria-label="Submit Search"><i class="fas fa-search" aria-hidden="true"></i></button>
+                                        </form>
+                                        <ul id='saytlist' style='width:150px;'><li style="display:none"></li></ul>
+<script>
+function delay(cb, ms)
+{
+  var timer = 0;
+  return function() {
+   var context = this, args = arguments;
+   clearTimeout(timer);
+   timer = setTimeout(function() {
+     cb.apply(context, args);
+   }, ms  || 0);
+  };
+}
+$(function() {
+
+ $('#searchField').keyup(delay(function() {
+  var q = $('#searchField').val() || '';
+  if(q.length >= 3)
+  {
+    $.ajax({
+      type: "POST",
+      url: 'https://misc.interactivebrokers.com/response_handlers/search/index.php',
+      dataType: "json",
+      data: {
+        'q': q
+      },
+      success: function(r) {
+        if(r && r.success)
+        {
+          var recommendations = '';
+          var limit = Math.min(r.suggestions.length, 10);
+          for(var i = 0; i < limit; i++)
+          {
+            recommendations += "<li>" + r.suggestions[i] + "</li>";
+          }
+          $('#saytlist').html(recommendations);
+          $('#saytlist').show();
+          $('ul#saytlist li').click(function(e) {
+            var list = $(this).text() || '';
+            e.stopPropagation();
+            if(list != '')
+            {
+              $('input#searchField').val(list);
+              $('button#searchsubmit').click();
+            }
+          });
+        }
+      },
+      error: function(xhr, status, err) {}
+    });
+  } else {
+   $('#saytlist').hide();
+  }
+ }, 500));
+});
+</script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- LOG IN -->
+                    <li class="nav-item dropdown d-none d-lg-block"><a href="#" target="_self" class="nav-link nav-login dropdown-toggle" id="nav-log-in" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Log In</a>
+                        <div class="dropdown-menu dropdown-login" aria-labelledby="nav-log-in">
+                            <div class="row">
+                                <div class="col">
+                                                                                                                    <a href="/sso/Login?RL=1" target="_self" class="dropdown-item dropdown-portal">Portal Login</a>
+                                                                                                                <a href="tws.php.html#tws-software" target="_self" class="dropdown-item">Download Trader Workstation</a>
+                                    <a href="ibkr-desktop.php.html" target="_self" class="dropdown-item">Download IBKR Desktop </a>
+                                    <a href="tws-mobile.php.html#trytoday-drop" target="_self" class="dropdown-item">Download IBKR Mobile</a>
+                                    <a href="ibgateway-latest.php.html" target="_self" class="dropdown-item">Download IB Gateway</a>
+                                    <a href="trading-platforms.php.html" target="_self" class="dropdown-item">Compare All IBKR Platforms</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- OPEN ACCOUNT -->
+                    <li class="nav-item dropdown d-none d-lg-block"><a href="#" target="_self" class="nav-link nav-open-account dropdown-toggle" id="nav-open-account" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Open Account</a>
+                        <div class="dropdown-menu dropdown-open-account" aria-labelledby="nav-open-account">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="/Universal/Application" target="_self" class="dropdown-item dropdown-portal">Start Application</a>
+                                    <a href="/sso/Login?c=t" target="_self" class="dropdown-item">Finish an Application</a>
+                                    <a href="../general/what-you-need-inv.php.html" target="_self" class="dropdown-item">What You Need</a>
+                                    <a href="../accounts/account-guide.php.html" target="_self" class="dropdown-item">A Guide to Choosing the Right Account</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- NAV BOTTOM END -->
+</div>
+<!-- HEADER END ---------------------------------------------------------------------------------------------------- -->
+<!-- MOBILE NAV START (XS/SM/MD ONLY) ---------------------------------------------------------------------------------------------------- -->
+<div class="menu-mobile d-lg-none">
+    <!-- CLOSE BUTTON -->
+    <div class="close-button"><a href="javascript:void(0);" target="_self" class="btn-close" aria-label="Close Menu"><i class="fas fa-times"></i></a></div>
+    <!-- LOGO -->
+    <div class="logo-container"><a href="../home.php.html" target="_self" class="brand-logo" aria-label="Interactive Brokers Home"><span>Interactive Brokers Home</span></a></div>
+    <!-- SEARCH -->
+    <div class="search-container">
+        <div class="search-box">
+            <form action="/en/search/index.php" method="get" class="search_form" id="search_form_id">
+                <input type="text" class="form-control" placeholder="Search Site or Contracts" name="query" maxlength="64" autocomplete="off" id="searchFieldMobile" aria-label="Search Interactive Brokers">
+                <button type="submit" class="btn-search-submit" value="" id="searchsubmitMobile" aria-label="Submit Search"><i class="fas fa-search" aria-hidden="true"></i></button>
+            </form>
+        </div>
+    </div>
+    <ul>
+    <!-- LOG IN -->
+                    <li><a href="/sso/Login?RL=1" target="_self" class="menu-log-in">Portal Login</a></li>
+                <!-- OPEN ACCOUNT -->
+    <li class="has-submenu"><a href="#" target="_self" class="menu-open-account" data-submenu="submenu-open-account">Open Account</a>
+        <div class="submenu" id="submenu-open-account">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-open-account">Back</a></p>
+            <p class="submenu-title">OPEN ACCOUNT</p>
+            <ul>
+            <li><a href="/Universal/Application" target="_self" class="menu-start-application">Start Application</a></li>
+            <li><a href="/sso/Login?c=t" target="_self">Finish an Application</a></li>
+            <li><a href="../general/what-you-need-inv.php.html" target="_self">What You Need</a></li>
+            <li><a href="../accounts/account-guide.php.html" target="_self">A Guide to Chosing the Right Account</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- DOWNLOAD IBKR MOBILE -->
+        <!-- FREE TRIAL -->
+    <li><a href="free-trial.php.html" target="_self">Free Trial</a></li>
+    <!-- WHY IBKR -->
+    <li><a href="../whyib/overview.php.html" target="_self">Why IBKR</a></li>
+    <!-- ACCOUNT TYPES -->
+    <li class="has-submenu"><a href="#" target="_self" data-submenu="submenu-account-types">Account Types</a>
+        <div class="submenu" id="submenu-account-types">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-account-types">Back</a></p>
+            <p class="submenu-title">FOR INDIVIDUALS</p>
+            <ul>
+            <li><a href="../accounts/individual.php.html" target="_self">Individual, Joint or IRA</a></li>
+            <li><a href="../accounts/non-professional-advisor.php.html" target="_self">Non-Professional Advisors</a></li>
+            </ul>
+            <p class="submenu-title">FOR INSTITUTIONS</p>
+            <ul>
+            <li><a href="../accounts/institutions.php.html" target="_self">Institutions Home</a></li>
+            <li><a href="../accounts/advisor.php.html" target="_self">Registered Investment Advisors</a></li>
+            <li><a href="../accounts/proprietary-trading-group.php.html" target="_self">Proprietary Trading Groups</a></li>
+            <li><a href="../accounts/hedge-fund.php.html" target="_self">Hedge Funds</a></li>
+            <li><a href="../accounts/broker.php.html" target="_self">Introducing Brokers</a></li>
+            <li><a href="../accounts/family-office.php.html" target="_self">Family Offices</a></li>
+            <li><a href="../accounts/compliance-officer.php.html" target="_self">Compliance Officers</a></li>
+            <li><a href="../accounts/small-business.php.html" target="_self">Small Businesses</a></li>
+            <li><a href="../accounts/simple-ira.php.html" target="_self">Employee Plan Administrator <br>SIMPLE IRA</a></li>
+            <li><a href="../accounts/fsa-insurance-providers.php.html" target="_self">Full-Service Administrator <br>Insurance Providers</a></li>
+            <li><a href="../accounts/money-manager.php.html" target="_self">Money Managers</a></li>
+            <li><a href="../accounts/administrator.php.html" target="_self">Fund Administrators</a></li>
+            <li><a href="../accounts/hedge-fund-allocator.php.html" target="_self">Hedge Fund Allocators</a></li>
+            <li><a href="https://ibkrcampus.com/student-trading-lab/" target="_blank">Educators</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- PRICING -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-pricing">Pricing</a>
+        <div class="submenu" id="submenu-pricing">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-pricing">Back</a></p>
+            <p class="submenu-title">PRICING</p>
+            <ul>
+            <li><a href="../pricing/commissions-home.php.html" target="_self">Commissions</a></li>
+            <li><a href="margin-rates.php.html" target="_self">Margin Rates</a></li>
+            <li><a href="../accounts/fees/pricing-interest-rates.php.html" target="_self">Interest Rates</a></li>
+            <li><a href="../pricing/short-sale-cost.php.html" target="_self">Short Sale Cost</a></li>
+            <li><a href="../pricing/research-news-services.php.html" target="_self">Research and News</a></li>
+            <li><a href="../pricing/research-news-marketdata.php.html" target="_self">Market Data</a></li>
+            <li><a href="../pricing/stock-yield-enhancement-program.php.html" target="_self">Stock Yield Enhancement</a></li>
+            <li><a href="../pricing/other-fees-overview.php.html" target="_self">Other Fees</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- TRADING -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-trading">Trading</a>
+        <div class="submenu" id="submenu-trading">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-trading">Back</a></p>
+            <p class="submenu-title">TRADING</p>
+            <ul>
+            <li><a href="trading-platforms.php.html" target="_self">Platforms</a></li>
+            <li><a href="ib-api.php.html" target="_self">APIs</a></li>
+            <li><a href="margin.php.html" target="_self">Margin</a></li>
+            <li><a href="products-exchanges.php.html" target="_self">Products and Exchange Search</a></li>
+            <li><a href="ordertypes.php.html" target="_self">Order Types</a></li>
+            <li><a href="../whyib/reporting.php.html" target="_self">Reporting</a></li>
+            <li><a href="securities-financing.php.html" target="_self">Securities Financing</a></li>
+            <li><a href="features-in-focus.php.html" target="_self">Features in Focus</a></li>
+            <li><a href="../general/education/probability_lab.php.html" target="_self">Probability Lab</a></li>
+            <li><a href="global-outsourced-trading-desk.php.html" target="_self">Global Outsourced Trading Desk</a></li>
+            <li><a href="sustainable-investing.php.html" target="_self">Sustainable Investing</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- SERVICES -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-services">Services</a>
+        <div class="submenu" id="submenu-services">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-services">Back</a></p>
+            <p class="submenu-title">SERVICES</p>
+            <ul>
+            <li><a href="globalanalyst.php.html" target="_self">IBKR GlobalAnalyst</a></li>
+            <li><a href="https://www.portfolioanalyst.com" target="_blank">PortfolioAnalyst</a></li>
+            <li><a href="products-bonds.php.html" target="_self">Bonds Marketplace</a></li>
+            <li><a href="products-mutual-funds.php.html" target="_self">Mutual Funds Marketplace</a></li>
+            <li><a href="commission-free-etfs-mkt.php.html" target="_self">No Transaction Fee ETFs</a></li>
+            <li><a href="https://ndcdyn.interactivebrokers.com/aces/Marketplace/InvestorsMarketplace" target="_blank">Investors' Marketplace</a></li>
+            <li><a href="short-securities-availability.php.html" target="_self">Short Securities Availability</a></li>
+            <li><a href="../accounts/integrated-cash-management.php.html" target="_self">Cash Management</a></li>
+            <li><a href="third-party-integration.php.html" target="_self">Third Party Integration</a></li>
+            <li><a href="https://www.interactiveadvisors.com" target="_blank">Interactive Advisors</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- EDUCATION -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-education">Education</a>
+        <div class="submenu" id="submenu-education">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-education">Back</a></p>
+            <p class="submenu-title">EDUCATION</p>
+            <ul>
+            <li><a href="https://ibkrcampus.com" target="_blank">IBKR Campus</a></li>
+            <li><a href="https://ibkrcampus.com/academy" target="_blank">Traders' Academy</a></li>
+            <li><a href="https://ibkrcampus.com/news" target="_blank">Traders' Insight</a></li>
+            <li><a href="https://ibkrcampus.com/podcasts" target="_blank">IBKR Podcasts</a></li>
+            <li><a href="https://ibkrcampus.com/quant" target="_blank">IBKR Quant Blog</a></li>
+            <li><a href="https://ibkrcampus.com/webinars" target="_blank">Webinars</a></li>
+            <li><a href="https://ibkrcampus.com/student-trading-lab/" target="_blank">Student Trading Lab</a></li>
+            <li><a href="https://ibkrcampus.com/glossary" target="_blank">Traders' Glossary</a></li>
+            <li><a href="../general/calendar/calendar.php.html" target="_self">Traders' Calendar</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- ABOUT US -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-about-us">About Us</a>
+        <div class="submenu" id="submenu-about-us">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-about-us">Back</a></p>
+            <p class="submenu-title">ABOUT US</p>
+            <ul>
+            <li><a href="../general/financial-strength.php.html" target="_self">Strength and Security</a></li>
+            <li><a href="../general/about/about.php.html" target="_self">Information and History</a></li>
+            <li><a href="../general/about/careers-splash.php.html" target="_self">Careers</a></li>
+            <li><a href="../general/awards.php.html" target="_self">Awards</a></li>
+            <li><a href="../about/news-at-ibkr.php.html" target="_self">News at IBKR</a></li>
+            <li><a href="../general/about/press-and-media.php.html" target="_self">Press and Media</a></li>
+            <li><a href="https://investors.interactivebrokers.com/ir/main.php" target="_blank">Investor Relations</a></li>
+            <li><a href="../general/about/sustainability.php.html" target="_self">Sustainability</a></li>
+            <li><a href="../accounts/legalDocuments/brokerPerformanceReports.php.html" target="_self">Regulatory Reports</a></li>
+            <li><a href="../accounts/referrer.php.html" target="_self">Refer a Friend</a></li>
+            <li><a href="../general/about/affiliate-programs.php.html" target="_self">Affiliate Programs</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- SUPPORT -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-support">Support</a>
+        <div class="submenu" id="submenu-support">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-support">Back</a></p>
+            <p class="submenu-title">SUPPORT</p>
+            <ul>
+            <li><a href="../support/fund-my-account.php.html" target="_self">Fund Your Account</a></li>
+            <li><a href="../support/individuals.php.html" target="_self">For Individuals</a></li>
+            <li><a href="../support/institutions.php.html" target="_self">For Institutions</a></li>
+            <li><a href="../support/institutional-sales-contacts.php.html" target="_self">Institutional Sales Contacts</a></li>
+                        <li><a href="../general/contact/ibot-container.php.html" target="_self">Browse Our FAQs</a></li>
+            <li><a href="../support/reports-and-dates.php.html" target="_self">Tax Information</a></li>                 
+            </ul>
+        </div>
+    </li>
+    <!-- LANGUAGE -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-language">Language</a>
+        <div class="submenu" id="submenu-language">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-language">Back</a></p>
+            <p class="submenu-title">LANGUAGE</p>
+            <ul>
+            <li><a href="../home.php.html" target="_self">English</a></li>
+            <li><a href="/es/home.php" target="_self">Español</a></li>
+            <li><a href="/pt/home.php" target="_self">Português</a></li>
+            <li><a href="/cn/home.php?lang=sc" target="_self">中文简体</a></li>
+            <li><a href="/cn/home.php?lang=tc" target="_self">中文繁體</a></li>
+            </ul>
+        </div>
+    </li>
+    </ul>
+</div>
+<!-- MOBILE NAV OVERLAY -->
+<div class="website-overlay d-lg-none"></div>
+<!-- MOBILE NAV END (XS/SM/MD ONLY) ---------------------------------------------------------------------------------------------------- -->
+<div id="contents">
+    <section class="page-title" id="page-title">
+        <div class="container">
+            <div class="row">
+                                <div class="col"><h1>No Transaction Fee Mutual Funds</h1></div>
+                            </div>
+        </div>
+    </section>
+    <section id="mutual-funds">
+ <div class="container">
+  <div class="row">
+   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <ul class='pagination'>
+<li class=""><a href='ntfMutualFunds.php-14.html?f=&exch=&showcategories=&p=&cc=&page=U'> < </a></li>
+<li class=''><a href='ntfMutualFunds.php-2.html?f=&exch=&showcategories=&p=&cc=&page=3'>3</a></li>
+<li class=''><a href='ntfMutualFunds.php-24.html?f=&exch=&showcategories=&p=&cc=&page=Q'>Q</a></li>
+<li class=''><a href='ntfMutualFunds.php-25.html?f=&exch=&showcategories=&p=&cc=&page=R'>R</a></li>
+<li class=''><a href='ntfMutualFunds.php-21.html?f=&exch=&showcategories=&p=&cc=&page=S'>S</a></li>
+<li class=''><a href='ntfMutualFunds.php-13.html?f=&exch=&showcategories=&p=&cc=&page=T'>T</a></li>
+<li class=''><a href='ntfMutualFunds.php-14.html?f=&exch=&showcategories=&p=&cc=&page=U'>U</a></li>
+<li class='active'><a href='ntfMutualFunds.php-15.html?f=&exch=&showcategories=&p=&cc=&page=V'>V</a></li>
+<li class=''><a href='ntfMutualFunds.php-16.html?f=&exch=&showcategories=&p=&cc=&page=W'>W</a></li>
+<li class=''><a href='ntfMutualFunds.php-12.html?f=&exch=&showcategories=&p=&cc=&page=Y'>Y</a></li>
+<li class=''><a href='ntfMutualFunds.php-7.html?f=&exch=&showcategories=&p=&cc=&page=Z'>Z</a></li>
+<li class=""><a href='ntfMutualFunds.php-16.html?f=&exch=&showcategories=&p=&cc=&page=W'> > </a></li>
+</ul>
+    <div class="table-responsive">
+     <table width="100%" cellspacing="0" cellpadding="0" border="0" class="table table-striped table-bordered tablesorter" id="mftable">
+      <thead>
+       <tr>
+        <th width="10%" align="left" valign="middle">Symbol</th>
+        <th width="30%" align="left" valign="middle">Fund</th>
+        <th width="15%" align="left" valign="middle">CUSIP</th>
+        <th width="25%" align="left" valign="middle">Fund Family</th>
+        <th width="10%" align="left" valign="middle">Share Class</th>
+       </tr>
+      </thead>
+      <tbody>
+             <tr>
+        <td>JVAAX</td>
+        <td>VALUE ADVANTAGE FUND - A</td>
+        <td>a58693078</td>
+        <td>J.P. Morgan Mutual Funds</td>
+        <td>A SHARES</td>
+       </tr>
+             <tr>
+        <td>JVACX</td>
+        <td>VALUE ADVANTAGE FUND - C</td>
+        <td>a58797098</td>
+        <td>J.P. Morgan Mutual Funds</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>PAVLX</td>
+        <td>Value Advisor Class</td>
+        <td>a34165151</td>
+        <td>T Rowe Price</td>
+        <td>ADVISOR CLASS</td>
+       </tr>
+             <tr>
+        <td>VLAAX</td>
+        <td>VALUE LINE ASSET ALLOCATION FUND INVSTR</td>
+        <td>a58804336</td>
+        <td>Value Line Funds</td>
+        <td>Investor</td>
+       </tr>
+             <tr>
+        <td>VALIX</td>
+        <td>VALUE LINE CAPITAL APPREC FUND INV</td>
+        <td>a58804138</td>
+        <td>Value Line Funds</td>
+        <td>Investor</td>
+       </tr>
+             <tr>
+        <td>VAGIX</td>
+        <td>VALUE LINE CORE BOND FUND</td>
+        <td>a58804246</td>
+        <td>Value Line Funds</td>
+        <td>Investor</td>
+       </tr>
+             <tr>
+        <td>VALLX</td>
+        <td>VALUE LINE LARGER COMPANIES FOCUSED FUND</td>
+        <td>a58804167</td>
+        <td>Value Line Funds</td>
+        <td>Investor</td>
+       </tr>
+             <tr>
+        <td>VLIFX</td>
+        <td>VALUE LINE MID CAP FOCUSED FUND</td>
+        <td>a58804137</td>
+        <td>Value Line Funds</td>
+        <td>Investor</td>
+       </tr>
+             <tr>
+        <td>VALSX</td>
+        <td>VALUE LINE SELECT GROWTH FD INV</td>
+        <td>a58804139</td>
+        <td>Value Line Funds</td>
+        <td>Investor</td>
+       </tr>
+             <tr>
+        <td>VLEOX</td>
+        <td>VALUE LINE SMALL CAP OPPORTUNITIES FUND</td>
+        <td>a58804321</td>
+        <td>Value Line Funds</td>
+        <td>Investor</td>
+       </tr>
+             <tr>
+        <td>096957556</td>
+        <td>VARIOPARTNER-MIV GLOBAL MEDTECH &quot;P3&quot; (USD) ACC</td>
+        <td>a164789346</td>
+        <td>VARIOPARTNER (LU)</td>
+        <td>P3</td>
+       </tr>
+             <tr>
+        <td>VNVAX</td>
+        <td>VAUGHAN NELSON MID CAP FUND A</td>
+        <td>a58693784</td>
+        <td>Natixis Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VNSAX</td>
+        <td>VAUGHAN NELSON SELECT FUND CL A</td>
+        <td>a58695041</td>
+        <td>Natixis Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>NEFJX</td>
+        <td>VAUGHAN NELSON SMALL CAP VALUE FUND CL A</td>
+        <td>a58691894</td>
+        <td>Natixis Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>047715725</td>
+        <td>VAUGHAN NELSON US SELECT EQUITY &quot;H-I&quot; (EURHDG) ACC</td>
+        <td>a124128994</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>H-I</td>
+       </tr>
+             <tr>
+        <td>026007828</td>
+        <td>VAUGHAN NELSON US SELECT EQUITY &quot;I&quot; (EUR) ACC</td>
+        <td>a124129230</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>I</td>
+       </tr>
+             <tr>
+        <td>018351714</td>
+        <td>VAUGHAN NELSON US SELECT EQUITY &quot;I&quot; (USD) ACC</td>
+        <td>a124129124</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>I</td>
+       </tr>
+             <tr>
+        <td>018351749</td>
+        <td>VAUGHAN NELSON US SELECT EQUITY &quot;R&quot; (USD) ACC</td>
+        <td>a124129125</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>VIOAX</td>
+        <td>VELA Income Opp Fund Cl A</td>
+        <td>a194364151</td>
+        <td>VELA Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VEILX</td>
+        <td>VELA International Fund - A</td>
+        <td>a194364152</td>
+        <td>VELA Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VELAX</td>
+        <td>VELA Large Cap Plus Fund Cl A</td>
+        <td>a194364153</td>
+        <td>VELA Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VESAX</td>
+        <td>VELA Small Cap Fund - A</td>
+        <td>a194364154</td>
+        <td>VELA Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>I542128512</td>
+        <td>VERMOEGENS MANAGEMENT .WACHSTUM(A)</td>
+        <td>a161256888</td>
+        <td>ALLIANZ GLOBAL INV (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I389534176</td>
+        <td>VERMOGENSMANAGE BALANCE &quot;A&quot; (EUR) D</td>
+        <td>a120710166</td>
+        <td>ALLIANZ GLOBAL INV (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I581231053</td>
+        <td>VERMOGENSMANAGEMENT CHANCE &quot;A&quot; (EUR) INC</td>
+        <td>a171615402</td>
+        <td>ALLIANZ GLOBAL INV (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>191077652</td>
+        <td>VERMOGENSMANAGEMENT RENTENSTARS &quot;A2&quot; (EUR) INC</td>
+        <td>a132186112</td>
+        <td>ALLIANZ GLOBAL INV (LU)</td>
+        <td>A2</td>
+       </tr>
+             <tr>
+        <td>000979754</td>
+        <td>VERMOGENSMANAGEMENT STARS OF MULTI ASSET &quot;A&quot; (EUR) INC A</td>
+        <td>a134156301</td>
+        <td>ALLIANZ GLOBAL INV (DE)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>SRVEX</td>
+        <td>VICTORY DIVERSIFIED STOCK FUND A</td>
+        <td>a42536946</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>RSFLX</td>
+        <td>VICTORY FLOATING RATE FUND A</td>
+        <td>a86614386</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>IPFIX</td>
+        <td>VICTORY FUND FOR INCOME FUND A</td>
+        <td>a58692053</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>RSNRX</td>
+        <td>VICTORY GLOBAL ENERGY TRANSITION FD A</td>
+        <td>a86614383</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>RSHMX</td>
+        <td>VICTORY HIGH INCOME MUNICIPAL BD FD A</td>
+        <td>a86653388</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>GUHYX</td>
+        <td>VICTORY HIGH YIELD FUND A</td>
+        <td>a86653393</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>MMEAX</td>
+        <td>VICTORY INTEGRITY DISCOVERY FD A</td>
+        <td>a66420467</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>MAIMX</td>
+        <td>VICTORY INTEGRITY MID-CAP VALUE FUND A</td>
+        <td>a66420490</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>MCIMX</td>
+        <td>VICTORY INTEGRITY MID-CAP VALUE FUND C</td>
+        <td>a120821798</td>
+        <td>Victory Capital</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>VSCVX</td>
+        <td>VICTORY INTEGRITY SMALL-CAP VALUE FD A</td>
+        <td>a66420500</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>MAISX</td>
+        <td>VICTORY INTEGRITY SMALL/MID CAP VAL FD A</td>
+        <td>a66420488</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SBFCX</td>
+        <td>VICTORY INV GRADE CONVERT FUND A</td>
+        <td>a58691473</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>RLDAX</td>
+        <td>VICTORY LOW DURATION BOND FUND A</td>
+        <td>a86653411</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>CBHAX</td>
+        <td>VICTORY MARKET NEUTRAL INCOME FD A</td>
+        <td>a75448688</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>MGOAX</td>
+        <td>VICTORY MUNDER MID-CAP CORE GROWTH FD A</td>
+        <td>a66420472</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>MNNAX</td>
+        <td>VICTORY MUNDER MULTI-CAP FD A</td>
+        <td>a66420470</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>RSGGX</td>
+        <td>VICTORY RS GLOBAL FUND A</td>
+        <td>a86614380</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>RSGRX</td>
+        <td>VICTORY RS GROWTH FUND A</td>
+        <td>a86614389</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>GUBGX</td>
+        <td>VICTORY RS INTERNALTIONAL FUND A</td>
+        <td>a86653443</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>RSINX</td>
+        <td>VICTORY RS INVESTORS FUND A</td>
+        <td>a86653450</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>GPAFX</td>
+        <td>VICTORY RS LARGE CAP ALPHA FUND A</td>
+        <td>a86653372</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>RSMOX</td>
+        <td>VICTORY RS MID CAP GROWTH FUND A</td>
+        <td>a86653427</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>RSPFX</td>
+        <td>VICTORY RS PARTNERS FUND A</td>
+        <td>a86653375</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>RSIFX</td>
+        <td>VICTORY RS SCIENCE AND TECH FUND A</td>
+        <td>a86653380</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>RSDGX</td>
+        <td>VICTORY RS SELECT GROWTH FUND A</td>
+        <td>a86653430</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>GPSCX</td>
+        <td>VICTORY RS SMALL CAP EQUITY FUND A</td>
+        <td>a86653433</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>RSEGX</td>
+        <td>VICTORY RS SMALL CAP GROWTH FUND A</td>
+        <td>a86653387</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>RSVAX</td>
+        <td>VICTORY RS VALUE FUND A</td>
+        <td>a86653378</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>MUXAX</td>
+        <td>VICTORY S&amp;amp;P 500 INDEX FUND A</td>
+        <td>a66420462</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SSVSX</td>
+        <td>VICTORY SPECIAL VALUE FUND A</td>
+        <td>a58691584</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SBALX</td>
+        <td>VICTORY STRATEGIC ALLOCATION FUND A</td>
+        <td>a58691370</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>RSIAX</td>
+        <td>VICTORY STRATEGIC INCOME FUND A</td>
+        <td>a86653418</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VETAX</td>
+        <td>VICTORY SYCAMORE ESTABLISHED VAL FUND A</td>
+        <td>a58692079</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SSGSX</td>
+        <td>VICTORY SYCAMORE SMALL CO OPP FUND A</td>
+        <td>a58692054</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>GUTEX</td>
+        <td>VICTORY TAX-EXEMPT FUND A</td>
+        <td>a86653423</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>MUCAX</td>
+        <td>VICTORY TOT RET BOND FD A</td>
+        <td>a66420463</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>CUHAX</td>
+        <td>VICTORY US 500 ENHANCED VOL WTD A</td>
+        <td>a75448679</td>
+        <td>Victory Capital</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>BVAAX</td>
+        <td>Virginia Intermediate Tax Free Fund A</td>
+        <td>a58805302</td>
+        <td>Sterling Capital Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>AOTAX</td>
+        <td>Virtus AGI Emerging Markets Opp Fund A</td>
+        <td>a142593315</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>AOTCX</td>
+        <td>Virtus AGI Emerging Markets Opp Fund C</td>
+        <td>a142593337</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>PPGRX</td>
+        <td>Virtus AGI Focused Growth Fund R</td>
+        <td>a58795782</td>
+        <td>Allianz</td>
+        <td>CLASS R</td>
+       </tr>
+             <tr>
+        <td>PALAX</td>
+        <td>Virtus AGI Global Allocation Fund A</td>
+        <td>a142593318</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>PALCX</td>
+        <td>Virtus AGI Global Allocation Fund C</td>
+        <td>a142593340</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>AGARX</td>
+        <td>Virtus AGI Global Allocation Fund R</td>
+        <td>a58799608</td>
+        <td>Allianz</td>
+        <td>CLASS R</td>
+       </tr>
+             <tr>
+        <td>AOPAX</td>
+        <td>Virtus AGI International Small-Cap A</td>
+        <td>a141737396</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>AOPCX</td>
+        <td>Virtus AGI International Small-Cap C</td>
+        <td>a142593346</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>ALORX</td>
+        <td>Virtus AGI International Small-Cap R</td>
+        <td>a58799622</td>
+        <td>Allianz</td>
+        <td>CLASS R</td>
+       </tr>
+             <tr>
+        <td>ANZAX</td>
+        <td>Virtus AllianzGI Convertible Fund A</td>
+        <td>a141737385</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>ANZCX</td>
+        <td>Virtus AllianzGI Convertible Fund C</td>
+        <td>a142593335</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>AYBRX</td>
+        <td>Virtus AllianzGI High Yield Bond Fund R</td>
+        <td>a58799620</td>
+        <td>Allianz</td>
+        <td>CLASS R</td>
+       </tr>
+             <tr>
+        <td>AZNAX</td>
+        <td>Virtus AllianzGI Income &amp;amp; Growth Fund A</td>
+        <td>a141737394</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>AZNCX</td>
+        <td>Virtus AllianzGI Income &amp;amp; Growth Fund C</td>
+        <td>a142593345</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>AIGRX</td>
+        <td>Virtus AllianzGI Income &amp;amp; Growth Fund R</td>
+        <td>a58800319</td>
+        <td>Allianz</td>
+        <td>CLASS R</td>
+       </tr>
+             <tr>
+        <td>PRMRX</td>
+        <td>Virtus AllianzGI Mid-Cap Growth R</td>
+        <td>a58795785</td>
+        <td>Allianz</td>
+        <td>CLASS R</td>
+       </tr>
+             <tr>
+        <td>AZBAX</td>
+        <td>Virtus AllianzGI Small-Cap Fund A</td>
+        <td>a141737403</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>AZBCX</td>
+        <td>Virtus AllianzGI Small-Cap Fund Class C</td>
+        <td>a142593351</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>GAFCX</td>
+        <td>Virtus AlphaSimplex Global Alternative-C</td>
+        <td>a184908326</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>AMFAX</td>
+        <td>Virtus AlphaSimplex Managed Futrs Stgy-A</td>
+        <td>a184908324</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>ASFCX</td>
+        <td>Virtus AlphaSimplex Managed Futrs Stgy-C</td>
+        <td>a184908323</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>SVIIX</td>
+        <td>VIRTUS CEREDEX LARGE-CAP VALUE EQTY-A</td>
+        <td>a95553058</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SVIFX</td>
+        <td>VIRTUS CEREDEX LARGE-CAP VALUE EQTY-C</td>
+        <td>a95553059</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>SAMVX</td>
+        <td>VIRTUS CEREDEX MID-CAP VALUE EQTY-A</td>
+        <td>a95553062</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SMVFX</td>
+        <td>VIRTUS CEREDEX MID-CAP VALUE EQTY-C</td>
+        <td>a95553063</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>SASVX</td>
+        <td>VIRTUS CEREDEX SMALL-CAP VALUE EQTY-A</td>
+        <td>a95553071</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>STCEX</td>
+        <td>VIRTUS CEREDEX SMALL-CAP VALUE EQTY-C</td>
+        <td>a95553072</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>VGSAX</td>
+        <td>VIRTUS DUFF &amp;amp; PHELPS GBL RL EST SEC-A</td>
+        <td>a58694079</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VGSCX</td>
+        <td>VIRTUS DUFF &amp;amp; PHELPS GBL RL EST SEC-C</td>
+        <td>a58799504</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>PGUAX</td>
+        <td>VIRTUS DUFF &amp;amp; PHELPS GLOBAL INFRAST-A</td>
+        <td>a58692948</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>PGUCX</td>
+        <td>VIRTUS DUFF &amp;amp; PHELPS GLOBAL INFRAST-C</td>
+        <td>a58796828</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>PDPAX</td>
+        <td>VIRTUS DUFF &amp;amp; PHELPS REAL ASSET-A</td>
+        <td>a58693241</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>PDPCX</td>
+        <td>VIRTUS DUFF &amp;amp; PHELPS REAL ASSET-C</td>
+        <td>a58797445</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>PHRAX</td>
+        <td>VIRTUS DUFF &amp;amp; PHELPS REAL EST SEC-A</td>
+        <td>a42536949</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>PHRCX</td>
+        <td>VIRTUS DUFF &amp;amp; PHELPS REAL EST SEC-C</td>
+        <td>a58796665</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>VLPAX</td>
+        <td>VIRTUS DUFF &amp;amp; PHELPS SLT MLP AND ENGY-A</td>
+        <td>a83313777</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VLPCX</td>
+        <td>VIRTUS DUFF &amp;amp; PHELPS SLT MLP AND ENGY-C</td>
+        <td>a83313778</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>AWTAX</td>
+        <td>Virtus Duff &amp;amp; Phelps Water Fund A</td>
+        <td>a141737409</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>AWTCX</td>
+        <td>Virtus Duff &amp;amp; Phelps Water Fund C</td>
+        <td>a141737410</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>HEMZX.OLD</td>
+        <td>VIRTUS EMERGING MARKETS OPPTS FUND-A</td>
+        <td>a58692028</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>00BF41FJ7</td>
+        <td>VIRTUS GF MULTI-SECTOR INCOME &quot;A&quot; (USD) ACC</td>
+        <td>a138197440</td>
+        <td>VIRTUS (IE)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>00BF41FK8</td>
+        <td>VIRTUS GF MULTI-SECTOR INCOME &quot;A&quot; (USD) INC</td>
+        <td>a138197441</td>
+        <td>VIRTUS (IE)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>00BF41FQ4</td>
+        <td>VIRTUS GF MULTI-SECTOR INCOME &quot;C&quot; (USD) ACC</td>
+        <td>a138197442</td>
+        <td>VIRTUS (IE)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>00BF41FR5</td>
+        <td>VIRTUS GF MULTI-SECTOR INCOME &quot;C&quot; (USD) INC</td>
+        <td>a138197443</td>
+        <td>VIRTUS (IE)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>I455930872</td>
+        <td>VIRTUS GF MULTI-SECTOR SHORT DURATION BOND &quot;A&quot; (EUR) INC</td>
+        <td>a138197448</td>
+        <td>VIRTUS (IE)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>00BCZNJX3</td>
+        <td>VIRTUS GF MULTI-SECTOR SHORT DURATION BOND &quot;A&quot; (USD) ACC</td>
+        <td>a137733390</td>
+        <td>VIRTUS (IE)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I455930786</td>
+        <td>VIRTUS GF MULTI-SECTOR SHORT DURATION BOND &quot;A&quot; (USD) INC</td>
+        <td>a138197426</td>
+        <td>VIRTUS (IE)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>00BQSBJJ8</td>
+        <td>VIRTUS GF MULTI-SECTOR SHORT DURATION BOND &quot;C&quot; (USD) ACC</td>
+        <td>a138197430</td>
+        <td>VIRTUS (IE)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>I455930797</td>
+        <td>VIRTUS GF MULTI-SECTOR SHORT DURATION BOND &quot;C&quot; (USD) INC</td>
+        <td>a138197429</td>
+        <td>VIRTUS (IE)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>00BF5J448</td>
+        <td>VIRTUS GF SELECT HIGH YIELD &quot;A&quot; (USD) ACC</td>
+        <td>a138197438</td>
+        <td>VIRTUS (IE)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>00BF5J459</td>
+        <td>VIRTUS GF SELECT HIGH YIELD &quot;A&quot; (USD) INC</td>
+        <td>a138197439</td>
+        <td>VIRTUS (IE)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>00BF5J4B5</td>
+        <td>VIRTUS GF SELECT HIGH YIELD &quot;C&quot; (USD) ACC</td>
+        <td>a137733393</td>
+        <td>VIRTUS (IE)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>00BF5J4C6</td>
+        <td>VIRTUS GF SELECT HIGH YIELD &quot;C&quot; (USD) INC</td>
+        <td>a138197433</td>
+        <td>VIRTUS (IE)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>00BH4GXR0</td>
+        <td>VIRTUS GF US SMALL CAP FOCUS FUND &quot;A&quot; (USD) ACC</td>
+        <td>a143386446</td>
+        <td>VIRTUS (IE)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>00BQSBKK6</td>
+        <td>VIRTUS GF US SMALL CAP FOCUS FUND &quot;C&quot; (USD) ACC</td>
+        <td>a163968850</td>
+        <td>VIRTUS (IE)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>PSTAX</td>
+        <td>VIRTUS KAR CAPITAL GROWTH-A</td>
+        <td>a58691769</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SSTFX</td>
+        <td>VIRTUS KAR CAPITAL GROWTH-C</td>
+        <td>a58794883</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>VDMAX</td>
+        <td>VIRTUS KAR DEVELOPING MARKETS-A</td>
+        <td>a150011341</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VDMCX</td>
+        <td>VIRTUS KAR DEVELOPING MARKETS-C</td>
+        <td>a150011343</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>VAESX</td>
+        <td>VIRTUS KAR EMERGING MARKETS SMALL-CAP-A</td>
+        <td>a58994192</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VCESX</td>
+        <td>VIRTUS KAR EMERGING MARKETS SMALL-CAP-C</td>
+        <td>a58994358</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>PDIAX</td>
+        <td>VIRTUS KAR EQUITY INCOME-A</td>
+        <td>a58692126</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>PGICX</td>
+        <td>VIRTUS KAR EQUITY INCOME-C</td>
+        <td>a58794699</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>PPTAX</td>
+        <td>VIRTUS KAR GLOBAL QUALITY DIVIDEND-A</td>
+        <td>a58692927</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>PPTCX</td>
+        <td>VIRTUS KAR GLOBAL QUALITY DIVIDEND-C</td>
+        <td>a58796804</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>RGSAX</td>
+        <td>Virtus KAR Global Small-Cap Fund A</td>
+        <td>a141737391</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>RGSCX</td>
+        <td>Virtus KAR Global Small-Cap Fund C</td>
+        <td>a142593342</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>RAGHX</td>
+        <td>Virtus KAR Health Sciences Fund A</td>
+        <td>a141737392</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>RCGHX</td>
+        <td>Virtus KAR Health Sciences Fund C</td>
+        <td>a142593343</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>VISAX</td>
+        <td>VIRTUS KAR INTERNATIONAL SMALL-MID CAP-A</td>
+        <td>a58803950</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VCISX</td>
+        <td>VIRTUS KAR INTERNATIONAL SMALL-MID CAP-C</td>
+        <td>a58803951</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>VLSAX</td>
+        <td>VIRTUS KAR LONG/SHORT EQUITY-A</td>
+        <td>a109330548</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VLSCX</td>
+        <td>VIRTUS KAR LONG/SHORT EQUITY-C</td>
+        <td>a109154718</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>VMACX</td>
+        <td>VIRTUS KAR MID-CAP CORE-A</td>
+        <td>a58694252</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VMCCX</td>
+        <td>VIRTUS KAR MID-CAP CORE-C</td>
+        <td>a58799858</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>PHSKX</td>
+        <td>VIRTUS KAR MID-CAP GROWTH-A</td>
+        <td>a58691069</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>PSKCX</td>
+        <td>VIRTUS KAR MID-CAP GROWTH-C</td>
+        <td>a58795390</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>PKSAX</td>
+        <td>VIRTUS KAR SMALL-CAP CORE-A</td>
+        <td>a58692689</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>PKSCX</td>
+        <td>VIRTUS KAR SMALL-CAP CORE-C</td>
+        <td>a58796229</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>PSGAX</td>
+        <td>VIRTUS KAR SMALL-CAP GROWTH-A</td>
+        <td>a58693297</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>PSGCX</td>
+        <td>VIRTUS KAR SMALL-CAP GROWTH-C</td>
+        <td>a58797565</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>PQSAX</td>
+        <td>VIRTUS KAR SMALL-CAP VALUE-A</td>
+        <td>a58693296</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>PQSCX</td>
+        <td>VIRTUS KAR SMALL-CAP VALUE-C</td>
+        <td>a58797564</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>VKSAX</td>
+        <td>VIRTUS KAR SMALL-MID CAP CORE-A</td>
+        <td>a100128223</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VKSCX</td>
+        <td>VIRTUS KAR SMALL-MID CAP CORE-C</td>
+        <td>a100128224</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>VKSDX</td>
+        <td>VIRTUS KAR SMALL-MID CAP VALUE-A</td>
+        <td>a152084941</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VKSEX</td>
+        <td>VIRTUS KAR SMALL-MID CAP VALUE-C</td>
+        <td>a152084943</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>SAVAX</td>
+        <td>VIRTUS NEWFLEET CORE PLUS BOND-A</td>
+        <td>a58692241</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SAVCX</td>
+        <td>VIRTUS NEWFLEET CORE PLUS BOND-C</td>
+        <td>a58794998</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>PHCHX</td>
+        <td>VIRTUS NEWFLEET HIGH YIELD-A</td>
+        <td>a58691172</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>PGHCX</td>
+        <td>VIRTUS NEWFLEET HIGH YIELD-C</td>
+        <td>a58795268</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>NAMFX</td>
+        <td>VIRTUS NEWFLEET MULTI-SEC INTERMED BD-A</td>
+        <td>a58691444</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>NCMFX</td>
+        <td>VIRTUS NEWFLEET MULTI-SEC INTERMED BD-C</td>
+        <td>a58794881</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>NARAX</td>
+        <td>VIRTUS NEWFLEET MULTI-SEC SHT TERM BD-A</td>
+        <td>a58691538</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A MSSTB</td>
+       </tr>
+             <tr>
+        <td>PSTCX</td>
+        <td>VIRTUS NEWFLEET MULTI-SEC SHT TERM BD-C</td>
+        <td>a58794882</td>
+        <td>Virtus Funds</td>
+        <td>Class C MSSTB</td>
+       </tr>
+             <tr>
+        <td>PSFRX</td>
+        <td>VIRTUS NEWFLEET SENIOR FLOATING RATE-A</td>
+        <td>a58693855</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>PFSRX</td>
+        <td>VIRTUS NEWFLEET SENIOR FLOATING RATE-C</td>
+        <td>a58798971</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>ASHAX</td>
+        <td>Virtus Newfleet Short Dur High Inc A</td>
+        <td>a141737400</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>ASHCX</td>
+        <td>Virtus Newfleet Short Dur High Inc C</td>
+        <td>a141737401</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>HIMZX</td>
+        <td>VIRTUS NF LOW DURATION CORE PLUS BOND-A</td>
+        <td>a105591898</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>PCMZX</td>
+        <td>VIRTUS NF LOW DURATION CORE PLUS BOND-C</td>
+        <td>a121240790</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>PNEAX</td>
+        <td>Virtus NFJ Dividend Value Fund A</td>
+        <td>a141737389</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>PNECX</td>
+        <td>Virtus NFJ Dividend Value Fund C</td>
+        <td>a142593336</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>PNECX</td>
+        <td>Virtus NFJ Dividend Value Fund C</td>
+        <td>a58795497</td>
+        <td>Allianz</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>PNERX</td>
+        <td>Virtus NFJ Dividend Value Fund R</td>
+        <td>a58795780</td>
+        <td>Allianz</td>
+        <td>CLASS R</td>
+       </tr>
+             <tr>
+        <td>AZMAX</td>
+        <td>Virtus NFJ Emerging Markets Value A</td>
+        <td>a142593316</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>AZMCX</td>
+        <td>Virtus NFJ Emerging Markets Value C</td>
+        <td>a142593338</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>ASUAX</td>
+        <td>Virtus NFJ Global Sustainability Fund A</td>
+        <td>a142593320</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>AFJAX</td>
+        <td>Virtus NFJ International Value Fund A</td>
+        <td>a142593321</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>AFJCX</td>
+        <td>Virtus NFJ International Value Fund C</td>
+        <td>a142593347</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>ANJRX</td>
+        <td>Virtus NFJ International Value Fund R</td>
+        <td>a58799664</td>
+        <td>Allianz</td>
+        <td>CLASS R</td>
+       </tr>
+             <tr>
+        <td>ANLRX</td>
+        <td>Virtus NFJ Large-Cap Value Fund R</td>
+        <td>a58797762</td>
+        <td>Allianz</td>
+        <td>CLASS R</td>
+       </tr>
+             <tr>
+        <td>PNBAX</td>
+        <td>Virtus NFJ Large-Cap Value Fund-A</td>
+        <td>a142593322</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>PNBCX</td>
+        <td>Virtus NFJ Large-Cap Value Fund-C</td>
+        <td>a142593348</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>PQNAX</td>
+        <td>Virtus NFJ Mid-Cap Value Fund A</td>
+        <td>a141737398</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>PQNCX</td>
+        <td>Virtus NFJ Mid-Cap Value Fund C</td>
+        <td>a142593350</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>PRNRX</td>
+        <td>Virtus NFJ Mid-Cap Value Fund R</td>
+        <td>a58795783</td>
+        <td>Allianz</td>
+        <td>CLASS R</td>
+       </tr>
+             <tr>
+        <td>PCVAX</td>
+        <td>Virtus NFJ Small-Cap Value Fund A</td>
+        <td>a141737404</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>PCVCX</td>
+        <td>Virtus NFJ Small-Cap Value Fund C</td>
+        <td>a142593352</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>PNVRX</td>
+        <td>Virtus NFJ Small-Cap Value Fund R</td>
+        <td>a58795781</td>
+        <td>Allianz</td>
+        <td>CLASS R</td>
+       </tr>
+             <tr>
+        <td>STGIX</td>
+        <td>VIRTUS SEIX CORE BOND-A</td>
+        <td>a95553070</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SAINX</td>
+        <td>VIRTUS SEIX CORPORATE BOND-A</td>
+        <td>a95553060</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>STIFX</td>
+        <td>VIRTUS SEIX CORPORATE BOND-C</td>
+        <td>a95553055</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>SFRAX</td>
+        <td>VIRTUS SEIX FLOATING RATE HIGH INCOME-A</td>
+        <td>a95553045</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SFRCX</td>
+        <td>VIRTUS SEIX FLOATING RATE HIGH INCOME-C</td>
+        <td>a95553046</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>SFLTX</td>
+        <td>VIRTUS SEIX HIGH GRADE MUNICIPAL BOND-A</td>
+        <td>a95553053</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>HYPSX</td>
+        <td>VIRTUS SEIX HIGH YIELD-A</td>
+        <td>a95553050</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SISIX</td>
+        <td>VIRTUS SEIX INVMNT GRADE TAX-EXMPT BND-A</td>
+        <td>a95553054</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>HXBZX</td>
+        <td>VIRTUS SEIX TAX-EXEMPT BOND-A</td>
+        <td>a105591897</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>PXCZX</td>
+        <td>VIRTUS SEIX TAX-EXEMPT BOND-C</td>
+        <td>a121240791</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>CBPSX</td>
+        <td>VIRTUS SEIX TOTAL RETURN BOND-A</td>
+        <td>a95553032</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SSAGX</td>
+        <td>VIRTUS SEIX U.S. GVNMT SEC ULTRA-ST BD-A</td>
+        <td>a104700679</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>HEMZX</td>
+        <td>VIRTUS SGA EMERGING MARKETS EQUITY-A</td>
+        <td>a88020284</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SGAAX</td>
+        <td>VIRTUS SGA GLOBAL GROWTH-A</td>
+        <td>a113914717</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SGACX</td>
+        <td>VIRTUS SGA GLOBAL GROWTH-C</td>
+        <td>a114290139</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>SCIIX</td>
+        <td>VIRTUS SGA INTERNATIONAL GROWTH-A</td>
+        <td>a95553040</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>PGWAX</td>
+        <td>Virtus Silvant Focused Growth Fund A</td>
+        <td>a142593317</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>PGWCX</td>
+        <td>Virtus Silvant Focused Growth Fund C</td>
+        <td>a142593339</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>STCIX</td>
+        <td>VIRTUS SILVANT LARGE-CAP GROWTH STOCK-A</td>
+        <td>a95553034</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>RMDAX</td>
+        <td>Virtus Silvant Mid-Cap Growth Fund A</td>
+        <td>a142593323</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>RMDCX</td>
+        <td>Virtus Silvant Mid-Cap Growth Fund C</td>
+        <td>a142593349</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>NAINX</td>
+        <td>VIRTUS TACTICAL ALLOCATION-A</td>
+        <td>a58691095</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>POICX</td>
+        <td>VIRTUS TACTICAL ALLOCATION-C</td>
+        <td>a58795209</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>SAGAX</td>
+        <td>VIRTUS ZEVENBERGEN INNOV GRWTH STK-A</td>
+        <td>a95553039</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>RAGTX</td>
+        <td>Virtus Zevenbergen Technology Fund A</td>
+        <td>a141994055</td>
+        <td>Virtus Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>RCGTX</td>
+        <td>Virtus Zevenbergen Technology Fund C</td>
+        <td>a142593353</td>
+        <td>Virtus Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>048048862</td>
+        <td>VITRUVIUS ASIAN EQUITY &quot;B&quot; (EURHDG) ACC</td>
+        <td>a134155908</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>051437314</td>
+        <td>VITRUVIUS ASIAN EQUITY &quot;B&quot; (GBPHDG) ACC</td>
+        <td>a134155950</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>072517253</td>
+        <td>VITRUVIUS ASIAN EQUITY &quot;B&quot; (SGDHDG) ACC</td>
+        <td>a134157452</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>047942551</td>
+        <td>VITRUVIUS ASIAN EQUITY &quot;B&quot; (USD) ACC</td>
+        <td>a132870777</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>051437519</td>
+        <td>VITRUVIUS EUROPEAN EQUITY &quot;B&quot; (GBPHDG) ACC</td>
+        <td>a134155951</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>072517334</td>
+        <td>VITRUVIUS EUROPEAN EQUITY &quot;B&quot; (SGDHDG) ACC</td>
+        <td>a134157453</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>072517300</td>
+        <td>VITRUVIUS EUROPEAN EQUITY &quot;B&quot; (USDHDG) ACC</td>
+        <td>a132870779</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>010375436</td>
+        <td>VITRUVIUS EUROPEAN EQUITY &quot;B&quot; ACC</td>
+        <td>a134155860</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>043168525</td>
+        <td>VITRUVIUS GREATER CHINA EQUITY &quot;B&quot; (EURHDG) ACC</td>
+        <td>a134156011</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>I440614534</td>
+        <td>VITRUVIUS GREATER CHINA EQUITY &quot;B&quot; (GBPHDG) ACC</td>
+        <td>a134155952</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>072517377</td>
+        <td>VITRUVIUS GREATER CHINA EQUITY &quot;B&quot; (SGDHDG) ACC</td>
+        <td>a134157454</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>043168509</td>
+        <td>VITRUVIUS GREATER CHINA EQUITY &quot;B&quot; (USDHDG) ACC</td>
+        <td>a132870776</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>011777287</td>
+        <td>VITRUVIUS GROWTH OPPORTUNITIES &quot;B&quot; (EURHDG) ACC</td>
+        <td>a134155863</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>051437594</td>
+        <td>VITRUVIUS GROWTH OPPORTUNITIES &quot;B&quot; (GBP) ACC</td>
+        <td>a134155953</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>072517393</td>
+        <td>VITRUVIUS GROWTH OPPORTUNITIES &quot;B&quot; (SGDHDG) ACC</td>
+        <td>a134157455</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>010874955</td>
+        <td>VITRUVIUS GROWTH OPPORTUNITIES &quot;B&quot; (USDHDG) ACC</td>
+        <td>a132870773</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>I440614169</td>
+        <td>VITRUVIUS JAPANESE EQUITY &quot;B&quot; (EURHDG) ACC</td>
+        <td>a134155861</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>051437659</td>
+        <td>VITRUVIUS JAPANESE EQUITY &quot;B&quot; (GBPHDG) ACC</td>
+        <td>a134155954</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>I440614272</td>
+        <td>VITRUVIUS JAPANESE EQUITY &quot;B&quot; (JPY) ACC</td>
+        <td>a134155887</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>072517440</td>
+        <td>VITRUVIUS JAPANESE EQUITY &quot;B&quot; (SGDHDG) ACC</td>
+        <td>a134157456</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>I435747634</td>
+        <td>VITRUVIUS JAPANESE EQUITY &quot;B&quot; (USDHDG) ACC</td>
+        <td>a132870780</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>012983972</td>
+        <td>VITRUVIUS SWISS EQUITY &quot;B&quot; (CHF) ACC</td>
+        <td>a134155901</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>012983999</td>
+        <td>VITRUVIUS SWISS EQUITY &quot;B&quot; (EURHDG) ACC</td>
+        <td>a134155864</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>072517482</td>
+        <td>VITRUVIUS SWISS EQUITY &quot;B&quot; (SGDHDG) ACC</td>
+        <td>a134157477</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>072517466</td>
+        <td>VITRUVIUS SWISS EQUITY &quot;B&quot; (USDHDG) ACC</td>
+        <td>a132870782</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>I440614241</td>
+        <td>VITRUVIUS UCITS SELECTION &quot;B&quot; (EUR) ACC</td>
+        <td>a134155879</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>147953585</td>
+        <td>VITRUVIUS UCITS SELECTION &quot;B&quot; (GBPHDG) ACC</td>
+        <td>a134155889</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>147953607</td>
+        <td>VITRUVIUS UCITS SELECTION &quot;B&quot; (SGDHDG) ACC</td>
+        <td>a134155890</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>I435747610</td>
+        <td>VITRUVIUS UCITS SELECTION &quot;B&quot; (USDHDG) ACC</td>
+        <td>a132870774</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>I440614172</td>
+        <td>VITRUVIUS US EQUITY &quot;B&quot; (EURHDG) ACC</td>
+        <td>a134155862</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>051437691</td>
+        <td>VITRUVIUS US EQUITY &quot;B&quot; (GBPHDG) ACC</td>
+        <td>a134155955</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>072517512</td>
+        <td>VITRUVIUS US EQUITY &quot;B&quot; (SGDHDG) ACC</td>
+        <td>a134157478</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>I435747600</td>
+        <td>VITRUVIUS US EQUITY &quot;B&quot; (USD) ACC</td>
+        <td>a132870772</td>
+        <td>BELGRAVE CAPITAL MGMT LTD (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>I470232565</td>
+        <td>VONTOBEL ACTIVE BETA OPPORTUNITIES PLUS &quot;A&quot; (EUR) INC A</td>
+        <td>a142143722</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>187923140</td>
+        <td>VONTOBEL ACTIVE BETA OPPORTUNITIES PLUS &quot;B&quot; (EUR) ACC A</td>
+        <td>a142143723</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>187923158</td>
+        <td>VONTOBEL ACTIVE BETA OPPORTUNITIES PLUS &quot;C&quot; (EUR) ACC</td>
+        <td>a142143378</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>226068457</td>
+        <td>VONTOBEL ACTIVE BETA OPPORTUNITIES PLUS &quot;H&quot; (CHFHDG) ACC</td>
+        <td>a143386749</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>226068490</td>
+        <td>VONTOBEL ACTIVE BETA OPPORTUNITIES PLUS &quot;H&quot; (USDHDG) ACC</td>
+        <td>a143386413</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>I470234494</td>
+        <td>VONTOBEL ASIA EX JAPAN &quot;A&quot; (USD) INC</td>
+        <td>a142144204</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>008440875</td>
+        <td>VONTOBEL ASIA EX JAPAN &quot;B&quot; (USD) ACC</td>
+        <td>a142144205</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>013700702</td>
+        <td>VONTOBEL ASIA EX JAPAN &quot;C&quot; (USD) ACC</td>
+        <td>a142144417</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>021891240</td>
+        <td>VONTOBEL ASIA EX JAPAN&quot;H&quot; (HDG) ACC</td>
+        <td>a142144289</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>041541482</td>
+        <td>VONTOBEL COMMODITY &quot;B&quot; (USD) ACC</td>
+        <td>a142144540</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>041541512</td>
+        <td>VONTOBEL COMMODITY &quot;C&quot; (USD) ACC</td>
+        <td>a142143503</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>041541547</td>
+        <td>VONTOBEL COMMODITY &quot;H&quot; (CHFHDG) ACC</td>
+        <td>a142144539</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>041541563</td>
+        <td>VONTOBEL COMMODITY &quot;H&quot; (EURHDG) ACC</td>
+        <td>a142144250</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>050524272</td>
+        <td>VONTOBEL COMMODITY &quot;H&quot; (SEKHDG) ACC</td>
+        <td>a142143866</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>I470234460</td>
+        <td>VONTOBEL EASTERN EUROPEAN BOND &quot;A&quot; (EUR) INC</td>
+        <td>a142144196</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>057106859</td>
+        <td>VONTOBEL EASTERN EUROPEAN BOND &quot;AM&quot; (USD) INC</td>
+        <td>a142144983</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AM</td>
+       </tr>
+             <tr>
+        <td>008021520</td>
+        <td>VONTOBEL EASTERN EUROPEAN BOND &quot;B&quot; (EUR) ACC</td>
+        <td>a142144197</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>013700460</td>
+        <td>VONTOBEL EASTERN EUROPEAN BOND &quot;C&quot; ACC</td>
+        <td>a142143950</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>196334211</td>
+        <td>VONTOBEL EMERGING MARKETS BLEND &quot;B&quot; (USD) ACC</td>
+        <td>a142144618</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>203340010</td>
+        <td>VONTOBEL EMERGING MARKETS CORPORATE BOND &quot;A&quot; (USD) INC</td>
+        <td>a161257359</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>188261205</td>
+        <td>VONTOBEL EMERGING MARKETS CORPORATE BOND &quot;AQ1&quot; (USD) INC</td>
+        <td>a142143717</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AQ1</td>
+       </tr>
+             <tr>
+        <td>206606185</td>
+        <td>VONTOBEL EMERGING MARKETS CORPORATE BOND &quot;AQC1&quot; (USD) INC A</td>
+        <td>a161257340</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AQC</td>
+       </tr>
+             <tr>
+        <td>175011170</td>
+        <td>VONTOBEL EMERGING MARKETS CORPORATE BOND &quot;B&quot; (USD) ACC</td>
+        <td>a142143372</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>188261213</td>
+        <td>VONTOBEL EMERGING MARKETS CORPORATE BOND &quot;B1&quot; (USD) ACC</td>
+        <td>a142143718</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B1</td>
+       </tr>
+             <tr>
+        <td>194439628</td>
+        <td>VONTOBEL EMERGING MARKETS CORPORATE BOND &quot;H&quot; (EURHDG) ACC</td>
+        <td>a142144619</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>I470236704</td>
+        <td>VONTOBEL EMERGING MARKETS DEBT &quot;AH&quot; (EURHDG) INC</td>
+        <td>a142144757</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AH</td>
+       </tr>
+             <tr>
+        <td>108676655</td>
+        <td>VONTOBEL EMERGING MARKETS DEBT &quot;AI&quot; (EUR) INC</td>
+        <td>a142144158</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I470231625</td>
+        <td>VONTOBEL EMERGING MARKETS DEBT &quot;AM&quot; (USD) INC</td>
+        <td>a142143487</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AM</td>
+       </tr>
+             <tr>
+        <td>168347774</td>
+        <td>VONTOBEL EMERGING MARKETS DEBT &quot;AQ1&quot; (USD) INC</td>
+        <td>a142143387</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AQ1</td>
+       </tr>
+             <tr>
+        <td>I470236709</td>
+        <td>VONTOBEL EMERGING MARKETS DEBT &quot;AS&quot; (USD) INC</td>
+        <td>a142144758</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AS</td>
+       </tr>
+             <tr>
+        <td>092643956</td>
+        <td>VONTOBEL EMERGING MARKETS DEBT &quot;B&quot; (USD) ACC</td>
+        <td>a142144656</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>168347782</td>
+        <td>VONTOBEL EMERGING MARKETS DEBT &quot;B1&quot; (USD) ACC</td>
+        <td>a142143388</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B1</td>
+       </tr>
+             <tr>
+        <td>148206376</td>
+        <td>VONTOBEL EMERGING MARKETS DEBT &quot;C&quot; (USD) ACC</td>
+        <td>a142143482</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>092644006</td>
+        <td>VONTOBEL EMERGING MARKETS DEBT &quot;H&quot; (CHFHDG) ACC</td>
+        <td>a142144977</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>092643999</td>
+        <td>VONTOBEL EMERGING MARKETS DEBT &quot;H&quot; (EURHDG) ACC</td>
+        <td>a142144657</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>148206392</td>
+        <td>VONTOBEL EMERGING MARKETS DEBT &quot;HC&quot; (EURHDG) ACC</td>
+        <td>a142143510</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>HC</td>
+       </tr>
+             <tr>
+        <td>I470234484</td>
+        <td>VONTOBEL EMERGING MARKETS EQUITY &quot;A&quot; INC</td>
+        <td>a142144202</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>097949441</td>
+        <td>VONTOBEL EMERGING MARKETS EQUITY &quot;B&quot; (SEK) ACC</td>
+        <td>a142144025</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>004050703</td>
+        <td>VONTOBEL EMERGING MARKETS EQUITY &quot;B&quot; ACC</td>
+        <td>a142144203</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>168347952</td>
+        <td>VONTOBEL EMERGING MARKETS EQUITY &quot;B1&quot; (USD) ACC</td>
+        <td>a142143339</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B1</td>
+       </tr>
+             <tr>
+        <td>102119240</td>
+        <td>VONTOBEL EMERGING MARKETS EQUITY &quot;C&quot; (SEK) ACC</td>
+        <td>a142144027</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>013700621</td>
+        <td>VONTOBEL EMERGING MARKETS EQUITY &quot;C&quot; ACC</td>
+        <td>a142144416</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>046961811</td>
+        <td>VONTOBEL EMERGING MARKETS EQUITY &quot;H&quot; (CHFHDG) ACC</td>
+        <td>a142143538</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>097297606</td>
+        <td>VONTOBEL EMERGING MARKETS EQUITY &quot;H&quot; (SEKHDG) ACC</td>
+        <td>a142144024</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>021891223</td>
+        <td>VONTOBEL EMERGING MARKETS EQUITY &quot;H&quot;(EURHDG) ACC</td>
+        <td>a142144292</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>033324910</td>
+        <td>VONTOBEL EMERGING MARKETS EQUITY &quot;HC&quot;(HDG) ACC</td>
+        <td>a142143447</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>HC</td>
+       </tr>
+             <tr>
+        <td>I474193546</td>
+        <td>VONTOBEL ENERGY REVOLUTION &quot;A&quot; (CHF) INC</td>
+        <td>a143386271</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I470232240</td>
+        <td>VONTOBEL ENERGY REVOLUTION &quot;A&quot; (EUR) INC</td>
+        <td>a142143641</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>140793027</td>
+        <td>VONTOBEL ENERGY REVOLUTION &quot;B&quot; (CHF) ACC</td>
+        <td>a143386272</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>038440616</td>
+        <td>VONTOBEL ENERGY REVOLUTION &quot;B&quot; (EUR) ACC</td>
+        <td>a142143686</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>038440624</td>
+        <td>VONTOBEL ENERGY REVOLUTION &quot;C&quot; (EUR) ACC</td>
+        <td>a142143688</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>057108240</td>
+        <td>VONTOBEL ENERGY REVOLUTION &quot;C&quot; (USD) ACC</td>
+        <td>a142143601</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>046962338</td>
+        <td>VONTOBEL ENERGY REVOLUTION &quot;H&quot; (CHFHDG) ACC</td>
+        <td>a142143540</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>I470236199</td>
+        <td>VONTOBEL EURO CORPORATE BOND &quot;A&quot; (EUR) INC</td>
+        <td>a142144630</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>015358572</td>
+        <td>VONTOBEL EURO CORPORATE BOND &quot;B&quot; (EUR) ACC</td>
+        <td>a142144290</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>015358599</td>
+        <td>VONTOBEL EURO CORPORATE BOND &quot;C&quot; (EUR) ACC</td>
+        <td>a142144303</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>086329026</td>
+        <td>VONTOBEL EURO CORPORATE BOND&quot;H&quot; (CHFHDG) ACC</td>
+        <td>a142144022</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>I470234479</td>
+        <td>VONTOBEL EURO SHORT TERM BOND &quot;A&quot; (EUR) INC</td>
+        <td>a142144200</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>012068964</td>
+        <td>VONTOBEL EURO SHORT TERM BOND &quot;B&quot; (EUR) ACC</td>
+        <td>a142144283</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>013700923</td>
+        <td>VONTOBEL EURO SHORT TERM BOND &quot;C&quot; (EUR) ACC</td>
+        <td>a142144302</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>I470236200</td>
+        <td>VONTOBEL EUROPEAN EQUITY &quot;A&quot; INC</td>
+        <td>a142144631</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>015358513</td>
+        <td>VONTOBEL EUROPEAN EQUITY &quot;B&quot; ACC</td>
+        <td>a142144288</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>015358521</td>
+        <td>VONTOBEL EUROPEAN EQUITY &quot;C&quot; ACC</td>
+        <td>a142144363</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>022932312</td>
+        <td>VONTOBEL FD CH-SUST.BD CHF CONCEPT &quot;A&quot; (CHF) INC</td>
+        <td>a134156892</td>
+        <td>BANK VONTOBEL AG (CH)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I440616579</td>
+        <td>VONTOBEL FD CH-VESCORE GL.EQ.MU.FA &quot;A&quot; (CHF) INC</td>
+        <td>a134156463</td>
+        <td>BANK VONTOBEL AG (CH)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>004692235</td>
+        <td>VONTOBEL FUND (CH) - SUSTAINABLE SWISS EQUITY &quot;A&quot; (CHF) INC</td>
+        <td>a134157197</td>
+        <td>BANK VONTOBEL AG (CH)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>226295984</td>
+        <td>VONTOBEL FUND II MTX CHINA A-SHARES LEADERS &quot;A&quot; (USD) INC</td>
+        <td>a148939545</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>226295992</td>
+        <td>VONTOBEL FUND II MTX CHINA A-SHARES LEADERS &quot;B&quot; (USD) ACC</td>
+        <td>a148997076</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>226296000</td>
+        <td>VONTOBEL FUND II MTX CHINA A-SHARES LEADERS &quot;C&quot; (USD) ACC</td>
+        <td>a148997077</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>I470235054</td>
+        <td>VONTOBEL GLOBAL ACTIVE BOND &quot;A&quot; (EUR) INC</td>
+        <td>a142144344</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I470234510</td>
+        <td>VONTOBEL GLOBAL ACTIVE BOND &quot;AH HEDGED&quot; (USD) INC</td>
+        <td>a142144208</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AH</td>
+       </tr>
+             <tr>
+        <td>I470235936</td>
+        <td>VONTOBEL GLOBAL ACTIVE BOND &quot;AS&quot; (EUR) INC</td>
+        <td>a142144565</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AS</td>
+       </tr>
+             <tr>
+        <td>111275092</td>
+        <td>VONTOBEL GLOBAL ACTIVE BOND &quot;B&quot; (EUR) ACC</td>
+        <td>a142144345</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>148206384</td>
+        <td>VONTOBEL GLOBAL ACTIVE BOND &quot;C&quot; (EUR) ACC</td>
+        <td>a142143481</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>118165519</td>
+        <td>VONTOBEL GLOBAL ACTIVE BOND &quot;H&quot; (CHFHDG) ACC</td>
+        <td>a142144282</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>003574555</td>
+        <td>VONTOBEL GLOBAL ACTIVE BOND &quot;H&quot; (USDHDG) AC C</td>
+        <td>a142144294</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>I470233059</td>
+        <td>VONTOBEL GLOBAL CORPORATE BOND &quot;A&quot; (USD) INC</td>
+        <td>a142143845</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>139553616</td>
+        <td>VONTOBEL GLOBAL CORPORATE BOND &quot;AH&quot; (CHF) INC</td>
+        <td>a142143846</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>139553624</td>
+        <td>VONTOBEL GLOBAL CORPORATE BOND &quot;AH&quot; (EURHEDGED) INC</td>
+        <td>a142143847</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>139553659</td>
+        <td>VONTOBEL GLOBAL CORPORATE BOND &quot;B&quot; (USD)ACC</td>
+        <td>a142143848</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>139553667</td>
+        <td>VONTOBEL GLOBAL CORPORATE BOND &quot;C&quot; (USD) ACC</td>
+        <td>a142143849</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>139553675</td>
+        <td>VONTOBEL GLOBAL CORPORATE BOND &quot;H&quot; (EURHEDGED) ACC</td>
+        <td>a142143850</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>139553683</td>
+        <td>VONTOBEL GLOBAL CORPORATE BOND &quot;HC&quot; (EURHEDGED) ACC</td>
+        <td>a142143851</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>HC</td>
+       </tr>
+             <tr>
+        <td>I470231710</td>
+        <td>VONTOBEL GLOBAL ENVIRONMENTAL CHANGE &quot;A&quot; (CHF) INC</td>
+        <td>a142143508</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I470232228</td>
+        <td>VONTOBEL GLOBAL ENVIRONMENTAL CHANGE &quot;A&quot; (EUR) INC</td>
+        <td>a142143638</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>140793078</td>
+        <td>VONTOBEL GLOBAL ENVIRONMENTAL CHANGE &quot;B&quot; (CHF) ACC</td>
+        <td>a142143509</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>038440560</td>
+        <td>VONTOBEL GLOBAL ENVIRONMENTAL CHANGE &quot;B&quot; ACC</td>
+        <td>a142143639</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>165144317</td>
+        <td>VONTOBEL GLOBAL ENVIRONMENTAL CHANGE &quot;C&quot; (EUR) ACC</td>
+        <td>a142143629</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>195600694</td>
+        <td>VONTOBEL GLOBAL ENVIRONMENTAL CHANGE &quot;C&quot; (USD) ACC</td>
+        <td>a142144646</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>140793094</td>
+        <td>VONTOBEL GLOBAL ENVIRONMENTAL CHANGE &quot;H&quot; (CHFHDG) ACC A</td>
+        <td>a142143685</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>161834807</td>
+        <td>VONTOBEL GLOBAL ENVIRONMENTAL CHANGE &quot;H&quot; (USDHDG) ACC A</td>
+        <td>a142143440</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>I470236205</td>
+        <td>VONTOBEL GLOBAL EQUITY &quot;A&quot; (USD) INC</td>
+        <td>a142144632</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>021891053</td>
+        <td>VONTOBEL GLOBAL EQUITY &quot;B&quot; (USD) ACC</td>
+        <td>a142144299</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>168347936</td>
+        <td>VONTOBEL GLOBAL EQUITY &quot;B1&quot; (USD) ACC</td>
+        <td>a142143337</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B1</td>
+       </tr>
+             <tr>
+        <td>021891096</td>
+        <td>VONTOBEL GLOBAL EQUITY &quot;C&quot; (USD) ACC</td>
+        <td>a142144364</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>021891169</td>
+        <td>VONTOBEL GLOBAL EQUITY &quot;H&quot;(HDG) ACC</td>
+        <td>a142144306</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>033324936</td>
+        <td>VONTOBEL GLOBAL EQUITY &quot;HC&quot; (HDG) ACC</td>
+        <td>a142143448</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>HC</td>
+       </tr>
+             <tr>
+        <td>I470234500</td>
+        <td>VONTOBEL GLOBAL EQUITY INCOME &quot;A&quot; GROSS (USD) INC</td>
+        <td>a142144206</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I470232524</td>
+        <td>VONTOBEL GLOBAL EQUITY INCOME &quot;AQ GROSS&quot; (USD) INC</td>
+        <td>a142143712</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AQ</td>
+       </tr>
+             <tr>
+        <td>012960336</td>
+        <td>VONTOBEL GLOBAL EQUITY INCOME &quot;B&quot; (USD) ACC</td>
+        <td>a142144207</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>021909718</td>
+        <td>VONTOBEL GLOBAL EQUITY INCOME &quot;H&quot; (EURHDG) ACC</td>
+        <td>a142144293</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>097949816</td>
+        <td>VONTOBEL GLOBAL EQUITY&quot;B&quot; (SEK) ACC</td>
+        <td>a142144026</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>097193959</td>
+        <td>VONTOBEL GLOBAL EQUITY&quot;H&quot; (SEKHDG) ACC</td>
+        <td>a142144023</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>I470233257</td>
+        <td>VONTOBEL GLOBAL HIGH YIELD BOND &quot;AMH&quot; (AUDHDG) INC</td>
+        <td>a142143895</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AMH</td>
+       </tr>
+             <tr>
+        <td>I470233550</td>
+        <td>VONTOBEL GLOBAL HIGH YIELD BOND &quot;AMH&quot; (ZARHDG) INC</td>
+        <td>a142143968</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AMH</td>
+       </tr>
+             <tr>
+        <td>I470236925</td>
+        <td>VONTOBEL GLOBAL HIGH YIELD BOND &quot;AS&quot; (EUR) INC</td>
+        <td>a142144812</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AS</td>
+       </tr>
+             <tr>
+        <td>057106646</td>
+        <td>VONTOBEL GLOBAL HIGH YIELD BOND &quot;B&quot; (EUR) ACC</td>
+        <td>a142144762</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>148206368</td>
+        <td>VONTOBEL GLOBAL HIGH YIELD BOND &quot;C&quot; (EUR) ACC A</td>
+        <td>a142143511</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>057106743</td>
+        <td>VONTOBEL GLOBAL HIGH YIELD BOND &quot;H&quot; (CHFHDG) ACC</td>
+        <td>a142144981</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>057106760</td>
+        <td>VONTOBEL GLOBAL HIGH YIELD BOND &quot;H&quot; (USDHDG) ACC</td>
+        <td>a142144982</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>106195218</td>
+        <td>VONTOBEL GLOBAL HIGH YIELD BOND &quot;HC&quot; (USDHDG) ACC</td>
+        <td>a142144469</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>HC</td>
+       </tr>
+             <tr>
+        <td>I470234469</td>
+        <td>VONTOBEL GREEN BOND &quot;A&quot; (EUR) INC</td>
+        <td>a142144198</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I470233396</td>
+        <td>VONTOBEL GREEN BOND &quot;AM&quot; (USD) INC</td>
+        <td>a142143930</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AM</td>
+       </tr>
+             <tr>
+        <td>003574482</td>
+        <td>VONTOBEL GREEN BOND &quot;B&quot; (EUR) ACC</td>
+        <td>a142144199</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>165144325</td>
+        <td>VONTOBEL GREEN BOND &quot;C&quot; (EUR) ACC</td>
+        <td>a142143630</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>I470231775</td>
+        <td>VONTOBEL MTX SUSTAINABLE ASIAN LEADERS (EX JAPAN) &quot;A&quot; INC</td>
+        <td>a142143524</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>038440926</td>
+        <td>VONTOBEL MTX SUSTAINABLE ASIAN LEADERS (EX JAPAN) &quot;B&quot; ACC</td>
+        <td>a142143525</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>217701970</td>
+        <td>VONTOBEL MTX SUSTAINABLE ASIAN LEADERS (EX JAPAN) &quot;B1&quot; (USD) ACC</td>
+        <td>a142144351</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B1</td>
+       </tr>
+             <tr>
+        <td>038440969</td>
+        <td>VONTOBEL MTX SUSTAINABLE ASIAN LEADERS (EX JAPAN) &quot;H&quot; (EURHDG) ACC</td>
+        <td>a142143374</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>I493416515</td>
+        <td>VONTOBEL MTX SUSTAINABLE EMERGING MARKETS LEADERS &quot;AH&quot; (EURHDG) INC</td>
+        <td>a148461578</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AH</td>
+       </tr>
+             <tr>
+        <td>202814417</td>
+        <td>VONTOBEL MTX SUSTAINABLE EMERGING MARKETS LEADERS &quot;B&quot; (EUR) ACC</td>
+        <td>a142144964</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>160227265</td>
+        <td>VONTOBEL MTX SUSTAINABLE EMERGING MARKETS LEADERS &quot;B&quot; (SEK) ACC</td>
+        <td>a142143380</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>057108541</td>
+        <td>VONTOBEL MTX SUSTAINABLE EMERGING MARKETS LEADERS &quot;B&quot; ACC</td>
+        <td>a142144713</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>188261175</td>
+        <td>VONTOBEL MTX SUSTAINABLE EMERGING MARKETS LEADERS &quot;B1&quot; (USD) ACC</td>
+        <td>a142143703</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B1</td>
+       </tr>
+             <tr>
+        <td>165144333</td>
+        <td>VONTOBEL MTX SUSTAINABLE EMERGING MARKETS LEADERS &quot;C&quot; (USD) ACC</td>
+        <td>a142143632</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>164658511</td>
+        <td>VONTOBEL MTX SUSTAINABLE EMERGING MARKETS LEADERS &quot;H&quot; (EURHDG) ACC</td>
+        <td>a142143673</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>165144341</td>
+        <td>VONTOBEL MTX SUSTAINABLE EMERGING MARKETS LEADERS &quot;HC&quot; (EURHDG) ACC</td>
+        <td>a142143631</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>HC</td>
+       </tr>
+             <tr>
+        <td>173759592</td>
+        <td>VONTOBEL MULTI ASSET DEFENSIVE &quot;C&quot; (EUR) ACC</td>
+        <td>a142143548</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>176706686</td>
+        <td>VONTOBEL MULTI ASSET DEFENSIVE &quot;H&quot; (CHFHDG) ACC</td>
+        <td>a142143549</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>176706694</td>
+        <td>VONTOBEL MULTI ASSET DEFENSIVE &quot;H&quot; (USDHDG) ACC</td>
+        <td>a142143550</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>170037278</td>
+        <td>VONTOBEL MULTI ASSET DEFENSIVE &amp;#168;B&amp;#168; (EUR)ACC</td>
+        <td>a142143368</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>148172064</td>
+        <td>VONTOBEL MULTI ASSET SOLUTION &quot;B&quot; (EUR) ACC</td>
+        <td>a142144732</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>148172102</td>
+        <td>VONTOBEL MULTI ASSET SOLUTION &quot;C&quot; (EUR) ACC</td>
+        <td>a142144733</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>110654464</td>
+        <td>VONTOBEL NON-FOOD COMMODITY &quot;B&quot; (USD) ACC</td>
+        <td>a142144563</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>110654529</td>
+        <td>VONTOBEL NON-FOOD COMMODITY &quot;H&quot; (CHFHDG) ACC</td>
+        <td>a142143774</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>110654537</td>
+        <td>VONTOBEL NON-FOOD COMMODITY &quot;H&quot; (EURHDG) ACC</td>
+        <td>a142144564</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>I470236839</td>
+        <td>VONTOBEL SMART DATA EQUITY &quot;A&quot; (USD) INC</td>
+        <td>a142144790</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>084832537</td>
+        <td>VONTOBEL SMART DATA EQUITY &quot;B&quot; (USD) ACC</td>
+        <td>a142144789</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>084832618</td>
+        <td>VONTOBEL SMART DATA EQUITY &quot;H&quot; (CHFHDG) ACC</td>
+        <td>a142145006</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>084832626</td>
+        <td>VONTOBEL SMART DATA EQUITY &quot;H&quot; (EURHDG) ACC</td>
+        <td>a142145007</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>I470237302</td>
+        <td>VONTOBEL SUSTAINABLE EMERGING MARKETS &quot;A&quot; (USD) INC</td>
+        <td>a142144906</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>214539705</td>
+        <td>VONTOBEL SUSTAINABLE EMERGING MARKETS DEBT &quot;B&quot; (USD) ACC</td>
+        <td>a148461437</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>214539730</td>
+        <td>VONTOBEL SUSTAINABLE EMERGING MARKETS DEBT &quot;H&quot; (EURHDG) ACC</td>
+        <td>a148461438</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>I470236920</td>
+        <td>VONTOBEL SUSTAINABLE EMERGING MARKETS LOCAL CURRENCY BOND &quot;A&quot; (USD) INC</td>
+        <td>a142144811</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I470233151</td>
+        <td>VONTOBEL SUSTAINABLE EMERGING MARKETS LOCAL CURRENCY BOND &quot;AM&quot; (USD) INC</td>
+        <td>a142143868</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AM</td>
+       </tr>
+             <tr>
+        <td>I470233040</td>
+        <td>VONTOBEL SUSTAINABLE EMERGING MARKETS LOCAL CURRENCY BOND &quot;AMH&quot; (AUDHDG) INC</td>
+        <td>a142143841</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AMH</td>
+       </tr>
+             <tr>
+        <td>I470233038</td>
+        <td>VONTOBEL SUSTAINABLE EMERGING MARKETS LOCAL CURRENCY BOND &quot;AMH&quot; (ZARHDG) INC</td>
+        <td>a142143840</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AMH</td>
+       </tr>
+             <tr>
+        <td>075207026</td>
+        <td>VONTOBEL SUSTAINABLE EMERGING MARKETS LOCAL CURRENCY BOND &quot;B&quot; (CHF) ACC</td>
+        <td>a142144866</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>075207174</td>
+        <td>VONTOBEL SUSTAINABLE EMERGING MARKETS LOCAL CURRENCY BOND &quot;B&quot; (EUR) ACC</td>
+        <td>a142145003</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>056330771</td>
+        <td>VONTOBEL SUSTAINABLE EMERGING MARKETS LOCAL CURRENCY BOND &quot;B&quot; (USD) ACC</td>
+        <td>a142143555</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>056330780</td>
+        <td>VONTOBEL SUSTAINABLE EMERGING MARKETS LOCAL CURRENCY BOND &quot;C&quot; (USD) ACC</td>
+        <td>a142143556</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>056330836</td>
+        <td>VONTOBEL SUSTAINABLE EMERGING MARKETS LOCAL CURRENCY BOND &quot;H&quot; (CHFHDG) ACC</td>
+        <td>a142143927</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>056330844</td>
+        <td>VONTOBEL SUSTAINABLE EMERGING MARKETS LOCAL CURRENCY BOND &quot;H&quot; (EURHDG) ACC</td>
+        <td>a142143557</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>214613131</td>
+        <td>VONTOBEL SUSTAINABLE GLOBAL BOND &quot;B&quot; (EUR) ACC</td>
+        <td>a142144462</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>003573672</td>
+        <td>VONTOBEL SUSTAINABLE SWISS FRANC BOND &quot;A&quot; (CHF) INC</td>
+        <td>a142143780</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>003573877</td>
+        <td>VONTOBEL SUSTAINABLE SWISS FRANC BOND &quot;B&quot; (CHF) ACC</td>
+        <td>a142143781</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>013700311</td>
+        <td>VONTOBEL SUSTAINABLE SWISS FRANC BOND &quot;C&quot; (CHF) ACC</td>
+        <td>a142143375</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>000279570</td>
+        <td>VONTOBEL SWISS DIVIDEND &quot;A&quot; (CHF) INC</td>
+        <td>a134157198</td>
+        <td>BANK VONTOBEL AG (CH)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>012960255</td>
+        <td>VONTOBEL SWISS MID AND SMALL CAP EQUITY &quot;A&quot; (CHF) INC</td>
+        <td>a142143823</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>012960263</td>
+        <td>VONTOBEL SWISS MID AND SMALL CAP EQUITY &quot;B&quot; (CHF) ACC</td>
+        <td>a142143824</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>165144350</td>
+        <td>VONTOBEL SWISS MIDSMALL CAP EQUITY &quot;C&quot; (CHF) ACC</td>
+        <td>a142143633</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>012069464</td>
+        <td>VONTOBEL SWISS MONEY &quot;A&quot; (CHF) INC</td>
+        <td>a142143782</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>000279572</td>
+        <td>VONTOBEL SWISS SMALL COMPANIES &quot;A&quot; (CHF) INC</td>
+        <td>a134157199</td>
+        <td>BANK VONTOBEL AG (CH)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I470233014</td>
+        <td>VONTOBEL TWENTYFOUR ABSOLUTE RETURN CREDIT &quot;AH&quot; (CHFHEDGED) INC</td>
+        <td>a142143834</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AH</td>
+       </tr>
+             <tr>
+        <td>I470233017</td>
+        <td>VONTOBEL TWENTYFOUR ABSOLUTE RETURN CREDIT &quot;AH&quot; (EURHEDGED) INC</td>
+        <td>a142143835</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AH</td>
+       </tr>
+             <tr>
+        <td>I470233020</td>
+        <td>VONTOBEL TWENTYFOUR ABSOLUTE RETURN CREDIT &quot;AH&quot; (USDHEDGED) INC</td>
+        <td>a142143836</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AH</td>
+       </tr>
+             <tr>
+        <td>155175443</td>
+        <td>VONTOBEL TWENTYFOUR ABSOLUTE RETURN CREDIT &quot;H&quot; (EURHDG) ACC</td>
+        <td>a142143954</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>213306952</td>
+        <td>VONTOBEL TWENTYFOUR ABSOLUTE RETURN CREDIT &quot;H1&quot; (USDHDG) ACC</td>
+        <td>a142144143</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H1</td>
+       </tr>
+             <tr>
+        <td>170631633</td>
+        <td>VONTOBEL TWENTYFOUR ABSOLUTE RETURN CREDIT &quot;HC&quot; (EURHDG) ACC</td>
+        <td>a142143350</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>HC</td>
+       </tr>
+             <tr>
+        <td>I470233025</td>
+        <td>VONTOBEL TWENTYFOUR STRATEGIC INCOME &quot;AH&quot; (CHFHDG) INC</td>
+        <td>a142143837</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AH</td>
+       </tr>
+             <tr>
+        <td>I470233028</td>
+        <td>VONTOBEL TWENTYFOUR STRATEGIC INCOME &quot;AH&quot; (EURHGD) INC</td>
+        <td>a142143838</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AH</td>
+       </tr>
+             <tr>
+        <td>I470233035</td>
+        <td>VONTOBEL TWENTYFOUR STRATEGIC INCOME &quot;AH&quot; (USDHDG) INC</td>
+        <td>a142143839</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AH</td>
+       </tr>
+             <tr>
+        <td>I470233674</td>
+        <td>VONTOBEL TWENTYFOUR STRATEGIC INCOME &quot;AMH&quot; (EURHGD) INC</td>
+        <td>a142143999</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AMH</td>
+       </tr>
+             <tr>
+        <td>I493416063</td>
+        <td>VONTOBEL TWENTYFOUR STRATEGIC INCOME &quot;AMH&quot; (USDHDG) INC</td>
+        <td>a148461465</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AMH</td>
+       </tr>
+             <tr>
+        <td>I470231244</td>
+        <td>VONTOBEL TWENTYFOUR STRATEGIC INCOME &quot;AQ&quot; (GBP) INC</td>
+        <td>a142143392</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AQ</td>
+       </tr>
+             <tr>
+        <td>I470231255</td>
+        <td>VONTOBEL TWENTYFOUR STRATEGIC INCOME &quot;AQH GROSS&quot; (EURHDG) INC</td>
+        <td>a142143394</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AQH</td>
+       </tr>
+             <tr>
+        <td>I470231250</td>
+        <td>VONTOBEL TWENTYFOUR STRATEGIC INCOME &quot;AQH GROSS&quot; (USDHDG) INC</td>
+        <td>a142143393</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AQH</td>
+       </tr>
+             <tr>
+        <td>I470231067</td>
+        <td>VONTOBEL TWENTYFOUR STRATEGIC INCOME &quot;AQH&quot; (HKDHDG) INC</td>
+        <td>a142143347</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AQH</td>
+       </tr>
+             <tr>
+        <td>I470231070</td>
+        <td>VONTOBEL TWENTYFOUR STRATEGIC INCOME &quot;AQH&quot; (SGDHDG) INC</td>
+        <td>a142143348</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AQH</td>
+       </tr>
+             <tr>
+        <td>I470231448</td>
+        <td>VONTOBEL TWENTYFOUR STRATEGIC INCOME &quot;AQH1&quot; (USDHDG) INC A</td>
+        <td>a142143443</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AQH</td>
+       </tr>
+             <tr>
+        <td>I470236361</td>
+        <td>VONTOBEL TWENTYFOUR STRATEGIC INCOME &quot;AQH1&quot; (USDHDG) INC A A</td>
+        <td>a142144671</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AQH</td>
+       </tr>
+             <tr>
+        <td>155175451</td>
+        <td>VONTOBEL TWENTYFOUR STRATEGIC INCOME &quot;H&quot; (EURHDG) ACC</td>
+        <td>a142144325</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>176706627</td>
+        <td>VONTOBEL TWENTYFOUR STRATEGIC INCOME &quot;H&quot; (SGDHDG) ACC</td>
+        <td>a142143325</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>169553513</td>
+        <td>VONTOBEL TWENTYFOUR STRATEGIC INCOME &quot;H&quot; (USDHDG) ACC</td>
+        <td>a142143395</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>168347901</td>
+        <td>VONTOBEL TWENTYFOUR STRATEGIC INCOME &quot;H1&quot; (USDHDG) ACC</td>
+        <td>a142143444</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H1</td>
+       </tr>
+             <tr>
+        <td>170631927</td>
+        <td>VONTOBEL TWENTYFOUR STRATEGIC INCOME &quot;HC&quot; (EURHDG) ACC</td>
+        <td>a142143351</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>HC</td>
+       </tr>
+             <tr>
+        <td>I470231351</td>
+        <td>VONTOBEL TWENTYFOUR SUSTAINABLE MONUMENT ABS &quot;A&quot; (EUR) INC</td>
+        <td>a142143418</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I514482408</td>
+        <td>VONTOBEL TWENTYFOUR SUSTAINABLE SHORT TERM BOND IN &quot;AH&quot; (EURHDG) INC</td>
+        <td>a154025435</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>AH</td>
+       </tr>
+             <tr>
+        <td>208148729</td>
+        <td>VONTOBEL TWENTYFOUR SUSTAINABLE SHORT TERM BOND IN &quot;H&quot; (EURHDG) ACC</td>
+        <td>a154025434</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>I470234859</td>
+        <td>VONTOBEL US DOLLAR MONEY &quot;A&quot; INC</td>
+        <td>a142144295</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>012069022</td>
+        <td>VONTOBEL US DOLLAR MONEY &quot;B&quot; ACC</td>
+        <td>a142144296</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>I470234864</td>
+        <td>VONTOBEL US EQUITY &quot;A&quot; INC</td>
+        <td>a142144297</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>171711827</td>
+        <td>VONTOBEL US EQUITY &quot;B&quot; (EUR) ACC</td>
+        <td>a142143369</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>003576574</td>
+        <td>VONTOBEL US EQUITY &quot;B&quot; ACC</td>
+        <td>a142144298</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>168347995</td>
+        <td>VONTOBEL US EQUITY &quot;B1&quot; (USD) ACC</td>
+        <td>a142143341</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B1</td>
+       </tr>
+             <tr>
+        <td>013700591</td>
+        <td>VONTOBEL US EQUITY &quot;C&quot; ACC</td>
+        <td>a142144119</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>021891215</td>
+        <td>VONTOBEL US EQUITY &quot;H&quot; (EURHDG) ACC</td>
+        <td>a142144291</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>H</td>
+       </tr>
+             <tr>
+        <td>021890910</td>
+        <td>VONTOBEL VALUE BOND &quot;B&quot; (CHF) ACC</td>
+        <td>a142143542</td>
+        <td>VONTOBEL AM SA (LU)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>VYCBX</td>
+        <td>VOYA CORPORATE LEADERS 100 FD CL C</td>
+        <td>a121176954</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>NAWGX</td>
+        <td>VOYA GBL HIGH DIV LOW VOLATILITY FD CL A</td>
+        <td>a61302319</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>INGBX</td>
+        <td>VOYA GLOBAL BOND FD CL A</td>
+        <td>a61302396</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VYGQX</td>
+        <td>VOYA GLOBAL DIVERSIFIED PAYMENT FD CL A</td>
+        <td>a121176962</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VYGRX</td>
+        <td>VOYA GLOBAL DIVERSIFIED PAYMENT FD CL C</td>
+        <td>a121176957</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>VYGKX</td>
+        <td>VOYA GLOBAL MULTI-ASSET FD CL C</td>
+        <td>a121176953</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>IAPVX</td>
+        <td>VOYA GLOBAL PERSPECTIVES FUND CL A</td>
+        <td>a61302516</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VYBXX</td>
+        <td>VOYA GOVERNMENT MONEY MARKET FD CL C</td>
+        <td>a121176956</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>VGLAX</td>
+        <td>VOYA INT HIGH DIV LOW VOLATILITY FD CL A</td>
+        <td>a86869892</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VYMQX</td>
+        <td>VOYA MID CAP RESEARCH ENHANCD INDEX CL A</td>
+        <td>a121176958</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VYMRX</td>
+        <td>VOYA MID CAP RESEARCH ENHANCD INDEX CL C</td>
+        <td>a121176955</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>IEMHX</td>
+        <td>VOYA MULTI-MGR EMERGING MKTS EQUITY FD A</td>
+        <td>a61302466</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>NTKLX</td>
+        <td>VOYA MULTI-MGR INTL SMALL CAP FD CL A</td>
+        <td>a61302335</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VCFAX</td>
+        <td>VOYA SECURITIZED CREDIT FUND CL A</td>
+        <td>a72889626</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VVJGX</td>
+        <td>VOYA SHRT DURTN HIGH INC FD CL C</td>
+        <td>a183178204</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>VWYFX</td>
+        <td>VOYA SMALL CAP GROWTH FUND CL A</td>
+        <td>a174092030</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VYSYX</td>
+        <td>VOYA SMALL COMPANY FD CL A</td>
+        <td>a121176963</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VYSZX</td>
+        <td>VOYA SMALL COMPANY FD CL C</td>
+        <td>a121176952</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>VTRVX</td>
+        <td>VOYA TARGET IN-RETIREMENT FD CL A</td>
+        <td>a201801176</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VTRCX</td>
+        <td>VOYA TARGET RETIREMENT 2025 FD CL A</td>
+        <td>a76337512</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VTREX</td>
+        <td>VOYA TARGET RETIREMENT 2030 FD CL A</td>
+        <td>a76337513</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VTRMX</td>
+        <td>VOYA TARGET RETIREMENT 2034 FD CL A</td>
+        <td>a76337516</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VTRGX</td>
+        <td>VOYA TARGET RETIREMENT 2035 FD CL A</td>
+        <td>a76337514</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VTRJX</td>
+        <td>VOYA TARGET RETIREMENT 2040 FD CL A</td>
+        <td>a76337515</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VTROX</td>
+        <td>VOYA TARGET RETIREMENT 2050 FD CL A</td>
+        <td>a76337517</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VTRQX</td>
+        <td>VOYA TARGET RETIREMENT 2055 FD CL A</td>
+        <td>a76337518</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>VTRSX</td>
+        <td>VOYA TARGET RETIREMENT 2060 FD CL A</td>
+        <td>a76337519</td>
+        <td>Voya Investments Distributor LLC</td>
+        <td>CLASS A</td>
+       </tr>
+                   
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <p>Interactive Brokers LLC receives compensation from fund companies participating in its no-transaction-fee program for shareholder and other administrative services.  Such compensation includes, but is not limited to, Rule 12b-1 fees that are paid out of the fund’s assets.  IB may share a portion of the compensation received from fund companies with your financial advisor or introducing broker.</p>
+ </div>
+</section>
+</div>
+<!-- FOOTER START ---------------------------------------------------------------------------------------------------- -->
+<footer class="footer noprint" id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p>Interactive Brokers ®, IB<sup>SM</sup>, InteractiveBrokers.com ®, Interactive Analytics ®, IB Options Analytics<sup>SM</sup>, IB SmartRouting<sup>SM</sup>, PortfolioAnalyst ®, IB Trader Workstation<sup>SM</sup> and One World, One Account<sup>SM</sup> are service marks and/or trademarks of Interactive Brokers LLC. Supporting documentation for any claims and statistical information will be provided upon request. Any trading symbols displayed are for illustrative purposes only and are not intended to portray recommendations.</p>
+                <p>The risk of loss in online trading of stocks, options, futures, currencies, foreign equities, and fixed Income can be substantial.</p>
+                <p>Options involve risk and are not suitable for all investors. For more information read the <a href="https://www.theocc.com/about/publications/character-risks.jsp" rel="noreferrer noopener" target="_blank">Characteristics and Risks of Standardized Options</a>, also known as the options disclosure document (ODD). Alternatively, please contact <a href="../support/customer-service.php.html?p=contact" target="_self">IB Customer Service</a> to receive a copy of the ODD. Before trading, clients must read the relevant risk disclosure statements on our <a href="../general/homepage-disclosures.php.html" target="_self">Warnings and Disclosures page</a>. Trading on margin is only for experienced investors with high risk tolerance. You may lose more than your initial investment. For additional information about rates on margin loans, please see <a href="margin-rates.php.html" target="_self">Margin Loan Rates</a>. Security futures involve a high degree of risk and are not suitable for all investors. The amount you may lose may be greater than your initial investment. Before trading security futures, read the <a href="../general/homepage-disclosures.php.html" target="_self">Security Futures Risk Disclosure Statement</a>. Structured products and fixed income products such as bonds are complex products that are more risky and are not suitable for all investors. Before trading, please read the <a href="../general/homepage-disclosures.php.html" target="_self">Risk Warning and Disclosure Statement</a>.</p>
+                <p>For information on the IBKR ATS, please <a href="https://www.sec.gov/divisions/marketreg/form-ats-n-filings.htm#ats-n" rel="noreferrer noopener" target="_blank">visit the SEC site</a>.</p>
+                <p>34 countries include both countries and territories.</p>
+			</div>
+		</div>
+        <div class="footer-site-links" id="footerSiteLinks">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>Account</p>
+                    <ul>
+                    <li><a href="/sso/Login?RL=1" target="_self">Log In</a></li>
+                    <li><a href="/Universal/Application" target="_self">Open an Account</a></li>
+                    <li><a href="/sso/Login?c=t" target="_self">Finish an Application</a></li>
+                    <li><a href="../accounts/account-guide.php.html" target="_self">Account Types</a></li>
+                    <li><a href="/Universal/Application?ft=T" target="_self">Free Trial</a></li>
+                    </ul>
+                    <p>Software & Downloads</p>
+                    <ul>
+                    <li><a href="tws.php.html#tws-software" target="_self">Trader Workstation</a></li>
+                    <li><a href="ibkr-desktop.php.html" target="_self">IBKR Desktop</a></li>
+                    <li><a href="tws-mobile.php.html#trytoday" target="_self">IBKR Mobile</a></li>
+                    <li><a href="ib-api.php.html#api-software" target="_self">APIs</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>Support</p>
+                    <ul>
+                    <li><a href="../support/fund-my-account.php.html" target="_self">Fund Your Account</a></li>
+					<li><a href="../support/individuals.php.html" target="_self">For Individuals</a></li>
+                    <li><a href="../support/institutions.php.html" target="_self">For Institutions</a></li>
+                    <li><a href="../support/institutional-sales-contacts.php.html" target="_self">Institutional Sales Contacts</a></li>
+					<li><a href="../general/contact/ibot-container.php.html" target="_self">Browse our FAQs</a></li>
+					<li><a href="../software/systemStatus.php.html" target="_self">System Status</a></li>
+                    </ul>
+                    <p>Vendor Support</p>
+                    <ul>
+                    <li><a href="../general/about/supplier-information.php.html" target="_self">Supplier Information</a></li>
+                    </ul>
+                    
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>About Us</p>
+                    <ul>
+                    <li><a href="../general/awards.php.html" target="_self">Awards</a></li>
+                    <li><a href="../general/about/careers-splash.php.html" target="_self">Careers</a></li>
+                    <li><a href="../general/about/about.php.html" target="_self">Information and History</a></li>
+                    <li><a href="https://investors.interactivebrokers.com/ir/main.php" target="_self">Investor Relations</a></li>
+                    <li><a href="../about/news-at-ibkr.php.html" target="_self">News @ IBKR</a></li>
+                    <li><a href="../general/about/press-and-media.php.html" target="_self">Press and Media</a></li>
+                    <li><a href="../accounts/legalDocuments/brokerPerformanceReports.php.html" target="_self">Regulatory Reports</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>Follow Us on Social Media</p>
+                    <ul>
+                    <li><a href="https://www.facebook.com/interactivebrokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com/interactivebrokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/company/interactive-brokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="https://www.twitter.com/ibkr" target="_blank" rel="noreferrer noopener"><i class="fab fa-x-twitter"></i> Twitter</a></li>
+                    <li><a href="https://www.youtube.com/interactivebrokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-youtube"></i> YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-disclosure-links" id="footerDisclosureLinks">
+            <div class="row">
+                <div class="col">
+                    <ul>
+                    <li><a href="../accounts/legalDocuments/accessibility-policy.php.html" target="_self">Accessibility Policy</a></li>
+                    <li><a href="../accounts/legalDocuments/anti-fraud-notice.php.html" target="_self">Anti-Fraud Notice</a></li>
+                    <li><a href="../accounts/legalDocuments/custIdentificationNotice.php.html" target="_self">Customer Identification Program Notice</a></li>
+                    <li><a href="../../Universal/servlet/Registration_v2-1.formSampleView?formdb=4024" target="_blank" rel="noreferrer noopener">Customer Relationship Summary</a></li>
+                    <li><a href="../general/warnings-on-frauds-and-scams.php.html" target="_self">Warning on Frauds and Scams</a></li>
+                    <li><a href="../accounts/forms-and-disclosures-client-agreements.php.html" target="_self">Forms and Disclosures</a></li>
+                    <li><a href="../accounts/legalDocuments/privacy.php.html" target="_self">Privacy</a></li>
+                    <li><a href="../sitemap/index.php.html" target="_self">Site Map</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-entities" id="footerEntities">
+            <div class="row">
+                <div class="col">
+                    <div class="footer-entity">
+                        <!-- IBKR LLC -->
+                        <p class="entity-name"><a href="https://www.interactivebrokers.com" target="_self">Interactive Brokers LLC</a></p>
+                        <p>Is a member <a rel="noreferrer noopener" target="_blank" href="https://www.nyse.com">NYSE</a> - <a href="https://www.finra.org" rel="noreferrer noopener" target="_blank">FINRA</a> - <a href="https://www.sipc.org" rel=" noreferrer noopener" target="_blank">SIPC</a> and regulated by the US Securities and Exchange Commission and the Commodity Futures Trading Commission.<br> <strong>Headquarters:</strong> One Pickwick Plaza, Greenwich, CT 06830 USA<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.com" target="_self">www.interactivebrokers.com</a></p>
+                                                <p class="footer-entities-link"><a href="#collapseEntities" target="_self" class="collapsed" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseEntities">Information on Other Interactive Brokers Affiliates</a></p>
+                    </div>
+                    <div class="footer-entities-list collapse" id="collapseEntities">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <!-- IBKR CA -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.ca/en/home.php?nored=t" target="_self">Interactive Brokers Canada Inc.</a></p>
+                                <p>Is a member of the                                 <a href="https://www.ciro.ca" target="_blank" rel="noreferrer noopener">Canadian Investment Regulatory Organization (CIRO)</a> 
+                                 
+                                and Member - <a href="https://www.cipf.ca" target="_blank" rel="noreferrer noopener">Canadian Investor Protection Fund.</a><br> <strong>Registered Office:</strong> 1800 McGill College Avenue, Suite 2106, Montreal, Quebec, H3A 3J6, Canada.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.ca/en/home.php?nored=t" target="_self">www.interactivebrokers.ca</a></p>
+                                <!-- IBKR UK -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.co.uk/en/home.php?nored=t" target="_self">Interactive Brokers (U.K.) Limited </a></p>
+                                <p>Is authorised and regulated by the <a href="https://www.fca.org.uk" target="_blank" rel="noreferrer noopener">Financial Conduct Authority</a>. FCA register entry number 208159. Incorporated in England & Wales under company number 03958476. <a href="https://www.fca.org.uk/firms/financial-services-register" target="_blank" rel="noreferrer noopener">[https://www.fca.org.uk/firms/financial-services-register]</a><br> <strong>Registered Office:</strong> 20 Fenchurch Street, Floor 12, London EC3M 3BY.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.co.uk/en/home.php?nored=t" target="_self">www.interactivebrokers.co.uk</a></p>
+                                <!-- IBKR IE -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.ie/en/home.php?nored=t" target="_self">Interactive Brokers Ireland Limited</a></p>
+                                <p>Is regulated by the <a href="https://www.centralbank.ie" target="_blank" rel="noreferrer noopener">Central Bank of Ireland</a> (CBI, reference number C423427), registered with the Companies Registration Office (CRO, registration number 657406), and is a member of the Irish Investor Compensation Scheme (ICS).<br> <strong>Registered Office:</strong> North Dock One, 91/92 North Wall Quay, Dublin 1 D01 H7V7, Ireland.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.ie/en/home.php?nored=t" target="_self">www.interactivebrokers.ie</a></p>
+                                <!-- IBKR HU -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.hu/en/home.php?nored=t" target="_self">Interactive Brokers Central Europe Zrt.</a></p>
+                                <p>Is licensed and regulated by the <a href="https://www.mnb.hu/" target="_blank" rel="noreferrer noopener">Central Bank of Hungary (Magyar Nemzeti Bank)</a> under no. H-EN-III-623/2020. Company registration number 01-10-141029. Registering Court: Company Registry of the Metropolitan General Court.<br> <strong>Registered Office:</strong> 1075 Budapest, Madách Imre út 13-14., Hungary.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.hu/en/home.php?nored=t" target="_self">www.interactivebrokers.hu</a></p>
+                                <!-- IBKR AUS -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.com.au/en/home.php?nored=t" target="_self">Interactive Brokers Australia Pty. Ltd.</a></p>
+                                <p>ABN 98 166 929 568 is licensed and regulated by the <a href="https://asic.gov.au/" target="_blank" rel="noreferrer noopener">Australian Securities and Investments Commission</a> (AFSL: 453554) and is a participant of <a href="https://www.asx.com.au/" target="_blank" rel="noreferrer noopener">ASX</a>, <a href="https://www.asx.com.au/" target="_blank" rel="noreferrer noopener">ASX 24</a> and <a href="https://www.cboe.com.au/" target="_blank" rel="noreferrer noopener">Cboe Australia</a>.<br> <strong>Registered Office:</strong> Level 11, 175 Pitt Street, Sydney, New South Wales 2000, Australia.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.com.au/en/home.php?nored=t" target="_self">www.interactivebrokers.com.au </a></p>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <!-- IBKR HK -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.com.hk/en/home.php?nored=t" target="_self">Interactive Brokers Hong Kong Limited</a></p>
+                                <p>Is regulated by the Hong Kong Securities and Futures Commission, and is a member of the <a href="https://www.hkex.com.hk" target="_blank" rel="noreferrer noopener">SEHK</a> and the <a href="https://www.hkex.com.hk" target="_blank" rel="noreferrer noopener">HKFE</a>.<br> <strong>Registered Office:</strong> Suite 1512, Two Pacific Place, 88 Queensway, Admiralty, Hong Kong SAR.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.com.hk/en/home.php?nored=t" target="_self">www.interactivebrokers.com.hk</a></p>
+                                <!-- IBKR IN -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.co.in/en/home.php?nored=t" target="_self">Interactive Brokers India Pvt. Ltd.</a></p>
+                                <p>Is a trading member of <a href="https://www.nseindia.com/" target="_blank" rel="noreferrer noopener">NSE</a>, <a href="https://www.bseindia.com/" target="_blank" rel="noreferrer noopener">BSE</a>, and depository participant of <a href="https://nsdl.co.in/" target="_blank" rel="noreferrer noopener">NSDL</a>. <a href="https://www.sebi.gov.in" target="_blank" rel="noreferrer noopener">SEBI</a> Registration No. INZ000217730; NSDL: IN-DP-602-2021. CIN-U67120MH2007FTC170004.<br> <strong>Registered Office:</strong> 502/A, Times Square, Andheri Kurla Road, Andheri East, Mumbai 400059, India.<br> <strong>Phone:</strong> +91-22-61289888 <span class="pipe">|</span> <strong>Fax:</strong> +91-22-61289898.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.co.in/en/home.php?nored=t" target="_self">www.interactivebrokers.co.in</a></p>
+                                <!-- IBKR JP -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.co.jp/en/home.php?nored=t" target="_self">Interactive Brokers Securities Japan Inc.</a></p>
+                                <p>Is regulated by Kanto Local Finance Bureau (Registration No.187) and is a member of <a href="https://www.jsda.or.jp/" target="_blank" rel="noreferrer noopener">Japan Securities Dealers Association</a> and <a href="https://www.nisshokyo.or.jp" target="_blank" rel="noreferrer noopener">The Commodity Futures Association of Japan</a>.<br> <strong>Registered Office:</strong> Kasumigaseki Building 25F, 2-5 Kasumigaseki 3-chome, Chiyoda-ku, Tokyo, 100-6025 Japan.<br> <strong>Phone:</strong> +81 03-4590-0711 <em>(On business days from 8:30-17:30 JST)</em>.<br> <strong>Website:</strong>  <a href="https://www.interactivebrokers.co.jp/en/home.php?nored=t" target="_self">www.interactivebrokers.co.jp</a></p>
+                                <!-- IBKR SG -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.com.sg/en/home.php?nored=t" target="_self">Interactive Brokers Singapore Pte. Ltd.</a></p>
+                                <p>Is licensed and regulated by the Monetary Authority of Singapore (Licence No. CMS100917).<br> <strong>Registered Office:</strong> #40-02A, Asia Square Tower 1, 8 Marina View, Singapore 018960.<br> <strong>Website:</strong>  <a href="https://www.interactivebrokers.com.sg/en/home.php?nored=t" target="_self">www.interactivebrokers.com.sg</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- FOOTER END ---------------------------------------------------------------------------------------------------- -->
+<!-- SHARE ON SOCIAL ---------------------------------------------------------------------------------------------------->
+<div class="social-sidebar animated fadeInLeft noprint">
+	<span><i class="fa fa-chevron-left"></i><i class="fa fa-chevron-right"></i></span>
+	<div class="icon-set">
+		<p>SHARE</p>
+		<div class="share-icon"><a href="/insights/ibtr_alerts.php?tiv=13654&cl=F&p=T" target="_blank" rel="noreferrer noopener" title="Share on Facebook" aria-label="Share on Facebook" class="icon-facebook"><i class="fab fa-facebook-square"></i></a></div>
+		<div class="share-icon"><a href="/insights/ibtr_alerts.php?tiv=13654&cl=T&p=T" target="_blank" rel="noreferrer noopener" title="Share on Twitter" aria-label="Share on Twitter" class="icon-twitter"><i class="fab fa-x-twitter"></i></a></div>
+		<div class="share-icon"><a href="/insights/ibtr_alerts.php?tiv=13654&cl=L&p=T" target="_blank" rel="noreferrer noopener" title="Share on Linkedin" aria-label="Share on Linkedin" class="icon-linkedin"><i class="fab fa-linkedin"></i></a></div>
+		<div class="share-icon"><a href="javascript:void(0);" target="_self" title="Share by Email" aria-label="Share by Email" name="btn_trigger" data-bs-toggle="modal" data-bs-target="#emailModal" id="13654" onclick="emailCookie();" class="icon-email"><i class="far fa-envelope"></i></a></div>
+	</div>
+</div>
+<!-- MODAL START | SHARE ON SOCIAL ---------------------------------------------------------------------------------------------------->
+<div class="modal fade noprint" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button id="cls_frm_1" type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="gridSystemModalLabel"><i class="far fa-envelope text-gray"></i> Email</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col">
+						<form>
+							<div class="form-group">
+								<label for="_to" class="control-label">To:</label> <span id="_err_to" style="color: red;"></span>
+								<input type="text" class="form-control" id="_to">
+							</div>
+							<div class="form-group">
+								<label for="_from" class="control-label">From:</label> <span id="_err_frm" style="color: red;"></span>
+								<input type="text" class="form-control" id="_from">
+							</div>
+							<div class="form-group">
+								<label for="_subject" class="control-label">Subject:</label> <span id="_err_subject" style="color: red;"></span>
+								<input type="text" class="form-control" id="_subject" value="Interactive Brokers">
+							</div>
+							<div class="form-group">
+								<textarea class="form-control" id="_content" style="height:200px;"></textarea>
+							</div>
+							<p class="text-sm">URL: <span class="text-italic text-black">www.interactivebrokers.com/en/index.php?f=<span id='vid'></span></span></p>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<div class="row">
+					<div class="col-6">
+						<div align="left">
+							<button id="cls_frm_2" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+					<div class="col-6">
+						<div align="right">
+							<button type="button" class="btn btn-primary" id="send">Send</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<input type="hidden" id="_page_id" name="_page_id" value="13654">
+</div>
+<!-- MODAL END | SHARE ON SOCIAL ----------------------------------------------------------------------------------------------------> 
+<script type="text/javascript" src="../../insights/ibtr_share.js?t=v1"></script>
+<script>
+$(document).ready(function() {
+	 $(".social-sidebar span").click(function(){
+		 $(".social-sidebar div").toggleClass("social-sidebar-hide");
+		 $(".social-sidebar span").toggleClass("toggle-arrow");
+ 	 });
+});
+function emailCookie() {
+	if (document.cookie.indexOf("IB_EM_SH") == -1) {
+		var ex=new Date();
+		ex.setTime(ex.getTime()+86400000);
+		document.cookie ='IB_EM_SH='+1+';expires='+ex.toGMTString()+';path=/;domain=';
+	}
+}
+</script>
+<!-- SCRIPTS FOOTER ---------------------------------------------------------------------------------------------------- -->
+<script type="text/javascript" src="../../scripts/common/js/zeynep-2.2.0/zeynep.js"></script>
+<script type="text/javascript" src="../../scripts/common/js/lazyload/lazyload.min.js"></script>
+<script type="text/javascript" src="../../search/conversions-2408.js?t=1718780056"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+    // GATHER HEIGHT OF HEADER
+    var defaultMarginTop = $("div#ibkr-header").outerHeight();
+    // SET MARGIN-TOP OF CONTENTS
+    $("div#contents").css("margin-top", defaultMarginTop);
+    // ON WINDOW RESIZE CALCULATE THE HEIGHT OF THE HEADER AND USE THAT AS THE MARGIN-TOP OF CONTENTS DIV
+    $(window).resize(function() {
+        var headerHeight = $("div#ibkr-header").outerHeight();
+        var headerHeightDelta = headerHeight - defaultMarginTop;
+        $("div#contents").css("margin-top", defaultMarginTop + headerHeightDelta);
+    });
+    // BANNER | REGION SELECTOR
+    $("#bannerRegionSelector a.btn-close").click(function() {
+        // On banner close, set margin-top on timeout
+        setTimeout(function() {
+            var headerHeight = $("div#ibkr-header").outerHeight();
+            $("div#contents").css("margin-top", headerHeight);
+        },500);
+    });
+    // MOBILE MENU
+    $(function() {
+        // Initilize mobile menu
+        var zeynep = $('.menu-mobile').zeynep({
+            opened: function () {
+        },
+        closed: function () {
+            }
+        })
+        // Dynamically bind closing event
+        zeynep.on('closing', function () {
+        })
+        // Mobile menu close on overlay click
+        $('.website-overlay').on('click', function () {
+            zeynep.close()
+        })
+        // Mobile menu close on button click
+        $('.btn-close').on('click', function () {
+            zeynep.close()
+        })
+        // Mobile menu open on navbar-toggler click
+        $('.navbar-toggler').on('click', function () {
+            zeynep.open()
+        })
+    })
+});
+</script>
+ <script>var ibdmn='interactivebrokers.co.uk';(function(d,c){let s=d.createElement('script');s.src='https://www.interactivebrokers.co.uk/mkt/ibgtag.js?wbst='+c;s.id='_ib_tag';s.async=true;d.getElementsByTagName('head')[0].appendChild(s);})(document,'UK');</script><!-- STYLES FOOTER ---------------------------------------------------------------------------------------------------- -->
+<link rel="preload" as="font" type="font/woff2" href="../../fonts/fontawesome-6.4.2/webfonts/fa-brands-400.woff2" crossorigin="">
+<link rel="preload" as="font" type="font/woff2" href="../../fonts/fontawesome-6.4.2/webfonts/fa-regular-400.woff2" crossorigin="">
+<link rel="preload" as="font" type="font/woff2" href="../../fonts/fontawesome-6.4.2/webfonts/fa-solid-900.woff2" crossorigin="">
+<link rel="preload" as="style" href="../../css/fontawesome-6.4.2/all.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/fontawesome-6.4.2/all.min.css">
+<link rel="preload" as="style" href="../../css/animate-3.7.2/animate.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/animate-3.7.2/animate.min.css">
+<link rel="preload" as="style" href="../../css/bootstrap-switch-3.3.2/bootstrap-switch.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/bootstrap-switch-3.3.2/bootstrap-switch.min.css">
+<link rel="preload" as="style" href="../../css/ibkr/website-print.min.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../css/ibkr/website-print.min.css"></body>
+</html>

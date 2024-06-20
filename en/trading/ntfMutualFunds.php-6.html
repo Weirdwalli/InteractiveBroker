@@ -1,0 +1,4764 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<title>No Transaction Fee Mutual Funds | Interactive Brokers LLC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"> 
+<meta name="description" content="No Transaction Fee (NTF) Mutual Funds do not assess a ticket charge to place a mutual fund trade.">
+<meta name="keywords" content="No Transaction Fee Mutual Funds">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="expires" content="-1">
+<meta name="robots" content="index, follow">
+<meta http-equiv="pragma" content="no-cache">
+<!--Pid:13654-->
+<link rel="canonical" href="ntfMutualFunds.php-1.html">
+<meta name="apple-mobile-web-app-title" content="IBKR">
+<link rel="icon" sizes="192x192" href="../../images/web/favicons/home-screen-icon-192x192.png">
+<link rel="icon" sizes="128x128" href="../../images/web/favicons/home-screen-icon-128x128.png">
+<link rel="apple-touch-icon" sizes="57x57" href="../../images/web/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../images/web/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../images/web/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../images/web/favicons/apple-touch-icon-144x144.png">
+<!-- SCRIPTS HEAD ---------------------------------------------------------------------------------------------------- -->
+<script type="text/javascript" src='../../scripts/common/js/jquery-3.6.1/jquery.min.js'></script>
+<script type="text/javascript">
+function createScriptElement(data) {
+ if (typeof data == "undefined") {
+  return;
+ }
+ var element = document.createElement("SCRIPT");
+ element.type = "text/javascript";
+ if (typeof data.id != "undefined") {
+  element.id = data.id;
+ }
+ if (typeof data.source != "undefined") {
+  element.src = data.source;
+ }
+ if (typeof data.loadfunction == "function") {
+  element.onload = data.loadfunction;
+ }
+ document.head.appendChild(element);
+}
+createScriptElement({ source : "/scripts/common/js/bootstrap-5.2.2/bootstrap.bundle.min.js", loadfunction: bsLoaded  });
+createScriptElement({ source : "/scripts/common/js/lib.js?ver=9" });
+function bsLoaded() {
+  createScriptElement({ source : "/scripts/common/js/appear/appear.min.js?ver=1" });
+  createScriptElement({ source : "/scripts/common/js/easing/easing.min.js?ver=1" });
+  createScriptElement({ source : "/scripts/common/js/parallax/parallax.min.js?ver=1" });
+  createScriptElement({ source : "/scripts/common/js/uitotop/uitotop.min.js?ver=1", loadfunction: uiLoaded });
+}
+function uiLoaded() {
+  createScriptElement({ source : "/scripts/common/js/twsUtils.js?ver=2" });
+  createScriptElement({ source : "/scripts/common/js/design/design.js?ver=1" }); 
+}
+</script>
+<script type="text/javascript">
+$(function() {
+  let ex=new Date();
+  ex.setTime(ex.getTime()+86400000);
+  document.cookie ='IB_REST=1;expires='+ex.toGMTString()+';path=/;domain=.interactivebrokers.com';
+  $('div#langselector').find('a').each(function() {
+  $(this).click(function() {
+   var link = $(this).attr("href");
+   if(link.match(/\/(en|fr|de|es|it|ru|cn|jp)\//))
+   {
+    var langs = link.split("/");
+    if(langs[3] == 'en' || langs[3] == 'fr' || langs[3] == 'de' || langs[3] == 'es' || langs[3] == 'it' || langs[3] == 'ru' || langs[3] == 'cn' || langs[3] == 'jp')
+    {
+      var lang = langs[3];
+      if(lang == 'cn')
+      {
+        lang = 'zh_CN';
+      }
+      if(lang == 'jp')
+      {
+        lang = 'ja';
+      }
+      if(hasCookie("IB_LANG"))
+      {
+        deleteCookie("IB_LANG");
+      }
+      setCookie("IB_LANG", lang, 7, '.interactivebrokers.com');
+    } else if(langs[1] == 'en') {
+      var lang = 'en';
+      setCookie("IB_LANG", lang, 7, '.interactivebrokers.com');
+    }
+   }
+  });
+ });
+ $('p#bandaid-close').click(function() {
+  setCookie("IB_BANDAID", 1, 30, '.interactivebrokers.com');
+ });
+ $('a#btnCloseBannerRegionSelector').click(function() {
+  setCookie("IB_REGION_SEL", 1, 30, '.interactivebrokers.com');
+ });
+});
+</script>
+<script>var e=document.createElement("script");e.type='text/javascript';e.src='/scripts/common/js/ibtrk.js?v=14';document.head.appendChild(e);_ibp=13654;</script>
+<!-- STYLES HEAD -->
+<link rel="preload" as="style" href="../../css/bootstrap-5.2.2/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/bootstrap-5.2.2/bootstrap.min.css">
+<link rel="preload" as="style" href="../../css/ibkr/website.min.css?v=25dbb9871dad19f5b220266180efb316">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/ibkr/website.min.css?v=25dbb9871dad19f5b220266180efb316">
+<link rel="preload" as="style" href="../../css/ibkr/theme-ibkr.min.css?v=25dbb9871dad19f5b220266180efb316">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/ibkr/theme-ibkr.min.css?v=25dbb9871dad19f5b220266180efb316"><script language='javascript' type='text/javascript' src='../../scripts/common/js/actb.js'></script>
+<style type="text/css">
+table.tablesorter td:hover { cursor:auto !important;  }
+</style>
+
+<script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch"}]);</script>
+                              <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="CGJ34-S5RKA-7ZQ8F-AJER9-TWWVG",function(){function e(){if(!o){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,i.parentNode.appendChild(e),o=!0}}function t(e){o=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(i.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",i.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"CGJ34-S5RKA-7ZQ8F-AJER9-TWWVG";var i=document.currentScript||document.getElementsByTagName("script")[0],o=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!o)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),i.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="nfygq4tacd4isztso36a-f-256fc88cb-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,o={"ak.v":"37","ak.cp":"1131468","ak.ai":parseInt("665092",10),"ak.ol":"0","ak.cr":134,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"15b7e748","ak.r":42379,"ak.a2":n,"ak.m":"a","ak.n":"essl","ak.bpcip":"105.112.104.0","ak.cport":8744,"ak.gh":"23.77.196.137","ak.quicv":"","ak.tlsv":"tls1.2","ak.0rtt":"","ak.csrc":"-","ak.acc":"bbr","ak.t":"1718777596","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==iu5MZEYOX8VbpfHOkgcQdyurtXu1QED9UWw1TZnYd1WaQylMHOBdfUjFWRZwmBXyfsDHJQosKl/ukpF7fFf3Qm3ZIvKHuiX8GVmf2bKmrrKDM3Vxmj8jFcA8jNR1acm5y/smMRKp36u4UaWg4wGualCKxYfTBT6CCunz7zbEhRNnlYCUs2WAlngGwKP2T1nO7xIHNjHiyadLP4o+B7VF7cqa4zlWfeCv/FcOUpGTOPt0Xi8G7uJCyoRyNb/L0SCjdNFqxFRpwQSCePwiFSRfSDdmFmhxRSvDfbgfV+gYwOn8enFG7L624O5e0kjMzlXNKSiubvSavnS9whRPPBfgF/B4idiunmc5Z84MGPBSUObkGZsglVMHQ7PWAq8E5Ci5KfQ2ujLs7k432eCO0Zb7ol8fI0GZWFfPczuyrIL9G7I=","ak.pv":"316","ak.dpoabenc":"","ak.tf":i};if(""!==t)o["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))o["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(o)},rv:function(){var e=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:o,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+<body>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NK9NSD');</script>
+<!-- End Google Tag Manager --><div id="printheader"></div>
+<!-- HEADER START ---------------------------------------------------------------------------------------------------- -->
+<div class="ibkr-header" id="ibkr-header">
+     
+     
+    <!-- NAV TOP START (LG/XL ONLY) -->
+    <nav class="navbar navbar-inverse navbar-expand-lg navbar-top d-none d-lg-block">
+        <div class="container">
+            <div class="navbar-collapse collapse" id="ibkr-nav-top">
+                <!-- LEFT MENU -->
+                <ul class="navbar-nav mr-auto align-items-center">
+                    <!-- FOR INDIVIDUALS -->
+                    <li class="nav-item dropdown"><a href="#" target="_self" class="nav-link dropdown-toggle" id="nav-for-individuals" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">For Individuals</a>
+                        <div class="dropdown-menu dropdown-ind-accounts" aria-labelledby="nav-for-individuals">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../accounts/individual.php.html" target="_self" class="dropdown-item">Individual, Joint or IRA</a>
+                                    <a href="../accounts/non-professional-advisor.php.html" target="_self" class="dropdown-item">Non-Professional Advisors</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- FOR INSTITUTIONS -->
+					<li class="nav-item dropdown"><a href="#" target="_self" class="nav-link dropdown-toggle" id="nav-for-institutions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">For Institutions</a>
+                        <div class="dropdown-menu dropdown-inst-accounts" aria-labelledby="nav-for-institutions">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../accounts/institutions.php.html" target="_self" class="dropdown-item">Institutions Home</a>
+                                    <a href="../accounts/advisor.php.html" target="_self" class="dropdown-item">Registered Investment Advisors</a>
+                                    <a href="../accounts/proprietary-trading-group.php.html" target="_self" class="dropdown-item">Proprietary Trading Groups</a>
+                                    <a href="../accounts/hedge-fund.php.html" target="_self" class="dropdown-item">Hedge Funds</a>
+                                    <a href="../accounts/broker.php.html" target="_self" class="dropdown-item">Introducing Brokers</a>
+                                    <a href="../accounts/family-office.php.html" target="_self" class="dropdown-item">Family Offices</a>
+                                    <a href="../accounts/compliance-officer.php.html" target="_self" class="dropdown-item">Compliance Officers</a>
+                                    <a href="../accounts/small-business.php.html" target="_self" class="dropdown-item">Small Businesses</a>
+                                    <a href="../accounts/simple-ira.php.html" target="_self" class="dropdown-item">Employee Plan Administrator <br>SIMPLE IRA</a>
+                                    <a href="../accounts/fsa-insurance-providers.php.html" target="_self" class="dropdown-item">Full-Service Administrator <br>Insurance Providers</a>
+                                    <a href="../accounts/money-manager.php.html" target="_self" class="dropdown-item">Money Managers</a>
+                                    <a href="../accounts/administrator.php.html" target="_self" class="dropdown-item">Fund Administrators</a>
+                                    <a href="../accounts/hedge-fund-allocator.php.html" target="_self" class="dropdown-item">Hedge Fund Allocators</a>
+                                    <a href="https://ibkrcampus.com/student-trading-lab/" target="_blank" class="dropdown-item">Educators</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- RIGHT MENU -->
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <!-- FREE TRIAL -->
+                    <li class="nav-item"><a href="free-trial.php.html" target="_self" class="nav-link">FREE TRIAL</a></li>
+                    <!-- CAREERS -->
+                    <li class="nav-item"><a href="../general/about/careers-splash.php.html" target="_self" class="nav-link">Careers</a></li>
+                    <!-- ABOUT US -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-about-us" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
+                        <div class="dropdown-menu dropdown-about-us" aria-labelledby="nav-about-us">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../general/financial-strength.php.html" target="_self" class="dropdown-item">Strength and Security</a>
+                                    <a href="../general/about/about.php.html" target="_self" class="dropdown-item">Information and History</a>
+                                    <a href="../general/awards.php.html" target="_self" class="dropdown-item">Awards</a>
+                                    <a href="../about/news-at-ibkr.php.html" target="_self" class="dropdown-item">News at IBKR</a>
+                                    <a href="../general/about/press-and-media.php.html" target="_self" class="dropdown-item">Press and Media</a>
+                                    <a href="https://investors.interactivebrokers.com/ir/main.php" target="_blank" class="dropdown-item" rel="noreferrer noopener">Investor Relations</a>
+                                    <a href="../general/about/sustainability.php.html" target="_self" class="dropdown-item">Sustainability</a>
+                                    <a href="../accounts/legalDocuments/brokerPerformanceReports.php.html" target="_self" class="dropdown-item">Regulatory Reports</a>
+                                    <a href="../accounts/referrer.php.html" target="_self" class="dropdown-item">Refer a Friend</a>
+                                    <a href="../general/about/affiliate-programs.php.html" target="_self" class="dropdown-item">Affiliate Programs</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- SUPPORT -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-support" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Support</a>
+                        <div class="dropdown-menu dropdown-contact-us" aria-labelledby="nav-support">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../support/fund-my-account.php.html" target="_self" class="dropdown-item">Fund Your Account</a>
+                                    <a href="../support/individuals.php.html" target="_self" class="dropdown-item">For Individuals</a>
+                                    <a href="../support/institutions.php.html" target="_self" class="dropdown-item">For Institutions</a>
+                                    <a href="../support/institutional-sales-contacts.php.html" target="_self" class="dropdown-item">Institutional Sales Contacts</a>
+                                                                        <a href="../general/contact/ibot-container.php.html" target="_self" class="dropdown-item">Browse Our FAQs</a>
+                                    <a href="../support/reports-and-dates.php.html" target="_self" class="dropdown-item">Tax Information</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- LANGUAGE SELECTOR -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link nav-language dropdown-toggle" id="nav-language" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Language</span><img src="../../images/web/icons/icon-language.svg" alt="Language" width="23" height="18" border="0"></a>
+                        <div class="dropdown-menu dropdown-language" aria-labelledby="nav-language">
+                            <div class="row">
+                                <div class="col" id="langselector">
+                                    <a href="../home.php.html" target="_self" class="dropdown-item">English</a>
+                                    <a href="/es/home.php" target="_self" class="dropdown-item">Español</a>
+                                    <a href="/pt/home.php" target="_self" class="dropdown-item">Português</a>
+                                    <a href="/cn/home.php?lang=sc" target="_self" class="dropdown-item">中文简体</a>
+                                    <a href="/cn/home.php?lang=tc" target="_self" class="dropdown-item">中文繁體</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- NAV TOP END -->
+    <!-- NAV BOTTOM START -->
+    <nav class="navbar navbar-inverse navbar-expand-lg navbar-bottom">
+        <div class="container">
+            <!-- IBKR LOGO -->
+                        <a href="../home.php.html" target="_self" title="Interactive Brokers Home" alt="Interactive Brokers Logo" class="navbar-brand brand-logo" aria-label="Interactive Brokers Home"><span>Interactive Brokers Home</span></a>
+            <!-- TOGGLE (XS/SM/MD ONLY) -->
+            <button class="navbar-toggler" type="button" aria-label="Toggle Navigation"><span class="navbar-toggler-icon"><i class="fas fa-bars" aria-hidden="true"></i></span></button>
+            <!-- OPEN ACCOUNT BUTTON (XS/SM/MD ONLY) -->
+            <a href="/Universal/Application" target="_self" class="d-block d-lg-none btn btn-open-account">Open Account</a>
+            <!-- LOG IN (SM/MD ONLY) -->
+                            <a href="/sso/Login?RL=1" target="_self" class="d-none d-sm-block d-lg-none btn btn-log-in">Log In</a>
+                        <!-- IBKR NAV BOTTOM START   -->
+            <div class="navbar-collapse collapse" id="ibkr-nav-bottom">
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <!-- WHY IBKR -->
+                    <li class="nav-item"><a href="../whyib/overview.php.html" target="_self" class="nav-link">Why IBKR</a></li>
+                    <!-- PRICING -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-pricing" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pricing</a>
+                        <div class="dropdown-menu dropdown-pricing" aria-labelledby="nav-pricing">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../pricing/commissions-home.php.html" target="_self" class="dropdown-item">Commissions</a>
+                                    <a href="margin-rates.php.html" target="_self" class="dropdown-item">Margin Rates</a>
+                                    <a href="../accounts/fees/pricing-interest-rates.php.html" target="_self" class="dropdown-item">Interest Rates</a>
+                                    <a href="../pricing/short-sale-cost.php.html" target="_self" class="dropdown-item">Short Sale Cost</a>
+                                    <a href="../pricing/research-news-services.php.html" target="_self" class="dropdown-item">Research and News</a>
+                                    <a href="../pricing/research-news-marketdata.php.html" target="_self" class="dropdown-item">Market Data</a>
+                                    <a href="../pricing/stock-yield-enhancement-program.php.html" target="_self" class="dropdown-item">Stock Yield Enhancement Program</a>
+                                    <a href="../pricing/other-fees-overview.php.html" target="_self" class="dropdown-item">Other Fees</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- TRADING -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-technology" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Trading</a>
+                        <div class="dropdown-menu dropdown-technology" aria-labelledby="nav-technology">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="trading-platforms.php.html" target="_self" class="dropdown-item">Platforms</a>
+                                    <a href="ib-api.php.html" target="_self" class="dropdown-item">APIs</a>
+                                    <a href="margin.php.html" target="_self" class="dropdown-item">Margin</a>
+                                    <a href="products-exchanges.php.html" target="_self" class="dropdown-item">Products and Exchange Search</a>
+                                    <a href="ordertypes.php.html" target="_self" class="dropdown-item">Order Types</a>
+                                    <a href="../whyib/reporting.php.html" target="_self" class="dropdown-item">Reporting</a>
+                                    <a href="securities-financing.php.html" target="_self" class="dropdown-item">Securities Financing</a>
+                                    <a href="features-in-focus.php.html" target="_self" class="dropdown-item">Features in Focus</a>
+                                    <a href="../general/education/probability_lab.php.html" target="_self" class="dropdown-item">Probability Lab</a>
+                                    <a href="global-outsourced-trading-desk.php.html" target="_self" class="dropdown-item">Global Outsourced Trading Desk</a>
+                                    <a href="sustainable-investing.php.html" target="_self" class="dropdown-item">Sustainable Investing</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- SERVICES -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-products" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+                        <div class="dropdown-menu dropdown-products" aria-labelledby="nav-products">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="globalanalyst.php.html" target="_self" class="dropdown-item">IBKR GlobalAnalyst</a>
+                                    <a href="https://www.portfolioanalyst.com" target="_blank" class="dropdown-item" rel="noreferrer noopener">PortfolioAnalyst</a>
+                                    <a href="products-bonds.php.html" target="_self" class="dropdown-item">Bonds Marketplace</a>
+                                    <a href="products-mutual-funds.php.html" target="_self" class="dropdown-item">Mutual Funds Marketplace</a>
+                                    <a href="commission-free-etfs-mkt.php.html" target="_self" class="dropdown-item">No Transaction Fee ETFs</a>
+                                    <a href="https://ndcdyn.interactivebrokers.com/aces/Marketplace/InvestorsMarketplace" target="_blank" class="dropdown-item" rel="noreferrer noopener">Investors' Marketplace</a>
+                                    <a href="short-securities-availability.php.html" target="_self" class="dropdown-item">Short Securities Availability</a>
+                                    <a href="../accounts/integrated-cash-management.php.html" target="_self" class="dropdown-item">Cash Management</a>
+                                    <a href="third-party-integration.php.html" target="_self" class="dropdown-item">Third Party Integration</a>
+                                    <a href="https://www.interactiveadvisors.com" target="_blank" class="dropdown-item" rel="noreferrer noopener">Interactive Advisors</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- EDUCATION -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-education" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Education</a>
+                        <div class="dropdown-menu dropdown-education" aria-labelledby="nav-education">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="https://ibkrcampus.com" target="_blank" class="dropdown-item">IBKR Campus</a>
+                                    <a href="https://ibkrcampus.com/academy" target="_blank" class="dropdown-item" rel="noreferrer noopener">Traders' Academy</a>
+                                    <a href="https://ibkrcampus.com/news" target="_blank" class="dropdown-item" rel="noreferrer noopener">Traders' Insight</a>
+                                    <a href="https://ibkrcampus.com/podcasts" target="_blank" class="dropdown-item" rel="noreferrer noopener">IBKR Podcasts</a>
+                                    <a href="https://ibkrcampus.com/quant" target="_blank" class="dropdown-item" rel="noreferrer noopener">IBKR Quant Blog</a>
+                                    <a href="https://ibkrcampus.com/webinars" target="_blank" class="dropdown-item" rel="noreferrer noopener">Webinars</a>
+                                    <a href="https://ibkrcampus.com/student-trading-lab/" target="_blank" class="dropdown-item">Student Trading Lab</a>
+                                    <a href="https://ibkrcampus.com/glossary" target="_blank" class="dropdown-item" rel="noreferrer noopener">Traders' Glossary</a>
+                                    <a href="../general/calendar/calendar.php.html" target="_self" class="dropdown-item">Traders' Calendar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- SEARCH -->
+                    <li class="nav-item dropdown d-none d-lg-block" id="search-expand"><a href="#" class="nav-link nav-search dropdown-toggle" id="nav-search" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Search</span><i class="fas fa-search" aria-hidden="true"></i></a>
+                        <div class="dropdown-menu dropdown-search" aria-labelledby="nav-search">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="search_box">
+                                        <script type="text/javascript">
+                                         searchbox_input_changed=false;
+                                          $('#search-expand').on('shown.bs.dropdown', function(e) {
+                                            $('#searchField').focus();
+                                          });
+                                        </script>
+                                        <form action="/en/search/index.php" method="get" class="search_form" id="search_form_id">
+                                            <input type="text" aria-label="Search Box" placeholder="Search Site or Contracts" name="query" maxlength="64" autocomplete="off" id="searchField" class="form-control s swap_value searchinput" aria-label="Search Interactive Brokers">
+                                            <button type="submit" value="" id="searchsubmit" class="searchsubmit" aria-label="Submit Search"><i class="fas fa-search" aria-hidden="true"></i></button>
+                                        </form>
+                                        <ul id='saytlist' style='width:150px;'><li style="display:none"></li></ul>
+<script>
+function delay(cb, ms)
+{
+  var timer = 0;
+  return function() {
+   var context = this, args = arguments;
+   clearTimeout(timer);
+   timer = setTimeout(function() {
+     cb.apply(context, args);
+   }, ms  || 0);
+  };
+}
+$(function() {
+
+ $('#searchField').keyup(delay(function() {
+  var q = $('#searchField').val() || '';
+  if(q.length >= 3)
+  {
+    $.ajax({
+      type: "POST",
+      url: 'https://misc.interactivebrokers.com/response_handlers/search/index.php',
+      dataType: "json",
+      data: {
+        'q': q
+      },
+      success: function(r) {
+        if(r && r.success)
+        {
+          var recommendations = '';
+          var limit = Math.min(r.suggestions.length, 10);
+          for(var i = 0; i < limit; i++)
+          {
+            recommendations += "<li>" + r.suggestions[i] + "</li>";
+          }
+          $('#saytlist').html(recommendations);
+          $('#saytlist').show();
+          $('ul#saytlist li').click(function(e) {
+            var list = $(this).text() || '';
+            e.stopPropagation();
+            if(list != '')
+            {
+              $('input#searchField').val(list);
+              $('button#searchsubmit').click();
+            }
+          });
+        }
+      },
+      error: function(xhr, status, err) {}
+    });
+  } else {
+   $('#saytlist').hide();
+  }
+ }, 500));
+});
+</script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- LOG IN -->
+                    <li class="nav-item dropdown d-none d-lg-block"><a href="#" target="_self" class="nav-link nav-login dropdown-toggle" id="nav-log-in" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Log In</a>
+                        <div class="dropdown-menu dropdown-login" aria-labelledby="nav-log-in">
+                            <div class="row">
+                                <div class="col">
+                                                                                                                    <a href="/sso/Login?RL=1" target="_self" class="dropdown-item dropdown-portal">Portal Login</a>
+                                                                                                                <a href="tws.php.html#tws-software" target="_self" class="dropdown-item">Download Trader Workstation</a>
+                                    <a href="ibkr-desktop.php.html" target="_self" class="dropdown-item">Download IBKR Desktop </a>
+                                    <a href="tws-mobile.php.html#trytoday-drop" target="_self" class="dropdown-item">Download IBKR Mobile</a>
+                                    <a href="ibgateway-latest.php.html" target="_self" class="dropdown-item">Download IB Gateway</a>
+                                    <a href="trading-platforms.php.html" target="_self" class="dropdown-item">Compare All IBKR Platforms</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- OPEN ACCOUNT -->
+                    <li class="nav-item dropdown d-none d-lg-block"><a href="#" target="_self" class="nav-link nav-open-account dropdown-toggle" id="nav-open-account" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Open Account</a>
+                        <div class="dropdown-menu dropdown-open-account" aria-labelledby="nav-open-account">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="/Universal/Application" target="_self" class="dropdown-item dropdown-portal">Start Application</a>
+                                    <a href="/sso/Login?c=t" target="_self" class="dropdown-item">Finish an Application</a>
+                                    <a href="../general/what-you-need-inv.php.html" target="_self" class="dropdown-item">What You Need</a>
+                                    <a href="../accounts/account-guide.php.html" target="_self" class="dropdown-item">A Guide to Choosing the Right Account</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- NAV BOTTOM END -->
+</div>
+<!-- HEADER END ---------------------------------------------------------------------------------------------------- -->
+<!-- MOBILE NAV START (XS/SM/MD ONLY) ---------------------------------------------------------------------------------------------------- -->
+<div class="menu-mobile d-lg-none">
+    <!-- CLOSE BUTTON -->
+    <div class="close-button"><a href="javascript:void(0);" target="_self" class="btn-close" aria-label="Close Menu"><i class="fas fa-times"></i></a></div>
+    <!-- LOGO -->
+    <div class="logo-container"><a href="../home.php.html" target="_self" class="brand-logo" aria-label="Interactive Brokers Home"><span>Interactive Brokers Home</span></a></div>
+    <!-- SEARCH -->
+    <div class="search-container">
+        <div class="search-box">
+            <form action="/en/search/index.php" method="get" class="search_form" id="search_form_id">
+                <input type="text" class="form-control" placeholder="Search Site or Contracts" name="query" maxlength="64" autocomplete="off" id="searchFieldMobile" aria-label="Search Interactive Brokers">
+                <button type="submit" class="btn-search-submit" value="" id="searchsubmitMobile" aria-label="Submit Search"><i class="fas fa-search" aria-hidden="true"></i></button>
+            </form>
+        </div>
+    </div>
+    <ul>
+    <!-- LOG IN -->
+                    <li><a href="/sso/Login?RL=1" target="_self" class="menu-log-in">Portal Login</a></li>
+                <!-- OPEN ACCOUNT -->
+    <li class="has-submenu"><a href="#" target="_self" class="menu-open-account" data-submenu="submenu-open-account">Open Account</a>
+        <div class="submenu" id="submenu-open-account">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-open-account">Back</a></p>
+            <p class="submenu-title">OPEN ACCOUNT</p>
+            <ul>
+            <li><a href="/Universal/Application" target="_self" class="menu-start-application">Start Application</a></li>
+            <li><a href="/sso/Login?c=t" target="_self">Finish an Application</a></li>
+            <li><a href="../general/what-you-need-inv.php.html" target="_self">What You Need</a></li>
+            <li><a href="../accounts/account-guide.php.html" target="_self">A Guide to Chosing the Right Account</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- DOWNLOAD IBKR MOBILE -->
+        <!-- FREE TRIAL -->
+    <li><a href="free-trial.php.html" target="_self">Free Trial</a></li>
+    <!-- WHY IBKR -->
+    <li><a href="../whyib/overview.php.html" target="_self">Why IBKR</a></li>
+    <!-- ACCOUNT TYPES -->
+    <li class="has-submenu"><a href="#" target="_self" data-submenu="submenu-account-types">Account Types</a>
+        <div class="submenu" id="submenu-account-types">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-account-types">Back</a></p>
+            <p class="submenu-title">FOR INDIVIDUALS</p>
+            <ul>
+            <li><a href="../accounts/individual.php.html" target="_self">Individual, Joint or IRA</a></li>
+            <li><a href="../accounts/non-professional-advisor.php.html" target="_self">Non-Professional Advisors</a></li>
+            </ul>
+            <p class="submenu-title">FOR INSTITUTIONS</p>
+            <ul>
+            <li><a href="../accounts/institutions.php.html" target="_self">Institutions Home</a></li>
+            <li><a href="../accounts/advisor.php.html" target="_self">Registered Investment Advisors</a></li>
+            <li><a href="../accounts/proprietary-trading-group.php.html" target="_self">Proprietary Trading Groups</a></li>
+            <li><a href="../accounts/hedge-fund.php.html" target="_self">Hedge Funds</a></li>
+            <li><a href="../accounts/broker.php.html" target="_self">Introducing Brokers</a></li>
+            <li><a href="../accounts/family-office.php.html" target="_self">Family Offices</a></li>
+            <li><a href="../accounts/compliance-officer.php.html" target="_self">Compliance Officers</a></li>
+            <li><a href="../accounts/small-business.php.html" target="_self">Small Businesses</a></li>
+            <li><a href="../accounts/simple-ira.php.html" target="_self">Employee Plan Administrator <br>SIMPLE IRA</a></li>
+            <li><a href="../accounts/fsa-insurance-providers.php.html" target="_self">Full-Service Administrator <br>Insurance Providers</a></li>
+            <li><a href="../accounts/money-manager.php.html" target="_self">Money Managers</a></li>
+            <li><a href="../accounts/administrator.php.html" target="_self">Fund Administrators</a></li>
+            <li><a href="../accounts/hedge-fund-allocator.php.html" target="_self">Hedge Fund Allocators</a></li>
+            <li><a href="https://ibkrcampus.com/student-trading-lab/" target="_blank">Educators</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- PRICING -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-pricing">Pricing</a>
+        <div class="submenu" id="submenu-pricing">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-pricing">Back</a></p>
+            <p class="submenu-title">PRICING</p>
+            <ul>
+            <li><a href="../pricing/commissions-home.php.html" target="_self">Commissions</a></li>
+            <li><a href="margin-rates.php.html" target="_self">Margin Rates</a></li>
+            <li><a href="../accounts/fees/pricing-interest-rates.php.html" target="_self">Interest Rates</a></li>
+            <li><a href="../pricing/short-sale-cost.php.html" target="_self">Short Sale Cost</a></li>
+            <li><a href="../pricing/research-news-services.php.html" target="_self">Research and News</a></li>
+            <li><a href="../pricing/research-news-marketdata.php.html" target="_self">Market Data</a></li>
+            <li><a href="../pricing/stock-yield-enhancement-program.php.html" target="_self">Stock Yield Enhancement</a></li>
+            <li><a href="../pricing/other-fees-overview.php.html" target="_self">Other Fees</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- TRADING -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-trading">Trading</a>
+        <div class="submenu" id="submenu-trading">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-trading">Back</a></p>
+            <p class="submenu-title">TRADING</p>
+            <ul>
+            <li><a href="trading-platforms.php.html" target="_self">Platforms</a></li>
+            <li><a href="ib-api.php.html" target="_self">APIs</a></li>
+            <li><a href="margin.php.html" target="_self">Margin</a></li>
+            <li><a href="products-exchanges.php.html" target="_self">Products and Exchange Search</a></li>
+            <li><a href="ordertypes.php.html" target="_self">Order Types</a></li>
+            <li><a href="../whyib/reporting.php.html" target="_self">Reporting</a></li>
+            <li><a href="securities-financing.php.html" target="_self">Securities Financing</a></li>
+            <li><a href="features-in-focus.php.html" target="_self">Features in Focus</a></li>
+            <li><a href="../general/education/probability_lab.php.html" target="_self">Probability Lab</a></li>
+            <li><a href="global-outsourced-trading-desk.php.html" target="_self">Global Outsourced Trading Desk</a></li>
+            <li><a href="sustainable-investing.php.html" target="_self">Sustainable Investing</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- SERVICES -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-services">Services</a>
+        <div class="submenu" id="submenu-services">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-services">Back</a></p>
+            <p class="submenu-title">SERVICES</p>
+            <ul>
+            <li><a href="globalanalyst.php.html" target="_self">IBKR GlobalAnalyst</a></li>
+            <li><a href="https://www.portfolioanalyst.com" target="_blank">PortfolioAnalyst</a></li>
+            <li><a href="products-bonds.php.html" target="_self">Bonds Marketplace</a></li>
+            <li><a href="products-mutual-funds.php.html" target="_self">Mutual Funds Marketplace</a></li>
+            <li><a href="commission-free-etfs-mkt.php.html" target="_self">No Transaction Fee ETFs</a></li>
+            <li><a href="https://ndcdyn.interactivebrokers.com/aces/Marketplace/InvestorsMarketplace" target="_blank">Investors' Marketplace</a></li>
+            <li><a href="short-securities-availability.php.html" target="_self">Short Securities Availability</a></li>
+            <li><a href="../accounts/integrated-cash-management.php.html" target="_self">Cash Management</a></li>
+            <li><a href="third-party-integration.php.html" target="_self">Third Party Integration</a></li>
+            <li><a href="https://www.interactiveadvisors.com" target="_blank">Interactive Advisors</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- EDUCATION -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-education">Education</a>
+        <div class="submenu" id="submenu-education">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-education">Back</a></p>
+            <p class="submenu-title">EDUCATION</p>
+            <ul>
+            <li><a href="https://ibkrcampus.com" target="_blank">IBKR Campus</a></li>
+            <li><a href="https://ibkrcampus.com/academy" target="_blank">Traders' Academy</a></li>
+            <li><a href="https://ibkrcampus.com/news" target="_blank">Traders' Insight</a></li>
+            <li><a href="https://ibkrcampus.com/podcasts" target="_blank">IBKR Podcasts</a></li>
+            <li><a href="https://ibkrcampus.com/quant" target="_blank">IBKR Quant Blog</a></li>
+            <li><a href="https://ibkrcampus.com/webinars" target="_blank">Webinars</a></li>
+            <li><a href="https://ibkrcampus.com/student-trading-lab/" target="_blank">Student Trading Lab</a></li>
+            <li><a href="https://ibkrcampus.com/glossary" target="_blank">Traders' Glossary</a></li>
+            <li><a href="../general/calendar/calendar.php.html" target="_self">Traders' Calendar</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- ABOUT US -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-about-us">About Us</a>
+        <div class="submenu" id="submenu-about-us">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-about-us">Back</a></p>
+            <p class="submenu-title">ABOUT US</p>
+            <ul>
+            <li><a href="../general/financial-strength.php.html" target="_self">Strength and Security</a></li>
+            <li><a href="../general/about/about.php.html" target="_self">Information and History</a></li>
+            <li><a href="../general/about/careers-splash.php.html" target="_self">Careers</a></li>
+            <li><a href="../general/awards.php.html" target="_self">Awards</a></li>
+            <li><a href="../about/news-at-ibkr.php.html" target="_self">News at IBKR</a></li>
+            <li><a href="../general/about/press-and-media.php.html" target="_self">Press and Media</a></li>
+            <li><a href="https://investors.interactivebrokers.com/ir/main.php" target="_blank">Investor Relations</a></li>
+            <li><a href="../general/about/sustainability.php.html" target="_self">Sustainability</a></li>
+            <li><a href="../accounts/legalDocuments/brokerPerformanceReports.php.html" target="_self">Regulatory Reports</a></li>
+            <li><a href="../accounts/referrer.php.html" target="_self">Refer a Friend</a></li>
+            <li><a href="../general/about/affiliate-programs.php.html" target="_self">Affiliate Programs</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- SUPPORT -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-support">Support</a>
+        <div class="submenu" id="submenu-support">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-support">Back</a></p>
+            <p class="submenu-title">SUPPORT</p>
+            <ul>
+            <li><a href="../support/fund-my-account.php.html" target="_self">Fund Your Account</a></li>
+            <li><a href="../support/individuals.php.html" target="_self">For Individuals</a></li>
+            <li><a href="../support/institutions.php.html" target="_self">For Institutions</a></li>
+            <li><a href="../support/institutional-sales-contacts.php.html" target="_self">Institutional Sales Contacts</a></li>
+                        <li><a href="../general/contact/ibot-container.php.html" target="_self">Browse Our FAQs</a></li>
+            <li><a href="../support/reports-and-dates.php.html" target="_self">Tax Information</a></li>                 
+            </ul>
+        </div>
+    </li>
+    <!-- LANGUAGE -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-language">Language</a>
+        <div class="submenu" id="submenu-language">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-language">Back</a></p>
+            <p class="submenu-title">LANGUAGE</p>
+            <ul>
+            <li><a href="../home.php.html" target="_self">English</a></li>
+            <li><a href="/es/home.php" target="_self">Español</a></li>
+            <li><a href="/pt/home.php" target="_self">Português</a></li>
+            <li><a href="/cn/home.php?lang=sc" target="_self">中文简体</a></li>
+            <li><a href="/cn/home.php?lang=tc" target="_self">中文繁體</a></li>
+            </ul>
+        </div>
+    </li>
+    </ul>
+</div>
+<!-- MOBILE NAV OVERLAY -->
+<div class="website-overlay d-lg-none"></div>
+<!-- MOBILE NAV END (XS/SM/MD ONLY) ---------------------------------------------------------------------------------------------------- -->
+<div id="contents">
+    <section class="page-title" id="page-title">
+        <div class="container">
+            <div class="row">
+                                <div class="col"><h1>No Transaction Fee Mutual Funds</h1></div>
+                            </div>
+        </div>
+    </section>
+    <section id="mutual-funds">
+ <div class="container">
+  <div class="row">
+   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <ul class='pagination'>
+<li class=""><a href='ntfMutualFunds.php-5.html?f=&exch=&showcategories=&p=&cc=&page=C'> < </a></li>
+<li class=''><a href='ntfMutualFunds.php-2.html?f=&exch=&showcategories=&p=&cc=&page=3'>3</a></li>
+<li class=''><a href='ntfMutualFunds.php-3.html?f=&exch=&showcategories=&p=&cc=&page=A'>A</a></li>
+<li class=''><a href='ntfMutualFunds.php-4.html?f=&exch=&showcategories=&p=&cc=&page=B'>B</a></li>
+<li class=''><a href='ntfMutualFunds.php-5.html?f=&exch=&showcategories=&p=&cc=&page=C'>C</a></li>
+<li class='active'><a href='ntfMutualFunds.php-6.html?f=&exch=&showcategories=&p=&cc=&page=D'>D</a></li>
+<li class=''><a href='ntfMutualFunds.php-8.html?f=&exch=&showcategories=&p=&cc=&page=E'>E</a></li>
+<li class=''><a href='ntfMutualFunds.php-9.html?f=&exch=&showcategories=&p=&cc=&page=F'>F</a></li>
+<li class=''><a href='ntfMutualFunds.php-10.html?f=&exch=&showcategories=&p=&cc=&page=G'>G</a></li>
+<li class=''><a href='ntfMutualFunds.php-11.html?f=&exch=&showcategories=&p=&cc=&page=H'>H</a></li>
+<li class=''><a href='ntfMutualFunds.php-7.html?f=&exch=&showcategories=&p=&cc=&page=Z'>Z</a></li>
+<li class=""><a href='ntfMutualFunds.php-8.html?f=&exch=&showcategories=&p=&cc=&page=E'> > </a></li>
+</ul>
+    <div class="table-responsive">
+     <table width="100%" cellspacing="0" cellpadding="0" border="0" class="table table-striped table-bordered tablesorter" id="mftable">
+      <thead>
+       <tr>
+        <th width="10%" align="left" valign="middle">Symbol</th>
+        <th width="30%" align="left" valign="middle">Fund</th>
+        <th width="15%" align="left" valign="middle">CUSIP</th>
+        <th width="25%" align="left" valign="middle">Fund Family</th>
+        <th width="10%" align="left" valign="middle">Share Class</th>
+       </tr>
+      </thead>
+      <tbody>
+             <tr>
+        <td>RPFCX</td>
+        <td>DAVIS APPRECIATION AND INCOME FUND CL A</td>
+        <td>a58691579</td>
+        <td>Davis Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>DCSCX</td>
+        <td>DAVIS APPRECIATION AND INCOME FUND CL C</td>
+        <td>a58794749</td>
+        <td>Davis Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>RPFGX</td>
+        <td>DAVIS FINANCIAL FUND CLASS A</td>
+        <td>a58691489</td>
+        <td>Davis Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>DFFCX</td>
+        <td>DAVIS FINANCIAL FUND CLASS C</td>
+        <td>a58794750</td>
+        <td>Davis Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DGFAX</td>
+        <td>DAVIS GLOBAL FUND CLASS A</td>
+        <td>a58692760</td>
+        <td>Davis Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>DGFCX</td>
+        <td>DAVIS GLOBAL FUND CLASS C</td>
+        <td>a58796397</td>
+        <td>Davis Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>RFBAX</td>
+        <td>DAVIS GOVERNMENT BOND FUND CLASS A</td>
+        <td>a58691681</td>
+        <td>Davis Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>DGVCX</td>
+        <td>DAVIS GOVERNMENT BOND FUND CLASS C</td>
+        <td>a58794751</td>
+        <td>Davis Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DILAX</td>
+        <td>DAVIS INTERNATIONAL FUND CLASS A</td>
+        <td>a58693200</td>
+        <td>Davis Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>DILCX</td>
+        <td>DAVIS INTERNATIONAL FUND CLASS C</td>
+        <td>a58797381</td>
+        <td>Davis Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>NYVTX</td>
+        <td>DAVIS NEW YORK VENTURE FUND CLASS A</td>
+        <td>a42536845</td>
+        <td>Davis Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>NYVCX</td>
+        <td>DAVIS NEW YORK VENTURE FUND CLASS C</td>
+        <td>a42536846</td>
+        <td>Davis Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>RPEAX</td>
+        <td>DAVIS OPPORTUNITY FUND CLASS A</td>
+        <td>a58691657</td>
+        <td>Davis Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>DGOCX</td>
+        <td>DAVIS OPPORTUNITY FUND CLASS C</td>
+        <td>a58794752</td>
+        <td>Davis Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>RPFRX</td>
+        <td>DAVIS REAL ESTATE FUND CLASS A</td>
+        <td>a58691550</td>
+        <td>Davis Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>DRECX</td>
+        <td>DAVIS REAL ESTATE FUND CLASS C</td>
+        <td>a58794753</td>
+        <td>Davis Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DDJRX</td>
+        <td>DDJ OPPORTUNISTIC HIGH YIELD FD -CL II</td>
+        <td>a175381529</td>
+        <td>ALPS Funds</td>
+        <td>Investor Class II</td>
+       </tr>
+             <tr>
+        <td>I453288866</td>
+        <td>DEUTSCHE INVEST I TOP DIVIDEND &quot;LCH (P)&quot; (EUR) INC</td>
+        <td>a137499327</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>DWGAX</td>
+        <td>DEVELOPING WORLD GROWTH &amp;amp; INCOME-A</td>
+        <td>a60327313</td>
+        <td>American Funds</td>
+        <td>CLASS - A</td>
+       </tr>
+             <tr>
+        <td>DWGCX</td>
+        <td>DEVELOPING WORLD GROWTH &amp;amp; INCOME-C</td>
+        <td>a60327322</td>
+        <td>American Funds</td>
+        <td>CLASS - C</td>
+       </tr>
+             <tr>
+        <td>DWGFX</td>
+        <td>DEVELOPING WORLD GROWTH &amp;amp; INCOME-F1</td>
+        <td>a60327323</td>
+        <td>American Funds</td>
+        <td>CLASS - F1</td>
+       </tr>
+             <tr>
+        <td>AGUAX</td>
+        <td>Developing World Income Fund  - A</td>
+        <td>a60221338</td>
+        <td>American Beacon</td>
+        <td>A CLASS</td>
+       </tr>
+             <tr>
+        <td>DXQLX</td>
+        <td>Direxion Mnthy NASDAQ 100 Bull</td>
+        <td>a58693511</td>
+        <td>Direxionfunds</td>
+        <td>Investor</td>
+       </tr>
+             <tr>
+        <td>DXRSX</td>
+        <td>Direxion Mnthy Sm Cap Bear</td>
+        <td>a60774791</td>
+        <td>Direxionfunds</td>
+        <td>Investor</td>
+       </tr>
+             <tr>
+        <td>MDFSX</td>
+        <td>Disciplined Value Series Class S</td>
+        <td>a58804070</td>
+        <td>Manning &amp;amp; Napier Fund, Inc.</td>
+        <td>CLASS S</td>
+       </tr>
+             <tr>
+        <td>JDVAX</td>
+        <td>DIVERSIFIED FUND - A</td>
+        <td>a58693141</td>
+        <td>J.P. Morgan Mutual Funds</td>
+        <td>A SHARES</td>
+       </tr>
+             <tr>
+        <td>JDVCX</td>
+        <td>DIVERSIFIED FUND - C</td>
+        <td>a58797243</td>
+        <td>J.P. Morgan Mutual Funds</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>HRIDX</td>
+        <td>Diversified International All Cap - Admn</td>
+        <td>a82876637</td>
+        <td>Harbor Funds</td>
+        <td>Administrative Class</td>
+       </tr>
+             <tr>
+        <td>HIIDX</td>
+        <td>Diversified International All Cap - Inv</td>
+        <td>a82876621</td>
+        <td>Harbor Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>TADGX</td>
+        <td>Dividend Growth Advisor Class</td>
+        <td>a34165112</td>
+        <td>T Rowe Price</td>
+        <td>ADVISOR CLASS</td>
+       </tr>
+             <tr>
+        <td>NDGAX</td>
+        <td>DIVIDEND GROWTH FUND CLASS A</td>
+        <td>a78782869</td>
+        <td>Neuberger Berman Funds</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I453287358</td>
+        <td>DJE GESTION PATRIMONIAL 2026 (EUR) INC</td>
+        <td>a137498950</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>SIN</td>
+       </tr>
+             <tr>
+        <td>169478945</td>
+        <td>DNCA ALPHA BONDS &quot;A&quot; (EUR) ACC</td>
+        <td>a161258868</td>
+        <td>DNCA FINANCE (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I542137375</td>
+        <td>DNCA ALPHA BONDS &quot;AD&quot; (EUR) INC</td>
+        <td>a161259112</td>
+        <td>DNCA FINANCE (LU)</td>
+        <td>AD</td>
+       </tr>
+             <tr>
+        <td>014791779</td>
+        <td>DNCA EMERGING EUROPE EQUITY&quot;I&quot; (EUR) ACC</td>
+        <td>a124129130</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>I</td>
+       </tr>
+             <tr>
+        <td>009583092</td>
+        <td>DNCA EMERGING EUROPE EQUITY&quot;I&quot; (USD) ACC</td>
+        <td>a124129089</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>I</td>
+       </tr>
+             <tr>
+        <td>I403272911</td>
+        <td>DNCA EMERGING EUROPE EQUITY&quot;I&quot; (USD) INC</td>
+        <td>a124370114</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>I</td>
+       </tr>
+             <tr>
+        <td>014791892</td>
+        <td>DNCA EMERGING EUROPE EQUITY&quot;R&quot; (EUR) ACC</td>
+        <td>a124129131</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>I402371893</td>
+        <td>DNCA EMERGING EUROPE EQUITY&quot;R&quot; (SGD) ACC</td>
+        <td>a124128991</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>008428859</td>
+        <td>DNCA EMERGING EUROPE EQUITY&quot;R&quot; (USD) ACC</td>
+        <td>a124129090</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>I402373848</td>
+        <td>DNCA EMERGING EUROPE EQUITY&quot;R&quot; (USD) INC</td>
+        <td>a124129480</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>I402369086</td>
+        <td>DNCA EMERGING EUROPE EQUITY&quot;RE&quot; (EUR) ACC</td>
+        <td>a124128289</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>RE</td>
+       </tr>
+             <tr>
+        <td>I402369169</td>
+        <td>DNCA EMERGING EUROPE EQUITY&quot;RE&quot; (USD) ACC</td>
+        <td>a124128310</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>RE</td>
+       </tr>
+             <tr>
+        <td>093522656</td>
+        <td>DNCA EURO VALUE EQUITY &quot;R&quot; (EUR) ACC</td>
+        <td>a124370022</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>I403272546</td>
+        <td>DNCA EURO VALUE EQUITY &quot;R&quot; (EUR) INC</td>
+        <td>a124370023</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>093522702</td>
+        <td>DNCA EURO VALUE EQUITY &quot;RE&quot; (EUR) ACC</td>
+        <td>a124370025</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>RE</td>
+       </tr>
+             <tr>
+        <td>I403272551</td>
+        <td>DNCA EURO VALUE EQUITY &quot;RE&quot; (EUR) INC</td>
+        <td>a124370024</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>RE</td>
+       </tr>
+             <tr>
+        <td>I402370363</td>
+        <td>DNCA EUROPE SMALLER COMPANIES &quot;I&quot; (EUR) INC</td>
+        <td>a124128608</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>I</td>
+       </tr>
+             <tr>
+        <td>047715601</td>
+        <td>DNCA EUROPE SMALLER COMPANIES &quot;RE&quot; (EUR) ACC</td>
+        <td>a124129678</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>RE</td>
+       </tr>
+             <tr>
+        <td>169479003</td>
+        <td>DNCA FLEX INFLATION &quot;A&quot; (EUR) ACC</td>
+        <td>a161258872</td>
+        <td>DNCA FINANCE (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I514482194</td>
+        <td>DNCA GLOBAL CONVERTIBLE BONDS &quot;R/D&quot; (EURHDG) INC</td>
+        <td>a154025381</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>R/D</td>
+       </tr>
+             <tr>
+        <td>147044178</td>
+        <td>DNCA GLOBAL CONVERTIBLE BONDS &quot;REA&quot; (EURHDG) ACC</td>
+        <td>a154025382</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>REA</td>
+       </tr>
+             <tr>
+        <td>I514482200</td>
+        <td>DNCA GLOBAL CONVERTIBLE BONDS &quot;RED&quot; (EURHDG) INC</td>
+        <td>a154025383</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>RED</td>
+       </tr>
+             <tr>
+        <td>I403272800</td>
+        <td>DNCA GLOBAL EMERGING EQUITY&quot;R&quot; (EUR) INC</td>
+        <td>a124370087</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>093523750</td>
+        <td>DNCA GLOBAL EMERGING EQUITY&quot;RE&quot; (EUR) ACC</td>
+        <td>a124370088</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>RE</td>
+       </tr>
+             <tr>
+        <td>DSBFX</td>
+        <td>DOMINI IMPACT BOND FUND INVESTOR</td>
+        <td>a58794647</td>
+        <td>Domini Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>DSEPX</td>
+        <td>DOMINI IMPACT EQUITY FUND</td>
+        <td>a58796586</td>
+        <td>Domini Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>DSEFX</td>
+        <td>DOMINI IMPACT EQUITY FUND</td>
+        <td>a58793407</td>
+        <td>Domini Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>DOMIX</td>
+        <td>DOMINI IMPACT INTNL EQUITY INVESTOR SHAR</td>
+        <td>a58797882</td>
+        <td>Domini Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>RISEX</td>
+        <td>Domini International Opportunities Fund</td>
+        <td>a142926336</td>
+        <td>Domini Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>DOMAX</td>
+        <td>DOMINI INTERNATIONAL SOC EQ FUND CLASS A</td>
+        <td>a58797883</td>
+        <td>Domini Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>CAREX</td>
+        <td>Domini Sustainable Solutions Fund</td>
+        <td>a142926335</td>
+        <td>Domini Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>700000597</td>
+        <td>DOMINION GLB TRENDS - MANAGED &quot;B&quot; (USD) ACC</td>
+        <td>a183853496</td>
+        <td>DOMINION FUND MGMT LTD (MT)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>700000998</td>
+        <td>DOMINION GLOBAL TRENDS - ECOMMERCE &quot;B&quot; (USD) ACC</td>
+        <td>a183853499</td>
+        <td>DOMINION FUND MGMT LTD (MT)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>700000590</td>
+        <td>DOMINION GLOBAL TRENDS SICAV LUXURY CONSUMER USD &quot;B&quot; (USD) ACC</td>
+        <td>a183853500</td>
+        <td>DOMINION FUND MGMT LTD (MT)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>700001276</td>
+        <td>DOMINION GLOBAL TRENDS SICAV LUXURY CONSUMER USD &quot;C&quot; (USD) ACC</td>
+        <td>a166100370</td>
+        <td>DOMINION FUND MGMT LTD (MT)</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>DSGAX</td>
+        <td>DREY SELECT MANAGER SML CAP GRWTH CL-A</td>
+        <td>a119771535</td>
+        <td>BNY Mellon Funds</td>
+        <td>Class A 5.75</td>
+       </tr>
+             <tr>
+        <td>DSGCX</td>
+        <td>DREY SELECT MANAGER SML CAP GRWTH CL-C</td>
+        <td>a119846793</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DMBAX</td>
+        <td>DREY SHORT-INTERMEDIATE MUNI BD A</td>
+        <td>a119771494</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS A 2.50</td>
+       </tr>
+             <tr>
+        <td>DHGAX</td>
+        <td>DREY/STAN GLOBAL FIXED INCOME FD CL A</td>
+        <td>a58807757</td>
+        <td>Dreyfus</td>
+        <td>CLASS A 4.50</td>
+       </tr>
+             <tr>
+        <td>DHGCX</td>
+        <td>DREY/STAN GLOBAL FIXED INCOME FD CL C</td>
+        <td>a58807758</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DNLDX</td>
+        <td>DREYFUS ACTIVE MIDCAP FUND CL-A</td>
+        <td>a119771531</td>
+        <td>BNY Mellon Funds</td>
+        <td>Class A 5.75</td>
+       </tr>
+             <tr>
+        <td>DNLCX</td>
+        <td>DREYFUS ACTIVE MIDCAP FUND CL-C</td>
+        <td>a119846790</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DMUAX</td>
+        <td>DREYFUS AMT-FREE MUNI BOND FUND-CL A</td>
+        <td>a58692766</td>
+        <td>Dreyfus</td>
+        <td>CLASS A 4.50</td>
+       </tr>
+             <tr>
+        <td>DMUCX</td>
+        <td>DREYFUS AMT-FREE MUNI BOND FUND-CL C</td>
+        <td>a119846801</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DMUCX</td>
+        <td>DREYFUS AMT-FREE MUNI BOND FUND-CL C</td>
+        <td>a58796451</td>
+        <td>Dreyfus</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DBOAX</td>
+        <td>DREYFUS BALANCED OPPORTUNITY FUND-CL A</td>
+        <td>a119771525</td>
+        <td>BNY Mellon Funds</td>
+        <td>Class A 5.75</td>
+       </tr>
+             <tr>
+        <td>DBOCX</td>
+        <td>DREYFUS BALANCED OPPORTUNITY FUND-CL C</td>
+        <td>a119846780</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DBMIX</td>
+        <td>DREYFUS BOND MARKET INDEX</td>
+        <td>a34164942</td>
+        <td>Dreyfus</td>
+        <td>Investor</td>
+       </tr>
+             <tr>
+        <td>DCAAX</td>
+        <td>DREYFUS CA AMT-FREE MUNI BOND FUND- A</td>
+        <td>a58692843</td>
+        <td>Dreyfus</td>
+        <td>CLASS A 4.50</td>
+       </tr>
+             <tr>
+        <td>DFPAX</td>
+        <td>Dreyfus Diversified Intl Fund- A</td>
+        <td>a119771549</td>
+        <td>BNY Mellon Funds</td>
+        <td>Class A 5.75</td>
+       </tr>
+             <tr>
+        <td>DFPCX</td>
+        <td>Dreyfus Diversified Intl Fund- C</td>
+        <td>a119846810</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DFLAX</td>
+        <td>Dreyfus Floating Rate Income-A</td>
+        <td>a58695164</td>
+        <td>Dreyfus</td>
+        <td>CLASS A 2.50</td>
+       </tr>
+             <tr>
+        <td>DFLCX</td>
+        <td>Dreyfus Floating Rate Income-C</td>
+        <td>a58802373</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DGDAX</td>
+        <td>DREYFUS GLB DYNAMIC BOND INCOME FD CL-A</td>
+        <td>a60775339</td>
+        <td>Dreyfus</td>
+        <td>CLASS A 4.50</td>
+       </tr>
+             <tr>
+        <td>DGDCX</td>
+        <td>DREYFUS GLB DYNAMIC BOND INCOME FD CL-C</td>
+        <td>a60775340</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DEQAX</td>
+        <td>DREYFUS GLOBAL EQUITY INCOME FUND-CL A</td>
+        <td>a119771543</td>
+        <td>BNY Mellon Funds</td>
+        <td>Class A 5.75</td>
+       </tr>
+             <tr>
+        <td>DEQCX</td>
+        <td>DREYFUS GLOBAL EQUITY INCOME FUND-CL C</td>
+        <td>a119846803</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DRLAX</td>
+        <td>DREYFUS GLOBAL REAL ESTATE SEC FD-CL A</td>
+        <td>a119771547</td>
+        <td>BNY Mellon Funds</td>
+        <td>Class A 5.75</td>
+       </tr>
+             <tr>
+        <td>DGBCX</td>
+        <td>DREYFUS GLOBAL REAL ESTATE SEC FD-CL C</td>
+        <td>a119846809</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>GPGAX</td>
+        <td>DREYFUS GNMA FUND -CL A</td>
+        <td>a58694163</td>
+        <td>Dreyfus</td>
+        <td>CLASS A 4.50</td>
+       </tr>
+             <tr>
+        <td>GPNCX</td>
+        <td>DREYFUS GNMA FUND -CL C</td>
+        <td>a58799686</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DRGMX</td>
+        <td>DREYFUS GNMA FUND-CL Z</td>
+        <td>a33667835</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS Z</td>
+       </tr>
+             <tr>
+        <td>DAGXX</td>
+        <td>Dreyfus Government Cash</td>
+        <td>a36004327</td>
+        <td>BNY Mellon Funds</td>
+        <td>Administrative Share</td>
+       </tr>
+             <tr>
+        <td>DGVXX</td>
+        <td>Dreyfus Government Cash</td>
+        <td>a36004330</td>
+        <td>BNY Mellon Funds</td>
+        <td>INVESTOR SHARES</td>
+       </tr>
+             <tr>
+        <td>DPGXX</td>
+        <td>Dreyfus Government Cash</td>
+        <td>a36004331</td>
+        <td>BNY Mellon Funds</td>
+        <td>Participant Shares</td>
+       </tr>
+             <tr>
+        <td>DAPXX</td>
+        <td>Dreyfus Government Prime</td>
+        <td>a36004332</td>
+        <td>BNY Mellon Funds</td>
+        <td>Administrative Share</td>
+       </tr>
+             <tr>
+        <td>DVPXX</td>
+        <td>Dreyfus Government Prime</td>
+        <td>a36004335</td>
+        <td>BNY Mellon Funds</td>
+        <td>INVESTOR SHARES</td>
+       </tr>
+             <tr>
+        <td>DGPXX</td>
+        <td>Dreyfus Government Prime</td>
+        <td>a36004336</td>
+        <td>BNY Mellon Funds</td>
+        <td>Participant Shares</td>
+       </tr>
+             <tr>
+        <td>DPLTX</td>
+        <td>DREYFUS HIGH YIELD FD- A</td>
+        <td>a58692119</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS A 4.50</td>
+       </tr>
+             <tr>
+        <td>PTHIX</td>
+        <td>DREYFUS HIGH YIELD FUND CL-C</td>
+        <td>a58794567</td>
+        <td>Dreyfus</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DHYAX</td>
+        <td>DREYFUS HIGH YIELD MUNI BOND FUND-CL A</td>
+        <td>a58693263</td>
+        <td>Dreyfus</td>
+        <td>CLASS A 4.50</td>
+       </tr>
+             <tr>
+        <td>DHYCX</td>
+        <td>DREYFUS HIGH YIELD MUNI BOND FUND-CL C</td>
+        <td>a58797481</td>
+        <td>Dreyfus</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DHMBX</td>
+        <td>DREYFUS HIGH YIELD MUNI BOND FUND-CL Z</td>
+        <td>a58798012</td>
+        <td>Dreyfus</td>
+        <td>CLASS Z</td>
+       </tr>
+             <tr>
+        <td>DIAVX</td>
+        <td>DREYFUS INFLATION ADJUSTED SECURITIES</td>
+        <td>a33468449</td>
+        <td>BNY Mellon Funds</td>
+        <td>Investor</td>
+       </tr>
+             <tr>
+        <td>CEAXX</td>
+        <td>Dreyfus Inst Pref Treasury MM-Hamilton</td>
+        <td>a36004293</td>
+        <td>BNY Mellon Funds</td>
+        <td>Hamilton Shares</td>
+       </tr>
+             <tr>
+        <td>DSHXX</td>
+        <td>Dreyfus Institutional Reserves</td>
+        <td>a36004351</td>
+        <td>BNY Mellon Funds</td>
+        <td>Hamilton Shares</td>
+       </tr>
+             <tr>
+        <td>DHLXX</td>
+        <td>Dreyfus Institutional Reserves</td>
+        <td>a36004356</td>
+        <td>BNY Mellon Funds</td>
+        <td>Hamilton Shares</td>
+       </tr>
+             <tr>
+        <td>DIBAX</td>
+        <td>DREYFUS INTERNATIONAL BOND FUND-CL A</td>
+        <td>a58693293</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS A 4.50</td>
+       </tr>
+             <tr>
+        <td>DIBCX</td>
+        <td>DREYFUS INTERNATIONAL BOND FUND-CL C</td>
+        <td>a58797555</td>
+        <td>Dreyfus</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DIEAX</td>
+        <td>DREYFUS INTERNATIONAL EQUITY FUND-CL A</td>
+        <td>a119771523</td>
+        <td>BNY Mellon Funds</td>
+        <td>Class A 5.75</td>
+       </tr>
+             <tr>
+        <td>DIECX</td>
+        <td>DREYFUS INTERNATIONAL EQUITY FUND-CL C</td>
+        <td>a119846776</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DLQAX</td>
+        <td>DREYFUS LARGE CAP EQUITY FUND-CL A</td>
+        <td>a119771546</td>
+        <td>BNY Mellon Funds</td>
+        <td>Class A 5.75</td>
+       </tr>
+             <tr>
+        <td>DEYCX</td>
+        <td>DREYFUS LARGE CAP EQUITY FUND-CL C</td>
+        <td>a119846808</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>PTEBX</td>
+        <td>DREYFUS MUNI BOND OPPORTUNITY FUND- A</td>
+        <td>a58691283</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS A 4.50</td>
+       </tr>
+             <tr>
+        <td>DMBCX</td>
+        <td>DREYFUS MUNI BOND OPPORTUNITY FUND- C</td>
+        <td>a58793779</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DMBZX</td>
+        <td>DREYFUS MUNI BOND OPPORTUNITY FUND- Z</td>
+        <td>a33468474</td>
+        <td>Dreyfus</td>
+        <td>CLASS Z</td>
+       </tr>
+             <tr>
+        <td>DNLAX</td>
+        <td>DREYFUS NATURAL RESOURCES FUND-CL A</td>
+        <td>a119771527</td>
+        <td>BNY Mellon Funds</td>
+        <td>Class A 5.75</td>
+       </tr>
+             <tr>
+        <td>DLDCX</td>
+        <td>DREYFUS NATURAL RESOURCES FUND-CL C</td>
+        <td>a119846782</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DRNJX</td>
+        <td>DREYFUS NJ MUNICIPAL BOND FUND-CL A</td>
+        <td>a119771501</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS 4.50 (2)</td>
+       </tr>
+             <tr>
+        <td>DCNJX</td>
+        <td>DREYFUS NJ MUNICIPAL BOND FUND-CL C</td>
+        <td>a58795633</td>
+        <td>Dreyfus</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>PNYCX</td>
+        <td>DREYFUS NY AMT-FREE MUNI BOND FUND- C</td>
+        <td>a58793929</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DVLCX</td>
+        <td>DREYFUS OPP MIDCAP VALUE FUND-CL C</td>
+        <td>a115728075</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DCACX</td>
+        <td>DREYFUS PREMIER CALIFORNIA TAX EXEMPT BO</td>
+        <td>a58796634</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DMVAX</td>
+        <td>DREYFUS SELECT MNGRS SMALL CAP VALUE A</td>
+        <td>a119771536</td>
+        <td>BNY Mellon Funds</td>
+        <td>Class A 5.75</td>
+       </tr>
+             <tr>
+        <td>DMECX</td>
+        <td>DREYFUS SELECT MNGRS SMALL CAP VALUE C</td>
+        <td>a119846794</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DSDDX</td>
+        <td>Dreyfus Short Duration Bond Fund- Cl D</td>
+        <td>a58802233</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS D</td>
+       </tr>
+             <tr>
+        <td>DSTIX</td>
+        <td>DREYFUS SHORT TERM INCOME</td>
+        <td>a115728084</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS D</td>
+       </tr>
+             <tr>
+        <td>DSTIX</td>
+        <td>DREYFUS SHORT TERM INCOME</td>
+        <td>a33468477</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS D</td>
+       </tr>
+             <tr>
+        <td>DSIBX</td>
+        <td>DREYFUS SHORT-INT MUNI BOND FUND-CL D</td>
+        <td>a119846816</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS D</td>
+       </tr>
+             <tr>
+        <td>PMCCX</td>
+        <td>DREYFUS STATE MUNI BD FD DRY CT FD- C</td>
+        <td>a58793926</td>
+        <td>Dreyfus</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>PSMAX</td>
+        <td>DREYFUS STATE MUNI BD FD DRY MA FD- A</td>
+        <td>a58691324</td>
+        <td>Dreyfus</td>
+        <td>CLASS A 4.50</td>
+       </tr>
+             <tr>
+        <td>PCMAX</td>
+        <td>DREYFUS STATE MUNI BD FD DRY MA FD- C</td>
+        <td>a58793927</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>PTPAX</td>
+        <td>DREYFUS STATE MUNI BD FD DRY PA FD- A</td>
+        <td>a58691335</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS A 4.50</td>
+       </tr>
+             <tr>
+        <td>PPACX</td>
+        <td>DREYFUS STATE MUNI BD FD DRY PA FD- C</td>
+        <td>a58793928</td>
+        <td>Dreyfus</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DTHXX</td>
+        <td>Dreyfus Treas Secs Cash Mgmt-Service</td>
+        <td>a148359796</td>
+        <td>BNY Mellon Funds</td>
+        <td>SERVICE SHARES</td>
+       </tr>
+             <tr>
+        <td>DTJXX</td>
+        <td>Dreyfus Treas Secs Cash Mgmt-Wealth</td>
+        <td>a148359797</td>
+        <td>BNY Mellon Funds</td>
+        <td>WEALTH SHARES</td>
+       </tr>
+             <tr>
+        <td>DTAXX</td>
+        <td>Dreyfus Treasury &amp;amp; Agency</td>
+        <td>a36004394</td>
+        <td>BNY Mellon Funds</td>
+        <td>Administrative Share</td>
+       </tr>
+             <tr>
+        <td>DTVXX</td>
+        <td>Dreyfus Treasury &amp;amp; Agency</td>
+        <td>a36004396</td>
+        <td>BNY Mellon Funds</td>
+        <td>INVESTOR SHARES</td>
+       </tr>
+             <tr>
+        <td>DTPXX</td>
+        <td>Dreyfus Treasury &amp;amp; Agency</td>
+        <td>a36004399</td>
+        <td>BNY Mellon Funds</td>
+        <td>Participant Shares</td>
+       </tr>
+             <tr>
+        <td>DARXX</td>
+        <td>Dreyfus Treasury Prime</td>
+        <td>a36004400</td>
+        <td>BNY Mellon Funds</td>
+        <td>Administrative Share</td>
+       </tr>
+             <tr>
+        <td>DVRXX</td>
+        <td>Dreyfus Treasury Prime</td>
+        <td>a36004403</td>
+        <td>BNY Mellon Funds</td>
+        <td>INVESTOR SHARES</td>
+       </tr>
+             <tr>
+        <td>DPRXX</td>
+        <td>Dreyfus Treasury Prime</td>
+        <td>a36004404</td>
+        <td>BNY Mellon Funds</td>
+        <td>Participant Shares</td>
+       </tr>
+             <tr>
+        <td>DABMX</td>
+        <td>Dreyfus Yld Enhancement Strategy - A</td>
+        <td>a60772613</td>
+        <td>Dreyfus</td>
+        <td>CLASS A 4.50</td>
+       </tr>
+             <tr>
+        <td>DABLX</td>
+        <td>Dreyfus Yld Enhancement Strategy- Cl C</td>
+        <td>a60772614</td>
+        <td>Dreyfus</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>NIEAX</td>
+        <td>DREYFUS/NEWTON INTERNATIONAL EQTY-CL A</td>
+        <td>a119771553</td>
+        <td>BNY Mellon Funds</td>
+        <td>Class A 5.75</td>
+       </tr>
+             <tr>
+        <td>NIECX</td>
+        <td>DREYFUS/NEWTON INTERNATIONAL EQTY-CL C</td>
+        <td>a119846813</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>BOSCX</td>
+        <td>Dreyfus/TBC Small Cap Value- Class C</td>
+        <td>a122860118</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>RUDAX</td>
+        <td>Dreyfus/TBC Small Cap Value-Class A</td>
+        <td>a119771530</td>
+        <td>BNY Mellon Funds</td>
+        <td>Class A 5.75</td>
+       </tr>
+             <tr>
+        <td>00B76BMG5</td>
+        <td>DRIEHAUS EMERGING MARKETS SUSTAINABLE EQUITY &quot;A&quot; (USD) ACC</td>
+        <td>a143386020</td>
+        <td>HEPTAGON CAPITAL (IE)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>00B6R1HD9</td>
+        <td>DRIEHAUS EMERGING MARKETS SUSTAINABLE EQUITY &quot;B&quot; (USD) ACC</td>
+        <td>a143386022</td>
+        <td>HEPTAGON CAPITAL (IE)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>00BDB52V9</td>
+        <td>DRIEHAUS US MICRO CAP EQUITY &quot;A&quot; (USD) ACC</td>
+        <td>a148461660</td>
+        <td>HEPTAGON CAPITAL (IE)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>00BDB5338</td>
+        <td>DRIEHAUS US MICRO CAP EQUITY &quot;AE&quot; (EUR) ACC</td>
+        <td>a148461766</td>
+        <td>HEPTAGON CAPITAL (IE)</td>
+        <td>AE</td>
+       </tr>
+             <tr>
+        <td>00BDB5372</td>
+        <td>DRIEHAUS US MICRO CAP EQUITY &quot;AEH&quot; (EURHDG) ACC</td>
+        <td>a148461501</td>
+        <td>HEPTAGON CAPITAL (IE)</td>
+        <td>AEH</td>
+       </tr>
+             <tr>
+        <td>00BH3Z9P8</td>
+        <td>DRIEHAUS US SMALL CAP EQUITY &quot;A&quot; (USD) ACC</td>
+        <td>a148462143</td>
+        <td>HEPTAGON CAPITAL (IE)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>00BH3ZB41</td>
+        <td>DRIEHAUS US SMALL CAP EQUITY &quot;AG&quot; (GBP) ACC</td>
+        <td>a161257588</td>
+        <td>HEPTAGON CAPITAL (IE)</td>
+        <td>AG</td>
+       </tr>
+             <tr>
+        <td>DSDAX</td>
+        <td>DRY/STANDISH INTER TAX/EX BD FD CL-A</td>
+        <td>a58694095</td>
+        <td>Dreyfus</td>
+        <td>CLASS A 4.50</td>
+       </tr>
+             <tr>
+        <td>DSDCX</td>
+        <td>DRY/STANDISH INTER TAX/EX BD FD CL-C</td>
+        <td>a58799513</td>
+        <td>BNY Mellon Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>DACGX</td>
+        <td>Dunham Corporate/Government Bond - A</td>
+        <td>a58797918</td>
+        <td>DUNHAM &amp;amp; ASSOCIATES INVESTMENTS</td>
+        <td>CLASS A (BOND)</td>
+       </tr>
+             <tr>
+        <td>DAAVX</td>
+        <td>Dunham Dynamic Macro - A</td>
+        <td>a58799748</td>
+        <td>DUNHAM &amp;amp; ASSOCIATES INVESTMENTS</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>DAEMX</td>
+        <td>Dunham Emerging Markets Stock - A</td>
+        <td>a58797920</td>
+        <td>DUNHAM &amp;amp; ASSOCIATES INVESTMENTS</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>DAFRX</td>
+        <td>Dunham Floating Rate Bond - A</td>
+        <td>a58802162</td>
+        <td>DUNHAM &amp;amp; ASSOCIATES INVESTMENTS</td>
+        <td>CLASS A (BOND)</td>
+       </tr>
+             <tr>
+        <td>DAFGX</td>
+        <td>Dunham Focused Large Cap Growth - A</td>
+        <td>a58800682</td>
+        <td>DUNHAM &amp;amp; ASSOCIATES INVESTMENTS</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>DAHYX</td>
+        <td>Dunham High-Yield Bond - A</td>
+        <td>a58797921</td>
+        <td>DUNHAM &amp;amp; ASSOCIATES INVESTMENTS</td>
+        <td>CLASS A (BOND)</td>
+       </tr>
+             <tr>
+        <td>DAIOX</td>
+        <td>Dunham Int'l Opportunity Bond - A</td>
+        <td>a58802165</td>
+        <td>DUNHAM &amp;amp; ASSOCIATES INVESTMENTS</td>
+        <td>CLASS A (BOND)</td>
+       </tr>
+             <tr>
+        <td>DAINX</td>
+        <td>Dunham International Stock - A</td>
+        <td>a58797922</td>
+        <td>DUNHAM &amp;amp; ASSOCIATES INVESTMENTS</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>DALVX</td>
+        <td>Dunham Large Cap Value - A</td>
+        <td>a58797924</td>
+        <td>DUNHAM &amp;amp; ASSOCIATES INVESTMENTS</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>DAAIX</td>
+        <td>Dunham Long/Short Credit - A</td>
+        <td>a58797917</td>
+        <td>DUNHAM &amp;amp; ASSOCIATES INVESTMENTS</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>DAMDX</td>
+        <td>Dunham Monthly Distribution - A</td>
+        <td>a60774802</td>
+        <td>DUNHAM &amp;amp; ASSOCIATES INVESTMENTS</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>DAREX</td>
+        <td>Dunham Real Estate Stock - A</td>
+        <td>a58797925</td>
+        <td>DUNHAM &amp;amp; ASSOCIATES INVESTMENTS</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>DADGX</td>
+        <td>Dunham Small Cap Growth - A</td>
+        <td>a58797919</td>
+        <td>DUNHAM &amp;amp; ASSOCIATES INVESTMENTS</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>DASVX</td>
+        <td>Dunham Small Cap Value - A</td>
+        <td>a58797926</td>
+        <td>DUNHAM &amp;amp; ASSOCIATES INVESTMENTS</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>000DWS23F</td>
+        <td>DWS AKTIEN SCHWEIZ &quot;LD&quot; (EUR) INC</td>
+        <td>a161257246</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>000DWS0D2</td>
+        <td>DWS AKTIEN SCHWEIZ ACC</td>
+        <td>a137501122</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>SIN</td>
+       </tr>
+             <tr>
+        <td>I542136234</td>
+        <td>DWS AKTIEN STRATEGIE DEUTSCHLAND &quot;LD&quot; (EUR) INC</td>
+        <td>a161258827</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>I453296049</td>
+        <td>DWS BALANCE ACC</td>
+        <td>a137501123</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>SIN</td>
+       </tr>
+             <tr>
+        <td>KCTAX</td>
+        <td>DWS CALIFORNIA TAX-FREE INCOME-A</td>
+        <td>a64585490</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SDGAX</td>
+        <td>DWS CAPITAL GROWTH FUND-A</td>
+        <td>a64585595</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>DOAXX</td>
+        <td>DWS CASH INVESTMENT TRUST-A</td>
+        <td>a64585699</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>TISHX</td>
+        <td>DWS COMMUNICATIONS FUND-A</td>
+        <td>a64585492</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>I453292449</td>
+        <td>DWS CONCEPT DJE RESPONSIBLE INVEST &quot;LD&quot; (EUR) INC</td>
+        <td>a137500223</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>230692149</td>
+        <td>DWS CONCEPT ESG BLUE ECONOMY &quot;LC&quot; (EUR) ACC</td>
+        <td>a154025103</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>235794489</td>
+        <td>DWS CONCEPT ESG BLUE ECONOMY &quot;NC&quot; (EUR) ACC</td>
+        <td>a161259562</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>000848665</td>
+        <td>DWS CONCEPT GSP FOOD &quot;LD&quot; (EUR) INC</td>
+        <td>a154025493</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>059994689</td>
+        <td>DWS CONCEPT KALDEMORGEN &quot;LC&quot; (EUR) ACC</td>
+        <td>a137500875</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>059994760</td>
+        <td>DWS CONCEPT KALDEMORGEN &quot;LCH&quot; (USDHDG) ACC</td>
+        <td>a137501236</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>A2</td>
+       </tr>
+             <tr>
+        <td>I453287818</td>
+        <td>DWS CONCEPT KALDEMORGEN &quot;LD&quot; (EUR) INC</td>
+        <td>a137499065</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>059994719</td>
+        <td>DWS CONCEPT KALDEMORGEN &quot;NC&quot; (EUR) ACC</td>
+        <td>a137500903</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>I453290696</td>
+        <td>DWS CONCEPT KALDEMORGEN &quot;SLD&quot; (EUR) INC</td>
+        <td>a137499785</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>SLD</td>
+       </tr>
+             <tr>
+        <td>186503295</td>
+        <td>DWS CONCEPT PLATOW &quot;LC&quot; (EUR) ACC</td>
+        <td>a137501150</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>SUWAX</td>
+        <td>DWS CORE EQUITY FUND-A</td>
+        <td>a64585549</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>000DWS1UL</td>
+        <td>DWS COVERED BOND &quot;LC&quot; ACC</td>
+        <td>a137499196</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>KDHAX</td>
+        <td>DWS CROCI EQUITY DIVIDEND FUND-A</td>
+        <td>a64585498</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SUIAX</td>
+        <td>DWS CROCI INTERNATIONAL FUND-A</td>
+        <td>a64585548</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>DCUAX</td>
+        <td>DWS CROCI U.S. FUND-A</td>
+        <td>a71683917</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>I514482862</td>
+        <td>DWS DYNAMIK &quot;LC&quot; (EUR) ACC</td>
+        <td>a154025548</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>SEKAX</td>
+        <td>DWS EMERGING MARKETS EQUITY FUND-A</td>
+        <td>a64585604</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SZEAX</td>
+        <td>DWS EMERGING MARKETS FIXED INCOME-A</td>
+        <td>a64585568</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SKNRX</td>
+        <td>DWS ENHANCED COMMODITY STRATEGY-A</td>
+        <td>a64585756</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SUPAX</td>
+        <td>DWS EQUITY SECTOR STRATEGY FUND-A</td>
+        <td>a64585634</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>000847402</td>
+        <td>DWS ESG AKKUMULA &quot;LC&quot; (EUR) ACC</td>
+        <td>a137498651</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>000847426</td>
+        <td>DWS ESG CONVERTIBLES &quot;LD&quot; (EUR) INC</td>
+        <td>a137501136</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>MIDVX</td>
+        <td>DWS ESG CORE EQUITY FUND-A</td>
+        <td>a64585675</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>I470234702</td>
+        <td>DWS ESG DYNAMIC OPPORTUNITIES &quot;LC&quot; (EUR) ACC</td>
+        <td>a142144256</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>004438752</td>
+        <td>DWS ESG EURO BONDS (LONG) &quot;LC&quot; (EUR) ACC</td>
+        <td>a137499955</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>003631915</td>
+        <td>DWS ESG EURO BONDS (MEDIUM) &quot;LC&quot; (EUR) ACC</td>
+        <td>a137498654</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>DURAX</td>
+        <td>DWS ESG INTERNATIONAL CORE EQUITY-A</td>
+        <td>a66605603</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>000847400</td>
+        <td>DWS ESG INVESTA &quot;LD&quot; (EUR) INC</td>
+        <td>a137501187</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>I453296022</td>
+        <td>DWS ESG MULTI ASSET DYNAMIC &quot;LD&quot; (EUR) INC</td>
+        <td>a137501116</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>000DWS22Q</td>
+        <td>DWS ESG STIFTUNGSFONDS &quot;LC&quot; (EUR) ACC</td>
+        <td>a137499046</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>000531840</td>
+        <td>DWS ESG STIFTUNGSFONDS &quot;LD&quot; (EUR) INC</td>
+        <td>a137500398</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>000976979</td>
+        <td>DWS ESG TOP WORLD (EUR) INC</td>
+        <td>a137498607</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>SIN</td>
+       </tr>
+             <tr>
+        <td>000DWS2XX</td>
+        <td>DWS ESGDYNAMIC OPPORTUNITIES &quot;LD&quot; (EUR) INC</td>
+        <td>a161259042</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>000847651</td>
+        <td>DWS EURO BOND &quot;LD&quot; (EUR) INC</td>
+        <td>a140159420</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>000847423</td>
+        <td>DWS EURO FLEXIZINS &quot;NC&quot; (EUR) ACC</td>
+        <td>a140159322</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>I463338528</td>
+        <td>DWS EUROPE DYNAMIC INC</td>
+        <td>a140159343</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>SIN</td>
+       </tr>
+             <tr>
+        <td>000847415</td>
+        <td>DWS EUROPEAN OPPORTUNITIES &quot;LD&quot; (EUR) INC</td>
+        <td>a137498653</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>I453285973</td>
+        <td>DWS EURORENTA &quot;LD&quot; (EUR) INC</td>
+        <td>a137498604</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>I453296187</td>
+        <td>DWS EUROVESTA INC</td>
+        <td>a137501157</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>SIN</td>
+       </tr>
+             <tr>
+        <td>I453285983</td>
+        <td>DWS EUROZONE BONDS FLEXIBLE &quot;LD&quot; (EUR) INC</td>
+        <td>a137498606</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>I542131872</td>
+        <td>DWS FINTECH &quot;LD&quot; (EUR) INC</td>
+        <td>a161257728</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>207907782</td>
+        <td>DWS FIXED MATURITY ESG MULTI ASSET DEFENSIVE 2026 &quot;NA&quot; (EUR) ACC</td>
+        <td>a137498925</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NA</td>
+       </tr>
+             <tr>
+        <td>DFRAX</td>
+        <td>DWS FLOATING RATE FUND-A</td>
+        <td>a64585719</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>233458988</td>
+        <td>DWS FUNDS ESG GARANT &quot;LC&quot; (EUR) ACC</td>
+        <td>a156853193</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>018815770</td>
+        <td>DWS FUNDS GLOBAL PROTECT 80 (EUR) ACC</td>
+        <td>a137499566</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>SIN</td>
+       </tr>
+             <tr>
+        <td>000847650</td>
+        <td>DWS FUTURE TRENDS LD INC</td>
+        <td>a154024514</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>SIN</td>
+       </tr>
+             <tr>
+        <td>I453286923</td>
+        <td>DWS GLOBAL EMERGING MARKETS BALANCED &quot;LD&quot;(EUR) INC</td>
+        <td>a137498841</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>000515244</td>
+        <td>DWS GLOBAL GROWTH &quot;LD&quot; (EUR) INC</td>
+        <td>a137500864</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>SGHAX</td>
+        <td>DWS GLOBAL HIGH INCOME FUND-A</td>
+        <td>a64585644</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>KTRAX</td>
+        <td>DWS GLOBAL INCOME BUILDER FUND-A</td>
+        <td>a64585487</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>DBISX</td>
+        <td>DWS GLOBAL MACRO FUND-A</td>
+        <td>a64585598</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>KGDAX</td>
+        <td>DWS GLOBAL SMALL CAP FUND-A</td>
+        <td>a64585556</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>I453286179</td>
+        <td>DWS GLOBAL VALUE &quot;LD&quot; (EUR) INC</td>
+        <td>a137498655</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>I453296301</td>
+        <td>DWS GLOBAL WATER &quot;LD&quot; (EUR) INC</td>
+        <td>a137501186</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>GGGGX</td>
+        <td>DWS GNMA FUND-A</td>
+        <td>a64585722</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>005564905</td>
+        <td>DWS GOLD PLUS</td>
+        <td>a137498834</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>SIN</td>
+       </tr>
+             <tr>
+        <td>SUHAX</td>
+        <td>DWS HEALTH AND WELLNESS FUND-A</td>
+        <td>a64585627</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>KHYAX</td>
+        <td>DWS HIGH INCOME FUND-A</td>
+        <td>a64585770</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SZMAX</td>
+        <td>DWS INTERMEDIATE TAX-FREE FUND-A</td>
+        <td>a64585754</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SGQAX</td>
+        <td>DWS INTERNATIONAL GROWTH FUND-A</td>
+        <td>a64585562</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>032975976</td>
+        <td>DWS INVEST AFRICA &quot;LC&quot; (EUR) ACC</td>
+        <td>a137499344</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>032976107</td>
+        <td>DWS INVEST AFRICA &quot;LC&quot; (USD) ACC</td>
+        <td>a137499443</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>A2</td>
+       </tr>
+             <tr>
+        <td>I453288940</td>
+        <td>DWS INVEST AFRICA &quot;LD&quot; (EUR) INC</td>
+        <td>a137499346</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>032975984</td>
+        <td>DWS INVEST AFRICA &quot;NC&quot; (EUR) ACC</td>
+        <td>a137499442</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>186326334</td>
+        <td>DWS INVEST ARTIFICIAL INTELLIGENCE &quot;LC&quot; (EUR) ACC</td>
+        <td>a137501007</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>188566839</td>
+        <td>DWS INVEST ARTIFICIAL INTELLIGENCE &quot;LC&quot; (USD) ACC</td>
+        <td>a137498917</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I453295590</td>
+        <td>DWS INVEST ARTIFICIAL INTELLIGENCE &quot;LD&quot; (EUR) INC</td>
+        <td>a137501008</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>191438396</td>
+        <td>DWS INVEST ARTIFICIAL INTELLIGENCE &quot;NC&quot; (EUR) ACC</td>
+        <td>a137500783</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>081332541</td>
+        <td>DWS INVEST ASIAN BONDS &quot;LC&quot; (USD) ACC</td>
+        <td>a137499520</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>200437047</td>
+        <td>DWS INVEST ASIAN BONDS &quot;LCH&quot; (CHFHDG) ACC</td>
+        <td>a148462142</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>081332436</td>
+        <td>DWS INVEST ASIAN BONDS &quot;LCH&quot; (EURHDG) ACC</td>
+        <td>a137499347</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>I453291036</td>
+        <td>DWS INVEST ASIAN BONDS &quot;LDH&quot; (EURHDG) INC</td>
+        <td>a137499870</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDH</td>
+       </tr>
+             <tr>
+        <td>I453294555</td>
+        <td>DWS INVEST ASIAN BONDS &quot;LDM&quot; (EURHDG) INC</td>
+        <td>a137500749</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDM</td>
+       </tr>
+             <tr>
+        <td>I493416358</td>
+        <td>DWS INVEST ASIAN BONDS &quot;LDM&quot; (SGD) INC</td>
+        <td>a148461539</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDM</td>
+       </tr>
+             <tr>
+        <td>I453291187</td>
+        <td>DWS INVEST ASIAN BONDS &quot;LDM&quot; (USD) INC</td>
+        <td>a137499907</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDM</td>
+       </tr>
+             <tr>
+        <td>180536108</td>
+        <td>DWS INVEST ASIAN BONDS &quot;LDMH&quot; (SGDHDG) INC</td>
+        <td>a137500881</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDM</td>
+       </tr>
+             <tr>
+        <td>191438400</td>
+        <td>DWS INVEST ASIAN BONDS &quot;NCH&quot; (EURHDG) ACC</td>
+        <td>a137500858</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NCH</td>
+       </tr>
+             <tr>
+        <td>I493417101</td>
+        <td>DWS INVEST ASIAN BONDS &quot;NDH&quot; (EURHDG) INC</td>
+        <td>a148461723</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NDH</td>
+       </tr>
+             <tr>
+        <td>061685693</td>
+        <td>DWS INVEST BRAZILIAN EQUITIES &quot;LC&quot; (EUR) ACC</td>
+        <td>a137498697</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>061685731</td>
+        <td>DWS INVEST BRAZILIAN EQUITIES &quot;NC&quot; (EUR) ACC</td>
+        <td>a137498696</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>063280526</td>
+        <td>DWS INVEST CHINA BONDS &quot;LCH (P)&quot; (EURHDG) ACC</td>
+        <td>a137499084</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>081332789</td>
+        <td>DWS INVEST CHINA BONDS &quot;LCH&quot; (CHF HEDGED) ACC</td>
+        <td>a137498791</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>132211256</td>
+        <td>DWS INVEST CHINA BONDS &quot;LCH&quot; (SEKHDG) ACC</td>
+        <td>a137499510</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>I453287083</td>
+        <td>DWS INVEST CHINA BONDS &quot;LDH&quot; (EURHDG) INC</td>
+        <td>a137498881</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDH</td>
+       </tr>
+             <tr>
+        <td>I453289605</td>
+        <td>DWS INVEST CHINA BONDS &quot;LDH&quot; (USDHDG) INC</td>
+        <td>a137499512</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDH</td>
+       </tr>
+             <tr>
+        <td>I453289610</td>
+        <td>DWS INVEST CHINA BONDS &quot;LDM&quot; (USDHDG) INC</td>
+        <td>a137499513</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDM</td>
+       </tr>
+             <tr>
+        <td>061685588</td>
+        <td>DWS INVEST CHINA BONDS &quot;NC&quot; EUR ACC</td>
+        <td>a137499103</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>074083161</td>
+        <td>DWS INVEST CHINA BONDS &quot;NCH&quot; (EURHDG) ACC</td>
+        <td>a137499010</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NCH</td>
+       </tr>
+             <tr>
+        <td>I453288791</td>
+        <td>DWS INVEST CHINA BONDS &quot;NDH&quot; (EURHDG) INC</td>
+        <td>a137499308</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NDH</td>
+       </tr>
+             <tr>
+        <td>I453292620</td>
+        <td>DWS INVEST CHINA BONDS &quot;NDQ&quot; (EURHDG) INC</td>
+        <td>a137500266</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NDQ</td>
+       </tr>
+             <tr>
+        <td>061685642</td>
+        <td>DWS INVEST CHINA BONDS &quot;USD LC&quot; ACC</td>
+        <td>a137498905</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>027316417</td>
+        <td>DWS INVEST CHINESE EQUITIES &quot;LC&quot; (USD) ACC</td>
+        <td>a137498824</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>027314562</td>
+        <td>DWS INVEST CHINESE EQUITIES &quot;N&quot; (EUR) ACC</td>
+        <td>a137498870</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>N</td>
+       </tr>
+             <tr>
+        <td>203432615</td>
+        <td>DWS INVEST CONSERVATIVE OPPORTUNITIES &quot;LC&quot; (EUR) ACC</td>
+        <td>a137499278</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>203432623</td>
+        <td>DWS INVEST CONSERVATIVE OPPORTUNITIES &quot;LD&quot; (EUR) INC</td>
+        <td>a137499279</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>216183975</td>
+        <td>DWS INVEST CONSERVATIVE OPPORTUNITIES &quot;NC&quot; (EUR) ACC</td>
+        <td>a137500423</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>203432631</td>
+        <td>DWS INVEST CONSERVATIVE OPPORTUNITIES &quot;ND&quot; (EUR) INC</td>
+        <td>a137499280</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>ND</td>
+       </tr>
+             <tr>
+        <td>074083340</td>
+        <td>DWS INVEST CONVERTIBLES &quot;LC CE&quot; (EUR) ACC</td>
+        <td>a137499814</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>017921975</td>
+        <td>DWS INVEST CONVERTIBLES &quot;LC&quot; (EUR) ACC</td>
+        <td>a137500258</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>061686789</td>
+        <td>DWS INVEST CONVERTIBLES &quot;LCH&quot; (CHFHDG) ACC</td>
+        <td>a137500405</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>128265872</td>
+        <td>DWS INVEST CONVERTIBLES &quot;LCH&quot; (SEKHDG) ACC</td>
+        <td>a137499998</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>I453287248</td>
+        <td>DWS INVEST CONVERTIBLES &quot;LD&quot; (EUR) INC</td>
+        <td>a137498923</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>017922025</td>
+        <td>DWS INVEST CONVERTIBLES &quot;NC&quot; (EUR) ACC</td>
+        <td>a137500257</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>027317014</td>
+        <td>DWS INVEST CONVERTIBLES &quot;USD LCH&quot; (USDHDG) ACC</td>
+        <td>a137499204</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>198220060</td>
+        <td>DWS INVEST CORPORATE GREEN BONDS &quot;LC&quot; (EUR) ACC</td>
+        <td>a137498745</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I453295620</td>
+        <td>DWS INVEST CORPORATE GREEN BONDS &quot;LD&quot; (EUR) INC</td>
+        <td>a137501016</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>191438426</td>
+        <td>DWS INVEST CORPORATE GREEN BONDS &quot;ND&quot; (EUR) INC</td>
+        <td>a137500860</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>ND</td>
+       </tr>
+             <tr>
+        <td>124592348</td>
+        <td>DWS INVEST CORPORATE HYBRID BONDS &quot;LC&quot; (EUR) ACC</td>
+        <td>a137500084</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>129289686</td>
+        <td>DWS INVEST CORPORATE HYBRID BONDS &quot;LC&quot; (USDHDG) ACC</td>
+        <td>a161257501</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I453291897</td>
+        <td>DWS INVEST CORPORATE HYBRID BONDS &quot;LD&quot; (EUR) INC</td>
+        <td>a137500085</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>I453291461</td>
+        <td>DWS INVEST CORPORATE HYBRID BONDS &quot;LDM&quot; (USDHDG) INC</td>
+        <td>a137499976</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDM</td>
+       </tr>
+             <tr>
+        <td>176993804</td>
+        <td>DWS INVEST CROCI EURO &quot;LC&quot; (EUR) ACC</td>
+        <td>a137500870</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>176993847</td>
+        <td>DWS INVEST CROCI EURO &quot;LCH&quot; (USDHDG) ACC</td>
+        <td>a137501130</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>I453295042</td>
+        <td>DWS INVEST CROCI EURO &quot;LD&quot; (EUR) INC</td>
+        <td>a137500871</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>189713886</td>
+        <td>DWS INVEST CROCI EURO &quot;NC&quot; (EUR) ACC</td>
+        <td>a137501045</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>176994371</td>
+        <td>DWS INVEST CROCI GLOBAL DIVIDENDS &quot;LC&quot; (EUR) ACC</td>
+        <td>a137501031</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>176994410</td>
+        <td>DWS INVEST CROCI GLOBAL DIVIDENDS &quot;LC&quot; (USD) ACC</td>
+        <td>a137501088</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I453295685</td>
+        <td>DWS INVEST CROCI GLOBAL DIVIDENDS &quot;LD&quot; (EUR) INC</td>
+        <td>a137501032</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>196868798</td>
+        <td>DWS INVEST CROCI INTELLECTUAL CAPITAL ESG &quot;LC&quot; (EUR) ACC</td>
+        <td>a137498678</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>196868810</td>
+        <td>DWS INVEST CROCI INTELLECTUAL CAPITAL ESG &quot;LC&quot; (USD) ACC</td>
+        <td>a137499008</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>176994215</td>
+        <td>DWS INVEST CROCI JAPAN &quot;LC&quot; (JPY) ACC</td>
+        <td>a137501089</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>176994223</td>
+        <td>DWS INVEST CROCI JAPAN &quot;LCH&quot; (EURHDG) ACC</td>
+        <td>a137501090</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>127891745</td>
+        <td>DWS INVEST CROCI SECTORS PLUS &quot;LC&quot; (EUR) ACC</td>
+        <td>a137499755</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>170186273</td>
+        <td>DWS INVEST CROCI SECTORS PLUS &quot;LCH&quot; (EURHDG) ACC</td>
+        <td>a137500766</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>I453294626</td>
+        <td>DWS INVEST CROCI SECTORS PLUS &quot;LDH&quot; (EURHDG) INC</td>
+        <td>a137500767</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDH</td>
+       </tr>
+             <tr>
+        <td>127891753</td>
+        <td>DWS INVEST CROCI SECTORS PLUS &quot;NC&quot; (EUR) ACC</td>
+        <td>a137499756</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>176993901</td>
+        <td>DWS INVEST CROCI US &quot;LC&quot; (EUR) ACC</td>
+        <td>a137500776</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>176993936</td>
+        <td>DWS INVEST CROCI US &quot;LC&quot; (USD) ACC</td>
+        <td>a137500810</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>176993910</td>
+        <td>DWS INVEST CROCI US &quot;LCH&quot; (EURHDG) ACC</td>
+        <td>a137500808</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>176994274</td>
+        <td>DWS INVEST CROCI US DIVIDENDS &quot;LC&quot; (USD) ACC</td>
+        <td>a137500741</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I453294525</td>
+        <td>DWS INVEST CROCI US DIVIDENDS &quot;LD&quot; (USD) INC</td>
+        <td>a137500742</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>176994100</td>
+        <td>DWS INVEST CROCI WORLD &quot;LC&quot; (EUR) ACC</td>
+        <td>a137500813</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>176994126</td>
+        <td>DWS INVEST CROCI WORLD &quot;LC&quot; (USD) ACC</td>
+        <td>a137500814</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>174771073</td>
+        <td>DWS INVEST EMERGING MARKETS OPPORTUNITIES &quot;LC&quot; (EUR) ACC</td>
+        <td>a137499844</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>188147666</td>
+        <td>DWS INVEST ENHANCED COMMODITY STRATEGY &quot;LC&quot; (CHF) ACC</td>
+        <td>a137499231</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>188147704</td>
+        <td>DWS INVEST ENHANCED COMMODITY STRATEGY &quot;LC&quot; (EUR) ACC</td>
+        <td>a137499260</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>188147712</td>
+        <td>DWS INVEST ENHANCED COMMODITY STRATEGY &quot;LC&quot; (SGD) ACC</td>
+        <td>a137499261</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>188147747</td>
+        <td>DWS INVEST ENHANCED COMMODITY STRATEGY &quot;LC&quot; (USD) ACC</td>
+        <td>a137499262</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>195601771</td>
+        <td>DWS INVEST ENHANCED COMMODITY STRATEGY &quot;LCH&quot; (EURHDG) ACC</td>
+        <td>a137498673</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>I453294912</td>
+        <td>DWS INVEST ESG ASIAN BONDS &quot;LC&quot; (USD) ACC</td>
+        <td>a137500839</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>250388195</td>
+        <td>DWS INVEST ESG ASIAN BONDS &quot;LCH&quot; (EURHDG) ACC</td>
+        <td>a176131914</td>
+        <td>DWS INVESTMENT (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>250388047</td>
+        <td>DWS INVEST ESG ASIAN BONDS &quot;LD&quot; (USD) INC</td>
+        <td>a176543791</td>
+        <td>DWS INVESTMENT (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>250388179</td>
+        <td>DWS INVEST ESG ASIAN BONDS &quot;LDH&quot; (EURHDG) INC</td>
+        <td>a176543795</td>
+        <td>DWS INVESTMENT (LU)</td>
+        <td>LDH</td>
+       </tr>
+             <tr>
+        <td>250388152</td>
+        <td>DWS INVEST ESG ASIAN BONDS &quot;NCH&quot; (EURHDG) ACC</td>
+        <td>a176131913</td>
+        <td>DWS INVESTMENT (LU)</td>
+        <td>NCH</td>
+       </tr>
+             <tr>
+        <td>250388136</td>
+        <td>DWS INVEST ESG ASIAN BONDS &quot;ND&quot; (EUR) INC</td>
+        <td>a176543794</td>
+        <td>DWS INVESTMENT (LU)</td>
+        <td>ND</td>
+       </tr>
+             <tr>
+        <td>250388128</td>
+        <td>DWS INVEST ESG ASIAN BONDS &quot;NDH&quot; (EURHDG) INC</td>
+        <td>a176543793</td>
+        <td>DWS INVESTMENT (LU)</td>
+        <td>NDH</td>
+       </tr>
+             <tr>
+        <td>250388110</td>
+        <td>DWS INVEST ESG ASIAN BONDS &quot;NDQ&quot; (EURHDG) INC</td>
+        <td>a176543792</td>
+        <td>DWS INVESTMENT (LU)</td>
+        <td>NDQ</td>
+       </tr>
+             <tr>
+        <td>186326415</td>
+        <td>DWS INVEST ESG CLIMATE TECH &quot;LC&quot; (EUR) ACC</td>
+        <td>a137501010</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>188566758</td>
+        <td>DWS INVEST ESG CLIMATE TECH &quot;LC&quot; (USD) ACC</td>
+        <td>a137499003</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I453295568</td>
+        <td>DWS INVEST ESG CLIMATE TECH &quot;LD&quot; (EUR) INC</td>
+        <td>a137501003</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>191438418</td>
+        <td>DWS INVEST ESG CLIMATE TECH &quot;NC&quot; (EUR) ACC</td>
+        <td>a137500859</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>186853709</td>
+        <td>DWS INVEST ESG DYNAMIC OPPORTUNITIES &quot;LC&quot; (EUR) ACC</td>
+        <td>a137501012</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>186853725</td>
+        <td>DWS INVEST ESG DYNAMIC OPPORTUNITIES &quot;NC&quot; (EUR) ACC</td>
+        <td>a137501013</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>032976000</td>
+        <td>DWS INVEST ESG EMERGING MARKETS TOP DIVIDEND &quot;LC&quot; ACC</td>
+        <td>a137500908</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I453294612</td>
+        <td>DWS INVEST ESG EMERGING MARKETS TOP DIVIDEND &quot;LD&quot; INC</td>
+        <td>a137500764</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>032976018</td>
+        <td>DWS INVEST ESG EMERGING MARKETS TOP DIVIDEND &quot;NC&quot; ACC</td>
+        <td>a137500909</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>I453292631</td>
+        <td>DWS INVEST ESG EMERGING MARKETS TOP DIVIDEND &quot;ND&quot; (EUR) INC</td>
+        <td>a137500268</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>ND</td>
+       </tr>
+             <tr>
+        <td>172994067</td>
+        <td>DWS INVEST ESG EQUITY INCOME &quot;LCH&quot; (EURHDG) ACC</td>
+        <td>a137499521</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>193291317</td>
+        <td>DWS INVEST ESG EQUITY INCOME &quot;LCH&quot; (USDHDG) ACC</td>
+        <td>a137498742</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>172994822</td>
+        <td>DWS INVEST ESG EQUITY INCOME &quot;NC&quot; (EUR) ACC</td>
+        <td>a137499522</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>174771120</td>
+        <td>DWS INVEST ESG EQUITY INCOME &quot;NCH&quot; (EURHDG) ACC</td>
+        <td>a137499624</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NCH</td>
+       </tr>
+             <tr>
+        <td>I453286482</td>
+        <td>DWS INVEST ESG EQUITY INCOME &quot;ND&quot; (EUR) INC</td>
+        <td>a137498731</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>ND</td>
+       </tr>
+             <tr>
+        <td>200124189</td>
+        <td>DWS INVEST ESG EURO CORPORATE BONDS &quot;LC&quot; (EUR) ACC</td>
+        <td>a137499048</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>211193565</td>
+        <td>DWS INVEST ESG EURO HIGH YIELD &quot;LC&quot; (EUR) ACC B</td>
+        <td>a137500511</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I453293604</td>
+        <td>DWS INVEST ESG EURO HIGH YIELD &quot;LD&quot; (EUR) INC B</td>
+        <td>a137500512</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>186326229</td>
+        <td>DWS INVEST ESG EUROPEAN SMALL/MID CAP &quot;LC&quot; (EUR) ACC</td>
+        <td>a137501006</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I514478679</td>
+        <td>DWS INVEST ESG EUROPEAN SMALL/MID CAP &quot;LD&quot; (EUR) INC</td>
+        <td>a154024504</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>235762617</td>
+        <td>DWS INVEST ESG EUROPEAN SMALL/MID CAP &quot;NC&quot; (EUR) ACC</td>
+        <td>a154025277</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>198220094</td>
+        <td>DWS INVEST ESG GLOBAL CORPORATE BONDS &quot;LC&quot; (EUR) ACC</td>
+        <td>a137498748</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>198422037</td>
+        <td>DWS INVEST ESG GLOBAL EMERGING MARKETS EQUITIES &quot;LC&quot; (EUR) ACC</td>
+        <td>a137499234</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>254061751</td>
+        <td>DWS INVEST ESG GLOBAL EMERGING MARKETS EQUITIES &quot;LC&quot; (USD) ACC</td>
+        <td>a176726965</td>
+        <td>DWS INVESTMENT (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>198422100</td>
+        <td>DWS INVEST ESG GLOBAL EMERGING MARKETS EQUITIES &quot;LD&quot; (EUR) INC</td>
+        <td>a137499235</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>254061689</td>
+        <td>DWS INVEST ESG GLOBAL EMERGING MARKETS EQUITIES &quot;NC&quot; (EUR) ACC</td>
+        <td>a176726962</td>
+        <td>DWS INVESTMENT (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>105432089</td>
+        <td>DWS INVEST ESG MULTI ASSET INCOME &quot;LC&quot; (EUR) ACC</td>
+        <td>a137500060</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I453291151</td>
+        <td>DWS INVEST ESG MULTI ASSET INCOME &quot;LD&quot; (EUR) INC</td>
+        <td>a137499898</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>I453296165</td>
+        <td>DWS INVEST ESG MULTI ASSET INCOME &quot;LDH&quot; (EURHDG) INC</td>
+        <td>a137501152</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDH</td>
+       </tr>
+             <tr>
+        <td>118621875</td>
+        <td>DWS INVEST ESG MULTI ASSET INCOME &quot;NC&quot; (EUR) ACC</td>
+        <td>a137500061</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>I453291153</td>
+        <td>DWS INVEST ESG MULTI ASSET INCOME &quot;ND&quot; (EUR) INC</td>
+        <td>a137499899</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>ND</td>
+       </tr>
+             <tr>
+        <td>216200454</td>
+        <td>DWS INVEST ESG NEXT GENERATION INFRASTRUCTURE &quot;LC&quot; (EUR) ACC</td>
+        <td>a137500132</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>216200462</td>
+        <td>DWS INVEST ESG NEXT GENERATION INFRASTRUCTURE &quot;LD&quot; (EUR) INC</td>
+        <td>a137500424</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>189127804</td>
+        <td>DWS INVEST ESG SMART INDUSTRIAL TECHNOLOGIES &quot;LC&quot; (EUR) ACC</td>
+        <td>a137500853</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>191438370</td>
+        <td>DWS INVEST ESG SMART INDUSTRIAL TECHNOLOGIES &quot;NC&quot; (EUR) ACC</td>
+        <td>a137500857</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>014564489</td>
+        <td>DWS INVEST ESG TOP EUROLAND &quot;LC&quot; ACC</td>
+        <td>a137500252</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>105434197</td>
+        <td>DWS INVEST ESG TOP EUROLAND &quot;LCH&quot; (SGDHDG) ACC A</td>
+        <td>a137499904</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>I453288231</td>
+        <td>DWS INVEST ESG TOP EUROLAND &quot;LCH&quot; (USDHDG) ACC</td>
+        <td>a137499168</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>A2H</td>
+       </tr>
+             <tr>
+        <td>I453287098</td>
+        <td>DWS INVEST ESG TOP EUROLAND &quot;LD&quot; INC</td>
+        <td>a137498885</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>014564730</td>
+        <td>DWS INVEST ESG TOP EUROLAND &quot;NC&quot; ACC</td>
+        <td>a137500156</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>030035755</td>
+        <td>DWS INVEST EURO CORPORATE BONDS &quot;LC&quot; ACC</td>
+        <td>a137500045</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>132211361</td>
+        <td>DWS INVEST EURO CORPORATE BONDS &quot;LCH&quot; (SEKHDG) ACC</td>
+        <td>a137499439</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>I453295009</td>
+        <td>DWS INVEST EURO CORPORATE BONDS &quot;LD&quot; INC</td>
+        <td>a137500863</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>030035763</td>
+        <td>DWS INVEST EURO CORPORATE BONDS &quot;NC&quot; ACC</td>
+        <td>a137500046</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>I453292637</td>
+        <td>DWS INVEST EURO CORPORATE BONDS &quot;NDQ&quot; (EUR) INC A</td>
+        <td>a137500270</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NDQ</td>
+       </tr>
+             <tr>
+        <td>061683950</td>
+        <td>DWS INVEST EURO HIGH YIELD CORPORATES &quot;LC&quot; (EUR) ACC</td>
+        <td>a137498839</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>132211329</td>
+        <td>DWS INVEST EURO HIGH YIELD CORPORATES &quot;LCH&quot; (SEKHDG) ACC B</td>
+        <td>a137499440</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>091103630</td>
+        <td>DWS INVEST EURO HIGH YIELD CORPORATES &quot;LCH&quot; (USDHDG) ACC</td>
+        <td>a137500221</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>I453287732</td>
+        <td>DWS INVEST EURO HIGH YIELD CORPORATES &quot;LD&quot; (EUR) INC</td>
+        <td>a137499044</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>I453292944</td>
+        <td>DWS INVEST EURO HIGH YIELD CORPORATES &quot;LDM&quot; (USDHDG) INC</td>
+        <td>a137500347</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDM</td>
+       </tr>
+             <tr>
+        <td>I453287842</td>
+        <td>DWS INVEST EURO HIGH YIELD CORPORATES &quot;NC&quot; (EUR) ACC</td>
+        <td>a137499071</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>I453288237</td>
+        <td>DWS INVEST EURO HIGH YIELD CORPORATES &quot;ND&quot; (EUR) INC</td>
+        <td>a137499170</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>ND</td>
+       </tr>
+             <tr>
+        <td>I453292641</td>
+        <td>DWS INVEST EURO HIGH YIELD CORPORATES &quot;NDQ&quot; (EUR) INC B</td>
+        <td>a137500271</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NDQ</td>
+       </tr>
+             <tr>
+        <td>014565205</td>
+        <td>DWS INVEST EURO-GOV BONDS &quot;LC&quot; ACC</td>
+        <td>a137500255</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I453287236</td>
+        <td>DWS INVEST EURO-GOV BONDS &quot;LD&quot; INC</td>
+        <td>a137498920</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>014565264</td>
+        <td>DWS INVEST EURO-GOV BONDS &quot;NC&quot; ACC</td>
+        <td>a137500159</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>027316034</td>
+        <td>DWS INVEST EUROPEAN EQUITY HIGH CONVICTION &quot;L&quot; (USD) ACC</td>
+        <td>a137499202</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>L</td>
+       </tr>
+             <tr>
+        <td>014563407</td>
+        <td>DWS INVEST EUROPEAN EQUITY HIGH CONVICTION &quot;LC&quot; (EUR) ACC</td>
+        <td>a137500253</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I453287246</td>
+        <td>DWS INVEST EUROPEAN EQUITY HIGH CONVICTION &quot;LD&quot; (EUR) INC</td>
+        <td>a137498922</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>014563512</td>
+        <td>DWS INVEST EUROPEAN EQUITY HIGH CONVICTION &quot;NC&quot; (EUR) ACC</td>
+        <td>a137500157</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>074082262</td>
+        <td>DWS INVEST GERMAN EQUITIES &quot;LC&quot; (EUR) ACC</td>
+        <td>a137498785</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>074082491</td>
+        <td>DWS INVEST GERMAN EQUITIES &quot;LC&quot; (USD) ACC</td>
+        <td>a137498609</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>A2</td>
+       </tr>
+             <tr>
+        <td>091103672</td>
+        <td>DWS INVEST GERMAN EQUITIES &quot;LCH&quot; (USDHDG) ACC</td>
+        <td>a137499591</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>I453287093</td>
+        <td>DWS INVEST GERMAN EQUITIES &quot;LD&quot; INC</td>
+        <td>a137498884</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>074082343</td>
+        <td>DWS INVEST GERMAN EQUITIES &quot;NC&quot; (EUR) ACC</td>
+        <td>a137498784</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>205252576</td>
+        <td>DWS INVEST GLOBAL AGRIBUSINESS &quot;LC&quot; (SGD) ACC</td>
+        <td>a148462082</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>027316484</td>
+        <td>DWS INVEST GLOBAL AGRIBUSINESS &quot;LC&quot; (USD) ACC</td>
+        <td>a137499150</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>A2</td>
+       </tr>
+             <tr>
+        <td>027315887</td>
+        <td>DWS INVEST GLOBAL AGRIBUSINESS &quot;LC&quot; ACC</td>
+        <td>a137499152</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I453292752</td>
+        <td>DWS INVEST GLOBAL AGRIBUSINESS &quot;LD&quot; (GBP) INC</td>
+        <td>a137500299</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>DS1</td>
+       </tr>
+             <tr>
+        <td>I453289617</td>
+        <td>DWS INVEST GLOBAL AGRIBUSINESS &quot;LD&quot; INC</td>
+        <td>a137499515</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>027314759</td>
+        <td>DWS INVEST GLOBAL AGRIBUSINESS &quot;NC&quot; ACC</td>
+        <td>a137499149</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>105433581</td>
+        <td>DWS INVEST GLOBAL BONDS &quot;LCH&quot; (CHFHDG) ACC A</td>
+        <td>a137500354</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>061684492</td>
+        <td>DWS INVEST GLOBAL BONDS &quot;LCH&quot; (EUR HDG) ACC</td>
+        <td>a137499815</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>128106774</td>
+        <td>DWS INVEST GLOBAL BONDS &quot;LCH&quot; (SEKHDG) ACC</td>
+        <td>a137500072</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>105433484</td>
+        <td>DWS INVEST GLOBAL BONDS &quot;LCH&quot; (USDHDG) ACC</td>
+        <td>a137500414</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>I453291495</td>
+        <td>DWS INVEST GLOBAL BONDS &quot;LDH&quot; (EUR) INC</td>
+        <td>a137499984</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDH</td>
+       </tr>
+             <tr>
+        <td>061684549</td>
+        <td>DWS INVEST GLOBAL BONDS &quot;NCH&quot; (EUR HDG) ACC</td>
+        <td>a137499816</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NCH</td>
+       </tr>
+             <tr>
+        <td>I453292644</td>
+        <td>DWS INVEST GLOBAL BONDS &quot;NDQ&quot; (EUR) INC</td>
+        <td>a137500272</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NDQ</td>
+       </tr>
+             <tr>
+        <td>032976166</td>
+        <td>DWS INVEST GLOBAL INFRASTRUCTURE &quot;LC&quot; (USD) ACC</td>
+        <td>a137499516</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>032976077</td>
+        <td>DWS INVEST GLOBAL INFRASTRUCTURE &quot;LC&quot; ACC</td>
+        <td>a137500684</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>061686517</td>
+        <td>DWS INVEST GLOBAL INFRASTRUCTURE &quot;LCH&quot; (CHFHDG) ACC</td>
+        <td>a137498708</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>156064629</td>
+        <td>DWS INVEST GLOBAL INFRASTRUCTURE &quot;LCH&quot; (EURHDG) ACC</td>
+        <td>a137500362</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>127822239</td>
+        <td>DWS INVEST GLOBAL INFRASTRUCTURE &quot;LCH&quot; (SEKHDG) ACC</td>
+        <td>a137499420</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>122273130</td>
+        <td>DWS INVEST GLOBAL INFRASTRUCTURE &quot;LCH&quot; (USDHDG) ACC</td>
+        <td>a137499746</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>I453289251</td>
+        <td>DWS INVEST GLOBAL INFRASTRUCTURE &quot;LD&quot; (USD) INC</td>
+        <td>a137499423</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>I453289627</td>
+        <td>DWS INVEST GLOBAL INFRASTRUCTURE &quot;LD&quot; INC</td>
+        <td>a137499517</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>I453289232</td>
+        <td>DWS INVEST GLOBAL INFRASTRUCTURE &quot;LDH&quot; (EURHDG) INC</td>
+        <td>a137499419</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDH</td>
+       </tr>
+             <tr>
+        <td>I453289935</td>
+        <td>DWS INVEST GLOBAL INFRASTRUCTURE &quot;LDM&quot; (SGDHDG) INC</td>
+        <td>a137499594</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDM</td>
+       </tr>
+             <tr>
+        <td>I453289254</td>
+        <td>DWS INVEST GLOBAL INFRASTRUCTURE &quot;LDM&quot; (USDHDG) INC A</td>
+        <td>a137499424</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDM</td>
+       </tr>
+             <tr>
+        <td>I453294288</td>
+        <td>DWS INVEST GLOBAL INFRASTRUCTURE &quot;NC&quot; ACC</td>
+        <td>a137500683</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>197371528</td>
+        <td>DWS INVEST GLOBAL INFRASTRUCTURE &quot;ND&quot; (EUR) INC</td>
+        <td>a137498679</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>ND</td>
+       </tr>
+             <tr>
+        <td>050726886</td>
+        <td>DWS INVEST GLOBAL REAL ESTATE SECURITIES &quot;LC&quot; (USD) ACC</td>
+        <td>a137500415</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I453295971</td>
+        <td>DWS INVEST GLOBAL REAL ESTATE SECURITIES &quot;LD&quot; INC</td>
+        <td>a137501103</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>I453290599</td>
+        <td>DWS INVEST GLOBAL REAL ESTATE SECURITIES &quot;LDH&quot; (CHFHDG) INC</td>
+        <td>a137499760</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDH</td>
+       </tr>
+             <tr>
+        <td>I453291288</td>
+        <td>DWS INVEST GLOBAL REAL ESTATE SECURITIES &quot;LDM&quot; (USDHDG) INC</td>
+        <td>a137499933</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDM</td>
+       </tr>
+             <tr>
+        <td>I453287991</td>
+        <td>DWS INVEST GOLD AND PRECIOUS METALS &quot;LC&quot; ACC</td>
+        <td>a137499108</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I453289615</td>
+        <td>DWS INVEST GOLD AND PRECIOUS METALS &quot;LD&quot; INC</td>
+        <td>a137499514</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>027314805</td>
+        <td>DWS INVEST GOLD AND PRECIOUS METALS &quot;NC&quot; ACC</td>
+        <td>a137499110</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>027316557</td>
+        <td>DWS INVEST GOLD AND PRECIOUS METALS EQUITIES &quot;LC&quot; (USD) ACC</td>
+        <td>a137499107</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>A2</td>
+       </tr>
+             <tr>
+        <td>014565671</td>
+        <td>DWS INVEST I ESG EURO BONDS (SHORT) &quot;NC&quot; ACC</td>
+        <td>a137500246</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>105433018</td>
+        <td>DWS INVEST I EURO BONDS (SHORT) &quot;NDQ&quot; (EUR) I NC</td>
+        <td>a137500269</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NDQ</td>
+       </tr>
+             <tr>
+        <td>078123761</td>
+        <td>DWS INVEST II ESG EUROPEAN TOP DIVIDEND &quot;LC&quot; (EUR) ACC</td>
+        <td>a137498957</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I453286728</td>
+        <td>DWS INVEST II ESG EUROPEAN TOP DIVIDEND &quot;LD&quot; (EUR) INC</td>
+        <td>a137498793</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>I453289300</td>
+        <td>DWS INVEST II ESG EUROPEAN TOP DIVIDEND &quot;LDH&quot; (CHFHDG) INC</td>
+        <td>a137499436</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDH</td>
+       </tr>
+             <tr>
+        <td>I453289307</td>
+        <td>DWS INVEST II ESG EUROPEAN TOP DIVIDEND &quot;LDH&quot; (EURHDG) INC</td>
+        <td>a137499437</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDH</td>
+       </tr>
+             <tr>
+        <td>078123788</td>
+        <td>DWS INVEST II ESG EUROPEAN TOP DIVIDEND &quot;NC&quot; (EUR) ACC</td>
+        <td>a137498794</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>078123877</td>
+        <td>DWS INVEST II ESG US TOP DIVIDEND &quot;LC&quot; (EUR) ACC</td>
+        <td>a137498956</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I453287501</td>
+        <td>DWS INVEST II ESG US TOP DIVIDEND &quot;LC&quot; (EUR) INC</td>
+        <td>a137498986</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>078124008</td>
+        <td>DWS INVEST II ESG US TOP DIVIDEND &quot;LC&quot; (USD) ACC</td>
+        <td>a137499307</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>A2</td>
+       </tr>
+             <tr>
+        <td>I453288780</td>
+        <td>DWS INVEST II ESG US TOP DIVIDEND &quot;LCH&quot; (EUR) ACC</td>
+        <td>a137499306</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>I453287507</td>
+        <td>DWS INVEST II ESG US TOP DIVIDEND &quot;NC&quot; (EUR) ACC</td>
+        <td>a137498987</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>I453288777</td>
+        <td>DWS INVEST II ESG US TOP DIVIDEND &quot;NCH&quot; (EUR) ACC</td>
+        <td>a137499305</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NCH</td>
+       </tr>
+             <tr>
+        <td>I453286739</td>
+        <td>DWS INVEST II EUROPEAN TOP DIVIDEND &quot;ND&quot; (EUR) INC</td>
+        <td>a137498795</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>ND</td>
+       </tr>
+             <tr>
+        <td>082645284</td>
+        <td>DWS INVEST II GLOBAL EQUITY HIGH CONVICTION &quot;LC&quot; (EUR) ACC</td>
+        <td>a137498934</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I453287298</td>
+        <td>DWS INVEST II GLOBAL EQUITY HIGH CONVICTION &quot;LD&quot; (EUR) INC</td>
+        <td>a137498935</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>082645322</td>
+        <td>DWS INVEST II GLOBAL EQUITY HIGH CONVICTION &quot;NC&quot; (EUR) ACC</td>
+        <td>a137498936</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>039935678</td>
+        <td>DWS INVEST LATIN AMERICAN EQUITIES &quot;LC&quot; (EUR) ACC</td>
+        <td>a137498840</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>081333718</td>
+        <td>DWS INVEST LATIN AMERICAN EQUITIES &quot;LC&quot; (USD) ACC</td>
+        <td>a137498796</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>A2</td>
+       </tr>
+             <tr>
+        <td>081333700</td>
+        <td>DWS INVEST LATIN AMERICAN EQUITIES &quot;NC&quot; (EUR) ACC</td>
+        <td>a137498698</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>233131598</td>
+        <td>DWS INVEST LOW CARBON CORPORATE BONDS &quot;LD&quot; (EUR) INC</td>
+        <td>a154024948</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>235762587</td>
+        <td>DWS INVEST LOW CARBON CORPORATE BONDS &quot;LDH&quot; (USDHDG) INC</td>
+        <td>a154432700</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDH</td>
+       </tr>
+             <tr>
+        <td>105432135</td>
+        <td>DWS INVEST MULTI OPPORTUNITIES &quot;LC&quot; (EUR) ACC</td>
+        <td>a137499900</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>119638577</td>
+        <td>DWS INVEST MULTI OPPORTUNITIES &quot;LCH&quot; (AUDHDG) ACC</td>
+        <td>a137499828</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>128902031</td>
+        <td>DWS INVEST MULTI OPPORTUNITIES &quot;LCH&quot; (SEKHDG) ACC</td>
+        <td>a137499611</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>119639409</td>
+        <td>DWS INVEST MULTI OPPORTUNITIES &quot;LCH&quot; (USDHDG) ACC</td>
+        <td>a137499920</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>I453288897</td>
+        <td>DWS INVEST MULTI OPPORTUNITIES &quot;LD&quot; (EUR) INC A</td>
+        <td>a137499335</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>I453288889</td>
+        <td>DWS INVEST MULTI OPPORTUNITIES &quot;LDM&quot; (AUDHDG) INC</td>
+        <td>a137499333</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDM</td>
+       </tr>
+             <tr>
+        <td>I453288872</td>
+        <td>DWS INVEST MULTI OPPORTUNITIES &quot;LDM&quot; (HKDHDG) INC</td>
+        <td>a137499329</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDM</td>
+       </tr>
+             <tr>
+        <td>I453294060</td>
+        <td>DWS INVEST MULTI OPPORTUNITIES &quot;LDM&quot; (SGDHDG) INC</td>
+        <td>a137500626</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDM</td>
+       </tr>
+             <tr>
+        <td>I453288900</td>
+        <td>DWS INVEST MULTI OPPORTUNITIES &quot;LDM&quot; (USDHDG) INC</td>
+        <td>a137499336</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDM</td>
+       </tr>
+             <tr>
+        <td>I453291163</td>
+        <td>DWS INVEST MULTI OPPORTUNITIES &quot;LDQ&quot; (EUR) INC</td>
+        <td>a137499901</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDQ</td>
+       </tr>
+             <tr>
+        <td>105432160</td>
+        <td>DWS INVEST MULTI OPPORTUNITIES &quot;NC&quot; (EUR) ACC</td>
+        <td>a137499902</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>I453291170</td>
+        <td>DWS INVEST MULTI OPPORTUNITIES &quot;NDQ&quot; (EUR) INC</td>
+        <td>a137499903</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NDQ</td>
+       </tr>
+             <tr>
+        <td>123007247</td>
+        <td>DWS INVEST QI LOWVOL WORLD &quot;LC&quot; (EUR) ACC</td>
+        <td>a137499829</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>123007271</td>
+        <td>DWS INVEST QI LOWVOL WORLD &quot;LC&quot; (USD) ACC</td>
+        <td>a137499832</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I453290877</td>
+        <td>DWS INVEST QI LOWVOL WORLD &quot;LD&quot; (EUR) INC</td>
+        <td>a137499830</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>I453290882</td>
+        <td>DWS INVEST QI LOWVOL WORLD &quot;ND&quot; (EUR) INC</td>
+        <td>a137499831</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>N</td>
+       </tr>
+             <tr>
+        <td>189131135</td>
+        <td>DWS INVEST SDG GLOBAL EQUITIES &quot;LC&quot; (EUR) ACC</td>
+        <td>a137500877</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>189131143</td>
+        <td>DWS INVEST SDG GLOBAL EQUITIES &quot;LD&quot; (EUR) INC</td>
+        <td>a137500878</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>191438434</td>
+        <td>DWS INVEST SDG GLOBAL EQUITIES &quot;NC&quot; (EUR) ACC</td>
+        <td>a137500861</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>023614545</td>
+        <td>DWS INVEST SHORT DURATION CREDIT &quot;LC&quot; (EUR) ACC</td>
+        <td>a137500016</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I453288243</td>
+        <td>DWS INVEST SHORT DURATION CREDIT &quot;LD&quot; (EUR) INC</td>
+        <td>a137499171</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>023614600</td>
+        <td>DWS INVEST SHORT DURATION CREDIT&quot;NC&quot; ACC</td>
+        <td>a137500014</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>222051436</td>
+        <td>DWS INVEST SHORT DURATION INCOME &quot;LC&quot; (EUR) ACC A</td>
+        <td>a154788277</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>222051444</td>
+        <td>DWS INVEST SHORT DURATION INCOME &quot;LD&quot; (EUR) INC</td>
+        <td>a154788276</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>222051452</td>
+        <td>DWS INVEST SHORT DURATION INCOME &quot;NC&quot; (EUR) ACC</td>
+        <td>a154788274</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>153250251</td>
+        <td>DWS INVEST STEPIN GLOBAL EQUITIES &quot;LC&quot; (EUR) ACC</td>
+        <td>a137499911</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>153250260</td>
+        <td>DWS INVEST STEPIN GLOBAL EQUITIES &quot;NC&quot; (EUR) ACC</td>
+        <td>a137499915</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>027316123</td>
+        <td>DWS INVEST TOP ASIA &quot;LC&quot; (USD) ACC</td>
+        <td>a137499105</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>A2</td>
+       </tr>
+             <tr>
+        <td>014564829</td>
+        <td>DWS INVEST TOP ASIA &quot;LC&quot; ACC</td>
+        <td>a137500254</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I453287233</td>
+        <td>DWS INVEST TOP ASIA &quot;LD&quot; INC</td>
+        <td>a137498919</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>014564888</td>
+        <td>DWS INVEST TOP ASIA &quot;NC&quot; ACC</td>
+        <td>a137500158</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>074083846</td>
+        <td>DWS INVEST TOP DIVIDEND &quot;LC&quot; (SGD) ACC</td>
+        <td>a137498913</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>050726592</td>
+        <td>DWS INVEST TOP DIVIDEND &quot;LC&quot; ACC</td>
+        <td>a137501064</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>061686401</td>
+        <td>DWS INVEST TOP DIVIDEND &quot;LCH&quot; (CHFHDG) ACC</td>
+        <td>a137499187</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>CH2</td>
+       </tr>
+             <tr>
+        <td>128265902</td>
+        <td>DWS INVEST TOP DIVIDEND &quot;LCH&quot; (SEKHDG) ACC</td>
+        <td>a137500071</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>074083854</td>
+        <td>DWS INVEST TOP DIVIDEND &quot;LCH&quot; (SGDHDG) ACC</td>
+        <td>a137498914</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>054457260</td>
+        <td>DWS INVEST TOP DIVIDEND &quot;LCH&quot; (USDHDG) ACC</td>
+        <td>a137498883</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>A2H</td>
+       </tr>
+             <tr>
+        <td>I453287807</td>
+        <td>DWS INVEST TOP DIVIDEND &quot;LD&quot; (GBP) INC</td>
+        <td>a137499062</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>DS1</td>
+       </tr>
+             <tr>
+        <td>I453295940</td>
+        <td>DWS INVEST TOP DIVIDEND &quot;LD&quot; INC</td>
+        <td>a137501096</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>I453286653</td>
+        <td>DWS INVEST TOP DIVIDEND &quot;LDH&quot; (P) (USDHDG) INC</td>
+        <td>a137498774</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>A1H</td>
+       </tr>
+             <tr>
+        <td>I453291760</td>
+        <td>DWS INVEST TOP DIVIDEND &quot;LDM&quot; (USD) INC</td>
+        <td>a137500051</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDM</td>
+       </tr>
+             <tr>
+        <td>I453287046</td>
+        <td>DWS INVEST TOP DIVIDEND &quot;LDQ&quot; (SGDHDG) INC</td>
+        <td>a137498872</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDQ</td>
+       </tr>
+             <tr>
+        <td>I453294003</td>
+        <td>DWS INVEST TOP DIVIDEND &quot;LDQ&quot; (USD) INC</td>
+        <td>a137500611</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>A1Q</td>
+       </tr>
+             <tr>
+        <td>I453290531</td>
+        <td>DWS INVEST TOP DIVIDEND &quot;LDQH&quot; (EURHDG) INC</td>
+        <td>a137499743</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDQ</td>
+       </tr>
+             <tr>
+        <td>I453291837</td>
+        <td>DWS INVEST TOP DIVIDEND &quot;LDQH&quot; (USDHDG) INC</td>
+        <td>a137500070</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LDQ</td>
+       </tr>
+             <tr>
+        <td>050726614</td>
+        <td>DWS INVEST TOP DIVIDEND &quot;NC&quot; ACC</td>
+        <td>a137501097</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>NC</td>
+       </tr>
+             <tr>
+        <td>I453295830</td>
+        <td>DWS INVEST TOP DIVIDEND &quot;ND&quot; INC</td>
+        <td>a137501068</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>ND</td>
+       </tr>
+             <tr>
+        <td>I453287808</td>
+        <td>DWS INVEST TOP DIVIDEND &quot;S1Q &quot; (SGD) INC</td>
+        <td>a137499063</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>S1Q</td>
+       </tr>
+             <tr>
+        <td>SGGAX</td>
+        <td>DWS LARGE CAP FOCUS GROWTH FUND-A</td>
+        <td>a64585746</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SLANX</td>
+        <td>DWS LATIN AMERICA EQUITY FUND-A</td>
+        <td>a64585607</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SMLAX</td>
+        <td>DWS MANAGED MUNICIPAL BOND FUND-A</td>
+        <td>a64585614</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SQMAX</td>
+        <td>DWS MASSACHUSETTS TAX-FREE FUND-A</td>
+        <td>a64585565</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>I453288454</td>
+        <td>DWS MULTI OPPORTUNITIES &quot;LD&quot; (EUR) INC</td>
+        <td>a137499224</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>SPDAX</td>
+        <td>DWS MULTI-ASSET CONSERVATIVE ALLO-A</td>
+        <td>a64585639</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>PLUSX</td>
+        <td>DWS MULTI-ASSET MODERATE ALLOCATION-A</td>
+        <td>a64585646</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>KNTAX</td>
+        <td>DWS NEW YORK TAX-FREE INCOME FUND-A</td>
+        <td>a64585493</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>000849095</td>
+        <td>DWS NOMURA JAPAN GROWTH &quot;LCH&quot; (EURHDG) ACC</td>
+        <td>a137501124</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LCH</td>
+       </tr>
+             <tr>
+        <td>006275664</td>
+        <td>DWS OSTEUROPA ACC</td>
+        <td>a137498603</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>SIN</td>
+       </tr>
+             <tr>
+        <td>000DWS172</td>
+        <td>DWS Qi EUROPEAN EQUITY &quot;LC&quot; (EUR) ACC</td>
+        <td>a161257881</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I514483169</td>
+        <td>DWS QI EUROZONE EQUITY &quot;RC&quot; (EUR) ACC</td>
+        <td>a154025625</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>RC</td>
+       </tr>
+             <tr>
+        <td>I514482645</td>
+        <td>DWS QI EXTRA BOND TOTAL RETURN &quot;SD&quot; (EUR) INC</td>
+        <td>a154025494</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>SD</td>
+       </tr>
+             <tr>
+        <td>TOLLX</td>
+        <td>DWS RREEF GLOBAL INFRASTRUCTURE-A</td>
+        <td>a64585725</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>RRGAX</td>
+        <td>DWS RREEF GLOBAL REAL ESTATE SEC-A</td>
+        <td>a64585695</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>AAAAX</td>
+        <td>DWS RREEF REAL ASSETS FUND-A</td>
+        <td>a64585715</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>RRRAX</td>
+        <td>DWS RREEF REAL ESTATE SECURITIES-A</td>
+        <td>a64585612</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SXPAX</td>
+        <td>DWS S&amp;amp;P 500 INDEX FUND-A</td>
+        <td>a64585672</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>000DWS0W3</td>
+        <td>DWS SACHWERTE INC</td>
+        <td>a154021928</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>SIN</td>
+       </tr>
+             <tr>
+        <td>KTCAX</td>
+        <td>DWS SCIENCE AND TECHNOLOGY FUND-A</td>
+        <td>a64585485</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>I463339013</td>
+        <td>DWS SDG GLOBAL EQUITIES &quot;LD&quot; (EUR) INC</td>
+        <td>a140159464</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>PPIAX</td>
+        <td>DWS SHORT DURATION FUND-A</td>
+        <td>a64585620</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SRMAX</td>
+        <td>DWS SHORT-TERM MUNICIPAL BOND-A</td>
+        <td>a64585688</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SZCAX</td>
+        <td>DWS SMALL CAP CORE FUND-A</td>
+        <td>a64585592</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>SSDAX</td>
+        <td>DWS SMALL CAP GROWTH FUND-A</td>
+        <td>a64585582</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>000DWS29E</td>
+        <td>DWS SMART INDUSTRIAL TECHNOLOGIES &quot;LC&quot; (EUR) ACC</td>
+        <td>a148461797</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>174098492</td>
+        <td>DWS STRATEGIC ESG ALLOCATION BALANCE &quot;LC&quot; (EUR) ACC</td>
+        <td>a137499524</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>192243033</td>
+        <td>DWS STRATEGIC ESG ALLOCATION BALANCE &quot;LD&quot; (EUR) INC</td>
+        <td>a137499041</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>192243289</td>
+        <td>DWS STRATEGIC ESG ALLOCATION DEFENSIVE &quot;LD&quot; (EUR) INC</td>
+        <td>a137499042</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>I453289337</td>
+        <td>DWS STRATEGIC ESG ALLOCATION DYNAMIC &quot;LC&quot; (EUR) ACC</td>
+        <td>a137499445</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I453290037</td>
+        <td>DWS STRATEGIC ESG ALLOCATION DYNAMIC &quot;LD&quot; (EUR) INC</td>
+        <td>a137499620</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>NOTAX</td>
+        <td>DWS STRATEGIC HIGH YIELD TAX-FREE-A</td>
+        <td>a64585551</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>036086505</td>
+        <td>DWS TOP BALANCE ACC</td>
+        <td>a137501109</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>SIN</td>
+       </tr>
+             <tr>
+        <td>I453292270</td>
+        <td>DWS TOP DIVIDENDE &quot;LC&quot; (EUR) ACC</td>
+        <td>a137500178</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I453289310</td>
+        <td>DWS TOP DIVIDENDE &quot;LDQ&quot; (EUR) INC</td>
+        <td>a137499438</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LDQ</td>
+       </tr>
+             <tr>
+        <td>035000518</td>
+        <td>DWS TOP DYNAMIC ACC</td>
+        <td>a137501108</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>SIN</td>
+       </tr>
+             <tr>
+        <td>000976972</td>
+        <td>DWS TOP EUROPE &quot;LC&quot; (EUR) INC</td>
+        <td>a137498605</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I453295019</td>
+        <td>DWS TOP PORTFOLIO OFFENSIV &quot;LC&quot; ACC</td>
+        <td>a137500865</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>SIN</td>
+       </tr>
+             <tr>
+        <td>SZIAX</td>
+        <td>DWS TOTAL RETURN BOND FUND-A</td>
+        <td>a64585572</td>
+        <td>DWS DISTRIBUTIORS, INC</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>000DWS08N</td>
+        <td>DWS TRC DEUTSCHLAND (EUR) ACC</td>
+        <td>a161257172</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>SIN</td>
+       </tr>
+             <tr>
+        <td>I542129660</td>
+        <td>DWS TRC ESG TOP ASIEN (EUR) ACC</td>
+        <td>a161257175</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>SIN</td>
+       </tr>
+             <tr>
+        <td>000DWS1W8</td>
+        <td>DWS TRC GLOBAL GROWTH (EUR) INC</td>
+        <td>a161257450</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>SIN</td>
+       </tr>
+             <tr>
+        <td>I542129654</td>
+        <td>DWS TRC TOP DIVIDENDE (EUR) INC</td>
+        <td>a161257173</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>SIN</td>
+       </tr>
+             <tr>
+        <td>000849089</td>
+        <td>DWS US GROWTH INC</td>
+        <td>a137500403</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>SIN</td>
+       </tr>
+             <tr>
+        <td>I453291850</td>
+        <td>DWS USD FLOATING RATE NOTES &quot;LC&quot; (USD) ACC</td>
+        <td>a137500073</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LC</td>
+       </tr>
+             <tr>
+        <td>I459434848</td>
+        <td>DWS USD FLOATING RATE NOTES &quot;LD&quot; (USD) INC</td>
+        <td>a139133195</td>
+        <td>DWS INV GMBH (LU)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>I453295777</td>
+        <td>DWSGLOBAL HYBRID BOND &quot;LD&quot; (EUR) INC</td>
+        <td>a137501055</td>
+        <td>DWS INV GMBH (DE)</td>
+        <td>LD</td>
+       </tr>
+             <tr>
+        <td>204763216</td>
+        <td>DYNAMIC CREDIT FUND &quot;A&quot; (USD) ACC</td>
+        <td>a137499020</td>
+        <td>T ROWE PRICE GLOBAL INV SERVICES LTD (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>PAIEX</td>
+        <td>Dynamic Global Bond Adv Cl</td>
+        <td>a68366969</td>
+        <td>T Rowe Price</td>
+        <td>ADVISOR CLASS</td>
+       </tr>
+             <tr>
+        <td>ORSAX</td>
+        <td>Dynamic Sm Cap</td>
+        <td>a108475793</td>
+        <td>North Square Investments Trust</td>
+        <td>CLASS A</td>
+       </tr>
+                   
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <p>Interactive Brokers LLC receives compensation from fund companies participating in its no-transaction-fee program for shareholder and other administrative services.  Such compensation includes, but is not limited to, Rule 12b-1 fees that are paid out of the fund’s assets.  IB may share a portion of the compensation received from fund companies with your financial advisor or introducing broker.</p>
+ </div>
+</section>
+</div>
+<!-- FOOTER START ---------------------------------------------------------------------------------------------------- -->
+<footer class="footer noprint" id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p>Interactive Brokers ®, IB<sup>SM</sup>, InteractiveBrokers.com ®, Interactive Analytics ®, IB Options Analytics<sup>SM</sup>, IB SmartRouting<sup>SM</sup>, PortfolioAnalyst ®, IB Trader Workstation<sup>SM</sup> and One World, One Account<sup>SM</sup> are service marks and/or trademarks of Interactive Brokers LLC. Supporting documentation for any claims and statistical information will be provided upon request. Any trading symbols displayed are for illustrative purposes only and are not intended to portray recommendations.</p>
+                <p>The risk of loss in online trading of stocks, options, futures, currencies, foreign equities, and fixed Income can be substantial.</p>
+                <p>Options involve risk and are not suitable for all investors. For more information read the <a href="https://www.theocc.com/about/publications/character-risks.jsp" rel="noreferrer noopener" target="_blank">Characteristics and Risks of Standardized Options</a>, also known as the options disclosure document (ODD). Alternatively, please contact <a href="../support/customer-service.php.html?p=contact" target="_self">IB Customer Service</a> to receive a copy of the ODD. Before trading, clients must read the relevant risk disclosure statements on our <a href="../general/homepage-disclosures.php.html" target="_self">Warnings and Disclosures page</a>. Trading on margin is only for experienced investors with high risk tolerance. You may lose more than your initial investment. For additional information about rates on margin loans, please see <a href="margin-rates.php.html" target="_self">Margin Loan Rates</a>. Security futures involve a high degree of risk and are not suitable for all investors. The amount you may lose may be greater than your initial investment. Before trading security futures, read the <a href="../general/homepage-disclosures.php.html" target="_self">Security Futures Risk Disclosure Statement</a>. Structured products and fixed income products such as bonds are complex products that are more risky and are not suitable for all investors. Before trading, please read the <a href="../general/homepage-disclosures.php.html" target="_self">Risk Warning and Disclosure Statement</a>.</p>
+                <p>For information on the IBKR ATS, please <a href="https://www.sec.gov/divisions/marketreg/form-ats-n-filings.htm#ats-n" rel="noreferrer noopener" target="_blank">visit the SEC site</a>.</p>
+                <p>34 countries include both countries and territories.</p>
+			</div>
+		</div>
+        <div class="footer-site-links" id="footerSiteLinks">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>Account</p>
+                    <ul>
+                    <li><a href="/sso/Login?RL=1" target="_self">Log In</a></li>
+                    <li><a href="/Universal/Application" target="_self">Open an Account</a></li>
+                    <li><a href="/sso/Login?c=t" target="_self">Finish an Application</a></li>
+                    <li><a href="../accounts/account-guide.php.html" target="_self">Account Types</a></li>
+                    <li><a href="/Universal/Application?ft=T" target="_self">Free Trial</a></li>
+                    </ul>
+                    <p>Software & Downloads</p>
+                    <ul>
+                    <li><a href="tws.php.html#tws-software" target="_self">Trader Workstation</a></li>
+                    <li><a href="ibkr-desktop.php.html" target="_self">IBKR Desktop</a></li>
+                    <li><a href="tws-mobile.php.html#trytoday" target="_self">IBKR Mobile</a></li>
+                    <li><a href="ib-api.php.html#api-software" target="_self">APIs</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>Support</p>
+                    <ul>
+                    <li><a href="../support/fund-my-account.php.html" target="_self">Fund Your Account</a></li>
+					<li><a href="../support/individuals.php.html" target="_self">For Individuals</a></li>
+                    <li><a href="../support/institutions.php.html" target="_self">For Institutions</a></li>
+                    <li><a href="../support/institutional-sales-contacts.php.html" target="_self">Institutional Sales Contacts</a></li>
+					<li><a href="../general/contact/ibot-container.php.html" target="_self">Browse our FAQs</a></li>
+					<li><a href="../software/systemStatus.php.html" target="_self">System Status</a></li>
+                    </ul>
+                    <p>Vendor Support</p>
+                    <ul>
+                    <li><a href="../general/about/supplier-information.php.html" target="_self">Supplier Information</a></li>
+                    </ul>
+                    
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>About Us</p>
+                    <ul>
+                    <li><a href="../general/awards.php.html" target="_self">Awards</a></li>
+                    <li><a href="../general/about/careers-splash.php.html" target="_self">Careers</a></li>
+                    <li><a href="../general/about/about.php.html" target="_self">Information and History</a></li>
+                    <li><a href="https://investors.interactivebrokers.com/ir/main.php" target="_self">Investor Relations</a></li>
+                    <li><a href="../about/news-at-ibkr.php.html" target="_self">News @ IBKR</a></li>
+                    <li><a href="../general/about/press-and-media.php.html" target="_self">Press and Media</a></li>
+                    <li><a href="../accounts/legalDocuments/brokerPerformanceReports.php.html" target="_self">Regulatory Reports</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>Follow Us on Social Media</p>
+                    <ul>
+                    <li><a href="https://www.facebook.com/interactivebrokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com/interactivebrokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/company/interactive-brokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="https://www.twitter.com/ibkr" target="_blank" rel="noreferrer noopener"><i class="fab fa-x-twitter"></i> Twitter</a></li>
+                    <li><a href="https://www.youtube.com/interactivebrokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-youtube"></i> YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-disclosure-links" id="footerDisclosureLinks">
+            <div class="row">
+                <div class="col">
+                    <ul>
+                    <li><a href="../accounts/legalDocuments/accessibility-policy.php.html" target="_self">Accessibility Policy</a></li>
+                    <li><a href="../accounts/legalDocuments/anti-fraud-notice.php.html" target="_self">Anti-Fraud Notice</a></li>
+                    <li><a href="../accounts/legalDocuments/custIdentificationNotice.php.html" target="_self">Customer Identification Program Notice</a></li>
+                    <li><a href="../../Universal/servlet/Registration_v2-1.formSampleView?formdb=4024" target="_blank" rel="noreferrer noopener">Customer Relationship Summary</a></li>
+                    <li><a href="../general/warnings-on-frauds-and-scams.php.html" target="_self">Warning on Frauds and Scams</a></li>
+                    <li><a href="../accounts/forms-and-disclosures-client-agreements.php.html" target="_self">Forms and Disclosures</a></li>
+                    <li><a href="../accounts/legalDocuments/privacy.php.html" target="_self">Privacy</a></li>
+                    <li><a href="../sitemap/index.php.html" target="_self">Site Map</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-entities" id="footerEntities">
+            <div class="row">
+                <div class="col">
+                    <div class="footer-entity">
+                        <!-- IBKR LLC -->
+                        <p class="entity-name"><a href="https://www.interactivebrokers.com" target="_self">Interactive Brokers LLC</a></p>
+                        <p>Is a member <a rel="noreferrer noopener" target="_blank" href="https://www.nyse.com">NYSE</a> - <a href="https://www.finra.org" rel="noreferrer noopener" target="_blank">FINRA</a> - <a href="https://www.sipc.org" rel=" noreferrer noopener" target="_blank">SIPC</a> and regulated by the US Securities and Exchange Commission and the Commodity Futures Trading Commission.<br> <strong>Headquarters:</strong> One Pickwick Plaza, Greenwich, CT 06830 USA<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.com" target="_self">www.interactivebrokers.com</a></p>
+                                                <p class="footer-entities-link"><a href="#collapseEntities" target="_self" class="collapsed" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseEntities">Information on Other Interactive Brokers Affiliates</a></p>
+                    </div>
+                    <div class="footer-entities-list collapse" id="collapseEntities">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <!-- IBKR CA -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.ca/en/home.php?nored=t" target="_self">Interactive Brokers Canada Inc.</a></p>
+                                <p>Is a member of the                                 <a href="https://www.ciro.ca" target="_blank" rel="noreferrer noopener">Canadian Investment Regulatory Organization (CIRO)</a> 
+                                 
+                                and Member - <a href="https://www.cipf.ca" target="_blank" rel="noreferrer noopener">Canadian Investor Protection Fund.</a><br> <strong>Registered Office:</strong> 1800 McGill College Avenue, Suite 2106, Montreal, Quebec, H3A 3J6, Canada.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.ca/en/home.php?nored=t" target="_self">www.interactivebrokers.ca</a></p>
+                                <!-- IBKR UK -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.co.uk/en/home.php?nored=t" target="_self">Interactive Brokers (U.K.) Limited </a></p>
+                                <p>Is authorised and regulated by the <a href="https://www.fca.org.uk" target="_blank" rel="noreferrer noopener">Financial Conduct Authority</a>. FCA register entry number 208159. Incorporated in England & Wales under company number 03958476. <a href="https://www.fca.org.uk/firms/financial-services-register" target="_blank" rel="noreferrer noopener">[https://www.fca.org.uk/firms/financial-services-register]</a><br> <strong>Registered Office:</strong> 20 Fenchurch Street, Floor 12, London EC3M 3BY.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.co.uk/en/home.php?nored=t" target="_self">www.interactivebrokers.co.uk</a></p>
+                                <!-- IBKR IE -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.ie/en/home.php?nored=t" target="_self">Interactive Brokers Ireland Limited</a></p>
+                                <p>Is regulated by the <a href="https://www.centralbank.ie" target="_blank" rel="noreferrer noopener">Central Bank of Ireland</a> (CBI, reference number C423427), registered with the Companies Registration Office (CRO, registration number 657406), and is a member of the Irish Investor Compensation Scheme (ICS).<br> <strong>Registered Office:</strong> North Dock One, 91/92 North Wall Quay, Dublin 1 D01 H7V7, Ireland.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.ie/en/home.php?nored=t" target="_self">www.interactivebrokers.ie</a></p>
+                                <!-- IBKR HU -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.hu/en/home.php?nored=t" target="_self">Interactive Brokers Central Europe Zrt.</a></p>
+                                <p>Is licensed and regulated by the <a href="https://www.mnb.hu/" target="_blank" rel="noreferrer noopener">Central Bank of Hungary (Magyar Nemzeti Bank)</a> under no. H-EN-III-623/2020. Company registration number 01-10-141029. Registering Court: Company Registry of the Metropolitan General Court.<br> <strong>Registered Office:</strong> 1075 Budapest, Madách Imre út 13-14., Hungary.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.hu/en/home.php?nored=t" target="_self">www.interactivebrokers.hu</a></p>
+                                <!-- IBKR AUS -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.com.au/en/home.php?nored=t" target="_self">Interactive Brokers Australia Pty. Ltd.</a></p>
+                                <p>ABN 98 166 929 568 is licensed and regulated by the <a href="https://asic.gov.au/" target="_blank" rel="noreferrer noopener">Australian Securities and Investments Commission</a> (AFSL: 453554) and is a participant of <a href="https://www.asx.com.au/" target="_blank" rel="noreferrer noopener">ASX</a>, <a href="https://www.asx.com.au/" target="_blank" rel="noreferrer noopener">ASX 24</a> and <a href="https://www.cboe.com.au/" target="_blank" rel="noreferrer noopener">Cboe Australia</a>.<br> <strong>Registered Office:</strong> Level 11, 175 Pitt Street, Sydney, New South Wales 2000, Australia.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.com.au/en/home.php?nored=t" target="_self">www.interactivebrokers.com.au </a></p>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <!-- IBKR HK -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.com.hk/en/home.php?nored=t" target="_self">Interactive Brokers Hong Kong Limited</a></p>
+                                <p>Is regulated by the Hong Kong Securities and Futures Commission, and is a member of the <a href="https://www.hkex.com.hk" target="_blank" rel="noreferrer noopener">SEHK</a> and the <a href="https://www.hkex.com.hk" target="_blank" rel="noreferrer noopener">HKFE</a>.<br> <strong>Registered Office:</strong> Suite 1512, Two Pacific Place, 88 Queensway, Admiralty, Hong Kong SAR.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.com.hk/en/home.php?nored=t" target="_self">www.interactivebrokers.com.hk</a></p>
+                                <!-- IBKR IN -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.co.in/en/home.php?nored=t" target="_self">Interactive Brokers India Pvt. Ltd.</a></p>
+                                <p>Is a trading member of <a href="https://www.nseindia.com/" target="_blank" rel="noreferrer noopener">NSE</a>, <a href="https://www.bseindia.com/" target="_blank" rel="noreferrer noopener">BSE</a>, and depository participant of <a href="https://nsdl.co.in/" target="_blank" rel="noreferrer noopener">NSDL</a>. <a href="https://www.sebi.gov.in" target="_blank" rel="noreferrer noopener">SEBI</a> Registration No. INZ000217730; NSDL: IN-DP-602-2021. CIN-U67120MH2007FTC170004.<br> <strong>Registered Office:</strong> 502/A, Times Square, Andheri Kurla Road, Andheri East, Mumbai 400059, India.<br> <strong>Phone:</strong> +91-22-61289888 <span class="pipe">|</span> <strong>Fax:</strong> +91-22-61289898.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.co.in/en/home.php?nored=t" target="_self">www.interactivebrokers.co.in</a></p>
+                                <!-- IBKR JP -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.co.jp/en/home.php?nored=t" target="_self">Interactive Brokers Securities Japan Inc.</a></p>
+                                <p>Is regulated by Kanto Local Finance Bureau (Registration No.187) and is a member of <a href="https://www.jsda.or.jp/" target="_blank" rel="noreferrer noopener">Japan Securities Dealers Association</a> and <a href="https://www.nisshokyo.or.jp" target="_blank" rel="noreferrer noopener">The Commodity Futures Association of Japan</a>.<br> <strong>Registered Office:</strong> Kasumigaseki Building 25F, 2-5 Kasumigaseki 3-chome, Chiyoda-ku, Tokyo, 100-6025 Japan.<br> <strong>Phone:</strong> +81 03-4590-0711 <em>(On business days from 8:30-17:30 JST)</em>.<br> <strong>Website:</strong>  <a href="https://www.interactivebrokers.co.jp/en/home.php?nored=t" target="_self">www.interactivebrokers.co.jp</a></p>
+                                <!-- IBKR SG -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.com.sg/en/home.php?nored=t" target="_self">Interactive Brokers Singapore Pte. Ltd.</a></p>
+                                <p>Is licensed and regulated by the Monetary Authority of Singapore (Licence No. CMS100917).<br> <strong>Registered Office:</strong> #40-02A, Asia Square Tower 1, 8 Marina View, Singapore 018960.<br> <strong>Website:</strong>  <a href="https://www.interactivebrokers.com.sg/en/home.php?nored=t" target="_self">www.interactivebrokers.com.sg</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- FOOTER END ---------------------------------------------------------------------------------------------------- -->
+<!-- SHARE ON SOCIAL ---------------------------------------------------------------------------------------------------->
+<div class="social-sidebar animated fadeInLeft noprint">
+	<span><i class="fa fa-chevron-left"></i><i class="fa fa-chevron-right"></i></span>
+	<div class="icon-set">
+		<p>SHARE</p>
+		<div class="share-icon"><a href="/insights/ibtr_alerts.php?tiv=13654&cl=F&p=T" target="_blank" rel="noreferrer noopener" title="Share on Facebook" aria-label="Share on Facebook" class="icon-facebook"><i class="fab fa-facebook-square"></i></a></div>
+		<div class="share-icon"><a href="/insights/ibtr_alerts.php?tiv=13654&cl=T&p=T" target="_blank" rel="noreferrer noopener" title="Share on Twitter" aria-label="Share on Twitter" class="icon-twitter"><i class="fab fa-x-twitter"></i></a></div>
+		<div class="share-icon"><a href="/insights/ibtr_alerts.php?tiv=13654&cl=L&p=T" target="_blank" rel="noreferrer noopener" title="Share on Linkedin" aria-label="Share on Linkedin" class="icon-linkedin"><i class="fab fa-linkedin"></i></a></div>
+		<div class="share-icon"><a href="javascript:void(0);" target="_self" title="Share by Email" aria-label="Share by Email" name="btn_trigger" data-bs-toggle="modal" data-bs-target="#emailModal" id="13654" onclick="emailCookie();" class="icon-email"><i class="far fa-envelope"></i></a></div>
+	</div>
+</div>
+<!-- MODAL START | SHARE ON SOCIAL ---------------------------------------------------------------------------------------------------->
+<div class="modal fade noprint" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button id="cls_frm_1" type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="gridSystemModalLabel"><i class="far fa-envelope text-gray"></i> Email</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col">
+						<form>
+							<div class="form-group">
+								<label for="_to" class="control-label">To:</label> <span id="_err_to" style="color: red;"></span>
+								<input type="text" class="form-control" id="_to">
+							</div>
+							<div class="form-group">
+								<label for="_from" class="control-label">From:</label> <span id="_err_frm" style="color: red;"></span>
+								<input type="text" class="form-control" id="_from">
+							</div>
+							<div class="form-group">
+								<label for="_subject" class="control-label">Subject:</label> <span id="_err_subject" style="color: red;"></span>
+								<input type="text" class="form-control" id="_subject" value="Interactive Brokers">
+							</div>
+							<div class="form-group">
+								<textarea class="form-control" id="_content" style="height:200px;"></textarea>
+							</div>
+							<p class="text-sm">URL: <span class="text-italic text-black">www.interactivebrokers.com/en/index.php?f=<span id='vid'></span></span></p>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<div class="row">
+					<div class="col-6">
+						<div align="left">
+							<button id="cls_frm_2" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+					<div class="col-6">
+						<div align="right">
+							<button type="button" class="btn btn-primary" id="send">Send</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<input type="hidden" id="_page_id" name="_page_id" value="13654">
+</div>
+<!-- MODAL END | SHARE ON SOCIAL ----------------------------------------------------------------------------------------------------> 
+<script type="text/javascript" src="../../insights/ibtr_share.js?t=v1"></script>
+<script>
+$(document).ready(function() {
+	 $(".social-sidebar span").click(function(){
+		 $(".social-sidebar div").toggleClass("social-sidebar-hide");
+		 $(".social-sidebar span").toggleClass("toggle-arrow");
+ 	 });
+});
+function emailCookie() {
+	if (document.cookie.indexOf("IB_EM_SH") == -1) {
+		var ex=new Date();
+		ex.setTime(ex.getTime()+86400000);
+		document.cookie ='IB_EM_SH='+1+';expires='+ex.toGMTString()+';path=/;domain=';
+	}
+}
+</script>
+<!-- SCRIPTS FOOTER ---------------------------------------------------------------------------------------------------- -->
+<script type="text/javascript" src="../../scripts/common/js/zeynep-2.2.0/zeynep.js"></script>
+<script type="text/javascript" src="../../scripts/common/js/lazyload/lazyload.min.js"></script>
+<script type="text/javascript" src="../../search/conversions-2038.js?t=1718777596"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+    // GATHER HEIGHT OF HEADER
+    var defaultMarginTop = $("div#ibkr-header").outerHeight();
+    // SET MARGIN-TOP OF CONTENTS
+    $("div#contents").css("margin-top", defaultMarginTop);
+    // ON WINDOW RESIZE CALCULATE THE HEIGHT OF THE HEADER AND USE THAT AS THE MARGIN-TOP OF CONTENTS DIV
+    $(window).resize(function() {
+        var headerHeight = $("div#ibkr-header").outerHeight();
+        var headerHeightDelta = headerHeight - defaultMarginTop;
+        $("div#contents").css("margin-top", defaultMarginTop + headerHeightDelta);
+    });
+    // BANNER | REGION SELECTOR
+    $("#bannerRegionSelector a.btn-close").click(function() {
+        // On banner close, set margin-top on timeout
+        setTimeout(function() {
+            var headerHeight = $("div#ibkr-header").outerHeight();
+            $("div#contents").css("margin-top", headerHeight);
+        },500);
+    });
+    // MOBILE MENU
+    $(function() {
+        // Initilize mobile menu
+        var zeynep = $('.menu-mobile').zeynep({
+            opened: function () {
+        },
+        closed: function () {
+            }
+        })
+        // Dynamically bind closing event
+        zeynep.on('closing', function () {
+        })
+        // Mobile menu close on overlay click
+        $('.website-overlay').on('click', function () {
+            zeynep.close()
+        })
+        // Mobile menu close on button click
+        $('.btn-close').on('click', function () {
+            zeynep.close()
+        })
+        // Mobile menu open on navbar-toggler click
+        $('.navbar-toggler').on('click', function () {
+            zeynep.open()
+        })
+    })
+});
+</script>
+ <script>var ibdmn='interactivebrokers.co.uk';(function(d,c){let s=d.createElement('script');s.src='https://www.interactivebrokers.co.uk/mkt/ibgtag.js?wbst='+c;s.id='_ib_tag';s.async=true;d.getElementsByTagName('head')[0].appendChild(s);})(document,'UK');</script><!-- STYLES FOOTER ---------------------------------------------------------------------------------------------------- -->
+<link rel="preload" as="font" type="font/woff2" href="../../fonts/fontawesome-6.4.2/webfonts/fa-brands-400.woff2" crossorigin="">
+<link rel="preload" as="font" type="font/woff2" href="../../fonts/fontawesome-6.4.2/webfonts/fa-regular-400.woff2" crossorigin="">
+<link rel="preload" as="font" type="font/woff2" href="../../fonts/fontawesome-6.4.2/webfonts/fa-solid-900.woff2" crossorigin="">
+<link rel="preload" as="style" href="../../css/fontawesome-6.4.2/all.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/fontawesome-6.4.2/all.min.css">
+<link rel="preload" as="style" href="../../css/animate-3.7.2/animate.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/animate-3.7.2/animate.min.css">
+<link rel="preload" as="style" href="../../css/bootstrap-switch-3.3.2/bootstrap-switch.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/bootstrap-switch-3.3.2/bootstrap-switch.min.css">
+<link rel="preload" as="style" href="../../css/ibkr/website-print.min.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../css/ibkr/website-print.min.css"></body>
+</html>

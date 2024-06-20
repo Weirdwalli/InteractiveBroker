@@ -1,0 +1,2169 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<title>Natural Language Interface to Trading | Interactive Brokers LLC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"> 
+<meta name="description" content="IBot.php is a natural language trading interface that lets you complete key trading tasks in TWS in one place using plain English">
+<meta name="keywords" content="IBot, natural language TWS trading, text-based trading, text-based TWS, natural language commands">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="expires" content="-1">
+<meta name="robots" content="index, follow">
+<meta http-equiv="pragma" content="no-cache">
+<!--Pid:23573-->
+<link rel="canonical" href="ibot-standalone.php.html">
+<meta name="apple-mobile-web-app-title" content="IBKR">
+<link rel="icon" sizes="192x192" href="../../images/web/favicons/home-screen-icon-192x192.png">
+<link rel="icon" sizes="128x128" href="../../images/web/favicons/home-screen-icon-128x128.png">
+<link rel="apple-touch-icon" sizes="57x57" href="../../images/web/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../images/web/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../images/web/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../images/web/favicons/apple-touch-icon-144x144.png">
+<!-- SCRIPTS HEAD ---------------------------------------------------------------------------------------------------- -->
+<script type="text/javascript" src='../../scripts/common/js/jquery-3.6.1/jquery.min.js'></script>
+<script type="text/javascript">
+function createScriptElement(data) {
+ if (typeof data == "undefined") {
+  return;
+ }
+ var element = document.createElement("SCRIPT");
+ element.type = "text/javascript";
+ if (typeof data.id != "undefined") {
+  element.id = data.id;
+ }
+ if (typeof data.source != "undefined") {
+  element.src = data.source;
+ }
+ if (typeof data.loadfunction == "function") {
+  element.onload = data.loadfunction;
+ }
+ document.head.appendChild(element);
+}
+createScriptElement({ source : "/scripts/common/js/bootstrap-5.2.2/bootstrap.bundle.min.js", loadfunction: bsLoaded  });
+createScriptElement({ source : "/scripts/common/js/lib.js?ver=9" });
+function bsLoaded() {
+  createScriptElement({ source : "/scripts/common/js/appear/appear.min.js?ver=1" });
+  createScriptElement({ source : "/scripts/common/js/easing/easing.min.js?ver=1" });
+  createScriptElement({ source : "/scripts/common/js/parallax/parallax.min.js?ver=1" });
+  createScriptElement({ source : "/scripts/common/js/uitotop/uitotop.min.js?ver=1", loadfunction: uiLoaded });
+}
+function uiLoaded() {
+  createScriptElement({ source : "/scripts/common/js/twsUtils.js?ver=2" });
+  createScriptElement({ source : "/scripts/common/js/design/design.js?ver=1" }); 
+}
+</script>
+<script type="text/javascript">
+$(function() {
+  let ex=new Date();
+  ex.setTime(ex.getTime()+86400000);
+  document.cookie ='IB_REST=1;expires='+ex.toGMTString()+';path=/;domain=.interactivebrokers.com';
+  $('div#langselector').find('a').each(function() {
+  $(this).click(function() {
+   var link = $(this).attr("href");
+   if(link.match(/\/(en|fr|de|es|it|ru|cn|jp)\//))
+   {
+    var langs = link.split("/");
+    if(langs[3] == 'en' || langs[3] == 'fr' || langs[3] == 'de' || langs[3] == 'es' || langs[3] == 'it' || langs[3] == 'ru' || langs[3] == 'cn' || langs[3] == 'jp')
+    {
+      var lang = langs[3];
+      if(lang == 'cn')
+      {
+        lang = 'zh_CN';
+      }
+      if(lang == 'jp')
+      {
+        lang = 'ja';
+      }
+      if(hasCookie("IB_LANG"))
+      {
+        deleteCookie("IB_LANG");
+      }
+      setCookie("IB_LANG", lang, 7, '.interactivebrokers.com');
+    } else if(langs[1] == 'en') {
+      var lang = 'en';
+      setCookie("IB_LANG", lang, 7, '.interactivebrokers.com');
+    }
+   }
+  });
+ });
+ $('p#bandaid-close').click(function() {
+  setCookie("IB_BANDAID", 1, 30, '.interactivebrokers.com');
+ });
+ $('a#btnCloseBannerRegionSelector').click(function() {
+  setCookie("IB_REGION_SEL", 1, 30, '.interactivebrokers.com');
+ });
+});
+</script>
+<script>var e=document.createElement("script");e.type='text/javascript';e.src='/scripts/common/js/ibtrk.js?v=14';document.head.appendChild(e);_ibp=23573;</script>
+<!-- STYLES HEAD -->
+<link rel="preload" as="style" href="../../css/bootstrap-5.2.2/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/bootstrap-5.2.2/bootstrap.min.css">
+<link rel="preload" as="style" href="../../css/ibkr/website.min.css?v=25dbb9871dad19f5b220266180efb316">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/ibkr/website.min.css?v=25dbb9871dad19f5b220266180efb316">
+<link rel="preload" as="style" href="../../css/ibkr/theme-ibkr.min.css?v=25dbb9871dad19f5b220266180efb316">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/ibkr/theme-ibkr.min.css?v=25dbb9871dad19f5b220266180efb316">
+<script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch"}]);</script>
+                              <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="CGJ34-S5RKA-7ZQ8F-AJER9-TWWVG",function(){function e(){if(!o){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,i.parentNode.appendChild(e),o=!0}}function t(e){o=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(i.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",i.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"CGJ34-S5RKA-7ZQ8F-AJER9-TWWVG";var i=document.currentScript||document.getElementsByTagName("script")[0],o=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!o)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),i.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="nfygq4s7mteccztsjeya-f-b991fa46b-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,o={"ak.v":"37","ak.cp":"1131468","ak.ai":parseInt("665092",10),"ak.ol":"0","ak.cr":177,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"26e117cc","ak.r":36911,"ak.a2":n,"ak.m":"a","ak.n":"essl","ak.bpcip":"105.112.104.0","ak.cport":1630,"ak.gh":"95.100.200.29","ak.quicv":"","ak.tlsv":"tls1.2","ak.0rtt":"","ak.csrc":"-","ak.acc":"bbr","ak.t":"1718765872","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==Xi/aLiJMgQ+oyKnTGOXSb6dyxTqoUL9MstMzssSDiHLWEs9MKG1KxYcG3nf0HpZL199YksAzoTtCamHUXEHEuAm30GDDsVMoYDCbCiSu+IskvGBNxznJDt7qy3sNTdutYy0k0zeC2+xvszNno3TrzwuVDlLhQ0CePNWcJj5hS3ZKPxkPL8GgRi11pVDbyPpCy63TxvEJ7MWyj0Wr+GenZUfq7nkurdSkxsJtibJAUQ27zwSXIttiL7t5Ej4W9/p71uLDcPib4G6kXLhvq4mTndXAmLHihNZp5+uF1F/Ltkac+26P+UrEg+53aOMUv64ucJsAJbUMw1fWruHhxGutT0Kxt63U4+O0pdsyijS6w2v/U0yW8gs3/Wyl/btEQll27q/AwVe+xIs+3OCUT9uy0/piqk/q6tgjTdY8HZ9PbpQ=","ak.pv":"316","ak.dpoabenc":"","ak.tf":i};if(""!==t)o["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))o["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(o)},rv:function(){var e=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:o,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+<body>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NK9NSD');</script>
+<!-- End Google Tag Manager --><div id="printheader"></div>
+<!-- HEADER START ---------------------------------------------------------------------------------------------------- -->
+<div class="ibkr-header" id="ibkr-header">
+     
+     
+    <!-- NAV TOP START (LG/XL ONLY) -->
+    <nav class="navbar navbar-inverse navbar-expand-lg navbar-top d-none d-lg-block">
+        <div class="container">
+            <div class="navbar-collapse collapse" id="ibkr-nav-top">
+                <!-- LEFT MENU -->
+                <ul class="navbar-nav mr-auto align-items-center">
+                    <!-- FOR INDIVIDUALS -->
+                    <li class="nav-item dropdown"><a href="#" target="_self" class="nav-link dropdown-toggle" id="nav-for-individuals" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">For Individuals</a>
+                        <div class="dropdown-menu dropdown-ind-accounts" aria-labelledby="nav-for-individuals">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../accounts/individual.php.html" target="_self" class="dropdown-item">Individual, Joint or IRA</a>
+                                    <a href="../accounts/non-professional-advisor.php.html" target="_self" class="dropdown-item">Non-Professional Advisors</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- FOR INSTITUTIONS -->
+					<li class="nav-item dropdown"><a href="#" target="_self" class="nav-link dropdown-toggle" id="nav-for-institutions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">For Institutions</a>
+                        <div class="dropdown-menu dropdown-inst-accounts" aria-labelledby="nav-for-institutions">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../accounts/institutions.php.html" target="_self" class="dropdown-item">Institutions Home</a>
+                                    <a href="../accounts/advisor.php.html" target="_self" class="dropdown-item">Registered Investment Advisors</a>
+                                    <a href="../accounts/proprietary-trading-group.php.html" target="_self" class="dropdown-item">Proprietary Trading Groups</a>
+                                    <a href="../accounts/hedge-fund.php.html" target="_self" class="dropdown-item">Hedge Funds</a>
+                                    <a href="../accounts/broker.php.html" target="_self" class="dropdown-item">Introducing Brokers</a>
+                                    <a href="../accounts/family-office.php.html" target="_self" class="dropdown-item">Family Offices</a>
+                                    <a href="../accounts/compliance-officer.php.html" target="_self" class="dropdown-item">Compliance Officers</a>
+                                    <a href="../accounts/small-business.php.html" target="_self" class="dropdown-item">Small Businesses</a>
+                                    <a href="../accounts/simple-ira.php.html" target="_self" class="dropdown-item">Employee Plan Administrator <br>SIMPLE IRA</a>
+                                    <a href="../accounts/fsa-insurance-providers.php.html" target="_self" class="dropdown-item">Full-Service Administrator <br>Insurance Providers</a>
+                                    <a href="../accounts/money-manager.php.html" target="_self" class="dropdown-item">Money Managers</a>
+                                    <a href="../accounts/administrator.php.html" target="_self" class="dropdown-item">Fund Administrators</a>
+                                    <a href="../accounts/hedge-fund-allocator.php.html" target="_self" class="dropdown-item">Hedge Fund Allocators</a>
+                                    <a href="https://ibkrcampus.com/student-trading-lab/" target="_blank" class="dropdown-item">Educators</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- RIGHT MENU -->
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <!-- FREE TRIAL -->
+                    <li class="nav-item"><a href="free-trial.php.html" target="_self" class="nav-link">FREE TRIAL</a></li>
+                    <!-- CAREERS -->
+                    <li class="nav-item"><a href="../general/about/careers-splash.php.html" target="_self" class="nav-link">Careers</a></li>
+                    <!-- ABOUT US -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-about-us" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
+                        <div class="dropdown-menu dropdown-about-us" aria-labelledby="nav-about-us">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../general/financial-strength.php.html" target="_self" class="dropdown-item">Strength and Security</a>
+                                    <a href="../general/about/about.php.html" target="_self" class="dropdown-item">Information and History</a>
+                                    <a href="../general/awards.php.html" target="_self" class="dropdown-item">Awards</a>
+                                    <a href="../about/news-at-ibkr.php.html" target="_self" class="dropdown-item">News at IBKR</a>
+                                    <a href="../general/about/press-and-media.php.html" target="_self" class="dropdown-item">Press and Media</a>
+                                    <a href="https://investors.interactivebrokers.com/ir/main.php" target="_blank" class="dropdown-item" rel="noreferrer noopener">Investor Relations</a>
+                                    <a href="../general/about/sustainability.php.html" target="_self" class="dropdown-item">Sustainability</a>
+                                    <a href="../accounts/legalDocuments/brokerPerformanceReports.php.html" target="_self" class="dropdown-item">Regulatory Reports</a>
+                                    <a href="../accounts/referrer.php.html" target="_self" class="dropdown-item">Refer a Friend</a>
+                                    <a href="../general/about/affiliate-programs.php.html" target="_self" class="dropdown-item">Affiliate Programs</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- SUPPORT -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-support" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Support</a>
+                        <div class="dropdown-menu dropdown-contact-us" aria-labelledby="nav-support">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../support/fund-my-account.php.html" target="_self" class="dropdown-item">Fund Your Account</a>
+                                    <a href="../support/individuals.php.html" target="_self" class="dropdown-item">For Individuals</a>
+                                    <a href="../support/institutions.php.html" target="_self" class="dropdown-item">For Institutions</a>
+                                    <a href="../support/institutional-sales-contacts.php.html" target="_self" class="dropdown-item">Institutional Sales Contacts</a>
+                                                                        <a href="../general/contact/ibot-container.php.html" target="_self" class="dropdown-item">Browse Our FAQs</a>
+                                    <a href="../support/reports-and-dates.php.html" target="_self" class="dropdown-item">Tax Information</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- LANGUAGE SELECTOR -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link nav-language dropdown-toggle" id="nav-language" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Language</span><img src="../../images/web/icons/icon-language.svg" alt="Language" width="23" height="18" border="0"></a>
+                        <div class="dropdown-menu dropdown-language" aria-labelledby="nav-language">
+                            <div class="row">
+                                <div class="col" id="langselector">
+                                    <a href="../home.php.html" target="_self" class="dropdown-item">English</a>
+                                    <a href="/es/home.php" target="_self" class="dropdown-item">Español</a>
+                                    <a href="/pt/home.php" target="_self" class="dropdown-item">Português</a>
+                                    <a href="/cn/home.php?lang=sc" target="_self" class="dropdown-item">中文简体</a>
+                                    <a href="/cn/home.php?lang=tc" target="_self" class="dropdown-item">中文繁體</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- NAV TOP END -->
+    <!-- NAV BOTTOM START -->
+    <nav class="navbar navbar-inverse navbar-expand-lg navbar-bottom">
+        <div class="container">
+            <!-- IBKR LOGO -->
+                        <a href="../home.php.html" target="_self" title="Interactive Brokers Home" alt="Interactive Brokers Logo" class="navbar-brand brand-logo" aria-label="Interactive Brokers Home"><span>Interactive Brokers Home</span></a>
+            <!-- TOGGLE (XS/SM/MD ONLY) -->
+            <button class="navbar-toggler" type="button" aria-label="Toggle Navigation"><span class="navbar-toggler-icon"><i class="fas fa-bars" aria-hidden="true"></i></span></button>
+            <!-- OPEN ACCOUNT BUTTON (XS/SM/MD ONLY) -->
+            <a href="/Universal/Application" target="_self" class="d-block d-lg-none btn btn-open-account">Open Account</a>
+            <!-- LOG IN (SM/MD ONLY) -->
+                            <a href="/sso/Login?RL=1" target="_self" class="d-none d-sm-block d-lg-none btn btn-log-in">Log In</a>
+                        <!-- IBKR NAV BOTTOM START   -->
+            <div class="navbar-collapse collapse" id="ibkr-nav-bottom">
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <!-- WHY IBKR -->
+                    <li class="nav-item"><a href="../whyib/overview.php.html" target="_self" class="nav-link">Why IBKR</a></li>
+                    <!-- PRICING -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-pricing" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pricing</a>
+                        <div class="dropdown-menu dropdown-pricing" aria-labelledby="nav-pricing">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../pricing/commissions-home.php.html" target="_self" class="dropdown-item">Commissions</a>
+                                    <a href="margin-rates.php.html" target="_self" class="dropdown-item">Margin Rates</a>
+                                    <a href="../accounts/fees/pricing-interest-rates.php.html" target="_self" class="dropdown-item">Interest Rates</a>
+                                    <a href="../pricing/short-sale-cost.php.html" target="_self" class="dropdown-item">Short Sale Cost</a>
+                                    <a href="../pricing/research-news-services.php.html" target="_self" class="dropdown-item">Research and News</a>
+                                    <a href="../pricing/research-news-marketdata.php.html" target="_self" class="dropdown-item">Market Data</a>
+                                    <a href="../pricing/stock-yield-enhancement-program.php.html" target="_self" class="dropdown-item">Stock Yield Enhancement Program</a>
+                                    <a href="../pricing/other-fees-overview.php.html" target="_self" class="dropdown-item">Other Fees</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- TRADING -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-technology" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Trading</a>
+                        <div class="dropdown-menu dropdown-technology" aria-labelledby="nav-technology">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="trading-platforms.php.html" target="_self" class="dropdown-item">Platforms</a>
+                                    <a href="ib-api.php.html" target="_self" class="dropdown-item">APIs</a>
+                                    <a href="margin.php.html" target="_self" class="dropdown-item">Margin</a>
+                                    <a href="products-exchanges.php.html" target="_self" class="dropdown-item">Products and Exchange Search</a>
+                                    <a href="ordertypes.php.html" target="_self" class="dropdown-item">Order Types</a>
+                                    <a href="../whyib/reporting.php.html" target="_self" class="dropdown-item">Reporting</a>
+                                    <a href="securities-financing.php.html" target="_self" class="dropdown-item">Securities Financing</a>
+                                    <a href="features-in-focus.php.html" target="_self" class="dropdown-item">Features in Focus</a>
+                                    <a href="../general/education/probability_lab.php.html" target="_self" class="dropdown-item">Probability Lab</a>
+                                    <a href="global-outsourced-trading-desk.php.html" target="_self" class="dropdown-item">Global Outsourced Trading Desk</a>
+                                    <a href="sustainable-investing.php.html" target="_self" class="dropdown-item">Sustainable Investing</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- SERVICES -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-products" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+                        <div class="dropdown-menu dropdown-products" aria-labelledby="nav-products">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="globalanalyst.php.html" target="_self" class="dropdown-item">IBKR GlobalAnalyst</a>
+                                    <a href="https://www.portfolioanalyst.com" target="_blank" class="dropdown-item" rel="noreferrer noopener">PortfolioAnalyst</a>
+                                    <a href="products-bonds.php.html" target="_self" class="dropdown-item">Bonds Marketplace</a>
+                                    <a href="products-mutual-funds.php.html" target="_self" class="dropdown-item">Mutual Funds Marketplace</a>
+                                    <a href="commission-free-etfs-mkt.php.html" target="_self" class="dropdown-item">No Transaction Fee ETFs</a>
+                                    <a href="https://ndcdyn.interactivebrokers.com/aces/Marketplace/InvestorsMarketplace" target="_blank" class="dropdown-item" rel="noreferrer noopener">Investors' Marketplace</a>
+                                    <a href="short-securities-availability.php.html" target="_self" class="dropdown-item">Short Securities Availability</a>
+                                    <a href="../accounts/integrated-cash-management.php.html" target="_self" class="dropdown-item">Cash Management</a>
+                                    <a href="third-party-integration.php.html" target="_self" class="dropdown-item">Third Party Integration</a>
+                                    <a href="https://www.interactiveadvisors.com" target="_blank" class="dropdown-item" rel="noreferrer noopener">Interactive Advisors</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- EDUCATION -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-education" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Education</a>
+                        <div class="dropdown-menu dropdown-education" aria-labelledby="nav-education">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="https://ibkrcampus.com" target="_blank" class="dropdown-item">IBKR Campus</a>
+                                    <a href="https://ibkrcampus.com/academy" target="_blank" class="dropdown-item" rel="noreferrer noopener">Traders' Academy</a>
+                                    <a href="https://ibkrcampus.com/news" target="_blank" class="dropdown-item" rel="noreferrer noopener">Traders' Insight</a>
+                                    <a href="https://ibkrcampus.com/podcasts" target="_blank" class="dropdown-item" rel="noreferrer noopener">IBKR Podcasts</a>
+                                    <a href="https://ibkrcampus.com/quant" target="_blank" class="dropdown-item" rel="noreferrer noopener">IBKR Quant Blog</a>
+                                    <a href="https://ibkrcampus.com/webinars" target="_blank" class="dropdown-item" rel="noreferrer noopener">Webinars</a>
+                                    <a href="https://ibkrcampus.com/student-trading-lab/" target="_blank" class="dropdown-item">Student Trading Lab</a>
+                                    <a href="https://ibkrcampus.com/glossary" target="_blank" class="dropdown-item" rel="noreferrer noopener">Traders' Glossary</a>
+                                    <a href="../general/calendar/calendar.php.html" target="_self" class="dropdown-item">Traders' Calendar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- SEARCH -->
+                    <li class="nav-item dropdown d-none d-lg-block" id="search-expand"><a href="#" class="nav-link nav-search dropdown-toggle" id="nav-search" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Search</span><i class="fas fa-search" aria-hidden="true"></i></a>
+                        <div class="dropdown-menu dropdown-search" aria-labelledby="nav-search">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="search_box">
+                                        <script type="text/javascript">
+                                         searchbox_input_changed=false;
+                                          $('#search-expand').on('shown.bs.dropdown', function(e) {
+                                            $('#searchField').focus();
+                                          });
+                                        </script>
+                                        <form action="/en/search/index.php" method="get" class="search_form" id="search_form_id">
+                                            <input type="text" aria-label="Search Box" placeholder="Search Site or Contracts" name="query" maxlength="64" autocomplete="off" id="searchField" class="form-control s swap_value searchinput" aria-label="Search Interactive Brokers">
+                                            <button type="submit" value="" id="searchsubmit" class="searchsubmit" aria-label="Submit Search"><i class="fas fa-search" aria-hidden="true"></i></button>
+                                        </form>
+                                        <ul id='saytlist' style='width:150px;'><li style="display:none"></li></ul>
+<script>
+function delay(cb, ms)
+{
+  var timer = 0;
+  return function() {
+   var context = this, args = arguments;
+   clearTimeout(timer);
+   timer = setTimeout(function() {
+     cb.apply(context, args);
+   }, ms  || 0);
+  };
+}
+$(function() {
+
+ $('#searchField').keyup(delay(function() {
+  var q = $('#searchField').val() || '';
+  if(q.length >= 3)
+  {
+    $.ajax({
+      type: "POST",
+      url: 'https://misc.interactivebrokers.com/response_handlers/search/index.php',
+      dataType: "json",
+      data: {
+        'q': q
+      },
+      success: function(r) {
+        if(r && r.success)
+        {
+          var recommendations = '';
+          var limit = Math.min(r.suggestions.length, 10);
+          for(var i = 0; i < limit; i++)
+          {
+            recommendations += "<li>" + r.suggestions[i] + "</li>";
+          }
+          $('#saytlist').html(recommendations);
+          $('#saytlist').show();
+          $('ul#saytlist li').click(function(e) {
+            var list = $(this).text() || '';
+            e.stopPropagation();
+            if(list != '')
+            {
+              $('input#searchField').val(list);
+              $('button#searchsubmit').click();
+            }
+          });
+        }
+      },
+      error: function(xhr, status, err) {}
+    });
+  } else {
+   $('#saytlist').hide();
+  }
+ }, 500));
+});
+</script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- LOG IN -->
+                    <li class="nav-item dropdown d-none d-lg-block"><a href="#" target="_self" class="nav-link nav-login dropdown-toggle" id="nav-log-in" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Log In</a>
+                        <div class="dropdown-menu dropdown-login" aria-labelledby="nav-log-in">
+                            <div class="row">
+                                <div class="col">
+                                                                                                                    <a href="/sso/Login?RL=1" target="_self" class="dropdown-item dropdown-portal">Portal Login</a>
+                                                                                                                <a href="tws.php.html#tws-software" target="_self" class="dropdown-item">Download Trader Workstation</a>
+                                    <a href="ibkr-desktop.php.html" target="_self" class="dropdown-item">Download IBKR Desktop </a>
+                                    <a href="tws-mobile.php.html#trytoday-drop" target="_self" class="dropdown-item">Download IBKR Mobile</a>
+                                    <a href="ibgateway-latest.php.html" target="_self" class="dropdown-item">Download IB Gateway</a>
+                                    <a href="trading-platforms.php.html" target="_self" class="dropdown-item">Compare All IBKR Platforms</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- OPEN ACCOUNT -->
+                    <li class="nav-item dropdown d-none d-lg-block"><a href="#" target="_self" class="nav-link nav-open-account dropdown-toggle" id="nav-open-account" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Open Account</a>
+                        <div class="dropdown-menu dropdown-open-account" aria-labelledby="nav-open-account">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="/Universal/Application" target="_self" class="dropdown-item dropdown-portal">Start Application</a>
+                                    <a href="/sso/Login?c=t" target="_self" class="dropdown-item">Finish an Application</a>
+                                    <a href="../general/what-you-need-inv.php.html" target="_self" class="dropdown-item">What You Need</a>
+                                    <a href="../accounts/account-guide.php.html" target="_self" class="dropdown-item">A Guide to Choosing the Right Account</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- NAV BOTTOM END -->
+</div>
+<!-- HEADER END ---------------------------------------------------------------------------------------------------- -->
+<!-- MOBILE NAV START (XS/SM/MD ONLY) ---------------------------------------------------------------------------------------------------- -->
+<div class="menu-mobile d-lg-none">
+    <!-- CLOSE BUTTON -->
+    <div class="close-button"><a href="javascript:void(0);" target="_self" class="btn-close" aria-label="Close Menu"><i class="fas fa-times"></i></a></div>
+    <!-- LOGO -->
+    <div class="logo-container"><a href="../home.php.html" target="_self" class="brand-logo" aria-label="Interactive Brokers Home"><span>Interactive Brokers Home</span></a></div>
+    <!-- SEARCH -->
+    <div class="search-container">
+        <div class="search-box">
+            <form action="/en/search/index.php" method="get" class="search_form" id="search_form_id">
+                <input type="text" class="form-control" placeholder="Search Site or Contracts" name="query" maxlength="64" autocomplete="off" id="searchFieldMobile" aria-label="Search Interactive Brokers">
+                <button type="submit" class="btn-search-submit" value="" id="searchsubmitMobile" aria-label="Submit Search"><i class="fas fa-search" aria-hidden="true"></i></button>
+            </form>
+        </div>
+    </div>
+    <ul>
+    <!-- LOG IN -->
+                    <li><a href="/sso/Login?RL=1" target="_self" class="menu-log-in">Portal Login</a></li>
+                <!-- OPEN ACCOUNT -->
+    <li class="has-submenu"><a href="#" target="_self" class="menu-open-account" data-submenu="submenu-open-account">Open Account</a>
+        <div class="submenu" id="submenu-open-account">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-open-account">Back</a></p>
+            <p class="submenu-title">OPEN ACCOUNT</p>
+            <ul>
+            <li><a href="/Universal/Application" target="_self" class="menu-start-application">Start Application</a></li>
+            <li><a href="/sso/Login?c=t" target="_self">Finish an Application</a></li>
+            <li><a href="../general/what-you-need-inv.php.html" target="_self">What You Need</a></li>
+            <li><a href="../accounts/account-guide.php.html" target="_self">A Guide to Chosing the Right Account</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- DOWNLOAD IBKR MOBILE -->
+        <!-- FREE TRIAL -->
+    <li><a href="free-trial.php.html" target="_self">Free Trial</a></li>
+    <!-- WHY IBKR -->
+    <li><a href="../whyib/overview.php.html" target="_self">Why IBKR</a></li>
+    <!-- ACCOUNT TYPES -->
+    <li class="has-submenu"><a href="#" target="_self" data-submenu="submenu-account-types">Account Types</a>
+        <div class="submenu" id="submenu-account-types">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-account-types">Back</a></p>
+            <p class="submenu-title">FOR INDIVIDUALS</p>
+            <ul>
+            <li><a href="../accounts/individual.php.html" target="_self">Individual, Joint or IRA</a></li>
+            <li><a href="../accounts/non-professional-advisor.php.html" target="_self">Non-Professional Advisors</a></li>
+            </ul>
+            <p class="submenu-title">FOR INSTITUTIONS</p>
+            <ul>
+            <li><a href="../accounts/institutions.php.html" target="_self">Institutions Home</a></li>
+            <li><a href="../accounts/advisor.php.html" target="_self">Registered Investment Advisors</a></li>
+            <li><a href="../accounts/proprietary-trading-group.php.html" target="_self">Proprietary Trading Groups</a></li>
+            <li><a href="../accounts/hedge-fund.php.html" target="_self">Hedge Funds</a></li>
+            <li><a href="../accounts/broker.php.html" target="_self">Introducing Brokers</a></li>
+            <li><a href="../accounts/family-office.php.html" target="_self">Family Offices</a></li>
+            <li><a href="../accounts/compliance-officer.php.html" target="_self">Compliance Officers</a></li>
+            <li><a href="../accounts/small-business.php.html" target="_self">Small Businesses</a></li>
+            <li><a href="../accounts/simple-ira.php.html" target="_self">Employee Plan Administrator <br>SIMPLE IRA</a></li>
+            <li><a href="../accounts/fsa-insurance-providers.php.html" target="_self">Full-Service Administrator <br>Insurance Providers</a></li>
+            <li><a href="../accounts/money-manager.php.html" target="_self">Money Managers</a></li>
+            <li><a href="../accounts/administrator.php.html" target="_self">Fund Administrators</a></li>
+            <li><a href="../accounts/hedge-fund-allocator.php.html" target="_self">Hedge Fund Allocators</a></li>
+            <li><a href="https://ibkrcampus.com/student-trading-lab/" target="_blank">Educators</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- PRICING -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-pricing">Pricing</a>
+        <div class="submenu" id="submenu-pricing">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-pricing">Back</a></p>
+            <p class="submenu-title">PRICING</p>
+            <ul>
+            <li><a href="../pricing/commissions-home.php.html" target="_self">Commissions</a></li>
+            <li><a href="margin-rates.php.html" target="_self">Margin Rates</a></li>
+            <li><a href="../accounts/fees/pricing-interest-rates.php.html" target="_self">Interest Rates</a></li>
+            <li><a href="../pricing/short-sale-cost.php.html" target="_self">Short Sale Cost</a></li>
+            <li><a href="../pricing/research-news-services.php.html" target="_self">Research and News</a></li>
+            <li><a href="../pricing/research-news-marketdata.php.html" target="_self">Market Data</a></li>
+            <li><a href="../pricing/stock-yield-enhancement-program.php.html" target="_self">Stock Yield Enhancement</a></li>
+            <li><a href="../pricing/other-fees-overview.php.html" target="_self">Other Fees</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- TRADING -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-trading">Trading</a>
+        <div class="submenu" id="submenu-trading">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-trading">Back</a></p>
+            <p class="submenu-title">TRADING</p>
+            <ul>
+            <li><a href="trading-platforms.php.html" target="_self">Platforms</a></li>
+            <li><a href="ib-api.php.html" target="_self">APIs</a></li>
+            <li><a href="margin.php.html" target="_self">Margin</a></li>
+            <li><a href="products-exchanges.php.html" target="_self">Products and Exchange Search</a></li>
+            <li><a href="ordertypes.php.html" target="_self">Order Types</a></li>
+            <li><a href="../whyib/reporting.php.html" target="_self">Reporting</a></li>
+            <li><a href="securities-financing.php.html" target="_self">Securities Financing</a></li>
+            <li><a href="features-in-focus.php.html" target="_self">Features in Focus</a></li>
+            <li><a href="../general/education/probability_lab.php.html" target="_self">Probability Lab</a></li>
+            <li><a href="global-outsourced-trading-desk.php.html" target="_self">Global Outsourced Trading Desk</a></li>
+            <li><a href="sustainable-investing.php.html" target="_self">Sustainable Investing</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- SERVICES -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-services">Services</a>
+        <div class="submenu" id="submenu-services">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-services">Back</a></p>
+            <p class="submenu-title">SERVICES</p>
+            <ul>
+            <li><a href="globalanalyst.php.html" target="_self">IBKR GlobalAnalyst</a></li>
+            <li><a href="https://www.portfolioanalyst.com" target="_blank">PortfolioAnalyst</a></li>
+            <li><a href="products-bonds.php.html" target="_self">Bonds Marketplace</a></li>
+            <li><a href="products-mutual-funds.php.html" target="_self">Mutual Funds Marketplace</a></li>
+            <li><a href="commission-free-etfs-mkt.php.html" target="_self">No Transaction Fee ETFs</a></li>
+            <li><a href="https://ndcdyn.interactivebrokers.com/aces/Marketplace/InvestorsMarketplace" target="_blank">Investors' Marketplace</a></li>
+            <li><a href="short-securities-availability.php.html" target="_self">Short Securities Availability</a></li>
+            <li><a href="../accounts/integrated-cash-management.php.html" target="_self">Cash Management</a></li>
+            <li><a href="third-party-integration.php.html" target="_self">Third Party Integration</a></li>
+            <li><a href="https://www.interactiveadvisors.com" target="_blank">Interactive Advisors</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- EDUCATION -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-education">Education</a>
+        <div class="submenu" id="submenu-education">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-education">Back</a></p>
+            <p class="submenu-title">EDUCATION</p>
+            <ul>
+            <li><a href="https://ibkrcampus.com" target="_blank">IBKR Campus</a></li>
+            <li><a href="https://ibkrcampus.com/academy" target="_blank">Traders' Academy</a></li>
+            <li><a href="https://ibkrcampus.com/news" target="_blank">Traders' Insight</a></li>
+            <li><a href="https://ibkrcampus.com/podcasts" target="_blank">IBKR Podcasts</a></li>
+            <li><a href="https://ibkrcampus.com/quant" target="_blank">IBKR Quant Blog</a></li>
+            <li><a href="https://ibkrcampus.com/webinars" target="_blank">Webinars</a></li>
+            <li><a href="https://ibkrcampus.com/student-trading-lab/" target="_blank">Student Trading Lab</a></li>
+            <li><a href="https://ibkrcampus.com/glossary" target="_blank">Traders' Glossary</a></li>
+            <li><a href="../general/calendar/calendar.php.html" target="_self">Traders' Calendar</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- ABOUT US -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-about-us">About Us</a>
+        <div class="submenu" id="submenu-about-us">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-about-us">Back</a></p>
+            <p class="submenu-title">ABOUT US</p>
+            <ul>
+            <li><a href="../general/financial-strength.php.html" target="_self">Strength and Security</a></li>
+            <li><a href="../general/about/about.php.html" target="_self">Information and History</a></li>
+            <li><a href="../general/about/careers-splash.php.html" target="_self">Careers</a></li>
+            <li><a href="../general/awards.php.html" target="_self">Awards</a></li>
+            <li><a href="../about/news-at-ibkr.php.html" target="_self">News at IBKR</a></li>
+            <li><a href="../general/about/press-and-media.php.html" target="_self">Press and Media</a></li>
+            <li><a href="https://investors.interactivebrokers.com/ir/main.php" target="_blank">Investor Relations</a></li>
+            <li><a href="../general/about/sustainability.php.html" target="_self">Sustainability</a></li>
+            <li><a href="../accounts/legalDocuments/brokerPerformanceReports.php.html" target="_self">Regulatory Reports</a></li>
+            <li><a href="../accounts/referrer.php.html" target="_self">Refer a Friend</a></li>
+            <li><a href="../general/about/affiliate-programs.php.html" target="_self">Affiliate Programs</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- SUPPORT -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-support">Support</a>
+        <div class="submenu" id="submenu-support">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-support">Back</a></p>
+            <p class="submenu-title">SUPPORT</p>
+            <ul>
+            <li><a href="../support/fund-my-account.php.html" target="_self">Fund Your Account</a></li>
+            <li><a href="../support/individuals.php.html" target="_self">For Individuals</a></li>
+            <li><a href="../support/institutions.php.html" target="_self">For Institutions</a></li>
+            <li><a href="../support/institutional-sales-contacts.php.html" target="_self">Institutional Sales Contacts</a></li>
+                        <li><a href="../general/contact/ibot-container.php.html" target="_self">Browse Our FAQs</a></li>
+            <li><a href="../support/reports-and-dates.php.html" target="_self">Tax Information</a></li>                 
+            </ul>
+        </div>
+    </li>
+    <!-- LANGUAGE -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-language">Language</a>
+        <div class="submenu" id="submenu-language">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-language">Back</a></p>
+            <p class="submenu-title">LANGUAGE</p>
+            <ul>
+            <li><a href="../home.php.html" target="_self">English</a></li>
+            <li><a href="/es/home.php" target="_self">Español</a></li>
+            <li><a href="/pt/home.php" target="_self">Português</a></li>
+            <li><a href="/cn/home.php?lang=sc" target="_self">中文简体</a></li>
+            <li><a href="/cn/home.php?lang=tc" target="_self">中文繁體</a></li>
+            </ul>
+        </div>
+    </li>
+    </ul>
+</div>
+<!-- MOBILE NAV OVERLAY -->
+<div class="website-overlay d-lg-none"></div>
+<!-- MOBILE NAV END (XS/SM/MD ONLY) ---------------------------------------------------------------------------------------------------- -->
+<div id="contents">
+    <section class="page-title" id="page-title">
+        <div class="container">
+            <div class="row">
+                                <div class="col"><h1>Natural Language Interface to Trading</h1></div>
+                            </div>
+        </div>
+    </section>
+    <style type="text/css">
+/* INTRO -------------------------------------------------------------- */
+section#page-title {
+	display:none;
+}
+section#page-title {
+	display:none;
+}
+#ib-bot .parallax-overlay {
+	padding-top:0px;
+}
+#ib-bot {
+	min-height:340px;
+	padding-top:90px;
+	background-image: url("../../images/2015/header-ib-bot.jpg");
+	background-size: 100% auto;
+	border-bottom:1px solid #242424;
+}
+#ib-bot h2, #ib-bot h5, #ib-bot p {
+	text-align:center;
+	color:#FFFFFF;
+	text-shadow:0px 0px 5px rgba(0, 0, 0, 1.0);
+}
+.img-pad {padding:20px 0;}
+.parallax-overlay {
+    padding-bottom: 40px;
+}
+@media (max-width:767px) {
+ #ib-bot {
+ height:auto;
+ padding-top:20px;
+}
+}
+@media (max-width:1250px) {
+ #ib-bot {
+ background-size: cover;
+}
+}
+</style>
+<!-- INTRO -->
+<section id="ib-bot" class="parallax-section">
+<div class="parallax-overlay">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+				<div class="animated" data-animation="fadeInDown" data-animation-delay="250">
+					<h2 class="text-center">Meet IBot</h2>
+					<h5>The Natural Way to Manage Your Account and More</h5>
+					<hr>
+					<p>Let IBot show you how easy it can be to trade with TWS, manage your account and find information. Type requests in plain English, and let <br>
+IBot  set up your trade, show your daily P&L, scan the markets, create a custom chart, answer account questions and show related articles. <br>
+IBot can search the IBKR website and outside sources like Wikipedia and Investopedia, and access Account Management to help with funds, banking and more. <br>
+You can link your production account with Alexa for read-only access to account data. </p>
+<p>
+</p></div>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+<section>
+  <div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 gray-box hidden-xs hidden-sm">
+				<h3>Quick Links</h3>
+				<h4><a href="#01" target="_self" class="page-scroll">Using IBot</a></h4>
+				<ul>
+					<li class="paralist"><a href="#01-01" target="_self" class="page-scroll">Desktop TWS</a></li>
+<li class="paralist"><a href="#01-02" target="_self" class="page-scroll">IBKR Mobile</a></li>
+<li class="paralist"><a href="#01-03" target="_self" class="page-scroll">Client Portal</a></li>
+<li class="paralist"><a href="#01-04" target="_self" class="page-scroll">Enter Commands</a></li>
+<li class="paralist"><a href="#01-05" target="_self" class="page-scroll">Create an Order</a></li>
+<li class="paralist"><a href="#01-07" target="_self" class="page-scroll">More Order Types and Algos</a></li>
+<li class="paralist"><a href="#01-08" target="_self" class="page-scroll">Create a Percent of Volume Algo Order</a></li>
+<li class="paralist"><a href="#01-06" target="_self" class="page-scroll">Create an Accumulate/Distribute Algo Order</a></li>
+				</ul>
+				<h4><a href="#02" target="_self" class="page-scroll">Supported Commands</a></h4>
+				<ul>
+					<li class="paralist"><a href="#02-01" target="_self" class="page-scroll">Quotes</a></li>
+                    <li class="paralist"><a href="#02-02" target="_self" class="page-scroll">Symbols</a></li>
+                    <li class="paralist"><a href="#02-02a" target="_self" class="page-scroll">Fundamentals</a></li>
+					<li class="paralist"><a href="#02-03" target="_self" class="page-scroll">Charts</a></li>
+					<li class="paralist"><a href="#02-04" target="_self" class="page-scroll">Orders</a></li>
+					<li class="paralist"><a href="#02-05" target="_self" class="page-scroll">Trades</a></li>
+					<li class="paralist"><a href="#02-06" target="_self" class="page-scroll">Market Scanners</a></li>
+<li class="paralist"><a href="#02-16" target="_self" class="page-scroll">Market Updates</a></li>
+<li class="paralist"><a href="#02-17" target="_self" class="page-scroll">IBot FAQs</a></li>
+					<li class="paralist"><a href="#02-06a" target="_self" class="page-scroll">Market Depth Level II Data</a></li>
+					<li class="paralist"><a href="#02-07" target="_self" class="page-scroll">Option Chains</a></li>
+					<li class="paralist"><a href="#02-08" target="_self" class="page-scroll">Events Calendar</a></li>
+					<li class="paralist"><a href="#02-09" target="_self" class="page-scroll">Account Metrics</a></li>
+                    <!--<li class="paralist"><a href="#02-10" target="_self" class="page-scroll">Account Management</a></li>!-->
+					<li class="paralist"><a href="#02-10" target="_self" class="page-scroll">Modify a Command</a></li>
+					<li class="paralist"><a href="#02-11" target="_self" class="page-scroll">Help</a></li>
+					<li class="paralist"><a href="#02-13" target="_self" class="page-scroll">Company Summary</a></li>
+ 					<li class="paralist"><a href="#02-14" target="_self" class="page-scroll">Search IBKR.com</a></li>
+					<li class="paralist"><a href="#02-15" target="_self" class="page-scroll">Customer Service Information</a></li>
+				</ul>
+				<h4><a href="#03" target="_self" class="page-scroll">Appendix A</a></h4>
+				<ul>
+					<li class="paralist"><a href="#03-01" target="_self" class="page-scroll">Options</a></li>
+				</ul>
+				<h4><a href="#04" target="_self" class="page-scroll">Appendix B</a></h4>
+				<ul>
+					<li class="paralist"><a href="#04-01" target="_self" class="page-scroll">Quotes Commands</a></li>
+					<li class="paralist"><a href="#04-02" target="_self" class="page-scroll">Charts Commands</a></li>
+					<li class="paralist"><a href="#04-03" target="_self" class="page-scroll">Trades Commands</a></li>
+					<li class="paralist"><a href="#04-04" target="_self" class="page-scroll">Orders Commands</a></li>
+					<li class="paralist"><a href="#04-05" target="_self" class="page-scroll">Market Scanner Commands</a></li>
+					<li class="paralist"><a href="#04-06" target="_self" class="page-scroll">Market Depth Level II Commands</a></li>
+					<li class="paralist"><a href="#04-07" target="_self" class="page-scroll">Option Chain Commands</a></li>
+					<li class="paralist"><a href="#04-08" target="_self" class="page-scroll">Calendar Commands</a></li>
+					<li class="paralist"><a href="#04-09" target="_self" class="page-scroll">Close Position Commands</a></li>
+					<li class="paralist"><a href="#04-10" target="_self" class="page-scroll">My Account Commands</a></li>
+				</ul>
+		</div>
+			<div id="01" class="col-xs-12 col-sm-12 col-md-8 col-md-offset-1 col-lg-8 col-lg-offset-1">
+				<h2>Overview</h2>
+				<p>Powerful yet easy to use, IBot is pioneering a new way to interact with your Interactive Brokers brokerage account that requires no learning curve. Because IBot understands commands in plain English, you don't need to follow any syntax rules or know any key words.</p>
+<p>Enter commands in plain language, and IBot provides help and information wherever you may need it. In addition to Desktop TWS, IBKR Mobile and  Client Portal, we continue to add new ways to access IBKR brokerage and account information quickly and easily; IBot is now available to help in more places than ever before:</p>
+<ul>
+<li><strong>Amazon Alexa</strong>: With the new <a href="alexa-skill.php.html">IBKR IBot Skill for Alexa</a>, you can securely link your production trading account and access read-only account data. For example, ask "Alexa, what's my current p&l?" or "Alexa, what's my position in apple?"  Additionally, get the latest market updates (courtesy of briefing.com), real-time price and volume details, and answers to general IBKR questions. For example, ask "Alexa, what's the price of apple?" or "Alexa, get the latest market update" or "Alexa, how do I open a cash account at Interactive Brokers?" To load the IBKR IBot Skill, just say "Alexa, open IBKR".</li>
+<li><strong>IBKR.com search</strong>: Enter a question and browse the FAQs for a quick answer.</li>
+<li><strong>IBKR support ticket</strong>: Have a question? Start with Ask IBot for a fast response to your question.</li>
+</ul> 
+<p>IBot enriches the user experience by offering supplemental articles and information from external sources, like Wikipedia and Investopedia. These third-party additions are clearly marked in  IBot's search results.Whether you  simply want to check  your daily P&L or  the price of your favorite stock, or  you want to create a sophisticated, custom algo order to buy or sell a large volume of shares using Accumulate/Distribute, IBot is there to assist, wherever you are. </p>
+			  <br>
+				<br>
+				<span class="id-drop"><span id="01"></span></span>
+				<h2>Using IBot</h2>
+				                <span class="id-drop"><span id="01-01"></span></span>
+                <h4>Desktop TWS</h4>
+                <p class="align-image-tops">From the New Window drop-down, scroll down and select <strong>IBot - type to trade</strong>. Or, click the <strong>IBot</strong> button along the top of the Mosaic workspace. </p>
+                <div align="center"><img src="../../images/2015/open-ibot-977.gif" alt="Open IBot in TWS" border="0" class="img-pad"></div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="no-padding-top">
+	<div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                	 <span class="id-drop"><span id="01-02"></span></span>
+                    <h4>IBKR Mobile</h4>
+                    <p>To access IBot in  IBKR Mobile, use the main menu and tap  <strong>IBot – type to trade</strong>. Additionally, you can easily access IBot from any Quote Details screen from the <em>Ask IBot</em> section. Simply expand using the arrow, and tap the <strong>Ask IBot</strong> button.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                    <div align="center"><img src="../../images/2015/android-ibot-menu.png" alt="IBKR Mobile for Android Open IBot" border="0" class="img-pad"></div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+               		<div align="center"><img src="../../images/2015/android-ibot-quote-details.png" alt="IBKR Mobile for Android IBot in Quote Details" border="0" class="img-pad"></div>
+                </div>
+            </div>
+    <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                    <div align="center"><img src="../../images/2015/iOS-IBKR-mobile-iphone-ibot-on-menu-callout.png" alt="IBKR Mobile for iPhone Open IBot" border="0" class="img-pad"></div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+               		<div align="center"><img src="../../images/2015/IBKR-mobile-ios-phone-ibot-quote-details-callout.png" alt="IBKR Mobile for iPhone IBot in Quote Details" border="0" class="img-pad"></div>
+                </div>
+                </div>
+                </div>
+</section> 
+<section class="no-padding-top">
+<div class="container">
+	                	 <span class="id-drop"><span id="01-03"></span></span>
+                        <h4>Client Portal</h4>
+                   <p class="align-image-tops">Use the Client Portal to see a clear, real-time view of key account metrics, place a trade, access Account Management (with just one click!) or communicate with other clients via the IBKR  Forum. Use IBot to help with whatever you may need. Simply click the IBot icon at the bottom right of the Client Portal.</p>
+                    <div align="center"><img src="../../images/2015/CP_IBot%402x.png" alt="Open IBot from Client Portal" border="0"></div>
+  </div>            
+</section>       
+<section class="no-padding-top">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<span class="id-drop"><span id="01-04"></span></span>
+				<h4>Entering Commands</h4>
+			<p>IBot is a true cross-platform application that  understands the same commands whether you're interacting from Desktop TWS, IBKR Mobile,  Client Portal or any other platform on which IBot is accessible. </p>
+<p>To start with a simple command, let's find the current price of Apple stock. </p>
+                <p>In the IBot entry field type your command, something like "show me the price of apple" or "last price AAPL" or "AAPL stock price."</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+				<div align="center"><img src="../../images/2015/ibot-price-apple-start.png" alt="Ask IBot to find the price of Apple stock" border="0" class="img-pad"></div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+				<div align="center"><img src="../../images/2015/ibot-price-apple-result.png" alt="IBot returns the last price of Apple" border="0" class="img-pad"></div>
+			</div>
+		</div>
+        <div class="row padding-top-80">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <span class="id-drop"><span id="01-05"></span></span>
+				<h4>Create an Order</h4>
+                <p>Now let's go a step further and create an order. IBot already knows we're discussing Apple, so in this case you only need to give it a "buy" or "sell" command. If you want to buy 100 shares of Apple at a limit price of $176.00, you only need to type  "buy this at 176." When the order is returned, simply review the order attributes and if it's correct, submit the order. Note that the order parameters are the same defaults you will see if you create an order from the Order Panel.</p>
+			</div>
+		</div>
+        <div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<span class="id-drop"><span id="01-01"></span></span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+				<div align="center"><img src="../../images/2015/ibot-apple-create-order.png" alt="Create an Order" border="0" class="img-pad"></div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+				<div align="center"><img src="../../images/2015/ibot-apple-review-order.png" alt="Review Order" border="0" class="img-pad"></div>
+			</div>
+		</div>
+              <div class="row padding-top-40">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+               <span class="id-drop"><span id="01-07"></span></span>
+                <h4>Create More Order Types and Algos with IBot</h4>
+<p>IBot can help you to create orders that aren't supported in normal channels. In addition to the Accumulate/Distribute and Percent of Volume algo orders with examples below, you can use IBot to create:</p>
+<ul>
+<li><a href="orders/oca.php.html" target="_new">One-Cancels-All</a> (also known as One-Cancels-Other)</li>
+<li><a href="orders/snap-to-market.php.html" target="_new">Snap to Market</a></li>
+<li><a href="orders/snap-to-midpoint.php.html" target="_new">Snap to Midpoint</a></li>
+<li><a href="orders/snap-to-primary.php.html" target="_new">Snap to Primary</a></li>
+<li><a href="orders/rpi.php.html" target="_new">Retail Price Improvement (RPI)</a></li>
+<li><a href="orders/pegged-to-market.php.html" target="_new">Pegged-to-Market</a></li>
+<li><a href="orders/pegged-to-midpoint.php.html" target="_new">Pegged-to-Midpoint</a></li>
+<li><a href="orders/passive-relative.php.html" target="_new">Passive Relative</a></li>
+</ul>
+<p>Check back regularly as we continue to add IBot support for more order types and algos.</p>
+			</div>
+		</div>
+  <a name="percent-algo"></a><div class="row padding-top-80">
+	  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <span class="id-drop"><span id="01-08"></span></span>
+	    <h4>Create a Percent of Volume Algo Order</h4>
+          <p>Let's have IBot help us create a <a href="orders/percent-of-volume.php.html" target="_new">Percent of Volume</a> IB Algo order.  Simply ask IBot to create the algo. For example, we could ask "buy 300 aapl with volume algo" or "buy aapl using percent of vol algo" or "buy 300 aapl with 10% target volume." If we had just checked the price of Apple, our command could be as simple as "buy 300 with %vol algo." In this case IBot assumes we want to buy AAPL, since that's the last asset we asked about. IBot will complete as much of the order as possible based on your original command, then prompt you to complete any outstanding  parameters. In this example, we need to specify the percent of volume, which we can do either by entering a value or picking from the list of presented shortcut buttons. Once the order is complete, we can elect to submit the order from IBot. </p>
+          <p>The commands are the same whether you're using IBot in Desktop TWS, IBKR Mobile or Client Portal.</p>
+	  </div>
+				<div align="center"><img src="../../images/2015/ibot-percent-vol-algo.gif" alt="Percent of Volume Algo Order" border="0" class="img-pad"></div>
+	  </div>       
+ <div class="row padding-top-80">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <span class="id-drop"><span id="01-06"></span></span>
+				<h4>Create an Accumulate/Distribute Order</h4>
+                <p>For another example of how IBot can help you configure complex order types and algos, let's ask IBot help us to buy a very large volume of shares. If you're familiar with the TWS Accumulate/Distribute algo, you understand the  complexity of the tool and the power of the custom algo orders it can create. IBot simplifies this process considerably. For example, IBot can help us easily create an algo order to buy 10000 shares in 300 share increments submitted every 30 seconds, using a relative order with or without a limit price cap, that continues until you cancel it. We can have it fill outside regular trading hours, tell it whether or not to wait for each increment to fill before it submits the next one, and have it attempt to catch up quickly if it falls behind. And we can  randomize the increment size and time periods to help ensure the large order is not detected in the market. </p>
+<p>As mentioned earlier, you can create this same complex type of order from your phone or in the Client Portal.
+			Start by asking IBot to accumulate a large share of stock, and answer the simple questions to let IBot create the algo.</p></div>
+				<div align="center"><img src="../../images/2015/ibot-ad-order-977.gif" alt="Create an Accumulate/Distribute Order" border="0" class="img-pad"></div>
+		</div>       
+		<div class="row padding-top-80">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<br>
+				<!--<span class="id-drop"><span id="01-02"></span></span>-->
+				<!--
+                <hr>
+				<p><strong>KEY POINT:</strong> It's important to note that IBot is designed to accommodate language entries in normal, everyday English. You don't have to use the exact words or any kind of technical syntax to be understood. For example, you could type in "IBKR NBBO" or "Show me the current NBBO for IBKR" or "Get IBKR NBBO" and for each of these entries the result would be the same.</p>
+				<hr>
+				<br>
+				<span class="id-drop"><span id="01-03"></span></span>
+				<h4>Non-Supported and Misunderstood Commands</h4>
+                                -->
+				<p>IBot can understand and act on commands to be executed within the trading platform, on the website, and in Account Management. Command categories include (but are not limited to) quotes, charts, orders, trades, market scanners, Level II data, option chains, events calendars, adding and modifying market data subscriptions, trading permissions, depositing and withdrawing funds to and from your account, seeing PortfolioAnalyst and activity metrics, and getting Customer Support answers to common questions.</p>
+				<hr>
+				<br>
+				<span class="id-drop"><span id="02"></span></span>
+				<h2>Supported Command Sets and Examples</h2>
+				<p>Currently IBot can respond to commands within the following command sets:</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+				<span class="id-drop"><span id="02-01"></span></span>
+				<h4>Quotes</h4>
+				<p>This command gets pricing and fundamentals data.  For instance, you could type "show nbbo IBKR" to see the NBBO prices and sizes for IBKR. Or, IBot can retrieve fundamental price data such as the price to book, price to free cash flow per share and price to revenues.</p>
+				<p>Also retrieve annual and upcoming dividend amounts and dividend yield plus other fundamental data including (but not limited to):</p>
+				<!-- nested column -->
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+						<ul class="paralist">
+							<li>Quick ratio</li>
+							<li>Current ratio</li>
+							<li>Market cap</li>
+							<li>Operating margin</li>
+							<li>Payout ratio</li>
+							<li>Revenue</li>
+							<li>Cash flow per share</li>
+						</ul>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+						<ul class="paralist">
+							<li>Beta</li>
+							<li>Free cash flow</li>
+							<li>Total debt to total equity</li>
+							<li>Earnings date</li>
+							<li>Return on equity</li>
+							<li>Gross margin%</li>
+							<li>Operating income</li>
+						</ul>
+					</div>
+				</div>
+				<!-- end nested column --> 
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+				<div align="left"><img src="../../images/2015/ibot-bond-quote.png" alt="Bond Quote" border="0" class="img-pad"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<p>See the <a href="#03" target="_self" class="page-scroll">Appendix</a> for information on the best ways to enter option  contracts.</p>
+			</div>
+		</div>
+        <div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+				<span class="id-drop"><span id="02-02"></span></span>
+			  <h4>Symbols</h4>
+				<p>Want to know the symbol  for a certain company? Just ask and IBot provides the symbol along with the last available price. IBot is also smart enough to understand follow-up questions. If you ask IBot to "buy 500 microsoft" go ahead and follow up with "what's the symbol?"  IBot will show you the symbol for Microsoft, your last request!</p>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+				<div align="left"><img src="../../images/2015/ibot-symbol.png" alt="Ask iBot to Provide Symbol" border="0" class="img-pad"></div>
+			</div>
+		</div>
+        <div class="row">
+		  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<span class="id-drop"><span id="02-02a"></span></span>
+			<h4>Fundamentals</h4>
+			<p>Looking for fundamentals data on a specific company?  Just ask IBot using either the symbol or company name with questions like:</p>
+            <ul>
+              <li>What are the yearly revenues for Interactive Brokers?</li>
+              <li>What is the market capitalization of Ameritrade?</li>
+              <li>Show company fundamentals for ibkr.</li>
+            </ul>
+            <p>IBot also understands queries for market cap, EPS, P/E, price to   book, price to share, return on equity and more. Use the command buttons   below to quickly review additional fundamentals for the company you are   interested in.</p>
+          </div>
+			</div>
+        <div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+				<div align="left"><img src="../../images/2015/ibot-company-fundamentals.png" alt="Company Fundamentals" border="0" class="img-pad"></div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+            <div align="left"><img src="../../images/2015/ibot-fundamentals.png" alt="Company Fundamentals" border="0" class="img-pad"></div>
+		</div>
+        </div>
+		<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<span class="id-drop"><span id="02-03"></span></span>
+				<h4>Charts</h4>
+				<p>Tell IBot the specifics of the chart you want to see, for example: "chart aapl over six months." If you don't mention bar size or even time range, IBot will display the most reasonable chart based on what you entered. In this case, it shows the six months with weekly bars. You can have IBot change to daily bars easily, simply by entering "use daily bars." Use the Next Step shortcut buttons to perform an action naturally associated with your previous one. Click "Open Chart" to display the full chart in a new TWS window. </p>
+			</div>
+			</div>
+        <div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+				<div align="left"><img src="../../images/2015/ibot-apple-chart-six-months.png" alt="6-month Chart" border="0" class="img-pad"></div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+            <div align="left"><img src="../../images/2015/ibot-apple-chart-six-months-change-to-daily.png" alt="6-month Chart with Daily bars" border="0" class="img-pad"></div>
+		</div>
+        </div>
+<div class="row padding-top-80">
+			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+				<span class="id-drop"><span id="02-17"></span></span>
+				<h4>IBot FAQs</h4>
+				<p>For the shortest response time to questions, we suggest you start with the IBot FAQ. Our natural language-based interface can quickly provide solutions to common issues, and offers "how to" help for popular areas of inquiry, like funds and banking, Client Portal, activity statements, account balances, order entry and much more. Access the IBot FAQs from the Client Services page (in the Contact Us menu) and from the IBKR Search. Whenever possible, the IBot FAQ response offers a direct link to where you need to be, for example, if you Ask IBot how to fund your account, the answer contains a link to "Transfer Funds" within Account Management. Click this link, log into Account Management, and you will be taken to the screen you need to complete the task.</p>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+				<div align="left"><img src="../../images/2015/ibot-faq.png" alt="FAQ Sample Screenshot" border="0" class="img-pad"></div>
+			</div>
+		</div>
+<div class="row padding-top-80">
+			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+				<span class="id-drop"><span id="02-16"></span></span>
+				<h4>Market Updates</h4>
+				<p>Simply ask, and IBot provides the latest market updates courtesy of Briefing.com. Type "What's the latest market update" or "market brief" and IBot provides the most current Briefing.com market brief so that you can keep on top of what's happening in the markets and never miss an update.</p>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+				<div align="left"><img src="../../images/2015/ibot-market-updates.png" alt="Market Updates" border="0" class="img-pad"></div>
+			</div>
+		</div>
+		<div class="row padding-top-80">
+			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+				<span class="id-drop"><span id="02-04"></span></span>
+				<h4>Orders</h4>
+				<p>Quickly place orders, or close some or all of an open position, for example type "buy 100  IBKR at 70" and IBot will show a prefilled order ticket with  a Submit button to send the order, along with an Edit button to make changes and a Cancel button. IBot also understands commands such as "close my BAC position" or "close 10% of my long positions".</p>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+				<div align="left"><img src="../../images/2015/ibot-ibkr-order.png" alt="iBot Orders" border="0" class="img-pad"></div>
+			</div>
+		</div>
+		<div class="row padding-top-80">
+			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+				<span class="id-drop"><span id="02-05"></span></span>
+				<h4>Trades</h4>
+				<p>Ask to see trades, for example type "show trades on tsla" and IBot will return all recent trades in the specified symbol. Use Next Step buttons as needed. Click Open Trades to display all trades in the Mosaic Trades Activity panel.</p>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+				<div align="left"><img src="../../images/2015/ibot-trades-tsla.png" alt="iBot Trades" border="0" class="img-pad"></div>
+			</div>
+		</div>
+		<div class="row padding-top-80">
+		<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+			<span class="id-drop"><span id="02-06"></span></span>
+				<h4>Market Scanners</h4>
+				<p>Scan the markets for the most active US stocks, for example you could ask to see "top gaining US stocks" or "biggest US market winners." Enter the request for information  you want to find and the scanner will show you the top returns with a helpful list of Next Step shortcuts.</p>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+				<div align="center"><img src="../../images/2015/ibot-market-scanner.png" alt="iBot Market Scanner" border="0" class="img-pad"></div>
+			</div>
+		</div>
+		<div class="row padding-top-80">
+		<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+			<span class="id-drop"><span id="02-06a"></span></span>
+				<h4>Market Depth Level II Data</h4>
+				<p>Market depth shows bids and offers away from the inside quote on a single instrument, gathered from all available exchanges. You could ask to see "market depth for Tesla" or "show depth for tsla."</p>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+				<div align="center"><img src="../../images/2015/ibot-level-II.png" alt="iBot Market Depth Level II Data" border="0" class="img-pad"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<span class="id-drop"><span id="02-07"></span></span>
+				<h4>Option Chains</h4>
+				<p>View a chain of options on multiple strikes an underlying instrument by asking to see "apple options" or "jan options for apple." The option chain shows a list of all strikes for an expiration date, with the bid/ask for calls on the left side and the bid/ask for puts on the right. Elect to open the Volatility Chart using the Next Step shortcut, and click Open Option Chain to see the full tool.  </p>
+			</div>
+		</div>
+        <div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+				<div align="center"><img src="../../images/2015/ibot-apple-chains.png" alt="Options Chains" border="0" class="img-pad"></div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+				<div align="center"><img src="../../images/2015/ibot-apple-chains-vol-chart.png" alt="Options Chains Volatility Chart 3 Months" border="0" class="img-pad"></div>
+			</div>
+		</div>
+		<div class="row padding-top-80">
+			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+			<span class="id-drop"><span id="02-08"></span></span>
+				<h4>Events Calendar</h4>
+				<p>Find upcoming corporate and economic events. Ask IBot to "show portfolio events,"  "show events for next week" or "earnings for apple." The desktop version of IBot finds events from your Watchlist as well as Portfolio companies.</p>
+                </div>
+			<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+				<div align="center"><img src="../../images/2015/ibot-calendar-events-102717.png" alt="iBot Events Calendar" border="0" class="img-pad"></div>
+			</div>
+		</div>
+		<div class="row padding-top-80">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<span class="id-drop"><span id="02-09"></span></span>
+				<h4>Your Account</h4>
+				<p>You can quickly find key account metrics in TWS and within Account Management using IBot. For example, ask IBot "show my P&L" or even specify a symbol to return your account or position P&L for the day. Ask to see PortfolioAnalyst metrics and IBot will bring you into Account Management.</p>
+			</div>
+            </div>
+        <div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+				<div align="center"><img src="../../images/2015/ibot-account-pnl.png" alt="iBot in Your Account" border="0" class="img-pad"></div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+				<div align="center"><img src="../../images/2015/ibot-account-open-am.png" alt="iBot in Your Account" border="0" class="img-pad"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<span class="id-drop"><span id="02-10a"></span></span>
+				<h4>Modify Commands</h4>
+				<p>Issue a command to modify an order, or add information to a chart.  For instance if you create a limit order and decide you would like to change the order type in the middle of the process, simply type "change that order to market" and IBot will update the order it is creating with the new command information.Or if you accidentally entered an incorrect price, ask IBot to "change limit price to..." the correct price.</p>
+			</div>
+			  </div>
+        <div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+				<div align="center"><img src="../../images/2015/ibot-modify-screen-one.png" alt="Modify Commands" border="0" class="img-pad"></div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+				<div align="center"><img src="../../images/2015/ibot-modify-screen-two.png" alt="Modify Commands" border="0" class="img-pad"></div>
+			</div>
+		</div>
+		<div class="row padding-top-80">
+			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+				<span class="id-drop"><span id="02-11"></span></span>
+				<h4>Help</h4>
+				<p>You can type a command like "help with orders" or "help with quotes" to get help with a specific function. To find help always start the sentence with the word "help." Type just "help" to bring up help for the tool or to watch the IBot demo.</p>
+				<hr>
+				<p><strong>KEY POINT:</strong> To get help with a topic, begin your sentence with "help" to ensure IBot understands the command. This is one area where using a specific word in your command is helpful.</p>
+				<hr>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+				<div align="left"><img src="../../images/2015/ibot-help.png" alt="iBot Help" border="0"></div>
+			</div>
+		</div>
+		<div class="row padding-top-80">
+			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+				<span class="id-drop"><span id="02-13"></span></span>
+				<h4>Company Summary</h4>
+				<p>To view a summary of a company, type a command like "show summary for AAPL" and IBot will return a short company summary.</p>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+				<div align="left"><img src="../../images/2015/ibot-apple-summary.png" alt="Company Summary" border="0" class="img-pad"></div>
+			</div>
+		</div>
+        <div class="row padding-top-80">
+			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+				<span class="id-drop"><span id="02-14"></span></span>
+				<h4>Search IBKR.com</h4>
+				<p>To have IBot find reference and other information from  IBKR.com, use the terms "search for" or ""search IBKR for..." and IBot returns a list of  informational links available on our website; click a link to go directly to ibkr.com.</p>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+				<div align="left"><img src="../../images/2015/ibot-search.png" alt="IBot Search" border="0" class="img-pad"></div>
+			</div>
+		</div>
+		<div class="row padding-top-80">
+			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+				<span class="id-drop"><span id="02-15"></span></span>
+				<h4>Customer Service Information</h4>
+				<p>At any time you can use the command "contact customer support" to get a link to the contact information for Interactive Brokers Client Services on the website.</p>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+				<div align="left"><img src="../../images/2015/ibot-contact-support.png" alt="IBot Contact Support" border="0" class="img-pad"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<br>
+				<hr>
+				<br>
+				<span class="id-drop"><span id="03"></span></span>
+				<h2>Appendix A</h2>
+				<br>
+				<span class="id-drop"><span id="03-01"></span></span>
+				<h4>Options</h4>
+				<p>IBot uses these basic rules to decide  which options contracts to return:</p>
+				<br>
+				<h6>Contract Identification</h6>
+				<p>In cases where there is more than one option contract on the same exchange with the same expiry, strike and right, IBot will choose a contract as follows:</p>
+				<ul class="paralist">
+				<li>She will choose smart over non-smart</li>
+					<li>She will choose non-weekly contracts</li>
+					<li>She will choose the contract with a standard multiplier</li>
+				</ul>
+				<br>
+				<h6>Partial Instrument Match</h6>
+				<p>In cases where you leave out a parameter, IBot will try to identify the option contract with an educated guess based on the following logic. In these cases IBot indicates that this might be a "Partial instrument match."</p>
+				<ul class="paralist">
+				<li>If the underlying is missing she assumes the last used underlying if one is available.</li>
+					<li>If the type is missing, she will use a CALL.</li>
+					<li>If the expiration is missing, she will use the nearest month.</li>
+					<li>If the strike is missing, she will use the at-the-money strike.</li>
+				</ul>
+				<br>
+				<h6>Option Syntax</h6>
+				<p>IBot will recognize all of the following entries as the same option:</p>
+				<ul class="paralist">
+					<li>SPY 105 call Sep'16 </li>
+					<li>SPY Sep16 105 CALL</li>
+					<li>SPY 16Sep16 105 call</li>
+					<li>SPY Q3 Sep16 105 call</li>
+					<li>September 2016 SPY 105 call</li>
+					<li>SPY expiring on 2016-09-16 105 call</li>
+					<li>SPY Sep 16, 2016 105 call</li>
+					<li>SPY SEP16 105C</li>
+					<li>SPY Sep 16,2016 105C</li>
+					<li>SPY September 105 Call</li>
+					<li>SPY Q3 105C</li>
+					<li>SPY Sep-16 105C</li>
+					<li>SPY Sep16 16 105 call</li>
+					<li>SPY September 105 Call</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<br>
+				<hr>
+				<br>
+				<span class="id-drop"><span id="04"></span></span>
+				<h2>Appendix B</h2>
+                <p>The below sections documents examples of the currently supported syntax for IBot commands, sorted by section. Symbols and companies are used for illustrative purposes only.</p>
+				<br>
+				<span class="id-drop"><span id="04-01"></span></span>
+				<h4>Quotes Commands</h4>
+			</div>
+		</div>
+          <style type="text/css">
+            .appendix-b-no-bullets { list-style-type:none; }
+			.appendix-b-no-bullets > li{
+				margin-bottom: 8px;
+				line-height: 1.4em;
+			}
+          </style> 
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <ul class="appendix-b-no-bullets">
+              <li>Quote SPY dec,16 strike 200</li>
+              <li>Show 3 week chart for ES fut dec 2016</li>
+              <li>What is NBBO of SPY 105 call Dec'16</li>
+              <li>Show me bid of SPY Dec16 105 CALL</li>
+              <li>What is last for SPY 16Dec16 105 call</li>
+              <li>What is NBBO for SPY expiring on 2016-12-16 105 call</li>
+              <li>I would like to know bid, ask and last for IBM CORP 1.25 Feb06'17</li>
+              <li>Show me the trading hours for ES FOP</li>
+              <li>Last trading day of SPY 105 call Dec'16</li>
+              <li>What is the expiration date for CL FUT Oct'16 @NYMEX?</li>
+              <li>Tell me about AAPL</li>
+              <li>Show me AAPL contract info</li>
+              <li>Display contract description for IBKR</li>
+              <li>Show me fundamentals for AAPL</li>
+              <li>Business summary for AAPL</li>
+              <li>Print trading calendar for AAPL</li>
+              <li>Tell me bid size of MM2 @SWB</li>
+              <li>Show volume</li>
+              <li>View price</li>
+              <li>Price IBKR</li>
+              <li>AAPL cost of materials</li>
+              <li>AAPL cost of labor</li>
+              <li>Show AAPL</li>
+              <li>BAC high price</li>
+              <li>BAC low price</li>
+              <li>BAC market cap</li>
+              <li>Show research for AAPL</li>
+              <li>Show AAPL quotes 3 weeks ago</li>
+              <li>News MSFT</li>
+              <li>Show me price of AAPL@MEXI</li>
+              <li>Quick Ratio for MSFT</li>
+              <li>Last AAPL</li>
+              <li>What is mid of IBKR?</li>
+              <li>Inside market AAPL</li>
+              <li>Gross Margin for MSFT</li>
+              <li>Free Cash Flow for MSFT</li>
+              <li>Free Cash Flow per share for MSFT</li>
+ 			</ul>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <ul class="appendix-b-no-bullets">
+              <li>Earnings before taxes for MSFT</li>
+              <li>Return on Equity for MSFT</li>
+              <li>Total debt/total equity for MSFT</li>
+              <li>Beta for MSFT</li>
+              <li>Revenue for MSFT</li>
+              <li>Revenue per Employee for MSFT</li>
+              <li>Revenue/Employee for MSFT</li>
+              <li>Price to revenue for MSFT</li>
+              <li>Price 1 week percent change for MSFT</li>
+              <li>Operating margin for MSFT</li>
+              <li>Current ratio for MSFT</li>
+              <li>Payout ratio for MSFT</li>
+              <li>Earnings date for MSFT</li>
+              <li>Receivables turnover for MSFT</li>
+              <li>Dividends for MSFT</li>
+              <li>Dividend date for MSFT</li>
+              <li>Dividend yield for MSFT</li>
+              <li>Earnings per share for MSFT</li>
+              <li>Show PE ratio for MSFT</li>
+              <li>Operating income for MSFT</li>
+              <li>Net income available to common for MSFT</li>
+              <li>Total current assets for MSFT</li>
+              <li>Total current liabilities for MSFT</li>
+              <li>Revenue change for MSFT</li>
+              <li>Return on investment for MSFT</li>
+              <li>Financing cash flow items for MSFT</li>
+              <li>Earnings/share change for MSFT</li>
+              <li>Cash from operating activities for MSFT</li>
+              <li>Book value per share for MSFT</li>
+              <li>Pretax margin for MSFT</li>
+              <li>Return on average assets for MSFT</li>
+              <li>Revenue per share for MSFT</li>
+              <li>Price 52 week high for MSFT</li>
+              <li>Price 52-week low for MSFT</li>
+              <li>Average volume MSFT</li>
+              <li>Show me upcoming dividends</li>
+            </ul>
+        	<p>  </p>
+			</div>
+  		</div>
+        <!--   Charts     -->
+		<div class="row">
+		  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<br>
+				<span class="id-drop"><span id="04-02"></span></span>
+			<h4>Charts Commands</h4>
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <ul class="appendix-b-no-bullets">
+                          <li>Chart for US-T BILL Jan26'17 for 1 week with hourly bars</li>
+                          <li>Show me price chart for SPY Sep-16 105C</li>
+                          <li>Plot short term chart for junior index</li>
+                          <li>Plot midpoint chart for SPY Sep16 16 105 call</li>
+                          <li>Price chart for SPY September $105 Call with midpoint</li>
+                          <li>History of AAPL</li>
+                          <li>Chart AAPL</li>
+                          <li>Show me 2 days price of AAPL</li>
+                          <li>Chart MSFT over 5 days</li>
+                          <li>Open chart for IBKR</li>
+                          <li>Chart on IBKR</li>
+                          <li>Draw AAPL 2 years 1 week bar chart</li>
+                    </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <ul class="appendix-b-no-bullets">
+                          <li>Give me 5 minute bar chart of IBKR</li>
+                          <li>Show AAPL ytd line chart</li>
+                          <li>Plot AAPL 5 days 10 mins bar chart</li>
+                          <li>Long term chart for usd.jpy</li>
+                          <li>Plot AAPL year chart 10 mins candles</li>
+                          <li>Plot TTM chart of IBKR</li>
+                          <li>Plot YTD chart of IBKR</li>
+                          <li>3 months historical volatility chart AAPL</li>
+                          <li>Price chart for AAPL with midpoint</li>
+                          <li>Year option implied volatility chart for AAPL with fee rate</li>
+                          <li>Chart AAPL vs MSFT</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+		</div>
+        <!--   Trades     -->
+		<div class="row">
+		  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<br>
+				<span class="id-drop"><span id="04-03"></span></span>
+			<h4>Trades Commands</h4>
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                      <ul class="appendix-b-no-bullets">
+                          <li>Show all of my filled orders</li>
+                          <li>Show all of my active orders</li>
+                          <li>Show all of my unfilled orders</li>
+                          <li>Show all of my completed orders</li>
+                          <li>Show canceled orders</li>
+                          <li>Show my open orders</li>
+                          <li>Show working orders</li>
+                          <li>Show working orders for computer companies</li>
+                          <li>Show IBKR orders</li>
+                          <li>Show working orders for TWTR and IBKR</li>
+                          <li>Show all orders that filled on NYSE</li>
+                          <li>List bond orders</li>
+                          <li>Display trades</li>
+                          <li>Show my trades for last week</li>
+                    </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <ul class="appendix-b-no-bullets">
+                          <li>Show yesterday's trades</li>
+                          <li>Show all yesterday's trades filled on CPH</li>
+                          <li>Show trades for IBKR</li>
+                          <li>Show trades for TWTR and IBKR</li>
+                          <li>Last 5 days trades filled on SEHK</li>
+                          <li>Trades filled on SGX and BM</li>
+                          <li>Trades for STK</li>
+                          <li>Stock trades filled on HEX or OSE</li>
+                          <li>All Futures trades</li>
+                          <li>Trades for past 4 days</li>
+                          <li>Show my Monday trades</li>
+                          <li>Show my Tuesday trades filled on ISLAND</li>
+                          <li>List Wednesday trades for futures</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--   Orders     -->
+		<div class="row">
+		  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<br>
+				<span class="id-drop"><span id="04-04"></span></span>
+			<h4>Orders Commands</h4>
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                      <ul class="appendix-b-no-bullets">
+                          <li>I would like to buy University of California 4.75 May15'22</li>
+                          <li>Buy BUF@FWB</li>
+                          <li>Place an order for December 2016 SPY 105 call</li>
+                          <li>Buy 2 of SPY Dec 16, 2016 105 call at mkt</li>
+                          <li>Buy 2 of GC Oct 27, 2016 @NYMEX</li>
+                          <li>Buy 3 of SPY DEC16 105C at ask</li>
+                          <li>Buy ZC May 26,2017 285 call at bid</li>
+                          <li>Buy 5 of SPY September 105 Call at 106</li>
+                          <li>Buy 500 of SEL at 100</li>
+                          <li>Buy 1000 AAPL</li>
+                          <li>Place an order for IBKR</li>
+                          <li>Buy 100k of EUR.USD</li>
+                          <li>Buy 1000$ worth IBKR at market</li>
+                          <li>Buy 300 shares of MSFT at ask</li>
+                    </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <ul class="appendix-b-no-bullets">
+                          <li>Buy 100 shares of IBKR at 40.95</li>
+                          <li>Buy 20 shares of that at market (applicable after looking at a quote or chart for a symbol)</li>
+                          <li>Buy additionally 100 of it at 40.0</li>
+                          <li>Short IBKR</li>
+                          <li>Sell 300 IBKR@mkt</li>
+                          <li>Sell 400 IBKR@last</li>
+                          <li>Buy 100 shares of AAPL on market open</li>
+                          <li>sell 100 IBKR shares at GTC</li>
+                          <li>Buy 200 lot of AAPL loo</li>
+                          <li>Buy 200 AAPL at moo</li>
+                          <li>Sell 300 shares of IBKR at limit on close</li>
+                          <li>Sell 1 lot</li>
+                          <li>Buy 300 more shares</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!--   Market Scanner Commands     -->
+		<div class="row">
+		  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<br>
+				<span class="id-drop"><span id="04-05"></span></span>
+			<h4>Market Scanner Commands</h4>
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                      <ul class="appendix-b-no-bullets">
+                          <li>US stocks top % gainers (winners/losers)</li>
+                          <li>US STK top % gainers (winners/losers)</li>
+                          <li>Top gaining (winning/losing/increasing/decreasing) US stocks</li>
+                          <li>US stock top gainers (winners/losers) in price</li>
+                          <li>Most advanced (declining) US stk</li>
+                          <li>Top risers (losers) of US stocks</li>
+                          <li>US stocks price % winners (losers)</li>
+                          <li>US STK price percentage leaders (losers)</li>
+                          <li>Top percentage gainers (winners/losers) for US stk</li>
+                          <li>Biggest percentage winners (gainers/losers) of US stocks</li>
+                          <li>US stocks biggest percent winners (gainers/losers)</li>
+                          <li>US stocks with biggest price increases (decreases)</li>
+                          <li>Top percent gainers (winners/losers) on US stock market</li>
+                          <li>Scan US stocks for top % gainers (winners/losers)</li>
+                          <li>Top gainers (winners/losers) in US stocks by percentage</li>
+                          <li>US stocks top percent gainers (winners/losers)</li>
+                          <li>Most up (down) US stocks</li>
+                          <li>Top US stock market gainers (winners/losers)</li>
+                          <li>Biggest US market winners (gainers/losers)</li>
+                          <li>US biggest percentage winners (gainers/losers)</li>
+                          <li>Find top US gainers (winners/losers)</li>
+                          <li>US Stocks with highest percent gain (loss)</li>
+                          <li>Highest gainer (winners/losers) for US stocks</li>
+                          <li>Greatest percent gains (losses) US stocks</li>
+                          <li>NYSE top % gainers (losers) US STK</li>
+                          <li>Top risers (losers) of US stocks on NYSE</li>
+                          <li>NYSE price % winners (gainers) US stocks</li>
+                          <li>Price percentage gainers (winners/losers) of US stocks on NYSE exchange</li>
+                          <li>Top percentage gainers (winners/losers) for US stk in NYSE</li>
+                          <li>Biggest percentage winners (gainers/losers) of US stocks at NYSE</li>
+                          <li>NYSE biggest percent winners (gainers/losers) US stocks</li>
+                          <li>US stocks with biggest price increases (decreases) on NYSE</li>
+                          <li>Worst losers of US stocks</li>
+                          <li>US stock losers</li>
+                          <li>Lowest gains for US stocks</li>
+                          <li>Greatest percent loss (gain) for US stocks</li>
+                          <li>Highest percent loss (gain) for US stocks</li>
+                          <li>NYSE US STK top % losers (gainers)</li>
+                          <li>Hot stocks that are moving US stock market</li>
+                          <li>Hot stocks trading today on US market</li>
+                          <li>Stock market movers in US</li>
+                          <li>Big movers among US stocks</li>
+                          <li>US market hot stocks today</li>
+                          <li>US hot stocks today</li>
+                          <li>most heavily traded us stocks</li>
+                          <li>top volume active us stocks</li>
+                          <li>most traded US stocks today</li>
+                          <li>most active US stocks today</li>
+                          <li>most active US stocks by volume</li>
+                          <li>most traded US stocks by volume</li>
+                          <li>show me us stocks with the most active trading</li>
+                          <li>Highest (Least) traded US stocks</li>
+                          <li>Top US stocks</li>
+                          <li>US stock winners (losers)</li>
+                          <li>high (low) volume traded us shares</li>
+                          <li>US stocks with highest (lowest) trading volume</li>
+                          <li>US stk volume leaders</li>
+                          <li>rank US stocks by highest (lowest) daily volume</li>
+                          <li>scan US stocks for the greatest daily volume</li>
+                          <li>show US stocks with largest (smallest) trade volume</li>
+                          <li>most active US stocks by dollar volume</li>
+                          <li>top $ volume US STK</li>
+                          <li>high $ vol US stk</li>
+                          <li>$ volume leaders of us stocks</li>
+                          <li>US stocks not yet traded today</li>
+                          <li>US stocks no deals today</li>
+                          <li>US STK not yet transacted</li>
+                          <li>not opened US stocks</li>
+                          <li>US Stocks with no trades today</li>
+                          <li>US stocks not traded today</li>
+                          <li>Show halted us stocks</li>
+                          <li>display stocks which are halted in US</li>
+                          <li>US STK trading halts</li>
+                          <li>Show trading pause US stocks</li>
+                          <li>Show Trading halt US stocks</li>
+                          <li>Today's halted stocks</li>
+                          <li>Hot stocks by price (volume) in US</li>
+                          <li>US market hot stocks by price (volume)</li>
+                          <li>Hottest US stocks by price (volume)</li>
+                          <li>Hottest by price (volume)</li>
+                          <li>US stocks having high dividend yield</li>
+                          <li>highest yield dividend US stocks</li>
+                          <li>US stocks with highest dividend per share yield</li>
+                          <li>Top trade rate US stocks</li>
+                          <li>Hot by price range us stocks</li>
+                          <li>US stocks with the largest volume/minute amount</li>
+                          <li>High 3 minute volume US stocks</li>
+                    </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <ul class="appendix-b-no-bullets">
+                          <li>Top % gainers since open for US stocks</li>
+                          <li>US stocks top close to open % losers</li>
+                          <li>Show US stocks with the lowest close to open percent gap</li>
+                          <li>Highest Option Imp Vol US stocks</li>
+                          <li>US stocks with the highest option implied volatility percent</li>
+                          <li>Lowest Option Imp Vol US stocks</li>
+                          <li>US stocks with the lowest option implied volatility percent</li>
+                          <li>Top Option Imp Vol % Gainers among US stocks</li>
+                          <li>US stocks with the largest percent gain in option implied volatility</li>
+                          <li>US stocks with the highest option implied volatility change</li>
+                          <li>US stocks with the lowest option implied volatility change</li>
+                          <li>High Option Imp Vol Over Historical for US stocks</li>
+                          <li>US stocks with the highest ratio of the implied volatility over the historical in percentage</li>
+                          <li>hottest buy side imbalance US stk</li>
+                          <li>Hot by Sell Imbalance US stocks</li>
+                          <li>US stocks with the highest sell-side imbalance</li>
+                          <li>hottest sell side imbalance US stk</li>
+                          <li>Hot by Buy Regulatory Imbalance US stocks</li>
+                          <li>US stocks with the highest buy-side regulatory imbalance</li>
+                          <li>US stocks 52-week high</li>
+                          <li>52 week high among US STK</li>
+                          <li>US stocks Upcoming IPO date</li>
+                          <li>upcoming initial public offering date for US stocks</li>
+                          <li>High Growth Rate of US stocks</li>
+                          <li>US stocks with the highest EPS growth rate</li>
+                          <li>US stocks with the highest Earnings Per Share growth rate</li>
+                          <li>Low Growth Rate of US stocks</li>
+                          <li>US stocks with the lowest EPS growth rate</li>
+                          <li>US stocks with the lowest Earnings Per Share growth rate</li>
+                          <li>High P/E Ratio of US stocks</li>
+                          <li>US stocks with the highest Price to Earnings ratio</li>
+                          <li>Low P/E Ratio of US stocks</li>
+                          <li>Low Price/Book Ratio of US stocks</li>
+                          <li>Low price to book ratio of us stocks</li>
+                          <li>US stocks with the lowest price-to-book ratio</li>
+                          <li>High Price/Tang. Book Ratio of US stocks</li>
+                          <li>US stocks with high price to tangible book ratio</li>
+                          <li>US stocks with the highest price-to-tangible book ratio</li>
+                          <li>Low Price/Tang. Book Ratio of US stocks</li>
+                          <li>US stocks with low price to tangible book ratio</li>
+                          <li>US stocks with the lowest price-to-tangible book ratio</li>
+                          <li>Upcoming major event of US stocks</li>
+                          <li>US stocks with high Fee Rate</li>
+                          <li>US stocks with low Fee Rate</li>
+                          <li>Show me top options in US</li>
+                          <li>Show most active us options</li>
+                          <li>top $ volume US OPT</li>
+                          <li>high $ vol US opt</li>
+                          <li>dollar volume traded top US options</li>
+                          <li>US options by dollar trading volume</li>
+                          <li>US futures top % gainers</li>
+                          <li>US FUT top % gainers</li>
+                          <li>us futures price % winners (losers)</li>
+                          <li>US FUT price percentage leaders</li>
+                          <li>top percentage gainers (losers) for us fut</li>
+                          <li>Show most active US FUT</li>
+                          <li>display most active by volume US fut</li>
+                          <li>Show halted us futures</li>
+                          <li>most heavily traded us futures on globex</li>
+                          <li>NYMEX most active us futures</li>
+                          <li>US indices top % losers</li>
+                          <li>price % decliners of US indices</li>
+                          <li>US indexes top % losers</li>
+                          <li>America non-US stocks top % gainers (losers)</li>
+                          <li>Top American stock movers outside US</li>
+                          <li>EU FUT price percentage leaders (losers)</li>
+                          <li>Europe indices top % gainers (losers)</li>
+                          <li>EU IND top % gainers (losers)</li>
+                          <li>Most advanced European indexes</li>
+                          <li>top risers (losers/decliners) of Europe's indexes</li>
+                          <li>Europe indexes price % winners (losers)</li>
+                          <li>Scan EU indices for top % losers (winners/gainers)</li>
+                          <li>Europe indexes top % losers</li>
+                          <li>Asia stocks top gainers in price</li>
+                          <li>Most advanced (declining) Asian stocks</li>
+                          <li>Show most active Asian stocks</li>
+                          <li>Top Asia stocks by dollar volume</li>
+                          <li>Asian stocks with highest dollar-volume</li>
+                          <li>Trading halts of Asian STK</li>
+                          <li>Flops (losers/winners) today</li>
+                          <li>What's the best short for today</li>
+                          <li>What are the highest volume etfs today</li>
+                          <li>active ibm bonds</li>
+                          <li>Show us stocks with largest change</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--   Market Depth/Level II Commands     -->
+		<div class="row">
+		  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<br>
+				<span class="id-drop"><span id="04-06"></span></span>
+			<h4>Market Depth Level II Commands</h4>
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                      <ul class="appendix-b-no-bullets">
+                          <li>Show market depth for this (use following another command for a specific symbol)</li>
+                          <li>show depth for this (use following another command for a specific symbol)</li>
+                          <li>aapl book</li>
+                          <li>apple book</li>
+                          <li>aapl level II book</li>
+                          <li>aapl depth</li>
+                          <li>aapl level2 data</li>
+                          <li>get aapl level ii data</li>
+                          <li>show aapl depth</li>
+                          <li>aapl level ii order book</li>
+                          <li>Level 2 market data for AAPL</li>
+                          <li>Show level 2 quotes for AAPL</li>
+                          <li>Show AAPL order book</li>
+                          <li>AAPL level II</li>
+                          <li>AAPL deep book</li>
+                          <li>Level II for AAPL</li>
+                    </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <ul class="appendix-b-no-bullets">
+                          <li>Deep book quote for AAPL</li>
+                          <li>BP. Depth</li>
+                          <li>ibkr depth</li>
+                          <li>EUR.USD depth</li>
+                          <li>bmw depth</li>
+                          <li>ibkr depth for bats</li>
+                          <li>show IBKR level 2 data in BATS</li>
+                          <li>Show NYSE order book for IBKR</li>
+                          <li>Show NYSE market depth for IBKR</li>
+                          <li>show depth NYSE IBKR</li>
+                          <li>show level 2 data IBKR NYSE</li>
+                          <li>IBKR deep book NYSE</li>
+                          <li>NYSE Level II IBKR</li>
+                          <li>NYSE depth for IBKR</li>
+                          <li>ibkr depth for bats, lse, nyse</li>
+                          <li>level 2 quotes msft and intc</li>
+                          <li>Show the order book for microsoft and intc</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!--   Option Chains Commands     -->
+		<div class="row">
+		  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<br>
+				<span class="id-drop"><span id="04-07"></span></span>
+			<h4>Option Chains Commands</h4>
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                      <ul class="appendix-b-no-bullets">
+                            <li>flo options</li>
+                          <li>flo option chain</li>
+                          <li>option chain for flo</li>
+                          <li>option chain for oil on nymex</li>
+                          <li>option chain for clz7</li>
+                          <li>option chain for dec17 heating oil</li>
+                          <li>option chain for heating oil Dec17</li>
+                          <li>all December 17 heating oil options</li>
+                          <li>all December heating oil options</li>
+                          <li>all 12/17 heating oil options</li>
+                          <li>all 12-17 heating oil options</li>
+                          <li>ibkr option chain</li>
+                          <li>aapl (apple) option chain</li>
+                          <li>options AAPL (apple)</li>
+                          <li>AAPL all option strike prices</li>
+                          <li>AAPL option strike prices</li>
+                          <li>option quotes AAPL</li>
+                          <li>all aapl strikes</li>
+                          <li>all options for aapl</li>
+                    </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <ul class="appendix-b-no-bullets">
+                          <li>aapl option chain for expiries Jan'17, Feb'17 and Mar'17 strikes 90 100 and 110</li>
+                          <li>aapl option chain with strikes from 90 100 and 110 and expiring Jan'17 Feb'17 and Mar'17</li>
+                          <li>AAPL option chain Jan – Mar 17 for strikes 90 100 110</li>
+                          <li>AAPL options 90 100 110 for Jan – Mar 17 expiry</li>
+                          <li>AAPL options 90 100 110 expiring Jan – Mar 17</li>
+                          <li>AAPL options Jan-March with 90-110 strikes</li>
+                          <li>AAPL options for Jan, Feb, March with strikes 90 – 110</li>
+                          <li>Option chains for AAPL jan-march with 90, 100 and 110 strikes</li>
+                          <li>ibm option chain for expiries Jan'17, Feb'17 and Mar'17 strikes 155 to 165</li>
+                          <li>aapl option chain with strikes from 100 to 120</li>
+                          <li>show AAPL options 100 to 120</li>
+                          <li>show AAPL option strikes 100 – 120</li>
+                          <li>AAPL options 100 to 120</li>
+                          <li>AAPL option chain for strikes 100 to 120</li>
+                          <li>AAPL strikes 100 to 120</li>
+                          <li>From 100-120 strikes for AAPL</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!--   Events Calendar Commands     -->
+		<div class="row">
+		  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<br>
+				<span class="id-drop"><span id="04-08"></span></span>
+			<h4>Calendar/Events Commands</h4>
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                      <ul class="appendix-b-no-bullets">
+                          <li>show economic events</li>
+                          <li>earnings for aapl</li>
+                          <li>show event calendars</li>
+                          <li>show events for next week</li>
+                          <li>display calendar for portfolio, watchlist, recently held and competitor companies</li>
+                          <li>display calendar for ibkr</li>
+                          <li>IBKR events calendar</li>
+                          <li>event calendars for Interactive Brokers</li>
+                          <li>Show event calendars for ibkr ticker</li>
+                          <li>display next scheduled event for ibkr</li>
+                          <li>What is the next most important event for ibkr</li>
+                          <li>What is the next most important calendar event for ibkr</li>
+                          <li>show me ibkr events</li>
+                          <li>show events for my portfolio</li>
+                          <li>my portfolio events</li>
+                          <li>show event calendar for US</li>
+                          <li>United States event calendars</li>
+                          <li>USA calendar of events</li>
+                          <li>Display upcoming calendar events in US</li>
+                          <li>show US events calendar for 12/26/2016</li>
+                          <li>show event calendar for EU</li>
+                          <li>display Europe's events calendar</li>
+                          <li>European calendar of events</li>
+                          <li>display upcoming calendar events in Europe</li>
+                          <li>show event calendar for America non-US region</li>
+                          <li>America non US events calendar</li>
+                          <li>american outside US event calendars</li>
+                          <li>show event calendar for Asia</li>
+                          <li>Asian events calendar</li>
+                          <li>Asia's calendar of events</li>
+                          <li>display corporate earnings</li>
+                          <li>Show corporate earnings calendar</li>
+                          <li>Show event calendar for earnings</li>
+                          <li>Company earnings announcements</li>
+                          <li>Earnings announced by companies</li>
+                          <li>Display earnings reports</li>
+                          <li>schedule of corporate earnings</li>
+                          <li>corporate earnings preview</li>
+                          <li>corporate earnings lineup</li>
+                          <li>When is sbux earnings</li>
+                          <li>When is sbux earnings date</li>
+                          <li>When will sbux earnings be announced?</li>
+                          <li>when does sbux report earnings</li>
+                          <li>earnings announcements for sbux</li>
+                          <li>sbux earnings calendar</li>
+                          <li>Show corporate earnings from 12/08/2016 until 1/10/2017</li>
+                          <li>Show dividends calendar</li>
+                    </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <ul class="appendix-b-no-bullets">
+                          <li>Display dividend payment dates</li>
+                          <li>Show dividends schedule</li>
+                          <li>List of upcoming dividend dates</li>
+                          <li>dividends timetable</li>
+                          <li>Dividends payout dates</li>
+                          <li>When is the next dividend payable date for oracle</li>
+                          <li>When is the ex. dividend date for oracle?</li>
+                          <li>get ORCL dividend calendars</li>
+                          <li>Upcoming IPOs</li>
+                          <li>Secondary public offerings</li>
+                          <li>SPOs calendar</li>
+                          <li>Initial & secondary offerings</li>
+                          <li>Upcoming secondary offering in europe</li>
+                          <li>show next month secondary offerings</li>
+                          <li>stock split calendar</li>
+                          <li>calendar of stocks splits for AAPL</li>
+                          <li>AAPL stock splits</li>
+                          <li>shares splits dates of AAPL</li>
+                          <li>AAPL upcoming stock splits</li>
+                          <li>stock splitting for AAPL</li>
+                          <li>US stock splits calendar</li>
+                          <li>upcoming stocks splits in US</li>
+                          <li>United States stock splits</li>
+                          <li>EU stock splits calendar</li>
+                          <li>Europe's stock splitting</li>
+                          <li>European stocks splits schedule</li>
+                          <li>corporate events</li>
+                          <li>corporate event calendar</li>
+                          <li>calendar of corporate events</li>
+                          <li>upcoming corporate events</li>
+                          <li>schedule of corporate events</li>
+                          <li>corporate events timetable</li>
+                          <li>BAC corporate events</li>
+                          <li>economic events</li>
+                          <li>economic event calendar</li>
+                          <li>calendar of economic events</li>
+                          <li>upcoming economic events</li>
+                          <li>US economic events</li>
+                          <li>economic event calendar in United States</li>
+                          <li>discover economic events in US</li>
+                          <li>show calendar with economic events in europe</li>
+                          <li>option last trade dates</li>
+                          <li>last trading days of options</li>
+                          <li>option last trade dates for SPY</li>
+                          <li>weekly option last trade dates</li>
+                          <li>show dividend calendar for companies in my portfolio</li>
+                          <li>show earnings dates for companies in my portfolio</li>
+                          <li>Are there any splits and corporate events for sbux?</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--   CLOSE POSITION   -->
+		<div class="row">
+		  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<br>
+				<span class="id-drop"><span id="04-09"></span></span>
+			<h4>Close Position Commands</h4>  
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">    
+                      <ul class="appendix-b-no-bullets">
+                          <li>Close AGFS position</li>
+                          <li>Close AAPL position at market</li>
+                          <li>Close 10 percent of AAPL position</li>
+                          <li>Close 23 percent of short stocks</li>
+                          <li>Close positions at market</li>
+                          <li>Close positions at ask</li>
+                          <li>Close all positions</li>
+                          <li>Sell everything</li>
+                          <li>Sell everything at bid</li>
+                          <li>Close my position in IBKR</li>
+                          <li>Sell all of my IBKR stock</li>
+                    </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <ul class="appendix-b-no-bullets">
+                          <li>Increase IBKR position by 50%</li>
+                          <li>Decrease IBKR position by 30</li>
+                          <li>Sell 60% of my IBKR</li>
+                          <li>Sell 60% of position in this (applicable after looking at a symbol in a chart or quote or order)</li>
+                          <li>Sell 100 of my IBKR</li>
+                          <li>Close short positions</li>
+                          <li>Close my stock positions</li>
+                          <li>Close all at market using GTC time in force</li>
+                          <li>Close positions at ask with 0.2 offset</li>
+                          <li>Close positions at bid with -0.1 offset</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--   My Account     -->
+		<div class="row">
+		  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<br>
+				<span class="id-drop"><span id="04-10"></span></span>
+			<h4>My Account Commands</h4>    
+              <ul class="appendix-b-no-bullets">
+                  <li>How much money I can withdraw?</li>
+                  <li>How much money do I have?</li>
+                  <li>Available funds</li>
+                  <li>Cash balance</li>
+                  <li>What is my buying power?</li>
+                  <li>Show my account summary</li>
+                  <li>Show me my account</li>
+                  <li>Daily P&L for IBKR</li>
+                  <li>Unrealized P&L for IBKR</li>
+                  <li>Realized P&L for IBKR</li>
+                  <li>Display P&L</li>
+                  <li>Current P&L</li>
+                  <li>What is my NLV?</li>
+                  <li>What's my overnight margin?</li>
+                  <li>Buying power and Margin</li>
+            </ul>
+            </div>
+		</div>
+	</div>
+</section>
+</div>
+<!-- FOOTER START ---------------------------------------------------------------------------------------------------- -->
+<footer class="footer noprint" id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p>Interactive Brokers ®, IB<sup>SM</sup>, InteractiveBrokers.com ®, Interactive Analytics ®, IB Options Analytics<sup>SM</sup>, IB SmartRouting<sup>SM</sup>, PortfolioAnalyst ®, IB Trader Workstation<sup>SM</sup> and One World, One Account<sup>SM</sup> are service marks and/or trademarks of Interactive Brokers LLC. Supporting documentation for any claims and statistical information will be provided upon request. Any trading symbols displayed are for illustrative purposes only and are not intended to portray recommendations.</p>
+                <p>The risk of loss in online trading of stocks, options, futures, currencies, foreign equities, and fixed Income can be substantial.</p>
+                <p>Options involve risk and are not suitable for all investors. For more information read the <a href="https://www.theocc.com/about/publications/character-risks.jsp" rel="noreferrer noopener" target="_blank">Characteristics and Risks of Standardized Options</a>, also known as the options disclosure document (ODD). Alternatively, please contact <a href="../support/customer-service.php.html?p=contact" target="_self">IB Customer Service</a> to receive a copy of the ODD. Before trading, clients must read the relevant risk disclosure statements on our <a href="../general/homepage-disclosures.php.html" target="_self">Warnings and Disclosures page</a>. Trading on margin is only for experienced investors with high risk tolerance. You may lose more than your initial investment. For additional information about rates on margin loans, please see <a href="margin-rates.php.html" target="_self">Margin Loan Rates</a>. Security futures involve a high degree of risk and are not suitable for all investors. The amount you may lose may be greater than your initial investment. Before trading security futures, read the <a href="../general/homepage-disclosures.php.html" target="_self">Security Futures Risk Disclosure Statement</a>. Structured products and fixed income products such as bonds are complex products that are more risky and are not suitable for all investors. Before trading, please read the <a href="../general/homepage-disclosures.php.html" target="_self">Risk Warning and Disclosure Statement</a>.</p>
+                <p>For information on the IBKR ATS, please <a href="https://www.sec.gov/divisions/marketreg/form-ats-n-filings.htm#ats-n" rel="noreferrer noopener" target="_blank">visit the SEC site</a>.</p>
+                <p>34 countries include both countries and territories.</p>
+			</div>
+		</div>
+        <div class="footer-site-links" id="footerSiteLinks">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>Account</p>
+                    <ul>
+                    <li><a href="/sso/Login?RL=1" target="_self">Log In</a></li>
+                    <li><a href="/Universal/Application" target="_self">Open an Account</a></li>
+                    <li><a href="/sso/Login?c=t" target="_self">Finish an Application</a></li>
+                    <li><a href="../accounts/account-guide.php.html" target="_self">Account Types</a></li>
+                    <li><a href="/Universal/Application?ft=T" target="_self">Free Trial</a></li>
+                    </ul>
+                    <p>Software & Downloads</p>
+                    <ul>
+                    <li><a href="tws.php.html#tws-software" target="_self">Trader Workstation</a></li>
+                    <li><a href="ibkr-desktop.php.html" target="_self">IBKR Desktop</a></li>
+                    <li><a href="tws-mobile.php.html#trytoday" target="_self">IBKR Mobile</a></li>
+                    <li><a href="ib-api.php.html#api-software" target="_self">APIs</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>Support</p>
+                    <ul>
+                    <li><a href="../support/fund-my-account.php.html" target="_self">Fund Your Account</a></li>
+					<li><a href="../support/individuals.php.html" target="_self">For Individuals</a></li>
+                    <li><a href="../support/institutions.php.html" target="_self">For Institutions</a></li>
+                    <li><a href="../support/institutional-sales-contacts.php.html" target="_self">Institutional Sales Contacts</a></li>
+					<li><a href="../general/contact/ibot-container.php.html" target="_self">Browse our FAQs</a></li>
+					<li><a href="../software/systemStatus.php.html" target="_self">System Status</a></li>
+                    </ul>
+                    <p>Vendor Support</p>
+                    <ul>
+                    <li><a href="../general/about/supplier-information.php.html" target="_self">Supplier Information</a></li>
+                    </ul>
+                    
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>About Us</p>
+                    <ul>
+                    <li><a href="../general/awards.php.html" target="_self">Awards</a></li>
+                    <li><a href="../general/about/careers-splash.php.html" target="_self">Careers</a></li>
+                    <li><a href="../general/about/about.php.html" target="_self">Information and History</a></li>
+                    <li><a href="https://investors.interactivebrokers.com/ir/main.php" target="_self">Investor Relations</a></li>
+                    <li><a href="../about/news-at-ibkr.php.html" target="_self">News @ IBKR</a></li>
+                    <li><a href="../general/about/press-and-media.php.html" target="_self">Press and Media</a></li>
+                    <li><a href="../accounts/legalDocuments/brokerPerformanceReports.php.html" target="_self">Regulatory Reports</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>Follow Us on Social Media</p>
+                    <ul>
+                    <li><a href="https://www.facebook.com/interactivebrokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com/interactivebrokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/company/interactive-brokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="https://www.twitter.com/ibkr" target="_blank" rel="noreferrer noopener"><i class="fab fa-x-twitter"></i> Twitter</a></li>
+                    <li><a href="https://www.youtube.com/interactivebrokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-youtube"></i> YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-disclosure-links" id="footerDisclosureLinks">
+            <div class="row">
+                <div class="col">
+                    <ul>
+                    <li><a href="../accounts/legalDocuments/accessibility-policy.php.html" target="_self">Accessibility Policy</a></li>
+                    <li><a href="../accounts/legalDocuments/anti-fraud-notice.php.html" target="_self">Anti-Fraud Notice</a></li>
+                    <li><a href="../accounts/legalDocuments/custIdentificationNotice.php.html" target="_self">Customer Identification Program Notice</a></li>
+                    <li><a href="../../Universal/servlet/Registration_v2-1.formSampleView?formdb=4024" target="_blank" rel="noreferrer noopener">Customer Relationship Summary</a></li>
+                    <li><a href="../general/warnings-on-frauds-and-scams.php.html" target="_self">Warning on Frauds and Scams</a></li>
+                    <li><a href="../accounts/forms-and-disclosures-client-agreements.php.html" target="_self">Forms and Disclosures</a></li>
+                    <li><a href="../accounts/legalDocuments/privacy.php.html" target="_self">Privacy</a></li>
+                    <li><a href="../sitemap/index.php.html" target="_self">Site Map</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-entities" id="footerEntities">
+            <div class="row">
+                <div class="col">
+                    <div class="footer-entity">
+                        <!-- IBKR LLC -->
+                        <p class="entity-name"><a href="https://www.interactivebrokers.com" target="_self">Interactive Brokers LLC</a></p>
+                        <p>Is a member <a rel="noreferrer noopener" target="_blank" href="https://www.nyse.com">NYSE</a> - <a href="https://www.finra.org" rel="noreferrer noopener" target="_blank">FINRA</a> - <a href="https://www.sipc.org" rel=" noreferrer noopener" target="_blank">SIPC</a> and regulated by the US Securities and Exchange Commission and the Commodity Futures Trading Commission.<br> <strong>Headquarters:</strong> One Pickwick Plaza, Greenwich, CT 06830 USA<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.com" target="_self">www.interactivebrokers.com</a></p>
+                                                <p class="footer-entities-link"><a href="#collapseEntities" target="_self" class="collapsed" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseEntities">Information on Other Interactive Brokers Affiliates</a></p>
+                    </div>
+                    <div class="footer-entities-list collapse" id="collapseEntities">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <!-- IBKR CA -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.ca/en/home.php?nored=t" target="_self">Interactive Brokers Canada Inc.</a></p>
+                                <p>Is a member of the                                 <a href="https://www.ciro.ca" target="_blank" rel="noreferrer noopener">Canadian Investment Regulatory Organization (CIRO)</a> 
+                                 
+                                and Member - <a href="https://www.cipf.ca" target="_blank" rel="noreferrer noopener">Canadian Investor Protection Fund.</a><br> <strong>Registered Office:</strong> 1800 McGill College Avenue, Suite 2106, Montreal, Quebec, H3A 3J6, Canada.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.ca/en/home.php?nored=t" target="_self">www.interactivebrokers.ca</a></p>
+                                <!-- IBKR UK -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.co.uk/en/home.php?nored=t" target="_self">Interactive Brokers (U.K.) Limited </a></p>
+                                <p>Is authorised and regulated by the <a href="https://www.fca.org.uk" target="_blank" rel="noreferrer noopener">Financial Conduct Authority</a>. FCA register entry number 208159. Incorporated in England & Wales under company number 03958476. <a href="https://www.fca.org.uk/firms/financial-services-register" target="_blank" rel="noreferrer noopener">[https://www.fca.org.uk/firms/financial-services-register]</a><br> <strong>Registered Office:</strong> 20 Fenchurch Street, Floor 12, London EC3M 3BY.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.co.uk/en/home.php?nored=t" target="_self">www.interactivebrokers.co.uk</a></p>
+                                <!-- IBKR IE -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.ie/en/home.php?nored=t" target="_self">Interactive Brokers Ireland Limited</a></p>
+                                <p>Is regulated by the <a href="https://www.centralbank.ie" target="_blank" rel="noreferrer noopener">Central Bank of Ireland</a> (CBI, reference number C423427), registered with the Companies Registration Office (CRO, registration number 657406), and is a member of the Irish Investor Compensation Scheme (ICS).<br> <strong>Registered Office:</strong> North Dock One, 91/92 North Wall Quay, Dublin 1 D01 H7V7, Ireland.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.ie/en/home.php?nored=t" target="_self">www.interactivebrokers.ie</a></p>
+                                <!-- IBKR HU -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.hu/en/home.php?nored=t" target="_self">Interactive Brokers Central Europe Zrt.</a></p>
+                                <p>Is licensed and regulated by the <a href="https://www.mnb.hu/" target="_blank" rel="noreferrer noopener">Central Bank of Hungary (Magyar Nemzeti Bank)</a> under no. H-EN-III-623/2020. Company registration number 01-10-141029. Registering Court: Company Registry of the Metropolitan General Court.<br> <strong>Registered Office:</strong> 1075 Budapest, Madách Imre út 13-14., Hungary.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.hu/en/home.php?nored=t" target="_self">www.interactivebrokers.hu</a></p>
+                                <!-- IBKR AUS -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.com.au/en/home.php?nored=t" target="_self">Interactive Brokers Australia Pty. Ltd.</a></p>
+                                <p>ABN 98 166 929 568 is licensed and regulated by the <a href="https://asic.gov.au/" target="_blank" rel="noreferrer noopener">Australian Securities and Investments Commission</a> (AFSL: 453554) and is a participant of <a href="https://www.asx.com.au/" target="_blank" rel="noreferrer noopener">ASX</a>, <a href="https://www.asx.com.au/" target="_blank" rel="noreferrer noopener">ASX 24</a> and <a href="https://www.cboe.com.au/" target="_blank" rel="noreferrer noopener">Cboe Australia</a>.<br> <strong>Registered Office:</strong> Level 11, 175 Pitt Street, Sydney, New South Wales 2000, Australia.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.com.au/en/home.php?nored=t" target="_self">www.interactivebrokers.com.au </a></p>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <!-- IBKR HK -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.com.hk/en/home.php?nored=t" target="_self">Interactive Brokers Hong Kong Limited</a></p>
+                                <p>Is regulated by the Hong Kong Securities and Futures Commission, and is a member of the <a href="https://www.hkex.com.hk" target="_blank" rel="noreferrer noopener">SEHK</a> and the <a href="https://www.hkex.com.hk" target="_blank" rel="noreferrer noopener">HKFE</a>.<br> <strong>Registered Office:</strong> Suite 1512, Two Pacific Place, 88 Queensway, Admiralty, Hong Kong SAR.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.com.hk/en/home.php?nored=t" target="_self">www.interactivebrokers.com.hk</a></p>
+                                <!-- IBKR IN -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.co.in/en/home.php?nored=t" target="_self">Interactive Brokers India Pvt. Ltd.</a></p>
+                                <p>Is a trading member of <a href="https://www.nseindia.com/" target="_blank" rel="noreferrer noopener">NSE</a>, <a href="https://www.bseindia.com/" target="_blank" rel="noreferrer noopener">BSE</a>, and depository participant of <a href="https://nsdl.co.in/" target="_blank" rel="noreferrer noopener">NSDL</a>. <a href="https://www.sebi.gov.in" target="_blank" rel="noreferrer noopener">SEBI</a> Registration No. INZ000217730; NSDL: IN-DP-602-2021. CIN-U67120MH2007FTC170004.<br> <strong>Registered Office:</strong> 502/A, Times Square, Andheri Kurla Road, Andheri East, Mumbai 400059, India.<br> <strong>Phone:</strong> +91-22-61289888 <span class="pipe">|</span> <strong>Fax:</strong> +91-22-61289898.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.co.in/en/home.php?nored=t" target="_self">www.interactivebrokers.co.in</a></p>
+                                <!-- IBKR JP -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.co.jp/en/home.php?nored=t" target="_self">Interactive Brokers Securities Japan Inc.</a></p>
+                                <p>Is regulated by Kanto Local Finance Bureau (Registration No.187) and is a member of <a href="https://www.jsda.or.jp/" target="_blank" rel="noreferrer noopener">Japan Securities Dealers Association</a> and <a href="https://www.nisshokyo.or.jp" target="_blank" rel="noreferrer noopener">The Commodity Futures Association of Japan</a>.<br> <strong>Registered Office:</strong> Kasumigaseki Building 25F, 2-5 Kasumigaseki 3-chome, Chiyoda-ku, Tokyo, 100-6025 Japan.<br> <strong>Phone:</strong> +81 03-4590-0711 <em>(On business days from 8:30-17:30 JST)</em>.<br> <strong>Website:</strong>  <a href="https://www.interactivebrokers.co.jp/en/home.php?nored=t" target="_self">www.interactivebrokers.co.jp</a></p>
+                                <!-- IBKR SG -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.com.sg/en/home.php?nored=t" target="_self">Interactive Brokers Singapore Pte. Ltd.</a></p>
+                                <p>Is licensed and regulated by the Monetary Authority of Singapore (Licence No. CMS100917).<br> <strong>Registered Office:</strong> #40-02A, Asia Square Tower 1, 8 Marina View, Singapore 018960.<br> <strong>Website:</strong>  <a href="https://www.interactivebrokers.com.sg/en/home.php?nored=t" target="_self">www.interactivebrokers.com.sg</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- FOOTER END ---------------------------------------------------------------------------------------------------- -->
+<!-- SHARE ON SOCIAL ---------------------------------------------------------------------------------------------------->
+<div class="social-sidebar animated fadeInLeft noprint">
+	<span><i class="fa fa-chevron-left"></i><i class="fa fa-chevron-right"></i></span>
+	<div class="icon-set">
+		<p>SHARE</p>
+		<div class="share-icon"><a href="/insights/ibtr_alerts.php?tiv=23573&cl=F&p=T" target="_blank" rel="noreferrer noopener" title="Share on Facebook" aria-label="Share on Facebook" class="icon-facebook"><i class="fab fa-facebook-square"></i></a></div>
+		<div class="share-icon"><a href="/insights/ibtr_alerts.php?tiv=23573&cl=T&p=T" target="_blank" rel="noreferrer noopener" title="Share on Twitter" aria-label="Share on Twitter" class="icon-twitter"><i class="fab fa-x-twitter"></i></a></div>
+		<div class="share-icon"><a href="/insights/ibtr_alerts.php?tiv=23573&cl=L&p=T" target="_blank" rel="noreferrer noopener" title="Share on Linkedin" aria-label="Share on Linkedin" class="icon-linkedin"><i class="fab fa-linkedin"></i></a></div>
+		<div class="share-icon"><a href="javascript:void(0);" target="_self" title="Share by Email" aria-label="Share by Email" name="btn_trigger" data-bs-toggle="modal" data-bs-target="#emailModal" id="23573" onclick="emailCookie();" class="icon-email"><i class="far fa-envelope"></i></a></div>
+	</div>
+</div>
+<!-- MODAL START | SHARE ON SOCIAL ---------------------------------------------------------------------------------------------------->
+<div class="modal fade noprint" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button id="cls_frm_1" type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="gridSystemModalLabel"><i class="far fa-envelope text-gray"></i> Email</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col">
+						<form>
+							<div class="form-group">
+								<label for="_to" class="control-label">To:</label> <span id="_err_to" style="color: red;"></span>
+								<input type="text" class="form-control" id="_to">
+							</div>
+							<div class="form-group">
+								<label for="_from" class="control-label">From:</label> <span id="_err_frm" style="color: red;"></span>
+								<input type="text" class="form-control" id="_from">
+							</div>
+							<div class="form-group">
+								<label for="_subject" class="control-label">Subject:</label> <span id="_err_subject" style="color: red;"></span>
+								<input type="text" class="form-control" id="_subject" value="Interactive Brokers">
+							</div>
+							<div class="form-group">
+								<textarea class="form-control" id="_content" style="height:200px;"></textarea>
+							</div>
+							<p class="text-sm">URL: <span class="text-italic text-black">www.interactivebrokers.com/en/index.php?f=<span id='vid'></span></span></p>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<div class="row">
+					<div class="col-6">
+						<div align="left">
+							<button id="cls_frm_2" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+					<div class="col-6">
+						<div align="right">
+							<button type="button" class="btn btn-primary" id="send">Send</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<input type="hidden" id="_page_id" name="_page_id" value="23573">
+</div>
+<!-- MODAL END | SHARE ON SOCIAL ----------------------------------------------------------------------------------------------------> 
+<script type="text/javascript" src="../../insights/ibtr_share.js?t=v1"></script>
+<script>
+$(document).ready(function() {
+	 $(".social-sidebar span").click(function(){
+		 $(".social-sidebar div").toggleClass("social-sidebar-hide");
+		 $(".social-sidebar span").toggleClass("toggle-arrow");
+ 	 });
+});
+function emailCookie() {
+	if (document.cookie.indexOf("IB_EM_SH") == -1) {
+		var ex=new Date();
+		ex.setTime(ex.getTime()+86400000);
+		document.cookie ='IB_EM_SH='+1+';expires='+ex.toGMTString()+';path=/;domain=';
+	}
+}
+</script>
+<!-- SCRIPTS FOOTER ---------------------------------------------------------------------------------------------------- -->
+<script type="text/javascript" src="../../scripts/common/js/zeynep-2.2.0/zeynep.js"></script>
+<script type="text/javascript" src="../../scripts/common/js/lazyload/lazyload.min.js"></script>
+<script type="text/javascript" src="../../search/conversions-458.js?t=1718765872"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+    // GATHER HEIGHT OF HEADER
+    var defaultMarginTop = $("div#ibkr-header").outerHeight();
+    // SET MARGIN-TOP OF CONTENTS
+    $("div#contents").css("margin-top", defaultMarginTop);
+    // ON WINDOW RESIZE CALCULATE THE HEIGHT OF THE HEADER AND USE THAT AS THE MARGIN-TOP OF CONTENTS DIV
+    $(window).resize(function() {
+        var headerHeight = $("div#ibkr-header").outerHeight();
+        var headerHeightDelta = headerHeight - defaultMarginTop;
+        $("div#contents").css("margin-top", defaultMarginTop + headerHeightDelta);
+    });
+    // BANNER | REGION SELECTOR
+    $("#bannerRegionSelector a.btn-close").click(function() {
+        // On banner close, set margin-top on timeout
+        setTimeout(function() {
+            var headerHeight = $("div#ibkr-header").outerHeight();
+            $("div#contents").css("margin-top", headerHeight);
+        },500);
+    });
+    // MOBILE MENU
+    $(function() {
+        // Initilize mobile menu
+        var zeynep = $('.menu-mobile').zeynep({
+            opened: function () {
+        },
+        closed: function () {
+            }
+        })
+        // Dynamically bind closing event
+        zeynep.on('closing', function () {
+        })
+        // Mobile menu close on overlay click
+        $('.website-overlay').on('click', function () {
+            zeynep.close()
+        })
+        // Mobile menu close on button click
+        $('.btn-close').on('click', function () {
+            zeynep.close()
+        })
+        // Mobile menu open on navbar-toggler click
+        $('.navbar-toggler').on('click', function () {
+            zeynep.open()
+        })
+    })
+});
+</script>
+ <script>var ibdmn='interactivebrokers.co.uk';(function(d,c){let s=d.createElement('script');s.src='https://www.interactivebrokers.co.uk/mkt/ibgtag.js?wbst='+c;s.id='_ib_tag';s.async=true;d.getElementsByTagName('head')[0].appendChild(s);})(document,'UK');</script><!-- STYLES FOOTER ---------------------------------------------------------------------------------------------------- -->
+<link rel="preload" as="font" type="font/woff2" href="../../fonts/fontawesome-6.4.2/webfonts/fa-brands-400.woff2" crossorigin="">
+<link rel="preload" as="font" type="font/woff2" href="../../fonts/fontawesome-6.4.2/webfonts/fa-regular-400.woff2" crossorigin="">
+<link rel="preload" as="font" type="font/woff2" href="../../fonts/fontawesome-6.4.2/webfonts/fa-solid-900.woff2" crossorigin="">
+<link rel="preload" as="style" href="../../css/fontawesome-6.4.2/all.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/fontawesome-6.4.2/all.min.css">
+<link rel="preload" as="style" href="../../css/animate-3.7.2/animate.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/animate-3.7.2/animate.min.css">
+<link rel="preload" as="style" href="../../css/bootstrap-switch-3.3.2/bootstrap-switch.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/bootstrap-switch-3.3.2/bootstrap-switch.min.css">
+<link rel="preload" as="style" href="../../css/ibkr/website-print.min.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../css/ibkr/website-print.min.css"></body>
+</html>

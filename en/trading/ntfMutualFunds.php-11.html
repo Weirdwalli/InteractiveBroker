@@ -1,0 +1,3387 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<title>No Transaction Fee Mutual Funds | Interactive Brokers LLC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"> 
+<meta name="description" content="No Transaction Fee (NTF) Mutual Funds do not assess a ticket charge to place a mutual fund trade.">
+<meta name="keywords" content="No Transaction Fee Mutual Funds">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="expires" content="-1">
+<meta name="robots" content="index, follow">
+<meta http-equiv="pragma" content="no-cache">
+<!--Pid:13654-->
+<link rel="canonical" href="ntfMutualFunds.php-1.html">
+<meta name="apple-mobile-web-app-title" content="IBKR">
+<link rel="icon" sizes="192x192" href="../../images/web/favicons/home-screen-icon-192x192.png">
+<link rel="icon" sizes="128x128" href="../../images/web/favicons/home-screen-icon-128x128.png">
+<link rel="apple-touch-icon" sizes="57x57" href="../../images/web/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../images/web/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../images/web/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../images/web/favicons/apple-touch-icon-144x144.png">
+<!-- SCRIPTS HEAD ---------------------------------------------------------------------------------------------------- -->
+<script type="text/javascript" src='../../scripts/common/js/jquery-3.6.1/jquery.min.js'></script>
+<script type="text/javascript">
+function createScriptElement(data) {
+ if (typeof data == "undefined") {
+  return;
+ }
+ var element = document.createElement("SCRIPT");
+ element.type = "text/javascript";
+ if (typeof data.id != "undefined") {
+  element.id = data.id;
+ }
+ if (typeof data.source != "undefined") {
+  element.src = data.source;
+ }
+ if (typeof data.loadfunction == "function") {
+  element.onload = data.loadfunction;
+ }
+ document.head.appendChild(element);
+}
+createScriptElement({ source : "/scripts/common/js/bootstrap-5.2.2/bootstrap.bundle.min.js", loadfunction: bsLoaded  });
+createScriptElement({ source : "/scripts/common/js/lib.js?ver=9" });
+function bsLoaded() {
+  createScriptElement({ source : "/scripts/common/js/appear/appear.min.js?ver=1" });
+  createScriptElement({ source : "/scripts/common/js/easing/easing.min.js?ver=1" });
+  createScriptElement({ source : "/scripts/common/js/parallax/parallax.min.js?ver=1" });
+  createScriptElement({ source : "/scripts/common/js/uitotop/uitotop.min.js?ver=1", loadfunction: uiLoaded });
+}
+function uiLoaded() {
+  createScriptElement({ source : "/scripts/common/js/twsUtils.js?ver=2" });
+  createScriptElement({ source : "/scripts/common/js/design/design.js?ver=1" }); 
+}
+</script>
+<script type="text/javascript">
+$(function() {
+  let ex=new Date();
+  ex.setTime(ex.getTime()+86400000);
+  document.cookie ='IB_REST=1;expires='+ex.toGMTString()+';path=/;domain=.interactivebrokers.com';
+  $('div#langselector').find('a').each(function() {
+  $(this).click(function() {
+   var link = $(this).attr("href");
+   if(link.match(/\/(en|fr|de|es|it|ru|cn|jp)\//))
+   {
+    var langs = link.split("/");
+    if(langs[3] == 'en' || langs[3] == 'fr' || langs[3] == 'de' || langs[3] == 'es' || langs[3] == 'it' || langs[3] == 'ru' || langs[3] == 'cn' || langs[3] == 'jp')
+    {
+      var lang = langs[3];
+      if(lang == 'cn')
+      {
+        lang = 'zh_CN';
+      }
+      if(lang == 'jp')
+      {
+        lang = 'ja';
+      }
+      if(hasCookie("IB_LANG"))
+      {
+        deleteCookie("IB_LANG");
+      }
+      setCookie("IB_LANG", lang, 7, '.interactivebrokers.com');
+    } else if(langs[1] == 'en') {
+      var lang = 'en';
+      setCookie("IB_LANG", lang, 7, '.interactivebrokers.com');
+    }
+   }
+  });
+ });
+ $('p#bandaid-close').click(function() {
+  setCookie("IB_BANDAID", 1, 30, '.interactivebrokers.com');
+ });
+ $('a#btnCloseBannerRegionSelector').click(function() {
+  setCookie("IB_REGION_SEL", 1, 30, '.interactivebrokers.com');
+ });
+});
+</script>
+<script>var e=document.createElement("script");e.type='text/javascript';e.src='/scripts/common/js/ibtrk.js?v=14';document.head.appendChild(e);_ibp=13654;</script>
+<!-- STYLES HEAD -->
+<link rel="preload" as="style" href="../../css/bootstrap-5.2.2/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/bootstrap-5.2.2/bootstrap.min.css">
+<link rel="preload" as="style" href="../../css/ibkr/website.min.css?v=25dbb9871dad19f5b220266180efb316">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/ibkr/website.min.css?v=25dbb9871dad19f5b220266180efb316">
+<link rel="preload" as="style" href="../../css/ibkr/theme-ibkr.min.css?v=25dbb9871dad19f5b220266180efb316">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/ibkr/theme-ibkr.min.css?v=25dbb9871dad19f5b220266180efb316"><script language='javascript' type='text/javascript' src='../../scripts/common/js/actb.js'></script>
+<style type="text/css">
+table.tablesorter td:hover { cursor:auto !important;  }
+</style>
+
+<script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch"}]);</script>
+                              <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="CGJ34-S5RKA-7ZQ8F-AJER9-TWWVG",function(){function e(){if(!o){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,i.parentNode.appendChild(e),o=!0}}function t(e){o=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(i.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",i.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"CGJ34-S5RKA-7ZQ8F-AJER9-TWWVG";var i=document.currentScript||document.getElementsByTagName("script")[0],o=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!o)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),i.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="nfygq4tacd4isztsqcia-f-cd9fadf0c-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,o={"ak.v":"37","ak.cp":"1131468","ak.ai":parseInt("665092",10),"ak.ol":"0","ak.cr":143,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"15df36c4","ak.r":42379,"ak.a2":n,"ak.m":"a","ak.n":"essl","ak.bpcip":"105.112.104.0","ak.cport":7791,"ak.gh":"23.77.196.137","ak.quicv":"","ak.tlsv":"tls1.2","ak.0rtt":"","ak.csrc":"-","ak.acc":"bbr","ak.t":"1718780048","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==6Bj6dwHHd1ITTr5KTHRWoEi7zjdZiyXAtYAm2hXWJWi2qQ9gf32N5aOgE2ibW/ANIDBR++C9EjdcFUUfBncGO5Pxs5r/dfaETDBveWwOxeAfkX4Ymq7hTmav2LgDmirdxxLkAm6fseFX8sZyXl1z5s6RUTiMWP/OazGePx9SdVBtnHw0C0NkVZxbeNlrsgrEeJsZPcQwK1ZBTBGbVjwkzkZcArT9zXoq+wbcjUAshZwD9kquyjqer+/YUi64h0hjuXxFItcVdZ6COC2bmpyANBuM6CUUKYTotYQZ+i5XVkFkzZh6JP4CqePe4iL7xAx8tnZVyERCrrC+aq//917nYKQTKBD8uDRkHNgx1nVHkaYvsBfSVg8Lve/eMRDCPiN3aEpN172dNqdENnZegpVuTJHl0YfmIvv6bh2CK6D+hoQ=","ak.pv":"316","ak.dpoabenc":"","ak.tf":i};if(""!==t)o["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))o["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(o)},rv:function(){var e=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:o,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+<body>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NK9NSD');</script>
+<!-- End Google Tag Manager --><div id="printheader"></div>
+<!-- HEADER START ---------------------------------------------------------------------------------------------------- -->
+<div class="ibkr-header" id="ibkr-header">
+     
+     
+    <!-- NAV TOP START (LG/XL ONLY) -->
+    <nav class="navbar navbar-inverse navbar-expand-lg navbar-top d-none d-lg-block">
+        <div class="container">
+            <div class="navbar-collapse collapse" id="ibkr-nav-top">
+                <!-- LEFT MENU -->
+                <ul class="navbar-nav mr-auto align-items-center">
+                    <!-- FOR INDIVIDUALS -->
+                    <li class="nav-item dropdown"><a href="#" target="_self" class="nav-link dropdown-toggle" id="nav-for-individuals" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">For Individuals</a>
+                        <div class="dropdown-menu dropdown-ind-accounts" aria-labelledby="nav-for-individuals">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../accounts/individual.php.html" target="_self" class="dropdown-item">Individual, Joint or IRA</a>
+                                    <a href="../accounts/non-professional-advisor.php.html" target="_self" class="dropdown-item">Non-Professional Advisors</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- FOR INSTITUTIONS -->
+					<li class="nav-item dropdown"><a href="#" target="_self" class="nav-link dropdown-toggle" id="nav-for-institutions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">For Institutions</a>
+                        <div class="dropdown-menu dropdown-inst-accounts" aria-labelledby="nav-for-institutions">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../accounts/institutions.php.html" target="_self" class="dropdown-item">Institutions Home</a>
+                                    <a href="../accounts/advisor.php.html" target="_self" class="dropdown-item">Registered Investment Advisors</a>
+                                    <a href="../accounts/proprietary-trading-group.php.html" target="_self" class="dropdown-item">Proprietary Trading Groups</a>
+                                    <a href="../accounts/hedge-fund.php.html" target="_self" class="dropdown-item">Hedge Funds</a>
+                                    <a href="../accounts/broker.php.html" target="_self" class="dropdown-item">Introducing Brokers</a>
+                                    <a href="../accounts/family-office.php.html" target="_self" class="dropdown-item">Family Offices</a>
+                                    <a href="../accounts/compliance-officer.php.html" target="_self" class="dropdown-item">Compliance Officers</a>
+                                    <a href="../accounts/small-business.php.html" target="_self" class="dropdown-item">Small Businesses</a>
+                                    <a href="../accounts/simple-ira.php.html" target="_self" class="dropdown-item">Employee Plan Administrator <br>SIMPLE IRA</a>
+                                    <a href="../accounts/fsa-insurance-providers.php.html" target="_self" class="dropdown-item">Full-Service Administrator <br>Insurance Providers</a>
+                                    <a href="../accounts/money-manager.php.html" target="_self" class="dropdown-item">Money Managers</a>
+                                    <a href="../accounts/administrator.php.html" target="_self" class="dropdown-item">Fund Administrators</a>
+                                    <a href="../accounts/hedge-fund-allocator.php.html" target="_self" class="dropdown-item">Hedge Fund Allocators</a>
+                                    <a href="https://ibkrcampus.com/student-trading-lab/" target="_blank" class="dropdown-item">Educators</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- RIGHT MENU -->
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <!-- FREE TRIAL -->
+                    <li class="nav-item"><a href="free-trial.php.html" target="_self" class="nav-link">FREE TRIAL</a></li>
+                    <!-- CAREERS -->
+                    <li class="nav-item"><a href="../general/about/careers-splash.php.html" target="_self" class="nav-link">Careers</a></li>
+                    <!-- ABOUT US -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-about-us" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
+                        <div class="dropdown-menu dropdown-about-us" aria-labelledby="nav-about-us">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../general/financial-strength.php.html" target="_self" class="dropdown-item">Strength and Security</a>
+                                    <a href="../general/about/about.php.html" target="_self" class="dropdown-item">Information and History</a>
+                                    <a href="../general/awards.php.html" target="_self" class="dropdown-item">Awards</a>
+                                    <a href="../about/news-at-ibkr.php.html" target="_self" class="dropdown-item">News at IBKR</a>
+                                    <a href="../general/about/press-and-media.php.html" target="_self" class="dropdown-item">Press and Media</a>
+                                    <a href="https://investors.interactivebrokers.com/ir/main.php" target="_blank" class="dropdown-item" rel="noreferrer noopener">Investor Relations</a>
+                                    <a href="../general/about/sustainability.php.html" target="_self" class="dropdown-item">Sustainability</a>
+                                    <a href="../accounts/legalDocuments/brokerPerformanceReports.php.html" target="_self" class="dropdown-item">Regulatory Reports</a>
+                                    <a href="../accounts/referrer.php.html" target="_self" class="dropdown-item">Refer a Friend</a>
+                                    <a href="../general/about/affiliate-programs.php.html" target="_self" class="dropdown-item">Affiliate Programs</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- SUPPORT -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-support" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Support</a>
+                        <div class="dropdown-menu dropdown-contact-us" aria-labelledby="nav-support">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../support/fund-my-account.php.html" target="_self" class="dropdown-item">Fund Your Account</a>
+                                    <a href="../support/individuals.php.html" target="_self" class="dropdown-item">For Individuals</a>
+                                    <a href="../support/institutions.php.html" target="_self" class="dropdown-item">For Institutions</a>
+                                    <a href="../support/institutional-sales-contacts.php.html" target="_self" class="dropdown-item">Institutional Sales Contacts</a>
+                                                                        <a href="../general/contact/ibot-container.php.html" target="_self" class="dropdown-item">Browse Our FAQs</a>
+                                    <a href="../support/reports-and-dates.php.html" target="_self" class="dropdown-item">Tax Information</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- LANGUAGE SELECTOR -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link nav-language dropdown-toggle" id="nav-language" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Language</span><img src="../../images/web/icons/icon-language.svg" alt="Language" width="23" height="18" border="0"></a>
+                        <div class="dropdown-menu dropdown-language" aria-labelledby="nav-language">
+                            <div class="row">
+                                <div class="col" id="langselector">
+                                    <a href="../home.php.html" target="_self" class="dropdown-item">English</a>
+                                    <a href="/es/home.php" target="_self" class="dropdown-item">Español</a>
+                                    <a href="/pt/home.php" target="_self" class="dropdown-item">Português</a>
+                                    <a href="/cn/home.php?lang=sc" target="_self" class="dropdown-item">中文简体</a>
+                                    <a href="/cn/home.php?lang=tc" target="_self" class="dropdown-item">中文繁體</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- NAV TOP END -->
+    <!-- NAV BOTTOM START -->
+    <nav class="navbar navbar-inverse navbar-expand-lg navbar-bottom">
+        <div class="container">
+            <!-- IBKR LOGO -->
+                        <a href="../home.php.html" target="_self" title="Interactive Brokers Home" alt="Interactive Brokers Logo" class="navbar-brand brand-logo" aria-label="Interactive Brokers Home"><span>Interactive Brokers Home</span></a>
+            <!-- TOGGLE (XS/SM/MD ONLY) -->
+            <button class="navbar-toggler" type="button" aria-label="Toggle Navigation"><span class="navbar-toggler-icon"><i class="fas fa-bars" aria-hidden="true"></i></span></button>
+            <!-- OPEN ACCOUNT BUTTON (XS/SM/MD ONLY) -->
+            <a href="/Universal/Application" target="_self" class="d-block d-lg-none btn btn-open-account">Open Account</a>
+            <!-- LOG IN (SM/MD ONLY) -->
+                            <a href="/sso/Login?RL=1" target="_self" class="d-none d-sm-block d-lg-none btn btn-log-in">Log In</a>
+                        <!-- IBKR NAV BOTTOM START   -->
+            <div class="navbar-collapse collapse" id="ibkr-nav-bottom">
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <!-- WHY IBKR -->
+                    <li class="nav-item"><a href="../whyib/overview.php.html" target="_self" class="nav-link">Why IBKR</a></li>
+                    <!-- PRICING -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-pricing" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pricing</a>
+                        <div class="dropdown-menu dropdown-pricing" aria-labelledby="nav-pricing">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../pricing/commissions-home.php.html" target="_self" class="dropdown-item">Commissions</a>
+                                    <a href="margin-rates.php.html" target="_self" class="dropdown-item">Margin Rates</a>
+                                    <a href="../accounts/fees/pricing-interest-rates.php.html" target="_self" class="dropdown-item">Interest Rates</a>
+                                    <a href="../pricing/short-sale-cost.php.html" target="_self" class="dropdown-item">Short Sale Cost</a>
+                                    <a href="../pricing/research-news-services.php.html" target="_self" class="dropdown-item">Research and News</a>
+                                    <a href="../pricing/research-news-marketdata.php.html" target="_self" class="dropdown-item">Market Data</a>
+                                    <a href="../pricing/stock-yield-enhancement-program.php.html" target="_self" class="dropdown-item">Stock Yield Enhancement Program</a>
+                                    <a href="../pricing/other-fees-overview.php.html" target="_self" class="dropdown-item">Other Fees</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- TRADING -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-technology" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Trading</a>
+                        <div class="dropdown-menu dropdown-technology" aria-labelledby="nav-technology">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="trading-platforms.php.html" target="_self" class="dropdown-item">Platforms</a>
+                                    <a href="ib-api.php.html" target="_self" class="dropdown-item">APIs</a>
+                                    <a href="margin.php.html" target="_self" class="dropdown-item">Margin</a>
+                                    <a href="products-exchanges.php.html" target="_self" class="dropdown-item">Products and Exchange Search</a>
+                                    <a href="ordertypes.php.html" target="_self" class="dropdown-item">Order Types</a>
+                                    <a href="../whyib/reporting.php.html" target="_self" class="dropdown-item">Reporting</a>
+                                    <a href="securities-financing.php.html" target="_self" class="dropdown-item">Securities Financing</a>
+                                    <a href="features-in-focus.php.html" target="_self" class="dropdown-item">Features in Focus</a>
+                                    <a href="../general/education/probability_lab.php.html" target="_self" class="dropdown-item">Probability Lab</a>
+                                    <a href="global-outsourced-trading-desk.php.html" target="_self" class="dropdown-item">Global Outsourced Trading Desk</a>
+                                    <a href="sustainable-investing.php.html" target="_self" class="dropdown-item">Sustainable Investing</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- SERVICES -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-products" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+                        <div class="dropdown-menu dropdown-products" aria-labelledby="nav-products">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="globalanalyst.php.html" target="_self" class="dropdown-item">IBKR GlobalAnalyst</a>
+                                    <a href="https://www.portfolioanalyst.com" target="_blank" class="dropdown-item" rel="noreferrer noopener">PortfolioAnalyst</a>
+                                    <a href="products-bonds.php.html" target="_self" class="dropdown-item">Bonds Marketplace</a>
+                                    <a href="products-mutual-funds.php.html" target="_self" class="dropdown-item">Mutual Funds Marketplace</a>
+                                    <a href="commission-free-etfs-mkt.php.html" target="_self" class="dropdown-item">No Transaction Fee ETFs</a>
+                                    <a href="https://ndcdyn.interactivebrokers.com/aces/Marketplace/InvestorsMarketplace" target="_blank" class="dropdown-item" rel="noreferrer noopener">Investors' Marketplace</a>
+                                    <a href="short-securities-availability.php.html" target="_self" class="dropdown-item">Short Securities Availability</a>
+                                    <a href="../accounts/integrated-cash-management.php.html" target="_self" class="dropdown-item">Cash Management</a>
+                                    <a href="third-party-integration.php.html" target="_self" class="dropdown-item">Third Party Integration</a>
+                                    <a href="https://www.interactiveadvisors.com" target="_blank" class="dropdown-item" rel="noreferrer noopener">Interactive Advisors</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- EDUCATION -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-education" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Education</a>
+                        <div class="dropdown-menu dropdown-education" aria-labelledby="nav-education">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="https://ibkrcampus.com" target="_blank" class="dropdown-item">IBKR Campus</a>
+                                    <a href="https://ibkrcampus.com/academy" target="_blank" class="dropdown-item" rel="noreferrer noopener">Traders' Academy</a>
+                                    <a href="https://ibkrcampus.com/news" target="_blank" class="dropdown-item" rel="noreferrer noopener">Traders' Insight</a>
+                                    <a href="https://ibkrcampus.com/podcasts" target="_blank" class="dropdown-item" rel="noreferrer noopener">IBKR Podcasts</a>
+                                    <a href="https://ibkrcampus.com/quant" target="_blank" class="dropdown-item" rel="noreferrer noopener">IBKR Quant Blog</a>
+                                    <a href="https://ibkrcampus.com/webinars" target="_blank" class="dropdown-item" rel="noreferrer noopener">Webinars</a>
+                                    <a href="https://ibkrcampus.com/student-trading-lab/" target="_blank" class="dropdown-item">Student Trading Lab</a>
+                                    <a href="https://ibkrcampus.com/glossary" target="_blank" class="dropdown-item" rel="noreferrer noopener">Traders' Glossary</a>
+                                    <a href="../general/calendar/calendar.php.html" target="_self" class="dropdown-item">Traders' Calendar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- SEARCH -->
+                    <li class="nav-item dropdown d-none d-lg-block" id="search-expand"><a href="#" class="nav-link nav-search dropdown-toggle" id="nav-search" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Search</span><i class="fas fa-search" aria-hidden="true"></i></a>
+                        <div class="dropdown-menu dropdown-search" aria-labelledby="nav-search">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="search_box">
+                                        <script type="text/javascript">
+                                         searchbox_input_changed=false;
+                                          $('#search-expand').on('shown.bs.dropdown', function(e) {
+                                            $('#searchField').focus();
+                                          });
+                                        </script>
+                                        <form action="/en/search/index.php" method="get" class="search_form" id="search_form_id">
+                                            <input type="text" aria-label="Search Box" placeholder="Search Site or Contracts" name="query" maxlength="64" autocomplete="off" id="searchField" class="form-control s swap_value searchinput" aria-label="Search Interactive Brokers">
+                                            <button type="submit" value="" id="searchsubmit" class="searchsubmit" aria-label="Submit Search"><i class="fas fa-search" aria-hidden="true"></i></button>
+                                        </form>
+                                        <ul id='saytlist' style='width:150px;'><li style="display:none"></li></ul>
+<script>
+function delay(cb, ms)
+{
+  var timer = 0;
+  return function() {
+   var context = this, args = arguments;
+   clearTimeout(timer);
+   timer = setTimeout(function() {
+     cb.apply(context, args);
+   }, ms  || 0);
+  };
+}
+$(function() {
+
+ $('#searchField').keyup(delay(function() {
+  var q = $('#searchField').val() || '';
+  if(q.length >= 3)
+  {
+    $.ajax({
+      type: "POST",
+      url: 'https://misc.interactivebrokers.com/response_handlers/search/index.php',
+      dataType: "json",
+      data: {
+        'q': q
+      },
+      success: function(r) {
+        if(r && r.success)
+        {
+          var recommendations = '';
+          var limit = Math.min(r.suggestions.length, 10);
+          for(var i = 0; i < limit; i++)
+          {
+            recommendations += "<li>" + r.suggestions[i] + "</li>";
+          }
+          $('#saytlist').html(recommendations);
+          $('#saytlist').show();
+          $('ul#saytlist li').click(function(e) {
+            var list = $(this).text() || '';
+            e.stopPropagation();
+            if(list != '')
+            {
+              $('input#searchField').val(list);
+              $('button#searchsubmit').click();
+            }
+          });
+        }
+      },
+      error: function(xhr, status, err) {}
+    });
+  } else {
+   $('#saytlist').hide();
+  }
+ }, 500));
+});
+</script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- LOG IN -->
+                    <li class="nav-item dropdown d-none d-lg-block"><a href="#" target="_self" class="nav-link nav-login dropdown-toggle" id="nav-log-in" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Log In</a>
+                        <div class="dropdown-menu dropdown-login" aria-labelledby="nav-log-in">
+                            <div class="row">
+                                <div class="col">
+                                                                                                                    <a href="/sso/Login?RL=1" target="_self" class="dropdown-item dropdown-portal">Portal Login</a>
+                                                                                                                <a href="tws.php.html#tws-software" target="_self" class="dropdown-item">Download Trader Workstation</a>
+                                    <a href="ibkr-desktop.php.html" target="_self" class="dropdown-item">Download IBKR Desktop </a>
+                                    <a href="tws-mobile.php.html#trytoday-drop" target="_self" class="dropdown-item">Download IBKR Mobile</a>
+                                    <a href="ibgateway-latest.php.html" target="_self" class="dropdown-item">Download IB Gateway</a>
+                                    <a href="trading-platforms.php.html" target="_self" class="dropdown-item">Compare All IBKR Platforms</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- OPEN ACCOUNT -->
+                    <li class="nav-item dropdown d-none d-lg-block"><a href="#" target="_self" class="nav-link nav-open-account dropdown-toggle" id="nav-open-account" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Open Account</a>
+                        <div class="dropdown-menu dropdown-open-account" aria-labelledby="nav-open-account">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="/Universal/Application" target="_self" class="dropdown-item dropdown-portal">Start Application</a>
+                                    <a href="/sso/Login?c=t" target="_self" class="dropdown-item">Finish an Application</a>
+                                    <a href="../general/what-you-need-inv.php.html" target="_self" class="dropdown-item">What You Need</a>
+                                    <a href="../accounts/account-guide.php.html" target="_self" class="dropdown-item">A Guide to Choosing the Right Account</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- NAV BOTTOM END -->
+</div>
+<!-- HEADER END ---------------------------------------------------------------------------------------------------- -->
+<!-- MOBILE NAV START (XS/SM/MD ONLY) ---------------------------------------------------------------------------------------------------- -->
+<div class="menu-mobile d-lg-none">
+    <!-- CLOSE BUTTON -->
+    <div class="close-button"><a href="javascript:void(0);" target="_self" class="btn-close" aria-label="Close Menu"><i class="fas fa-times"></i></a></div>
+    <!-- LOGO -->
+    <div class="logo-container"><a href="../home.php.html" target="_self" class="brand-logo" aria-label="Interactive Brokers Home"><span>Interactive Brokers Home</span></a></div>
+    <!-- SEARCH -->
+    <div class="search-container">
+        <div class="search-box">
+            <form action="/en/search/index.php" method="get" class="search_form" id="search_form_id">
+                <input type="text" class="form-control" placeholder="Search Site or Contracts" name="query" maxlength="64" autocomplete="off" id="searchFieldMobile" aria-label="Search Interactive Brokers">
+                <button type="submit" class="btn-search-submit" value="" id="searchsubmitMobile" aria-label="Submit Search"><i class="fas fa-search" aria-hidden="true"></i></button>
+            </form>
+        </div>
+    </div>
+    <ul>
+    <!-- LOG IN -->
+                    <li><a href="/sso/Login?RL=1" target="_self" class="menu-log-in">Portal Login</a></li>
+                <!-- OPEN ACCOUNT -->
+    <li class="has-submenu"><a href="#" target="_self" class="menu-open-account" data-submenu="submenu-open-account">Open Account</a>
+        <div class="submenu" id="submenu-open-account">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-open-account">Back</a></p>
+            <p class="submenu-title">OPEN ACCOUNT</p>
+            <ul>
+            <li><a href="/Universal/Application" target="_self" class="menu-start-application">Start Application</a></li>
+            <li><a href="/sso/Login?c=t" target="_self">Finish an Application</a></li>
+            <li><a href="../general/what-you-need-inv.php.html" target="_self">What You Need</a></li>
+            <li><a href="../accounts/account-guide.php.html" target="_self">A Guide to Chosing the Right Account</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- DOWNLOAD IBKR MOBILE -->
+        <!-- FREE TRIAL -->
+    <li><a href="free-trial.php.html" target="_self">Free Trial</a></li>
+    <!-- WHY IBKR -->
+    <li><a href="../whyib/overview.php.html" target="_self">Why IBKR</a></li>
+    <!-- ACCOUNT TYPES -->
+    <li class="has-submenu"><a href="#" target="_self" data-submenu="submenu-account-types">Account Types</a>
+        <div class="submenu" id="submenu-account-types">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-account-types">Back</a></p>
+            <p class="submenu-title">FOR INDIVIDUALS</p>
+            <ul>
+            <li><a href="../accounts/individual.php.html" target="_self">Individual, Joint or IRA</a></li>
+            <li><a href="../accounts/non-professional-advisor.php.html" target="_self">Non-Professional Advisors</a></li>
+            </ul>
+            <p class="submenu-title">FOR INSTITUTIONS</p>
+            <ul>
+            <li><a href="../accounts/institutions.php.html" target="_self">Institutions Home</a></li>
+            <li><a href="../accounts/advisor.php.html" target="_self">Registered Investment Advisors</a></li>
+            <li><a href="../accounts/proprietary-trading-group.php.html" target="_self">Proprietary Trading Groups</a></li>
+            <li><a href="../accounts/hedge-fund.php.html" target="_self">Hedge Funds</a></li>
+            <li><a href="../accounts/broker.php.html" target="_self">Introducing Brokers</a></li>
+            <li><a href="../accounts/family-office.php.html" target="_self">Family Offices</a></li>
+            <li><a href="../accounts/compliance-officer.php.html" target="_self">Compliance Officers</a></li>
+            <li><a href="../accounts/small-business.php.html" target="_self">Small Businesses</a></li>
+            <li><a href="../accounts/simple-ira.php.html" target="_self">Employee Plan Administrator <br>SIMPLE IRA</a></li>
+            <li><a href="../accounts/fsa-insurance-providers.php.html" target="_self">Full-Service Administrator <br>Insurance Providers</a></li>
+            <li><a href="../accounts/money-manager.php.html" target="_self">Money Managers</a></li>
+            <li><a href="../accounts/administrator.php.html" target="_self">Fund Administrators</a></li>
+            <li><a href="../accounts/hedge-fund-allocator.php.html" target="_self">Hedge Fund Allocators</a></li>
+            <li><a href="https://ibkrcampus.com/student-trading-lab/" target="_blank">Educators</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- PRICING -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-pricing">Pricing</a>
+        <div class="submenu" id="submenu-pricing">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-pricing">Back</a></p>
+            <p class="submenu-title">PRICING</p>
+            <ul>
+            <li><a href="../pricing/commissions-home.php.html" target="_self">Commissions</a></li>
+            <li><a href="margin-rates.php.html" target="_self">Margin Rates</a></li>
+            <li><a href="../accounts/fees/pricing-interest-rates.php.html" target="_self">Interest Rates</a></li>
+            <li><a href="../pricing/short-sale-cost.php.html" target="_self">Short Sale Cost</a></li>
+            <li><a href="../pricing/research-news-services.php.html" target="_self">Research and News</a></li>
+            <li><a href="../pricing/research-news-marketdata.php.html" target="_self">Market Data</a></li>
+            <li><a href="../pricing/stock-yield-enhancement-program.php.html" target="_self">Stock Yield Enhancement</a></li>
+            <li><a href="../pricing/other-fees-overview.php.html" target="_self">Other Fees</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- TRADING -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-trading">Trading</a>
+        <div class="submenu" id="submenu-trading">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-trading">Back</a></p>
+            <p class="submenu-title">TRADING</p>
+            <ul>
+            <li><a href="trading-platforms.php.html" target="_self">Platforms</a></li>
+            <li><a href="ib-api.php.html" target="_self">APIs</a></li>
+            <li><a href="margin.php.html" target="_self">Margin</a></li>
+            <li><a href="products-exchanges.php.html" target="_self">Products and Exchange Search</a></li>
+            <li><a href="ordertypes.php.html" target="_self">Order Types</a></li>
+            <li><a href="../whyib/reporting.php.html" target="_self">Reporting</a></li>
+            <li><a href="securities-financing.php.html" target="_self">Securities Financing</a></li>
+            <li><a href="features-in-focus.php.html" target="_self">Features in Focus</a></li>
+            <li><a href="../general/education/probability_lab.php.html" target="_self">Probability Lab</a></li>
+            <li><a href="global-outsourced-trading-desk.php.html" target="_self">Global Outsourced Trading Desk</a></li>
+            <li><a href="sustainable-investing.php.html" target="_self">Sustainable Investing</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- SERVICES -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-services">Services</a>
+        <div class="submenu" id="submenu-services">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-services">Back</a></p>
+            <p class="submenu-title">SERVICES</p>
+            <ul>
+            <li><a href="globalanalyst.php.html" target="_self">IBKR GlobalAnalyst</a></li>
+            <li><a href="https://www.portfolioanalyst.com" target="_blank">PortfolioAnalyst</a></li>
+            <li><a href="products-bonds.php.html" target="_self">Bonds Marketplace</a></li>
+            <li><a href="products-mutual-funds.php.html" target="_self">Mutual Funds Marketplace</a></li>
+            <li><a href="commission-free-etfs-mkt.php.html" target="_self">No Transaction Fee ETFs</a></li>
+            <li><a href="https://ndcdyn.interactivebrokers.com/aces/Marketplace/InvestorsMarketplace" target="_blank">Investors' Marketplace</a></li>
+            <li><a href="short-securities-availability.php.html" target="_self">Short Securities Availability</a></li>
+            <li><a href="../accounts/integrated-cash-management.php.html" target="_self">Cash Management</a></li>
+            <li><a href="third-party-integration.php.html" target="_self">Third Party Integration</a></li>
+            <li><a href="https://www.interactiveadvisors.com" target="_blank">Interactive Advisors</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- EDUCATION -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-education">Education</a>
+        <div class="submenu" id="submenu-education">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-education">Back</a></p>
+            <p class="submenu-title">EDUCATION</p>
+            <ul>
+            <li><a href="https://ibkrcampus.com" target="_blank">IBKR Campus</a></li>
+            <li><a href="https://ibkrcampus.com/academy" target="_blank">Traders' Academy</a></li>
+            <li><a href="https://ibkrcampus.com/news" target="_blank">Traders' Insight</a></li>
+            <li><a href="https://ibkrcampus.com/podcasts" target="_blank">IBKR Podcasts</a></li>
+            <li><a href="https://ibkrcampus.com/quant" target="_blank">IBKR Quant Blog</a></li>
+            <li><a href="https://ibkrcampus.com/webinars" target="_blank">Webinars</a></li>
+            <li><a href="https://ibkrcampus.com/student-trading-lab/" target="_blank">Student Trading Lab</a></li>
+            <li><a href="https://ibkrcampus.com/glossary" target="_blank">Traders' Glossary</a></li>
+            <li><a href="../general/calendar/calendar.php.html" target="_self">Traders' Calendar</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- ABOUT US -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-about-us">About Us</a>
+        <div class="submenu" id="submenu-about-us">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-about-us">Back</a></p>
+            <p class="submenu-title">ABOUT US</p>
+            <ul>
+            <li><a href="../general/financial-strength.php.html" target="_self">Strength and Security</a></li>
+            <li><a href="../general/about/about.php.html" target="_self">Information and History</a></li>
+            <li><a href="../general/about/careers-splash.php.html" target="_self">Careers</a></li>
+            <li><a href="../general/awards.php.html" target="_self">Awards</a></li>
+            <li><a href="../about/news-at-ibkr.php.html" target="_self">News at IBKR</a></li>
+            <li><a href="../general/about/press-and-media.php.html" target="_self">Press and Media</a></li>
+            <li><a href="https://investors.interactivebrokers.com/ir/main.php" target="_blank">Investor Relations</a></li>
+            <li><a href="../general/about/sustainability.php.html" target="_self">Sustainability</a></li>
+            <li><a href="../accounts/legalDocuments/brokerPerformanceReports.php.html" target="_self">Regulatory Reports</a></li>
+            <li><a href="../accounts/referrer.php.html" target="_self">Refer a Friend</a></li>
+            <li><a href="../general/about/affiliate-programs.php.html" target="_self">Affiliate Programs</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- SUPPORT -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-support">Support</a>
+        <div class="submenu" id="submenu-support">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-support">Back</a></p>
+            <p class="submenu-title">SUPPORT</p>
+            <ul>
+            <li><a href="../support/fund-my-account.php.html" target="_self">Fund Your Account</a></li>
+            <li><a href="../support/individuals.php.html" target="_self">For Individuals</a></li>
+            <li><a href="../support/institutions.php.html" target="_self">For Institutions</a></li>
+            <li><a href="../support/institutional-sales-contacts.php.html" target="_self">Institutional Sales Contacts</a></li>
+                        <li><a href="../general/contact/ibot-container.php.html" target="_self">Browse Our FAQs</a></li>
+            <li><a href="../support/reports-and-dates.php.html" target="_self">Tax Information</a></li>                 
+            </ul>
+        </div>
+    </li>
+    <!-- LANGUAGE -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-language">Language</a>
+        <div class="submenu" id="submenu-language">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-language">Back</a></p>
+            <p class="submenu-title">LANGUAGE</p>
+            <ul>
+            <li><a href="../home.php.html" target="_self">English</a></li>
+            <li><a href="/es/home.php" target="_self">Español</a></li>
+            <li><a href="/pt/home.php" target="_self">Português</a></li>
+            <li><a href="/cn/home.php?lang=sc" target="_self">中文简体</a></li>
+            <li><a href="/cn/home.php?lang=tc" target="_self">中文繁體</a></li>
+            </ul>
+        </div>
+    </li>
+    </ul>
+</div>
+<!-- MOBILE NAV OVERLAY -->
+<div class="website-overlay d-lg-none"></div>
+<!-- MOBILE NAV END (XS/SM/MD ONLY) ---------------------------------------------------------------------------------------------------- -->
+<div id="contents">
+    <section class="page-title" id="page-title">
+        <div class="container">
+            <div class="row">
+                                <div class="col"><h1>No Transaction Fee Mutual Funds</h1></div>
+                            </div>
+        </div>
+    </section>
+    <section id="mutual-funds">
+ <div class="container">
+  <div class="row">
+   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <ul class='pagination'>
+<li class=""><a href='ntfMutualFunds.php-10.html?f=&exch=&showcategories=&p=&cc=&page=G'> < </a></li>
+<li class=''><a href='ntfMutualFunds.php-2.html?f=&exch=&showcategories=&p=&cc=&page=3'>3</a></li>
+<li class=''><a href='ntfMutualFunds.php-5.html?f=&exch=&showcategories=&p=&cc=&page=C'>C</a></li>
+<li class=''><a href='ntfMutualFunds.php-6.html?f=&exch=&showcategories=&p=&cc=&page=D'>D</a></li>
+<li class=''><a href='ntfMutualFunds.php-8.html?f=&exch=&showcategories=&p=&cc=&page=E'>E</a></li>
+<li class=''><a href='ntfMutualFunds.php-9.html?f=&exch=&showcategories=&p=&cc=&page=F'>F</a></li>
+<li class=''><a href='ntfMutualFunds.php-10.html?f=&exch=&showcategories=&p=&cc=&page=G'>G</a></li>
+<li class='active'><a href='ntfMutualFunds.php-11.html?f=&exch=&showcategories=&p=&cc=&page=H'>H</a></li>
+<li class=''><a href='ntfMutualFunds.php-17.html?f=&exch=&showcategories=&p=&cc=&page=I'>I</a></li>
+<li class=''><a href='ntfMutualFunds.php-18.html?f=&exch=&showcategories=&p=&cc=&page=J'>J</a></li>
+<li class=''><a href='ntfMutualFunds.php-19.html?f=&exch=&showcategories=&p=&cc=&page=K'>K</a></li>
+<li class=''><a href='ntfMutualFunds.php-20.html?f=&exch=&showcategories=&p=&cc=&page=L'>L</a></li>
+<li class=''><a href='ntfMutualFunds.php-7.html?f=&exch=&showcategories=&p=&cc=&page=Z'>Z</a></li>
+<li class=""><a href='ntfMutualFunds.php-17.html?f=&exch=&showcategories=&p=&cc=&page=I'> > </a></li>
+</ul>
+    <div class="table-responsive">
+     <table width="100%" cellspacing="0" cellpadding="0" border="0" class="table table-striped table-bordered tablesorter" id="mftable">
+      <thead>
+       <tr>
+        <th width="10%" align="left" valign="middle">Symbol</th>
+        <th width="30%" align="left" valign="middle">Fund</th>
+        <th width="15%" align="left" valign="middle">CUSIP</th>
+        <th width="25%" align="left" valign="middle">Fund Family</th>
+        <th width="10%" align="left" valign="middle">Share Class</th>
+       </tr>
+      </thead>
+      <tbody>
+             <tr>
+        <td>001339321</td>
+        <td>H2O ADAGIO &quot;R&quot; (CHFHDG) ACC</td>
+        <td>a132185763</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001339318</td>
+        <td>H2O ADAGIO &quot;R&quot; (EUR) ACC</td>
+        <td>a124598143</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001248973</td>
+        <td>H2O ADAGIO &quot;R&quot; (GBPHDG) ACC</td>
+        <td>a137499988</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001339319</td>
+        <td>H2O ADAGIO &quot;R&quot; (SGDHDG) ACC</td>
+        <td>a132185762</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001339320</td>
+        <td>H2O ADAGIO &quot;R&quot; (USDHDG) ACC</td>
+        <td>a124598192</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001353494</td>
+        <td>H2O ADAGIO SP &quot;R&quot; (CHFHDG) ACC</td>
+        <td>a137499426</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353489</td>
+        <td>H2O ADAGIO SP &quot;R&quot; (EUR) INC</td>
+        <td>a139133414</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353499</td>
+        <td>H2O ADAGIO SP &quot;R&quot; (GBPHDG) ACC</td>
+        <td>a139133429</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353492</td>
+        <td>H2O ADAGIO SP &quot;R&quot; (SGDHDG) ACC</td>
+        <td>a137499425</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353493</td>
+        <td>H2O ADAGIO SP &quot;R&quot; (USDHDG) ACC</td>
+        <td>a139133428</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353511</td>
+        <td>H2O ADAGIO SP &quot;SR&quot; (CHFHDG) ACC</td>
+        <td>a137499430</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001353507</td>
+        <td>H2O ADAGIO SP &quot;SR&quot; (EUR) ACC</td>
+        <td>a139133432</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001353508</td>
+        <td>H2O ADAGIO SP &quot;SR&quot; (SGDHDG) ACC</td>
+        <td>a137499429</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001353509</td>
+        <td>H2O ADAGIO SP &quot;SR&quot; (USDHDG) ACC</td>
+        <td>a139133433</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001339322</td>
+        <td>H2O ALLEGRO &quot;R&quot; (EUR) ACC</td>
+        <td>a132186644</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001339323</td>
+        <td>H2O ALLEGRO &quot;R&quot; (SGD) ACC</td>
+        <td>a142144617</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001339324</td>
+        <td>H2O ALLEGRO &quot;R&quot; (USDHDG) ACC</td>
+        <td>a132185764</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001353580</td>
+        <td>H2O ALLEGRO SP &quot;HRC&quot; (SGDHDG) INC</td>
+        <td>a140159455</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>HRC</td>
+       </tr>
+             <tr>
+        <td>001353579</td>
+        <td>H2O ALLEGRO SP &quot;R&quot; (CHFHDG) ACC</td>
+        <td>a139133384</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353571</td>
+        <td>H2O ALLEGRO SP &quot;R&quot; (EUR) ACC</td>
+        <td>a139133381</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353583</td>
+        <td>H2O ALLEGRO SP &quot;R&quot; (USDHDG) ACC</td>
+        <td>a139133383</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353565</td>
+        <td>H2O ALLEGRO SP &quot;SR&quot; (EUR) ACC</td>
+        <td>a139133379</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001353567</td>
+        <td>H2O ALLEGRO SP &quot;SR&quot; (SGDHDG) INC</td>
+        <td>a137500443</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001353568</td>
+        <td>H2O ALLEGRO SP &quot;SR&quot; (USDHDG) INC</td>
+        <td>a139133398</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001100741</td>
+        <td>H2O EUROAGGREGATE &quot;R&quot; (EUR) ACC</td>
+        <td>a132184245</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>00BYNJF17</td>
+        <td>H2O FIDELIO &quot;H-R&quot; (CHF) ACC</td>
+        <td>a124602451</td>
+        <td>H2O AM (IE)</td>
+        <td>H-R</td>
+       </tr>
+             <tr>
+        <td>00BYNJF39</td>
+        <td>H2O FIDELIO &quot;H-R&quot; (EUR) ACC</td>
+        <td>a124602452</td>
+        <td>H2O AM (IE)</td>
+        <td>H-R</td>
+       </tr>
+             <tr>
+        <td>00BYNJF06</td>
+        <td>H2O FIDELIO &quot;R&quot; (USD) ACC</td>
+        <td>a124602445</td>
+        <td>H2O AM (IE)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001339326</td>
+        <td>H2O LARGO &quot;R&quot; (EUR) ACC B</td>
+        <td>a132186743</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001339329</td>
+        <td>H2O MODERATO &quot;R&quot; (EUR) ACC</td>
+        <td>a132186645</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001339330</td>
+        <td>H2O MODERATO &quot;R&quot; (USD) ACC</td>
+        <td>a132185765</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001353530</td>
+        <td>H2O MODERATO SP &quot;R&quot; (CHFHDG) ACC</td>
+        <td>a137499431</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353528</td>
+        <td>H2O MODERATO SP &quot;R&quot; (EUR) ACC</td>
+        <td>a139133435</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353522</td>
+        <td>H2O MODERATO SP &quot;R&quot; (USDHDG) ACC</td>
+        <td>a137499432</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353519</td>
+        <td>H2O MODERATO SP &quot;SR&quot; (CHFHDG) ACC</td>
+        <td>a137499434</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001353517</td>
+        <td>H2O MODERATO SP &quot;SR&quot; (EUR) ACC</td>
+        <td>a139133245</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001353518</td>
+        <td>H2O MODERATO SP &quot;SR&quot; (USDHDG) ACC</td>
+        <td>a137499433</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>00BHNZKS8</td>
+        <td>H2O MULTIAGGREGATE &quot;HRB&quot; (CHF) ACC</td>
+        <td>a134157700</td>
+        <td>H2O AM (IE)</td>
+        <td>HRB</td>
+       </tr>
+             <tr>
+        <td>00BD8RFJ7</td>
+        <td>H2O MULTIAGGREGATE &quot;R&quot; (CHF) ACC</td>
+        <td>a124602436</td>
+        <td>H2O AM (IE)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>00BD8RFQ4</td>
+        <td>H2O MULTIAGGREGATE &quot;R&quot; (EUR) ACC</td>
+        <td>a124602462</td>
+        <td>H2O AM (IE)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>00BD8RG49</td>
+        <td>H2O MULTIAGGREGATE &quot;R&quot; (GBP) ACC</td>
+        <td>a124602437</td>
+        <td>H2O AM (IE)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>00BD8RFS6</td>
+        <td>H2O MULTIAGGREGATE &quot;R&quot; (SGD) ACC</td>
+        <td>a124602438</td>
+        <td>H2O AM (IE)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>00BD8RFH5</td>
+        <td>H2O MULTIAGGREGATE &quot;R&quot; (USD) ACC</td>
+        <td>a124602443</td>
+        <td>H2O AM (IE)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>00BYMPC15</td>
+        <td>H2O MULTIAGGREGATE &quot;R&quot; (USD) INC</td>
+        <td>a124602454</td>
+        <td>H2O AM (IE)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>00BHNZKR7</td>
+        <td>H2O MULTIAGGREGATE &quot;R-B&quot; (EUR) ACC</td>
+        <td>a132186135</td>
+        <td>H2O AM (IE)</td>
+        <td>R-B</td>
+       </tr>
+             <tr>
+        <td>00BHNZKQ6</td>
+        <td>H2O MULTIAGGREGATE &quot;R-B&quot; (USDHDG) ACC</td>
+        <td>a124602463</td>
+        <td>H2O AM (IE)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001339335</td>
+        <td>H2O MULTIBONDS &quot;R&quot; (CHF) ACC</td>
+        <td>a132185766</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001339332</td>
+        <td>H2O MULTIBONDS &quot;R&quot; (EUR) ACC</td>
+        <td>a132186646</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001340409</td>
+        <td>H2O MULTIBONDS &quot;R&quot; (EUR) INC</td>
+        <td>a132186136</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001339333</td>
+        <td>H2O MULTIBONDS &quot;R&quot; (SGD) ACC</td>
+        <td>a132185827</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001339334</td>
+        <td>H2O MULTIBONDS &quot;R&quot; (USDHDG) ACC</td>
+        <td>a132185826</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001353591</td>
+        <td>H2O MULTIBONDS SP &quot;R&quot; (CHFHDG) ACC</td>
+        <td>a137499505</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353595</td>
+        <td>H2O MULTIBONDS SP &quot;R&quot; (EUR) ACC</td>
+        <td>a136593206</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353604</td>
+        <td>H2O MULTIBONDS SP &quot;R&quot; (EUR) INC</td>
+        <td>a139133259</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353597</td>
+        <td>H2O MULTIBONDS SP &quot;R&quot; (SGD) ACC</td>
+        <td>a139133255</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353606</td>
+        <td>H2O MULTIBONDS SP &quot;R&quot; (SGDHDG) ACC</td>
+        <td>a139133260</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353603</td>
+        <td>H2O MULTIBONDS SP &quot;R&quot; (USD) ACC</td>
+        <td>a139133258</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353600</td>
+        <td>H2O MULTIBONDS SP &quot;R&quot; (USDHDG) INC</td>
+        <td>a139133256</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353613</td>
+        <td>H2O MULTIBONDS SP &quot;SR&quot; (CHFHDG) ACC</td>
+        <td>a139133264</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001353610</td>
+        <td>H2O MULTIBONDS SP &quot;SR&quot; (EUR) ACC</td>
+        <td>a139133262</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001353614</td>
+        <td>H2O MULTIBONDS SP &quot;SR&quot; (EUR) INC</td>
+        <td>a139133265</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001353611</td>
+        <td>H2O MULTIBONDS SP &quot;SR&quot; (SGDHDG) ACC</td>
+        <td>a137499507</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>001353612</td>
+        <td>H2O MULTIBONDS SP &quot;SR&quot; (USDHDG) ACC</td>
+        <td>a139133263</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>SR</td>
+       </tr>
+             <tr>
+        <td>00BD9Y4S9</td>
+        <td>H2O MULTIEMERGING DEBT &quot;R&quot; (CHF) ACC</td>
+        <td>a124602448</td>
+        <td>H2O AM (IE)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>00BD4LCP8</td>
+        <td>H2O MULTIEMERGING DEBT &quot;R&quot; (EUR) ACC</td>
+        <td>a124602441</td>
+        <td>H2O AM (IE)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>00BD4LCQ9</td>
+        <td>H2O MULTIEMERGING DEBT &quot;R&quot; (USD) ACC</td>
+        <td>a124602446</td>
+        <td>H2O AM (IE)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>00BYMPG80</td>
+        <td>H2O MULTIEMERGING DEBT &quot;R&quot; (USD) INC</td>
+        <td>a124602456</td>
+        <td>H2O AM (IE)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>00BD9Y4V2</td>
+        <td>H2O MULTIEMERGING DEBT &quot;R&quot;(EUR) ACC</td>
+        <td>a124602449</td>
+        <td>H2O AM (IE)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001100876</td>
+        <td>H2O MULTIEQUITIES &quot;R&quot; (EUR) ACC</td>
+        <td>a132184075</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353559</td>
+        <td>H2O MULTIEQUITIES SP &quot;R&quot; (EUR) ACC</td>
+        <td>a139133267</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001106180</td>
+        <td>H2O MULTISTRATEGIES &quot;R&quot; (CHF) ACC</td>
+        <td>a134157378</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001092338</td>
+        <td>H2O MULTISTRATEGIES &quot;R&quot; (EUR) ACC</td>
+        <td>a124128196</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353541</td>
+        <td>H2O MULTISTRATEGIES SP &quot;R&quot; (CHFHDG) ACC</td>
+        <td>a140159466</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353540</td>
+        <td>H2O MULTISTRATEGIES SP &quot;R&quot; (EUR) ACC</td>
+        <td>a139133378</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353533</td>
+        <td>H2O MULTISTRATEGIES SP &quot;R&quot; (SGDHDG) ACC</td>
+        <td>a140159465</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353535</td>
+        <td>H2O MULTISTRATEGIES SP &quot;R&quot; (USD) ACC</td>
+        <td>a140159462</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001197827</td>
+        <td>H2O VIVACE FCP &quot;R&quot; (CHFHDG) ACC</td>
+        <td>a134156263</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001101547</td>
+        <td>H2O VIVACE FCP &quot;R&quot; (EUR) ACC</td>
+        <td>a124128726</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001249798</td>
+        <td>H2O VIVACE FCP &quot;R&quot; (USD) ACC</td>
+        <td>a137499990</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353549</td>
+        <td>H2O VIVACE SP &quot;R&quot; (EUR) ACC</td>
+        <td>a139133350</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>001353546</td>
+        <td>H2O VIVACE SP &quot;R&quot; (USDHDG) ACC</td>
+        <td>a137500439</td>
+        <td>NATIXIS IM (FR)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>HRCAX</td>
+        <td>Harbor Capital Appreciation Fund Admin C</td>
+        <td>a58692440</td>
+        <td>Harbor Funds</td>
+        <td>Administrative Class</td>
+       </tr>
+             <tr>
+        <td>HCAIX</td>
+        <td>Harbor Capital Appreciation Fund Invstr</td>
+        <td>a58692439</td>
+        <td>Harbor Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HRBDX</td>
+        <td>Harbor Core Plus Fund Admin Class</td>
+        <td>a58692441</td>
+        <td>Harbor Funds</td>
+        <td>Administrative Class</td>
+       </tr>
+             <tr>
+        <td>HRMGX</td>
+        <td>Harbor Disruptive Innovation Fund Admin</td>
+        <td>a58692433</td>
+        <td>Harbor Funds</td>
+        <td>Administrative Class</td>
+       </tr>
+             <tr>
+        <td>HIMGX</td>
+        <td>Harbor Disruptive Innovation Fund Inv</td>
+        <td>a58692432</td>
+        <td>Harbor Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HRINX</td>
+        <td>Harbor International Fund Admin Class</td>
+        <td>a58692438</td>
+        <td>Harbor Funds</td>
+        <td>Administrative Class</td>
+       </tr>
+             <tr>
+        <td>HIINX</td>
+        <td>Harbor International Fund Investor Class</td>
+        <td>a42536881</td>
+        <td>Harbor Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HRIGX</td>
+        <td>Harbor International Growth Fund Admin C</td>
+        <td>a58692437</td>
+        <td>Harbor Funds</td>
+        <td>Administrative Class</td>
+       </tr>
+             <tr>
+        <td>HIIGX</td>
+        <td>Harbor International Growth Fund Invst C</td>
+        <td>a58692436</td>
+        <td>Harbor Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HRLVX</td>
+        <td>Harbor Large Cap Value Fund Admin Class</td>
+        <td>a58692435</td>
+        <td>Harbor Funds</td>
+        <td>Administrative Class</td>
+       </tr>
+             <tr>
+        <td>HILVX</td>
+        <td>Harbor Large Cap Value Fund Invstr Class</td>
+        <td>a58692434</td>
+        <td>Harbor Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HMCNX</td>
+        <td>Harbor Mid Cap Fund</td>
+        <td>a121927274</td>
+        <td>Harbor Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HRMVX</td>
+        <td>Harbor Mid Cap Value Fund Admin Class</td>
+        <td>a58692431</td>
+        <td>Harbor Funds</td>
+        <td>Administrative Class</td>
+       </tr>
+             <tr>
+        <td>HIMVX</td>
+        <td>Harbor Mid Cap Value Fund Investor Class</td>
+        <td>a58692430</td>
+        <td>Harbor Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HAONX</td>
+        <td>Harbor Overseas Fund Investor Class</td>
+        <td>a111803728</td>
+        <td>Harbor Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HRSGX</td>
+        <td>Harbor Small Cap Growth Fund Admin Class</td>
+        <td>a58692428</td>
+        <td>Harbor Funds</td>
+        <td>Administrative Class</td>
+       </tr>
+             <tr>
+        <td>HISGX</td>
+        <td>Harbor Small Cap Growth Fund Invst Class</td>
+        <td>a58692427</td>
+        <td>Harbor Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HSVRX</td>
+        <td>Harbor Small Cap Value Fund Admin Class</td>
+        <td>a58692426</td>
+        <td>Harbor Funds</td>
+        <td>Administrative Class</td>
+       </tr>
+             <tr>
+        <td>HISVX</td>
+        <td>Harbor Small Cap Value Fund Invstr Class</td>
+        <td>a58692425</td>
+        <td>Harbor Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>I433067552</td>
+        <td>HARRIS ASSOCIATES GLOBAL EQUITY &quot;F&quot; (EUR) ACC</td>
+        <td>a132182990</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>F</td>
+       </tr>
+             <tr>
+        <td>I433078283</td>
+        <td>HARRIS ASSOCIATES GLOBAL EQUITY &quot;F&quot; (USD) ACC</td>
+        <td>a132185672</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>F</td>
+       </tr>
+             <tr>
+        <td>014794395</td>
+        <td>HARRIS ASSOCIATES GLOBAL EQUITY &quot;I&quot; (EUR) ACC</td>
+        <td>a124129128</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>I</td>
+       </tr>
+             <tr>
+        <td>038935526</td>
+        <td>HARRIS ASSOCIATES GLOBAL EQUITY &quot;I&quot; (GBP) ACC</td>
+        <td>a161258497</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>I</td>
+       </tr>
+             <tr>
+        <td>I542134919</td>
+        <td>HARRIS ASSOCIATES GLOBAL EQUITY &quot;I&quot; (GBP) INC</td>
+        <td>a161258498</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>I</td>
+       </tr>
+             <tr>
+        <td>013010374</td>
+        <td>HARRIS ASSOCIATES GLOBAL EQUITY &quot;I&quot; ACC</td>
+        <td>a124129084</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>I</td>
+       </tr>
+             <tr>
+        <td>014794425</td>
+        <td>HARRIS ASSOCIATES GLOBAL EQUITY &quot;R&quot; (EUR) ACC</td>
+        <td>a124129129</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>142956225</td>
+        <td>HARRIS ASSOCIATES GLOBAL EQUITY &quot;R&quot; (EURHDG) ACC</td>
+        <td>a161259218</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>038935895</td>
+        <td>HARRIS ASSOCIATES GLOBAL EQUITY &quot;R&quot; (GBP) ACC</td>
+        <td>a124128982</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>I402371863</td>
+        <td>HARRIS ASSOCIATES GLOBAL EQUITY &quot;R&quot; (GBP) INC</td>
+        <td>a124128983</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>064800094</td>
+        <td>HARRIS ASSOCIATES GLOBAL EQUITY &quot;R&quot; (SGD) ACC</td>
+        <td>a124128984</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>013010340</td>
+        <td>HARRIS ASSOCIATES GLOBAL EQUITY &quot;R&quot; ACC</td>
+        <td>a124129085</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>I402371373</td>
+        <td>HARRIS ASSOCIATES GLOBAL EQUITY &quot;R&quot; INC</td>
+        <td>a124128861</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>047715652</td>
+        <td>HARRIS ASSOCIATES GLOBAL EQUITY &quot;RE&quot; (EUR) ACC</td>
+        <td>a124128311</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>RE</td>
+       </tr>
+             <tr>
+        <td>047715679</td>
+        <td>HARRIS ASSOCIATES GLOBAL EQUITY &quot;RE&quot; (USD) ACC</td>
+        <td>a124128312</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>RE</td>
+       </tr>
+             <tr>
+        <td>086388839</td>
+        <td>HARRIS ASSOCIATES GLOBAL EQUITY &quot;RE&quot;(EURHDG) ACC</td>
+        <td>a124598312</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>RE</td>
+       </tr>
+             <tr>
+        <td>025844424</td>
+        <td>HARRIS ASSOCIATES GLOBAL EQUITY FUND &quot;H-I/A&quot; (EURHGD)</td>
+        <td>a124128497</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>I</td>
+       </tr>
+             <tr>
+        <td>098061053</td>
+        <td>HARRIS ASSOCIATES US VALUE EQUITY &quot;H-R&quot; (SGD) ACC</td>
+        <td>a124128819</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>H-R</td>
+       </tr>
+             <tr>
+        <td>025844874</td>
+        <td>HARRIS ASSOCIATES US VALUE EQUITY &quot;I&quot; (EUR HDG)ACC</td>
+        <td>a124129229</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>I</td>
+       </tr>
+             <tr>
+        <td>014794310</td>
+        <td>HARRIS ASSOCIATES US VALUE EQUITY &quot;I&quot; (EUR) ACC</td>
+        <td>a124129627</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>I</td>
+       </tr>
+             <tr>
+        <td>064800124</td>
+        <td>HARRIS ASSOCIATES US VALUE EQUITY &quot;I&quot; (SGD) ACC</td>
+        <td>a124128985</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>I</td>
+       </tr>
+             <tr>
+        <td>013010293</td>
+        <td>HARRIS ASSOCIATES US VALUE EQUITY &quot;I&quot; (USD) ACC</td>
+        <td>a124129091</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>I</td>
+       </tr>
+             <tr>
+        <td>014794344</td>
+        <td>HARRIS ASSOCIATES US VALUE EQUITY &quot;R&quot; (EUR) ACC</td>
+        <td>a124129481</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>142956241</td>
+        <td>HARRIS ASSOCIATES US VALUE EQUITY &quot;R&quot; (EURHDG) ACC</td>
+        <td>a137499562</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>031556040</td>
+        <td>HARRIS ASSOCIATES US VALUE EQUITY &quot;R&quot; (GBP) ACC</td>
+        <td>a124128619</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>064800132</td>
+        <td>HARRIS ASSOCIATES US VALUE EQUITY &quot;R&quot; (SGD) ACC</td>
+        <td>a124128986</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>013010277</td>
+        <td>HARRIS ASSOCIATES US VALUE EQUITY &quot;R&quot; ACC</td>
+        <td>a124129092</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>I402371379</td>
+        <td>HARRIS ASSOCIATES US VALUE EQUITY &quot;R&quot; INC</td>
+        <td>a124128862</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>I402369182</td>
+        <td>HARRIS ASSOCIATES US VALUE EQUITY &quot;RE&quot; (EUR) ACC</td>
+        <td>a124128313</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>RE</td>
+       </tr>
+             <tr>
+        <td>047715695</td>
+        <td>HARRIS ASSOCIATES US VALUE EQUITY &quot;RE&quot; (USD) ACC</td>
+        <td>a140159320</td>
+        <td>NATIXIS IM (LU)</td>
+        <td>RE</td>
+       </tr>
+             <tr>
+        <td>HAFAX</td>
+        <td>Hartford AARP Balanced Retirement Fund-A</td>
+        <td>a61470424</td>
+        <td>The Hartford Mutual Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>HAFRX</td>
+        <td>Hartford AARP Balanced-R3</td>
+        <td>a61470420</td>
+        <td>The Hartford Mutual Funds</td>
+        <td>CLASS R3</td>
+       </tr>
+             <tr>
+        <td>HAFSX</td>
+        <td>Hartford AARP Balanced-R4</td>
+        <td>a61470419</td>
+        <td>The Hartford Mutual Funds</td>
+        <td>Class R4</td>
+       </tr>
+             <tr>
+        <td>HAIAX</td>
+        <td>HARTFORD CORE EQUITY FD - A</td>
+        <td>a58794512</td>
+        <td>The Hartford Mutual Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>HGIRX</td>
+        <td>HARTFORD CORE EQUITY FD-R3</td>
+        <td>a58797706</td>
+        <td>The Hartford Mutual Funds</td>
+        <td>CLASS R3</td>
+       </tr>
+             <tr>
+        <td>HGISX</td>
+        <td>HARTFORD CORE EQUITY FD-R4</td>
+        <td>a58797707</td>
+        <td>The Hartford Mutual Funds</td>
+        <td>Class R4</td>
+       </tr>
+             <tr>
+        <td>HERRX</td>
+        <td>HARTFORD EMERGING MARKETS EQUITY FD-R3</td>
+        <td>a58800810</td>
+        <td>The Hartford Mutual Funds</td>
+        <td>CLASS R3</td>
+       </tr>
+             <tr>
+        <td>HERSX</td>
+        <td>HARTFORD EMERGING MARKETS EQUITY FD-R4</td>
+        <td>a58800811</td>
+        <td>The Hartford Mutual Funds</td>
+        <td>Class R4</td>
+       </tr>
+             <tr>
+        <td>HERAX</td>
+        <td>HARTFORD EMERING MARKETS EQUITY FD-A</td>
+        <td>a58800806</td>
+        <td>The Hartford Mutual Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>HDVAX</td>
+        <td>HARTFORD INTERNATIONAL EQUITY FUND-A</td>
+        <td>a58799158</td>
+        <td>The Hartford Mutual Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>HDVRX</td>
+        <td>HARTFORD INTERNATIONAL EQUITY FUND-R3</td>
+        <td>a58798302</td>
+        <td>The Hartford Mutual Funds</td>
+        <td>CLASS R3</td>
+       </tr>
+             <tr>
+        <td>HDVSX</td>
+        <td>HARTFORD INTERNATIONAL EQUITY FUND-R4</td>
+        <td>a58798303</td>
+        <td>The Hartford Mutual Funds</td>
+        <td>Class R4</td>
+       </tr>
+             <tr>
+        <td>HBAAX</td>
+        <td>HARTFORD MODERATE ALLOCATION FUND-A</td>
+        <td>a58796859</td>
+        <td>The Hartford Mutual Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>HBARX</td>
+        <td>HARTFORD MODERATE ALLOCATION FUND-R3</td>
+        <td>a58797688</td>
+        <td>The Hartford Mutual Funds</td>
+        <td>CLASS R3</td>
+       </tr>
+             <tr>
+        <td>HBASX</td>
+        <td>HARTFORD MODERATE ALLOCATION FUND-R4</td>
+        <td>a58797689</td>
+        <td>The Hartford Mutual Funds</td>
+        <td>Class R4</td>
+       </tr>
+             <tr>
+        <td>ITTRX</td>
+        <td>Hartford Multi-Asset Income Fund-R3</td>
+        <td>a58797684</td>
+        <td>The Hartford Mutual Funds</td>
+        <td>CLASS R3</td>
+       </tr>
+             <tr>
+        <td>ITTSX</td>
+        <td>Hartford Multi-Asset Income Fund-R4</td>
+        <td>a58797621</td>
+        <td>The Hartford Mutual Funds</td>
+        <td>Class R4</td>
+       </tr>
+             <tr>
+        <td>HMJAX</td>
+        <td>HARTFORD MUNICIPAL SHORT DURATION FUND-A</td>
+        <td>a71683891</td>
+        <td>The Hartford Mutual Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>HSSBX</td>
+        <td>HARTFORD SCHRDRS SUST CORE BOND FD-R4</td>
+        <td>a157299601</td>
+        <td>The Hartford Mutual Funds</td>
+        <td>Class R4</td>
+       </tr>
+             <tr>
+        <td>HSMRX</td>
+        <td>HARTFORD SMALL CAP VALUE FD-R3</td>
+        <td>a58800659</td>
+        <td>The Hartford Mutual Funds</td>
+        <td>CLASS R3</td>
+       </tr>
+             <tr>
+        <td>HSMSX</td>
+        <td>HARTFORD SMALL CAP VALUE FD-R4</td>
+        <td>a58800660</td>
+        <td>The Hartford Mutual Funds</td>
+        <td>Class R4</td>
+       </tr>
+             <tr>
+        <td>HSMAX</td>
+        <td>HARTFORD SMALL CAP VALUE FUND-A</td>
+        <td>a58796679</td>
+        <td>The Hartford Mutual Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>HMKAX</td>
+        <td>Hartford Sustainable Muni Bond Fund-A</td>
+        <td>a71683893</td>
+        <td>The Hartford Mutual Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>155443570</td>
+        <td>HARVEST ESG CHINA BONDS &quot;R&quot; (EUR) ACC</td>
+        <td>a134694321</td>
+        <td>HARVEST GLB INV LTD (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>155444134</td>
+        <td>HARVEST ESG CHINA BONDS &quot;R&quot; (USD) ACC</td>
+        <td>a134694318</td>
+        <td>HARVEST GLB INV LTD (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>155442611</td>
+        <td>HARVEST ESG CHINA EQUITY &quot;R&quot; (EUR) ACC</td>
+        <td>a134694319</td>
+        <td>HARVEST GLB INV LTD (LU)</td>
+        <td>R</td>
+       </tr>
+             <tr>
+        <td>HULAX</td>
+        <td>HAWAIIAN TAX-FREE TRUST A</td>
+        <td>a58793211</td>
+        <td>THE AQUILA GROUP OF FUNDS</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>HCMWX</td>
+        <td>HCM Dividend Sector Plus Fund - A1</td>
+        <td>a158577131</td>
+        <td>HCM Funds</td>
+        <td>CLASS A1</td>
+       </tr>
+             <tr>
+        <td>HCMPX</td>
+        <td>HCM Dividend Sector Plus Fund - Investor</td>
+        <td>a158577132</td>
+        <td>HCM Funds</td>
+        <td>Investor</td>
+       </tr>
+             <tr>
+        <td>HCMBX</td>
+        <td>HCM Dynamic Income Fund - A</td>
+        <td>a171043165</td>
+        <td>HCM Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>HCMFX</td>
+        <td>HCM Dynamic Income Fund - Investor</td>
+        <td>a171043167</td>
+        <td>HCM Funds</td>
+        <td>Investor</td>
+       </tr>
+             <tr>
+        <td>HCMEX</td>
+        <td>HCM Income Plus Fund - A</td>
+        <td>a136454712</td>
+        <td>HCM Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>HCMKX</td>
+        <td>HCM Income Plus Fund - Investor</td>
+        <td>a158577134</td>
+        <td>HCM Funds</td>
+        <td>Investor</td>
+       </tr>
+             <tr>
+        <td>HCMGX</td>
+        <td>HCM Tactical Growth Fund - A</td>
+        <td>a64900149</td>
+        <td>HCM Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>HCMDX</td>
+        <td>HCM Tactical Growth Fund - Investor</td>
+        <td>a64900150</td>
+        <td>HCM Funds</td>
+        <td>Investor</td>
+       </tr>
+             <tr>
+        <td>HCPSX</td>
+        <td>HEALTH CARE ULTRASECTOR PROFUND SVC</td>
+        <td>a42548239</td>
+        <td>Profunds</td>
+        <td>SERVICE</td>
+       </tr>
+             <tr>
+        <td>HRMDX</td>
+        <td>HEARTLAND MID CAP VALUE FUND INVESTOR</td>
+        <td>a169458770</td>
+        <td>Heartland Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HRTVX</td>
+        <td>Heartland Value Fund Investor</td>
+        <td>a58691189</td>
+        <td>Heartland Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HRVIX</td>
+        <td>HEARTLAND VALUE PLUS FUND INVESTOR</td>
+        <td>a42536880</td>
+        <td>Heartland Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>JHDAX</td>
+        <td>Hedged Equity 2 Fund - A</td>
+        <td>a146128359</td>
+        <td>J.P. Morgan Mutual Funds</td>
+        <td>A SHARES</td>
+       </tr>
+             <tr>
+        <td>JHDCX</td>
+        <td>Hedged Equity 2 Fund - C</td>
+        <td>a147772387</td>
+        <td>J.P. Morgan Mutual Funds</td>
+        <td>C SHARES</td>
+       </tr>
+             <tr>
+        <td>JHTAX</td>
+        <td>Hedged Equity 3 Fund - A</td>
+        <td>a146128361</td>
+        <td>J.P. Morgan Mutual Funds</td>
+        <td>A SHARES</td>
+       </tr>
+             <tr>
+        <td>JHTCX</td>
+        <td>Hedged Equity 3 Fund - C</td>
+        <td>a147772388</td>
+        <td>J.P. Morgan Mutual Funds</td>
+        <td>C SHARES</td>
+       </tr>
+             <tr>
+        <td>JHQAX</td>
+        <td>Hedged Equity Fund - A</td>
+        <td>a62403748</td>
+        <td>J.P. Morgan Mutual Funds</td>
+        <td>A SHARES</td>
+       </tr>
+             <tr>
+        <td>JHQCX</td>
+        <td>Hedged Equity Fund - C</td>
+        <td>a62403749</td>
+        <td>J.P. Morgan Mutual Funds</td>
+        <td>C</td>
+       </tr>
+             <tr>
+        <td>HBFBX</td>
+        <td>Hennessy Balanced INV</td>
+        <td>a58804842</td>
+        <td>Hennessy Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HFCGX</td>
+        <td>Hennessy Cornerstone Growth INV</td>
+        <td>a58804910</td>
+        <td>Hennessy Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HFLGX</td>
+        <td>Hennessy Cornerstone Large Growth INV</td>
+        <td>a58806354</td>
+        <td>Hennessy Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HFMDX</td>
+        <td>Hennessy Cornerstone Mid Cap 30 INV</td>
+        <td>a58806093</td>
+        <td>Hennessy Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HFCVX</td>
+        <td>Hennessy Cornerstone Value INV</td>
+        <td>a58804911</td>
+        <td>Hennessy Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HNRGX</td>
+        <td>Hennessy Energy Transition INV</td>
+        <td>a161551259</td>
+        <td>Hennessy Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HEIFX</td>
+        <td>Hennessy Equity and Income INV</td>
+        <td>a58805719</td>
+        <td>Hennessy Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HFCSX</td>
+        <td>Hennessy Focus INV</td>
+        <td>a58804944</td>
+        <td>Hennessy Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>GASFX</td>
+        <td>Hennessy Gas Utility INV</td>
+        <td>a58804378</td>
+        <td>Hennessy Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HJPNX</td>
+        <td>Hennessy Japan INV</td>
+        <td>a58806491</td>
+        <td>Hennessy Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HJPSX</td>
+        <td>Hennessy Japan Small Cap INV</td>
+        <td>a58807218</td>
+        <td>Hennessy Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HLFNX</td>
+        <td>Hennessy Large Cap Financial INV</td>
+        <td>a58804942</td>
+        <td>Hennessy Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HMSFX</td>
+        <td>Hennessy Midstream INV</td>
+        <td>a161551261</td>
+        <td>Hennessy Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HSFNX</td>
+        <td>Hennessy Small Cap Financial INV</td>
+        <td>a58804943</td>
+        <td>Hennessy Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HTECX</td>
+        <td>Hennessy Technology INV</td>
+        <td>a58805210</td>
+        <td>Hennessy Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HDOGX</td>
+        <td>Hennessy Total Return INV</td>
+        <td>a58805225</td>
+        <td>Hennessy Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>00BDB53G1</td>
+        <td>HEPTAGON DRIEHAUS US MICRO CAP EQUITY &quot;B&quot; (USD) ACC</td>
+        <td>a148461661</td>
+        <td>HEPTAGON CAPITAL (IE)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>00BPT33X8</td>
+        <td>HEPTAGON EUROPEAN FOCUS EQUITY &quot;AE&quot; (EUR) ACC</td>
+        <td>a143386635</td>
+        <td>HEPTAGON CAPITAL (IE)</td>
+        <td>AE</td>
+       </tr>
+             <tr>
+        <td>00BPT33S3</td>
+        <td>HEPTAGON EUROPEAN FOCUS EQUITY &quot;B&quot; ACC</td>
+        <td>a143386634</td>
+        <td>HEPTAGON CAPITAL (IE)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>00BYWKMH6</td>
+        <td>HEPTAGON FUTURE TRENDS EQUITY &quot;A&quot; (USD) ACC</td>
+        <td>a143386350</td>
+        <td>HEPTAGON CAPITAL (IE)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>00BYWKMQ5</td>
+        <td>HEPTAGON FUTURE TRENDS EQUITY &quot;AE&quot; (EUR) ACC</td>
+        <td>a143386654</td>
+        <td>HEPTAGON CAPITAL (IE)</td>
+        <td>AE</td>
+       </tr>
+             <tr>
+        <td>00BZBZ484</td>
+        <td>HEPTAGON FUTURE TRENDS HEDGED FUND &quot;A&quot; (USD) ACC</td>
+        <td>a143386310</td>
+        <td>HEPTAGON CAPITAL (IE)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>00BF1D6S2</td>
+        <td>HEPTAGON KETTLE HILL US L/S EQUITY &quot;AEH&quot; (USDHDG) ACC</td>
+        <td>a148461915</td>
+        <td>HEPTAGON CAPITAL (IE)</td>
+        <td>AEH</td>
+       </tr>
+             <tr>
+        <td>00BYZ0927</td>
+        <td>HEPTAGON WCM GLOBAL EQUITY &quot;A&quot; (USD) ACC</td>
+        <td>a143386275</td>
+        <td>HEPTAGON CAPITAL (IE)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>00BYZ09B6</td>
+        <td>HEPTAGON WCM GLOBAL EQUITY &quot;AE&quot; (EUR) ACC</td>
+        <td>a161258465</td>
+        <td>HEPTAGON CAPITAL (IE)</td>
+        <td>AE</td>
+       </tr>
+             <tr>
+        <td>00BYZ09F0</td>
+        <td>HEPTAGON WCM GLOBAL EQUITY &quot;AEH&quot; (EURHDG) ACC</td>
+        <td>a161258464</td>
+        <td>HEPTAGON CAPITAL (IE)</td>
+        <td>AEH</td>
+       </tr>
+             <tr>
+        <td>00B3N32X3</td>
+        <td>HEPTAGON YACKTMAN US EQUITY &quot;A&quot; (USD)</td>
+        <td>a142368651</td>
+        <td>HEPTAGON CAPITAL (IE)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>00B959F87</td>
+        <td>HEPTAGON YACKTMAN US EQUITY &quot;AD&quot;(USD) INC</td>
+        <td>a143386582</td>
+        <td>HEPTAGON CAPITAL (IE)</td>
+        <td>AD</td>
+       </tr>
+             <tr>
+        <td>00B95B6G8</td>
+        <td>HEPTAGON YACKTMAN US EQUITY &quot;AE&quot; ACC</td>
+        <td>a143385976</td>
+        <td>HEPTAGON CAPITAL (IE)</td>
+        <td>AE</td>
+       </tr>
+             <tr>
+        <td>00BYNG369</td>
+        <td>HEPTAGON YACKTMAN US EQUITY &quot;AED&quot; (EUR HDG) ACC</td>
+        <td>a143386549</td>
+        <td>HEPTAGON CAPITAL (IE)</td>
+        <td>AED</td>
+       </tr>
+             <tr>
+        <td>00BVRYN35</td>
+        <td>HEPTAGON YACKTMAN US EQUITY &quot;AED&quot; (EUR) DIS</td>
+        <td>a143386269</td>
+        <td>HEPTAGON CAPITAL (IE)</td>
+        <td>AED</td>
+       </tr>
+             <tr>
+        <td>00B6STVH4</td>
+        <td>HEPTAGON YACKTMAN US EQUITY &quot;B&quot; (USD) ACC</td>
+        <td>a143386205</td>
+        <td>HEPTAGON CAPITAL (IE)</td>
+        <td>B</td>
+       </tr>
+             <tr>
+        <td>NHIAX</td>
+        <td>HIGH INCOME BOND FUND CLASS A</td>
+        <td>a58807738</td>
+        <td>Neuberger Berman Funds</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>MNHYX</td>
+        <td>High Yield Bond Series Class S</td>
+        <td>a58803725</td>
+        <td>Manning &amp;amp; Napier Fund, Inc.</td>
+        <td>CLASS S</td>
+       </tr>
+             <tr>
+        <td>DXHYX</td>
+        <td>High Yield Bull 1.2x</td>
+        <td>a94139486</td>
+        <td>Direxionfunds</td>
+        <td>Investor</td>
+       </tr>
+             <tr>
+        <td>OHYAX</td>
+        <td>High Yield Fund - A</td>
+        <td>a58692283</td>
+        <td>J.P. Morgan Mutual Funds</td>
+        <td>A SHARES</td>
+       </tr>
+             <tr>
+        <td>OGHCX</td>
+        <td>High Yield Fund - C</td>
+        <td>a58795056</td>
+        <td>J.P. Morgan Mutual Funds</td>
+        <td>C SHARES</td>
+       </tr>
+             <tr>
+        <td>JRJYX</td>
+        <td>High Yield Fund - R3</td>
+        <td>a176358731</td>
+        <td>J.P. Morgan Mutual Funds</td>
+        <td>R3 SHARES</td>
+       </tr>
+             <tr>
+        <td>AAHMX</td>
+        <td>High Yield Managed Duration Muni Fd A</td>
+        <td>a102129377</td>
+        <td>Aberdeen Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>JTIAX</td>
+        <td>High Yield Municipal Fund - A</td>
+        <td>a58693849</td>
+        <td>J.P. Morgan Mutual Funds</td>
+        <td>A SHARES</td>
+       </tr>
+             <tr>
+        <td>JTICX</td>
+        <td>High Yield Municipal Fund - C</td>
+        <td>a58798945</td>
+        <td>J.P. Morgan Mutual Funds</td>
+        <td>C SHARES</td>
+       </tr>
+             <tr>
+        <td>HOBEX</td>
+        <td>Holbrook Income Fund - Investor</td>
+        <td>a147772390</td>
+        <td>Holbrook Funds</td>
+        <td>Investor</td>
+       </tr>
+             <tr>
+        <td>HOSTX</td>
+        <td>Holbrook Structured Income Investor Cl</td>
+        <td>a189450537</td>
+        <td>Holbrook Funds</td>
+        <td>Investor</td>
+       </tr>
+             <tr>
+        <td>HASAX</td>
+        <td>Horizon Active Asset Allocation Fund</td>
+        <td>a100105893</td>
+        <td>Horizon Funds</td>
+        <td>ADVISOR CLASS</td>
+       </tr>
+             <tr>
+        <td>HADUX</td>
+        <td>Horizon Active Dividend Fund</td>
+        <td>a120752315</td>
+        <td>Horizon Funds</td>
+        <td>ADVISOR CLASS</td>
+       </tr>
+             <tr>
+        <td>AIHAX</td>
+        <td>Horizon Active Income Fund</td>
+        <td>a100105899</td>
+        <td>Horizon Funds</td>
+        <td>ADVISOR CLASS</td>
+       </tr>
+             <tr>
+        <td>ARAAX</td>
+        <td>Horizon Active Risk Assist Fund</td>
+        <td>a100105896</td>
+        <td>Horizon Funds</td>
+        <td>ADVISOR CLASS</td>
+       </tr>
+             <tr>
+        <td>USRTX</td>
+        <td>Horizon Defensive Multi-Factor Fund</td>
+        <td>a178178980</td>
+        <td>Horizon Funds</td>
+        <td>ADVISOR CLASS</td>
+       </tr>
+             <tr>
+        <td>HADRX</td>
+        <td>Horizon Defined Risk Fund</td>
+        <td>a120714490</td>
+        <td>Horizon Funds</td>
+        <td>ADVISOR CLASS</td>
+       </tr>
+             <tr>
+        <td>HESAX</td>
+        <td>Horizon ESG Defensive Core Fund</td>
+        <td>a177979098</td>
+        <td>Horizon Funds</td>
+        <td>ADVISOR CLASS</td>
+       </tr>
+             <tr>
+        <td>HWLAX</td>
+        <td>HOTCHKIS &amp;amp; WILEY LARGE CAP VALUE FUND A</td>
+        <td>a58692602</td>
+        <td>Hotchkis And Wiley Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>HWLCX</td>
+        <td>HOTCHKIS &amp;amp; WILEY LARGE CAP VALUE FUND C</td>
+        <td>a42536887</td>
+        <td>Hotchkis And Wiley Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>HWMAX</td>
+        <td>HOTCHKIS &amp;amp; WILEY MID-CAP VALUE FUND A</td>
+        <td>a42536886</td>
+        <td>Hotchkis And Wiley Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>HWMCX</td>
+        <td>HOTCHKIS &amp;amp; WILEY MID-CAP VALUE FUND C</td>
+        <td>a42536876</td>
+        <td>Hotchkis And Wiley Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>HWSAX</td>
+        <td>HOTCHKIS &amp;amp; WILEY SMALL CAP VALUE FUND A</td>
+        <td>a58692202</td>
+        <td>Hotchkis And Wiley Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>HWSCX</td>
+        <td>HOTCHKIS &amp;amp; WILEY SMALL CAP VALUE FUND C</td>
+        <td>a42536889</td>
+        <td>Hotchkis And Wiley Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>HWCAX</td>
+        <td>HOTCHKIS AND WILEY DIVERSIFIED VALUE A</td>
+        <td>a58693099</td>
+        <td>Hotchkis And Wiley Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>HWCCX</td>
+        <td>HOTCHKIS AND WILEY DIVERSIFIED VALUE C</td>
+        <td>a58797145</td>
+        <td>Hotchkis And Wiley Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>HWHAX</td>
+        <td>HOTCHKIS AND WILEY HIGH YIELD FUND A</td>
+        <td>a58694102</td>
+        <td>Hotchkis And Wiley Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>HWAAX</td>
+        <td>HOTCHKIS AND WILEY VALUE OPPORTUNITIES A</td>
+        <td>a58692485</td>
+        <td>Hotchkis And Wiley Funds</td>
+        <td>CLASS A</td>
+       </tr>
+             <tr>
+        <td>HWACX</td>
+        <td>HOTCHKIS AND WILEY VALUE OPPORTUNITIES C</td>
+        <td>a42536888</td>
+        <td>Hotchkis And Wiley Funds</td>
+        <td>CLASS C</td>
+       </tr>
+             <tr>
+        <td>I617460798</td>
+        <td>HSBC GIF ASEAN Equity &quot;AD&quot; INC</td>
+        <td>a180851147</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AD</td>
+       </tr>
+             <tr>
+        <td>242394364</td>
+        <td>HSBC GIF ASIA ESG BOND &quot;AC&quot; (USD) ACC</td>
+        <td>a179371391</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>242394399</td>
+        <td>HSBC GIF ASIA ESG BOND &quot;ACO&quot; (EUR) ACC</td>
+        <td>a179371392</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>ACO</td>
+       </tr>
+             <tr>
+        <td>242394518</td>
+        <td>HSBC GIF ASIA ESG BOND &quot;AM2&quot; (USD) INC</td>
+        <td>a180816772</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AM2</td>
+       </tr>
+             <tr>
+        <td>242394542</td>
+        <td>HSBC GIF ASIA ESG BOND &quot;AM3&quot; (EURHDG) INC</td>
+        <td>a180816773</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AM3</td>
+       </tr>
+             <tr>
+        <td>242394569</td>
+        <td>HSBC GIF ASIA ESG BOND &quot;AM3&quot; (GBPHDG) INC</td>
+        <td>a180816774</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AM3</td>
+       </tr>
+             <tr>
+        <td>016528943</td>
+        <td>HSBC GIF ASIA EX JAPAN EQUITY &quot;AC&quot; ACC</td>
+        <td>a178535037</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>I617333333</td>
+        <td>HSBC GIF ASIA EX JAPAN EQUITY &quot;AD&quot; INC</td>
+        <td>a180817154</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AD</td>
+       </tr>
+             <tr>
+        <td>206640375</td>
+        <td>HSBC GIF ASIA HIGH YIELD BOND &quot;AM2&quot; (USD) INC</td>
+        <td>a179371393</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AM2</td>
+       </tr>
+             <tr>
+        <td>019777316</td>
+        <td>HSBC GIF ASIA PACIF EX JAPAN EQ HD &quot;AC&quot; ACC</td>
+        <td>a178535041</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>I611708636</td>
+        <td>HSBC GIF ASIA PACIFIC EX JAPAN EQ HD &quot;AM2&quot; (USD) INC</td>
+        <td>a179371394</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AM2</td>
+       </tr>
+             <tr>
+        <td>025497848</td>
+        <td>HSBC GIF BRAZIL BOND &quot;AC&quot; (USD) ACC</td>
+        <td>a198051445</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>055136971</td>
+        <td>HSBC GIF BRAZIL EQUITY &quot;AC&quot; (EUR) ACC</td>
+        <td>a179371395</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>ACE</td>
+       </tr>
+             <tr>
+        <td>019669645</td>
+        <td>HSBC GIF BRAZIL EQUITY &quot;AC&quot; (USD) ACC</td>
+        <td>a178535039</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>I617333362</td>
+        <td>HSBC GIF BRAZIL EQUITY &quot;AD&quot; (USD) INC</td>
+        <td>a180817161</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AD</td>
+       </tr>
+             <tr>
+        <td>025498194</td>
+        <td>HSBC GIF BRIC MARKETS EQUITY &quot;AC&quot; (USD) ACC</td>
+        <td>a180851149</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>I617460809</td>
+        <td>HSBC GIF BRIC MARKETS EQUITY &quot;AD&quot; (USD) INC</td>
+        <td>a180851150</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>054497814</td>
+        <td>HSBC GIF CHINESE EQUITY &quot;AC&quot; (GBP) ACC</td>
+        <td>a180851156</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>016486523</td>
+        <td>HSBC GIF CHINESE EQUITY &quot;AC&quot; (USD) ACC</td>
+        <td>a180817158</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>I634279453</td>
+        <td>HSBC GIF CHINESE EQUITY &quot;AD&quot; INC</td>
+        <td>a185220684</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AD</td>
+       </tr>
+             <tr>
+        <td>016490245</td>
+        <td>HSBC GIF ECONOMIC SCALE US EQUITY &quot;A&quot; (USD) ACC</td>
+        <td>a180817159</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>016512834</td>
+        <td>HSBC GIF EURO HIGH YIELD BOND &quot;AC&quot; ACC</td>
+        <td>a178535044</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>I617460818</td>
+        <td>HSBC GIF EURO HIGH YIELD BOND &quot;AD&quot; INC</td>
+        <td>a180851152</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AD</td>
+       </tr>
+             <tr>
+        <td>I611709789</td>
+        <td>HSBC GIF EURO HIGH YIELD BOND &quot;AM2&quot; (EUR) INC</td>
+        <td>a179371680</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AM2</td>
+       </tr>
+             <tr>
+        <td>I617460812</td>
+        <td>HSBC GIF EUROLAND EQ SMALLER CO. &quot;AC&quot; ACC</td>
+        <td>a180851151</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>I617460795</td>
+        <td>HSBC GIF EUROLAND EQ SMALLER CO. &quot;AD&quot; INC</td>
+        <td>a180851146</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AD</td>
+       </tr>
+             <tr>
+        <td>I617333356</td>
+        <td>HSBC GIF EUROLAND VALUE &quot;AC&quot; (EUR) ACC</td>
+        <td>a180817160</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>I617460803</td>
+        <td>HSBC GIF EUROLAND VALUE &quot;AD&quot; (EUR) INC</td>
+        <td>a180851148</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AD</td>
+       </tr>
+             <tr>
+        <td>016490695</td>
+        <td>HSBC GIF EUROPE VALUE &quot;AC&quot; (EUR) ACC</td>
+        <td>a178535045</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>I608475008</td>
+        <td>HSBC GIF EUROPE VALUE &quot;AD&quot; (EUR) INC</td>
+        <td>a178535043</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AD</td>
+       </tr>
+             <tr>
+        <td>016519138</td>
+        <td>HSBC GIF GLOBAL BOND &quot;AC&quot; ACC</td>
+        <td>a178535042</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>I617333338</td>
+        <td>HSBC GIF GLOBAL BOND &quot;AD&quot; INC</td>
+        <td>a180817155</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AD</td>
+       </tr>
+             <tr>
+        <td>056611614</td>
+        <td>HSBC GIF GLOBAL EMERGING MARKETS BOND &quot;A&quot; (USD) ACC</td>
+        <td>a179371682</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>I617460836</td>
+        <td>HSBC GIF GLOBAL EMERGING MARKETS BOND &quot;AD&quot; (USD) INC</td>
+        <td>a180851157</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AD</td>
+       </tr>
+             <tr>
+        <td>I611709803</td>
+        <td>HSBC GIF GLOBAL EMERGING MARKETS BOND &quot;AM2&quot; (USD) INC</td>
+        <td>a179371683</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AM2</td>
+       </tr>
+             <tr>
+        <td>I611709806</td>
+        <td>HSBC GIF GLOBAL EMERGING MARKETS BOND &quot;AM3&quot; (EURHDG) INC</td>
+        <td>a179371684</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AM3</td>
+       </tr>
+             <tr>
+        <td>023458543</td>
+        <td>HSBC GIF GLOBAL EMERGING MARKETS LOCAL DEBT &quot;AC&quot; (USD) ACC</td>
+        <td>a179371685</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>I611709813</td>
+        <td>HSBC GIF GLOBAL EMERGING MARKETS MULTI-ASSET INCOM &quot;AM2&quot; (USD) INC</td>
+        <td>a179371686</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AM2</td>
+       </tr>
+             <tr>
+        <td>I611945350</td>
+        <td>HSBC GIF GLOBAL EMERGING MARKETS MULTI-ASSET INCOM &quot;AM3&quot; (EUR) INC</td>
+        <td>a179432585</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AM3</td>
+       </tr>
+             <tr>
+        <td>I611945353</td>
+        <td>HSBC GIF GLOBAL EMERGING MARKETS MULTI-ASSET INCOM &quot;AM3&quot; (GBP) INC</td>
+        <td>a179432586</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AM3</td>
+       </tr>
+             <tr>
+        <td>I617331818</td>
+        <td>HSBC GIF GLOBAL EMERGING MARKTS EQ &quot;AD&quot; INC</td>
+        <td>a180816777</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AD</td>
+       </tr>
+             <tr>
+        <td>032323944</td>
+        <td>HSBC GIF GLOBAL EQUITY CLIMATE CHANGE &quot;AC&quot; ACC</td>
+        <td>a179432587</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>232435704</td>
+        <td>HSBC GIF GLOBAL EQUITY SUSTAINABLE HEALTHCARE &quot;AC&quot; (USD) ACC</td>
+        <td>a179432588</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>232435801</td>
+        <td>HSBC GIF GLOBAL EQUITY SUSTAINABLE HEALTHCARE &quot;ACO&quot; (EURHDG) ACC</td>
+        <td>a179432589</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>ACO</td>
+       </tr>
+             <tr>
+        <td>106605122</td>
+        <td>HSBC GIF GLOBAL EQUITY VOLATILITY FOCUSED &quot;AC&quot; (USD) ACC</td>
+        <td>a179432590</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>052429161</td>
+        <td>HSBC GIF GLOBAL HIGH INCOME BOND &quot;AC&quot; (USD) ACC</td>
+        <td>a180851159</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>I617460843</td>
+        <td>HSBC GIF GLOBAL HIGH INCOME BOND &quot;ADH&quot; (USD) INC</td>
+        <td>a180851158</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>ADH</td>
+       </tr>
+             <tr>
+        <td>I611945373</td>
+        <td>HSBC GIF GLOBAL HIGH INCOME BOND &quot;AM2&quot; (USD) INC</td>
+        <td>a179432591</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AM2</td>
+       </tr>
+             <tr>
+        <td>078025140</td>
+        <td>HSBC GIF GLOBAL HIGH YIELD BOND &quot;AC&quot; (USD) ACC</td>
+        <td>a179432592</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>I611427863</td>
+        <td>HSBC GIF GLOBAL HIGH YIELD BOND &quot;AM2&quot; (USD) INC</td>
+        <td>a179297452</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AM2</td>
+       </tr>
+             <tr>
+        <td>I611945387</td>
+        <td>HSBC GIF GLOBAL HIGH YIELD BOND &quot;AM3&quot; (EURHDG) INC</td>
+        <td>a179432594</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AM3</td>
+       </tr>
+             <tr>
+        <td>244932746</td>
+        <td>HSBC GIF GLOBAL INFRASTRUCTURE EQUITY &quot;AC&quot; (USD) ACC</td>
+        <td>a196523911</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>167467288</td>
+        <td>HSBC GIF GLOBAL LOWER CARBON BOND &quot;AC&quot; (USD) ACC</td>
+        <td>a179432593</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>167467342</td>
+        <td>HSBC GIF GLOBAL LOWER CARBON EQUITY &quot;AC&quot; (USD) ACC</td>
+        <td>a179445212</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>116322749</td>
+        <td>HSBC GIF GLOBAL REAL ESTATE EQUITY &quot;AC&quot; (USD) ACC</td>
+        <td>a179445213</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>078024780</td>
+        <td>HSBC GIF INDIA FIXED INCOME &quot;AC&quot; (USD) ACC</td>
+        <td>a179297450</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>I617460853</td>
+        <td>HSBC GIF INDIA FIXED INCOME &quot;AD&quot; (USD) INC</td>
+        <td>a180851161</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AD</td>
+       </tr>
+             <tr>
+        <td>054497725</td>
+        <td>HSBC GIF INDIAN EQUITY &quot;AC&quot; (GBP) ACC</td>
+        <td>a179445214</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>016488119</td>
+        <td>HSBC GIF INDIAN EQUITY &quot;AC&quot; (USD) ACC</td>
+        <td>a178535038</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>I634279448</td>
+        <td>HSBC GIF INDIAN EQUITY &quot;AD&quot; (USD) INC</td>
+        <td>a185220683</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AD</td>
+       </tr>
+             <tr>
+        <td>085429248</td>
+        <td>HSBC GIF MANAGED SOLUTIONS - ASIA FOCUSED CONSERVA &quot;AC&quot; (USD) ACC</td>
+        <td>a179445215</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>085429507</td>
+        <td>HSBC GIF MANAGED SOLUTIONS - ASIA FOCUSED CONSERVA &quot;ACH&quot; (EURHDG) ACC</td>
+        <td>a179445216</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>ACH</td>
+       </tr>
+             <tr>
+        <td>081912173</td>
+        <td>HSBC GIF MANAGED SOLUTIONS ASIA FOCUSED GROWTH &quot;AC&quot; (USD) ACC</td>
+        <td>a179445217</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>076254095</td>
+        <td>HSBC GIF MANAGED SOLUTIONS ASIA FOCUSED INCOME &quot;AC&quot; (USD) ACC</td>
+        <td>a179445218</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AC</td>
+       </tr>
+             <tr>
+        <td>I611995887</td>
+        <td>HSBC GIF MANAGED SOLUTIONS ASIA FOCUSED INCOME &quot;AM2&quot; (USD) INC</td>
+        <td>a179445219</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AM2</td>
+       </tr>
+             <tr>
+        <td>I612462202</td>
+        <td>HSBC GIF MANAGED SOLUTIONS ASIA FOCUSED INCOME &quot;AM3H&quot; (EURHDG) INC</td>
+        <td>a179563934</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AM3</td>
+       </tr>
+             <tr>
+        <td>I617460823</td>
+        <td>HSBC GIF TURKEY EQUITY &quot;AD&quot; INC</td>
+        <td>a180851153</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AD</td>
+       </tr>
+             <tr>
+        <td>208390058</td>
+        <td>HSBC GIF US INCOME FOCUSED &quot;AM2&quot; (USD) INC</td>
+        <td>a179563931</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AM2</td>
+       </tr>
+             <tr>
+        <td>208390112</td>
+        <td>HSBC GIF US INCOME FOCUSED &quot;AM3&quot; (EURHDG) INC</td>
+        <td>a179563932</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AM3</td>
+       </tr>
+             <tr>
+        <td>208390139</td>
+        <td>HSBC GIF US INCOME FOCUSED &quot;AM3&quot; (GBPHDG) INC</td>
+        <td>a179563933</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AM3</td>
+       </tr>
+             <tr>
+        <td>085698508</td>
+        <td>HSBC GLOBAL INVESTMENT FUNDS - MANAGED SOLUTIONS -ASIA FOCUSED GROWTH &quot;ACH&quot; (EURHDG) ACC</td>
+        <td>a180851160</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>ACH</td>
+       </tr>
+             <tr>
+        <td>080693109</td>
+        <td>HSBC ISLAMIC GLOBAL EQUITY INDEX &quot;A&quot; (EUR) ACC</td>
+        <td>a186853131</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>046684265</td>
+        <td>HSBC ISLAMIC GLOBAL EQUITY INDEX &quot;A&quot; (USD) ACC</td>
+        <td>a175447980</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I597669837</td>
+        <td>HSBC ISLAMIC GLOBAL EQUITY INDEX &quot;A&quot; (USD) INC</td>
+        <td>a175730530</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>044761114</td>
+        <td>HSBC PORTFOLIOS WORLD SELECTION 3 &quot;A&quot; (HGDGBP) ACC</td>
+        <td>a179563960</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I612462262</td>
+        <td>HSBC WORLD SELECTION 1 &quot;A&quot; (EURHDG) INC</td>
+        <td>a179563949</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I612462265</td>
+        <td>HSBC WORLD SELECTION 1 &quot;A&quot; (GBPHDG) INC</td>
+        <td>a179563950</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>044761041</td>
+        <td>HSBC WORLD SELECTION 1 &quot;A&quot; (HGDEUR) ACC</td>
+        <td>a179563954</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>044761050</td>
+        <td>HSBC WORLD SELECTION 1 &quot;A&quot; (HGDGBP) ACC</td>
+        <td>a179563955</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>044761033</td>
+        <td>HSBC WORLD SELECTION 1 &quot;A&quot; (USD) ACC</td>
+        <td>a179563951</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I612462259</td>
+        <td>HSBC WORLD SELECTION 1 &quot;AM&quot; (USD) INC</td>
+        <td>a179563948</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AM</td>
+       </tr>
+             <tr>
+        <td>I612462213</td>
+        <td>HSBC WORLD SELECTION 2 &quot;A&quot; (EURHDG) INC A</td>
+        <td>a179563937</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I612462253</td>
+        <td>HSBC WORLD SELECTION 2 &quot;A&quot; (GBPHDG) INC A</td>
+        <td>a179563947</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>044761076</td>
+        <td>HSBC WORLD SELECTION 2 &quot;A&quot; (HGDEUR) ACC</td>
+        <td>a179563957</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>044761084</td>
+        <td>HSBC WORLD SELECTION 2 &quot;A&quot; (HGDGBP) ACC</td>
+        <td>a179563956</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>044761068</td>
+        <td>HSBC WORLD SELECTION 2 &quot;A&quot; (USD) ACC</td>
+        <td>a179563958</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I612462208</td>
+        <td>HSBC WORLD SELECTION 2 &quot;A&quot; (USD) INC</td>
+        <td>a179563936</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I612462223</td>
+        <td>HSBC WORLD SELECTION 3 &quot;A&quot; (EURHDG) INC</td>
+        <td>a179563939</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I612462225</td>
+        <td>HSBC WORLD SELECTION 3 &quot;A&quot; (GBPHDG) INC</td>
+        <td>a179563940</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>044761106</td>
+        <td>HSBC WORLD SELECTION 3 &quot;A&quot; (HGDEUR) ACC</td>
+        <td>a179563959</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>044761092</td>
+        <td>HSBC WORLD SELECTION 3 &quot;A&quot; (USD) ACC</td>
+        <td>a179563952</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>3</td>
+       </tr>
+             <tr>
+        <td>I612462218</td>
+        <td>HSBC WORLD SELECTION 3 &quot;AM&quot; (USD) INC</td>
+        <td>a179563938</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AM</td>
+       </tr>
+             <tr>
+        <td>192617219</td>
+        <td>HSBC WORLD SELECTION 3 &quot;AMFLX&quot; (USD) INC</td>
+        <td>a196523855</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AMF</td>
+       </tr>
+             <tr>
+        <td>I612462235</td>
+        <td>HSBC WORLD SELECTION 4 &quot;A&quot; (EURHDG) INC A</td>
+        <td>a179563942</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I612462238</td>
+        <td>HSBC WORLD SELECTION 4 &quot;A&quot; (GBPHDG) INC</td>
+        <td>a179563943</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>044761149</td>
+        <td>HSBC WORLD SELECTION 4 &quot;A&quot; (HGDEUR) ACC</td>
+        <td>a179563961</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>044761157</td>
+        <td>HSBC WORLD SELECTION 4 &quot;A&quot; (HGDGBP) ACC</td>
+        <td>a179563962</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>044761122</td>
+        <td>HSBC WORLD SELECTION 4 &quot;A&quot; (USD) ACC</td>
+        <td>a179563963</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I612462228</td>
+        <td>HSBC WORLD SELECTION 4 &quot;A&quot; (USD) INC</td>
+        <td>a179563941</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I612462247</td>
+        <td>HSBC WORLD SELECTION 5 &quot;A&quot; (EURHDG) INC A</td>
+        <td>a179563945</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I612462248</td>
+        <td>HSBC WORLD SELECTION 5 &quot;A&quot; (GBPHDG) INC</td>
+        <td>a179563946</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>044761173</td>
+        <td>HSBC WORLD SELECTION 5 &quot;A&quot; (HGDEUR) ACC</td>
+        <td>a179563964</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>044761181</td>
+        <td>HSBC WORLD SELECTION 5 &quot;A&quot; (HGDGBP) ACC</td>
+        <td>a179563965</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>044761165</td>
+        <td>HSBC WORLD SELECTION 5 &quot;A&quot; (USD) ACC</td>
+        <td>a179563953</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>A</td>
+       </tr>
+             <tr>
+        <td>I612462242</td>
+        <td>HSBC WORLD SELECTION 5 &quot;AM&quot; (USD) INC</td>
+        <td>a179563944</td>
+        <td>HSBC GLOBAL AM (LU)</td>
+        <td>AM</td>
+       </tr>
+             <tr>
+        <td>HUDEX</td>
+        <td>Huber Diversified Lg Cap Val Fd, Inst Cl</td>
+        <td>a58808950</td>
+        <td>Huber Capital Funds</td>
+        <td>Institutional Class</td>
+       </tr>
+             <tr>
+        <td>HUDIX</td>
+        <td>Huber Diversified Lg Cap Val Fd, Inv Cl</td>
+        <td>a58808951</td>
+        <td>Huber Capital Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HULEX</td>
+        <td>Huber Equity Income Fund, Inst Cl</td>
+        <td>a58807913</td>
+        <td>Huber Capital Funds</td>
+        <td>Institutional Class</td>
+       </tr>
+             <tr>
+        <td>HULIX</td>
+        <td>Huber Equity Income Fund, Investor Cl</td>
+        <td>a58807072</td>
+        <td>Huber Capital Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HUMEX</td>
+        <td>Huber Mid Cap Value Fd, Inst Cl</td>
+        <td>a136307814</td>
+        <td>Huber Capital Funds</td>
+        <td>Institutional Class</td>
+       </tr>
+             <tr>
+        <td>HUMDX</td>
+        <td>Huber Mid Cap Value Fd, Investor Cl</td>
+        <td>a136307815</td>
+        <td>Huber Capital Funds</td>
+        <td>Investor Class</td>
+       </tr>
+             <tr>
+        <td>HUSEX</td>
+        <td>Huber Small Cap Value Fund, Inst Cl</td>
+        <td>a58807914</td>
+        <td>Huber Capital Funds</td>
+        <td>Institutional Class</td>
+       </tr>
+             <tr>
+        <td>HUSIX</td>
+        <td>Huber Small Cap Value Fund, Investor Cl</td>
+        <td>a58807073</td>
+        <td>Huber Capital Funds</td>
+        <td>Investor Class</td>
+       </tr>
+                   
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <p>Interactive Brokers LLC receives compensation from fund companies participating in its no-transaction-fee program for shareholder and other administrative services.  Such compensation includes, but is not limited to, Rule 12b-1 fees that are paid out of the fund’s assets.  IB may share a portion of the compensation received from fund companies with your financial advisor or introducing broker.</p>
+ </div>
+</section>
+</div>
+<!-- FOOTER START ---------------------------------------------------------------------------------------------------- -->
+<footer class="footer noprint" id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p>Interactive Brokers ®, IB<sup>SM</sup>, InteractiveBrokers.com ®, Interactive Analytics ®, IB Options Analytics<sup>SM</sup>, IB SmartRouting<sup>SM</sup>, PortfolioAnalyst ®, IB Trader Workstation<sup>SM</sup> and One World, One Account<sup>SM</sup> are service marks and/or trademarks of Interactive Brokers LLC. Supporting documentation for any claims and statistical information will be provided upon request. Any trading symbols displayed are for illustrative purposes only and are not intended to portray recommendations.</p>
+                <p>The risk of loss in online trading of stocks, options, futures, currencies, foreign equities, and fixed Income can be substantial.</p>
+                <p>Options involve risk and are not suitable for all investors. For more information read the <a href="https://www.theocc.com/about/publications/character-risks.jsp" rel="noreferrer noopener" target="_blank">Characteristics and Risks of Standardized Options</a>, also known as the options disclosure document (ODD). Alternatively, please contact <a href="../support/customer-service.php.html?p=contact" target="_self">IB Customer Service</a> to receive a copy of the ODD. Before trading, clients must read the relevant risk disclosure statements on our <a href="../general/homepage-disclosures.php.html" target="_self">Warnings and Disclosures page</a>. Trading on margin is only for experienced investors with high risk tolerance. You may lose more than your initial investment. For additional information about rates on margin loans, please see <a href="margin-rates.php.html" target="_self">Margin Loan Rates</a>. Security futures involve a high degree of risk and are not suitable for all investors. The amount you may lose may be greater than your initial investment. Before trading security futures, read the <a href="../general/homepage-disclosures.php.html" target="_self">Security Futures Risk Disclosure Statement</a>. Structured products and fixed income products such as bonds are complex products that are more risky and are not suitable for all investors. Before trading, please read the <a href="../general/homepage-disclosures.php.html" target="_self">Risk Warning and Disclosure Statement</a>.</p>
+                <p>For information on the IBKR ATS, please <a href="https://www.sec.gov/divisions/marketreg/form-ats-n-filings.htm#ats-n" rel="noreferrer noopener" target="_blank">visit the SEC site</a>.</p>
+                <p>34 countries include both countries and territories.</p>
+			</div>
+		</div>
+        <div class="footer-site-links" id="footerSiteLinks">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>Account</p>
+                    <ul>
+                    <li><a href="/sso/Login?RL=1" target="_self">Log In</a></li>
+                    <li><a href="/Universal/Application" target="_self">Open an Account</a></li>
+                    <li><a href="/sso/Login?c=t" target="_self">Finish an Application</a></li>
+                    <li><a href="../accounts/account-guide.php.html" target="_self">Account Types</a></li>
+                    <li><a href="/Universal/Application?ft=T" target="_self">Free Trial</a></li>
+                    </ul>
+                    <p>Software & Downloads</p>
+                    <ul>
+                    <li><a href="tws.php.html#tws-software" target="_self">Trader Workstation</a></li>
+                    <li><a href="ibkr-desktop.php.html" target="_self">IBKR Desktop</a></li>
+                    <li><a href="tws-mobile.php.html#trytoday" target="_self">IBKR Mobile</a></li>
+                    <li><a href="ib-api.php.html#api-software" target="_self">APIs</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>Support</p>
+                    <ul>
+                    <li><a href="../support/fund-my-account.php.html" target="_self">Fund Your Account</a></li>
+					<li><a href="../support/individuals.php.html" target="_self">For Individuals</a></li>
+                    <li><a href="../support/institutions.php.html" target="_self">For Institutions</a></li>
+                    <li><a href="../support/institutional-sales-contacts.php.html" target="_self">Institutional Sales Contacts</a></li>
+					<li><a href="../general/contact/ibot-container.php.html" target="_self">Browse our FAQs</a></li>
+					<li><a href="../software/systemStatus.php.html" target="_self">System Status</a></li>
+                    </ul>
+                    <p>Vendor Support</p>
+                    <ul>
+                    <li><a href="../general/about/supplier-information.php.html" target="_self">Supplier Information</a></li>
+                    </ul>
+                    
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>About Us</p>
+                    <ul>
+                    <li><a href="../general/awards.php.html" target="_self">Awards</a></li>
+                    <li><a href="../general/about/careers-splash.php.html" target="_self">Careers</a></li>
+                    <li><a href="../general/about/about.php.html" target="_self">Information and History</a></li>
+                    <li><a href="https://investors.interactivebrokers.com/ir/main.php" target="_self">Investor Relations</a></li>
+                    <li><a href="../about/news-at-ibkr.php.html" target="_self">News @ IBKR</a></li>
+                    <li><a href="../general/about/press-and-media.php.html" target="_self">Press and Media</a></li>
+                    <li><a href="../accounts/legalDocuments/brokerPerformanceReports.php.html" target="_self">Regulatory Reports</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>Follow Us on Social Media</p>
+                    <ul>
+                    <li><a href="https://www.facebook.com/interactivebrokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com/interactivebrokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/company/interactive-brokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="https://www.twitter.com/ibkr" target="_blank" rel="noreferrer noopener"><i class="fab fa-x-twitter"></i> Twitter</a></li>
+                    <li><a href="https://www.youtube.com/interactivebrokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-youtube"></i> YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-disclosure-links" id="footerDisclosureLinks">
+            <div class="row">
+                <div class="col">
+                    <ul>
+                    <li><a href="../accounts/legalDocuments/accessibility-policy.php.html" target="_self">Accessibility Policy</a></li>
+                    <li><a href="../accounts/legalDocuments/anti-fraud-notice.php.html" target="_self">Anti-Fraud Notice</a></li>
+                    <li><a href="../accounts/legalDocuments/custIdentificationNotice.php.html" target="_self">Customer Identification Program Notice</a></li>
+                    <li><a href="../../Universal/servlet/Registration_v2-1.formSampleView?formdb=4024" target="_blank" rel="noreferrer noopener">Customer Relationship Summary</a></li>
+                    <li><a href="../general/warnings-on-frauds-and-scams.php.html" target="_self">Warning on Frauds and Scams</a></li>
+                    <li><a href="../accounts/forms-and-disclosures-client-agreements.php.html" target="_self">Forms and Disclosures</a></li>
+                    <li><a href="../accounts/legalDocuments/privacy.php.html" target="_self">Privacy</a></li>
+                    <li><a href="../sitemap/index.php.html" target="_self">Site Map</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-entities" id="footerEntities">
+            <div class="row">
+                <div class="col">
+                    <div class="footer-entity">
+                        <!-- IBKR LLC -->
+                        <p class="entity-name"><a href="https://www.interactivebrokers.com" target="_self">Interactive Brokers LLC</a></p>
+                        <p>Is a member <a rel="noreferrer noopener" target="_blank" href="https://www.nyse.com">NYSE</a> - <a href="https://www.finra.org" rel="noreferrer noopener" target="_blank">FINRA</a> - <a href="https://www.sipc.org" rel=" noreferrer noopener" target="_blank">SIPC</a> and regulated by the US Securities and Exchange Commission and the Commodity Futures Trading Commission.<br> <strong>Headquarters:</strong> One Pickwick Plaza, Greenwich, CT 06830 USA<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.com" target="_self">www.interactivebrokers.com</a></p>
+                                                <p class="footer-entities-link"><a href="#collapseEntities" target="_self" class="collapsed" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseEntities">Information on Other Interactive Brokers Affiliates</a></p>
+                    </div>
+                    <div class="footer-entities-list collapse" id="collapseEntities">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <!-- IBKR CA -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.ca/en/home.php?nored=t" target="_self">Interactive Brokers Canada Inc.</a></p>
+                                <p>Is a member of the                                 <a href="https://www.ciro.ca" target="_blank" rel="noreferrer noopener">Canadian Investment Regulatory Organization (CIRO)</a> 
+                                 
+                                and Member - <a href="https://www.cipf.ca" target="_blank" rel="noreferrer noopener">Canadian Investor Protection Fund.</a><br> <strong>Registered Office:</strong> 1800 McGill College Avenue, Suite 2106, Montreal, Quebec, H3A 3J6, Canada.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.ca/en/home.php?nored=t" target="_self">www.interactivebrokers.ca</a></p>
+                                <!-- IBKR UK -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.co.uk/en/home.php?nored=t" target="_self">Interactive Brokers (U.K.) Limited </a></p>
+                                <p>Is authorised and regulated by the <a href="https://www.fca.org.uk" target="_blank" rel="noreferrer noopener">Financial Conduct Authority</a>. FCA register entry number 208159. Incorporated in England & Wales under company number 03958476. <a href="https://www.fca.org.uk/firms/financial-services-register" target="_blank" rel="noreferrer noopener">[https://www.fca.org.uk/firms/financial-services-register]</a><br> <strong>Registered Office:</strong> 20 Fenchurch Street, Floor 12, London EC3M 3BY.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.co.uk/en/home.php?nored=t" target="_self">www.interactivebrokers.co.uk</a></p>
+                                <!-- IBKR IE -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.ie/en/home.php?nored=t" target="_self">Interactive Brokers Ireland Limited</a></p>
+                                <p>Is regulated by the <a href="https://www.centralbank.ie" target="_blank" rel="noreferrer noopener">Central Bank of Ireland</a> (CBI, reference number C423427), registered with the Companies Registration Office (CRO, registration number 657406), and is a member of the Irish Investor Compensation Scheme (ICS).<br> <strong>Registered Office:</strong> North Dock One, 91/92 North Wall Quay, Dublin 1 D01 H7V7, Ireland.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.ie/en/home.php?nored=t" target="_self">www.interactivebrokers.ie</a></p>
+                                <!-- IBKR HU -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.hu/en/home.php?nored=t" target="_self">Interactive Brokers Central Europe Zrt.</a></p>
+                                <p>Is licensed and regulated by the <a href="https://www.mnb.hu/" target="_blank" rel="noreferrer noopener">Central Bank of Hungary (Magyar Nemzeti Bank)</a> under no. H-EN-III-623/2020. Company registration number 01-10-141029. Registering Court: Company Registry of the Metropolitan General Court.<br> <strong>Registered Office:</strong> 1075 Budapest, Madách Imre út 13-14., Hungary.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.hu/en/home.php?nored=t" target="_self">www.interactivebrokers.hu</a></p>
+                                <!-- IBKR AUS -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.com.au/en/home.php?nored=t" target="_self">Interactive Brokers Australia Pty. Ltd.</a></p>
+                                <p>ABN 98 166 929 568 is licensed and regulated by the <a href="https://asic.gov.au/" target="_blank" rel="noreferrer noopener">Australian Securities and Investments Commission</a> (AFSL: 453554) and is a participant of <a href="https://www.asx.com.au/" target="_blank" rel="noreferrer noopener">ASX</a>, <a href="https://www.asx.com.au/" target="_blank" rel="noreferrer noopener">ASX 24</a> and <a href="https://www.cboe.com.au/" target="_blank" rel="noreferrer noopener">Cboe Australia</a>.<br> <strong>Registered Office:</strong> Level 11, 175 Pitt Street, Sydney, New South Wales 2000, Australia.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.com.au/en/home.php?nored=t" target="_self">www.interactivebrokers.com.au </a></p>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <!-- IBKR HK -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.com.hk/en/home.php?nored=t" target="_self">Interactive Brokers Hong Kong Limited</a></p>
+                                <p>Is regulated by the Hong Kong Securities and Futures Commission, and is a member of the <a href="https://www.hkex.com.hk" target="_blank" rel="noreferrer noopener">SEHK</a> and the <a href="https://www.hkex.com.hk" target="_blank" rel="noreferrer noopener">HKFE</a>.<br> <strong>Registered Office:</strong> Suite 1512, Two Pacific Place, 88 Queensway, Admiralty, Hong Kong SAR.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.com.hk/en/home.php?nored=t" target="_self">www.interactivebrokers.com.hk</a></p>
+                                <!-- IBKR IN -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.co.in/en/home.php?nored=t" target="_self">Interactive Brokers India Pvt. Ltd.</a></p>
+                                <p>Is a trading member of <a href="https://www.nseindia.com/" target="_blank" rel="noreferrer noopener">NSE</a>, <a href="https://www.bseindia.com/" target="_blank" rel="noreferrer noopener">BSE</a>, and depository participant of <a href="https://nsdl.co.in/" target="_blank" rel="noreferrer noopener">NSDL</a>. <a href="https://www.sebi.gov.in" target="_blank" rel="noreferrer noopener">SEBI</a> Registration No. INZ000217730; NSDL: IN-DP-602-2021. CIN-U67120MH2007FTC170004.<br> <strong>Registered Office:</strong> 502/A, Times Square, Andheri Kurla Road, Andheri East, Mumbai 400059, India.<br> <strong>Phone:</strong> +91-22-61289888 <span class="pipe">|</span> <strong>Fax:</strong> +91-22-61289898.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.co.in/en/home.php?nored=t" target="_self">www.interactivebrokers.co.in</a></p>
+                                <!-- IBKR JP -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.co.jp/en/home.php?nored=t" target="_self">Interactive Brokers Securities Japan Inc.</a></p>
+                                <p>Is regulated by Kanto Local Finance Bureau (Registration No.187) and is a member of <a href="https://www.jsda.or.jp/" target="_blank" rel="noreferrer noopener">Japan Securities Dealers Association</a> and <a href="https://www.nisshokyo.or.jp" target="_blank" rel="noreferrer noopener">The Commodity Futures Association of Japan</a>.<br> <strong>Registered Office:</strong> Kasumigaseki Building 25F, 2-5 Kasumigaseki 3-chome, Chiyoda-ku, Tokyo, 100-6025 Japan.<br> <strong>Phone:</strong> +81 03-4590-0711 <em>(On business days from 8:30-17:30 JST)</em>.<br> <strong>Website:</strong>  <a href="https://www.interactivebrokers.co.jp/en/home.php?nored=t" target="_self">www.interactivebrokers.co.jp</a></p>
+                                <!-- IBKR SG -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.com.sg/en/home.php?nored=t" target="_self">Interactive Brokers Singapore Pte. Ltd.</a></p>
+                                <p>Is licensed and regulated by the Monetary Authority of Singapore (Licence No. CMS100917).<br> <strong>Registered Office:</strong> #40-02A, Asia Square Tower 1, 8 Marina View, Singapore 018960.<br> <strong>Website:</strong>  <a href="https://www.interactivebrokers.com.sg/en/home.php?nored=t" target="_self">www.interactivebrokers.com.sg</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- FOOTER END ---------------------------------------------------------------------------------------------------- -->
+<!-- SHARE ON SOCIAL ---------------------------------------------------------------------------------------------------->
+<div class="social-sidebar animated fadeInLeft noprint">
+	<span><i class="fa fa-chevron-left"></i><i class="fa fa-chevron-right"></i></span>
+	<div class="icon-set">
+		<p>SHARE</p>
+		<div class="share-icon"><a href="/insights/ibtr_alerts.php?tiv=13654&cl=F&p=T" target="_blank" rel="noreferrer noopener" title="Share on Facebook" aria-label="Share on Facebook" class="icon-facebook"><i class="fab fa-facebook-square"></i></a></div>
+		<div class="share-icon"><a href="/insights/ibtr_alerts.php?tiv=13654&cl=T&p=T" target="_blank" rel="noreferrer noopener" title="Share on Twitter" aria-label="Share on Twitter" class="icon-twitter"><i class="fab fa-x-twitter"></i></a></div>
+		<div class="share-icon"><a href="/insights/ibtr_alerts.php?tiv=13654&cl=L&p=T" target="_blank" rel="noreferrer noopener" title="Share on Linkedin" aria-label="Share on Linkedin" class="icon-linkedin"><i class="fab fa-linkedin"></i></a></div>
+		<div class="share-icon"><a href="javascript:void(0);" target="_self" title="Share by Email" aria-label="Share by Email" name="btn_trigger" data-bs-toggle="modal" data-bs-target="#emailModal" id="13654" onclick="emailCookie();" class="icon-email"><i class="far fa-envelope"></i></a></div>
+	</div>
+</div>
+<!-- MODAL START | SHARE ON SOCIAL ---------------------------------------------------------------------------------------------------->
+<div class="modal fade noprint" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button id="cls_frm_1" type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="gridSystemModalLabel"><i class="far fa-envelope text-gray"></i> Email</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col">
+						<form>
+							<div class="form-group">
+								<label for="_to" class="control-label">To:</label> <span id="_err_to" style="color: red;"></span>
+								<input type="text" class="form-control" id="_to">
+							</div>
+							<div class="form-group">
+								<label for="_from" class="control-label">From:</label> <span id="_err_frm" style="color: red;"></span>
+								<input type="text" class="form-control" id="_from">
+							</div>
+							<div class="form-group">
+								<label for="_subject" class="control-label">Subject:</label> <span id="_err_subject" style="color: red;"></span>
+								<input type="text" class="form-control" id="_subject" value="Interactive Brokers">
+							</div>
+							<div class="form-group">
+								<textarea class="form-control" id="_content" style="height:200px;"></textarea>
+							</div>
+							<p class="text-sm">URL: <span class="text-italic text-black">www.interactivebrokers.com/en/index.php?f=<span id='vid'></span></span></p>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<div class="row">
+					<div class="col-6">
+						<div align="left">
+							<button id="cls_frm_2" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+					<div class="col-6">
+						<div align="right">
+							<button type="button" class="btn btn-primary" id="send">Send</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<input type="hidden" id="_page_id" name="_page_id" value="13654">
+</div>
+<!-- MODAL END | SHARE ON SOCIAL ----------------------------------------------------------------------------------------------------> 
+<script type="text/javascript" src="../../insights/ibtr_share.js?t=v1"></script>
+<script>
+$(document).ready(function() {
+	 $(".social-sidebar span").click(function(){
+		 $(".social-sidebar div").toggleClass("social-sidebar-hide");
+		 $(".social-sidebar span").toggleClass("toggle-arrow");
+ 	 });
+});
+function emailCookie() {
+	if (document.cookie.indexOf("IB_EM_SH") == -1) {
+		var ex=new Date();
+		ex.setTime(ex.getTime()+86400000);
+		document.cookie ='IB_EM_SH='+1+';expires='+ex.toGMTString()+';path=/;domain=';
+	}
+}
+</script>
+<!-- SCRIPTS FOOTER ---------------------------------------------------------------------------------------------------- -->
+<script type="text/javascript" src="../../scripts/common/js/zeynep-2.2.0/zeynep.js"></script>
+<script type="text/javascript" src="../../scripts/common/js/lazyload/lazyload.min.js"></script>
+<script type="text/javascript" src="../../search/conversions-2404.js?t=1718780048"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+    // GATHER HEIGHT OF HEADER
+    var defaultMarginTop = $("div#ibkr-header").outerHeight();
+    // SET MARGIN-TOP OF CONTENTS
+    $("div#contents").css("margin-top", defaultMarginTop);
+    // ON WINDOW RESIZE CALCULATE THE HEIGHT OF THE HEADER AND USE THAT AS THE MARGIN-TOP OF CONTENTS DIV
+    $(window).resize(function() {
+        var headerHeight = $("div#ibkr-header").outerHeight();
+        var headerHeightDelta = headerHeight - defaultMarginTop;
+        $("div#contents").css("margin-top", defaultMarginTop + headerHeightDelta);
+    });
+    // BANNER | REGION SELECTOR
+    $("#bannerRegionSelector a.btn-close").click(function() {
+        // On banner close, set margin-top on timeout
+        setTimeout(function() {
+            var headerHeight = $("div#ibkr-header").outerHeight();
+            $("div#contents").css("margin-top", headerHeight);
+        },500);
+    });
+    // MOBILE MENU
+    $(function() {
+        // Initilize mobile menu
+        var zeynep = $('.menu-mobile').zeynep({
+            opened: function () {
+        },
+        closed: function () {
+            }
+        })
+        // Dynamically bind closing event
+        zeynep.on('closing', function () {
+        })
+        // Mobile menu close on overlay click
+        $('.website-overlay').on('click', function () {
+            zeynep.close()
+        })
+        // Mobile menu close on button click
+        $('.btn-close').on('click', function () {
+            zeynep.close()
+        })
+        // Mobile menu open on navbar-toggler click
+        $('.navbar-toggler').on('click', function () {
+            zeynep.open()
+        })
+    })
+});
+</script>
+ <script>var ibdmn='interactivebrokers.co.uk';(function(d,c){let s=d.createElement('script');s.src='https://www.interactivebrokers.co.uk/mkt/ibgtag.js?wbst='+c;s.id='_ib_tag';s.async=true;d.getElementsByTagName('head')[0].appendChild(s);})(document,'UK');</script><!-- STYLES FOOTER ---------------------------------------------------------------------------------------------------- -->
+<link rel="preload" as="font" type="font/woff2" href="../../fonts/fontawesome-6.4.2/webfonts/fa-brands-400.woff2" crossorigin="">
+<link rel="preload" as="font" type="font/woff2" href="../../fonts/fontawesome-6.4.2/webfonts/fa-regular-400.woff2" crossorigin="">
+<link rel="preload" as="font" type="font/woff2" href="../../fonts/fontawesome-6.4.2/webfonts/fa-solid-900.woff2" crossorigin="">
+<link rel="preload" as="style" href="../../css/fontawesome-6.4.2/all.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/fontawesome-6.4.2/all.min.css">
+<link rel="preload" as="style" href="../../css/animate-3.7.2/animate.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/animate-3.7.2/animate.min.css">
+<link rel="preload" as="style" href="../../css/bootstrap-switch-3.3.2/bootstrap-switch.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/bootstrap-switch-3.3.2/bootstrap-switch.min.css">
+<link rel="preload" as="style" href="../../css/ibkr/website-print.min.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../css/ibkr/website-print.min.css"></body>
+</html>
