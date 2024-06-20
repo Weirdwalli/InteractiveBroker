@@ -1,0 +1,292 @@
+@charset "UTF-8";
+/* CSS Document */
+section#page-title {
+	display: none;
+}
+.forms-disclosures table {
+	border-top: none;
+	border-bottom: none;
+}
+.forms-disclosures table > tbody tr td {
+	border-top: none;
+	padding: 12px 8px 9px 8px;
+}
+.forms-disclosures h3 {
+	margin-bottom: 1rem;
+}
+/* Side Nav Overrides for height */
+.ibkr-sidebar ul {min-height: initial;}
+.ibkr-sidebar {height: 100%;}
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content .navbar {
+	padding: 15px 10px;
+	background: var(--gray-5-solid);
+	border: none;
+	border-radius: 0;
+	margin-bottom: 40px;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+#content .navbar-btn {
+	box-shadow: none;
+	outline: none !important;
+	border: none;
+}
+#content .hide {
+	display: none;
+}
+#product-body .wrapper {
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+#content {
+	width: 100%;
+	padding: 20px;
+	/* min-height: 100vh; */
+	transition: all 0.3s;
+	padding-bottom: 80px;
+}
+/* ---------------------------------------------------
+    PRODUCT PAGE SET
+----------------------------------------------------- */
+section#page-title, .section-title {
+	display: none;
+}
+#intro h1, #intro h2 {
+	color: var(--white);
+	font-weight: 600;
+	font-size: 2.5rem;
+	line-height: 3rem;
+	margin: 0.5rem 0 2rem;
+}
+/* START FORMS AND DISCLOSURES CSS  ------------------------------------------------------------------------------------------------------------------ */
+#intro {
+	padding: 0;
+}
+#intro .hero-color {
+	background: #ebf1f4;
+	background-image: url('/images/web/press-and-media-hero.jpg');
+	background-size: cover;
+	background-position: 30% center;
+	padding-bottom: 20px;
+	min-height: 216px;
+	border-bottom: 2px solid var(--light);
+}
+#intro .hero-color h2 {
+	color: var(--black);
+	font-weight: 300;
+}
+#intro .eyebrow {
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 2px;
+	color: var(--black);
+	font-size: 0.9375rem;
+}
+#intro h4 {
+	color: var(--white);
+	font-weight: 600;
+	padding-bottom: 2rem;
+	padding-end: 5rem;
+	-webkit-padding-end: 5rem;
+	-moz-padding-end: 5rem;
+}
+#intro .wrapper {
+	padding-top: 4rem;
+	padding-right: 25%;
+	padding-bottom: 1rem;
+	padding-start: 3rem;
+	-webkit-padding-start: 3rem;
+	-moz-padding-start: 3rem;
+}
+[dir="rtl"] #intro .wrapper {
+	padding-right: 45%;
+}
+/* ---------------------------------------------------
+    PRESS AND MEDIA PAGE SET
+----------------------------------------------------- */
+.press-and-media {
+	padding-top: 30px;
+}
+.press-and-media h2 {
+	color: var(--font-color-dark);
+	margin-bottom: 0px;
+	margin-top: 20px;
+}
+.press-and-media h3 {
+	margin-top: 0;
+	color: var(--font-color-dark);
+	font-weight: var(--fw-600);
+	font-size: 1.5rem;
+	line-height: 1.2;
+}
+.press-and-media .tools h3 {
+	margin-top: 70px;
+	margin-bottom: 25px;
+	font-weight: var(--fw-300);
+	font-size: 1.75rem;
+}
+.press-and-media h4 {
+	margin-top: 0;
+	color: var(--font-color-dark);
+	font-weight: var(--fw-600);
+	font-size: 1.25rem;
+}
+.press-and-media .prod-name {
+	padding-top: 15px;
+}
+.press-and-media p.article-details {
+	color: var(--gray);
+}
+.press-and-media .month {
+	font-weight: var(--fw-600);
+}
+.press-and-media .row {
+	margin-bottom: 40px;
+}
+.press-and-media .row .droplinks {
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+.press-and-media .row .facts {
+	margin-top: 40px;
+}
+.press-and-media .content-link, #pr-articles .content-link {
+	margin-bottom: 15px;
+	margin-top: 15px;
+	align-self: center;
+}
+.press-and-media .presentations-link {
+	margin-bottom: 15px;
+	margin-top: 5px;
+}
+.press-and-media .presentations-link a {
+	margin-end: 15px;
+	-webkit-margin-end: 15px;
+	-moz-margin-end: 15px;
+}
+.press-and-media .presentations-header h2 {
+	display: none;
+}
+.press-and-media .checklist li {
+	margin-bottom: 10px;
+}
+.press-and-media .col-md-6 {
+	padding: 10px 15px;
+}
+.press-and-media .facts, .press-and-media .products {
+	margin: 20px 0;
+}
+.press-and-media .facts p {
+	margin: 5px auto;
+}
+.press-and-media .facts .left p {
+	font-weight: var(--fw-600);
+}
+.press-and-media .col-header {
+	font-weight: var(--fw-600);
+}
+.press-and-media .row .item {
+	margin-bottom: 30px;
+}
+.press-and-media .divider {
+	margin: 0;
+	padding: 0;
+}
+/* MEDIA QUERY | EXTRA SMALL < 576px ---------------------------------------------------------------------------------------------------- */
+@media (max-width:575.98px) {
+	#intro .hero-color {
+		min-height: 180px;
+		padding-bottom: 0px;
+		background-position: 20% 50%
+	}
+	#intro h2 {
+		font-size: 2rem;
+		line-height: 2.5rem;
+		width: 80%
+	}
+	#intro .wrapper {
+		padding-top: 2rem;
+		padding-right: 30%;
+		padding-bottom: 0rem;
+		padding-start: 1rem;
+		-webkit-padding-start: 1rem;
+		-moz-padding-start: 1rem;
+	}
+	[dir="rtl"] #intro .wrapper {
+		padding-right: 45%;
+	}
+	.press-and-media .presentations-link a {
+		display: block;
+	}
+	.press-and-media .left {
+		padding-bottom: 0px;
+	}
+	.press-and-media .right {
+		padding-top: 0px;
+	}
+	.press-and-media .hide {
+		display: none;
+	}
+}
+/* MEDIA QUERY | SMALL > 576px ---------------------------------------------------------------------------------------------------- */
+@media (min-width:576px) and (max-width:767.98px) {
+	#intro .hero-color {
+		min-height: 200px;
+		padding-bottom: 30px;
+	}
+	#intro h2 {
+		font-size: 2rem;
+		line-height: 2.5rem;
+	}
+	#intro .wrapper {
+		padding-top: 3rem;
+		padding-right: 25%;
+		padding-bottom: 1rem;
+		padding-start: 2rem;
+		-webkit-padding-start: 2rem;
+		-moz-padding-start: 2rem;
+	}
+	[dir="rtl"] #intro .wrapper {
+		padding-right: 45%;
+	}
+	.press-and-media .left {
+		padding-bottom: 0px;
+	}
+	.press-and-media .right {
+		padding-top: 0px;
+	}
+	.press-and-media .hide {
+		display: none;
+	}
+}
+/* MEDIA QUERY | MEDIUM > 768px ---------------------------------------------------------------------------------------------------- */
+@media (min-width:768px) and (max-width:991.98px) {}
+/* MEDIA QUERY | LARGE > 992px ---------------------------------------------------------------------------------------------------- */
+@media (min-width:992px) and (max-width:1199.98px) {
+	.press-and-media .content {
+		border-right: 1px solid var(--border-color);
+		padding-end: 70px;
+		-webkit-padding-end: 70px;
+		-moz-padding-end: 70px;
+	}
+	[dir="rtl"] .press-and-media .content {
+		border-right: none;
+		border-left: 1px solid var(--border-color);
+	}
+}
+/* MEDIA QUERY | EXTRA LARGE > 1200px ---------------------------------------------------------------------------------------------------- */
+@media (min-width:1200px) {
+	.press-and-media .content {
+		border-right: 1px solid var(--border-color);
+		padding-end: 70px;
+		-webkit-padding-end: 70px;
+		-moz-padding-end: 70px;
+	}
+	[dir="rtl"] .press-and-media .content {
+		border-right: none;
+		border-left: 1px solid var(--border-color);
+	}
+}

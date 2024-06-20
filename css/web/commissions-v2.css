@@ -1,0 +1,252 @@
+/* color switch: 626c82 from 2b2e39  */
+h2, h4{color:var(--dark);}
+.body-img {max-width:420px;}
+#final-cta {background-color: var(--gray-5-solid);}
+.sb-award{max-width: 200px;padding-top:20px;}
+.dflex{display:flex;align-items: center;justify-content: flex-start;}
+.dflex-center{display:flex;align-items: center;justify-content: center;}
+.d-inlineblock {display: inline-block;margin-end:10px;-webkit-margin-end:10px;-moz-margin-end:10px;}
+#award-tiles{padding:60px 0 20px;}
+/* START COMMISSIONS INCLUDES  ---------------------------------------------------------- */
+h3, h4{color:var(--dark); font-weight: var(--fw-600);margin-top:10px; }
+.modal-dialog-top{margin-top:10%;}
+.table{background-color:transparent;}
+.table > tr > td{padding: 16px 8px;color:var(--dark);}
+.table > thead tr > th{color:var(--dark);line-height: 1.25rem;background-color:transparent;}
+/*td {color:var(--dark;}*/
+.text-price {color:var(--dark);font-weight: var(--fw-600);}
+.item-title{margin-bottom:5px;}
+.title-block{display: inline-block;}
+.country-block h4{color:var(--dark);font-weight: var(--fw-300);text-transform: uppercase;letter-spacing: 2px;display: inline;}
+.country-block img {margin-top: 2px; margin-bottom: 0px; margin-start:0px; -webkit-margin-start:0px; -moz-margin-start:0px; margin-end:10px;-webkit-margin-end:10px;-moz-margin-end:10px; width: 36px;vertical-align: top;}
+h5 img {margin: 0px; margin-end:20px;-webkit-margin-end:20px;-moz-margin-end:20px; width: 42px;}
+h3 {color: var(--dark);font-weight: var(--fw-600);}
+.table-footnote{font-size:.875rem;margin:.5rem 0;color:var(--gray);}
+.example-link{margin-top:5px;}
+/* FEES AND EXPENSES */
+#box-fees-exp .title-box{border-bottom:1px solid var(--border-color);padding: .5rem 0;}
+#box-fees-exp .bkgd-box, #box-incentive .bkgd-box, #stocks-us .bkgd-box{background-color:var(--gray-5-solid);;border:1px solid var(--border-color);padding: .5rem 1.5rem 2rem;}
+#box-fees-exp .title-box h4, #box-incentive .title-box h4{font-weight: var(--fw-300);/*padding:.5rem 1.5rem;*/}
+#box-fees-exp .content-box, #box-incentive .content-box{padding:1.5rem 0rem;}
+#box-fees-exp .nolines .table td, #box-incentive .nolines .table td{border-top:none;}
+#box-fees-exp td {color:var(--dark);}
+#box-fees-exp p {padding-top:.5rem;margin-bottom:.25rem;}
+.featured-text{line-height: 1.5rem;}
+.text-below-table{font-size:.9rem;padding-top:.325rem;color:var(--gray);line-height: 1.125rem;margin-bottom:0;}
+.panel-body {background-color:var(--bg-body);}
+/* NOTES */
+.notes .table {background-color:var(--bg-body);}
+.note .table td{padding:3px;}
+/* FEES AND EXPENSES ACCORDION PANELS --------------------------------------------------------- */
+.bkgd-box-gray {border-color:var(--border-color) !important;background-color:var(--gray-5-solid) !important;}
+.panel-group .content-box p, .panel-group .content-box li, .panel-group .content-box {font-size:.9rem;}
+.panel-group .content-box h5 {font-weight: var(--fw-600); font-size:1rem;}
+/* START NEW COMMISSIONS TABLES  --------------------------------------------------------------- */
+.page-title h2 {
+    color: var(--dark);
+    font-weight: var(--fw-600);
+    font-size: 2.5rem;
+}
+.page-title h3 {
+    color: var(--dark);
+    margin-top: 0;
+}
+p, li, th, td, input, select, textarea {
+    color: var(--dark);
+}
+.commission-tables {
+    padding-bottom: 20px;
+}
+.disclosure {
+    margin: 80px 0 0;
+}
+.commission-tables h3 {
+    color: var(--dark);
+}
+.commission-tables h4 {
+    color: var(--dark);
+    font-weight: var(--fw-600);
+}
+.commission-tables .item-title {
+    margin-bottom: 10px;
+}
+.commission-tables .item-title h4 {
+    display: inline;
+    padding-start:10px;
+    -webkit-padding-start:10px;
+    -moz-padding-start:10px;
+}
+.commission-tables .item-title img {
+    max-width: 30px;
+}
+.commission-tables tr>td>ul {
+    padding-start:15px;
+    -webkit-padding-start:15px;
+    -moz-padding-start:15px;
+}
+.commission-tables .table>tbody tr>td {
+    padding-start:20px;
+    -webkit-padding-start:20px;
+    -moz-padding-start:20px;
+}
+
+.commission-tables .table-bordered>:not(caption)>* {
+    border-width: inherit;
+}
+.commission-tables .panel-group>.panel.panel-default, 
+.commission-tables .panel-group>.panel.card-default, 
+.commission-tables .panel-group>.card.panel-default, 
+.commission-tables .panel-group>.card.card-default, 
+.commission-tables .accordion>.panel.panel-default, 
+.commission-tables .accordion>.panel.card-default, 
+.commission-tables .accordion>.card.panel-default, 
+.commission-tables .accordion>.card.card-default {
+    border: 1px solid var(--border-color);
+}
+.commission-tables .panel-group>.panel.panel-default>.panel-heading {
+    background-color: var(--gray-5-solid);;
+}
+.commission-tables .table>thead tr>th, .table>tbody tr>th, .table>tfoot tr>th {
+    padding: 15px 20px 15px 20px;
+    font-weight: var(--fw-600);
+    font-size: 0.9875rem;
+    line-height: 1rem;
+    text-transform: none;
+    color: var(--dark);
+    background-color: var(--gray-5-solid);;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+.commission-tables h5 {
+    font-weight: var(--fw-600);
+}
+.commission-tables .text-price {
+    font-weight: var(--fw-600);
+}
+.commission-tables .tier-set {
+    background-color: var(--gray-5-solid);;
+    font-weight: var(--fw-600);
+}
+.commission-tables p {
+    margin-bottom: .25rem;
+}
+.commission-tables .tab-content {
+    padding: 0;
+}
+.commission-tables .tab-content>.active {
+    display: block;
+    padding: 5px 0;
+}
+.commission-tables .col-min-170 {
+    min-width: 170px;
+}
+.commission-tables ul li{
+    margin-start:0;
+    -webkit-margin-start:0;
+    -moz-margin-start:0
+}
+.nolines>.table, .nolines>.table tr>td {
+    border: none!important;
+}
+.table>tbody tr>.noborder-t {
+    border-top: none;
+}
+.table>tbody tr>.noborder-b {
+    border-bottom: none;
+}
+.table>tbody tr>.noborder-tb {
+    border-top: none;
+    border-bottom: none;
+}
+/* END NEW COMMISSIONS TABLES  --------------------------------------------------------------- */
+#content .navbar {
+    padding: 15px 10px;
+    background: var(--gray-5-solid);;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+#content .navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+#content .hide {display:none;}
+#product-body .wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+    width: 100%;
+    padding: 20px;
+    transition: all 0.3s;
+    padding-bottom: 80px;
+}
+/* ---------------------------------------------------
+    PRODUCT PAGE SET
+----------------------------------------------------- */
+section#page-title, .section-title{display:none;}
+#intro h1, #intro h2 {
+    color:var(--white);
+    font-weight: var(--fw-600);
+    font-size:2.875rem;
+    line-height: 3.125rem; 
+    margin:0 0 1rem; 
+}
+/* START HERO INTRO  ------------------------------------------------------------------------------------------------------------------ */
+#intro {padding:0;}
+#intro .hero-color{
+    background: #222244; 
+    background-image: url('/images/web/Commissions-bg-900x495.jpg');
+    background-size:cover;
+    background-position: 80% 0;
+    padding-bottom:30px;
+    min-height: 585px;
+}
+#intro .eyebrow{text-transform: uppercase;font-weight: var(--fw-600); letter-spacing: 2px;color:var(--white);font-size:0.9375rem;}
+#intro h4 {color:var(--white);font-weight: var(--fw-600);padding-bottom:2rem;padding-end:5rem;-webkit-padding-end:5rem;-moz-padding-end:5rem; font-size: var(--fs-5); line-height: var(--h5-line-height);}
+#intro .wrapper{padding-top:6rem;padding-bottom:1rem; padding-end:2rem;-webkit-padding-end:2rem;-moz-padding-end:2rem; padding-start:3rem;-webkit-padding-start:3rem;-moz-padding-start:3rem;}
+/* BUTTONS AND BULLETS */
+#intro .btn{min-width: 140px;margin:.5rem 0 .25rem;}
+#intro .btn-region, #intro .btn-region:focus, #intro .btn-region:visited {color:var(--gray);background-color:#f7f7f7;}
+#intro .btn-region:hover {color:var(--white);background-color: var(--primary);}
+#intro .btn-region-active, #intro .btn-region-active:hover, #intro .btn-region:hover, #intro .btn-region-active:focus, #intro .btn-region-active:visited {color:var(--white);background-color: var(--primary);}
+#intro h3 {color:var(--white); font-weight: var(--fw-600);}
+#intro p {color:var(--white);}
+#intro .comm-tabs{margin:1rem 0;}
+#intro .lifestyle {max-width: 460px;bottom:-30px;}
+#intro h5{color:var(--white);  font-weight: var(--fw-700); text-transform: uppercase;letter-spacing: 2px; padding: 10px 10px;font-size: .875rem;}
+#intro .fa-li{font-size:1rem;}
+#intro h5.fa-ul h5 i.fa-check-circle, #intro h5 svg.fa-check-circle {color:  var(--primary);}
+#intro ul.fa-ul li i.fa-check-circle, #intro ul li svg.fa-check-circle {color:  var(--primary);}
+#intro ul.fa-ul li{font-size:1.125rem; line-height: 1.325rem;padding-bottom: .25rem;}
+/* END HERO INTRO  ------------------------------------------------------------------------------------------------------------------ */
+/* MEDIA QUERY | EXTRA SMALL < 576px ---------------------------------------------------------------------------------------------------- */
+@media (max-width:575.98px) {
+    #intro .hero-color{min-height: 280px;}
+    #intro h2 {font-size:2rem;line-height: 2.5rem;}
+    #intro .wrapper{padding:3rem 2rem 1rem 2rem;}
+    #intro h4 {padding-end:2rem;-webkit-padding-end:2rem;-moz-padding-end:2rem;}     
+}
+/* MEDIA QUERY | SMALL > 576px ---------------------------------------------------------------------------------------------------- */
+@media (min-width:576px) and (max-width:767.98px) { 
+    #intro .hero-color{min-height: 280px;}
+    #intro h2 {font-size:2rem;line-height: 2.5rem;}
+    #intro .wrapper{padding:3rem 2rem 1rem 2rem;}
+    #intro h4 {padding-end:2rem;-webkit-padding-end:2rem;-moz-padding-end:2rem;}     
+}
+/* MEDIA QUERY | MEDIUM > 768px ---------------------------------------------------------------------------------------------------- */
+@media (min-width:768px) and (max-width:991.98px) {
+    #intro .hero-color{min-height: 280px;}
+}
+/* MEDIA QUERY | LARGE > 992px ---------------------------------------------------------------------------------------------------- */
+@media (min-width:992px) and (max-width:1199.98px) {
+}
+/* MEDIA QUERY | EXTRA LARGE > 1200px ---------------------------------------------------------------------------------------------------- */
+@media (min-width:1200px) {
+}

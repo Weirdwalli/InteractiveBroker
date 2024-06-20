@@ -1,0 +1,404 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* CONTENT -------------------------------------------------------------------------------------  */
+#content {
+	width: 100%;
+	padding: 20px;
+	transition: all 0.3s;
+	padding-bottom: 80px;
+}
+#content .navbar {
+	padding: 15px 10px;
+	background: #f7f7f7;
+	border: none;
+	border-radius: 0;
+	margin-bottom: 40px;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+#content .navbar-btn {
+	box-shadow: none;
+	outline: none !important;
+	border: none;
+}
+#content .hide {
+	display: none;
+}
+#product-body .wrapper {
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+/* ---------------------------------------------------
+    PRODUCT PAGE SET
+----------------------------------------------------- */
+section#page-title, .section-title {
+	display: none;
+}
+#intro h2, #intro h2 {
+	color: #fff;
+	font-weight: 600;
+	font-size: 2.75rem;
+	line-height: 3rem;
+	margin: 0 0 1rem;
+}
+/* START HERO INTRO  ------------------------------------------------------------------------------------------------------------------ */
+#intro {
+	padding: 0;
+}
+#intro .hero-color {
+	background: #0f4b80;
+	background-image: url('/images/web/Products-bg-900x861-v2dark.jpg');
+	background-size: cover;
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	min-height: 655px;
+	padding-bottom: 40px;
+}
+#intro .ibkr-adv {
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: #fff;
+	font-weight: 600;
+	font-size: 0.875rem;
+}
+#intro .eyebrow {
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 2px;
+	color: #fff;
+	font-size: 0.9375rem;
+}
+#intro h4 {
+	color: #fff;
+	font-weight: 600;
+	padding-bottom: 2rem;
+	padding-right: 5rem;
+}
+#intro .wrapper {
+	padding: 3.5rem 2rem 1rem 3rem;
+	width: 90%;
+}
+/* BUTTONS AND BULLETS */
+#intro .btn {
+	min-width: 140px;
+	margin: .5rem 0 .25rem;
+}
+#intro .btn-region, #intro .btn-region:focus, #intro .btn-region:visited {
+	color: #666666;
+	background-color: #F7F7F7;
+}
+#intro .btn-region:hover {
+	color: #fff;
+	background-color: var(--primary);
+}
+#intro .btn-region-active, #intro .btn-region-active:hover, #intro .btn-region:hover, #intro .btn-region-active:focus, #intro .btn-region-active:visited {
+	color: #fff;
+	background-color: var(--primary);
+}
+#intro h3 {
+	color: #fff;
+	font-weight: 600;
+}
+#intro p {
+	color: #fff;
+}
+#intro .comm-tabs {
+	margin: 1rem 0;
+}
+#intro .lifestyle {
+	max-width: 460px;
+	bottom: -30px;
+}
+#intro h5 {
+	color: #fff;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding: 10px 10px;
+	font-size: .875rem;
+}
+#intro .fa-li {
+	font-size: 1rem;
+}
+#intro ul.fa-ul {
+	margin-left: 0;
+}
+#intro h5.fa-ul h5 i.fa-circle-check, #intro h5 svg.fa-circle-check {
+	color: var(--white);
+}
+#intro ul.fa-ul li i.fa-circle-check, #intro ul li svg.fa-circle-check {
+	color: var(--white);
+}
+#intro h5.fa-ul h5 i.fa-check-circle, #intro h5 svg.fa-check-circle {
+	color: var(--white);
+}
+#intro ul.fa-ul li i.fa-check-circle, #intro ul li svg.fa-check-circle {
+	color: var(--white);
+}
+#intro ul.fa-ul li {
+	font-size: 1.375rem;
+	line-height: 1.625rem;
+	padding-bottom: .25rem;
+}
+#intro ul > li {
+	color: #fff;
+}
+.hero {
+	width: 100%;
+	align-items: flex-start;
+}
+.hero .hero-content {
+	padding: 40px 40px;
+}
+#intro .btn-region, #intro .btn-region:focus, #intro .btn-region:visited {
+	color: var(--gray);
+	background-color: var(--white);
+}
+#intro .btn-region:hover {
+	color: var(--white);
+	background-color: var(--primary);
+}
+/* END HERO INTRO  ------------------------------------------------------------------------------------------------------------------ */
+#market-centers.lazy {
+	background-image: none;
+	background-color: #ffffff;
+}
+#market-centers {
+	background-image: url(/images/web/stocks-map-global-mkt.jpg);
+	background-color: #ffffff;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: 50% 0;
+	padding: 80px 0;
+	min-height: 400px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+#final-cta {
+	background-color: var(--gray-5-solid);
+}
+.cta-block {
+	padding-left: 40px;
+}
+.dflex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.dflex-start {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+.title-link {
+	font-size: 1.25rem;
+	font-weight: 600;
+	text-decoration: none;
+	color: #db1222;
+	-webkit-transition: all .2s ease-out;
+	-moz-transition: all .2s ease-out;
+	-o-transition: all .2s ease-out;
+	transition: all .2s ease-out;
+}
+.title-link:hover {
+	color: #990000;
+}
+.title-fx {
+	margin: 0 0 0 0;
+	-webkit-transition: all .2s ease-out;
+	-moz-transition: all .2s ease-out;
+	-o-transition: all .2s ease-out;
+	transition: all .2s ease-out;
+}
+.title-fx:hover {
+	margin: 0 5px 0 0;
+}
+.title-link i {
+	font-size: 0.85em;
+}
+.min-240 {
+	min-width: 240px;
+}
+.img-max-width {
+	max-width: 560px;
+}
+.img-shadow {
+	box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+	margin-bottom: 30px;
+}
+.box-shadow {
+	box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+	margin-bottom: 30px;
+}
+.hero-box-shadow {
+	box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+}
+.btn-open-account {
+	padding: .5rem 1rem;
+}
+/* SUPPORT AND AWARDS BLOCKS -------------------------------------------------------------- */
+#award-tiles {
+	padding: 20px 0 0;
+}
+#award-tiles .headline {
+	color: #000;
+	font-weight: 600;
+	text-align: center;
+	display: block;
+}
+#award-tiles .disp-flex {
+	display: flex;
+	box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+	color: #000;
+	padding: 1rem;
+	margin: 1rem .125rem;
+	border-radius: 0px;
+	height: 100%;
+}
+#award-tiles .feature-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#award-tiles .award-copy {
+	text-align: center;
+	line-height: 1.5rem;
+}
+#award-tiles .img-stockbroker {
+	max-width: 200px;
+}
+#award-tiles .award-label h5, #support-tiles .award-label h5 {
+	font-size: 1rem;
+	line-height: 1.25rem;
+}
+#support-tiles {
+	padding: 20px 0 80px;
+}
+#support-tiles .headline {
+	color: #000;
+	font-weight: 600;
+	text-align: left;
+	display: block;
+}
+#support-tiles .disp-flex {
+	display: flex;
+	box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+	color: #000;
+	padding: 1rem;
+	margin: 1rem .125rem;
+	border-radius: 0px;
+	height: 100%;
+}
+#support-tiles .feature-item {
+	display: flex;
+	align-items: baseline;
+	justify-content: left;
+}
+#support-tiles .award-copy {
+	text-align: left;
+	line-height: 1.5rem;
+}
+#support-tiles .img-stockbroker {
+	max-width: 200px;
+}
+/* MEDIA QUERY | EXTRA SMALL < 576px ---------------------------------------------------------------------------------------------------- */
+@media (max-width:575.98px) {
+#intro .hero-color {
+	min-height: 380px;
+}
+#intro h2 {
+	font-size: 2rem;
+	line-height: 2.5rem;
+}
+#intro .wrapper {
+	padding: 3rem 2rem 1rem 2rem;
+	width: 100%
+}
+#intro h4 {
+	padding-right: 2rem;
+}
+#market-centers {
+	min-height: 0px;
+	padding-top: 20px;
+	margin-top: 30px;
+}
+.cta-block {
+	padding-left: 15px;
+}
+.img-max-width {
+	max-width: 100%;
+}
+.hero-box-shadow {
+	box-shadow: none;
+}
+}
+
+/* MEDIA QUERY | SMALL > 576px ---------------------------------------------------------------------------------------------------- */
+@media (min-width:576px) and (max-width:767.98px) {
+#intro .hero-color {
+	min-height: 380px;
+}
+#intro h2 {
+	font-size: 2rem;
+	line-height: 2.5rem;
+}
+#intro .wrapper {
+	padding: 3rem 2rem 1rem 2rem;
+	width: 90%
+}
+#intro h4 {
+	padding-right: 2rem;
+}
+#market-centers {
+	min-height: 0px;
+	padding-top: 40px;
+	margin-top: 30px;
+}
+.cta-block {
+	padding-left: 15px;
+}
+.img-max-width {
+	max-width: 100%;
+}
+.hero-box-shadow {
+	box-shadow: none;
+}
+}
+/* MEDIA QUERY | MEDIUM > 768px ---------------------------------------------------------------------------------------------------- */
+@media (min-width:768px) and (max-width:991.98px) {
+#intro .hero-color {
+	min-height: 380px;
+}
+#market-centers {
+	min-height: 310px;
+	padding-top: 40px;
+}
+.hero-box-shadow {
+	box-shadow: none;
+}
+}
+
+/* MEDIA QUERY | LARGE > 992px ---------------------------------------------------------------------------------------------------- */
+@media (min-width:992px) and (max-width:1199.98px) {
+#intro .wrapper {
+	padding: 3rem 2rem 1rem 2rem;
+	width: 90%
+}
+.hero {
+	padding-top: 80px;
+}
+.hero .hero-content {
+	padding: 0px 40px 40px;
+}
+}
+/* MEDIA QUERY | EXTRA LARGE > 1200px ---------------------------------------------------------------------------------------------------- */
+@media (min-width:1200px) {
+.hero {
+	width: 74%;
+	padding-top: 80px;
+}
+.hero .hero-content {
+	padding: 0px 40px 40px;
+}
+}

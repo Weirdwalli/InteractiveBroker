@@ -1,0 +1,12 @@
+@charset "UTF-8";
+/* CSS Document */
+section#page-title{display:none;}
+.forms-disclosures table {border-top:none;border-bottom:none;}
+.forms-disclosures table > tbody tr td{border-top:none;padding: 12px 8px 9px 8px;border-bottom: var(--bs-border-color);}
+.forms-disclosures h3{margin-bottom: 1rem;}
+.hero.hero-side-nav .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 80px;
+}
