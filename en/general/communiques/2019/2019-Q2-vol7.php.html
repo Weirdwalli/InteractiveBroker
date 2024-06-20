@@ -1,0 +1,2524 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Interactive Brokers | NEWs @ IBKR vol.7</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="description" content="News at IBKR: As of May 6, 2019, Interactive Brokers clients with Futures trading permission can begin trading CME Group Micro E-mini futures."><meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="expires" content="-1">
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="pragma" content="no-cache">
+<link rel="stylesheet" media="all" type="text/css" href="../../../../stylesheet/web/bootstrap.v3.3.6.css?ver=1">
+<link rel="stylesheet" media="all" type="text/css" href="../../../../stylesheet/web/font-awesome.v4.7.0.css?ver=1" id="font-awesome-css">
+<link rel="stylesheet" media="all" type="text/css" href="../../../../stylesheet/web/animate.css">
+<link rel="stylesheet" media="all" type="text/css" href="../../../../stylesheet/web/ib-common.css?ver=1">
+<!-- BEGIN GENERAL PAGE STYLES -----------------------------------------------------------------------------------------------------------------	-->
+<style type="text/css">
+section#page-title {display:none;}
+html {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+}
+body {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 20px;
+	font-family: proxima-nova, Arial, Verdana, sans-serif;
+	color: #000;
+	background-color: #FFFFFF;
+	overflow-x: hidden;
+}
+h1, h2, h3, h4, h5, h6, p, li, th, td, label, input, textarea {
+	font-family: proxima-nova, Arial, Verdana, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 20px;
+	margin-bottom: 5px;
+}
+h1, h2, h3, h4, h5 {
+	font-weight: 300;
+}
+h1, .h1 {
+	font-size: 46px;
+	color: #000000;
+}
+h2, .h2 {
+	font-size: 40px;
+	color: #000000;
+}
+h3, .h3 {
+	font-size: 32px;
+	color: #000000;
+}
+h4, .h4 {
+	font-size: 24px;
+	line-height: 1.4;
+	color: #000000;
+}
+h5, .h5 {
+	font-size: 18px;
+	line-height: 1.4;
+	color: #000000;
+}
+h6, .h6 {
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 1.6;
+	color: #000000;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	text-decoration: underline;
+}
+h1 a.btn, h2 a.btn, h3 a.btn, h4 a.btn, h5 a.btn, h6 a.btn {
+	text-decoration: none;
+}
+p, ul, ol, li {
+	color: #000000;
+}
+p > i {
+	margin-right: 5px;
+	width: 20px;
+	text-align: center;
+}
+a {
+	color: #000000;
+}
+a:hover {
+	color: #eb2a2e;
+	text-decoration: none;
+}
+a:focus {
+	color: #242424;
+	text-decoration: none;
+	outline: none;
+}
+hr {
+	border-style: solid;
+	border-color: #999999;
+}
+/* Side Navigaiton Bar ------------------------------------------------------------------------------------------------------------------------  */
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+	background-color: transparent;
+}
+/* WRAPPERS FOR SIDE NAVIGATION  --------------------------------------------------------------------------------------------------------------  */
+#wrapper {
+	padding-right: 0;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+#sidebar-wrapper {
+	z-index: 999;
+	right: 0px;
+	width: 0px;
+	height: 100%;
+	margin-left: 0px;
+	top: 66px;
+	left: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	background: #242424;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+#sidebar-wrapper::-webkit-scrollbar {
+display: none;
+}
+#wrapper.toggled #sidebar-wrapper {
+	right: 0;
+	width: 220px;
+	margin-left: -220px;
+}
+#page-content-wrapper {
+	right: 0;
+	width: 100%;
+	padding-top: 70px;
+}
+#wrapper.toggled #page-content-wrapper {
+	position: absolute;
+	right: 0;
+}
+/* SIDEBAR NAV STYLES  ------------------------------------------------------------------------------------------------------------------------- */
+.sidebar-nav {
+	position: absolute;
+	top: 60px;
+	width: 220px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.sidebar-nav li {
+	position: relative;
+	line-height: 16px;
+	display: inline-block;
+	width: 100%;
+}
+.sidebar-nav li:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: -1;
+	height: 100%;
+	width: 3px;
+	background-color: #242424;
+	-webkit-transition: width .2s ease-in;
+	-moz-transition: width .2s ease-in;
+	-ms-transition: width .2s ease-in;
+	transition: width .2s ease-in;
+}
+.sidebar-nav-head {
+	color: #c7c7c7;
+	padding: 3px 22px;
+	font-weight: 300;
+	font-size: 24px;
+	white-space: nowrap;
+}
+.sidebar-nav li:before {
+	background-color: #A02200;
+}
+.sidebar-nav li:hover:before, .sidebar-nav li.open:hover:before {
+	width: 100%;
+	-webkit-transition: width .2s ease-in;
+	-moz-transition: width .2s ease-in;
+	-ms-transition: width .2s ease-in;
+	transition: width .2s ease-in;
+}
+.sidebar-nav li a {
+	display: block;
+	color: #c7c7c7;
+	text-decoration: none;
+	padding: 10px 15px 10px 22px;
+}
+.sidebar-nav li a:hover, .sidebar-nav li a:active, .sidebar-nav li a:focus, .sidebar-nav li.open a:hover, .sidebar-nav li.open a:active, .sidebar-nav li.open a:focus {
+	color: #fff;
+	text-decoration: none;
+	background-color: transparent;
+}
+/* HAMBURGER-CROSS  ---------------------------------------------------------------------------------------------------------------------------- */
+.hamburger {
+	position: fixed;
+	top: 16px;
+	z-index: 1000;
+	display: block;
+	width: 32px;
+	height: 32px;
+	margin-left: -55px;
+	background: transparent;
+	border: none;
+	left: 100%;
+}
+.hamburger:hover, .hamburger:focus, .hamburger:active {
+	outline: none;
+}
+.hamburger.is-closed {
+	margin-left: -50px;
+	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-transition: all .45s ease-in-out;
+}
+.hamburger.is-closed:before {
+	content: '';
+	display: block;
+	width: 100px;
+	font-size: 14px;
+	color: #fff;
+	line-height: 32px;
+	text-align: center;
+	opacity: 0;
+	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-closed:hover:before {
+	opacity: 1;
+	display: block;
+	-webkit-transform: translate3d(-100px, 0, 0);
+	-webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-closed .hamb-top, .hamburger.is-closed .hamb-middle, .hamburger.is-closed .hamb-bottom, .hamburger.is-open .hamb-top, .hamburger.is-open .hamb-middle, .hamburger.is-open .hamb-bottom {
+	position: absolute;
+	right: 0;
+	height: 4px;
+	width: 100%;
+}
+.hamburger.is-closed .hamb-top, .hamburger.is-closed .hamb-middle, .hamburger.is-closed .hamb-bottom {
+	background-color: #fff;
+}
+.hamburger.is-closed .hamb-top {
+	top: 5px;
+	-webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-closed .hamb-middle {
+	top: 50%;
+	margin-top: -2px;
+}
+.hamburger.is-closed .hamb-bottom {
+	bottom: 5px;
+	-webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-closed:hover .hamb-top {
+	top: 0;
+	-webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-closed:hover .hamb-bottom {
+	bottom: 0;
+	-webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-open {
+	margin-left: -50px;
+	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-transition: all .3s ease-in-out;
+}
+.hamburger.is-open .hamb-top, .hamburger.is-open .hamb-middle, .hamburger.is-open .hamb-bottom {
+	background-color: #fff;
+}
+.hamburger.is-open .hamb-top, .hamburger.is-open .hamb-bottom {
+	top: 50%;
+	margin-top: -2px;
+}
+.hamburger.is-open .hamb-top {
+	-webkit-transform: rotate(45deg);
+	-webkit-transition: -webkit-transform .2s cubic-bezier(.73, 1, .28, .08);
+}
+.hamburger.is-open .hamb-middle {
+	display: none;
+}
+.hamburger.is-open .hamb-bottom {
+	-webkit-transform: rotate(-45deg);
+	-webkit-transition: -webkit-transform .2s cubic-bezier(.73, 1, .28, .08);
+}
+.hamburger.is-open:before {
+	content: '';
+	display: block;
+	width: 100px;
+	font-size: 14px;
+	color: #fff;
+	line-height: 32px;
+	text-align: center;
+	opacity: 0;
+	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-open:hover:before {
+	opacity: 1;
+	display: block;
+	-webkit-transform: translate3d(-100px, 0, 0);
+	-webkit-transition: all .35s ease-in-out;
+}
+/* NAV BAR FOR PAGE TITLE ONLY ------------------------------------------------------------------------------------------------------------------------ */
+.navbar-default {
+	background-color: #171717;
+	border-color: #272727;
+	z-index: 10;
+	height: 66px;
+}
+.page-title {
+	color: #fff;
+	font-size: 28px;
+	font-weight: 300;
+	padding: 10px 0 10px 10px;
+}
+.page-title .titlebar {
+	vertical-align: bottom;
+	display: inline-block;
+	margin-bottom: -4px;
+}
+.page-title span.vol {
+	color: #c7c7c7;
+	font-size: 18px;
+	font-weight: 300;
+	padding-left: 80px;
+}
+.ib-icon {
+	padding: 0;
+	margin: 0 5px 0 0;
+	display: inline-block;
+}
+.titlebar-bold {
+	font-weight: 700;
+}
+.titlebar-normal {
+	font-weight: 300;
+}
+.accent-red {
+	color: #eb2a2e;
+}
+@media (max-width:767px) {
+.page-title span.vol {
+	color: #c7c7c7;
+	font-size: 14px;
+	font-weight: 300;
+	padding-left: 10px;
+}
+}
+/* WIDE BUTTONS ---------------------------------------------------------------------------------------------------------------------------------------- */
+.btn {
+	width: 100%;
+}
+/* DISCLOSURES SECTION ---------------------------------------------------------------------------------------------------- */
+#disclosures a {
+	color: #757f83;
+	text-decoration: none;
+}
+#disclosures a:hover {
+	color: #757f83;
+	text-decoration: underline;
+}
+/* FOOTER MENU FROM WEBSITE ---------------------------------------------------------------------------------------------------- */
+footer {
+	background-color: #242424;
+	padding: 2px 0;
+}
+footer.disclosures {
+	background-color: #393939;
+}
+.footer-text {
+	text-align: right;
+	color: #FFFFFF;
+	font-size: 13px;
+}
+footer .container ul.social {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+	text-align: left;
+}
+.social:after, footer .container ul.social:before {
+	content: " ";
+	display: table;
+}
+footer .container ul.social>li {
+	display: inline-block;
+	margin: 5px 5px 5px 0;
+}
+footer .container ul.social>li>a {
+	display: block;
+	width: 24px;
+	height: 24px;
+	line-height: 30px;
+	color: #FFFFFF;
+	background-color: #333;
+	text-align: center;
+}
+footer .container ul.social>li>a:hover {
+	color: #262626;
+	background-color: #FFFFFF;
+}
+footer .container ul.social>li>a.footer-social-facebook {
+	background: url(../../../../images/2015/template/footer_social_facebook.png) no-repeat;
+}
+footer .container ul.social>li>a.footer-social-facebook:hover {
+	background-position: 0 -24px;
+}
+footer .container ul.social>li>a.footer-social-twitter {
+	background: url(../../../../images/2015/template/footer_social_twitter.png) no-repeat;
+}
+footer .container ul.social>li>a.footer-social-twitter:hover {
+	background-position: 0 -24px;
+}
+footer .container ul.social>li>a.footer-social-linkedin {
+	background: url(../../../../images/2015/template/footer_social_linkedin.png) no-repeat;
+}
+footer .container ul.social>li>a.footer-social-linkedin:hover {
+	background-position: 0 -24px;
+}
+footer .container ul.social>li>a.footer-social-youtube {
+	background: url(../../../../images/2015/template/footer_social_youtube.png) no-repeat;
+}
+footer .container ul.social>li>a.footer-social-youtube:hover {
+	background-position: 0 -24px;
+}
+footer .container ul.social>li>a .fa {
+	line-height: inherit;
+}
+footer .container ul.footerlinks {
+	list-style: none;
+	padding-left: 0;
+	margin: 1px 0 0;
+	text-align: right;
+}
+footer .container ul.footerlinks>li {
+	display: inline-block;
+	margin: 10px 5px 5px 15px;
+}
+footer .container ul.footerlinks>li>a, footer .container ul.footerlinks>li>a:active, footer .container ul.footerlinks>li>a:focus, footer .container ul.footerlinks>li>a:hover, footer .container ul.footerlinks>li>a:link, footer .container ul.footerlinks>li>a:visited {
+	display: block;
+	font-size: 12px;
+	line-height: 14px;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #D7D7D7;
+	outline: 0;
+}
+footer .container ul.footerlinks>li>a:hover {
+	color: #FFFFFF;
+}
+ul.footerlinks li.open ul.dropdown-menu {
+	top: inherit;
+	right: 0;
+	bottom: 36px;
+	left: inherit;
+	padding: 5px 0 10px;
+	border-width: 1px;
+	border-color: #242424;
+	background-color: #242424;
+	box-shadow: none;
+}
+ul.footerlinks li.open ul.dropdown-menu li {
+	margin: 0;
+	font-size: 12px;
+	line-height: 18px;
+}
+ul.footerlinks li.open ul.dropdown-menu li a, ul.footerlinks li.open ul.dropdown-menu li a active, ul.footerlinks li.open ul.dropdown-menu li a:focus, ul.footerlinks li.open ul.dropdown-menu li a:hover, ul.footerlinks li.open ul.dropdown-menu li a:link, ul.footerlinks li.open ul.dropdown-menu li a:visited {
+	margin: 2px 5px;
+	padding: 4px 15px;
+	color: #D7D7D7;
+}
+ul.footerlinks li.open ul.dropdown-menu li a:hover {
+	color: #FFFFFF;
+	background-color: #A02200;
+}
+ul.footerlinks li.open ul.dropdown-menu li a.selected_lang {
+	color: #999;
+	background-color: #000;
+}
+ul.footerlinks li.open ul.dropdown-menu li a.selected_lang:hover {
+	cursor: default;
+}
+footer .container h1, footer .container h2, footer .container h3, footer .container h4, footer .container h5, footer .container h6, footer .container li, footer .container p {
+	margin: 15px 0 5px;
+	font-size: 12px;
+	line-height: 18px;
+	color: #999999;
+}
+footer .container h1, footer .container h2, footer .container h3, footer .container h4, footer .container h5, footer .container h6 {
+	margin: 0;
+	color: #D7D7D7;
+}
+footer .container hr {
+	margin: 5px 0;
+	border-color: #999;
+}
+footer .container p a {
+	text-decoration: underline;
+	color: #999999;
+}
+footer .container p a:hover {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+footer .container p a.footerlink {
+	text-decoration: none;
+	color: #D7D7D7;
+}
+footer .container p a.footerlink:hover {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+footer .container ul.subfooterlinks {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+	text-align: left;
+}
+footer .container ul.subfooterlinks>li {
+	display: inline-block;
+	margin: 5px 10px 5px 0;
+}
+footer .container ul.subfooterlinks>li>a, footer .container ul.subfooterlinks>li>a:active, footer .container ul.subfooterlinks>li>a:focus, footer .container ul.subfooterlinks>li>a:hover, footer .container ul.subfooterlinks>li>a:link, footer .container ul.subfooterlinks>li>a:visited {
+	display: block;
+	font-weight: 600;
+	font-size: 11px;
+	line-height: 18px;
+	text-align: center;
+	color: #D7D7D7;
+	outline: 0;
+}
+footer .container ul.subfooterlinks>li>a:hover {
+	color: #FFFFFF;
+}
+/* PAGE SCROLL TO TARGET ---------------------------------------------------------------------------------------------------- */
+.id-drop {
+	display: block;
+	position: relative;
+	width: 0;
+	visibility: hidden;
+}
+.id-drop span {
+	display: block;
+	position: absolute;
+	height: 40px;
+	width: 0;
+	left: 0;
+	bottom: 0;
+	visibility: hidden;
+}
+/* OVERRIDE TO TOP LINK */
+#toTop {
+	display: none !important;
+}
+/* BULLET POINT LIST AND RIGHT CHEVRON RED ----------------------------------------------------------------------------------------------------	*/
+.fa-ul {
+	padding-left: 0;
+	margin-left: 24px;
+	list-style-type: none;
+}
+.slide-text > ul {
+	color: #000;
+	list-style: none;
+	padding: 0;
+}
+.fa-ul > li {
+	font-weight: 300;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+.wht > .fa-ul > li {
+	color: #fff;
+	font-weight: 300;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+.slide-text-wht > ul {
+	color: #fff;
+	list-style: none;
+	padding: 0;
+}
+.fa-chevron-right::before, .fa-li {
+	color: #eb2a2e;
+	font-size: 15px;
+}
+/* SECTION BODY TEXT FOR WHITE AND DARK BACKGROUNDS ----------------------------------------------------------------------------------------------------	*/
+/* Red accent text over any background ----------------------------------- */
+.slide-text .pre-title, .pre-title {
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 500;
+	margin: 2px 0;
+	color: #eb2a2e;
+}
+.slide-text .pre-title-dark, .pre-title-dark{
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 2px 0;
+    color: #bd2225;
+}
+.pre-title-shadow {
+    text-shadow: 0 0 8px rgba(0,0,0,0.66);
+}
+.pre-title-glow {
+	text-shadow: 0px 0px 5px rgba(255,255,255,0.25);
+}
+.slide-text h4, .slide-subhead {
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 26px;
+	color: #A02200;
+	margin: 6px 0 12px;
+}
+/* Black text over light background -------------------------------------- */
+.slide-text-heading {
+	font-size: 40px;
+	font-weight: 700;
+	margin: 0 0 0px;
+	color: #000;
+}
+.slide-text {
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: 300;
+	margin-bottom: 1.5rem;
+	color: #171717;
+	padding: 10px 0 0;
+}
+.slide-text-small {
+	font-size: 12px;
+    line-height: 16px;
+	font-weight: 300;
+	margin-bottom: 1.5rem;
+	color: #171717;
+	padding: 0px 0 0;
+}
+.bold-list-title {
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 24px;
+	color: #000;
+}
+.bold-list-title a, .slide-text a {
+	color: #000;
+	text-decoration: underline;
+}
+.bold-list-title a:hover, .slide-text a:hover {
+	color: #eb2a2e;
+	text-decoration: underline;
+}
+/* White text over dark background -------------------------------------- */
+.slide-text-heading-wht {
+	font-size: 40px;
+	font-weight: 700;
+	margin: 0 0 0px;
+	color: #fff;
+}
+.slide-text-wht {
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: 100;
+	margin-bottom: 1.5rem;
+	color: #fff;
+	padding: 10px 0 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+.slide-text-small-wht {
+	font-size: 12px;
+    line-height: 16px;
+	font-weight: 300;
+	margin-bottom: 1.5rem;
+	color: #fff;
+	padding: 0px 0 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+.bold-list-title-wht {
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 24px;
+	color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+.bold-list-title-wht a, .slide-text-wht a {
+	color: #fff;
+	text-decoration: underline;
+}
+.bold-list-title-wht a:hover, .slide-text-wht a:hover {
+	color: #eb2a2e;
+	text-decoration: underline;
+}
+/* INNER WHITE TEXT BOX LOW 40% OPACITY	-------------------------------------- */
+.text-bkgd-white {
+	background-color: rgba(255,255,255,0.8);
+	padding: 40px;
+	border: 1px solid #e7e7e7;
+	margin-bottom: 30px;
+}
+@media (max-width:767px) {
+.text-bkgd-white {
+	margin-bottom: 0px;
+}
+}
+@media (min-width:768px) {
+.text-bkgd-white {
+	margin-bottom: 30px;
+}
+}
+@media (min-width:992px) {
+.text-bkgd-white {
+	margin-bottom: 30px;
+}
+}
+/* INNER BLACK/DARK TEXT BOX LOW 70% OPACITY	-------------------------------------- */
+.text-bkgd-black {
+	background-color: rgba(0,0,0,0.7);
+	padding: 40px;
+	border: 1px solid #272727;
+	margin-bottom: 100px;
+}
+.text-bkgd-navy-red-border {
+	background-color: rgba(0,13,33,0.7);
+	padding: 40px;
+	/*border:1px solid #eb2a2e; */
+	margin-bottom: 100px;
+}
+/*	CUSTOM SECTION BACKGROUNDS  --------------------------------------------------------------------------------------------------------------------- */
+.bkgd-black {
+	background-color: #000000;
+}
+.bkgd-navy {
+	background-color: #000f2e;
+}
+.imagebox {
+	padding: 0 0 20px;
+	width: 100%;
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* CME Micro E-mini  */
+#section-bkgd-micro-emini {
+	height: auto;
+	overflow: auto;
+	background-repeat: no-repeat;
+}
+#section-bkgd-micro-emini  .text-bkgd-navy{
+    background-color: rgba(0,13,33,0.5);
+    box-shadow: 10px 10px 40px rgba(1,6,25,0.25);
+    padding: 10px 50px 40px;
+}
+#section-bkgd-micro-emini .all-in-pricing {
+    font-size:2.5em;
+    font-weight: 700;
+}
+@media(max-width:767px) {
+    #section-bkgd-micro-emini {
+        background-color: #032d58;
+        background-image: url("../../../../images/emailImages/micro-emini-full.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 40% 0px;
+    }
+    #section-bkgd-micro-emini  .text-bkgd-navy{
+        padding: 20px 30px 30px;
+    }
+    #section-bkgd-micro-emini .all-in-pricing {
+        font-size: 2.2em;
+        font-weight: 700;
+    }
+}
+@media(min-width:768px) {
+    #section-bkgd-micro-emini {
+        padding: 50px 0 0;
+        background-color: #032d58;
+        background-image: url("../../../../images/emailImages/micro-emini-full.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 30% 0px;
+    }
+    #section-bkgd-micro-emini  .text-bkgd-navy{
+        background-color: rgba(0,13,33,0.5);
+        box-shadow: 10px 10px 40px rgba(1,6,25,0.25);
+        padding: 10px 50px 40px;
+    }
+    #section-bkgd-micro-emini .all-in-pricing {
+        font-size: 2.5em;
+        font-weight: 700;
+    }
+}
+@media(min-width:992px) {
+    #section-bkgd-micro-emini {
+        padding-top: 80px;
+        background-size: cover;
+        background-position: 50% 0px;
+    }
+}
+@media(min-width:1200px) {
+    #section-bkgd-micro-emini {
+        background-size: cover;
+        background-position: 50% 0px;
+    }
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* New Account Management Features for Advisors  */
+#section-bkgd-money-transfer {
+	height: auto;
+	overflow: auto;
+	background-repeat: no-repeat;
+}
+@media(max-width:767px) {
+    #section-bkgd-money-transfer {
+        background-image: none;
+        background-size: contain;
+        background-position: 50% 0px;
+    }
+}
+@media(min-width:768px) {
+    #section-bkgd-money-transfer {
+        padding: 50px 0 0;
+        background-image: none;
+        background-size: contain;
+        background-position: 50% 0px;
+    }
+}
+@media(min-width:992px) {
+    #section-bkgd-money-transfer {
+        padding-top: 80px;
+        background-image: url("../../../../images/emailImages/Electronic-Money-Transfer-full.jpg");
+        background-repeat: no-repeat;
+        background-size: 140%;
+        background-position: 50% 0px;
+    }
+}
+@media(min-width:1200px) {
+    #section-bkgd-money-transfer {
+        background-size: cover;
+        background-position: 0px 0px;
+    }
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* IBKR Trading Platform */
+#section-bkgd-trading-platform ul li a {
+    color: #000;
+    text-decoration: underline;
+}
+#section-bkgd-trading-platform ul li a:hover {
+    color: #eb2a2e;
+}
+@media(max-width:767px) {
+    #section-bkgd-trading-platform {
+        padding: 0;
+        margin: 0;
+        background-image: none;
+        background-color: #edf0f5; /* #d4dee8; #e9edf0; */
+    }
+}
+@media(min-width:768px) {
+    #section-bkgd-trading-platform {
+        padding: 60px 0px 0px;
+        height: auto;
+        background-image: none;
+        background-color: #edf0f5; /* #d4dee8; #e9edf0; */
+        overflow: auto;
+    }
+}
+@media(min-width:992px) {
+    #section-bkgd-trading-platform {
+        padding-top: 80px;
+        background-image: url("../../../../images/emailImages/ibkr-trading-platform-full4.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-height: auto;
+        background-position: 30% 0%;
+    }
+    #section-bkgd-trading-platform .phone {
+        background-repeat: no-repeat;
+        background-position: 40px 180px;
+        display: block;
+        background-size: 370px;
+        height: 800px;
+    }
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* When Was Your Last Portfolio Checkup?  */
+#section-bkgd-portfolio-checkup {
+	height: auto;
+	overflow: auto;
+	background-repeat: no-repeat;
+}
+@media(max-width:767px) {
+    #section-bkgd-portfolio-checkup {
+        background-image: none;
+        background-size: contain;
+        background-position: 0px 0px;
+        background-color: #153863;
+    }
+    #section-bkgd-portfolio-checkup .text-bkgd-white {
+        background-color: none;
+        padding: inherit;
+        border: none;
+        margin-bottom: inherit;
+    }
+}
+@media(min-width:768px) {
+    #section-bkgd-portfolio-checkup {
+        padding: 60px 0px;
+        background-image: none;
+        background-size: contain;
+        background-color: #153863;
+    }
+    #section-bkgd-portfolio-checkup .text-bkgd-white {
+        background-color: rgba(255,255,255,0.85);
+        padding: 40px;
+        border: 1px solid #e7e7e7;
+        margin-bottom: 100px;
+    }
+}
+@media(min-width:992px) {
+    #section-bkgd-portfolio-checkup {
+        padding-top: 80px;
+        background-image: url("../../../../images/emailImages/portfolio-checkup-full2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 0px;
+        background-color: #153863;
+    }
+    #section-bkgd-portfolio-checkup .text-bkgd-white {
+        background-color: rgba(255,255,255,0.66);
+        padding: 40px;
+        border: 1px solid #e7e7e7;
+        margin-bottom: 100px;
+    }
+}
+@media(min-width:1200px) {
+    #section-bkgd-portfolio-checkup {
+        background-size: cover;
+        background-position: 0px 0px;
+    }
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* New Account Management Features for Advisors  */
+#section-bkgd-DLCs-SGX{
+	height: auto;
+	overflow: auto;
+	background-repeat: no-repeat;
+}
+@media(max-width:767px) {
+    #section-bkgd-DLCs-SGX {
+        background-image: none;
+        background-size: contain;
+        background-position: 0px 0px;
+        padding-bottom: 60px;
+    }
+    #section-bkgd-DLCs-SGX .text-bkgd-white {
+        background-color: none;
+        padding: inherit;
+        border: none;
+        margin-bottom: inherit;
+    }
+}
+@media(min-width:768px) {
+    #section-bkgd-DLCs-SGX {
+        padding-top: 80px;
+        background-image: url("../../../../images/emailImages/daily-leverage-cert-full.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: -60px 0px;
+    }
+    #section-bkgd-DLCs-SGX .text-bkgd-white {
+        background-color: rgba(255,255,255,0.85);
+        padding: 40px;
+        border: 1px solid #e7e7e7;
+        margin-bottom: 100px;
+    }
+}
+@media(min-width:992px) {
+    #section-bkgd-DLCs-SGX {
+        padding-top: 80px;
+    }
+}
+@media(min-width:1200px) {
+    #section-bkgd-DLCs-SGX {
+        background-size: cover;
+        background-position: 0px 0px;
+    }
+}
+/* New Commissions Structure for European Stocks -----------------------------------------------------------  */
+/* Picture background with focus on right third of the image and blurred light background to the left for black text. Separate smaller image for col-xs size. */
+@media(max-width:767px) {
+    #section-bkgd-commissions-european-stocks {
+        padding: 0 0px;
+        background-color: #5c606b;
+    }
+    #section-bkgd-commissions-european-stocks .imagebox {
+        padding: 0 0 0px;
+        width: 100%;
+    }
+}
+@media(min-width:768px) {
+    #section-bkgd-commissions-european-stocks {
+        padding-top: 50px;
+        padding-bottom: 80px;
+        background-image: none;
+        background-color: #5c606b;
+    }
+}
+@media(min-width:992px) {
+    #section-bkgd-commissions-european-stocks {
+        height: auto;
+        background-image: url("../../../../images/emailImages/commissions-european-stocks-full.jpg");
+        overflow: auto;
+        background-repeat: no-repeat;
+        background-size: 142%;
+        background-position: -230px 0px;
+    }
+}
+@media(min-width:1200px) {
+    #section-bkgd-commissions-european-stocks {
+        background-size: 110%;
+        background-position: 0px 0px;
+    }
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* Tradeweb Credit as a Bond ATS */
+/* Blur abstract background behind dark textbox with border for white text. Background remains for all col sizes. */
+#section-bkgd-tradeweb-credit {
+	height: auto;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0% 0%;
+	background-color: #1e3140;
+	overflow: auto;
+	padding-top: 80px;
+	padding-bottom: 0px;
+}
+@media(max-width:767px) {
+    #section-bkgd-tradeweb-credit {
+        padding: 0 0 0 0;
+        background-image: none;
+        background-color: #1e3140;
+    }
+}
+@media(min-width:768px) {
+    #section-bkgd-tradeweb-credit {
+        padding: 60px 0 60px 0;
+        background-image: none;
+        background-color: #1e3140;
+    }
+}
+@media(min-width:992px) {
+    #section-bkgd-tradeweb-credit {
+        background-image: url("../../../../images/emailImages/Tradeweb-Credit-as-a-Bond-ATS-full.jpg");
+        background-repeat: no-repeat;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        background-size: cover;
+        background-position: 90% 0%;
+        min-height: 700px;
+    }
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* IBKR MOBILE */
+/* Background png image floating over solid background for 3 collum opening next to white text box with black text in col-md and col-lg sizes only. Separate smaller image for col-xs and col-sm sizes. */
+#section-bkgd-ibkr-mobile .toggle-white-bkgd {
+	background-color: rgba(255,255,255,0.0);
+	padding: 40px;
+	border: none;
+}
+@media (max-width:767px) {
+    #section-bkgd-ibkr-mobile {
+        background-color: #e7e7e7;
+        padding: 0px 20px 80px;
+        background-image: none;
+        height: auto;
+    }
+    #section-bkgd-ibkr-mobile .toggle-white-bkgd {
+        background-color: rgba(255,255,255,0.0);
+        padding: 10px;
+        border: none;
+    }
+}
+@media(min-width:768px) {
+    #section-bkgd-ibkr-mobile {
+        background-color: #e7e7e7;
+        padding-top: 0;
+        padding-bottom: 80px;
+        background-image: none;
+    }
+}
+@media(min-width:992px) {
+#section-bkgd-ibkr-mobile {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	background-image: url(../../../../images/emailImages/ibkr-mobile-v2-full.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 55% 40%;
+}
+#section-bkgd-ibkr-mobile .toggle-white-bkgd {
+	background-color: rgba(255,255,255,0.4);
+	padding: 40px;
+	border: 1px solid #e7e7e7;
+}
+}
+@media(min-width:1200px) {
+    #section-bkgd-ibkr-mobile {
+        padding-top: 80px;
+        padding-bottom: 80px;
+        background-image: url(../../../../images/emailImages/ibkr-mobile-v2-full.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 47% 40%;
+    }
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* TRADERS' ACADEMY */
+/* Hard angle color tint image right with solid white background left for black text. Use in col-md and col-lg sizes only. Separate smaller image for col-xs and col-sm sizes. */
+@media (max-width:767px) {
+    #section-bkgd-traders-academy {
+        background-image: none;
+        background-color: #fff;
+        padding-bottom: 60px;
+    }
+}
+@media (min-width:768px) {
+    #section-bkgd-traders-academy {
+        /*background-position: 60% 0;*/
+        padding-top: 0;
+        padding-bottom: 80px;
+    }
+    #section-bkgd-traders-academy .imagetop{
+        background-image: url("../../../../images/emailImages/traders-academy-Q4-xs.jpg");
+        background-size:cover;
+        display: block;
+        min-height:400px;
+        margin-bottom:40px;
+        background-repeat: no-repeat;
+    }
+}
+@media(min-width:992px) {
+    #section-bkgd-traders-academy {
+        padding-top: 80px;
+        padding-bottom: 80px;
+        height: auto;
+        background-image: url("../../../../images/emailImages/traders-academy-Q4-full.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        /*background-position: 70% 0%;*/
+    }
+}
+@media(min-width:1200px) {
+    #section-bkgd-traders-academy {
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 100% 0%;
+    }
+}
+.academy-course {
+	padding: 0 15px;
+	border: 1px solid #dbdded;  /*#d7d7d7;*/
+	margin: 0 0 9px;
+	background-color: rgba(179,186,204,0.1)
+}
+.academy-course .slide-text-heading {
+	font-size: 40px;
+	font-weight: 700;
+	margin: 0 0 0px;
+	color: #000;
+}
+.academy-course .slide-text {
+	font-size: 14px;
+	line-height: 22px;
+	font-weight: 300;
+	margin-bottom: 1.5rem;
+	color: #171717;
+	padding: 0px 0 0;
+}
+.academy-course .bold-list-title {
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 24px;
+	color: #444;
+	margin-top: 1.2rem;
+}
+.academy-course .bold-list-title a, .academy-course .slide-text a {
+	color: #444;
+	text-decoration: underline;
+}
+.academy-course .bold-list-title a:hover, .academy-course .slide-text a:hover {
+	color: #eb2a2e;
+	text-decoration: underline;
+}
+ #section-bkgd-traders-academy .academy-course ul{
+     line-height:22px;
+     font-size:14px;
+     padding-bottom: 10px;
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* IBKR EXPERT COMMUNITIES */
+/* Dark background image left half fades into dark background. Use white text right half. Use in col-md and col-lg sizes only. Separate smaller image for col-xs and col-sm sizes. */
+@media(max-width:767px) {
+    #section-bkgd-ibkr-mkt-commentary {
+        background-color: #000;
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
+}
+@media(min-width:768px) {
+    #section-bkgd-ibkr-mkt-commentary {
+        background-color: #000;
+        padding-top: 80px;
+        padding-bottom: 60px;
+    }
+}
+@media(min-width:992px) {
+    #section-bkgd-ibkr-mkt-commentary {
+        height: auto;
+        padding-top: 80px;
+        padding-bottom: 60px;
+    }
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* The IBKR Client Risk Profile Tool for Advisors   */
+/* Dark background image upper right corner fades into dark background. Leaves space for mobile device animated gif or png on right side. Use white text left half. Use in all col sizes. */
+@media(max-width:767px) {
+    #section-bkgd-client-risk-profile {
+        padding: 0;
+        margin: 0;
+        background-image: none;
+        background-color: #257ab5;
+    }
+}
+@media(min-width:768px) {
+    #section-bkgd-client-risk-profile {
+        padding: 60px 0px 0px;
+        background-image: none;
+        background-color: #257ab5;
+    }
+}
+@media(min-width:992px) {
+    #section-bkgd-client-risk-profile {
+        background-image: url("../../../../images/emailImages/client-risk-profile-full.jpg");
+        background-repeat: no-repeat;
+        background-color: #257ab5;
+        overflow: auto;
+        padding-top: 40px;
+        background-size: 115%;
+        background-position: 0% 100%;
+        min-height: 800px;
+    }
+}
+@media(min-width:1200px) {
+    #section-bkgd-client-risk-profile {
+        padding-top: 80px;
+        background-size: contain;
+        background-position: 0% 100%;
+        min-height: 850px;
+    }
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* IBKR Trading Platform */
+#section-bkgd-syep-canada ul li a {
+    color: #000;
+    text-decoration: underline;
+}
+#section-bkgd-syep-canada ul li a:hover {
+    color: #eb2a2e;
+}
+@media(max-width:767px) {
+    #section-bkgd-syep-canada {
+        padding: 0;
+        margin: 0;
+        background-image: none;
+        background-color: #e9edf0;
+    }
+}
+@media(min-width:768px) {
+    #section-bkgd-syep-canada {
+        padding: 60px 0px 0px;
+        height: auto;
+        background-image: none;
+        background-color: #e9edf0;
+        overflow: auto;
+    }
+}
+@media(min-width:992px) {
+    #section-bkgd-syep-canada {
+        padding-top: 80px;
+        background-image: url("../../../../images/emailImages/syep-canada-full-v2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-height: auto;
+        background-position: 90% 0%;
+    }
+}
+@media(min-width:1200px) {
+    #section-bkgd-syep-canada {
+        padding-top: 80px;
+        background-image: url("../../../../images/emailImages/syep-canada-full-v2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-height: auto;
+        background-position: 100% 0%;
+    }
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* NEW INVESTMENT PRODUCTS AND SERVICES */
+/* White bkgd with flag icons at bottom. Fades to light blue solid background top. Black text in white low opacity text box. Use in all col sizes. */
+#section-bkgd-new-investment-prod {
+	background-image: url("../../../../images/emailImages/background-international-flag-icons.jpg");
+	background-repeat: no-repeat;
+	background-position: 50% 100%;
+	background-size: 100%;
+	overflow: hidden;
+	background-color: #aedaff;
+}
+#section-bkgd-new-investment-prod ul li a {
+	color: #000;
+	text-decoration: underline;
+}
+#section-bkgd-new-investment-prod ul li a:hover {
+	color: #eb2a2e;
+	text-decoration: underline;
+}
+@media(max-width:767px) {
+    #section-bkgd-new-investment-prod .symmetry-padding-1 {
+        padding-top: 20px;
+    }
+}
+@media(min-width:768px) {
+    #section-bkgd-new-investment-prod .btn {
+        float: inherit;
+        margin-left: auto;
+        width: 100%;
+    }
+}
+@media(min-width:992px) {
+    #section-bkgd-new-investment-prod .btn {
+        float: left;
+        margin-left: 0px;
+        width: 70%;
+    }
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* Launches Corporate Bond Order Desk */
+#section-bkgd-bond-desk {
+	height: auto;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0% 0%;
+	background-color: #040d28;
+	overflow: auto;
+	padding-top: 80px;
+	padding-bottom: 0px;
+    background-color: #040d28;
+}
+@media(max-width:767px) {
+    #section-bkgd-bond-desk {
+        padding: 0 0 0 0;
+        background-image: none; /*url("../../../../images/emailImages/bond-desk-sm-xs.jpg");*/
+        background-repeat: no-repeat;
+        background-size: contain;
+        bacground-image: none;
+        background-color: #040d28;
+    }
+    #section-bkgd-bond-desk .text-bkgd-navy-red-border{
+        background-color: rgba(0,13,33,0.0);
+        box-shadow: none;
+    }
+    #section-bkgd-bond-desk .container{
+        margin:0;
+        padding:0;
+    }
+}
+@media(min-width:768px) {
+    #section-bkgd-bond-desk {
+        padding: 0 0 0 0;
+        background-image: url("../../../../images/emailImages/bond-desk-sm-xs.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: #040d28;
+    }
+    #section-bkgd-bond-desk .text-bkgd-navy-red-border{
+        background-color: rgba(0,13,33,0.7);
+        box-shadow: none;
+    }
+}
+@media(min-width:992px) {
+    #section-bkgd-bond-desk {
+        background-image: url("../../../../images/emailImages/bond-desk-full-v2.jpg");
+        background-repeat: no-repeat;
+        padding-top: 80px;
+        padding-bottom: 0px;
+        background-size: cover;
+        background-position: 65% 0%;
+        background-color: #040d28;
+    }
+    #section-bkgd-bond-desk .text-bkgd-navy-red-border{
+        background-color: rgba(0,13,33,0.7);
+        box-shadow: 10px 10px 40px rgba(1,6,25,0.5);
+    }
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* AWARDS */
+/* Light textured background for all col sizes. Black text. Use in all col sizes. */
+#section-bkgd-awards {
+    background-image: url("../../../../images/emailImages/background-gray-triangles.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 0
+}
+#section-bkgd-awards .award-box, #section-bkgd-awards .award-box-barrons, #section-bkgd-awards .award-box-2 {
+    border: 1px solid #eee;
+    margin: 2px;
+    padding-bottom: 40px;
+    padding-top: 20px;
+    background-color: rgba(255,255,255,0.3);
+}
+#section-bkgd-awards .award-padding {
+    background:#fff; 
+    padding:30px 10px;
+}
+@media(max-width:767px) {
+    #section-bkgd-awards img{max-width: 200px;}  
+    #bkgd-light-texture-col-all .award-box {
+        width: auto;
+        height: auto;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    #section-bkgd-awards .award-box-barrons {
+        width: 78.8%;
+        height: auto;
+        margin-left: 10.9%;
+    }
+}
+@media (min-width:768px) {
+    #bkgd-light-texture-col-all .award-box {
+        width: auto;
+        height: auto;
+    }
+    #section-bkgd-awards img{max-width: 200px;}  
+    #section-bkgd-awards .award-box-barrons {
+        height: auto;
+        width: 470px;
+        padding-left: inherit;
+        padding-right: inherit;
+        margin-left: 142px;
+    }
+    #section-bkgd-awards .fa-ul {
+        padding-left: 0;
+        margin-left: 54px;
+        list-style-type: none;
+    }
+}
+@media (min-width:992px) {
+    #bkgd-light-texture-col-all .award-box {
+        width: auto;
+    }  
+    #section-bkgd-awards img{ max-width: 200px;}  
+    #section-bkgd-awards .award-pad-left {
+        padding-left: 20%;
+    }
+    #section-bkgd-awards .award-box {
+        width: 32%;
+        height: 400px;
+    }
+    #section-bkgd-awards .award-box-barrons {
+        padding-left: 40px;
+        padding-right: 0px;
+        margin-left: 17px;
+        width: 910px;
+    }
+    #section-bkgd-awards .award-box-2 {
+        width: 48%;
+        height: 400px;
+        width: 1102px;
+    }
+    #section-bkgd-awards .award-pad-left {
+        padding-left: 10%;
+    }
+    #section-bkgd-awards .fa-ul {
+        padding-left: 0;
+        margin-left: 34px;
+        list-style-type: none;
+    }
+}
+@media (min-width:1200px) {
+    #section-bkgd-awards .award-box-barrons {
+        padding-left: 40px;
+        padding-right: 0px;
+        margin-left: 17px;
+        width: 1102px;
+    }
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* INTERACTIVE BROKERS ASSET MANAGEMENT */
+/* Hard angle color tint image right with solid white background left for black text. Use in col-sm col-md and col-lg sizes only. Floating png image on right over backround. Reposition floatin png for col-xs. */
+@media(max-width:767px) {
+    #section-bkgd-asset-mngt {
+        height: auto;
+        overflow: auto;
+        background-image: none;
+        background-repeat: no-repeat;
+        padding: 0px 20px 40px;
+        padding-bottom: 40px;
+    }
+    #section-bkgd-asset-mngt .img-block {
+        padding: 10px 30px;
+    }
+}
+@media(min-width:768px) {
+    #section-bkgd-asset-mngt {
+        height: auto;
+        overflow: auto;
+        background-image: url("../../../../images/emailImages/ibkr-asset-mngt-full.jpg");
+        background-size: cover;
+        padding-top: 20px;
+        background-position: 60% 500px;
+        background-repeat: no-repeat;
+        padding-bottom: 80px;
+    }
+    #section-bkgd-asset-mngt .img-block {
+        padding: inherit;
+    }
+}
+@media(min-width:992px) {
+    #section-bkgd-asset-mngt {
+        background-image: url("../../../../images/emailImages/ibkr-asset-mngt-full.jpg");
+        background-size: cover;
+        padding-top: 20px;
+        background-position: 50% 0;
+        background-repeat: no-repeat;
+    }
+}
+@media(min-width:1200px) {
+    #section-bkgd-asset-mngt {
+        background-size: cover;
+        padding-top: 20px;
+        background-position: 50% 0;
+    }
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* Legg Mason */
+/* Hard angle color tint image right with solid white background left for black text. Use in col-sm col-md and col-lg sizes only. Floating png image on right over backround. Reposition floatin png for col-xs. */
+@media(max-width:767px) {
+    #section-bkgd-legg-mason {
+        padding: 0;
+        margin: 0;
+        background-image: none;
+        background-color: #b8d8d2;
+    }
+    #section-bkgd-legg-mason  .img-block {
+        padding: 10px 30px;
+    }
+}
+@media(min-width:768px) {
+    #section-bkgd-legg-mason {
+        padding: 60px 0px 0px;
+        height: auto;
+        overflow: auto;
+        background-color: #b8d8d2;
+    }
+    #section-bkgd-legg-mason .img-block {
+        padding: inherit;
+    }
+}
+@media(min-width:992px) {
+    #section-bkgd-legg-mason {
+        background-image: url("../../../../images/emailImages/ia-legg-mason-full.jpg");
+        background-size: cover;
+        padding-top: 80px;
+        background-position: 58% 0;
+        background-repeat: no-repeat;
+    }
+}
+@media(min-width:1200px) {
+    #section-bkgd-legg-mason {
+        background-size: cover;
+        padding-top: 80px;
+        background-position: 60% 0;
+    }
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* 2019 Calendar */
+/* Dark background image upper right corner fades into dark background. Leaves space for mobile device animated gif or png on right side. Use white text left half. Use in all col sizes. */
+@media(max-width:767px) {
+    #section-bkgd-calendar-2019 {
+        padding: 0 0 40px;
+        margin: 0;
+        background-image: none;
+        background-color: #192843;
+    }
+}
+@media(min-width:768px) {
+    #section-bkgd-calendar-2019 {
+        /*padding: 40px 20px 0;*/
+        background-image: url("../../../../images/emailImages/2019-calendar-v2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-height: auto;
+        background-position: 60% 0%;
+        background-color: #192843;
+        overflow: auto;
+    }
+}
+@media(min-width:992px) {
+    #section-bkgd-calendar-2019 {
+        padding-top: 80px;
+	    height: 700px;
+        background-size: cover;
+        background-position: 50% 0%;
+    }
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* Payment for Order Flow */
+/* Hard angle color tint image left with solid white background right for black text. Use in col-md and col-lg sizes only. Separate smaller image for col-xs and col-sm sizes. */
+#section-bkgd-pfof {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cecece+0,cecece+100&0.65+0,0+29,0+73,0.65+100 */
+    background: -moz-linear-gradient(-45deg, rgba(206,206,206,0.65) 0%, rgba(206,206,206,0) 29%, rgba(206,206,206,0) 73%, rgba(206,206,206,0.65) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, rgba(206,206,206,0.65) 0%,rgba(206,206,206,0) 29%,rgba(206,206,206,0) 73%,rgba(206,206,206,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, rgba(206,206,206,0.65) 0%,rgba(206,206,206,0) 29%,rgba(206,206,206,0) 73%,rgba(206,206,206,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6cecece', endColorstr='#a6cecece',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+#section-bkgd-pfof .disclosure li {
+    margin: 5px 0px 0px -15px;
+    padding: 0px 0px 0px 5px;
+    line-height: 14px;
+}  
+/* -------------------------------------------------------------------------------------------------------------------------------------------------- */
+</style>
+<script src="../../../../scripts/common/js/2015/jquery.min.js"></script>
+<script src="../../../../scripts/common/js/2015/jquery.appear.js"></script>
+<script src="../../../../scripts/common/js/2015/jquery.parallax.js"></script>
+<script src="../../../../scripts/common/js/2015/jquery.easing.js"></script>
+<script src="../../../../scripts/common/js/2015/jquery.uitotop.js"></script>
+<script src="../../../../scripts/common/js/2015/jquery.fancybox.js"></script>
+<script src="../../../../scripts/common/js/2015/design.js"></script>
+<script src="https://www.interactivebrokers.com/scripts/common/js/2015/lib.js"></script>
+<script src="https://www.interactivebrokers.com/scripts/common/js/2015/twsUtils.js"></script>
+<script src="../../../../scripts/common/js/2015/countUp.js"></script>
+<script src="https://www.interactivebrokers.com/scripts/common/js/2015/marketPlace.js"></script>
+<script src="../../../../scripts/common/js/2015/bootstrap.min.js"></script>
+
+<script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch"}]);</script>
+                              <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="CGJ34-S5RKA-7ZQ8F-AJER9-TWWVG",function(){function e(){if(!o){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,i.parentNode.appendChild(e),o=!0}}function t(e){o=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(i.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",i.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"CGJ34-S5RKA-7ZQ8F-AJER9-TWWVG";var i=document.currentScript||document.getElementsByTagName("script")[0],o=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!o)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),i.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="nfygq4s7mteccztsgjja-f-8c1806d00-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,o={"ak.v":"37","ak.cp":"1131468","ak.ai":parseInt("665092",10),"ak.ol":"0","ak.cr":186,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"26da48cd","ak.r":36911,"ak.a2":n,"ak.m":"a","ak.n":"essl","ak.bpcip":"105.112.104.0","ak.cport":19910,"ak.gh":"95.100.200.29","ak.quicv":"","ak.tlsv":"tls1.2","ak.0rtt":"","ak.csrc":"-","ak.acc":"bbr","ak.t":"1718760018","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==6jQhvesuw5XNqbdx//33pdvTijOV0UpAG6yreJgpNiIrOHxsKWJcYfMw0aGn5VYYMCRcxMTtgdX6JZX0X1SgvBJj7qF3XqH9qINUTWBiw5Ct0zXjxTL86CJ2AEvb/ko+CVtfVUms+UabjemfJKek4UZVrHL1zGssesLsFYeD+PX42hwh7OaUnUHmm2O2rHpltIRbNm6uhoL0U/m7rhy4jDDbQr2GfZoWMpB7ja/R6LwC6TJmDR1ITegVQXw/iLihUY6IUbU/BBwEnkZabO81TnQpyB5/vpEov/wZCsY/XvLTp3hRSh3fzpUkFTBdWaOlQcnzP+HsEXrCxPnP/2p2mVyYwqwh2EmZeyfJzuH2m4IIwrLhpw//qW7botg67clEwzoJ62mIhc4y8dY4OJC4AExG9s6q8uNue4m2WCCdtNw=","ak.pv":"316","ak.dpoabenc":"","ak.tf":i};if(""!==t)o["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))o["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(o)},rv:function(){var e=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:o,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+<body>
+<!-- Wrapper for Side Navigaiton Menu  ------------------------------------------------------------------------------------------------------------------------------------    -->
+<div id="wrapper"> 
+  <!-- Sidebar -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+    <h3 class="sidebar-nav-head">Quick Links</h3>
+    <ul class="nav sidebar-nav">
+      <li> <a href="#section-one-drop" target="_self" class="page-scroll">Micro E-mini Futures</a></li>
+      <li> <a href="#section-pfof-drop" target="_self" class="page-scroll">Payment for Order Flow</a></li>
+      <li> <a href="#section-two-drop" target="_self" class="page-scroll">New Commissions </a></li>
+      <li> <a href="#section-three-drop" target="_self" class="page-scroll">Portfolio Checkup</a></li>
+      <li> <a href="#section-four-drop" target="_self" class="page-scroll">Canadian Assets</a></li>
+      <li> <a href="#section-five-drop" target="_self" class="page-scroll">Tradeweb Credit</a></li>
+      <li> <a href="#section-six-drop" target="_self" class="page-scroll">Money Transfers</a></li>
+      <li> <a href="#section-seven-drop" target="_self" class="page-scroll">IBKR Trading Platforms</a></li>
+      <!--<li> <a href="#section-eight-drop" target="_self" class="page-scroll">Interactive Advisors</a></li>-->
+      <li> <a href="#section-nine-drop" target="_self" class="page-scroll">Legg Mason Global</a></li>
+      <li> <a href="#section-ten-drop" target="_self" class="page-scroll">Client Risk Profile Tool</a></li>
+      <li> <a href="#section-eleven-drop" target="_self" class="page-scroll">Research Offerings</a></li>
+      <li> <a href="#section-twelve-drop" target="_self" class="page-scroll">Traders' Academy</a></li>
+      <li> <a href="#section-thirteen-drop" target="_self" class="page-scroll">Market Commentary </a></li>
+      <li> <a href="#section-fourteen-drop" target="_self" class="page-scroll">Awards</a></li>
+      <li> <a href="#disclosures-drop" target="_self" class="page-scroll">Disclosures</a></li>
+    </ul>
+  </nav>
+</div>
+<!-- /#wrapper ------------------------------------------------------------------------------------------------------------------------------------  --> 
+<!-- Fixed Nav Bar top to hold page title "IB Communique   ----------------------------------------------------------------------------------  -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container page-title">
+    <div class="ib-icon"> <img src="../../../../images/emailImages/nav_iblogo.png" alt="Interactive Brokers Logo" width="26"> </div>
+    <div class="titlebar"> <span class="titlebar-bold"><span class="accent-red">NEWs</span> <span class="titlebar-normal">@</span> IBKR</span> <span class="vol">2019  Vol. 7</span> </div>
+  </div>
+</nav>
+<!-- Hamburger button for side nav -->
+<button type="button" class="hamburger is-closed" data-toggle="offcanvas"> <span class="hamb-top"></span> <span class="hamb-middle"></span> <span class="hamb-bottom"></span> </button>
+<!-- Page Title -->
+<section class="page-title" id="page-title">
+  <div class="container">
+    <div class="row">
+        <div class="col"><h1>News @ IBKR - Volume 7</h1></div>
+    </div>
+  </div>
+</section>
+<!-- CME Micro E-mini Futures --> 
+<span class="id-drop"><span id="section-one-drop"></span></span>
+<section id="section-bkgd-micro-emini">
+  <div class="container padding-top-40 padding-bottom-80">
+    <div class="row">
+      <div class="hidden-xs hidden-sm col-md-5 col-lg-5 padding-top-60 padding-left-0 padding-right-0">
+        <img src="../../../../images/emailImages/micro-emini-sm-xs.png" alt="Micro E-mini Futures">
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 padding-top-50">
+        <p class="pre-title pre-title-shadow">New Product</p>
+        <h2 class="slide-text-heading-wht">Access CME Group Micro E-mini Futures at IBKR</h2>
+        <div class="visible-xs-block visible-sm-block padding-top-20 padding-bottom-30"> <img src="../../../../images/emailImages/micro-emini-sm-xs.png" alt="Micro E-mini Futures"> </div>
+        <p class="slide-text-wht">As of May 6, 2019, Interactive Brokers clients with Futures trading permission can begin trading CME Group Micro E-mini futures. If you do not have futures trading permission and would like to trade micro e-mini futures you will need to log in to Client Portal and request Futures trading permission via the Settings > Account Settings > Trading Experience &amp; Permissions menu item. Trading permission requests are typically approved overnight.</p>
+        <div class="text-bkgd-navy margin-top-40 margin-bottom-20">
+            <h5 class="bold-list-title-wht padding-top-20">About Micro E-mini Futures</h5>
+            <p class="slide-text-wht">At 1/10th the size of their classic E-mini counterparts, Micro E-mini futures make it easier for a broader universe of traders to discover the benefits of trading futures. Trading began on May 6, 2019, with the launch of four index contracts:</p>
+            <span class="wht">
+             <ul class="fa-ul">
+                  <li><span class="fa-li"><i class="fa fa-chevron-right" aria-hidden="true"></i></span><strong>S&amp;P 500:</strong> Trade exposure to U.S. large-cap stocks, leading barometer of U.S. stock market</li>
+                  <li><span class="fa-li"><i class="fa fa-chevron-right" aria-hidden="true"></i></span><strong>Nasdaq-100:</strong> Trade exposure to largest non-financial companies in the Nasdaq stock market</li>
+                  <li><span class="fa-li"><i class="fa fa-chevron-right" aria-hidden="true"></i></span><strong>Russell 2000:</strong> Trade exposure to 2,000 U.S. small-cap stocks; leading small-cap benchmark</li>
+                  <li><span class="fa-li"><i class="fa fa-chevron-right" aria-hidden="true"></i></span><strong>Dow Jones Industrial Average:</strong> Trade exposure to 30 U.S. blue-chip companies, widely followed indicator of U.S. stock market</li>
+              </ul>
+              </span>
+            <p class="slide-text-wht margin-top-40 margin-bottom-0 text-center"><span class="all-in-pricing">$0.32 to $0.47 </span></p>
+            <p class="slide-text-wht padding-top-5 text-center">PER CONTRACT  &nbsp; &#8226; &nbsp;  ALL IN<br> </p>
+          </div>
+            <p class="slide-text-wht">These four index contracts join our existing offering of Micro E-mini futures contracts for gold, silver and foreign exchange.</p>
+           <p class="slide-text-wht">Please click either link below to learn more about Micro E-mini futures.</p>
+        <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-7 col-md-offset-5 col-lg-7 col-lg-offset-5 padding-left-5 padding-right-0">
+        <div class="col-xs-12 col-sm-8  col-md-11 col-lg-10 padding-top-10 padding-left-10">
+          <!--<p class="text-center margin-top-0 margin-left-0"><a href="https://www.interactivebrokers.com/en/index.php?f=269" target="_self" class="btn btn-lg btn-success">About Micro E-mini Futures at IBKR</a></p>-->  
+          <p class="text-center margin-top-0 margin-left-0"><a href="https://activetrader.cmegroup.com/microemini/?utm_source=pardot&utm_medium=email&utm_campaign=2019_micro_emini_launch&utm_content=20190402_email_3" target="_self" class="btn btn-lg btn-success">About Micro E-mini Futures at CME Group</a></p>
+        </div>
+      </div>  
+    </div>
+  </div>
+</section>
+<!-- Payment for Order Flow  --> 
+<span class="id-drop"><span id="section-pfof-drop"></span></span>
+<section id="section-bkgd-pfof">
+  <div class="container padding-top-80 padding-bottom-80">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-top-40 padding-bottom-20 ">
+            <p class="pre-title">Industry-Leading Growth </p>
+            <h2 class="slide-text-heading">Payment for Order Flow </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-bottom-20">
+            <p class="slide-text">For most brokers payment for order flow (PFOF) has become a larger component of their revenues. In spite of Interactive Brokers’ growth, we have not disadvantaged our clients by focusing on this revenue. We provide our clients with a $0.52 per 100 shares stock price execution advantage over the industry.<sup>1</sup></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-sm-offset-0 col-md-12 col-md-offset-0 col-lg-10 col-lg-offset-1 text-center">
+           <img src="../../../../images/emailImages/chart-set-v4d.png" alt="payment for order flow and daily average revenue trades charts" border="0">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-top-40">
+            <ol class="padding-left-20">
+                <li>A US equities execution price improvement comparison from IHS Markit, a third-party provider of transaction analysis, determined that Interactive Brokers' US stock price executions were significantly better than the industry's during the second half of 2018. For more information, see <a href="https://ibkr.com/bestexecution" target="_self">ibkr.com/bestexecution</a></li>
+                <li>Includes purchase of Scottrade in 2018.</li>
+                <li>This revenue is from Options exchanges only, where the payment isn’t tied to specific orders.</li>
+            </ol>
+            <div class="col-xs-12 col-sm-8 col-md-6 col-lg-5 padding-top-20 padding-left-0">
+              <p class="text-center margin-top-20; margin-left-0;"><a href="../../../index.php-201.html?f=1685" target="_blank" class="btn btn-lg btn-black">Learn more about IB SmartRouting&trade;</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-top-40">
+            <div class="disclosure">
+                <ul>
+                    <li>Source: Alphacution, SEC, company data</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+<!-- New Commissions Structure for European Stocks --> 
+<span class="id-drop"><span id="section-two-drop"></span></span>
+<section id="section-bkgd-commissions-european-stocks">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 hidden-sm hidden-md hidden-lg imagebox"> <img src="../../../../images/emailImages/commissions-european-stocks-sm-xs.jpg" alt="New Commissions Structure for European Stocks"> </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-6 col-lg-6 col-lg-offset-6 padding-top-50  text-bkgd-white">
+        <p class="pre-title">Low Cost</p>
+        <h2 class="slide-text-heading">New Commissions Structure for European Stocks</h2>
+        <div class="hidden-xs visible-sm-block padding-top-20 padding-bottom-30"> <img src="../../../../images/emailImages/commissions-european-stocks-sm-xs.jpg" alt="New Commissions Structure for European Stocks"> </div>
+        <p class="slide-text">On April 1, 2019, IBKR lowered its European stock commission rates for the company's tiered commission schedule. The most expensive tiers above 0.05% (5 bps) were eliminated for all 23 currencies clients are able to trade in. </p>
+        <p class="slide-text">For EUR, CHF, PLN, ILS and HUF-denominated products, commissions for all Monthly Trade Values up to EUR 50,000,000 are now 0.050% (5 bps). In the United Kingdom, commissions on all Monthly Trade Values up to GBP 40,000,000 are now 0.050% (5 bps). </p>
+        <p class="slide-text">All exchange, clearing and regulatory fees will continue to be passed through with no markup. There are no changes to the order minimums or maximums, flat rate commissions and commissions for Norway or Sweden, where commissions already start at 0.050%.</p>
+        <p class="slide-text">Visit our website to view our full commission schedule.</p>
+        <div class="col-xs-12 col-sm-10  col-md-10 col-lg-10 padding-top-10 padding-left-0">
+          <p class="text-center margin-top-20 margin-left-0"><a href="../../../index.php-65.html?f=1590&p=stocks2" target="_self" class="btn btn-lg btn-black">Learn More</a></p>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- When Was Your Last Portfolio Checkup? --> 
+<span class="id-drop"><span id="section-three-drop"></span></span>
+<section id="section-bkgd-portfolio-checkup">
+  <div class="container padding-top-0 padding-bottom-80">
+    <div class="row padding-bottom-0">
+      <div class="col-xs-12 hidden-md hidden-lg imagebox"> <img src="../../../../images/emailImages/portfolio-checkup-sm-xs2b.jpg" alt="Interest on Smaller Cash Balances"> </div>
+            <div class="row padding-top-20 margin-left-15 margin-right-15">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <p class="pre-title pre-title-glow">New Tool</p>
+                <h2 class="slide-text-heading-wht">When Was Your Last Portfolio Checkup?</h2>
+                <p class="slide-text-wht">PortfolioAnalyst is a free tool that lets our clients combine IBKR account data with held away account information to create a consolidated view of their complete financial portfolio. PortfolioAnalyst now includes Portfolio Checkup, a dynamic tool that transforms portfolio data into powerful analytics. Portfolio Checkup helps you:</p>
+                <span class="wht">
+                 <ul class="fa-ul">
+                      <li><span class="fa-li"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>Measure your performance against more than 200 industry benchmarks or your custom benchmarks, and toggle between money and time weighted returns with the click of a mouse.</li>
+                      <li><span class="fa-li"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>Use risk metrics such as max drawdown, peak-to-valley, Sharpe ratio and standard deviation to understand at a glance your portfolio's risks relative to its returns.</li>
+                      <li><span class="fa-li"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>Understand your portfolio exposure by geography, sector and asset class.</li>
+                </ul>
+                </span>
+                <p class="slide-text-wht">Take control of your financial health by using PortfolioAnalyst with Portfolio Checkup.</p>
+                <div class="row padding-top-0">
+                  <div class="col-xs-12 col-sm-8 col-md-8 col-lg-7 padding-top-20 padding-left-10">
+                    <p class="text-center margin-top-20 margin-left-0"><a href="https://www.interactivebrokers.com/en/index.php?f=5078" target="_self" class="btn btn-lg btn-black">Learn More </a></p>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+</section>
+<!-- Interactive Brokers First to Offer A Stock Yield Enhancement Program for Canadian Assets   --> 
+<span class="id-drop"><span id="section-four-drop"></span></span>
+<section id="section-bkgd-syep-canada">
+  <div class="container padding-bottom-0">
+    <div class="row">
+      <div class="visible-xs-block visible-sm-block padding-bottom-0 text-center"><img src="../../../../images/emailImages/syep-canada-sm-xs.jpg" alt="IBKR Trading Platform"></div>
+      <div class="col-xs-12 col-sm-9 col-md-7 col-lg-7 padding-top-40 padding-bottom-80 padding-left-20 padding-right-20">
+        <p class="pre-title-dark pre-title-glow">New Offering</p>
+        <h2 class="slide-text-heading">Interactive Brokers First to Offer a Stock Yield Enhancement Program for Canadian Assets</h2>
+        <p class="slide-text">Interactive Brokers Canada (IBC) clients participating in its Stock Yield Enhancement Program can now lend Canadian fully-paid shares of stock as part of the program. This first to the market service gives IBC clients the opportunity to lend their Canadian shares to IBC in exchange for a portion of the interest short sellers are willing to pay to borrow the shares.</p>
+        <p class="slide-text">IBC cash accounts with equity equivalent to US $50,000 and all IBC margin accounts are eligible to participate in the new program. Enrollment is easily completed online and program activation generally takes place overnight. After enrolling, IBC handles all program activities with no restriction on a client's ability to trade their shares. IBC clients can monitor in real-time indicative rates by configuring their Trader Workstation platform to display the Fee Rate column.</p>
+        <p class="slide-text">While the stock is loaned, clients maintain the ability to sell their stock anytime, and continue to recognize any profits and losses. Stocks listed on US or Canadian exchanges can be loaned.</p>
+        <p class="slide-text">Interactive Brokers uses its highly automated systems to identify the shares in client accounts which others are attempting to borrow. The company credits loan income to clients and provides daily activity statements detailing the quantity of shares loaned, collateral amount, market interest rate, IBC charges and net interest.</p>
+        <p class="slide-text">At the end of each day, IBC pays the client half of the gross amount earned by IBC from lending the shares to borrowers and retains half as compensation for coordinating the program and guaranteeing the return of the shares.</p>
+        <p class="slide-text">Please review the <a href="https://www.ibkrguides.com/kb/syep-faqs.htm" target="_self">SYEP FAQ</a> and <a href="https://www.ibkrguides.com/clientportal/syep.htm" target="_self">Enrollment Instructions</a> for additional information about participating in the program.</p>
+        <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 padding-top-20 padding-left-0">
+          <p class="text-center margin-top-20; margin-left-0;"><a href="../../../index.php-170.html?f=14527#sf_stockYield" target="_self" class="btn btn-lg btn-black">Learn More</a></p>
+        </div>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- IBKR Adds Tradeweb Credit as a Bond ATS for Our Corporate Bond Trading Desk  --> 
+<span class="id-drop"><span id="section-five-drop"></span></span>
+<section id="section-bkgd-tradeweb-credit" class="padding-bottom-60 bkgd-navy">
+  <div class="container">
+    <div class="row">
+      <div class="visible-xs-block visible-sm-block padding-bottom-60 margin-top-0 margin-bottom-0"><img src="../../../../images/emailImages/Tradeweb-Credit-as-a-Bond-ATS-sm-xs5.jpg" alt="IBKR Adds Tradeweb Credit"> </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-7">
+        <p class="pre-title">EXPANDED OFFERING</p>
+        <h2 class="slide-text-heading-wht">IBKR Bond Desk Adds Tradeweb Institutional as a Bond ATS </h2>
+        <p class="slide-text-wht padding-top-10">IBKR recently established a direct connection to Tradeweb Institutional, an alternative trading system (ATS) market that uses a Request for Quote (RFQ) model rather than a Central Limit Order Book (CLOB). On average, Tradeweb Institutional facilitates over $570 billion in notional value traded daily (TTM as of Q1 2019).</p>
+        <p class="slide-text-wht padding-top-10">IBKR clients can send RFQs for bids and offers by opening an RFQ window in TWS, entering a bond and indicating the quantity and direction. IBKR will route the RFQ to Tradeweb, who will return a price based on the size of the RFQ.</p>
+        <p class="slide-text-wht padding-top-10">We currently support high yield and emerging market bonds and anticipate adding other fixed income asset classes later this year.</p>
+        <div class="col-xs-12 col-sm-8 col-md-12 col-lg-8 padding-top-20 padding-left-0">
+         </div>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Electronic Money Transfers to Third Parties Now Available --> 
+<span class="id-drop"><span id="section-six-drop"></span></span>
+<section id="section-bkgd-money-transfer">
+  <div class="container padding-top-0 padding-bottom-80">
+    <div class="row padding-bottom-0">
+      <div class="col-xs-12 hidden-sm hidden-md hidden-lg imagebox"> <img src="../../../../images/emailImages/Electronic-Money-Transfer-sm-xs.jpg" alt="Electronic Money Transfers"> </div>
+      <div class="col-sm-12 hidden-xs hidden-md hidden-lg imagebox margin-bottom-40"> <img src="../../../../images/emailImages/Electronic-Money-Transfer-sm-xs.jpg" alt="Electronic Money Transfers"> </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-6 col-lg-6 col-lg-offset-6">
+        <p class="pre-title pre-title-glow">New Feature</p>
+        <h2 class="slide-text-heading">Electronic Money Transfers to Third Parties Now Available</h2>
+        <p class="slide-text">US clients can now use the Automated Clearing House (ACH) network to safely and securely transfer funds to and from their IBKR account. ACH allows you to connect your IBKR account to your US-based bank account(s) and to transfer funds between them. In addition, you can link your account with mobile payment providers such as PayPal or merchants and pay subscriptions or other recurring expenses such as a mortgage, car payment or utilities to any other entity using a bank on the network.</p>
+        <p class="slide-text">US clients who would like to use electronic transfers will need to first enroll in our Integrated Cash Management program via the <em>Transfer &amp; Pay > Integrated Cash Management</em> menu in Client Portal. Once enrolled, you can configure electronic transfers via the <em>Transfer &amp; Pay > Transfer Funds</em> menu.</p>
+        <h5 class="bold-list-title">Integrated Cash Management from IBKR</h5>
+        <p class="slide-text">Use Integrated Cash Management from Interactive Brokers to earn, borrow, spend and invest globally from a single account. Earn market rate interest on your idle balances<sup>4</sup> and extra income from lending your fully paid shares. Borrow against your account<sup>5</sup> at low, market-determined rates and use our debit card to make ATM withdrawals or purchases worldwide, without late fees or non-US transaction charges. Use electronic transfers to quickly and securely deposit funds or pay recurring expenses from your account and invest globally in stocks, options, futures, forex, fixed income and more.</p>
+        <p class="slide-text">All from an integrated account.</p>
+      </div>
+    </div>
+    <div class="row padding-top-20">
+      <div class="col-xs-12 col-sm-8 col-md-5 col-md-offset-6 col-lg-4 col-lg-offset-6 padding-top-20 padding-left-10">
+        <p class="text-center margin-top-20 margin-left-0"><a href="https://www.interactivebrokers.com/en/index.php?f=37283" target="_self" class="btn btn-lg btn-black">Learn More </a></p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- IBKR Trading Platform   --> 
+<span class="id-drop"><span id="section-seven-drop"></span></span>
+<section id="section-bkgd-trading-platform">
+  <div class="container padding-bottom-0">
+    <div class="row">
+      <div class="visible-xs-block visible-sm-block padding-bottom-0 text-center"><img src="../../../../images/emailImages/ibkr-trading-platform-sm-xs4.jpg" alt="IBKR Trading Platform"></div>
+      <div class="col-xs-12 col-sm-10 col-sm-offset-2 col-md-8 col-md-offset-4 col-lg-8 padding-top-40 padding-bottom-80 padding-left-20 padding-right-20">
+        <p class="pre-title-dark pre-title-glow">New Tools</p>
+        <h2 class="slide-text-heading">New Features Added to IBKR Trading Platforms</h2>
+        <p class="slide-text">New functionality added to IBKR Mobile, TWS for Desktop and the Client Portal help to deliver a powerful and seamless trading experience across all platforms, whether you're trading on-the-go or from your desktop.</p>
+        <h5 class="bold-list-title padding-top-10 margin-bottom-0">IBKR Mobile</h5>
+        <p class="slide-text">IBKR Mobile added support for Direct Debit and ChartTrader is now available directly from the Quote Details screen. In addition, Position and P&amp;L values can be converted from another currency into your base currency in italics. Learn more about IBKR Mobile for <a href="https://www.interactivebrokers.com/en/index.php?f=13337&nhf=T" target="_self">iOS</a> or <a href="https://www.interactivebrokers.com/en/index.php?f=13396&nhf=T" target="_self">Android</a>.</p>
+        <h5 class="bold-list-title padding-top-10 margin-bottom-0">Trader Workstation (TWS)</h5>
+        <p class="slide-text"><em>Snapshot Single-User Market Data</em> </p>
+        <p class="slide-text padding-top-0">Now benefit from even lower costs by paying only for the quotes you need when you need them. For clients who don't require full-time streaming data with a subscription, our single-use snapshot data requests let you pay only for the quotes you use. Learn more about <a href="../../../index.php-202.html?f=43660#976-03" target="_self">Snapshot Single User Market Data</a>.</p>
+        <p class="slide-text"><em>TWS API</em></p>
+        <p class="slide-text padding-top-0">The TWS API now provides a DDE Socket Bridge API. This feature provides the DDE API with the same functionality included in our socket-based APIs, so DDE users now have access to many features not previously available, including daily open price, multiple account data subscriptions and more. And, it's backwards-compatible with earlier DDE syntax and worksheets. Learn more about <a href="https://www.interactivebrokers.com/en/index.php?f=5059&nhf=T" target="_self">API features</a>. </p>
+        <h5 class="bold-list-title padding-top-10 margin-bottom-0">Client Portal</h5>
+        <p class="slide-text">Client Portal has become the new default access point for account management. It offers the same features of Account Management plus a friendlier interface, the IBKR Forum and an easy-to-use trading interface to submit basic orders.</p>
+        <p class="slide-text">We also offer a Client Portal Web API, currently in beta. Use the CP API to manage both trading and account information for individual and advisory account structures with one RESTful API solution. Learn more about our <a href="../../../trading/ib-api.php.html?f=35791" target="_self">Client Portal Web API</a>.</p>
+        <h5 class="bold-list-title padding-top-10 margin-bottom-0">All Mobile and Desktop Platforms</h5>
+        <p class="slide-text">All platforms now display Environmental, Social and Governance (ESG) factors as both a data point in Quote Details and as a column. Learn more about <a href="../../../index.php-203.html?f=42764#975-09" target="_self">ESG factors</a>.</p>
+        <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 padding-top-20 padding-left-0">
+          <p class="text-center margin-top-20; margin-left-0;"><a href="../../../index.php-68.html?f=13868" target="_self" class="btn btn-lg btn-black">ABOUT IBKR TRADING PLATFORMS</a></p>
+        </div>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Interactive Advisors Rolls Out Legg Mason Global Growth and Income Portfolio --> 
+<span class="id-drop"><span id="section-nine-drop"></span></span>
+<section id="section-bkgd-legg-mason">
+  <div class="container padding-bottom-80">
+    <div class="row">
+      <div class="visible-xs-block visible-sm-block padding-bottom-20 text-center"><img src="../../../../images/emailImages/ia-legg-mason-sm-xs.jpg" alt="Legg Mason Global Growth"></div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-bottom-10">
+        <p class="pre-title slide-text-wht">NEW PRODUCTS</p>
+        <h2 class="slide-text-heading">Interactive Advisors Rolls Out <span class="hidden-xs hidden-md hidden-lg"><br></span>Legg Mason <span class="hidden-xs hidden-sm"><br></span>Global Growth and Income Portfolio</h2>
+        <h5 class="bold-list-title">New Portfolio Focuses on Socially Responsible Investments</h5>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-7 col-lg-6">
+        <p class="slide-text">Interactive Advisors has added the <a href="https://interactiveadvisors.com/legg-mason" target="_self">Legg Mason Global Growth and Income Portfolio</a> to its lineup of investment products. The portfolio provides dedicated exposure to Exchange Traded Funds investing in companies that apply environmental, social and governance (ESG) principles. This diversified equity portfolio uses a combination of Legg Mason Exchange Traded Funds to meet its objectives of balancing growth, income, and portfolio risk. </p>
+        <p class="slide-text">The <a href="https://interactiveadvisors.com/legg-mason" target="_self">Legg Mason Global Growth and Income Portfolio</a>, which has an investment minimum of $5,000, is rebalanced every month. The annual management fee of 0.10% is among one of the lowest in the industry for an ETF-based portfolio. </p>
+        <p class="slide-text">Please note that commissions for trades in these portfolios charged by Interactive Advisors' affiliated broker-dealer Interactive Brokers LLC are separate and in addition to the management fee.</p>
+        <h5 class="bold-list-title">Introducing Interactive Advisors</h5>
+        <p class="slide-text">In 2015, Interactive Brokers acquired Covestor, one of the pioneers in online investing, which offers over 60 portfolios with low minimums and fees. The division, which was called Interactive Brokers Asset Management, has a new, shorter name: Interactive Advisors.</p>
+        <p class="slide-text">Our robo advisor's mission of providing clients with the convenience of online investing, human help and a wide range of actively and passively managed portfolios remains unchanged.</p>
+        <p class="slide-text">Interactive Brokers' clients can partition their brokerage accounts to invest in the Interactive Advisors portfolios and wealth managers can invest in portfolios on their clients' behalf.</p>
+      </div>
+    </div>
+    <div class="row padding-top-0">
+      <div class="col-xs-12 col-sm-8 col-md-6 col-lg-5 padding-top-0">
+        <p class="text-center margin-top-20 margin-left-0"><a href="http://ibkram.com/" target="_self" class="btn btn-lg btn-black">Learn More </a></p>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 padding-left-0">
+      <p class="slide-text-small margin-top-30">Past performance is no guarantee of future results, and all investments, including those in this portfolio, involve the risk of loss, including loss of principal and a reduction in earnings. </p>
+      <p class="slide-text-small margin-top-10">Interactive Advisors is currently licensed to offer investment services to US residents only. This communication and Interactive Advisors' website are NOT intended to be a solicitation or advertisement in any jurisdiction other than the United States. Interactive Advisors does not provide tax advice, does not make representations regarding the particular tax consequences of any portfolio investments and cannot assist clients with tax filings. Clients investing in Interactive Advisors portfolios should consult with their tax professional about the tax consequences of investing in Interactive Advisors portfolios.</p>
+    </div>
+  </div>
+</section>
+<!-- The IBKR Client Risk Profile Tool for Advisors  --> 
+<span class="id-drop"><span id="section-ten-drop"></span></span>
+<section id="section-bkgd-client-risk-profile">
+  <div class="container padding-bottom-80">
+    <div class="row">
+      <div class="visible-xs-block visible-sm-block padding-bottom-0 text-center"><img src="../../../../images/emailImages/client-risk-profile-xs.jpg" alt="Client Risk Profile"></div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-top-40 padding-bottom-20 ">
+            <p class="pre-title">New Tools</p>
+            <h2 class="slide-text-heading-wht">The IBKR Client Risk Profile Tool <span class="hidden-xs hidden-md hidden-lg"><br></span>for Advisors </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <p class="slide-text-wht">The IBKR Client Risk Profile tool is designed to help Advisors determine the most suitable investments for their clients, based on each client's risk capacity, risk need and risk tolerance. This information is collected through the distribution of a custom-designed client questionnaire. Advisors can view the scores through the Advisor Portal and use the scores to create custom pre-trade allocation groups in TWS to place orders and allocate trades for clients with similar risk profiles.</p>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
+            <p class="slide-text-wht"><strong>The Tool has Three Components:</strong></p>
+            <p class="slide-text-wht"><strong>Questionnaire Editor:</strong> Create a custom client questionnaire to help identify your clients' risk capacity, risk need and risk tolerance. Client responses result in a personalized "Risk Score" you can use to determine suitable investment vehicles appropriate to the client's overall risk tolerance.</p>
+            <p class="slide-text-wht"><strong>Score Builder:</strong> Customize Risk Score Values for specific questions, create your own Risk Score scale, and choose the scoring calculation method for client score outcomes that complements the way you do business.</p>
+            <p class="slide-text-wht"><strong>Score Viewer:</strong> View your clients' overall Risk Tolerance scores.</p>
+            <p class="slide-text-wht">Advisors can find additional information about enabling the Client Risk Profile tool <a href="https://www.interactivebrokers.com/en/software/riskprofile/riskProfile.htm#usersguidebook/riskProfile/riskprofile_enable.htm" target="_self">here.</a></p>
+            <p class="slide-text-wht">Please visit our website to learn more about the tool and Advisor Portal.</p>
+            <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 padding-top-20 padding-left-0">
+              <p class="text-center margin-top-20; margin-left-0;"><a href="../../../index.php-199.html?f=16765" target="_blank" class="btn btn-lg btn-default">Start Your Planning</a></p>
+            </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- New Fund, Product and Research Offerings  --> 
+<span class="id-drop"><span id="section-eleven-drop"></span></span>
+<section id="section-bkgd-new-investment-prod">
+  <div class="container padding-top-80 padding-bottom-80">
+    <div class="row margin-none">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-bkgd-white">
+           <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0 col-lg-10 col-lg-offset-1 padding-top-20 padding-bottom-80">
+                <p class="pre-title">NEW PRODUCTS</p>
+                <h2 class="slide-text-heading">New Fund, Product and Research Offerings</h2>
+                <p class="slide-text">We now offer access to <strong>11,609</strong> mutual funds from <strong>246</strong> fund families, including <strong>8,194</strong> no-load funds and <strong>4,207</strong> funds with no transaction fees.</p>
+                <h5 class="bold-list-title padding-top-10 margin-bottom-20">US Fund Families</h5>
+                <ul class="fa-ul">
+                     <li><span class="fa-li"><i class="fa fa-chevron-right"></i></span>ACM Funds</li>
+                     <li><span class="fa-li"><i class="fa fa-chevron-right"></i></span>AGF funds</li>
+                     <li><span class="fa-li"><i class="fa fa-chevron-right"></i></span>Aperture Investors</li>
+                     <li><span class="fa-li"><i class="fa fa-chevron-right"></i></span>Canyon Partners Fund</li>
+                     <li><span class="fa-li"><i class="fa fa-chevron-right"></i></span>Foothill Capital Fund</li>
+                     <li><span class="fa-li"><i class="fa fa-chevron-right"></i></span>FS Investments</li>
+                     <li><span class="fa-li"><i class="fa fa-chevron-right"></i></span>Fuller &amp; Thaler Funds</li>
+                     <li><span class="fa-li"><i class="fa fa-chevron-right"></i></span>Hodges Funds</li>
+                     <li><span class="fa-li"><i class="fa fa-chevron-right"></i></span>Liberty Street Funds</li>
+                     <li><span class="fa-li"><i class="fa fa-chevron-right"></i></span>Shenkman Funds</li>
+                </ul>
+                <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 padding-top-0 padding-left-0">
+                  <p class="text-center margin-top-20 margin-left-0"><a href="../../../trading/products-exchanges.php.html?f=1563&p=mf" target="ibkr_rp" class="btn btn-lg btn-black">Learn More</a></p>
+                </div>
+               <br>
+                <h5 class="bold-list-title padding-top-80 padding-top-20 margin-bottom-20">New Trading Venues / Products</h5>
+               <p class="slide-text"><em>Products</em></p>
+                <ul class="fa-ul">
+                  <li><span class="fa-li"><i class="fa fa-chevron-right"></i></span><a href="https://contract.ibkr.info/v3.10/index.php?action=Advanced%20Search&entityId=a89355943&lang=en&wlId=IB&showEntities=Y" target="ibkr_rp">KOSDAQ 150 Futures</a> available to <a href="http://tglobal.krx.co.kr/contents/GLB/02/0201/0201040901/GLB0201040901.jsp#e0b27a16bd7e1427b325a1b6742a36f1=1" target="ibkr_rp">US clients</a></li>
+                  <li><span class="fa-li"><i class="fa fa-chevron-right"></i></span><a href="https://contract.ibkr.info/v3.10/index.php?action=Advanced%20Search&entityId=a100492606&lang=en&wlId=IB&showEntities=Y" target="ibkr_rp">KRX300 Futures</a> available to <a href="http://tglobal.krx.co.kr/contents/GLB/02/0201/0201040901/GLB0201040901.jsp#e0b27a16bd7e1427b325a1b6742a36f1=1" target="ibkr_rp">US clients</a></li>
+                  <li><span class="fa-li"><i class="fa fa-chevron-right"></i></span><a href="../../../index.php-204.html?f=2222&exch=kse&showcategories=SSF" target="ibkr_rp">Added 100+ Korean Singe Stock Futures (SSFs) at KSE</a></li>
+                  <li><span class="fa-li"><i class="fa fa-chevron-right"></i></span><a href="http://global.krx.co.kr/contents/GLB/02/0201/0201041001/GLB0201041001.jsp#821abf37abef133e4bc76793166fc6bf=2" target="ibkr_rp">Extended Trading Hours for USD/KRW futures at KRX</a></li>
+                  <li><span class="fa-li"><i class="fa fa-chevron-right"></i></span><a href="https://www2.sgx.com/research-education/securities-products#Daily%20Leverage%20Certificates" target="ibkr_rp">New Daily Leverage Certificates (DLCs) at SGX</a></li>
+                  <li><span class="fa-li"><i class="fa fa-chevron-right"></i></span><a href="https://contract.ibkr.info/v3.10/index.php?action=Details&site=GEN&conid=358135082" target="ibkr_rp">EURO STOXX 50&reg; Index Options (OESX-MEEx) (OMSX) </a></li>
+                  <li><span class="fa-li"><i class="fa fa-chevron-right"></i></span><a href="../../../index.php-205.html?f=2222&exch=pink&showcategories=WAR#productbuffer" target="ibkr_rp">OTC Link ECN Warrants</a></li>
+                </ul>
+                <p class="slide-text margin-bottom-0">Explore all the products available on the IBKR Platform.</p>
+                <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 padding-top-0 padding-left-0">
+                  <p class="text-center margin-top-20 margin-left-0"><a href="../../../index.php-173.html?f=1167" target="ibkr_rp" class="btn btn-lg btn-black">Learn More</a></p>
+                </div>
+                <h5 class="bold-list-title padding-top-100 margin-bottom-20">Expanded Research Offering</h5>
+                <p class="slide-text margin-bottom-40">The following research providers were recently added to the IBKR platform.</p>
+                <ul class="fa-ul">
+                  <li><span class="fa-li"><i class="fa fa-chevron-right"></i></span><a href="https://www.interactivebrokers.com/en/index.php?f=37137" target="ibkr_rp">The Fibocall</a></li>
+                  <li><span class="fa-li"><i class="fa fa-chevron-right"></i></span><a href="../../../index.php-118.html?f=42604" target="ibkr_rp">MacroRisk</a></li>
+                  <li><span class="fa-li"><i class="fa fa-chevron-right"></i></span><a href="../../../index.php-159.html?f=43859" target="ibkr_rp">Ned Davis Research </a></li>
+                  <li><span class="fa-li"><i class="fa fa-chevron-right"></i></span><a href="../../../index.php-119.html?f=42956" target="ibkr_rp">SmartKarma</a></li>
+                  <li><span class="fa-li"><i class="fa fa-chevron-right"></i></span><a href="../../../index.php-189.html?f=43382" target="ibkr_rp">Stock Traders Daily</a></li>
+                  <li><span class="fa-li"><i class="fa fa-chevron-right"></i></span><a href="../../../index.php-206.html?f=37572" target="ibkr_rp">Thinknum</a></li>
+                </ul>
+                <p class="slide-text margin-bottom-0">View our current listing of research providers.</p>
+                <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 padding-top-0 padding-left-0">
+                  <p class="text-center margin-top-20 margin-left-0"><a href="../../../index.php-108.html?f=35311" target="ibkr_rp" class="btn btn-lg btn-black">Learn More</a></p>
+                </div>
+            </div>   
+      </div>
+    </div>
+  </div>
+</section>
+<!-- New Courses at Traders' Academy --> 
+<span class="id-drop"><span id="section-twelve-drop"></span></span>
+<section id="section-bkgd-traders-academy">
+<div class="visible-sm-block imagetop"></div> 
+  <div class="container">
+    <div class="row">
+      <div class="visible-xs-block imagebox"><img src="../../../../images/emailImages/traders-academy-Q4-xs.jpg" alt="Traders' Academy"></div>
+      <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+        <p class="pre-title">EXPANDED OFFERINGS</p>
+        <h2 class="slide-text-heading">New Courses Available at <span class="hidden-xs hidden-sm"><br>
+          </span>Traders' Academy</h2>
+        <p class="slide-text">Traders' Academy offers investors, educators and students more than 20 courses on the products, markets, currencies and tools available at Interactive Brokers. Each course uses a syllabus to define instructional goals, clearly states learning objectives and delivers content across multiple lessons. Quizzes and tests are used to benchmark progress against learning objectives and each course uses a combination of online lessons, videos or notes to help students learn at their own pace. In addition, students can ask questions of IBKR subject matter experts, provide written feedback on each course and rate their learning experience.</p>
+        <p class="slide-text">New courses include:</p>
+        <div class="academy-course">
+          <h5 class="bold-list-title">Client Portal</h5>
+          <p class="slide-text margin-bottom-0">Client Portal enables clients of Interactive Brokers to stay connected to what matters as well as access key features and services in their accounts. In a world where news that drives trading rarely ever stops, investors want to access their accounts from multiple devices and around the clock. Client Portal not only provides users with access to details about their accounts, but also allows them to trade using a single log in. This course walks you through the many capabilities of Client Portal. </p>
+          <p class="slide-text margin-bottom-0 margin-top-10">
+           <em> Course Lessons:</em>
+              <ul>
+                <li>Navigating IBKR's Client Portal</li>
+                <li>Watchlists and Market Scanners in Client Portal</li>
+                <li>Message Center &amp; Ticketing System</li>
+            </ul>
+            
+        </div>
+        <div class="academy-course">
+          <h5 class="bold-list-title">Python TWS API</h5>
+          <p class="slide-text margin-bottom-0">This is a course in programming with the Trader Workstation Application Programming Interface (TWS API) for Python developers. The TWS API is an open source interface to IBKR's flagship desktop trading application, TWS, which allows for automation of many aspects of TWS functionality. In this course, we describe how to get started in developing Python applications that use the API. First, we explain where to obtain and configure TWS and the API source code, then describe the most commonly used API functions with Hello World sample programs to demonstrate their individual use. We end with a case study in pair trade orders to demonstrate one of the many different advanced order types that can be used with the API. </p>
+          <p class="slide-text margin-bottom-0 margin-top-10">
+           <em> Course Lessons:</em>
+              <ul>
+                <li>What is the TWS API?</li>
+                <li>Installing &amp; Configuring TWS for the API</li>
+                <li>Accessing the TWS Python API Source Code</li>
+                <li>Essential components of TWS API programs</li>
+                <li>Receiving Market Data and Historical Candlesticks</li>
+                <li>Placing Orders</li>
+                <li>Option Chains, Portfolio Data and Account Information</li>
+                <li>API Case Study in Pair Trades</li>
+            </ul>
+            
+        </div>
+      </div>
+    </div>
+    <div class="row padding-top-20">
+      <div class="col-xs-12 col-sm-8 col-md-5 col-lg-6 padding-top-20">
+        <p class="text-center margin-top-20 margin-left-0"><a href="https://gdcdyn.interactivebrokers.com/en/index.php?f=25243 " target="_self" class="btn btn-lg btn-black">Enroll Today</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- IBKR Market Commentary --> 
+<span class="id-drop"><span id="section-thirteen-drop"></span></span>
+<section id="section-bkgd-ibkr-mkt-commentary">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-top-0 padding-left-0 padding-right-0">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-top-20 padding-bottom-20">
+            <p class="pre-title">EXPANDED OFFERING</p>
+            <h2 class="slide-text-heading-wht">New IBKR Market Commentary</h2>
+            <p class="slide-text-wht">IBKR continues to expand the resources available to help its clients understand markets, trading and technology.</p>
+            <br>
+            <hr>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> <img src="../../../../images/emailImages/community-traders-insight-img.jpg" alt="traders' insight">
+            <h5 class="bold-list-title-wht padding-top-40">Market Commentary from Nearly 70 Firms</h5>
+            <p class="slide-text-wht">Traders' Insight, our market commentary blog, features written and video market commentary from individuals at nearly 70 firms. In addition, IBKR's Chief Options Strategist Steve Sosnick offers market commentary and Senior Analyst Steve Levine provides Asian and US weekly previews.</p>
+            <p class="slide-text-wht">Watch IBKR Traders' Insight video commentary from the News monitor panel in TWS by clicking the "expand" button in the News monitor panel and selecting Traders' Insight Video.</p>
+            <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9 padding-top-10 padding-left-0 hidden-md hidden-lg">
+              <p class="text-center margin-top-20 margin-left-0"><a href="https://www.interactivebrokers.com/en/index.php?f=5599" target="_self" class="btn btn-lg btn-default">VISIT TRADERS' INSIGHT</a></p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="space-40 hidden-md hidden-lg"></div>
+            <img src="../../../../images/emailImages/community-quant-img.jpg" alt="qunat blog">
+            <h5 class="bold-list-title-wht padding-top-40">A Growing List of Contributors to the IBKR Quant Blog</h5>
+            <p class="slide-text-wht">The IBKR Quant Blog serves quantitative professionals who have an interest in programming. Discussion topics include deep learning, artificial intelligence (AI), Block chain and other transformative technologies influencing modern markets. Discussions about R, Python and other popular programming languages often include sample code to help you develop your own analysis. The blog has more than 40 contributors covering markets in the Americas, Europe and Asia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-top-0 padding-left-0 padding-right-0">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9 padding-top-10 padding-left-0 hidden-xs hidden-sm">
+              <p class="text-center margin-top-20 margin-left-0"><a href="https://www.interactivebrokers.com/en/index.php?f=5599" target="_self" class="btn btn-lg btn-default">VISIT TRADERS' INSIGHT</a></p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9 padding-top-10 padding-left-0">
+              <p class="text-center margin-top-20 margin-left-0"><a href="https://www.interactivebrokers.com/en/index.php?f=25244" target="_self" class="btn btn-lg btn-default">READ THE QUANT BLOG</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-top-0 padding-left-0 padding-right-0">
+          <div class="col-xs-12 col-sm-12">
+            <hr>
+          </div>
+          <div class="col-xs-12 col-sm-12  padding-top-20 padding-bottom-20">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-0 padding-right-0">
+              <p class="slide-text-wht">Connect with IBKR on Facebook, Twitter, LinkedIn or YouTube.</p>
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-6 padding-top-20 padding-left-0">
+              <p class="text-center margin-top-20 margin-left-0"><a href="../../../index.php-207.html?f=25370" target="_self" class="btn btn-lg btn-default">CONNECT WITH IBKR</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Awards--> 
+<span class="id-drop"><span id="section-fourteen-drop"></span></span>
+<section id="section-bkgd-awards" class="padding-top-80 padding-bottom-80">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-bottom-40">
+        <p class="pre-title">IBKR AWARDS 2019</p>
+        <h2 class="slide-text-heading">Interactive Brokers Takes Top Spot in Online Broker Rankings</h2>
+        <p class="slide-text">Interactive Brokers received industry recognition for its low costs, global product selection and premium trading technology.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1 award-box-barrons text-center"> 
+        <div class="hidden-xs hidden-sm col-xs-12 col-sm-12 col-md-3 col-lg-3 padding-top-40">
+          <div class="text-center"> <img src="../../../../images/2015/award-barrons-2019.png" alt="Barron's award"> </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 padding-top-80">
+          <div class="hidden-md hidden-lg text-center padding-top-20 padding-bottom-20"> <img src="../../../../images/2015/award-barrons-2019.png" alt="Barron's award"> </div>
+          <div>
+            <p class="slide-text text-left margin-left-20 margin-right-20">Interactive Brokers ranked number one in Barron's 24th annual ranking of The Best Online Brokers.<sup>6</sup> IBKR was also ranked "Best for Frequent Traders" and "Best for Mobile Traders" and "Best for International Traders." <a href="https://www.barrons.com/articles/who-are-2019s-best-online-brokers-51550882807" target="_self">Read the full article</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1 award-box-barrons text-center"> 
+        <div class="hidden-xs hidden-sm col-xs-12 col-sm-12 col-md-3 col-lg-3 padding-top-40">
+          <div class="text-center"> <img src="../../../../images/2015/stockbrokers-com-2019-badge-overall-4stars.png" alt="Stockbrokers.com award" class="award-padding"></div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 padding-top-80">
+          <div class="hidden-md hidden-lg text-center padding-top-20 padding-bottom-20"> <img src="../../../../images/2015/stockbrokers-com-2019-badge-overall-4stars.png" alt="Stockbrokers.com award" class="award-padding"> </div>
+          <div>
+            <p class="slide-text text-left margin-left-20 margin-right-20">IBKR also rated #1 for "Commissions &amp; Fees", "Offering of Investments", "Active Trading" and "Professional Trading" in the StockBrokers.com 2019 Annual Review." <a href="https://www.stockbrokers.com/review/interactivebrokers" target="_self">Read the full article</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1 award-box-barrons text-center"> 
+        <div class="hidden-xs hidden-sm col-xs-12 col-sm-12 col-md-3 col-lg-3 padding-top-40">
+          <div class="text-center"> <img src="../../../../images/2015/award_Investopedia_BestOverall.png" alt="Investopedia award">  </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 padding-top-80">
+          <div class="hidden-md hidden-lg text-center padding-top-20 padding-bottom-20"> <img src="../../../../images/2015/award_Investopedia_BestOverall.png" alt="Investopedia award"> </div>
+          <div>
+            <p class="slide-text text-left margin-left-20 margin-right-20">IBKR was rated "Best Overall", "Best for Low Costs", "Best for International Trading", "Best for Options Trading", "Best for Day Trading" and "Best for Penny Stocks" in the Investopedia Online Broker Awards 2019. <a href="https://www.investopedia.com/best-online-brokers-4587872" target="_self">Read the full article</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 padding-top-60">
+        <p class="text-center margin-top-20; margin-left-0;"><a href="../../../index.php-52.html?f=809" target="_self" class="btn btn-lg btn-black">View All Awards</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Disclosures --> 
+<span class="id-drop"><span id="disclosures-drop"></span></span>
+<section id="disclosures" class="padding-bottom-80 padding-top-80 background-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h5>Margin borrowing is only for sophisticated investors <u>with high risk tolerance</u>. You may lose more than your initial investment.</h5>
+        <p class="slide-text-small"> Supporting documentation for any claims and statistical information will be provided upon request.<br>
+          <br>
+          Options involve risk and are not suitable for all investors. For more information read the "Characteristics and Risks of Standardized Options". For a copy, call 312 542-6901 <br>
+          <br>
+          Any trading symbols displayed are for illustrative purposes only and are not intended to portray recommendations. <br>
+          <br>
+              [4] USD credit interest is paid on balances over USD 10,000 in security accounts with Net Asset Value exceeding USD 100,000. For more information, see <a href="../../../accounts/fees/pricing-interest-rates.php.html?f=1595" target="_blank" style="color:#757f83">ibkr.com/interest</a><br>
+          <br>
+            [5]  Interactive Brokers calculates the interest charged on margin loans using the applicable rates for each interest rate tier listed on its website. For additional information on margin loan rates, see <a href="../../../accounts/fees/pricing-interest-rates.php.html?f=1595">ibkr.com/interest</a> <br>
+            <br>
+            [6]  Interactive Brokers earned top ratings from Barron's for the past nine years with a 4.5 star rating. February 25, 2019, March 26, 2018, March 20, 2017, March 23, 2016, March 21, 2015, March 17, 2014, March 11, 2013, March 14, 2012 and March 14, 2011 Barron's Best Online Brokers. Criteria included Trading Experience and Technology, Usability, Mobile, Range of Offerings, Research Amenities, Portfolio Analysis &amp; Reports, Customer Service, Education and Security, and Costs. Supporting documentation for claims and statistical information will be provided upon request. Barron's is a registered trademark of Dow Jones &amp; Company, Inc.
+			<br><br>
+			Please keep in mind that Interactive Advisors is currently licensed to offer investment services to US residents only. This communication or Interactive Advisors' website is NOT intended to be a solicitation or advertisement in any jurisdiction other than the United States. Note that commissions for trades in these portfolios charged by Interactive Advisors' affiliate, Interactive Brokers LLC, are separate and in addition to our management fee. Note that there may be similar offerings in the marketplace with lower investment costs. While based on data provided by FTSE and Russell that calculate the indices these portfolios seek to track, these portfolios are not sponsored or recommended by these two index providers. Past performance is no guarantee of future results, and all investments, including those in these portfolios, involve the risk of loss, including loss of principal and a reduction in earnings. For a set of full disclosures regarding investments in these portfolios, please review this document: <a href="http://cdn02.ibkram.com/18021201/documents/mirroring-account/index-tracking-risk-disclosure-12-jan-2018.pdf" target="_self">index-tracking-risk-disclosure-12-jan-2018.pdf</a><br>
+          <br>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Disclosures --> 
+<!-- WEBSITE FOOTER BEGIN -->
+<footer class="disclosures noprint">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> <br>
+        <ul class="subfooterlinks">
+          <!-- ALL ENTITY DISCLOSURES EXCEPT INDIA -->
+          <li><a href="../../../index.php-37.html?f=305" target="_self">Privacy Policy</a></li>
+          <li>|</li>
+          <li><a href="../../../accounts/forms-and-disclosures-client-agreements.php.html?f=1552" target="_self">Forms and Disclosures</a></li>
+          <li>|</li>
+          <li><a href="../../../index.php-56.html?f=4088" target="_self">Customer Identification Program Notice</a></li>
+          <li>|</li>
+          <li><a href="../../security-privacy.php.html?f=18417" target="_self">Cyber Security Notice</a></li>
+          <!-- CANADA ONLY DISCLOSURES --> 
+          <!-- INDIA ONLY DISCLOSURES -->
+        </ul>
+        <p>Interactive Brokers ®, IB<sup>SM</sup>, InteractiveBrokers.com ®, Interactive Analytics ®, IB Options Analytics<sup>SM</sup>, IB SmartRouting<sup>SM</sup>, PortfolioAnalyst ® and IB Trader Workstation<sup>SM</sup> are service marks and/or trademarks of Interactive Brokers LLC. Supporting documentation for any claims and statistical information will be provided upon request. Any trading symbols displayed are for illustrative purposes only and are not intended to portray recommendations.</p>
+        <p>The risk of loss in online trading of stocks, options, futures, forex, foreign equities, and bonds can be substantial.</p>
+        <p>Options involve risk and are not suitable for all investors. Before investing in options, read the "Characteristics and Risks of Standardized Options". For a copy visit <a href="http://www.theocc.com/about/publications/character-risks.jsp" target="_blank">http://www.theocc.com/about/publications/character-risks.jsp</a>. Before trading, clients must read the relevant risk disclosure statements on our Warnings and Disclosures page - <a href="https://www.interactivebrokers.com/disclosures" target="_self">https://www.interactivebrokers.com/disclosures</a>. Trading on margin is only for sophisticated investors with high risk tolerance. You may lose more than your initial investment. For additional information regarding margin loan rates, see <a href="https://www.interactivebrokers.com/interest" target="_self">https://www.interactivebrokers.com/interest</a>. Security futures involve a high degree of risk and are not suitable for all investors. The amount you may lose may be greater than your initial investment. Before trading security futures, read the Security Futures Risk Disclosure Statement. For a copy visit <a href="https://www.interactivebrokers.com/disclosures" target="_self">https://www.interactivebrokers.com/disclosures</a>. There is a substantial risk of loss in foreign exchange trading. The settlement date of foreign exchange trades can vary due to time zone differences and bank holidays. When trading across foreign exchange markets, this may necessitate borrowing funds to settle foreign exchange trades. The interest rate on borrowed funds must be considered when computing the cost of trades across multiple markets.</p>
+        <br>
+        <hr>
+        <h6>INTERACTIVE BROKERS ENTITIES</h6>
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <p><a href="../../../home.php.html" target="_self" class="footerlink"><strong>INTERACTIVE BROKERS LLC</strong></a><br>
+          is a member <a target="_blank" href="http://www.nyse.com">NYSE</a> - <a href="http://www.finra.org" target="_blank">FINRA</a> - <a href="http://www.sipc.org" target="_blank">SIPC</a> and regulated by the US Securities and Exchange Commission and the Commodity Futures Trading Commission. <strong>Headquarters:</strong> One Pickwick Plaza, Greenwich, CT 06830 USA<br>
+          <a href="../../../home.php.html" target="_self" class="footerlink">www.interactivebrokers.com</a></p>
+        <p><a href="https://www.interactivebrokers.ca/en/main.php" target="_self" class="footerlink"><strong>INTERACTIVE BROKERS CANADA INC.</strong></a><br>
+          Is a member of the <a href="http://www.iiroc.ca" target="_blank">Investment Industry Regulatory Organization of Canada (IIROC)</a> and Member - <a href="http://www.cipf.ca" target="_blank">Canadian Investor Protection Fund</a>. Know Your Advisor: View the <a href="http://www.iiroc.ca/investors/knowyouradvisor/Pages/default.aspx">IIROC AdvisorReport</a>. Trading of securities and derivatives may involve a high degree of risk and investors should be prepared for the risk of losing their entire investment and losing further amounts. Interactive Brokers Canada Inc. is an execution-only dealer and does not provide investment advice or recommendations regarding the purchase or sale of any securities or derivatives.<br>
+          <strong>Registered Office:</strong> 1800 McGill College Avenue, Suite 2106, Montreal, Quebec, H3A 3J6, Canada.<br>
+          <a href="https://www.interactivebrokers.ca/en/main.php" target="_self" class="footerlink">www.interactivebrokers.ca</a></p>
+        <p><a href="https://www.interactivebrokers.com.au" target="_self" class="footerlink"><strong>INTERACTIVE BROKERS AUSTRALIA PTY LTD</strong></a><br>
+          ABN 98 166 929 568 is licensed and regulated by the <a href="http://asic.gov.au/" target="_blank">Australian Securities and Investments Commission</a> (AFSL: 245574) and is a participant of <a href="http://www.asx.com.au/" target="_blank">ASX</a>, <a href="http://www.asx.com.au/" target="_blank">ASX 24</a> and <a href="https://cmsau.chi-x.com" target="_blank">Chi-X Australia</a>.
+          Registered Office: Level 40, Grosvenor Place, 225 George Street, Sydney 2000, New South Wales, Australia. <br>
+          <a href="https://www.interactivebrokers.com.au " target="_self" class="footerlink">www.interactivebrokers.com.au </a></p>
+        <p><a href="https://www.interactivebrokers.co.uk/en/main.php" target="_self" class="footerlink"><strong>INTERACTIVE BROKERS (U.K.) LIMITED</strong></a><br>
+          is authorised and regulated by the <a href="http://www.fca.org.uk" target="_blank">Financial Conduct Authority</a>. FCA register entry number 208159. <a href="http://www.fsa.gov.uk/register/home.do" target="_blank">[http://www.fsa.gov.uk/register/home.do]</a> <strong>Office:</strong> Level 20 Heron Tower, 110 Bishopsgate, London EC2N 4AY<br>
+          <a href="https://www.interactivebrokers.co.uk/en/main.php" target="_self" class="footerlink">www.interactivebrokers.co.uk</a></p>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <p><a href="https://www.interactivebrokers.co.in/en/main.php" target="_self" class="footerlink"><strong>INTERACTIVE BROKERS (INDIA) PVT. LTD.</strong></a><br>
+          is a member of <a href="http://www.nseindia.com/" target="_blank">NSE</a>, <a href="http://www.bseindia.com/" target="_blank">BSE</a> <a href="http://www.sebi.gov.in" target="_blank">[http://www.sebi.gov.in]</a>. Regn. No. NSE: INB/F/E 231288037 (CM/F&O/CD); BSE: INB/F/E 011288033 (CM/F&O/CD); NSDL: IN-DP-NSDL-301-2008. CIN-U67120MH2007FTC170004. <strong>Registered Office:</strong> 502/A, Times Square, Andheri Kurla Road, Andheri East, Mumbai 400059, India. Tel: +91-22-61289888 / Fax: +91-22-61289898<br>
+          <a href="https://www.interactivebrokers.co.in/en/main.php" target="_self" class="footerlink">www.interactivebrokers.co.in</a></p>
+        <p><a href="https://www.interactivebrokers.co.jp/ind/jp/main.php" target="_self" class="footerlink"><strong>INTERACTIVE BROKERS SECURITIES JAPAN INC.</strong></a><br>
+          商号：インタラクティブ・ブローカーズ証券株式会社。 金融商品取引業者：関東財
+          務局長（金商）第187号。 加入協会：日本証券業協会  一般社団法人金融先物取引業
+          協会。 お問い合わせ先：カスタマー・サービス（03-4588-9700  平日8：30-17：
+          30）。 登録所在地: 〒 103-0025  東京都中央区日本橋茅場町三丁目2番10号  鉄鋼
+          会館4階<br>
+          <a href="https://www.interactivebrokers.co.jp/ind/jp/main.php" target="_self" class="footerlink">www.interactivebrokers.co.jp</a></p>
+        <p><a href="https://www.interactivebrokers.com.hk/en/main.php" target="_self" class="footerlink"><strong>INTERACTIVE BROKERS HONG KONG LIMITED</strong></a><br>
+          is regulated by the Hong Kong Securities and Futures Commission, and is a member of the <a href="https://www.hkex.com.hk" target="_blank">SEHK</a> and the <a href="https://www.hkex.com.hk" target="_blank">HKFE</a>. <strong>Registered Office:</strong> Suite 1512, Two Pacific Place, 88 Queensway, Admiralty, Hong Kong SAR <a href="https://www.interactivebrokers.com.hk/en/main.php" target="_self" class="footerlink">www.interactivebrokers.com.hk</a></p>
+      </div>
+    </div>
+    <div class="space_70"></div>
+  </div>
+</footer>
+<script type="text/javascript">
+$(document).ready(function() {
+  var $slider = $(".slider"),
+      $slideBGs = $(".slide-bg"),
+      diff = 0,
+      curSlide = 0,
+      numOfSlides = $(".slide").length-1,
+      animating = false,
+      animTime = 1500,
+      autoSlideTimeout,
+      autoSlideDelay = 10000,
+      $pagination = $(".slider-pagi");
+  function createBullets() {
+    for (var i = 0; i < numOfSlides+1; i++) {
+      var $li = $("<li class='slider-pagi-elem'></li>");
+      $li.addClass("slider-pagi-elem-"+i).data("page", i);
+      if (!i) $li.addClass("active");
+      $pagination.append($li);
+    }
+  };
+  createBullets();
+  function manageControls() {
+    $(".slider-control").removeClass("inactive");
+    if (!curSlide) $(".slider-control.left").addClass("inactive");
+    if (curSlide === numOfSlides) $(".slider-control.right").addClass("inactive");
+  };
+  function autoSlide() {
+    autoSlideTimeout = setTimeout(function() {
+      curSlide++;
+      if (curSlide > numOfSlides) curSlide = 0;
+      changeSlides();
+    }, autoSlideDelay);
+  };
+  autoSlide();
+  function changeSlides(instant) {
+    if (!instant) {
+      animating = true;
+      manageControls();
+      $slider.addClass("animating");
+      $slider.css("top");
+      $(".slide").removeClass("active");
+      $(".slide-"+curSlide).addClass("active");
+      setTimeout(function() {
+        $slider.removeClass("animating");
+        animating = false;
+      }, animTime);
+    }
+    window.clearTimeout(autoSlideTimeout);
+    $(".slider-pagi-elem").removeClass("active");
+    $(".slider-pagi-elem-"+curSlide).addClass("active");
+    $slider.css("transform", "translate3d("+ -curSlide*100 +"%,0,0)");
+    $slideBGs.css("transform", "translate3d("+ curSlide*50 +"%,0,0)");
+    diff = 0;
+	autoSlide();
+  }
+  function navigateLeft() {
+    if (animating) return;
+    if (curSlide > 0) curSlide--;
+    changeSlides();
+  }
+  function navigateRight() {
+    if (animating) return;
+    if (curSlide < numOfSlides) curSlide++;
+    changeSlides();
+  }
+	var arrowgone = false;
+	function hideArrow(){
+		if (!arrowgone){
+			winTop = $(window).scrollTop();
+			if (winTop>25){
+				arrowgone = true;
+				/*console.log('arrowgone...');*/
+				// console.log("winTop "+ winTop +" is greater than 100");
+				$('#arrow-scroll-more').css( {"visibility" : "hidden" } );
+			}
+		}
+	}
+	$(window).scroll(function(){
+		hideArrow();
+	});
+  $(document).on("mousedown touchstart", ".slider", function(e) {
+    if (animating) return;
+    window.clearTimeout(autoSlideTimeout);
+    var startX = e.pageX || e.originalEvent.touches[0].pageX,
+        winW = $(window).width();
+    diff = 0;
+    $(document).on("mousemove touchmove", function(e) {
+      var x = e.pageX || e.originalEvent.touches[0].pageX;
+      diff = (startX - x) / winW * 70;
+      if ((!curSlide && diff < 0) || (curSlide === numOfSlides && diff > 0)) diff /= 2;
+      $slider.css("transform", "translate3d("+ (-curSlide*100 - diff) +"%,0,0)");
+      $slideBGs.css("transform", "translate3d("+ (curSlide*50 + diff/2) +"%,0,0)");
+    });
+  });
+  $(document).on("mouseup touchend", function(e) {
+    $(document).off("mousemove touchmove");
+    if (animating) return;
+    if (!diff) {
+      changeSlides(true);
+      return;
+    }
+    if (diff > -8 && diff < 8) {
+      changeSlides();
+      return;
+    }
+    if (diff <= -8) {
+      navigateLeft();
+    }
+    if (diff >= 8) {
+      navigateRight();
+    }
+  });
+  $(document).on("click", ".slider-control", function() {
+    if ($(this).hasClass("left")) {
+      navigateLeft();
+    } else {
+      navigateRight();
+    }
+  });
+  $(document).on("click", ".slider-pagi-elem", function() {
+    curSlide = $(this).data("page");
+    changeSlides();
+  });
+	/* Script for Side Navigation Menu ---------------------------------------------------------------------------------------------------- */
+	$(document).ready(function () {
+	  var trigger = $('.hamburger'),
+		 isClosed = false;
+		trigger.click(function () {
+		  hamburger_cross();      
+		});
+		function hamburger_cross() {
+		  if (isClosed == true) {      
+			trigger.removeClass('is-open');
+			trigger.addClass('is-closed');
+			isClosed = false;
+		  } else {   
+			trigger.removeClass('is-closed');
+			trigger.addClass('is-open');
+			isClosed = true;
+		  }
+	  }
+		/* auto close side nav after menu selection is clicked*/
+	  $(document).on("click", ".sidebar-nav", function() {
+		  hamburger_cross();
+		  $('#wrapper').toggleClass('toggled');
+	  });
+	  $('[data-toggle="offcanvas"]').click(function () {
+			$('#wrapper').toggleClass('toggled');
+	  });  
+	});
+	/* END Script for Side Navigation Menu ---------------------------------------------------------------------------------------------------- */
+	/* Responsive Video added to hero --------------------------------------------------------------------------------------------------------- */
+	$( document ).ready(function() {
+		// Resive video
+		scaleVideoContainer();
+		initBannerVideoSize('.video-container .poster img');
+		initBannerVideoSize('.video-container .filter');
+		initBannerVideoSize('.video-container video');
+		$(window).on('resize', function() {
+			scaleVideoContainer();
+			scaleBannerVideoSize('.video-container .poster img');
+			scaleBannerVideoSize('.video-container .filter');
+			scaleBannerVideoSize('.video-container video');
+		});
+	});
+	/** Reusable Functions ******************************************************************** **/
+	function scaleVideoContainer() {
+		var height = $(window).height();
+		var unitHeight = parseInt(height) + 'px';
+		$('.homepage-hero-module').css('height',unitHeight);
+	}
+	function initBannerVideoSize(element){
+		$(element).each(function(){
+			$(this).data('height', $(this).height());
+			$(this).data('width', $(this).width());
+		});
+		scaleBannerVideoSize(element);
+	}
+	function scaleBannerVideoSize(element){
+		var windowWidth = $(window).width(),
+			windowHeight = $(window).height(),
+			videoWidth,
+			videoHeight;
+		$(element).each(function(){
+			var videoAspectRatio = $(this).data('height')/$(this).data('width'),
+				windowAspectRatio = windowHeight/windowWidth;
+			if (videoAspectRatio > windowAspectRatio) {
+				videoWidth = windowWidth;
+				videoHeight = videoWidth * videoAspectRatio;
+				$(this).css({'top' : -(videoHeight - windowHeight) / 2 + 'px', 'margin-left' : 0});
+			} else {
+				videoHeight = windowHeight;
+				videoWidth = videoHeight / videoAspectRatio;
+				$(this).css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
+			}
+			$(this).width(videoWidth).height(videoHeight);
+			$('.homepage-hero-module .video-container video').addClass('fadeIn animated');
+		});
+	}
+	/* END Responsive Video added to hero --------------------------------------------------------------------------------------------------------- */
+});
+</script>
+</body>
+</html>
