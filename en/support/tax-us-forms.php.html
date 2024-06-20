@@ -1,0 +1,1316 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<title>Tax Information and Reporting - Year-End Tax Forms | Interactive Brokers LLC | Interactive Brokers LLC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"> 
+<meta name="description" content="On this page, users can find year-end tax forms for US persons and Entities.">
+<meta name="keywords" content="us tax data collection, interactive brokers us tax data, us year end tax forms">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="expires" content="-1">
+<meta name="robots" content="index, follow">
+<meta http-equiv="pragma" content="no-cache">
+<!--Pid:56376-->
+<link rel="canonical" href="tax-us-forms.php.html">
+<meta name="apple-mobile-web-app-title" content="IBKR">
+<link rel="icon" sizes="192x192" href="../../images/web/favicons/home-screen-icon-192x192.png">
+<link rel="icon" sizes="128x128" href="../../images/web/favicons/home-screen-icon-128x128.png">
+<link rel="apple-touch-icon" sizes="57x57" href="../../images/web/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../images/web/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../images/web/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../images/web/favicons/apple-touch-icon-144x144.png">
+<!-- SCRIPTS HEAD ---------------------------------------------------------------------------------------------------- -->
+<script type="text/javascript" src='../../scripts/common/js/jquery-3.6.1/jquery.min.js'></script>
+<script type="text/javascript">
+function createScriptElement(data) {
+ if (typeof data == "undefined") {
+  return;
+ }
+ var element = document.createElement("SCRIPT");
+ element.type = "text/javascript";
+ if (typeof data.id != "undefined") {
+  element.id = data.id;
+ }
+ if (typeof data.source != "undefined") {
+  element.src = data.source;
+ }
+ if (typeof data.loadfunction == "function") {
+  element.onload = data.loadfunction;
+ }
+ document.head.appendChild(element);
+}
+createScriptElement({ source : "/scripts/common/js/bootstrap-5.2.2/bootstrap.bundle.min.js", loadfunction: bsLoaded  });
+createScriptElement({ source : "/scripts/common/js/lib.js?ver=9" });
+function bsLoaded() {
+  createScriptElement({ source : "/scripts/common/js/appear/appear.min.js?ver=1" });
+  createScriptElement({ source : "/scripts/common/js/easing/easing.min.js?ver=1" });
+  createScriptElement({ source : "/scripts/common/js/parallax/parallax.min.js?ver=1" });
+  createScriptElement({ source : "/scripts/common/js/uitotop/uitotop.min.js?ver=1", loadfunction: uiLoaded });
+}
+function uiLoaded() {
+  createScriptElement({ source : "/scripts/common/js/twsUtils.js?ver=2" });
+  createScriptElement({ source : "/scripts/common/js/design/design.js?ver=1" }); 
+}
+</script>
+<script type="text/javascript">
+$(function() {
+  let ex=new Date();
+  ex.setTime(ex.getTime()+86400000);
+  document.cookie ='IB_REST=1;expires='+ex.toGMTString()+';path=/;domain=.interactivebrokers.com';
+  $('div#langselector').find('a').each(function() {
+  $(this).click(function() {
+   var link = $(this).attr("href");
+   if(link.match(/\/(en|fr|de|es|it|ru|cn|jp)\//))
+   {
+    var langs = link.split("/");
+    if(langs[3] == 'en' || langs[3] == 'fr' || langs[3] == 'de' || langs[3] == 'es' || langs[3] == 'it' || langs[3] == 'ru' || langs[3] == 'cn' || langs[3] == 'jp')
+    {
+      var lang = langs[3];
+      if(lang == 'cn')
+      {
+        lang = 'zh_CN';
+      }
+      if(lang == 'jp')
+      {
+        lang = 'ja';
+      }
+      if(hasCookie("IB_LANG"))
+      {
+        deleteCookie("IB_LANG");
+      }
+      setCookie("IB_LANG", lang, 7, '.interactivebrokers.com');
+    } else if(langs[1] == 'en') {
+      var lang = 'en';
+      setCookie("IB_LANG", lang, 7, '.interactivebrokers.com');
+    }
+   }
+  });
+ });
+ $('p#bandaid-close').click(function() {
+  setCookie("IB_BANDAID", 1, 30, '.interactivebrokers.com');
+ });
+ $('a#btnCloseBannerRegionSelector').click(function() {
+  setCookie("IB_REGION_SEL", 1, 30, '.interactivebrokers.com');
+ });
+});
+</script>
+<script>var e=document.createElement("script");e.type='text/javascript';e.src='/scripts/common/js/ibtrk.js?v=14';document.head.appendChild(e);_ibp=56376;</script>
+<!-- STYLES HEAD -->
+<link rel="preload" as="style" href="../../css/bootstrap-5.2.2/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/bootstrap-5.2.2/bootstrap.min.css">
+<link rel="preload" as="style" href="../../css/ibkr/website.min.css?v=25dbb9871dad19f5b220266180efb316">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/ibkr/website.min.css?v=25dbb9871dad19f5b220266180efb316">
+<link rel="preload" as="style" href="../../css/ibkr/theme-ibkr.min.css?v=25dbb9871dad19f5b220266180efb316">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/ibkr/theme-ibkr.min.css?v=25dbb9871dad19f5b220266180efb316">
+<script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch"}]);</script>
+                              <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="CGJ34-S5RKA-7ZQ8F-AJER9-TWWVG",function(){function e(){if(!o){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,i.parentNode.appendChild(e),o=!0}}function t(e){o=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(i.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",i.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"CGJ34-S5RKA-7ZQ8F-AJER9-TWWVG";var i=document.currentScript||document.getElementsByTagName("script")[0],o=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!o)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),i.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="nfygq4s7mteccztslbpa-f-567e64a06-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,o={"ak.v":"37","ak.cp":"1131468","ak.ai":parseInt("665092",10),"ak.ol":"0","ak.cr":150,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"26ec7b7c","ak.r":36911,"ak.a2":n,"ak.m":"a","ak.n":"essl","ak.bpcip":"105.112.104.0","ak.cport":18424,"ak.gh":"95.100.200.29","ak.quicv":"","ak.tlsv":"tls1.2","ak.0rtt":"","ak.csrc":"-","ak.acc":"bbr","ak.t":"1718769758","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==/qte+fJ8Ch4uzjP48zT9K8CHkZExNq4D7ZtAYK5PERmLP/ApRKL59Tw0+22v4ZsBQ4KwC7eFFI358BcvXfVw8qIslw2UpSm0NSq5s4rs5paS0lmiczKM+7RKxw6qGa4AOaPvQrnt93K1bWQz6F9aFbYARv5hL+81nFc4kuTCuHcFLYGDv/KJ6HL1y/Gaw+QiNsbBDZ436be1Sst4rFTsmYFLjSTXxs61vOZx8PsQa1sgIeZrnFeCKcJQH8nZOk35JGbmMaCWWuyvRkWmJVTgbv/5jPvPjUe4DXDZCwSylQ5jBoudsivEGVHB37KVlZWIuxz4W4HxVDpJZbYvpXmOSKBQQmhjPJ3mFkEdcuBAed1mi92vzIjgL7eFfSoQybxtxGdRZxgldx5i6aBpUOq7FYjr0bGNawZtBQhWs0OggKg=","ak.pv":"316","ak.dpoabenc":"","ak.tf":i};if(""!==t)o["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))o["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(o)},rv:function(){var e=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:o,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+<body>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NK9NSD');</script>
+<!-- End Google Tag Manager --><div id="printheader"></div>
+<!-- HEADER START ---------------------------------------------------------------------------------------------------- -->
+<div class="ibkr-header" id="ibkr-header">
+     
+     
+    <!-- NAV TOP START (LG/XL ONLY) -->
+    <nav class="navbar navbar-inverse navbar-expand-lg navbar-top d-none d-lg-block">
+        <div class="container">
+            <div class="navbar-collapse collapse" id="ibkr-nav-top">
+                <!-- LEFT MENU -->
+                <ul class="navbar-nav mr-auto align-items-center">
+                    <!-- FOR INDIVIDUALS -->
+                    <li class="nav-item dropdown"><a href="#" target="_self" class="nav-link dropdown-toggle" id="nav-for-individuals" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">For Individuals</a>
+                        <div class="dropdown-menu dropdown-ind-accounts" aria-labelledby="nav-for-individuals">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../accounts/individual.php.html" target="_self" class="dropdown-item">Individual, Joint or IRA</a>
+                                    <a href="../accounts/non-professional-advisor.php.html" target="_self" class="dropdown-item">Non-Professional Advisors</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- FOR INSTITUTIONS -->
+					<li class="nav-item dropdown"><a href="#" target="_self" class="nav-link dropdown-toggle" id="nav-for-institutions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">For Institutions</a>
+                        <div class="dropdown-menu dropdown-inst-accounts" aria-labelledby="nav-for-institutions">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../accounts/institutions.php.html" target="_self" class="dropdown-item">Institutions Home</a>
+                                    <a href="../accounts/advisor.php.html" target="_self" class="dropdown-item">Registered Investment Advisors</a>
+                                    <a href="../accounts/proprietary-trading-group.php.html" target="_self" class="dropdown-item">Proprietary Trading Groups</a>
+                                    <a href="../accounts/hedge-fund.php.html" target="_self" class="dropdown-item">Hedge Funds</a>
+                                    <a href="../accounts/broker.php.html" target="_self" class="dropdown-item">Introducing Brokers</a>
+                                    <a href="../accounts/family-office.php.html" target="_self" class="dropdown-item">Family Offices</a>
+                                    <a href="../accounts/compliance-officer.php.html" target="_self" class="dropdown-item">Compliance Officers</a>
+                                    <a href="../accounts/small-business.php.html" target="_self" class="dropdown-item">Small Businesses</a>
+                                    <a href="../accounts/simple-ira.php.html" target="_self" class="dropdown-item">Employee Plan Administrator <br>SIMPLE IRA</a>
+                                    <a href="../accounts/fsa-insurance-providers.php.html" target="_self" class="dropdown-item">Full-Service Administrator <br>Insurance Providers</a>
+                                    <a href="../accounts/money-manager.php.html" target="_self" class="dropdown-item">Money Managers</a>
+                                    <a href="../accounts/administrator.php.html" target="_self" class="dropdown-item">Fund Administrators</a>
+                                    <a href="../accounts/hedge-fund-allocator.php.html" target="_self" class="dropdown-item">Hedge Fund Allocators</a>
+                                    <a href="https://ibkrcampus.com/student-trading-lab/" target="_blank" class="dropdown-item">Educators</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- RIGHT MENU -->
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <!-- FREE TRIAL -->
+                    <li class="nav-item"><a href="../trading/free-trial.php.html" target="_self" class="nav-link">FREE TRIAL</a></li>
+                    <!-- CAREERS -->
+                    <li class="nav-item"><a href="../general/about/careers-splash.php.html" target="_self" class="nav-link">Careers</a></li>
+                    <!-- ABOUT US -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-about-us" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
+                        <div class="dropdown-menu dropdown-about-us" aria-labelledby="nav-about-us">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../general/financial-strength.php.html" target="_self" class="dropdown-item">Strength and Security</a>
+                                    <a href="../general/about/about.php.html" target="_self" class="dropdown-item">Information and History</a>
+                                    <a href="../general/awards.php.html" target="_self" class="dropdown-item">Awards</a>
+                                    <a href="../about/news-at-ibkr.php.html" target="_self" class="dropdown-item">News at IBKR</a>
+                                    <a href="../general/about/press-and-media.php.html" target="_self" class="dropdown-item">Press and Media</a>
+                                    <a href="https://investors.interactivebrokers.com/ir/main.php" target="_blank" class="dropdown-item" rel="noreferrer noopener">Investor Relations</a>
+                                    <a href="../general/about/sustainability.php.html" target="_self" class="dropdown-item">Sustainability</a>
+                                    <a href="../accounts/legalDocuments/brokerPerformanceReports.php.html" target="_self" class="dropdown-item">Regulatory Reports</a>
+                                    <a href="../accounts/referrer.php.html" target="_self" class="dropdown-item">Refer a Friend</a>
+                                    <a href="../general/about/affiliate-programs.php.html" target="_self" class="dropdown-item">Affiliate Programs</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- SUPPORT -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-support" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Support</a>
+                        <div class="dropdown-menu dropdown-contact-us" aria-labelledby="nav-support">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="fund-my-account.php.html" target="_self" class="dropdown-item">Fund Your Account</a>
+                                    <a href="individuals.php.html" target="_self" class="dropdown-item">For Individuals</a>
+                                    <a href="institutions.php.html" target="_self" class="dropdown-item">For Institutions</a>
+                                    <a href="institutional-sales-contacts.php.html" target="_self" class="dropdown-item">Institutional Sales Contacts</a>
+                                                                        <a href="../general/contact/ibot-container.php.html" target="_self" class="dropdown-item">Browse Our FAQs</a>
+                                    <a href="reports-and-dates.php.html" target="_self" class="dropdown-item">Tax Information</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- LANGUAGE SELECTOR -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link nav-language dropdown-toggle" id="nav-language" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Language</span><img src="../../images/web/icons/icon-language.svg" alt="Language" width="23" height="18" border="0"></a>
+                        <div class="dropdown-menu dropdown-language" aria-labelledby="nav-language">
+                            <div class="row">
+                                <div class="col" id="langselector">
+                                    <a href="../home.php.html" target="_self" class="dropdown-item">English</a>
+                                    <a href="/es/home.php" target="_self" class="dropdown-item">Español</a>
+                                    <a href="/pt/home.php" target="_self" class="dropdown-item">Português</a>
+                                    <a href="/cn/home.php?lang=sc" target="_self" class="dropdown-item">中文简体</a>
+                                    <a href="/cn/home.php?lang=tc" target="_self" class="dropdown-item">中文繁體</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- NAV TOP END -->
+    <!-- NAV BOTTOM START -->
+    <nav class="navbar navbar-inverse navbar-expand-lg navbar-bottom">
+        <div class="container">
+            <!-- IBKR LOGO -->
+                        <a href="../home.php.html" target="_self" title="Interactive Brokers Home" alt="Interactive Brokers Logo" class="navbar-brand brand-logo" aria-label="Interactive Brokers Home"><span>Interactive Brokers Home</span></a>
+            <!-- TOGGLE (XS/SM/MD ONLY) -->
+            <button class="navbar-toggler" type="button" aria-label="Toggle Navigation"><span class="navbar-toggler-icon"><i class="fas fa-bars" aria-hidden="true"></i></span></button>
+            <!-- OPEN ACCOUNT BUTTON (XS/SM/MD ONLY) -->
+            <a href="/Universal/Application" target="_self" class="d-block d-lg-none btn btn-open-account">Open Account</a>
+            <!-- LOG IN (SM/MD ONLY) -->
+                            <a href="/sso/Login?RL=1" target="_self" class="d-none d-sm-block d-lg-none btn btn-log-in">Log In</a>
+                        <!-- IBKR NAV BOTTOM START   -->
+            <div class="navbar-collapse collapse" id="ibkr-nav-bottom">
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <!-- WHY IBKR -->
+                    <li class="nav-item"><a href="../whyib/overview.php.html" target="_self" class="nav-link">Why IBKR</a></li>
+                    <!-- PRICING -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-pricing" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pricing</a>
+                        <div class="dropdown-menu dropdown-pricing" aria-labelledby="nav-pricing">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../pricing/commissions-home.php.html" target="_self" class="dropdown-item">Commissions</a>
+                                    <a href="../trading/margin-rates.php.html" target="_self" class="dropdown-item">Margin Rates</a>
+                                    <a href="../accounts/fees/pricing-interest-rates.php.html" target="_self" class="dropdown-item">Interest Rates</a>
+                                    <a href="../pricing/short-sale-cost.php.html" target="_self" class="dropdown-item">Short Sale Cost</a>
+                                    <a href="../pricing/research-news-services.php.html" target="_self" class="dropdown-item">Research and News</a>
+                                    <a href="../pricing/research-news-marketdata.php.html" target="_self" class="dropdown-item">Market Data</a>
+                                    <a href="../pricing/stock-yield-enhancement-program.php.html" target="_self" class="dropdown-item">Stock Yield Enhancement Program</a>
+                                    <a href="../pricing/other-fees-overview.php.html" target="_self" class="dropdown-item">Other Fees</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- TRADING -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-technology" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Trading</a>
+                        <div class="dropdown-menu dropdown-technology" aria-labelledby="nav-technology">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../trading/trading-platforms.php.html" target="_self" class="dropdown-item">Platforms</a>
+                                    <a href="../trading/ib-api.php.html" target="_self" class="dropdown-item">APIs</a>
+                                    <a href="../trading/margin.php.html" target="_self" class="dropdown-item">Margin</a>
+                                    <a href="../trading/products-exchanges.php.html" target="_self" class="dropdown-item">Products and Exchange Search</a>
+                                    <a href="../trading/ordertypes.php.html" target="_self" class="dropdown-item">Order Types</a>
+                                    <a href="../whyib/reporting.php.html" target="_self" class="dropdown-item">Reporting</a>
+                                    <a href="../trading/securities-financing.php.html" target="_self" class="dropdown-item">Securities Financing</a>
+                                    <a href="../trading/features-in-focus.php.html" target="_self" class="dropdown-item">Features in Focus</a>
+                                    <a href="../general/education/probability_lab.php.html" target="_self" class="dropdown-item">Probability Lab</a>
+                                    <a href="../trading/global-outsourced-trading-desk.php.html" target="_self" class="dropdown-item">Global Outsourced Trading Desk</a>
+                                    <a href="../trading/sustainable-investing.php.html" target="_self" class="dropdown-item">Sustainable Investing</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- SERVICES -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-products" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+                        <div class="dropdown-menu dropdown-products" aria-labelledby="nav-products">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="../trading/globalanalyst.php.html" target="_self" class="dropdown-item">IBKR GlobalAnalyst</a>
+                                    <a href="https://www.portfolioanalyst.com" target="_blank" class="dropdown-item" rel="noreferrer noopener">PortfolioAnalyst</a>
+                                    <a href="../trading/products-bonds.php.html" target="_self" class="dropdown-item">Bonds Marketplace</a>
+                                    <a href="../trading/products-mutual-funds.php.html" target="_self" class="dropdown-item">Mutual Funds Marketplace</a>
+                                    <a href="../trading/commission-free-etfs-mkt.php.html" target="_self" class="dropdown-item">No Transaction Fee ETFs</a>
+                                    <a href="https://ndcdyn.interactivebrokers.com/aces/Marketplace/InvestorsMarketplace" target="_blank" class="dropdown-item" rel="noreferrer noopener">Investors' Marketplace</a>
+                                    <a href="../trading/short-securities-availability.php.html" target="_self" class="dropdown-item">Short Securities Availability</a>
+                                    <a href="../accounts/integrated-cash-management.php.html" target="_self" class="dropdown-item">Cash Management</a>
+                                    <a href="../trading/third-party-integration.php.html" target="_self" class="dropdown-item">Third Party Integration</a>
+                                    <a href="https://www.interactiveadvisors.com" target="_blank" class="dropdown-item" rel="noreferrer noopener">Interactive Advisors</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- EDUCATION -->
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="nav-education" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Education</a>
+                        <div class="dropdown-menu dropdown-education" aria-labelledby="nav-education">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="https://ibkrcampus.com" target="_blank" class="dropdown-item">IBKR Campus</a>
+                                    <a href="https://ibkrcampus.com/academy" target="_blank" class="dropdown-item" rel="noreferrer noopener">Traders' Academy</a>
+                                    <a href="https://ibkrcampus.com/news" target="_blank" class="dropdown-item" rel="noreferrer noopener">Traders' Insight</a>
+                                    <a href="https://ibkrcampus.com/podcasts" target="_blank" class="dropdown-item" rel="noreferrer noopener">IBKR Podcasts</a>
+                                    <a href="https://ibkrcampus.com/quant" target="_blank" class="dropdown-item" rel="noreferrer noopener">IBKR Quant Blog</a>
+                                    <a href="https://ibkrcampus.com/webinars" target="_blank" class="dropdown-item" rel="noreferrer noopener">Webinars</a>
+                                    <a href="https://ibkrcampus.com/student-trading-lab/" target="_blank" class="dropdown-item">Student Trading Lab</a>
+                                    <a href="https://ibkrcampus.com/glossary" target="_blank" class="dropdown-item" rel="noreferrer noopener">Traders' Glossary</a>
+                                    <a href="../general/calendar/calendar.php.html" target="_self" class="dropdown-item">Traders' Calendar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- SEARCH -->
+                    <li class="nav-item dropdown d-none d-lg-block" id="search-expand"><a href="#" class="nav-link nav-search dropdown-toggle" id="nav-search" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Search</span><i class="fas fa-search" aria-hidden="true"></i></a>
+                        <div class="dropdown-menu dropdown-search" aria-labelledby="nav-search">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="search_box">
+                                        <script type="text/javascript">
+                                         searchbox_input_changed=false;
+                                          $('#search-expand').on('shown.bs.dropdown', function(e) {
+                                            $('#searchField').focus();
+                                          });
+                                        </script>
+                                        <form action="/en/search/index.php" method="get" class="search_form" id="search_form_id">
+                                            <input type="text" aria-label="Search Box" placeholder="Search Site or Contracts" name="query" maxlength="64" autocomplete="off" id="searchField" class="form-control s swap_value searchinput" aria-label="Search Interactive Brokers">
+                                            <button type="submit" value="" id="searchsubmit" class="searchsubmit" aria-label="Submit Search"><i class="fas fa-search" aria-hidden="true"></i></button>
+                                        </form>
+                                        <ul id='saytlist' style='width:150px;'><li style="display:none"></li></ul>
+<script>
+function delay(cb, ms)
+{
+  var timer = 0;
+  return function() {
+   var context = this, args = arguments;
+   clearTimeout(timer);
+   timer = setTimeout(function() {
+     cb.apply(context, args);
+   }, ms  || 0);
+  };
+}
+$(function() {
+
+ $('#searchField').keyup(delay(function() {
+  var q = $('#searchField').val() || '';
+  if(q.length >= 3)
+  {
+    $.ajax({
+      type: "POST",
+      url: 'https://misc.interactivebrokers.com/response_handlers/search/index.php',
+      dataType: "json",
+      data: {
+        'q': q
+      },
+      success: function(r) {
+        if(r && r.success)
+        {
+          var recommendations = '';
+          var limit = Math.min(r.suggestions.length, 10);
+          for(var i = 0; i < limit; i++)
+          {
+            recommendations += "<li>" + r.suggestions[i] + "</li>";
+          }
+          $('#saytlist').html(recommendations);
+          $('#saytlist').show();
+          $('ul#saytlist li').click(function(e) {
+            var list = $(this).text() || '';
+            e.stopPropagation();
+            if(list != '')
+            {
+              $('input#searchField').val(list);
+              $('button#searchsubmit').click();
+            }
+          });
+        }
+      },
+      error: function(xhr, status, err) {}
+    });
+  } else {
+   $('#saytlist').hide();
+  }
+ }, 500));
+});
+</script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- LOG IN -->
+                    <li class="nav-item dropdown d-none d-lg-block"><a href="#" target="_self" class="nav-link nav-login dropdown-toggle" id="nav-log-in" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Log In</a>
+                        <div class="dropdown-menu dropdown-login" aria-labelledby="nav-log-in">
+                            <div class="row">
+                                <div class="col">
+                                                                                                                    <a href="/sso/Login?RL=1" target="_self" class="dropdown-item dropdown-portal">Portal Login</a>
+                                                                                                                <a href="../trading/tws.php.html#tws-software" target="_self" class="dropdown-item">Download Trader Workstation</a>
+                                    <a href="../trading/ibkr-desktop.php.html" target="_self" class="dropdown-item">Download IBKR Desktop </a>
+                                    <a href="../trading/tws-mobile.php.html#trytoday-drop" target="_self" class="dropdown-item">Download IBKR Mobile</a>
+                                    <a href="../trading/ibgateway-latest.php.html" target="_self" class="dropdown-item">Download IB Gateway</a>
+                                    <a href="../trading/trading-platforms.php.html" target="_self" class="dropdown-item">Compare All IBKR Platforms</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- OPEN ACCOUNT -->
+                    <li class="nav-item dropdown d-none d-lg-block"><a href="#" target="_self" class="nav-link nav-open-account dropdown-toggle" id="nav-open-account" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Open Account</a>
+                        <div class="dropdown-menu dropdown-open-account" aria-labelledby="nav-open-account">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="/Universal/Application" target="_self" class="dropdown-item dropdown-portal">Start Application</a>
+                                    <a href="/sso/Login?c=t" target="_self" class="dropdown-item">Finish an Application</a>
+                                    <a href="../general/what-you-need-inv.php.html" target="_self" class="dropdown-item">What You Need</a>
+                                    <a href="../accounts/account-guide.php.html" target="_self" class="dropdown-item">A Guide to Choosing the Right Account</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- NAV BOTTOM END -->
+</div>
+<!-- HEADER END ---------------------------------------------------------------------------------------------------- -->
+<!-- MOBILE NAV START (XS/SM/MD ONLY) ---------------------------------------------------------------------------------------------------- -->
+<div class="menu-mobile d-lg-none">
+    <!-- CLOSE BUTTON -->
+    <div class="close-button"><a href="javascript:void(0);" target="_self" class="btn-close" aria-label="Close Menu"><i class="fas fa-times"></i></a></div>
+    <!-- LOGO -->
+    <div class="logo-container"><a href="../home.php.html" target="_self" class="brand-logo" aria-label="Interactive Brokers Home"><span>Interactive Brokers Home</span></a></div>
+    <!-- SEARCH -->
+    <div class="search-container">
+        <div class="search-box">
+            <form action="/en/search/index.php" method="get" class="search_form" id="search_form_id">
+                <input type="text" class="form-control" placeholder="Search Site or Contracts" name="query" maxlength="64" autocomplete="off" id="searchFieldMobile" aria-label="Search Interactive Brokers">
+                <button type="submit" class="btn-search-submit" value="" id="searchsubmitMobile" aria-label="Submit Search"><i class="fas fa-search" aria-hidden="true"></i></button>
+            </form>
+        </div>
+    </div>
+    <ul>
+    <!-- LOG IN -->
+                    <li><a href="/sso/Login?RL=1" target="_self" class="menu-log-in">Portal Login</a></li>
+                <!-- OPEN ACCOUNT -->
+    <li class="has-submenu"><a href="#" target="_self" class="menu-open-account" data-submenu="submenu-open-account">Open Account</a>
+        <div class="submenu" id="submenu-open-account">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-open-account">Back</a></p>
+            <p class="submenu-title">OPEN ACCOUNT</p>
+            <ul>
+            <li><a href="/Universal/Application" target="_self" class="menu-start-application">Start Application</a></li>
+            <li><a href="/sso/Login?c=t" target="_self">Finish an Application</a></li>
+            <li><a href="../general/what-you-need-inv.php.html" target="_self">What You Need</a></li>
+            <li><a href="../accounts/account-guide.php.html" target="_self">A Guide to Chosing the Right Account</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- DOWNLOAD IBKR MOBILE -->
+        <!-- FREE TRIAL -->
+    <li><a href="../trading/free-trial.php.html" target="_self">Free Trial</a></li>
+    <!-- WHY IBKR -->
+    <li><a href="../whyib/overview.php.html" target="_self">Why IBKR</a></li>
+    <!-- ACCOUNT TYPES -->
+    <li class="has-submenu"><a href="#" target="_self" data-submenu="submenu-account-types">Account Types</a>
+        <div class="submenu" id="submenu-account-types">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-account-types">Back</a></p>
+            <p class="submenu-title">FOR INDIVIDUALS</p>
+            <ul>
+            <li><a href="../accounts/individual.php.html" target="_self">Individual, Joint or IRA</a></li>
+            <li><a href="../accounts/non-professional-advisor.php.html" target="_self">Non-Professional Advisors</a></li>
+            </ul>
+            <p class="submenu-title">FOR INSTITUTIONS</p>
+            <ul>
+            <li><a href="../accounts/institutions.php.html" target="_self">Institutions Home</a></li>
+            <li><a href="../accounts/advisor.php.html" target="_self">Registered Investment Advisors</a></li>
+            <li><a href="../accounts/proprietary-trading-group.php.html" target="_self">Proprietary Trading Groups</a></li>
+            <li><a href="../accounts/hedge-fund.php.html" target="_self">Hedge Funds</a></li>
+            <li><a href="../accounts/broker.php.html" target="_self">Introducing Brokers</a></li>
+            <li><a href="../accounts/family-office.php.html" target="_self">Family Offices</a></li>
+            <li><a href="../accounts/compliance-officer.php.html" target="_self">Compliance Officers</a></li>
+            <li><a href="../accounts/small-business.php.html" target="_self">Small Businesses</a></li>
+            <li><a href="../accounts/simple-ira.php.html" target="_self">Employee Plan Administrator <br>SIMPLE IRA</a></li>
+            <li><a href="../accounts/fsa-insurance-providers.php.html" target="_self">Full-Service Administrator <br>Insurance Providers</a></li>
+            <li><a href="../accounts/money-manager.php.html" target="_self">Money Managers</a></li>
+            <li><a href="../accounts/administrator.php.html" target="_self">Fund Administrators</a></li>
+            <li><a href="../accounts/hedge-fund-allocator.php.html" target="_self">Hedge Fund Allocators</a></li>
+            <li><a href="https://ibkrcampus.com/student-trading-lab/" target="_blank">Educators</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- PRICING -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-pricing">Pricing</a>
+        <div class="submenu" id="submenu-pricing">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-pricing">Back</a></p>
+            <p class="submenu-title">PRICING</p>
+            <ul>
+            <li><a href="../pricing/commissions-home.php.html" target="_self">Commissions</a></li>
+            <li><a href="../trading/margin-rates.php.html" target="_self">Margin Rates</a></li>
+            <li><a href="../accounts/fees/pricing-interest-rates.php.html" target="_self">Interest Rates</a></li>
+            <li><a href="../pricing/short-sale-cost.php.html" target="_self">Short Sale Cost</a></li>
+            <li><a href="../pricing/research-news-services.php.html" target="_self">Research and News</a></li>
+            <li><a href="../pricing/research-news-marketdata.php.html" target="_self">Market Data</a></li>
+            <li><a href="../pricing/stock-yield-enhancement-program.php.html" target="_self">Stock Yield Enhancement</a></li>
+            <li><a href="../pricing/other-fees-overview.php.html" target="_self">Other Fees</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- TRADING -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-trading">Trading</a>
+        <div class="submenu" id="submenu-trading">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-trading">Back</a></p>
+            <p class="submenu-title">TRADING</p>
+            <ul>
+            <li><a href="../trading/trading-platforms.php.html" target="_self">Platforms</a></li>
+            <li><a href="../trading/ib-api.php.html" target="_self">APIs</a></li>
+            <li><a href="../trading/margin.php.html" target="_self">Margin</a></li>
+            <li><a href="../trading/products-exchanges.php.html" target="_self">Products and Exchange Search</a></li>
+            <li><a href="../trading/ordertypes.php.html" target="_self">Order Types</a></li>
+            <li><a href="../whyib/reporting.php.html" target="_self">Reporting</a></li>
+            <li><a href="../trading/securities-financing.php.html" target="_self">Securities Financing</a></li>
+            <li><a href="../trading/features-in-focus.php.html" target="_self">Features in Focus</a></li>
+            <li><a href="../general/education/probability_lab.php.html" target="_self">Probability Lab</a></li>
+            <li><a href="../trading/global-outsourced-trading-desk.php.html" target="_self">Global Outsourced Trading Desk</a></li>
+            <li><a href="../trading/sustainable-investing.php.html" target="_self">Sustainable Investing</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- SERVICES -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-services">Services</a>
+        <div class="submenu" id="submenu-services">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-services">Back</a></p>
+            <p class="submenu-title">SERVICES</p>
+            <ul>
+            <li><a href="../trading/globalanalyst.php.html" target="_self">IBKR GlobalAnalyst</a></li>
+            <li><a href="https://www.portfolioanalyst.com" target="_blank">PortfolioAnalyst</a></li>
+            <li><a href="../trading/products-bonds.php.html" target="_self">Bonds Marketplace</a></li>
+            <li><a href="../trading/products-mutual-funds.php.html" target="_self">Mutual Funds Marketplace</a></li>
+            <li><a href="../trading/commission-free-etfs-mkt.php.html" target="_self">No Transaction Fee ETFs</a></li>
+            <li><a href="https://ndcdyn.interactivebrokers.com/aces/Marketplace/InvestorsMarketplace" target="_blank">Investors' Marketplace</a></li>
+            <li><a href="../trading/short-securities-availability.php.html" target="_self">Short Securities Availability</a></li>
+            <li><a href="../accounts/integrated-cash-management.php.html" target="_self">Cash Management</a></li>
+            <li><a href="../trading/third-party-integration.php.html" target="_self">Third Party Integration</a></li>
+            <li><a href="https://www.interactiveadvisors.com" target="_blank">Interactive Advisors</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- EDUCATION -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-education">Education</a>
+        <div class="submenu" id="submenu-education">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-education">Back</a></p>
+            <p class="submenu-title">EDUCATION</p>
+            <ul>
+            <li><a href="https://ibkrcampus.com" target="_blank">IBKR Campus</a></li>
+            <li><a href="https://ibkrcampus.com/academy" target="_blank">Traders' Academy</a></li>
+            <li><a href="https://ibkrcampus.com/news" target="_blank">Traders' Insight</a></li>
+            <li><a href="https://ibkrcampus.com/podcasts" target="_blank">IBKR Podcasts</a></li>
+            <li><a href="https://ibkrcampus.com/quant" target="_blank">IBKR Quant Blog</a></li>
+            <li><a href="https://ibkrcampus.com/webinars" target="_blank">Webinars</a></li>
+            <li><a href="https://ibkrcampus.com/student-trading-lab/" target="_blank">Student Trading Lab</a></li>
+            <li><a href="https://ibkrcampus.com/glossary" target="_blank">Traders' Glossary</a></li>
+            <li><a href="../general/calendar/calendar.php.html" target="_self">Traders' Calendar</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- ABOUT US -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-about-us">About Us</a>
+        <div class="submenu" id="submenu-about-us">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-about-us">Back</a></p>
+            <p class="submenu-title">ABOUT US</p>
+            <ul>
+            <li><a href="../general/financial-strength.php.html" target="_self">Strength and Security</a></li>
+            <li><a href="../general/about/about.php.html" target="_self">Information and History</a></li>
+            <li><a href="../general/about/careers-splash.php.html" target="_self">Careers</a></li>
+            <li><a href="../general/awards.php.html" target="_self">Awards</a></li>
+            <li><a href="../about/news-at-ibkr.php.html" target="_self">News at IBKR</a></li>
+            <li><a href="../general/about/press-and-media.php.html" target="_self">Press and Media</a></li>
+            <li><a href="https://investors.interactivebrokers.com/ir/main.php" target="_blank">Investor Relations</a></li>
+            <li><a href="../general/about/sustainability.php.html" target="_self">Sustainability</a></li>
+            <li><a href="../accounts/legalDocuments/brokerPerformanceReports.php.html" target="_self">Regulatory Reports</a></li>
+            <li><a href="../accounts/referrer.php.html" target="_self">Refer a Friend</a></li>
+            <li><a href="../general/about/affiliate-programs.php.html" target="_self">Affiliate Programs</a></li>
+            </ul>
+        </div>
+    </li>
+    <!-- SUPPORT -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-support">Support</a>
+        <div class="submenu" id="submenu-support">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-support">Back</a></p>
+            <p class="submenu-title">SUPPORT</p>
+            <ul>
+            <li><a href="fund-my-account.php.html" target="_self">Fund Your Account</a></li>
+            <li><a href="individuals.php.html" target="_self">For Individuals</a></li>
+            <li><a href="institutions.php.html" target="_self">For Institutions</a></li>
+            <li><a href="institutional-sales-contacts.php.html" target="_self">Institutional Sales Contacts</a></li>
+                        <li><a href="../general/contact/ibot-container.php.html" target="_self">Browse Our FAQs</a></li>
+            <li><a href="reports-and-dates.php.html" target="_self">Tax Information</a></li>                 
+            </ul>
+        </div>
+    </li>
+    <!-- LANGUAGE -->
+    <li class="has-submenu"><a href="#" data-submenu="submenu-language">Language</a>
+        <div class="submenu" id="submenu-language">
+            <p class="nav-link-back"><a href="javascript:void(0);" target="_self" data-submenu-close="submenu-language">Back</a></p>
+            <p class="submenu-title">LANGUAGE</p>
+            <ul>
+            <li><a href="../home.php.html" target="_self">English</a></li>
+            <li><a href="/es/home.php" target="_self">Español</a></li>
+            <li><a href="/pt/home.php" target="_self">Português</a></li>
+            <li><a href="/cn/home.php?lang=sc" target="_self">中文简体</a></li>
+            <li><a href="/cn/home.php?lang=tc" target="_self">中文繁體</a></li>
+            </ul>
+        </div>
+    </li>
+    </ul>
+</div>
+<!-- MOBILE NAV OVERLAY -->
+<div class="website-overlay d-lg-none"></div>
+<!-- MOBILE NAV END (XS/SM/MD ONLY) ---------------------------------------------------------------------------------------------------- -->
+<div id="contents">
+    <section class="page-title" id="page-title">
+        <div class="container">
+            <div class="row">
+                                <div class="col"><h1>Tax Information and Reporting - Year-End Tax Forms | Interactive Brokers LLC</h1></div>
+                            </div>
+        </div>
+    </section>
+    <!-- INTRO -->
+<section class="hero hero-dark hero-side-nav" id="intro">
+    <figure class="hero-bg-img">
+        <picture class="r-img"><img src="../../images/web/tax-reports-hero.jpg" alt="Tax Information" border="0" class="d-rtl-none"><img src="../../images/web/tax-reports-hero-rtl.jpg" alt="Tax Information" border="0" class="d-ltr-none"></picture>
+    </figure>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-4 col-xl-3">
+                <style>
+section#page-title, .section-title {
+	display: none;
+}
+.hero.hero-dark .hero-content h2 {color: var(--black); font-weight: var(--fw-300);}
+.hero.hero-dark .hero-content p.eyebrow {color: var(--black);}
+a.btn + a.btn{margin:0 0 2px 0;}
+.hero .btn-hero-tab, 
+.hero .btn-hero-tab:focus, 
+.hero .btn-hero-tab:visited {
+	color: var(--gray);
+	background-color: var(--white);
+}
+.hero .btn-hero-tab:hover, .hero .btn-hero-tab-active {
+	color: var(--white);
+	background-color: var(--primary);
+}
+a.btn.btn-lg.btn-hero-tab, a.btn.btn-lg.btn-hero-tab-active {
+	margin-top:10px;
+}
+</style>
+<nav class="ibkr-sidebar">
+<ul class="list-unstyled" id="nav_set">
+    <li> <a href="tax-overview.php.html" id="nav_overview" target="_self">Overview</a> </li>
+    <li> <a href="reports-and-dates.php.html" id="nav_reports" target="_self">Reports and Dates</a> </li>
+    <li> <a href="tax-residency.php.html" id="nav_residency" target="_self">Tax Residency</a> </li>
+    <li class="active"> <a href="tax-us-initial.php.html" id="nav_us" target="_self">US Persons & Entities</a> </li>
+    <li> <a href="tax-ca-initial.php.html" id="nav_ca" target="_self">CAN Persons & Entities</a> </li>
+    <li> <a href="tax-nonus-initial.php.html" id="nav_nonus" target="_self">Non-US Persons & Entities</a> </li>
+    <li> <a href="tax-wash-sales.php.html" id="nav_wash-sales" target="_self">Wash Sales</a> </li>
+    <li> <a href="tax-fxpl.php.html" id="nav_fxpl" target="_self">FX P&L</a> </li>
+    <li> <a href="tax-faqs.php.html" id="nav_faqs" target="_self">FAQs</a> </li>
+</ul>
+<script>
+        $(document).ready(navSetAnimation);
+        $(window).on('resize',navSetAnimation);
+        function navSetAnimation() {
+            const mqMd = window.matchMedia( "(max-width:991.98px)" );
+            if (mqMd.matches) {
+                $('#nav_set li').each(function() {
+                    let navItem = $(this);
+                    let navItemIndex = (parseInt($(navItem).index() + 1)) * 0.1;
+                    let navOrigin = $('.hero').offset().left;
+                    if ($(navItem).hasClass('active')) {
+                        let navItemActive = $(this);
+                        let navItemActiveOffset = navItemActive.offset().left - navOrigin;
+                        let navItemActiveDuration = navItemIndex * 1000;
+                        $('#nav_set').animate({scrollLeft: navItemActiveOffset}, navItemActiveDuration);
+                    }
+                });
+            }
+        }
+</script>            </nav></div>
+            <div class="col-12 col-lg-8 col-xl-7">
+                <div class="hero-content pb-80 pe-80">
+                    <p class="eyebrow">TAX INFORMATION AND REPORTING</p>
+                    <h2>US Persons & Entities</h2>
+                            <div class="comm-tabs">
+                                <a href="tax-us-initial.php.html" class="btn btn-lg btn-hero-tab">Initial Application & Data Collection</a>
+<a href="tax-us-forms.php.html" class="btn btn-lg btn-hero-tab-active">Year-End Tax Forms</a>
+<a href="tax-us-reports.php.html" class="btn btn-lg btn-hero-tab">Year-End Reports</a>                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <section id="tax-us-year-end-forms" class="pt-0">
+	<div class="container">
+    	<div class="row">
+            <div class="col-12">
+            
+                <h2>Year-End Tax Forms</h2>
+                <br>
+                <p>For US Persons, IBKR issues 1099 forms in a consolidated format. Most 1099 forms will appear on one statement rather than as separate forms.</p>
+                <p>Information reported on the Consolidated Form 1099 is also reported to the IRS and should be reported on your federal tax return. Please consult your tax advisor for proper reporting of all Form 1099 amounts.</p>
+                <br>
+                <h6>Jump to a section:</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <ul class="paralist">
+                <li><a href="#FORM-1099-INT" target="_self" class="linkarrowdown page-scroll">Form 1099-INT</a></li>
+                <li><a href="#FORM-1099-OID" target="_self" class="linkarrowdown page-scroll">Form 1099-OID</a></li>
+                <li><a href="#FORM-1099-DIV" target="_self" class="linkarrowdown page-scroll">Form 1099-DIV</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <ul class="paralist">
+                <li><a href="#FORM-1099-B" target="_self" class="linkarrowdown page-scroll">Form 1099-B</a></li>
+                <li><a href="#FORM-1099-MISC" target="_self" class="linkarrowdown page-scroll">Form 1099-MISC</a></li>
+                <li><a href="#FORM-1099-R" target="_self" class="linkarrowdown page-scroll">Form 1099-R</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <ul class="paralist">
+                <li><a href="#FORM-2439" target="_self" class="linkarrowdown page-scroll">Form 2439</a></li>
+                <li><a href="#FORM-5498" target="_self" class="linkarrowdown page-scroll">Form 5498</a></li>
+                <li><a href="#FORM-8949" target="_self" class="linkarrowdown page-scroll">Form 8949</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <ul class="paralist">
+                <li><a href="#WHFIT" target="_self" class="linkarrowdown page-scroll">WHFIT Tax Information Statement</a></li>
+                <li><a href="#FORM-NR4" target="_self" class="linkarrowdown page-scroll">Form NR4 (Canada)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+       	  <div class="col-12">
+            	<br>
+                <div class="notes">
+                    <p><strong>Available Online:</strong></p>
+                    <p>Your  Consolidated Form 1099, Forms 1099R and 5498 for IRA accounts are available to  view and print by accessing IBKR's website, selecting Account Management or  Client Portal from the Login menu and then clicking <strong>Reports > Tax > Tax Forms</strong>.</p>
+                    <p>Consolidated Form 1099 will be available February 15 for the immediately preceding year. Form 1099-R for IRA accounts will be available by January 31 for the immediately preceding year. Form 5498 for IRA accounts will be available by May 31 for the immediately preceding year.</p>
+                </div>
+                <br>
+                <hr>
+                <br>
+                <h2>Consolidated Form 1099 <span class="margin-left-10 text-small">1099-INT | 1099-OID | 1099-DIV | 1099-B | 1099-MISC</span></h2>
+                <br>
+                <a id="FORM-1099-INT"></a>
+                <h2>Form 1099-INT</h2>
+                <br>
+                <p>Form 1099-INT reports interest income including taxable and tax-exempt interest dividends from  mutual funds paid to you during the year.</p>
+              <p>Line  1 reports interest income, exclusive of US savings bond and US Treasury  obligations interest. Interest from US savings bonds and US Treasury  obligations is reported in Line 3. If the IRS has notified us that income tax  must be withheld on interest income in your account, US tax withheld, if any, amount  will be reported in Line 4.</p>
+              <p>Interest payments details are part of the supplemental information on the Consolidated 1099</p>
+                <p>US savings bond and treasury obligation interest is separated for state tax reporting.  Interest on these obligations is generally not subject to state tax.</p>
+                <p>Tax-exempt interest (Line 8) – is generally not subject to  federal taxation. If you own municipal bonds, then interest on bonds from your  home state is generally not subject to state tax. However, municipal interest  from other states is taxed in your home state.</p>
+                <p>Line 9:  Some interest paid by muni bonds is subject to AMT (Alternative minimum tax), amount in box 9 is the amount by which you adjust your taxable income to calculate AMT tax on Form 6251.</p>
+                <p>Lines  10-13 provide information concerning bond premiums and discounts: Depending on  your individual tax circumstances and elections, these items must be reported  on your tax return. We suggest that you consult your tax advisor about bond  premiums and discounts.</p>
+            <p>Accrued interest paid:  Provided in supplemental information on consolidated 1099 – reduce the amount of reported interest by interest paid.</p>
+                <ul>
+                <li><strong>Remember:</strong> Interest  income cannot be reduced by accrued interest paid until the first interest on  the same security is received. If a bond is purchased in December on which accrued  interest is paid and the first interest payment is in March of the following  year; the accrued interest paid must be carried over into the following year.</li>
+                </ul>
+              <p>Interest payments received on interest producing securities loaned out are reported as substitute payments in lieu of interest on Form 1099-Misc.</p>   
+				<br>
+                <h5>Margin Interest Paid</h5>
+                <p>If you have an IBKR margin account you may have margin interest expense paid from your account. Margin interest is included as an informational item in your Consolidated 1099. Please consult your tax advisor for the proper treatment and reporting of margin interest paid on your tax return.</p>
+                <br>
+                <hr>
+                <br>
+                <a id="FORM-1099-OID"></a>
+                <h2>Form 1099-OID Original Issue Discount</h2>
+                <br>
+                <p>Form 1099-OID reports the amortization of bond interest on discounted bonds taxable annually. Original Issue Discount (OID) is the difference between an obligation's stated redemption price at maturity and the issue price of the debt instrument.</p>
+                <p>Interest on bonds sold at a discount at the time that a bond or other debt instrument is issued and accreted annually is called Original Issue Discount or OID.  Interest income is recognized and the cost basis of the bond is increased.</p>
+                <p>The original issue discount (OID) greater than $10 is reportable and Form 1099 OID will be issued.</p> 
+                <p>Line 1:  OID – amount computed as OID for year – based on IRS tables</p>
+                <p>Line 2:  Other periodic interest – generally interest paid by a bond as a special payment or received on sale.</p>
+                <p>Line 6:  OID on US Treasury Obligations </p>
+                <br>
+                <hr>
+                <br>
+                <a id="FORM-1099-DIV"></a>
+                <h2>Form 1099-DIV Dividend Income</h2>
+                <br>
+                <p>Form 1099-DIV reports ordinary dividends credited to your account during the year, short-term capital gains distributions and total capital gains distributions, as well as non-dividend distributions (return of capital), dividends paid by foreign corporations, mutual funds and money market funds.</p>
+                <p>Line 1a: All dividends received.</p>
+                <ul>
+                <li><strong>Remember:</strong> Money Market funds pay dividends rather than interest. This  type of dividend does not qualify for reduced taxation.</li>
+                </ul>
+              <p>Line 1b: this line reports the amount ELIGIBLE for qualified dividend treatment.  Qualified dividends are taxed at the Long-term Capital Gain (LTCG) tax rate (0%, 15%, & 20%).</p>
+                <ul>
+                <li><strong>Remember: </strong>the  security paying the dividend must be long in your account for at least 61 days  including the date of dividend record to be treated as a qualified dividend.  The amount reported in this box on the 1099DIV does not consider holding  period. Information concerning holding period is on the dividend report.</li>
+                </ul>
+              <p>Line 2a: Long-term capital gain distributions – usually from mutual funds – reported on schedule D of return and are taxed at long-term capital gain rate.</p>
+                <p>Line 2b: Un-recaptured sec. 1250 gain </p>
+                <p>Line 3: Non-dividend distributions – return of capital</p>
+                <p>Line 5: Investment  expenses – expenses of a non-publicly offered regulated investment company,  generally a non-publicly offered mutual fund.</p>
+              <p>Line 6: Foreign tax paid – foreign tax withheld at the source on dividend payments</p>
+                <p>Lines 8 & 9: Liquidation  distributions - usually from mergers or acquisitions or other corporate  restructuring actions.</p>
+              <p>Line 10: Exempt Interest dividends. Generally dividends paid by tax-exempt bond funds</p>
+                <p>Line 11: Amount on line 10 used to calculate AMT. Please see explanation in <a href="#FORM-1099-INT" target="_self" class="page-scroll">1099-INT</a></p>
+                <p>Dividends declared and not yet paid at year-end are not generally included; however, there is an exception for mutual funds payments. Any dividend declared by a mutual fund during October, November, or December and paid the following January is reported in the year declared.</p>
+              <p>Dividend payments received on securities loaned out are reported as substitute payments in lieu of dividends on Form 1099-MISC. Payments  in lieu of dividends are ordinary income and not eligible, except in specific  circumstances for qualified dividend tax rates.</p>
+                <p>Please see more details in Dividend Report. </p>
+                <p>All IRS forms are available free of charge at <a href="http://www.IRS.gov/formspubs" target="_blank" class="linkexternal">www.IRS.gov/formspubs</a> or by calling the IRS at 800.829.3676 (800-TAX FORM)</p>
+                <br>
+                <hr>
+                <br>
+                <a id="FORM-1099-B"></a>
+                <h2>Form 1099-B Proceeds From Broker and Barter Exchange Transactions</h2>
+                <br>
+                <p>Form 1099-B reports proceeds from securities transactions including sales of stocks, bonds, short sales, redemptions, tenders and bond maturities. Additionally, profit and loss from futures is also reported on Form 1099-B.</p>
+                <p>Proceeds from Broker and Barter Exchange Transactions: </p>
+                <p>1099B reporting is made up of four separate forms: </p>
+                <ul class="paralist">
+                <li>Covered securities with short-term gains or losses, </li>
+                <li>Covered securities with long-term gains or losses, and</li>
+                <li>Uncovered securities.</li>
+                <li>Section 1256 transactions.</li>
+                </ul>
+<p>All of the 1099-B forms contain the same boxes, however not all of the boxes are used on every form.</p>
+                <p>Box 1b reports the date the security was acquired. For short sales the date of acquisition of the security used to cover the short position is reported. Box 1b will be blank for noncovered securities.</p>
+                <p>Box 1c reports the date of sale or exchange for the security. For short sales the date shown is the date the security was delivered to close the short sale.</p>
+                <p>Box 1d reports gross proceeds, less commissions and fees, of   sales and short sales of stocks and  bonds, other debt obligations, commodities, forward contracts, mutual funds and  other securities. This amount may also be adjusted for certain related options  positions.</p>
+                <p>Box 1e reports cost or other basis of securities sold. This  basis may be adjusted for wash sales, related options positions, and corporate  actions.  Box 1e is not used for  reporting sales of uncovered securities as cost basis is not reported for these  sales.</p>
+<p>Box 2 indicates whether the gain or loss is long-term or short-term.</p>
+                <p>Box 3 will be, checked for covered securities.</p>
+<p>Box 4 is the amount of federal income tax withheld from the sale proceeds, if any.</p>
+                <p>Box 5 will be checked for non-covered securities. </p>
+                <p>If Box 7 is checked  the any loss from a change in control or other capital change cannot be taken  on your tax return.  Please consult your  tax advisor if this box checked</p>
+<p>Boxes 8,9,10 and 11 is the aggregate profit or loss of lines  8, 9, and 10 on regulated futures contracts (and options on futures contracts)  commonly referred to as Section 1256 transaction for the year. Refer to Form  6781 and Instructions for guidance on how to report these boxes.</p>
+<br>
+              	<div class="table-responsive">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                    <th width="40%" align="left" valign="top"> </th>
+                    <th width="30%" align="left" valign="top">Covered Securities</th>
+                    <th width="30%" align="left" valign="top">Uncovered Securities</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                    <td align="left" valign="top"><strong>Broker/dealers vs. Taxpayer Responsibility</strong></td>
+                    <td align="left" valign="top">Broker/dealers report cost basis to IRS and taxpayer on Form 1099-B. Taxpayer will use Form 1099-B data to prepare their tax returns</td>
+                    <td align="left" valign="top">Taxpayer to maintain and report cost basis to IRS.</td>
+                    </tr>
+                    <tr>
+                    <td align="left" valign="top"><strong>Equities</strong></td>
+                    <td align="left" valign="top">Acquired  on or after January 1, 2011</td>
+                    <td align="left" valign="top">Acquired prior to January 1, 2011</td>
+                    </tr>
+                    <tr>
+                    <td align="left" valign="top"><strong>Mutual funds</strong></td>
+                    <td align="left" valign="top">Acquired on or after January 1, 2012</td>
+                    <td align="left" valign="top">Acquired prior to January 1, 2012</td>
+                    </tr>
+                    <tr>
+                    <td align="left" valign="top"><strong>Fixed income and options</strong></td>
+                    <td align="left" valign="top">Acquired on or after January 1, 2014</td>
+                    <td align="left" valign="top">Acquired prior to January 1, 2014</td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top"><strong>Publicly  Traded Partnerships</strong></td>
+                      <td align="left" valign="top"> </td>
+                      <td align="left" valign="top">Taxpayer to maintain and report cost basis to IRS</td>
+                    </tr>
+                    </tbody>
+                </table>
+              </div>   
+                <br>
+          <p><strong>Reminder:</strong></p>
+                <ul class="paralist">
+                <li>The details for each 1099B transaction is presented in your Form 8949 worksheet. This provides all the details for each transaction in the format that is required for tax reporting for covered securities all the information necessary to report is present, however please review the worksheet for accuracy.  8949 worksheet are account specific, please keep in mind that tax reporting is individual (person) specific so transactions in other accounts may impact tax reporting.  For non – covered securities, information we have on hand for cost basis is reported on the 8949 worksheet, however this may not be accurate.  Please verify the cost basis of all non-covered securities before reporting on your tax return. </li>
+                <li> Each of these reports is specific to the account associated with the report, however the tax code requires you to report on your tax return across all of your accounts. If you hold the same security in multiple accounts and sell it, the gain or loss calculated and reported to the IRS may be different than presented on an account level and must be adjusted.</li>
+                <a name="5" id="5"></a>
+                </ul>
+                <br>
+                <hr>
+                <br>
+                <a id="FORM-1099-MISC"></a>
+                <h2>Form 1099-MISC Miscellaneous Income</h2>
+                <br>
+                <p>Form 1099-MISC reports substitute payments in lieu of dividends and tax-exempt interest received in your account, gross fee income received by advisors, stock loan fees received, and soft-dollar payments.</p>
+          <p>Line 2 Royalties: Payments of Royalties are generally from investments in natural resource companies.</p>
+                <p>Line 3 Other income: Stock loan fees earned.</p>
+                <p>Box 7:  Reports  gross fee income received by advisors:   Fees earned by advisors – note that for these types of payments 1099  MISC forms are issued on January 31<sup>st</sup>.</p>
+              <p>Line 8 Substitute payments in lieu of dividends and interest (PIL): Substitute payments of interest and dividends.  These payments replace the normal interest or dividend payment when your security is lent.  </p>
+            <ul>
+                <li><strong>Remember:</strong> These payments cannot be “netted” with PIL paid on stocks you have borrowed.  They also are not interest or dividend payments, but are miscellaneous income and should be treated as such on your tax return. PIL received in lieu of a dividend payments are not eligible to be treated as qualified dividends except under specific circumstances.</li>
+            </ul>
+                <p> Details for fee income received by advisors and brokers and  stock borrow fees paid can be found in your Annual Statement. Details for  payments in lieu of dividends or tax-exempt interest and addition information  on Margin interest paid are included in your year-end Dividend Statement.</p>
+<br>
+                <hr>
+                <br>
+                <a id="FORM-1099-R"></a>
+              <h2>Retirement Accounts - Tax Reporting: Form 1099-R - Distributions from IRAs</h2>
+                <br>
+                <p>Form 1099-R reports distributions from Traditional,  Roth, SEP and Rollover IRAs held at IBKR. The IRA’s trustee/custodian issues  these forms on or before  1/31 annually for the prior year. For  a complete description of Form 1099-R, refer to the instructions for Form 1099-R and 5498 at <a href="http://www.irs.gov" target="_new">www.irs.gov</a>.</p>
+                <p>Box 1 reports the total amount you received this year.  If you have a Traditional IRA, the full amount on line one may not be taxable, refer to form 8606 and  the instructions for this form for more information.</p>
+                <p>Box 2a reports the amount of your distribution that may be  subject to federal income tax.  Box 2b  indicates the taxable amount is not determined. It is your responsibility to  determine the taxable amount.</p>
+                <p>                  Box 2b indicates if the distribution was for the full value  of the account.</p>
+<p>Box 4 is the amount of federal income tax withheld from your distribution. </p>
+                <p>Box 7 identifies, by code, the type of distribution you received and if the distribution is from a Traditional, SEP or SIMPLE IRA. Some of the more common IRS codes are listed below. </p>
+          <p>Box 12 reports the amount of state tax withheld.</p>
+                <p>Box 13 identifies the state for which tax, if any was withheld,  and provides the state identification number for IBKR.</p>
+<p>Most common:</p>
+              	<div class="table-responsive">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                    <th width="40%" align="left" valign="middle">Code</th>
+                    <th width="60%" align="left" valign="middle">Distribution Type</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                    <td align="left" valign="middle"><strong>1</strong></td>
+                    <td align="left" valign="middle">Early distribution, no known exception (in most cases under age 59.5)</td>
+                    </tr>
+                    <tr>
+                    <td align="left" valign="middle"><strong>2</strong></td>
+                    <td align="left" valign="middle">Early distribution, exception applies (under age 59.5)</td>
+                    </tr>
+                    <tr>
+                    <td align="left" valign="middle"><strong>3</strong></td>
+                    <td align="left" valign="middle">Disability </td>
+                    </tr>
+                    <tr>
+                    <td align="left" valign="middle"><strong>4</strong></td>
+                    <td align="left" valign="middle">Death </td>
+                    </tr>
+                    <tr>
+                    <td align="left" valign="middle"><strong>7</strong></td>
+                    <td align="left" valign="middle">Normal Distribution </td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+                <br>
+                <h5>Direct Rollovers</h5>
+                <p>The IRS requires the trustee/custodian of an employer-sponsored retirement plan (401(k), 403(b), 457(b), or annuity) to report a direct rollover to a Traditional IRA as a distribution on Form 1099-R.</p>
+                <br>
+                <h5>Trustee-to-Trustee Transfers</h5>
+                <p>A transfer of funds in your traditional IRA from one trustee/custodian directly to another is not considered a rollover. There is no distribution to you and the transfer is tax free. Because it is not a rollover, it is not affected by the 1-year waiting period required between rollovers. Trustee-to-trustee transfers are not required to be reported on Form 1099-R.</p>
+                <br>
+                <hr>
+                <br>
+                <a id="FORM-5498"></a>
+                <h2>Tax Reporting: Form 5498</h2>
+                <br>
+          <p>Form 5498,"IRA Contribution Information", is an information form used to report contributions and rollovers to Traditional IRAs, Roth IRAs, SEP IRAs, and SIMPLE IRAs. Form 5498 also reports the Fair Market Value (FMV) of your IRA account as of year-end.</p>
+                <p>Box 11 on the form indicates that you must take a required  minimum distribution (RMD) for all years after you have attained age 70 1/2. If  you attained 70 1/2 years of age or older in the previous tax year, Federal law  requires that you begin taking minimum distributions from your Traditional,  Rollover or SEP IRA account(s) in the following calendar year.  Additionally if you are the beneficiary  (non-spouse) of an inherited IRA you must also tax a RMD in the following  year.  </p>
+                <p>Owners of traditional IRAs may also direct that their RMD  (up to $100,000) for a year be paid directly to a charity.  You will still receive a 1099R if this is the  direction you have given.  Please consult  your tax advisor.  </p>
+<p>Your IRA's trustee/custodian must distribute 5498s to participants and the IRS no later than May 31 of each calendar year. The timing of this form is a result of contributions for the prior year may be made up to the filing date of your  income tax  return (generally April 15). <br>
+              </p>
+                <hr>
+                <br>
+                <a id="FORM-2439"></a>
+                <h2>Tax Reporting: Form 2439</h2>
+                <br>
+                <p>Form 2439, "Notice to Shareholder of Undistributed Long–Term Capital Gains", reports to owners of Regulated Investment Companies (RICs) and Real Estate Investment Trusts (REITs) undistributed capital gains allocable to them. A separate form 2439 will be issued for each investment. These forms will be issued 90 days following the fiscal year end of the RIC or REIT. <em>(<strong>Note:</strong> some RICs and REITs do not have calendar fiscal years, please check detail on the website of the investment)</em>.</p>
+                <p>Box 1a reports the total undistributed long-term capital gains, including the amounts in Boxes 1b, 1c and 1d. For individuals, this amount is reported on your IRS Form 1040, US Individual Income Tax Return, Schedule D, Capital Gains and Losses.</p>
+                <p>Box 1b reports the Section 1250 unrecaptured gain, and is your allocable portion of the amount included in Box 1a that has been designated as unrecaptured section 1250 gain from the disposition of depreciable real property. For individuals, this amount is entered on your unrecaptured Section 1250 Gain Worksheet. Box 1c reflects Section 1202 gain; and Box 1d reflects the collectibles (28%) gain.</p>
+          <p>Box 2 contains any Federal Income tax paid by the RIC or REIT on this gain in your behalf.</p>
+                <p>When the fund has paid a tax on the capital gains (Box 2,  Form 2439), you are allowed a credit for the tax as it is considered paid by  you. You can take this credit on Form 1040 for the amount of tax paid shown on in  Box 2. Copy B of Form 2439 should be attached to or scanned for E-filing with  your return.</p>
+<p>The undistributed capital gains reported on Form 2439 should be reported in addition to any capital gains reported on Form 1099-DIV. Please see details in <a href="../../pub/irs-pdf/p550.pdf" target="_blank" class="linkexternal">IRS Publication 550</a> for reference.</p>
+                <br>
+                <hr>
+                <br>
+                <a id="DIVIDEND-REPORT"></a>
+                <h2>Dividend Report: Annual Dividend Statement</h2>
+                <br>
+          <p>The report details all dividends, payments in lieu of dividends, and return of capital as well as any tax withholding on these amounts paid into your account during the year. Additionally, all dividends reported are summarized by revenue type (regular vs. qualified) to make year-end tax reporting easier. The dividend report is provided for all clients. Dividends will be reported in the base currency of the account. </p>
+                <p>US clients should reconcile the dividend report with your  Form 1099-Div in the consolidated 1099. For U.S foreign tax credit reporting,  dividends are also summarized by source country.</p>
+<p>In general, the dividend report is available on or before February 15.</p>
+                <br>
+                <hr>
+                <br>
+              <a id="FORM-8949"></a>
+                <h2>Tax Reporting: Form 8949 </h2>
+                <br>
+                <p>Worksheet  Form 8949 Worksheet, Sales and Other Dispositions of Capital Assets Worksheet  applies to individuals, trusts, and partnerships. Form 8949 Worksheet  reconciles amounts that were reported to you and the IRS on Form 1099-BFor  worksheets detailing covered securities (Box A and Box D) these should be the  amounts you report on your tax return. However, this report is account specific.</p>
+                <p>The Form 8949 worksheet shows trade details for all securities (stocks, options, single stock futures and bonds). Taxpayers report transactions on Form 8949 under one of six categories:</p>
+                <ul class="paralist">
+                <li>Part I-box A: Short-term transactions reported on Form 1099-B with basis reported to the IRS (Covered  Securities held less than one year)</li>
+                <li>Part I-box B: Short-term transactions reported on Form 1099-B but basis not reported to the IRS (Uncovered  Securities – such as PTPs, held less than one year)</li>
+                <li>Part I-box C: Short-term transaction for which you cannot check box A or B </li>
+                <li>Part II-box D: Long-term transactions reported on Form 1099-B with basis reported to the IRS (Covered  Securities held more than one year)</li>
+                <li>Part II-box E: Long-term transactions reported on Form 1099-B but basis not reported to the IRS (Uncovered  Securities, such as securities purchased before 1/1/11, held more than one year</li>
+                <li>Part II-box F: Long-term transaction for which you cannot check box A or B</li>
+                </ul>
+                <p>The IBKR 8949 worksheet reports transactions in this format. All attempts have been made to tie the information on these worksheets to your Form 1099-Bs; however discrepancies may exist. For accuracy of information on the Form 8949 worksheet, please review your trading records or consult your tax advisor.</p>
+                <p>Transactions are paired (sells matched with buys) according  to the tax basis declaration method selected in Account Management or Client  Portal at time of sale, or using the IBKR Tax Optimizer lot selection  designated at the time of the trade. FIFO is the default methodology. All cost  basis include commissions. All proceeds are reported net of commissions.</p>
+                <p>The worksheet for Form 8949 provides details for both  covered and noncovered securities. The details may include information not  reported on Form 1099-B and adjustments and explanations where the information  required to be reported on Form 1099-B differs from actual tax reporting.  Explanations are provided using a letter code. For example:</p>
+<ul>
+  <li>Noncovered Securities: Cost or other basis, and wash sale losses disallowed for  noncovered securities.</li>
+  <li>Incorrect Basis or Proceeds for Covered Securities
+          <ul>
+            <li>Form 1099-B reports cost basis adjusted for wash sale losses disallowed only when the loss was disallowed on the sale of a covered securities. The Form 8949 worksheet will provide a basis adjustment where the basis of a covered security is adjusted for a wash sale disallowed on a noncovered security. For example a client: (1) buys 100 shares of XYZ on June 1, 2010 (2) sells the 100 shares of XYZ on February 1, 2011 for a loss, and (3) then repurchases 100 shares of XYZ on February 15, 2011. The sale on February 1, 2011 was a sale of noncovered securities so the wash sale will not be reported and the basis of the shares purchased on February 15, 2011 will not be adjusted when those shares are sold. This adjustment will be included on the Form 8949 worksheet when the shares purchased on February 15, 2011 are sold.</li>
+          </ul>
+  </li>
+  <li>Incorrect Holding Period for Covered Securities: Form 1099-B reports the holding period adjusted to the holding period of a covered security sold with a wash sale loss disallowed. The Form 8949 worksheet will provide an adjustment to the holding period of a noncovered security sold with a wash sale loss disallowed.</li>
+  <li>Please refer to IRS Publication 550 and the  Instructions to Schedule D (and Form 8949) for more information.</li>
+</ul>
+<br>
+                <hr>
+                <br>
+                <a id="WHFIT"></a>
+                <h2>WHFIT Tax Information Statement</h2>
+                <br>
+                <p>Additional information for owners of Widely Held Fixed Investment Trusts (WHFITs) is reported on a separate tax information statement. WHFIT securities include unit investment trusts, royalty trusts, commodity trusts and HOLDRS trusts. IBKR is required to report all income from WHFITs gross on Forms 1099 to the IRS and to you. In many cases this amount will be more than the actual cash received in your account. In some cases, income may be reported on Form 1099 when no cash distribution was made from the WHFIT. The IRS requires that income be reported in the gross amount, including any expenses deducted by the WHFIT prior to a payment. Income (and expenses) must also be reported based on when it was received or incurred by the WHFIT, and not when it is distributed to shareholders.</p>
+                <p>The WHFIT tax information statement shows the gross amount reported to you on Forms 1099 (dividends, interest, OID, royalty or principal amounts) as well as expenses, including investment interest, foreign taxes and investment expense that have been withheld by the WHFIT from your payments.</p>
+                <p>For royalty and commodity WHFITs, only the gross income amounts and net income amounts are reported. For tax information on these WHFITs visit the website for the particular WHFIT security.</p>
+                <p>The WHFIT Tax Information Statement will be available by March 15 for the immediately preceding tax year. View and print the statement by accessing IB’s website, selecting Account Management or Client Portal from the Login menu and opening Tax Forms in the Report Management menu or the Reports menu.</p>
+                <br>
+                <hr>
+                <br>
+                <a id="FORM-NR4"></a>
+                <h2>Canadian NR4 – Statement of Amounts Paid or Credited to Non-Residents of Canada</h2>
+                <br>
+                <p>The NR4 reports Canadian Source income paid to a non-resident of Canada during the year from which Canadian tax has been withheld by IBKR. The value of Canadian payments reported on your NR4 may differ from the total value of distributions that are shown on your account statements due to return of capital distributions, which are not required to be reported on an NR4, in accordance with Canadian taxation laws.</p>
+                <p>Investment income including dividends, interest, Canadian unit trust income, mutual fund distributions and capital gains paid by Canadian securities to nonresidents are reported in box 16 or box 26. Canadian tax withheld is reported in box 17 or 27</p>
+            <p>Canadian tax is generally withheld at 30%, however a tax treaty may lower this rate.</p>
+              <p>If you are a US citizen, your Consolidated 1099 from  Interactive Broker (IB) includes Canadian dividends and tax withheld.</p>
+</div>                
+        </div>
+    </div>
+</section>            </div>
+        </div>
+    </div>
+</section>
+</div>
+<!-- FOOTER START ---------------------------------------------------------------------------------------------------- -->
+<footer class="footer noprint" id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p>Interactive Brokers ®, IB<sup>SM</sup>, InteractiveBrokers.com ®, Interactive Analytics ®, IB Options Analytics<sup>SM</sup>, IB SmartRouting<sup>SM</sup>, PortfolioAnalyst ®, IB Trader Workstation<sup>SM</sup> and One World, One Account<sup>SM</sup> are service marks and/or trademarks of Interactive Brokers LLC. Supporting documentation for any claims and statistical information will be provided upon request. Any trading symbols displayed are for illustrative purposes only and are not intended to portray recommendations.</p>
+                <p>The risk of loss in online trading of stocks, options, futures, currencies, foreign equities, and fixed Income can be substantial.</p>
+                <p>Options involve risk and are not suitable for all investors. For more information read the <a href="https://www.theocc.com/about/publications/character-risks.jsp" rel="noreferrer noopener" target="_blank">Characteristics and Risks of Standardized Options</a>, also known as the options disclosure document (ODD). Alternatively, please contact <a href="customer-service.php.html?p=contact" target="_self">IB Customer Service</a> to receive a copy of the ODD. Before trading, clients must read the relevant risk disclosure statements on our <a href="../general/homepage-disclosures.php.html" target="_self">Warnings and Disclosures page</a>. Trading on margin is only for experienced investors with high risk tolerance. You may lose more than your initial investment. For additional information about rates on margin loans, please see <a href="../trading/margin-rates.php.html" target="_self">Margin Loan Rates</a>. Security futures involve a high degree of risk and are not suitable for all investors. The amount you may lose may be greater than your initial investment. Before trading security futures, read the <a href="../general/homepage-disclosures.php.html" target="_self">Security Futures Risk Disclosure Statement</a>. Structured products and fixed income products such as bonds are complex products that are more risky and are not suitable for all investors. Before trading, please read the <a href="../general/homepage-disclosures.php.html" target="_self">Risk Warning and Disclosure Statement</a>.</p>
+                <p>For information on the IBKR ATS, please <a href="https://www.sec.gov/divisions/marketreg/form-ats-n-filings.htm#ats-n" rel="noreferrer noopener" target="_blank">visit the SEC site</a>.</p>
+                <p>34 countries include both countries and territories.</p>
+			</div>
+		</div>
+        <div class="footer-site-links" id="footerSiteLinks">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>Account</p>
+                    <ul>
+                    <li><a href="/sso/Login?RL=1" target="_self">Log In</a></li>
+                    <li><a href="/Universal/Application" target="_self">Open an Account</a></li>
+                    <li><a href="/sso/Login?c=t" target="_self">Finish an Application</a></li>
+                    <li><a href="../accounts/account-guide.php.html" target="_self">Account Types</a></li>
+                    <li><a href="/Universal/Application?ft=T" target="_self">Free Trial</a></li>
+                    </ul>
+                    <p>Software & Downloads</p>
+                    <ul>
+                    <li><a href="../trading/tws.php.html#tws-software" target="_self">Trader Workstation</a></li>
+                    <li><a href="../trading/ibkr-desktop.php.html" target="_self">IBKR Desktop</a></li>
+                    <li><a href="../trading/tws-mobile.php.html#trytoday" target="_self">IBKR Mobile</a></li>
+                    <li><a href="../trading/ib-api.php.html#api-software" target="_self">APIs</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>Support</p>
+                    <ul>
+                    <li><a href="fund-my-account.php.html" target="_self">Fund Your Account</a></li>
+					<li><a href="individuals.php.html" target="_self">For Individuals</a></li>
+                    <li><a href="institutions.php.html" target="_self">For Institutions</a></li>
+                    <li><a href="institutional-sales-contacts.php.html" target="_self">Institutional Sales Contacts</a></li>
+					<li><a href="../general/contact/ibot-container.php.html" target="_self">Browse our FAQs</a></li>
+					<li><a href="../software/systemStatus.php.html" target="_self">System Status</a></li>
+                    </ul>
+                    <p>Vendor Support</p>
+                    <ul>
+                    <li><a href="../general/about/supplier-information.php.html" target="_self">Supplier Information</a></li>
+                    </ul>
+                    
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>About Us</p>
+                    <ul>
+                    <li><a href="../general/awards.php.html" target="_self">Awards</a></li>
+                    <li><a href="../general/about/careers-splash.php.html" target="_self">Careers</a></li>
+                    <li><a href="../general/about/about.php.html" target="_self">Information and History</a></li>
+                    <li><a href="https://investors.interactivebrokers.com/ir/main.php" target="_self">Investor Relations</a></li>
+                    <li><a href="../about/news-at-ibkr.php.html" target="_self">News @ IBKR</a></li>
+                    <li><a href="../general/about/press-and-media.php.html" target="_self">Press and Media</a></li>
+                    <li><a href="../accounts/legalDocuments/brokerPerformanceReports.php.html" target="_self">Regulatory Reports</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <p>Follow Us on Social Media</p>
+                    <ul>
+                    <li><a href="https://www.facebook.com/interactivebrokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com/interactivebrokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/company/interactive-brokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="https://www.twitter.com/ibkr" target="_blank" rel="noreferrer noopener"><i class="fab fa-x-twitter"></i> Twitter</a></li>
+                    <li><a href="https://www.youtube.com/interactivebrokers" target="_blank" rel="noreferrer noopener"><i class="fab fa-youtube"></i> YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-disclosure-links" id="footerDisclosureLinks">
+            <div class="row">
+                <div class="col">
+                    <ul>
+                    <li><a href="../accounts/legalDocuments/accessibility-policy.php.html" target="_self">Accessibility Policy</a></li>
+                    <li><a href="../accounts/legalDocuments/anti-fraud-notice.php.html" target="_self">Anti-Fraud Notice</a></li>
+                    <li><a href="../accounts/legalDocuments/custIdentificationNotice.php.html" target="_self">Customer Identification Program Notice</a></li>
+                    <li><a href="../../Universal/servlet/Registration_v2-1.formSampleView?formdb=4024" target="_blank" rel="noreferrer noopener">Customer Relationship Summary</a></li>
+                    <li><a href="../general/warnings-on-frauds-and-scams.php.html" target="_self">Warning on Frauds and Scams</a></li>
+                    <li><a href="../accounts/forms-and-disclosures-client-agreements.php.html" target="_self">Forms and Disclosures</a></li>
+                    <li><a href="../accounts/legalDocuments/privacy.php.html" target="_self">Privacy</a></li>
+                    <li><a href="../sitemap/index.php.html" target="_self">Site Map</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-entities" id="footerEntities">
+            <div class="row">
+                <div class="col">
+                    <div class="footer-entity">
+                        <!-- IBKR LLC -->
+                        <p class="entity-name"><a href="https://www.interactivebrokers.com" target="_self">Interactive Brokers LLC</a></p>
+                        <p>Is a member <a rel="noreferrer noopener" target="_blank" href="https://www.nyse.com">NYSE</a> - <a href="https://www.finra.org" rel="noreferrer noopener" target="_blank">FINRA</a> - <a href="https://www.sipc.org" rel=" noreferrer noopener" target="_blank">SIPC</a> and regulated by the US Securities and Exchange Commission and the Commodity Futures Trading Commission.<br> <strong>Headquarters:</strong> One Pickwick Plaza, Greenwich, CT 06830 USA<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.com" target="_self">www.interactivebrokers.com</a></p>
+                                                <p class="footer-entities-link"><a href="#collapseEntities" target="_self" class="collapsed" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseEntities">Information on Other Interactive Brokers Affiliates</a></p>
+                    </div>
+                    <div class="footer-entities-list collapse" id="collapseEntities">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <!-- IBKR CA -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.ca/en/home.php?nored=t" target="_self">Interactive Brokers Canada Inc.</a></p>
+                                <p>Is a member of the                                 <a href="https://www.ciro.ca" target="_blank" rel="noreferrer noopener">Canadian Investment Regulatory Organization (CIRO)</a> 
+                                 
+                                and Member - <a href="https://www.cipf.ca" target="_blank" rel="noreferrer noopener">Canadian Investor Protection Fund.</a><br> <strong>Registered Office:</strong> 1800 McGill College Avenue, Suite 2106, Montreal, Quebec, H3A 3J6, Canada.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.ca/en/home.php?nored=t" target="_self">www.interactivebrokers.ca</a></p>
+                                <!-- IBKR UK -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.co.uk/en/home.php?nored=t" target="_self">Interactive Brokers (U.K.) Limited </a></p>
+                                <p>Is authorised and regulated by the <a href="https://www.fca.org.uk" target="_blank" rel="noreferrer noopener">Financial Conduct Authority</a>. FCA register entry number 208159. Incorporated in England & Wales under company number 03958476. <a href="https://www.fca.org.uk/firms/financial-services-register" target="_blank" rel="noreferrer noopener">[https://www.fca.org.uk/firms/financial-services-register]</a><br> <strong>Registered Office:</strong> 20 Fenchurch Street, Floor 12, London EC3M 3BY.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.co.uk/en/home.php?nored=t" target="_self">www.interactivebrokers.co.uk</a></p>
+                                <!-- IBKR IE -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.ie/en/home.php?nored=t" target="_self">Interactive Brokers Ireland Limited</a></p>
+                                <p>Is regulated by the <a href="https://www.centralbank.ie" target="_blank" rel="noreferrer noopener">Central Bank of Ireland</a> (CBI, reference number C423427), registered with the Companies Registration Office (CRO, registration number 657406), and is a member of the Irish Investor Compensation Scheme (ICS).<br> <strong>Registered Office:</strong> North Dock One, 91/92 North Wall Quay, Dublin 1 D01 H7V7, Ireland.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.ie/en/home.php?nored=t" target="_self">www.interactivebrokers.ie</a></p>
+                                <!-- IBKR HU -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.hu/en/home.php?nored=t" target="_self">Interactive Brokers Central Europe Zrt.</a></p>
+                                <p>Is licensed and regulated by the <a href="https://www.mnb.hu/" target="_blank" rel="noreferrer noopener">Central Bank of Hungary (Magyar Nemzeti Bank)</a> under no. H-EN-III-623/2020. Company registration number 01-10-141029. Registering Court: Company Registry of the Metropolitan General Court.<br> <strong>Registered Office:</strong> 1075 Budapest, Madách Imre út 13-14., Hungary.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.hu/en/home.php?nored=t" target="_self">www.interactivebrokers.hu</a></p>
+                                <!-- IBKR AUS -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.com.au/en/home.php?nored=t" target="_self">Interactive Brokers Australia Pty. Ltd.</a></p>
+                                <p>ABN 98 166 929 568 is licensed and regulated by the <a href="https://asic.gov.au/" target="_blank" rel="noreferrer noopener">Australian Securities and Investments Commission</a> (AFSL: 453554) and is a participant of <a href="https://www.asx.com.au/" target="_blank" rel="noreferrer noopener">ASX</a>, <a href="https://www.asx.com.au/" target="_blank" rel="noreferrer noopener">ASX 24</a> and <a href="https://www.cboe.com.au/" target="_blank" rel="noreferrer noopener">Cboe Australia</a>.<br> <strong>Registered Office:</strong> Level 11, 175 Pitt Street, Sydney, New South Wales 2000, Australia.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.com.au/en/home.php?nored=t" target="_self">www.interactivebrokers.com.au </a></p>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <!-- IBKR HK -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.com.hk/en/home.php?nored=t" target="_self">Interactive Brokers Hong Kong Limited</a></p>
+                                <p>Is regulated by the Hong Kong Securities and Futures Commission, and is a member of the <a href="https://www.hkex.com.hk" target="_blank" rel="noreferrer noopener">SEHK</a> and the <a href="https://www.hkex.com.hk" target="_blank" rel="noreferrer noopener">HKFE</a>.<br> <strong>Registered Office:</strong> Suite 1512, Two Pacific Place, 88 Queensway, Admiralty, Hong Kong SAR.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.com.hk/en/home.php?nored=t" target="_self">www.interactivebrokers.com.hk</a></p>
+                                <!-- IBKR IN -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.co.in/en/home.php?nored=t" target="_self">Interactive Brokers India Pvt. Ltd.</a></p>
+                                <p>Is a trading member of <a href="https://www.nseindia.com/" target="_blank" rel="noreferrer noopener">NSE</a>, <a href="https://www.bseindia.com/" target="_blank" rel="noreferrer noopener">BSE</a>, and depository participant of <a href="https://nsdl.co.in/" target="_blank" rel="noreferrer noopener">NSDL</a>. <a href="https://www.sebi.gov.in" target="_blank" rel="noreferrer noopener">SEBI</a> Registration No. INZ000217730; NSDL: IN-DP-602-2021. CIN-U67120MH2007FTC170004.<br> <strong>Registered Office:</strong> 502/A, Times Square, Andheri Kurla Road, Andheri East, Mumbai 400059, India.<br> <strong>Phone:</strong> +91-22-61289888 <span class="pipe">|</span> <strong>Fax:</strong> +91-22-61289898.<br> <strong>Website:</strong> <a href="https://www.interactivebrokers.co.in/en/home.php?nored=t" target="_self">www.interactivebrokers.co.in</a></p>
+                                <!-- IBKR JP -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.co.jp/en/home.php?nored=t" target="_self">Interactive Brokers Securities Japan Inc.</a></p>
+                                <p>Is regulated by Kanto Local Finance Bureau (Registration No.187) and is a member of <a href="https://www.jsda.or.jp/" target="_blank" rel="noreferrer noopener">Japan Securities Dealers Association</a> and <a href="https://www.nisshokyo.or.jp" target="_blank" rel="noreferrer noopener">The Commodity Futures Association of Japan</a>.<br> <strong>Registered Office:</strong> Kasumigaseki Building 25F, 2-5 Kasumigaseki 3-chome, Chiyoda-ku, Tokyo, 100-6025 Japan.<br> <strong>Phone:</strong> +81 03-4590-0711 <em>(On business days from 8:30-17:30 JST)</em>.<br> <strong>Website:</strong>  <a href="https://www.interactivebrokers.co.jp/en/home.php?nored=t" target="_self">www.interactivebrokers.co.jp</a></p>
+                                <!-- IBKR SG -->
+                                <p class="entity-name"><a href="https://www.interactivebrokers.com.sg/en/home.php?nored=t" target="_self">Interactive Brokers Singapore Pte. Ltd.</a></p>
+                                <p>Is licensed and regulated by the Monetary Authority of Singapore (Licence No. CMS100917).<br> <strong>Registered Office:</strong> #40-02A, Asia Square Tower 1, 8 Marina View, Singapore 018960.<br> <strong>Website:</strong>  <a href="https://www.interactivebrokers.com.sg/en/home.php?nored=t" target="_self">www.interactivebrokers.com.sg</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- FOOTER END ---------------------------------------------------------------------------------------------------- -->
+<!-- SHARE ON SOCIAL ---------------------------------------------------------------------------------------------------->
+<div class="social-sidebar animated fadeInLeft noprint">
+	<span><i class="fa fa-chevron-left"></i><i class="fa fa-chevron-right"></i></span>
+	<div class="icon-set">
+		<p>SHARE</p>
+		<div class="share-icon"><a href="/insights/ibtr_alerts.php?tiv=56376&cl=F&p=T" target="_blank" rel="noreferrer noopener" title="Share on Facebook" aria-label="Share on Facebook" class="icon-facebook"><i class="fab fa-facebook-square"></i></a></div>
+		<div class="share-icon"><a href="/insights/ibtr_alerts.php?tiv=56376&cl=T&p=T" target="_blank" rel="noreferrer noopener" title="Share on Twitter" aria-label="Share on Twitter" class="icon-twitter"><i class="fab fa-x-twitter"></i></a></div>
+		<div class="share-icon"><a href="/insights/ibtr_alerts.php?tiv=56376&cl=L&p=T" target="_blank" rel="noreferrer noopener" title="Share on Linkedin" aria-label="Share on Linkedin" class="icon-linkedin"><i class="fab fa-linkedin"></i></a></div>
+		<div class="share-icon"><a href="javascript:void(0);" target="_self" title="Share by Email" aria-label="Share by Email" name="btn_trigger" data-bs-toggle="modal" data-bs-target="#emailModal" id="56376" onclick="emailCookie();" class="icon-email"><i class="far fa-envelope"></i></a></div>
+	</div>
+</div>
+<!-- MODAL START | SHARE ON SOCIAL ---------------------------------------------------------------------------------------------------->
+<div class="modal fade noprint" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button id="cls_frm_1" type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="gridSystemModalLabel"><i class="far fa-envelope text-gray"></i> Email</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col">
+						<form>
+							<div class="form-group">
+								<label for="_to" class="control-label">To:</label> <span id="_err_to" style="color: red;"></span>
+								<input type="text" class="form-control" id="_to">
+							</div>
+							<div class="form-group">
+								<label for="_from" class="control-label">From:</label> <span id="_err_frm" style="color: red;"></span>
+								<input type="text" class="form-control" id="_from">
+							</div>
+							<div class="form-group">
+								<label for="_subject" class="control-label">Subject:</label> <span id="_err_subject" style="color: red;"></span>
+								<input type="text" class="form-control" id="_subject" value="Interactive Brokers">
+							</div>
+							<div class="form-group">
+								<textarea class="form-control" id="_content" style="height:200px;"></textarea>
+							</div>
+							<p class="text-sm">URL: <span class="text-italic text-black">www.interactivebrokers.com/en/index.php?f=<span id='vid'></span></span></p>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<div class="row">
+					<div class="col-6">
+						<div align="left">
+							<button id="cls_frm_2" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+					<div class="col-6">
+						<div align="right">
+							<button type="button" class="btn btn-primary" id="send">Send</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<input type="hidden" id="_page_id" name="_page_id" value="56376">
+</div>
+<!-- MODAL END | SHARE ON SOCIAL ----------------------------------------------------------------------------------------------------> 
+<script type="text/javascript" src="../../insights/ibtr_share.js?t=v1"></script>
+<script>
+$(document).ready(function() {
+	 $(".social-sidebar span").click(function(){
+		 $(".social-sidebar div").toggleClass("social-sidebar-hide");
+		 $(".social-sidebar span").toggleClass("toggle-arrow");
+ 	 });
+});
+function emailCookie() {
+	if (document.cookie.indexOf("IB_EM_SH") == -1) {
+		var ex=new Date();
+		ex.setTime(ex.getTime()+86400000);
+		document.cookie ='IB_EM_SH='+1+';expires='+ex.toGMTString()+';path=/;domain=';
+	}
+}
+</script>
+<!-- SCRIPTS FOOTER ---------------------------------------------------------------------------------------------------- -->
+<script type="text/javascript" src="../../scripts/common/js/zeynep-2.2.0/zeynep.js"></script>
+<script type="text/javascript" src="../../scripts/common/js/lazyload/lazyload.min.js"></script>
+<script type="text/javascript" src="../../search/conversions-741.js?t=1718769759"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+    // GATHER HEIGHT OF HEADER
+    var defaultMarginTop = $("div#ibkr-header").outerHeight();
+    // SET MARGIN-TOP OF CONTENTS
+    $("div#contents").css("margin-top", defaultMarginTop);
+    // ON WINDOW RESIZE CALCULATE THE HEIGHT OF THE HEADER AND USE THAT AS THE MARGIN-TOP OF CONTENTS DIV
+    $(window).resize(function() {
+        var headerHeight = $("div#ibkr-header").outerHeight();
+        var headerHeightDelta = headerHeight - defaultMarginTop;
+        $("div#contents").css("margin-top", defaultMarginTop + headerHeightDelta);
+    });
+    // BANNER | REGION SELECTOR
+    $("#bannerRegionSelector a.btn-close").click(function() {
+        // On banner close, set margin-top on timeout
+        setTimeout(function() {
+            var headerHeight = $("div#ibkr-header").outerHeight();
+            $("div#contents").css("margin-top", headerHeight);
+        },500);
+    });
+    // MOBILE MENU
+    $(function() {
+        // Initilize mobile menu
+        var zeynep = $('.menu-mobile').zeynep({
+            opened: function () {
+        },
+        closed: function () {
+            }
+        })
+        // Dynamically bind closing event
+        zeynep.on('closing', function () {
+        })
+        // Mobile menu close on overlay click
+        $('.website-overlay').on('click', function () {
+            zeynep.close()
+        })
+        // Mobile menu close on button click
+        $('.btn-close').on('click', function () {
+            zeynep.close()
+        })
+        // Mobile menu open on navbar-toggler click
+        $('.navbar-toggler').on('click', function () {
+            zeynep.open()
+        })
+    })
+});
+</script>
+ <script>var ibdmn='interactivebrokers.co.uk';(function(d,c){let s=d.createElement('script');s.src='https://www.interactivebrokers.co.uk/mkt/ibgtag.js?wbst='+c;s.id='_ib_tag';s.async=true;d.getElementsByTagName('head')[0].appendChild(s);})(document,'UK');</script><!-- STYLES FOOTER ---------------------------------------------------------------------------------------------------- -->
+<link rel="preload" as="font" type="font/woff2" href="../../fonts/fontawesome-6.4.2/webfonts/fa-brands-400.woff2" crossorigin="">
+<link rel="preload" as="font" type="font/woff2" href="../../fonts/fontawesome-6.4.2/webfonts/fa-regular-400.woff2" crossorigin="">
+<link rel="preload" as="font" type="font/woff2" href="../../fonts/fontawesome-6.4.2/webfonts/fa-solid-900.woff2" crossorigin="">
+<link rel="preload" as="style" href="../../css/fontawesome-6.4.2/all.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/fontawesome-6.4.2/all.min.css">
+<link rel="preload" as="style" href="../../css/animate-3.7.2/animate.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/animate-3.7.2/animate.min.css">
+<link rel="preload" as="style" href="../../css/bootstrap-switch-3.3.2/bootstrap-switch.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="../../css/bootstrap-switch-3.3.2/bootstrap-switch.min.css">
+<link rel="preload" as="style" href="../../css/ibkr/website-print.min.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../css/ibkr/website-print.min.css"></body>
+</html>
