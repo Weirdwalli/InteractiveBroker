@@ -1,0 +1,1868 @@
+/* ------------------------------------------------------------------------------*/
+/* | **************************************************************************  |*/
+/* | START OF MAIN INTERFACE CSS TAGS - DO NOT TOUCH/CHANGE WITHOUT CONTACTING   |*/
+/* | BILL DENGLER OR NICOLAS CHALESLE                                            |*/
+/* | **************************************************************************  |*/
+/* -------------------------------------------------------------------------------*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html { /* This CSS tag is for the grey background of IB site */
+	background: transparent url(../images/sitetemplate/mainTemplateBkgrnd.gif) repeat-x; 
+
+}
+
+body { /*WARNING - DO NOT TOUCH/CHANGE - ANY CHANGES WILL ALTER THE WEBSITE*/
+	margin: 0;
+	padding: 0;
+	/*top   right  bottom left*/
+	font: normal 11px Verdana, Arial, Georgia, sans-serif; 
+	color: #000000;
+	text-align: center;
+overflow-x: hidden;
+}
+
+#header { /*this header css is for IBs front page DO NOT TOUCH/CHANGE */
+	z-index: 0;
+	left:auto; 
+	right:auto; 
+	margin: 0px auto;
+/*	padding: 0;  */
+	width: 779px;
+	top: 0;
+	background: transparent url(../images/sitetemplate/mainTemplateHeader3.gif) no-repeat center top;
+	text-align: left;
+	background-position: 0 0;
+	padding-bottom: 90px;
+	padding-top: 10px;
+
+}
+
+#printheader { /*this header is for when a person prints th */
+	display: none;
+}
+
+#header2 { /*this header css is for pages within IBs website */
+	z-index: 0;
+	left:auto; 
+	right:auto; 
+	margin: 0px auto;
+	padding: 0;
+	width: 779px;
+	top: 0;
+	background: transparent url(../images/sitetemplate/mainTemplateHeader2.gif) no-repeat center top;
+	text-align: left;
+	background-position: 0 0;
+	padding-bottom: 90px;
+	padding-top: 10px;
+}
+#headerIPO { /*this header css is for the IPO standalone webpage */
+	z-index: 0;
+	left:auto; 
+	right:auto; 
+	margin: 0px auto;
+	padding: 0;
+	width: 779px;
+	top: 0;
+	background: transparent url(../images/sitetemplate/mainTemplateHeaderIPO.gif) no-repeat center top;
+	text-align: left;
+	background-position: 0 0;
+	padding-bottom: 90px;
+	padding-top: 10px;
+}
+
+#container { /*WARNING - DO NOT TOUCH/CHANGE - ANY CHANGES WILL ALTER THE WEBSITE*/
+	left:auto; 
+	right:auto; 
+	margin: 0 auto;
+	padding: 0;
+	height: 600px;
+	width: 779px;
+	top: 138px;
+	border: 0;
+	text-align: left;
+	padding-bottom: 20px;
+	padding-top: 10px;
+}
+
+#leftcolumn{
+	position: absolute;
+	left: auto; 
+	right:auto; 
+	top: 134px;
+	height: auto;
+	margin-left: 573px;
+	width: 212px;
+	border: 0;
+	text-align: justify;
+	background-image:  url(../images/sitetemplate/mainTemplateLeftColumnUseOldTemp.gif);
+	background-repeat: repeat-y;
+	background-position: 0% 0%;
+	padding-left: 0px;
+	padding-right: 5px;
+	bottom: auto;
+}
+
+#leftcolumnfooter{
+	position: relative;
+	top: 0;
+	left: auto; 
+	right: auto; 
+	margin-left: 0;
+	width: 212px;
+	min-width: 207px;
+	max-width: 207px;
+	background-image:  url(../images/sitetemplate/mainTempLeftColUseOldTemp.gif);
+	background-repeat: no-repeat;
+	background-position: 100% 100%;
+	margin-top: 9px;
+	padding-left: 0;
+	padding-right: 5px;
+	height: 15px;	
+	text-align: justify;	
+}
+
+#rightcolumn{
+	position: absolute;
+	left:auto; 
+	right:auto; 
+	top: 134px;
+	height: auto;
+	margin-left: 0px;
+	width: 567px;
+	background-image:  url(../images/sitetemplate/mainTemplateRightColumnUseOldTemp.gif);
+	background-repeat: repeat-y;
+	background-position: 0 0;
+	padding-left: 0;
+	padding-right: 10px;
+}
+
+#rightcolumnfooter{
+	position: relative;
+	top: 0;
+	left: auto; 
+	right:auto; 
+	margin-left: 0;
+	width: 567px;
+	background-image:  url(../images/sitetemplate/mainTempRightColUseOldTemp.gif);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	padding-left: 0px;
+	padding-right: 5px;
+	height: 20px;	
+	text-align: justify;	
+}
+
+#mainBody, #mainbody { /*this header css is for pages within IBs website */
+	position: absolute;
+	left:auto; 
+	right:auto; 
+	top: 134px;
+	height: auto;
+	margin-left: 0;
+	width: 779px;
+	background-image:  url(../images/sitetemplate/mainTempBodMidUseOldTemp.gif);
+	background-repeat: repeat-y;
+	background-position: 0 0;
+	padding-left: 0;
+	padding-right: 10px;
+}
+
+
+
+#mainBodyBottom{
+	position: relative;
+	top: 0;
+	left: auto; 
+	right:auto; 
+	margin-left: 0;
+	width: 779px;
+	background-image:  url(../images/sitetemplate/mainTempBodBotUseOldTemp.gif);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	padding-left: 0px;
+	padding-right: 5px;
+	height: 20px;	
+	text-align: justify;	
+}
+
+#signinsearch{
+	position: relative;
+	z-index: 6;
+	left:auto; 
+	right:auto; 
+	top: -11px;
+	margin-left: 450px;
+	font: bold 10px Verdana, Arial, Georgia, sans-serif;
+}
+
+
+#identifier{
+        position: absolute;
+        top: 4px;
+        margin-left: -20px;
+        width: 40px;
+        text-align: center;
+}
+
+
+#backtohome{
+	position: absolute;
+	z-index: 10;
+	left:auto; 
+	right:auto; 
+	top: 20px;
+}
+
+#ibmenu{
+	position: absolute;
+	z-index: 1000;
+	left:auto; 
+	right:auto; 
+	top: 88px;
+	margin-left: 10px;
+	font: normal 10px Verdana, Arial, Georgia, sans-serif;
+	width: 700px;
+}
+
+
+#pageHeader span,
+/* #signinsearch .p1, */
+#fpTitle h3 span,
+#fpProducts h3 span,
+#fpImage h3 span,
+#fpBackground h3 span,
+#fpOpenAccount h3 span,
+#twstour h3 span,
+#lselect h3 span,
+#larchives h3 span,
+#lresources h3 span,
+#extradiv3,
+#extraDiv4,
+#extraDiv5,
+#extraDiv6 {
+	display:none;
+}
+
+.fp1pixel {
+	margin-left: 1px;
+}
+
+.disclaimer {
+	position: absolute;
+	margin-top: 10px;
+	margin-bottom: 0px;
+	font: normal 9px Verdana, Arial, Georgia, sans-serif; 
+	color: #666666;
+	border-spacing: 10px;
+	border-collapse: seperate;
+	border: 0;
+	margin-left: 0; 
+	margin-right: 0;
+	top: 590px;
+}
+
+#fptext {
+	position: absolute;
+	z-index: 1;
+	left: auto; 
+	right: auto; 
+	border: 0;
+	margin-left: 175px;
+	margin-bottom: 10px;
+	width: 380px;
+	min-width: 350px;
+	max-width: 350px;
+	font: normal 11px Arial, Verdana, Georgia, sans-serif; 
+	line-height: 19px;
+	color: #000000;
+	padding: 13px 15px 10px 15px;
+	text-align: justify;
+	/*top   right  bottom left*/
+}
+
+#fpIcons img {
+	position: relative;
+	top: 90px;
+	border: 1px solid #666666;
+	margin: 23px -5px 100px 17px;
+	/*top   right  bottom left*/
+}
+
+#fpIcons a {
+  text-decoration: none;
+}
+#fpIcons a:link img, #fpIcons a:visited img {
+  text-decoration: none;
+  border: 1px solid #666666;
+}
+
+#fpIcons a:hover img, #fpIcons a:active img {
+  text-decoration: none;
+  border: 1px solid #ff0000;
+}
+
+#fpFlags2 img {
+	position: relative;
+	top: -5px;
+	border: 0;
+	text-align: center;
+	/*left: auto; 
+	right: auto; 
+	margin: 0px;*/
+        margin-left:-10px;
+	/*top   right  bottom left* 3px 1px 10px 3px;*/
+}
+
+#fpFlags img {
+	position: relative;
+	top: 0px;
+	border: 1px solid #666666;
+	text-align: center;
+	left: auto; 
+	right: auto; 
+	margin: 3px 1px 10px 3px;
+	/*top   right  bottom left*/
+}
+
+#fpFlags a {
+  text-decoration: none;
+}
+#fpFlags a:link img, #fpFlags a:visited img {
+  text-decoration: none;
+  border: 1px solid #666666;
+}
+
+#fpFlags a:hover img, #fpFlags a:active img {
+  text-decoration: none;
+  border: 1px solid #ff0000;
+}
+
+.borderit:hover{
+color: red; /* irrelevant definition to overcome IE bug */
+}
+
+#btnOpenAccount img {
+	position: relative;
+	top: 0px;
+	border: 0;
+	text-align: left;
+	left: auto; 
+	right: auto; 
+	margin: 3px 1px 10px 1px;
+	/*top   right  bottom left*/
+}
+
+#btnOpenAccount a, #btnOpenAccount a:link img, #btnOpenAccount a:visited img{
+  text-decoration: none;
+}
+
+#btnOpenAccount a:hover img, #btnOpenAccount a:active img {
+  text-decoration: none;
+}
+
+#btnprintpdf img {
+	position: relative;
+	top: 0px;
+	border: 0;
+	text-align: left;
+	left: auto; 
+	right: auto; 
+	margin: 3px 1px 10px 1px;
+	/*top   right  bottom left*/
+}
+
+#btnprintpdf a, #btnprintpdf a:link img, #btnprintpdf a:visited img, btnprintpdf a:hover img, #btnprintpdf a:active img{
+  text-decoration: none;
+}
+
+#rightcolumn2{
+	padding: 0;
+	margin: 0;
+	background-image:  url();
+	background-repeat: no-repeat;
+
+	background-position: right bottom;
+	padding-bottom: 250px;
+}
+
+#rightcolumn ul {
+	text-align: left;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#rightcolumn ul li{
+	margin: 0;
+	padding: 3px 0 3px 10px;
+	border-bottom: 1px solid #ECEFD7;
+}
+
+#rightcolumn ul li a, #rightcolumn ul li a:visited {
+	border-bottom: none;
+}
+
+#rightcolumn ul li a:hover {
+	color: #94AB36;
+}
+
+#lselect {
+	font-size: 0.9em; 
+}
+
+#lselect ul li {
+	background: transparent url() no-repeat 0% 25%;
+	padding: 3px 0 3px 25px;
+}
+
+#lselect a {
+	display: block;
+	font-size: 1.1em;
+	color: #789B51;
+}
+
+#lselect a.c {
+	display:inline;
+	line-height:5px;
+	margin:0;
+	padding:0;
+	font: normal 1.0em/0.9em Verdana, Arial, Tahoma, sans-serif;
+	color: #B9B9B9;
+	letter-spacing: -1px;
+}
+
+#fpTitle, #fpProducts, #fpImage, #fpBackground, #fpOpenAccount, #twstour{
+/*	position: absolute;
+	left:auto; 
+	right:auto; 
+	top: 119px;
+	width: 213px;
+	text-align: justify;
+	background-image:  url(../images/sitetemplate/mainTemplateLeftColumnUseOldTemp.gif);
+	background-repeat: repeat-y;
+	background-position: 0 0;
+	padding-left: 1px;
+	padding-right: 5px;*/
+	position: relative;
+	left: 0px;
+	width: 556px;
+	padding-bottom: 29px;
+	text-align: justify;
+}
+
+#fpTitle h3 {
+	background-image:  url(../images/sitetemplate/mainTemplateTitle_US.gif);
+	background-repeat: no-repeat;
+	background-position: left;
+	margin-left: 1px;
+	width: 556px;
+	height: 70px;
+}
+
+#fpProducts h3 {
+	background-image:  url(../images/sitetemplate/mnTempProductsTitle_US.gif);
+	background-repeat: no-repeat;
+	background-position: left;
+	margin-left: 1px;
+	width: 556px;
+	height: 47px;
+}
+
+#fpImage h3 {
+	position: absolute;
+	background-image:  url(../images/sitetemplate/mnTempFPimage_US.jpg);
+	background-repeat: no-repeat;
+	background-position: left;
+	margin-left: 1px;
+	width: 556px;
+	height: 178px;
+	z-index: 0;
+}
+
+#fpOpenAccount h3 {
+	position: absolute;
+	background-image:  url(../images/sitetemplate/mnTempOpenAcct_US.gif);
+	background-repeat: no-repeat;
+	background-position: left;
+	margin-left: 1px;
+	width: 195px;
+	height: 23px;
+}
+
+#twstour h3 {
+	position: absolute;
+	background-image:  url(../images/sitetemplate/mnTempTtlTWS_US.gif);
+	background-repeat: no-repeat;
+	background-position: left;
+	margin-left: 1px;
+	width: 195px;
+	height: 18px;
+}
+
+#lselect, #larchives {
+	margin-bottom: 20px;
+}
+
+#lselect h3 {
+	background-image:  url();
+	background-repeat: no-repeat;
+	background-position: left;
+	width: 196px;
+	height: 40px;
+}
+
+#larchives h3 {
+	background-image:  url();
+	background-repeat: no-repeat;
+	background-position: left;
+	width: 196px;
+	height: 40px;
+}
+
+#lresources h3 {
+	background-image:  url();
+	background-repeat: no-repeat;
+	background-position: left;
+	width: 196px;
+	height: 40px;
+}
+
+#footer{
+	font: normal 9px Verdana, Arial, Georgia, sans-serif; 
+	color: #666666;
+	left: auto; 
+	right:auto; 
+	bottom: 0;
+	text-align: center;
+	margin: 0 auto;
+	padding: 0;
+}
+
+#footer a, #footer a:visited {
+	padding: 2px;
+	border: 1px solid #f4f4f4;
+	background-color: #fff;
+}
+
+#footer a:hover {
+	padding: 2px;
+	border: 5px solid #993300;
+	background-color: #D94904;
+	color: #fff;
+}
+
+.breadcrumbs, .breadcrumbs a {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #ff0000;
+	text-transform: none;
+	text-decoration: underline;
+	
+	position: relative;
+	top: 0px;
+	text-align: left;
+	left: auto; 
+	right: auto; 
+	margin: 3px 5px 3px 5px;
+		/*top   right  bottom left*/
+	
+	
+
+}
+	
+.breadcrumbs a:hover { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px; 
+	color: #666666;
+	text-transform: none;
+	text-decoration: underline;
+	
+	position: relative;
+	top: 0px;
+	text-align: left;
+	left: auto; 
+	right: auto; 
+/*	margin: 3px; */
+		/*top   right  bottom left*/
+/*	margin: 3px 5px 3px 5px; */
+	}
+
+/* ------------------------------------------------------------------------------*/
+/* | **************************************************************************  |*/
+/* |   END OF MAIN INTERFACE CSS TAGS - DO NOT TOUCH/CHANGE WITHOUT CONTACTING   |*/
+/* | **************************************************************************  |*/
+/* -------------------------------------------------------------------------------*/
+
+
+/* ------------------------------------------------------------------------------*/
+/* | **************************************************************************  |*/
+/* |         CSS TAGS BELOW CONTROL MAIN HYPERLINKS THROUGHOUT WEBSITE           |*/
+/* | **************************************************************************  |*/
+/* -------------------------------------------------------------------------------*/
+
+a, a:visited {
+	text-decoration: underline;
+	color: #FF0000;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #666666;
+}
+
+a img, a:visited img, a:hover img, a:link img, a:active img {
+	text-decoration: none;
+	border: none;
+}
+
+/* ------------------------------------------------------------------------------*/
+/* | **************************************************************************  |*/
+/* |         CSS TAGS FOR            |*/
+/* | **************************************************************************  |*/
+/* -------------------------------------------------------------------------------*/
+
+
+/* 
+
+----------------------------------------------------------------------------------------------------------
+
+-----------*/
+/* |                                            START OF TAGS FOR GUTS OF WEBSITE                          
+
+            |*/
+/* 
+
+----------------------------------------------------------------------------------------------------------
+
+-----------*/
+
+
+acronym {
+	text-decoration: none;
+	color: #FF0000;
+	border-bottom: 1px dotted #ff0000;
+	cursor: help;
+}
+
+.CellHeader, .CellHeader2 {
+	font: bold 14px Arial, Verdana, Georgia, sans-serif; 
+	color: #000000;
+	background-image:  url(../images/sitetemplate/cellHeader.gif);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	margin: 15px 0 5px 15px;
+	padding: 4px 0px 0px 10px;
+
+	width: 739px;
+	height: 25px;
+}
+
+.CellSubheader, .CellSubHeader {
+	font: bold 12px Arial, Verdana, Georgia, sans-serif; 
+	color: #000000;
+	background-image:  url(../images/sitetemplate/cellSubHeader.gif);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	margin: 15px 0 5px 15px;
+	padding: 1px 0px 0px 10px;
+
+	width: 739px;
+	height: 18px;
+}
+
+.openaccounttab {
+	font: bold 12px Arial, Verdana, Georgia, sans-serif; 
+	color: #000000;
+	background-image:  url(../images/common/benefits/OpenAcctTab.gif);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	margin: 0px 0px 0px 0px;
+	padding: 2px 0px 0px 0px;
+		/*top   right  bottom left*/
+	width: 162px;
+	height: 18px;
+}
+
+.CellTitle {
+	font: bold 12px Arial, Verdana, Georgia, sans-serif; 
+	color: #FFFFFF;
+	text-align: inherit;
+	background-image:  url(../images/sitetemplate/cellTitle.gif);
+	background-repeat: repeat-x;
+	background-position: 0 0;
+	margin: 15px 0px 5px 15px;
+	padding: 1px 0px 0px 10px;
+		/*top   right  bottom left*/
+	
+	height: 25px;
+}
+
+.CellTitle2 {   /*to be used for cell titles with 2 lines of text*/
+	font: bold 12px Arial, Verdana, Georgia, sans-serif; 
+	color: #FFFFFF;
+	text-align: inherit;
+	background-image:  url(../images/sitetemplate/cellTitle2.gif);
+	background-repeat: repeat-x;
+	background-position: 0 0;
+	margin: 15px 0px 5px 15px;
+	padding: 1px 0px 0px 10px;
+		/*top   right  bottom left*/
+	
+	height: 50px;
+}
+
+.CellTitle3 {  /*to be used for cell titles with 3 lines of text*/
+	font: bold 12px Arial, Verdana, Georgia, sans-serif; 
+	color: #FFFFFF;
+	text-align: inherit;
+	background-image:  url(../images/sitetemplate/cellTitle3.gif);
+	background-repeat: repeat-x;
+	background-position: 0 0;
+	margin: 15px 0px 5px 15px;
+	padding: 1px 0px 0px 10px;
+		/*top   right  bottom left*/
+	
+	height: 75px;
+}
+
+.CellSubTitle {
+	font: bold 12px Arial, Verdana, Georgia, sans-serif; 
+	color: #000000;
+	text-align: inherit;
+	background-image:  url(../images/sitetemplate/CellSubTitle.gif);
+	background-repeat: repeat-x;
+	background-position: 0 0;
+	margin: 15px 0px 5px 15px;
+	padding: 1px 0px 0px 10px;
+		/*top   right  bottom left*/
+	
+	height: 25px;
+}
+
+.CellOn {
+	font-family: normal Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	color: #000000;
+	background: transparent url(../images/sitetemplate/mainTemplateBkgrnd.gif) repeat-x;
+	margin: 5px 30px 5px 20px;
+	padding: 15px 5px 15px 5px;
+		/*top   right  bottom left*/
+	border-bottom: 1px solid #999999;
+}
+
+.CellOff {
+	font-family: normal Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	color: #000000;
+	background-color: #FFFFFF;
+	margin: 0px 40px 0px 15px;
+	padding: 15px 5px 15px 5px;
+		/*top   right  bottom left*/
+	border-bottom: 1px solid #999999;
+}
+.CellOff3 {
+	font-family: normal Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	color: #000000;
+	background-color: #FFFFFF;
+	margin: 0px 40px 0px 15px;
+	padding: 2px 5px 2px 5px;
+		/*top   right  bottom left*/
+	border-bottom: 1px solid #999999;
+}
+
+
+
+.Title, h1{
+	font: bold 16px Arial, Verdana, Georgia, sans-serif; 
+	color: #000000;
+	/*background-image:  url(../images/sitetemplate/titleHeader.gif); Old graphic / black bar
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	width: 739px;
+	height: 25px;
+	margin: 15px 0px 5px 15px;*/
+	margin: 15px 0px 5px 0px;
+	padding: 5px 40px 5px 20px;
+	/*top   right  bottom left*/
+
+}
+
+.instructions, .Instructions {
+	font: bold 11px Arial, Verdana, Georgia, sans-serif; 
+	background: #FFFFCC;
+	border: 1px dotted #999999;
+	color: #000000;
+	margin: 0px 20px 0px 20px;
+	padding: 5px 10px 5px 10px;
+	/*top   right  bottom left*/
+
+
+}
+
+.ibcomments{
+	font: normal 11px Arial, Verdana, Georgia, sans-serif; 
+	background: #FFFFCC;
+	border: 1px dotted #999999;
+	color: #000000;
+	margin: 0px;
+	padding: 5px 10px 5px 10px;
+	/*top   right  bottom left*/
+}
+
+.warning, .red {
+	margin-bottom: 10px;
+	font: normal bold 11px  Verdana, Arial, Georgia, sans-serif; 
+	line-height: 14pt;
+	text-align: justify;
+	color: #FF0000;
+	/*padding: 5px 40px 5px 20px;*/
+	/*top   right  bottom left*/
+}
+
+p {
+	margin-bottom: 10px;
+	font: normal 11px  Verdana, Arial, Georgia, sans-serif; 
+	line-height: 14pt;
+text-align: justify;
+	color: #000000;
+	padding: 5px 40px 5px 20px;
+	/*top   right  bottom left*/
+}
+
+.code {
+	margin-bottom: 10px;
+	font: normal 11px  Courier New, Courier, mono; 
+	line-height: 14pt;
+        /*text-align: left;*/
+	color: #000000;
+	/*padding: 5px 40px 5px 20px;*/
+	/*top   right  bottom left*/
+}
+
+#rightalign{ /* used to control the flags and open account button for pages within IB website */
+	position: relative;
+	left: auto; 
+	right:auto; 
+	top: 0;
+	height: auto;
+	margin-left: 15px;
+	border: 0;
+	text-align: left;
+	padding-left: 0px;
+	padding-right: 25px;
+}
+
+.smalltext {
+	font: bold 11px Verdana, Arial, Georgia, sans-serif; 
+	color: #000000;
+	padding: 0 0 0 0;
+	/*top   right  bottom left*/
+}
+
+.smalltext2 {
+	font: 9px Verdana, Arial, Georgia, sans-serif; 
+	color: #000000;
+	padding: 5px 40px 5px 20px;
+	/*top   right  bottom left*/
+}
+
+.tabledrop { /* used on dropdowns for accounts - advisors individiuals institutions brokers */
+	background: transparent url(../images/sitetemplate/mainTemplateBkgrnd.gif) repeat-x;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	
+	border-bottom: 5px solid #999999;
+        border-top: 5px solid #999999;
+	border-right: 1px solid #999999;
+	border-left: 1px solid #999999;
+	
+	padding: 8px 8px 0px 0px;
+	margin: 5px 20px 5px 20px;
+	/*top   right  bottom left*/
+}
+
+.TableOutline { /* used on dropdowns for accounts - advisors individiuals institutions brokers */
+        background: transparent url(../images/sitetemplate/mainTemplateBkgrnd.gif) repeat-x;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        line-height: 14px;
+
+        border-bottom: 5px solid #999999;
+        border-top: 5px solid #999999;
+        border-right: 1px solid #999999;
+        border-left: 1px solid #999999;
+
+        padding: 0px;
+        margin: 5px 20px 5px 20px;
+        /*top   right  bottom left*/
+}
+
+.TableNoOutline { /* used on dropdowns for accounts - advisors individiuals institutions brokers */
+        /*background-color: #FFFFFF;*/
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        line-height: 14px;
+        padding: 0px;
+        margin: 5px 20px 5px 20px;
+        /*top   right  bottom left*/
+}
+
+ul, ol {
+	font: normal 11px Verdana, Arial, Helvetica, sans-serif; 
+	line-height: 14pt;
+	text-align: left;
+	color: #000000;
+	margin: 5px 40px 10px 20px;
+	margin-left: 50px;
+}
+
+
+
+/* 
+
+----------------------------------------------------------------------------------------------------------
+
+-----------*/
+/* |                                 HINT BOX  TAG FOR MAIN HYPERLINKS THROUGHOUT WEBSITE                  
+
+             |*/
+/* |                          used on pages like - Individuals, advisors, brokers, institutions            
+
+             |*/
+/* 
+
+----------------------------------------------------------------------------------------------------------
+
+-----------*/
+
+#hintbox{ /*CSS for pop up hint box */
+position:absolute;
+top: 0;
+background-color: #f3f3e9;
+width: 150px; /*Default width of hint.*/ 
+padding: 3px;
+border:1px solid black;
+font-family:normal 11px Verdana;
+line-height:18px;
+z-index:100;
+border-right: 3px solid black;
+border-bottom: 3px solid black;
+visibility: hidden;
+}
+
+.hintanchor{ /*CSS for link that shows hint onmouseover*/
+font-weight: bold;
+color: navy;
+margin: 3px 8px;
+}
+
+/* 
+
+----------------------------------------------------------------------------------------------------------
+
+-----------*/
+/* |                             END HINT BOX  TAG FOR MAIN HYPERLINKS THROUGHOUT WEBSITE                  
+
+            |*/
+/* 
+
+----------------------------------------------------------------------------------------------------------
+
+-----------*/
+
+
+/* 
+
+----------------------------------------------------------------------------------------------------------
+
+-----------*/
+/* |                                            CSS TAGS FOR OPTIONS COMMENTARY                            
+
+            |*/
+/* 
+
+----------------------------------------------------------------------------------------------------------
+
+-----------*/
+
+#mainBodyOC{ /*this header css is for the options commentary whitebranding */
+	position: absolute;
+	left:auto; 
+	right:auto; 
+	top: 5px;
+	height: auto;
+	margin-left: 0;
+	width: 779px;
+	background-image:  url(../images/sitetemplate/mainTempBodMidUseOldTemp.gif);
+	background-repeat: repeat-y;
+	background-position: 0 0;
+	padding-left: 0;
+	padding-right: 10px;
+}
+
+#headerOC { /*this header css is for the options commentary whitebranding */
+	z-index: 0;
+	left:auto; 
+	right:auto; 
+	margin: 0px auto;
+	width: 779px;
+	top: 0px;
+	background: transparent url(../images/sitetemplate/mainTemplateHeaderOC.gif) no-repeat center top;
+	text-align: left;
+	background-position: 0 0;
+	padding-bottom: 5px;
+	padding-top: 10px;
+}
+
+.CellRed {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 18px;
+	color: #FFFFFF;
+	background-color: #FF0000;
+	padding: 5px;
+	font-weight: normal;
+}
+.CellBlue {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 18px;
+	color: #FFFFFF;
+	background-color: #0033CC;
+	padding: 5px;
+	font-weight: normal;
+}
+
+.CellBlack {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 18px;
+	color: #FFFF99;
+	background-color: #000000;
+	padding: 5px;
+	font-weight: normal;
+}
+
+
+
+
+.CellSubheader2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #000000;
+
+	background-color: #CCCCCC;
+	padding: 2px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #666666;
+}
+
+/*.CellHeader2 {
+	background-color: #336666;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+	padding: 2px;
+	border-top: 1px solid #999999;
+	border-right: 1px solid #333333;
+	border-bottom: 1px solid #333333;
+	border-left: 1px solid #999999;
+}*/
+
+.CellOn2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	color: #000000;
+	background-color: #f3f3e9;
+	padding: 1px;
+	font-weight: normal;
+	padding-left: 5px;
+	border-bottom-width: 1px;
+	border-bottom-color: #999999;
+	border-bottom-style: solid;
+
+}
+
+.CellOff2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	color: #000000;
+	background-color: #FFFFFF;
+	padding: 1px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #f3f3e9;
+	border-right-color: #f3f3e9;
+	border-bottom-color: #f3f3e9;
+	border-left-color: #f3f3e9
+}
+
+.TableOutline2 {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 18px;
+	border: 1px solid #666666;
+}
+
+.TableData{ 
+        padding: 0px;
+        margin: 5px 20px 5px 20px;
+        /*top   right  bottom left*/
+}
+
+
+.upperLine {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        line-height: 18px;
+        color: #000000;
+        background-color: #FFFFFF;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-right-style: none;
+        border-bottom-style: none;
+        border-left-style: none;
+        border-top-color: #000000;        
+}
+
+.CellRed2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	color: #FFFFFF;
+	background-color: #FF0000;
+	padding: 1px;
+	font-weight: normal;
+	padding-right: 5px;
+	border-bottom-width: 1px;
+	border-bottom-color: #999999;
+	border-bottom-style: solid;
+}
+
+.CellBlue2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	color: #FFFFFF;
+	background-color: #0000ff;
+	padding: 1px;
+	font-weight: normal;
+	padding-right: 5px;
+	border-bottom-width: 1px;
+	border-bottom-color: #999999;
+	border-bottom-style: solid;
+}
+
+.CellBlack2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	color: #FFFF99;
+	background-color: #000000;
+	padding: 1px;
+	font-weight: normal;
+	border-bottom-width: 1px;
+	padding-right: 5px;
+	border-bottom-color: #999999;
+	border-bottom-style: solid;
+}
+
+/* 
+
+----------------------------------------------------------------------------------------------------------
+
+-----------*/
+/* |                                       END OF CSS TAGS FOR OPTIONS COMMENTARY                          
+
+            |*/
+/* 
+
+----------------------------------------------------------------------------------------------------------
+
+-----------*/
+
+
+/* 
+
+----------------------------------------------------------------------------------------------------------
+
+-----------*/
+/* |                                            CSS TAGS FOR FORMS                                         
+
+            |*/
+/* 
+
+----------------------------------------------------------------------------------------------------------
+
+-----------*/
+
+
+input, select {
+font-family: Arial, Helvetica, Verdnan, sans-serif;
+font-size: 10px;
+font-weight: normal;
+padding: 1px 1px 1px 1px
+}
+
+Textarea {
+font-family: Arial, Helvetica, Verdnan, sans-serif;
+font-size: 10px;
+font-weight: normal;
+padding: 1px 1px 1px 1px
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------*/
+/* |                                            CSS TAGS CONSULTANTS                                                   |*/
+/* ---------------------------------------------------------------------------------------------------------------------*/
+
+.ConsultantsOn {
+	font-family: normal Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	color: #000000;
+	background: transparent url(../images/sitetemplate/mainTemplateBkgrnd.gif) repeat-x;
+	margin: 5px 30px 5px 20px;
+	padding: 5px 5px 5px 5px;
+		/*top   right  bottom left*/
+	border-bottom: 1px solid #999999;
+}
+
+.ConsultantsOff {
+	font-family: normal Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	color: #000000;
+	background-color: #FFFFFF;
+	margin: 0px 40px 0px 15px;
+	padding: 5px 5px 5px 5px;
+		/*top   right  bottom left*/
+	border-bottom: 1px solid #999999;
+}
+
+
+
+#extraDiv1, #extraDiv2, #extraDiv3, #extraDiv4, #extraDiv5, #extraDiv6 { display:none }
+
+
+/* ---------------------------------------------------------------------------------------------------------------------*/
+/* |                                            PDF STYLES                                                             |*/
+/* ---------------------------------------------------------------------------------------------------------------------*/
+
+.pdfCellHeader, .pdfCellHeader2 {
+	font: bold 14px Arial, Verdana, Georgia, sans-serif; 
+	color: #000000;
+	background-image:  url(../images/sitetemplate/cellHeader.gif);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	margin: 15px 0 5px 15px;
+	padding: 4px 0px 0px 10px;
+	width: 739px;
+	height: 25px;
+}
+
+.pdfCellSubheader {
+	font: bold 12px Arial, Verdana, Georgia, sans-serif; 
+	color: #000000;	
+	background-image:  url(../images/sitetemplate/cellSubHeader.gif);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	margin: 15px 0 5px 15px;
+	padding: 1px 0px 0px 10px;
+	width: 739px;
+	height: 18px;
+}
+
+.pdfCellTitle {
+	font: bold 12px Arial, Verdana, Georgia, sans-serif; 
+	color: #FFFFFF;
+	text-align: inherit;
+	background-image:  url(../images/sitetemplate/cellTitle.gif);
+	background-repeat: repeat-x;
+	background-position: 0 0;
+	margin: 15px 0px 5px 15px;
+	padding: 1px 0px 0px 10px;
+		/*top   right  bottom left*/
+	height: 25px;
+}
+
+.pdfCellTitle2 {   /*to be used for cell titles with 2 lines of text*/
+	font: bold 12px Arial, Verdana, Georgia, sans-serif; 
+	color: #FFFFFF;
+	text-align: inherit;
+	background-image:  url(../images/sitetemplate/cellTitle2.gif);
+	background-repeat: repeat-x;
+	background-position: 0 0;
+	margin: 15px 0px 5px 15px;
+	padding: 1px 0px 0px 10px;
+		/*top   right  bottom left*/
+	height: 50px;
+}
+
+.pdfCellTitle3 {  /*to be used for cell titles with 3 lines of text*/
+	font: bold 12px Arial, Verdana, Georgia, sans-serif; 
+	color: #FFFFFF;
+	text-align: inherit;
+	background-image:  url(../images/sitetemplate/cellTitle3.gif);
+	background-repeat: repeat-x;
+	background-position: 0 0;
+	margin: 15px 0px 5px 15px;
+	padding: 1px 0px 0px 10px;
+		/*top   right  bottom left*/
+	height: 75px;
+}
+
+.pdfCellSubTitle {
+	font: bold 12px Arial, Verdana, Georgia, sans-serif; 
+	color: #000000;
+	text-align: inherit;
+	background-image:  url(../images/sitetemplate/CellSubTitle.gif);
+	background-repeat: repeat-x;
+	background-position: 0 0;
+	margin: 15px 0px 5px 15px;
+	padding: 1px 0px 0px 10px;
+		/*top   right  bottom left*/
+	height: 25px;
+}
+
+.pdfCellOn {
+	font-family: normal Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	text-align: left;
+	color: #000000;
+	margin: 5px 30px 5px 20px;
+	padding: 15px 5px 15px 5px;
+		/*top   right  bottom left*/
+	border-bottom: 1px solid #999999;
+}
+
+.pdfCellOff {
+	font-family: normal Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	color: #000000;
+	background-color: #FFFFFF;
+	margin: 0px 40px 0px 15px;
+	padding: 15px 5px 15px 5px;
+		/*top   right  bottom left*/
+	border-bottom: 1px solid #999999;
+}
+
+
+.pdfinstructions {
+	font: bold 11px Arial, Verdana, Georgia, sans-serif; 
+	background: #FFFFCC;
+	border: 1px dotted #999999;
+	color: #000000;
+	margin: 0px 30px 0px 20px;
+	padding: 5px 10px 5px 10px;
+	/*top   right  bottom left*/
+}
+
+.pdfTableOutline {
+font: bold 12px Arial, Verdana, Georgia, sans-serif; 
+	color: #000000;
+	background: transparent url(../images/sitetemplate/mainTemplateBkgrnd.gif) repeat-x;
+	text-align: left;
+
+	border-bottom: 5px solid #999999;
+	border-top: 5px solid #999999;
+	border-right: 1px solid #999999;
+	border-left: 1px solid #999999;
+
+	margin: 5px 10px 5px 15px;
+        /*top   right  bottom left*/
+}
+
+.pdfTableOutline2 {
+	font: normal 11px  Verdana, Arial, Georgia, sans-serif; 
+	line-height: 14pt;
+	text-align: left;
+	color: #000000;
+	padding: 5px 20px 5px 5px;
+	margin: 0px  10px 10px 0px;
+}
+
+.pdftableleft {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	text-align: left;
+	border: 1px solid #666666;
+	padding: 3px;
+}
+
+.pdftableleft ul {
+	text-align: left;
+	margin: 20px;
+	padding: 0;
+}
+
+.pdftableleft ul li{
+	margin: 0;
+/*	padding: 3px 0 3px 5px;*/
+}
+
+.pdftable p{
+	font: normal 11px  Verdana, Arial, Georgia, sans-serif; 
+	line-height: 14pt;
+	text-align: left;
+	margin: 0px;
+	padding: 0px;
+	color: #000000;
+}
+
+.pdftable ul {
+	text-align: left;
+	margin: 20px;
+	padding: 0;
+}
+
+
+.quicklinks {
+	margin-bottom: 10px;
+	font: 18px  Verdana, Arial, Georgia, sans-serif; 
+	font-weight: 900;
+	line-height: 14pt;
+	text-align: center;
+	color: #000000;
+	padding: 0px;
+}
+
+.highlightstitle {
+	font: bold 24px  Times New Roman, Times, serif; 
+	line-height: 18pt;
+	text-align: left;
+	color: #000000;
+	padding: 5px 5px 5px 5px;
+	margin: 0px 0px 0px 15px;
+}
+
+.highlights {
+	font: bold 12px  Verdana, Arial, Georgia, sans-serif; 
+	line-height: 12pt;
+	text-align: center;
+	color: #ffffff;
+	width: 250px;
+	background: #000000;
+	padding: 3px;
+	margin: 0px 0px 0px 15px;
+}
+.pdfsmalltext {
+	font: 9px Verdana, Arial, Georgia, sans-serif; 
+	color: #000000;
+	padding: 3px;
+	/*top   right  bottom left*/
+}
+
+/* Navigation
+-----------------------------------------------------------------*/
+ul#navigation{
+display:inline;
+list-style:none;
+position:absolute;
+top:40px;left:1px;
+margin:0px 0px 9px 0px;
+padding:0;
+height:41px;
+width:195px;
+z-index:200;
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+}
+ul#navigation li{
+display:inline;
+float:left;
+margin:0;padding:0;
+position:relative;
+}
+ul#navigation li a{
+display:block;
+height:22px;
+text-indent:-9000px;
+outline:none;
+}
+
+li.account, li.account a, li.account a:hover{height:41px;background:url(http://www.interactivebrokers.com/images/sitetemplate/mnTempbtnOpenAcct2.gif) 0 0 no-repeat;}
+li.account a{width:195px;height:41px;}
+li.account a:hover{width:195px;height:41px;}
+
+
+ul#navigation li ul { /* second-level lists */
+position: absolute;
+background: none /*#ccc*/;
+border:none/*1px solid #333*/;
+top:0px;
+width: 150px;
+left: -999em; 
+list-style:none;
+z-index:200;
+padding:0;
+}
+ul#navigation li ul li{float:none;backgoround:transparent;}
+ul#navigation li:hover ul, ul#navigation li.over ul { /* lists nested under hovered list items */
+left: -13px;top:30px;
+border: 0;
+}
+
+ul#navigation li ul li a:hover{
+background:url(http://www.interactivebrokers.com/images/sitetemplate/MTopenacctchild2.gif) 0 0 no-repeat; 
+font-weight:bold;
+text-indent:25px;
+z-index:200;
+}
+
+ul#navigation li ul li a{
+background:url(http://www.interactivebrokers.com/images/sitetemplate/MTopenacctchild.gif) 0 0 no-repeat; 
+font-weight:bold;
+text-indent:25px;
+z-index:200;
+}
+
+
+/* NEW FRONT PAGE TAB STYLES */
+#tabscontainer {
+	position: absolute;
+	z-index: 2;
+	top: 464px;
+	border: 0;
+	margin-left: 1px;
+	width: 600px;
+}
+.basictab ul{
+	margin: 0;
+	padding: 0;
+	font: bold 11px Arial, verdana, helvetica;
+	border-bottom: 0;
+	list-style-type: none;
+	text-align: center; /*set to left, center, or right to align the menu as desired*/
+}
+#tabcontentcontainer{
+	width:100%; /*width of 2nd level content 100%*/
+	height:1.5em; /*height of 2nd level content. Set to largest's content height to avoid jittering. 1.5em*/
+	top: 432px;
+	margin-left: 0px;/*how far from left the child sections are*/
+		/*background:url("bnrBackground.gif") repeat-x;
+		margin-top:18px;*/
+}
+.tabcontent{
+	display:none;
+}
+.basictab
+{
+	float:left;
+	width:600px;
+	background:none;
+	font-size:93%;
+	line-height:normal;
+	margin-left: 0px; /*how far from left the tabs are*/
+	border-bottom:0;
+}
+.basictab li
+{
+	float:left;
+	background:url("http://www.interactivebrokers.com/images/sitetemplate/tab_right3.gif") no-repeat right top;
+	margin: 0px 4px 0px 0px; /*space between tabs*/
+		/*top   right  bottom left*/
+	padding:0px;
+
+}
+.basictab li a:hover
+{
+	background:url("http://www.interactivebrokers.com/images/sitetemplate/tab_right.gif") no-repeat right top;
+}
+
+.basictab a
+{
+	display:block;
+	background:url("http://www.interactivebrokers.com/images/sitetemplate/tab_left3.gif") no-repeat left top;
+	padding:2px 11px; /*controls spacing of text from inner tab*/
+	color: #FF0000;
+	text-decoration:none;
+}
+.basictab a:hover
+{
+	display:block;
+	background:url("http://www.interactivebrokers.com/images/sitetemplate/tab_left.gif") no-repeat left top;
+	color: #000000;
+}
+.basictab li a.current{
+	background:url("http://www.interactivebrokers.com/images/sitetemplate/tab_right.gif") no-repeat right top;
+	color: #000000;
+	text-decoration:none;
+	border-left: 1px solid #B0B0B0;
+}
+
+
+.cellwebinar {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	color: #000000;
+	background-color: #FFFFFF;
+	padding: 1px;
+	padding-left: 5px;
+	border-bottom: 1px solid #cccccc;
+}
+/* COMMISSIONS TAB STYLES ON FRONT PAGE*/
+
+#commissionscontainer {
+        position: absolute;
+        z-index: 1;
+	top: 275px;
+	margin-left: 574px;
+	width: 195px;
+	border-bottom: 1px solid #999999;
+	height: 170px;
+	background: transparent url(http://www.interactivebrokers.com/images/sitetemplate/mainTemplateBkgrnd.gif) repeat-x;
+}
+.basiccommtab ul{
+	margin: 0;
+	padding: 0;
+	font: bold 11px Arial, verdana, helvetica, sans-serif;
+	border-bottom: 0;
+	list-style-type: none;
+	text-align: center; /*set to left, center, or right to align the menu as desired*/
+}
+#commissionscontentcontainer{
+	width:100%; /*width of 2nd level content 100%*/
+	height:1.5em; /*height of 2nd level content. Set to largest's content height to avoid jittering. 1.5em*/
+	top: 432px;
+	margin-left: 0px;/*how far from left the child sections are*/
+		/*background:url("bnrBackground.gif") repeat-x;
+		margin-top:18px;*/
+}
+.commcontent{
+	display:none;
+        margin: 1px 3px 0px 3px;
+}
+.basiccommtab
+{
+	float:left;
+	width:195px;
+	background:none;
+	font-size:93%;
+	line-height:normal;
+	margin-left: 0px; /*how far from left the tabs are*/
+	border-bottom:1px solid #999999;
+}
+.basiccommtab li
+{
+	float:left;
+	background:url("http://www.interactivebrokers.com/images/sitetemplate/tab_right3.gif") no-repeat right top;
+	margin: 0px 1px 0px 1px;
+		/*top   right  bottom left*/
+	padding:0px;
+
+}
+.basiccommtab li a:hover
+{
+	background:url("http://www.interactivebrokers.com/images/sitetemplate/tab_right.gif") no-repeat right top;
+}
+.basiccommtab a
+{
+	display:block;
+	background:url("http://www.interactivebrokers.com/images/sitetemplate/tab_left3.gif") no-repeat left top;
+	padding:1px 6px; /*controls spacing of text from inner tab*/
+	color: #FF0000;
+	text-decoration:none;
+}
+.basiccommtab a:hover
+{
+	display:block;
+	background:url("http://www.interactivebrokers.com/images/sitetemplate/tab_left.gif") no-repeat left top;
+	color: #000000;
+}
+.basiccommtab li a.current{
+	background:url("http://www.interactivebrokers.com/images/sitetemplate/tab_right.gif") no-repeat right top;
+		color: #000000;
+	text-decoration:none;
+	border-left: 1px solid #B0B0B0;
+}
+
+.CommissionsSmall, .CommissionsXSmall, .CommissionsLarge {
+	font-family: Arial, Verdana,Georgia, sans-serif; 
+	color: #000000;
+	padding: 0px;
+	line-height: 14px;
+	/*top   right  bottom left*/
+}
+.CommissionsXSmall {
+	font-size: 9px;  
+    font-weight: normal; 
+	/*top   right  bottom left*/
+}
+.CommissionsSmall {
+	font-size: 10px; 
+	font-weight: normal; 
+	/*top   right  bottom left*/
+}
+
+.CommissionsLarge {
+	font-size: 12px; 
+	font-weight: bold; 
+	/*top   right  bottom left*/
+}
+
+/* STYLES FOR WEBINAR CALENDAR*/
+
+.CalendarTable { /* used on dropdowns for accounts - advisors individiuals institutions brokers */
+        background-color: #FFFFFF;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        line-height: 14px;
+        padding: 0px;
+        margin: 5px 20px 5px 20px;
+		border: 1px solid #999999;
+        /*top   right  bottom left*/
+}
+
+.CalendarCellOn {
+	font-family: normal Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	color: #000000;
+	background: transparent url(../images/sitetemplate/mainTemplateBkgrnd.gif) repeat-x;
+	margin: 5px 30px 5px 20px;
+	padding: 3px 5px 20px 5px;
+		/*top   right  bottom left*/
+	border-right: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+}
+
+.CalendarCellOff {
+	font-family: normal Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	color: #000000;
+	background-color: #FFFFFF;
+	margin: 5px 30px 5px 20px;
+	padding: 3px 5px 20px 5px;
+		/*top   right  bottom left*/
+	border-right: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+}
+.Calendardate {
+	font: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	line-height: 14px;
+	color: #000000;
+	background-color: #FFFFFF;
+	margin: 5px 0px 0px -5px;
+	padding: 3px;
+		/*top   right  bottom left*/
+	border-right: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+}
+
+
+.dropdown { 
+	font: bold 11px Arial, Verdana, Georgia, sans-serif; 
+	color: #000000; 
+	border:1px solid #999999;
+	background-color: #ccc  ;
+	margin: 5px 30px 5px 20px;
+	padding: 5px;
+	text-align:left;
+
+}
+
+/*Tab CSS for Open Account Pages*/
+.acctapptabs{
+float:left;
+width:100%;
+line-height:normal;
+border-bottom: 1px solid #999; /*Add border strip to bottom of menu*/
+font: bold 11px Verdana, Arial, Georgia, sans-serif;
+}
+
+.acctapptabs ul{
+list-style-type: none;
+margin:0;
+margin-left: 5px; /*Left offset of entire tab menu relative to page*/
+padding:0;
+}
+
+.acctapptabs li{
+display:inline;
+margin:0;
+padding:0;
+}
+
+.acctapptabs a{
+float:left;
+background:url(http://www.interactivebrokers.com/images/common/acctapptab-left.gif) no-repeat left top;
+margin:0;
+margin-right: 1px; /*spacing between each tab*/
+padding:0 0 0 9px;
+text-decoration:none;
+}
+
+.acctapptabs a span{
+float:left;
+display:block;
+background:url(http://www.interactivebrokers.com/images/common/acctapptab.gif) no-repeat right top;
+padding: 5px 30px 3px 3px;
+/*top   right  bottom left*/
+font-weight:bold;
+color:#3B3B3B;
+
+}
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+.acctapptabs a span {float:none;}
+
+/* End IE5-Mac hack */
+
+.acctapptabs a:hover span {
+color: black;
+}
+
+.acctapptabs a.current{ /*Selected Tab style*/
+background-position:0 -82px; /*Shift background image up to start of 2nd tab image*/
+}
+
+.acctapptabs a.current span{ /*Selected Tab style*/
+background-position:100% -82px; /*Shift background image up to start of 2nd tab image*/
+color: black;
+}
+
+.acctapptabs a:hover{ /*onMouseover style*/
+background-position:0% -82px; /*Shift background image up to start of 2nd tab image*/
+}
+
+.acctapptabs a:hover span{ /*onMouseover style*/
+background-position:100% -82px; /*Shift background image up to start of 2nd tab image*/
+}
+
+.tabcontainer{
+clear: left;
+width:95%; /*width of 2nd level sub menus*/
+height:auto; /*1.5emheight of 2nd level sub menus. Set to largest's sub menu's height to avoid jittering.*/
+}
+
+.tabcontent{
+display:none;
+}

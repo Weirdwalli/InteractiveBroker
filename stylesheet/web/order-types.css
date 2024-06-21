@@ -1,0 +1,13 @@
+.table tbody tr td.icon-check {
+	border-left:none;
+	text-align:center;
+	vertical-align:middle;
+	width:38px;
+}
+.table tbody tr td:nth-child(odd) {
+        border-right:none;
+}
+.table tbody tr td.icon-check img {
+	height:14px;
+	width:14px;
+}

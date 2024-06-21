@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.TableOutline {
+	margin:5px 0px;
+	padding:0px;
+	width:100%;
+	height:auto;
+	background-color:#FFFFFF;
+	border:1px solid #CCCCCC;
+}
+.TableOutline td {
+	padding:8px;
+	border-bottom:1px solid #DDDDDD;
+}
+.CellTitle {
+	font-size:16px;
+    font-weight:400;
+	color:#A02200;
+    background-color:#FFFFFF;
+	border-bottom:2px solid #DDDDDD;
+}
+.columnheader {
+	font-weight:700;
+	text-transform:capitalize;
+	color:#000000;
+	background-color:#F9F9F9;
+	border-bottom:1px solid #DDDDDD;
+}
+.odd {
+	background-color:#FFFFFF;
+}
+.even {
+	background-color:#F9F9F9;
+}
+.centeritem {
+	text-align:center;
+}
